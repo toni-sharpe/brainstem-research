@@ -1,0 +1,291 @@
+{
+  "CommonClinicalResponses": {
+    "care_error_level": "Pflege-Fehlerniveau",
+    "care_technique_1": "Pflegetechnik 1",
+    "death_response_1": "Reaktion auf den Tod 1",
+    "death_response_2": "Reaktion auf den Tod 2",
+    "event_number": "Pathologische Ereignisfolge",
+    "fatal_symptom_1": "Tödliches Symptom 1",
+    "fatal_symptom_2": "Tödliches Symptom 2",
+    "first_prime_symptom": "Erste Moment des Hauptsymptoms",
+    "intro_symptom_duration": "Möglicher Start Dauer",
+    "intro_symptom_start": "Möglicher Start",
+    "mild_symptom_1": "Mildes Symptom 1",
+    "mild_symptom_1_2": "Mildes Symptom 1 Zweimal",
+    "mild_symptom_1_duration": "Mildes Symptom 1 Dauer",
+    "mild_symptom_2": "Mildes Symptom 2",
+    "mild_symptom_2_duration": "Mildes Symptom 2 Dauer",
+    "overall_patient_rating": "Gesamtbewertung der Patienten",
+    "pathogenesis_duration": "Pathogenesis Dauer",
+    "pathological_event_duration": "Dauer des pathologischen Ereignisses",
+    "pathological_severity": "Pathologischer Schweregrad",
+    "prime_symptom_1": "Hauptsymptom 1",
+    "prime_symptom_1_duration": "Hauptsymptom 1 Dauer",
+    "prime_symptom_2": "Hauptsymptom 2",
+    "prime_symptom_2_duration": "Hauptsymptom 2 Dauer",
+    "prime_symptom_3": "Hauptsymptom 3",
+    "prime_symptom_3_duration": "Hauptsymptom 3 Dauer",
+    "prime_symptom_duration": "Hauptsymptom Dauer",
+    "prime_symptom_level": "Hauptsymptom Schweregrad",
+    "prime_symptom_proportion": "Anteil der Hauptsymptome",
+    "recovery_duration": "Dauer der Wiederherstellung",
+    "recovery_proportion": "Anteil der Verwertung",
+    "slight_death_response_1": "Reaktion auf den Tod 1 (möglich)",
+    "slight_death_response_2": "Reaktion auf den Tod 2 (möglich)",
+    "time_of_death": "Zeitpunkt des Todes"
+  },
+
+  "MainPageHeading": {
+    "Scatter": "Punktwolke",
+    "PrimeSymptomList": "Hauptsymptomliste",
+    "AntiBiasToolKit": "Anti-Bias-Toolkit",
+    "TimeLineStatChart": "Zeitleiste Stat. Diagramm",
+    "TimeLine": "Zeitleiste",
+    "HistogramMaker": "Histogramm-Ersteller",
+    "CorrelationHeatmap": "Korr. Heatmap",
+    "nIs": "N ist {{n}}"
+  },
+
+  "Menu": {
+    "ariaLabel": "Hauptmenü"
+  },
+
+  "LanguageToggle": {
+    "languageToggle": "Sprache wechseln zu",
+    "de": "Deutsche",
+    "en": "English"
+  },
+
+  "FilterButtonLabel": {
+    "confirmedActors": "S. sicher",
+    "fatal": "TL",
+    "primeSymptomType": "H.symp",
+    "fjp": "Vorh.",
+    "hardEventOnly": "HE",
+    "hardPrimeSymptom": "Scwer h.symp.",
+    "rmDubious": "Auch Fr.",
+    "longTime": "Lang",
+    "moderateTime": "Mittel",
+    "nonFatal": "NT",
+    "secondOrMore": "2+",
+    "thirdOrMore": "3+"
+  },
+
+  "Scatter": {
+    "description": "Zwei Punktwolke, eines davon streng kontrolliert und hypothesengesteuert, das andere zur Erkundung durch den Benutzer",
+    "interactiveChart": "Interaktive-Punktwolke"
+  },
+
+  "ScatterChart": {
+    "notEnoughData": "Nicht genügend Daten für die Anzeige eines Diagramms"
+  },
+
+  "AxisSelector": {
+    "axisSTATS": "Stats pro Gruppe",
+    "axisGROUPBY": "Gruppen (Balken)",
+    "axisX": "x-Achse (unten)",
+    "axisY": "y-Achse (seite)",
+    "shownOnX": "auf der X-Achse dargestellt",
+    "shownOnY": "auf der Y-Achse dargestellt",
+    "shownOnSTATS": "auf der Gruppe-Achse dargestellt",
+    "shownOnGROUPBY": "auf der Gruppen (Balken)-Achse dargestellt",
+    "primaryMark": "diese Auswahl für die Achse vermittelt die wichtigsten Informationen"
+  },
+
+  "AxisSelectorButton": {
+    "shownOnX": "auf der X-Achse dargestellt",
+    "shownOnY": "auf der Y-Achse dargestellt"
+  },
+
+  "ScatterStatisticOutput": {
+    "label": "Liste der Statistiken basierend auf der Streuausgabe",
+    "notEnoughData": "Nicht genügend Daten zur Durchführung statistischer Operationen",
+    "sampleCorrelation": "Korrelation der Stichprobe",
+    "sampleCovariance": "Kovarianz der Stichprobe"
+  },
+
+  "PrimeSymptomList": {
+    "GraphHeading": "Zeigt, dass das Hauptsymptom früher auftritt, wenn die Zahl der Überlebenden zunimmt"
+  },
+
+  "PrimeSymptomListCounter": {
+    "counterLabel": "Erhöhen Sie die Daten wie hinzugefügt"
+  },
+
+  "PrimeSymptomHistogram": {
+    "factoredBy": "mit um {{factor}} faktorisierten nicht-tödlich Spalten",
+    "fatal": "{{count}} Tödliche Fälle in {{histogramHistogramBarGroupLabel}}",
+    "name": "Balkendiagramm zur Hauptsymptom",
+    "nonFatal": "{{count}} nicht tödliche Fälle in {{histogramHistogramBarGroupLabel}}",
+    "numberExplanation": "NB: Dieses Diagramm zählt immer ab dem ersten Eintrag, daher kann die Filterung Zahlen liefern, die nicht sofort Sinn ergeben.",
+    "primeSymptomHistogramTools": "Tools und Feedback zur Interaktion mit dem Diagramm"
+  },
+
+  "TimeLineBarListScale": {
+    "scaleFor": "Skala für {{AriaLabel}}"
+  },
+
+  "HistogramBarGroupLabel": {
+    "0": "0..5 Tage",
+    "5": "5..10 Tage",
+    "10": "10..15 Tage",
+    "15": "15..20 Tage",
+    "20": "20..25 Tage",
+    "25": "25..30 Tage",
+    "30": "30..35 Tage",
+    "35": "35..40 Tage",
+    "40": "40..45 Tage",
+    "45": "45..50 Tage",
+    "50": "50..55 Tage",
+    "55": "55..60 Tage",
+    "60": "Über 60 Tage"
+  },
+
+  "AverageLineList": {
+    "average": "Der Durchschnitt dieses Diagramms beträgt {{ariaAverages}}",
+    "averageList": "Die Durchschnittswerte aus diesem Diagramm sind {{ariaAverages}}",
+    "and": "und",
+    "fatal": "Tödlich",
+    "non-fatal": "Nicht tödlich"
+  },
+
+  "FactorToggle": {
+    "ariaLabel": "Umschalttaste für den Faktor: zum Umschalten anklicken",
+    "on": "Faktor ist eingeschaltet",
+    "off": "Faktor ist ausgeschaltet",
+    "turnOn": "Einschalten",
+    "turnOff": "Ausschalten"
+  },
+
+  "AntiBiasToolKit": {
+    "secondaryNav": "Sekundäre Navigation für die Auswahl der zu untersuchenden schlechten Simulation",
+    "correlationPanelLabel": "Simulation der verzerrten Korrelation",
+    "judgementPanelLabel": "Simulation eines verzerrten Urteils",
+    "timingPanelLabel": "Verzerrte Zeitsimulation"
+  },
+
+  "BiasedJudgementSim": {
+    "summary": "Wiederholt und jedes Mal nach dem Zufallsprinzip davon ausgeht, dass sich ~50 % meiner Einschätzungen als falsch erweisen"
+  },
+
+  "BiasedTimingSim": {
+    "summary": "Geht von einem schlechten Timing aus, mit interaktivem Prozentsatz, um zu bestimmen, wie weit ich daneben liege",
+    "biased": "V'teil",
+    "timingShorthand": "t",
+    "veryBiased": "S. V'teil"
+  },
+
+  "BiasedCorrelationSim": {
+    "biasedCorrelationSimChart": "Schlechtes Korrelations-Simulationsdiagramm",
+    "random": "Zufällig",
+    "summary": "Ändert die korrelierten Werte zufällig nach oben oder unten, begrenzt auf den Tastenwert",
+    "timingShorthand": "t"
+  },
+
+  "OutcomeSummmary": {
+    "total": "Alles",
+    "fatal": "Tödlich",
+    "nonFatal": "Nicht tödlich",
+    "outcomeSummary": "Zusammenfassung der Ergebnisspalte",
+    "unknown": "Unbekannt"
+  },
+
+  "TimeLineStatChart": {
+    "subHeading": "Grundlegende Zeitstatistiken, über gemeinsame Antworten und mit interaktiven Querverweisen",
+    "interactivePanelLabel": "Interaktive Zeitleiste",
+    "generalPanelLabel": "Allgemeiner klinischer Zeitleiste",
+    "ariaLabel": "{{label}}; Bereich {{min}} bis {{max}} mit mean {{mean}} Standardabweichung {{minStd}} bis {{maxStd}}",
+    "secondaryNav": "Siehe Antwortzeitstatistiken oder interaktiv, wo Sie auswählen können, was gruppiert werden soll und wo Sie Statistiken über"
+  },
+
+  "GeneralResponseTimeLineStatChart": {
+    "GraphHeading": "Filterbare Bereiche und grundlegende Statistiken für agonale und Erholungsreaktionen"
+  },
+
+  "InteractiveTimeLineStatChart": {
+    "GraphHeading": "Interaktive Statistikliste, die es dem Benutzer ermöglicht, auszuwählen, was gruppiert werden soll, und die Zeitstatistiken für diese Gruppen anzuzeigen",
+    "group": "{{k}} N={{count}}"
+  },
+
+  "TimeLineBar": {
+    "good": "Wiederherstellungsantworten",
+    "notGood": "Schwerwiegende Reaktionen",
+    "bad": "Schwerwiegende und / oder agonale Reaktionen",
+    "veryBad": "Aggressive Reaktionen mit tödlichem Ausgang",
+    "neutral": "Aufprall ohne Lager"
+  },
+
+  "TimeLineBarList": {
+    "mean": "Mtlwrt",
+    "range": "Bereich",
+    "stddev": "Mdaabw",
+    "mda": "MdA dev",
+    "median": "Md",
+    "skewness": "Skew",
+    "quantile": "Qu",
+    "mAndM": "Mean | Medn",
+    "ranges": "lo | MDA | hi"
+  },
+
+  "TimeLineBarDetailToggleList": {
+    "mean": "Mtlwrt",
+    "range": "Bereich",
+    "min": "Min",
+    "max": "Max",
+    "median": "Md",
+    "quantile": "Qunt",
+    "quantileNumber": "Qunt Zahlen",
+    "deviation": "MDA Abweichung",
+    "label": "Etikett",
+    "statList": "Statistiken",
+    "fatLines": "Fette Linien"
+  },
+
+  "TimeLine": {
+    "overall_patient_ratingPanelLabel": "Rating",
+    "pathological_severityPanelLabel": "Severity",
+    "care_error_levelPanelLabel": "Pflegetechnik",
+    "mild_symptom_1PanelLabel": "Mildes Symptom",
+    "prime_symptom_1PanelLabel": "Hauptsymptom 1",
+    "first_prime_symptomPanelLabel": "Primärer Start",
+    "death_response_1PanelLabel": "Tödliches 1",
+    "pathogenesis_durationPanelLabel": "Pathogenesis Dauer",
+    "pathological_event_durationPanelLabel": "Dauer",
+    "death_response_2PanelLabel": "Tödliches 2",
+    "care_technique_1PanelLabel": "Pflegetechnik 1",
+    "secondaryNav": "Eine Reihe von Optionen für die Monate"
+  },
+
+  "HistogramMaker": {
+    "countPanelLabel": "Zahlen",
+    "avePanelLabel": "Median",
+    "mdaPanelLabel": "Abweichung",
+    "minPanelLabel": "Min",
+    "maxPanelLabel": "Max",
+    "rangePanelLabel": "Bereich"
+  },
+
+  "ErrorList": {
+    "calcLeft": "calcLeft Funktion erfordert eine val bereitgestellt",
+    "calcPercentage": "calcPercentage Funktion erfordert eine val bereitgestellt",
+    "calcWidth": "calcWidth Funktion erfordert eine min und max val",
+    "fnMustBeProvidedTo": "{{fnName}} muss {{caller}} zur Verfügung gestellt werden und muss eine Funktion sein",
+    "fullStatBase": "fullStatBase Funktion benötigt ein k",
+    "graphBlockLengthInvalid": "histogramBarGroupList ist nicht korrekt in {{callingFn}} - Empfangen: {{typeOf}} | {{val}}",
+    "graphBlockLengthZero": "histogramBarGroupList hat die Länge 0, es sollte etwas in histogramBarGroupList für {{callingFn}} enthalten sein",
+    "calcWidth": "calcWidth erfordert die Angabe eines Mindest- und Höchstwerts",
+    "mapToTimeLineBars": "mapToTimeLineBars benötigt data mit Länge und eine i18nBase",
+    "noHistogramData": "Diese Histogramm-Konfiguration hat null Ergebnisse",
+    "primeSymptomHistogramBarGroup": "Prime symptom graph block list muss ein Array mit positiver Anzahl sein",
+    "secondaryNavProps": "alle vier Args sind erforderlich, currentPanel, k und i18nBase sind alle Strings und setCurrentPanel sollte eine Funktion sein",
+    "utilKeyPairXYMakeMapFn": "makeMapFn benötigt sowohl x als auch y, um die richtigen Schlüssel in jedem Punkt zu referenzieren"
+  },
+
+  "ReactTestLibrary": {
+    "NOTE": "ONLY EN USED IN SB - FIND KEYS THERE"
+  },
+
+  "StoryBook": {
+    "NOTE": "ONLY EN USED IN SB - FIND KEYS THERE"
+  }
+}

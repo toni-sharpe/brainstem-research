@@ -1,0 +1,308 @@
+{
+  "CommonClinicalResponses": {
+    "care_error_level": "Care error level",
+    "care_technique_1": "Care technique 1",
+    "death_response_1": "Death response 1",
+    "death_response_2": "Death response 2",
+    "event_number": "Pathological event order",
+    "fatal_symptom_1": "Fatal symptom 1",
+    "fatal_symptom_2": "Fatal symptom 2",
+    "first_prime_symptom": "1st moment of prime symptom",
+    "intro_symptom_duration": "Possible start duration",
+    "intro_symptom_start": "Possible start",
+    "mild_symptom_1": "Mild symptom 1",
+    "mild_symptom_1_2": "Mild symptom 1 second time",
+    "mild_symptom_1_duration": "Mild symptom 1 duration",
+    "mild_symptom_2": "Mild symptom 2",
+    "mild_symptom_2_duration": "Mild symptom 2 duration",
+    "overall_patient_rating": "Overall patient rating",
+    "pathogenesis_duration": "Pathogenesis duration",
+    "pathological_event_duration": "Pathogical event duration",
+    "pathological_severity": "Pathogical severity",
+    "prime_symptom_1": "Prime symptom 1",
+    "prime_symptom_1_duration": "Prime symptom 1 duration",
+    "prime_symptom_2": "Prime symptom 2",
+    "prime_symptom_2_duration": "Prime symptom 2 duration",
+    "prime_symptom_3": "Prime symptom 3",
+    "prime_symptom_3_duration": "Prime symptom 3 duration",
+    "prime_symptom_duration": "Prime symptom duration",
+    "prime_symptom_level": "Prime symptom severity",
+    "prime_symptom_proportion": "Prime symptom proportion",
+    "recovery_duration": "Recovery duration",
+    "recovery_proportion": "Recovery proportion",
+    "slight_death_response_1": "Death response 1 (pos)",
+    "slight_death_response_2": "Death response 2 (pos)",
+    "time_of_death": "Time of death"
+  },
+
+  "MainPageHeading": {
+    "Scatter": "Scatter Plot",
+    "PrimeSymptomList": "Prime Symptom",
+    "AntiBiasToolKit": "Anti-bias Tool Kit",
+    "TimeLineStatChart": "Time Line Stat. Chart",
+    "TimeLine": "Time Line",
+    "HistogramMaker": "Histogram",
+    "CorrelationHeatmap": "Corr. Heatmap",
+    "nIs": "N is {{n}}"
+  },
+
+  "Menu": {
+    "ariaLabel": "Main menu"
+  },
+
+  "LanguageToggle": {
+    "languageToggle": "Switch language to",
+    "de": "Deutsche",
+    "en": "English"
+  },
+
+  "FilterButtonLabel": {
+    "confirmedActors": "Cnf",
+    "fatal": "FT",
+    "primeSymptomType": "Rdgt.",
+    "fjp": "Prev",
+    "hardEventOnly": "HE",
+    "hardPrimeSymptom": "HR",
+    "rmDubious": "Rm Dub.",
+    "longTime": "Long",
+    "moderateTime": "Med",
+    "nonFatal": "NF",
+    "secondOrMore": "2+",
+    "thirdOrMore": "3+"
+  },
+
+  "Scatter": {
+    "description": "Interactive scatter diagram set to hypothesis as default",
+    "interactiveChart": "Interactive chart"
+  },
+
+  "ScatterChart": {
+    "notEnoughData": "Not enough data to display a chart"
+  },
+
+  "HypothesisScatterChart": {
+    "hypothesisCorrelationDescription": "Represents the correlation described in the document",
+    "hypothesisChart": "Hypothesis chart"
+  },
+
+  "AxisSelector": {
+    "axisSTATS": "Stats per grouping",
+    "axisGROUPBY": "Groupings (bars)",
+    "axisX": "X Axis (bottom)",
+    "axisY": "Y Axis (side)",
+    "shownOnX": "shown on X axis",
+    "shownOnY": "shown on Y axis",
+    "shownOnSTATS": "shown on stats axis",
+    "shownOnGROUPBY": "shown on group by axis",
+    "primaryMark": "this selection for the axis conveys the primary information"
+  },
+
+  "ScatterStatisticOutput": {
+    "label": "List of statistics based on scatter output",
+    "notEnoughData": "Not enough data to perform statistic operations",
+    "sampleCorrelation": "Sample correlation",
+    "sampleCovariance": "Sample covariance"
+  },
+
+  "PrimeSymptomList": {
+    "GraphHeading": "Shows prime symptom appearing earlier as the set who survive increases"
+  },
+
+  "PrimeSymptomListCounter": {
+    "counterLabel": "Increase data as added"
+  },
+
+  "PrimeSymptomHistogram": {
+    "factoredBy": "{{ariaName}} with non fatal columns factored by {{factor}}",
+    "fatal": "{{count}} fatal cases in {{ariaLabel}}",
+    "name": "Prime symptom bar graph",
+    "nonFatal": "{{count}} non fatal cases in {{ariaLabel}}",
+    "numberExplanation": "NB: this graph always counts from the first entry made, therefore filtering may return numbers that don't immediately make sense",
+    "primeSymptomHistogramTools": "Tools and feedback to interact with the graph"
+  },
+
+  "TimeLineBarListScale": {
+    "scaleFor": "Scale for {{ariaLabel}}"
+  },
+
+  "HistogramBarGroupLabel": {
+    "0": "0..5 days",
+    "5": "5..10 days",
+    "10": "10..15 days",
+    "15": "15..20 days",
+    "20": "20..25 days",
+    "25": "25..30 days",
+    "30": "30..35 days",
+    "35": "35..40 days",
+    "40": "40..45 days",
+    "45": "45..50 days",
+    "50": "50..55 days",
+    "55": "55..60 days",
+    "60": "60 days +",
+    "sb-example": "Storybook Example"
+  },
+
+  "HistogramBarLabel": {
+    "sb-3": "{{count}} cases in {{ariaLabel}}"
+  },
+
+  "AverageLineList": {
+    "averageList": "Averages from this graph are {{ariaAverages}}",
+    "average": "Average from this graph is {{ariaAverages}}",
+    "sb-1": "collection",
+    "sb-3": "some things",
+    "sb-5": "everything else in the world",
+    "sb-4": "those things I want",
+    "and": "and",
+    "fatal": "fatal",
+    "non-fatal": "non fatal"
+  },
+
+  "FactorToggle": {
+    "ariaLabel": "Factor toggle button: currently {{state}} click to toggle to {{altState}}",
+    "on": "Factor is on",
+    "off": "Factor is off",
+    "turnOn": "Turn on",
+    "turnOff": "Turn off"
+  },
+
+  "AntiBiasToolKit": {
+    "secondaryNav": "Secondary nav for selecting which error simulation to look at",
+    "correlationPanelLabel": "Biased correlation simulation",
+    "judgementPanelLabel": "Biased judgement simulation",
+    "timingPanelLabel": "Biased timing simulation"
+  },
+
+  "BiasedJudgementSim": {
+    "summary": "Repeatedly, and randomly each time, assumes ~50% of my assessments turn out to be incorrect"
+  },
+
+  "BiasedTimingSim": {
+    "biased": "Biased",
+    "summary": "Assumes poor timing, with interactive percentage to define how far off I am",
+    "timingShorthand": "d",
+    "veryBiased": "V. Biased"
+  },
+
+  "BiasedCorrelationSim": {
+    "biasedCorrelationSimChart": "Biased correlation sim chart",
+    "random": "Random",
+    "summary": "Alters the correlated values randomly up or down limited to button value",
+    "timingShorthand": "d"
+  },
+
+  "OutcomeSummmary": {
+    "total": "Total",
+    "fatal": "Fatal",
+    "nonFatal": "Non Fatal",
+    "outcomeSummary": "Outcome column summary",
+    "unknown": "Unknown"
+  },
+
+  "TimeLineStatChart": {
+    "subHeading": "Basic timing statistics, across common responses and with interactive cross referencing",
+    "interactivePanelLabel": "Interactive time line",
+    "generalPanelLabel": "General clinical time line",
+    "ariaLabel": "{{label}}; range {{range}} with mean {{mean}} Standard deviation {{stddev}}",
+    "secondaryNav": "See response time statistics or interactive where you can choose what to group and see time statistics about"
+  },
+
+  "GeneralResponseTimeLineStatChart": {
+    "GraphHeading": "Filterable ranges and basic statistics for both agonal and recovery responses"
+  },
+
+  "InteractiveTimeLineStatChart": {
+    "GraphHeading": "Interactive stat list allowing the user to choose what is grouped and see the timing stats for those groups",
+    "group": "{{k}} (N={{count}})"
+  },
+
+  "TimeLineBar": {
+    "good": "Recovery responses",
+    "notGood": "Serious responses",
+    "bad": "Serious and / or agonal responses",
+    "veryBad": "Agonal responses in fatality",
+    "neutral": "Impact without bearing"
+  },
+
+  "TimeLineBarList": {
+    "ariaLabel": "{{valueList}}",
+    "mAndM": "Mean | Medn",
+    "mda": "Median absolute dev.",
+    "mean": "Mean",
+    "median": "Md",
+    "quantile": "Qu (10ths)",
+    "range": "Range",
+    "ranges": "lo | MDA | hi",
+    "skewness": "Skew",
+    "stddev": "MdA dev"
+  },
+
+  "TimeLineBarDetailToggleList": {
+    "mean": "Mean",
+    "range": "Range",
+    "min": "Min",
+    "max": "Max",
+    "median": "Median",
+    "quantile": "Quantile",
+    "quantileNumber": "Quantile Numbers",
+    "deviation": "MDA Deviation",
+    "label": "Label",
+    "statList": "Stats",
+    "fatLines": "Fat lines"
+  },
+
+  "TimeLine": {
+    "overall_patient_ratingPanelLabel": "Rating",
+    "pathological_severityPanelLabel": "Severity",
+    "care_error_levelPanelLabel": "Prognosis",
+    "secondaryNavSumAndFilterList": "A set of options for the months"
+  },
+
+  "HistogramMaker": {
+    "countPanelLabel": "Count",
+    "avePanelLabel": "Median",
+    "mdaPanelLabel": "Deviation",
+    "minPanelLabel": "Min",
+    "maxPanelLabel": "Max",
+    "rangePanelLabel": "Range"
+  },
+
+  "ErrorList": {
+    "calcInteractiveTimeBarArgs": "data to calcInteractiveTimeLineBarStatList must be an array and current user choices must be strings",
+    "calcLeft": "calcLeft function requires a val",
+    "calcPercentage": "calcPercentage function requires a val",
+    "calcScaleToFitUI": "calcScaleToFitUI requires scale argument with numeric properties stepDivision and totalSteps",
+    "calcWidth": "calcWidth function requires a min and max value provided",
+    "fnMustBeProvidedTo": "{{fnName}} must be provided to {{caller}} and must be a function",
+    "fullStatBase": "fullStatBase needs a k",
+    "generalResponseTimeBarDataIsArray": "General stat list calc needs an array for data",
+    "graphBlockLengthInvalid": "histogramBarGroupList is not correct in {{callingFn}} - receiving: {{typeOf}} | {{val}}",
+    "graphBlockLengthZero": "histogramBarGroupList has length 0, there should be something in histogramBarGroupList for {{callingFn}}",
+    "isOrIsInArrayNeedsValues": "isOrIsInArray value error. {{missing}}",
+    "makeWidth": "makeWidth requires a min and max value provided",
+    "mapToTimeLineBars": "mapToTimeLineBars needs data with length and an i18nBase",
+    "noHistogramData": "This histogram config has zero results",
+    "primeSymptomHistogramBarGroup": "Prime symptom graph block list must be an array with positive count",
+    "secondaryNavProps": "all four args are required, currentPanel, k and i18nBase are all strings and setCurrentPanel should be a function",
+    "testError": "Test {{addToError}} {{alsoAddToError}}",
+    "userChoiceStatMapper": "userChoiceStatMapper needs a string for currentResponse",
+    "utilKeyPairXYMakeMapFn": "makeMapFn needs both x and y to refence the correct keys in each point"
+  },
+
+  "ReactTestLibrary": {
+    "key1": "Test the label",
+    "test-aPanelLabel": "Test Panel A"
+  },
+
+  "StoryBook": {
+    "secondaryNav": "Storybook secondary nav",
+    "secondaryNavSumAndFilterList": "Storybook secondary nav sum and filter list",
+    "test-aPanelLabel": "Test Panel A",
+    "test-bPanelLabel": "Test Panel B",
+    "aPanelLabel": "A",
+    "bPanelLabel": "B",
+    "cPanelLabel": "C",
+    "dPanelLabel": "D",
+    "ePanelLabel": "E"
+  }
+}

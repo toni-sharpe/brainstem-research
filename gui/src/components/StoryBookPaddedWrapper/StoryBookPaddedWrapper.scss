@@ -1,0 +1,17 @@
+.story-book-padded-wrapper {
+  margin: 56px 40px;
+  position: relative;
+
+  h2 {
+    border-bottom: 1px solid var(--grey--light);
+    box-shadow: none;
+    font-size: var(--font-size--medium-large);
+    margin-top: 0;
+    padding-bottom: var(--padding--very-large);
+    text-align: left;
+  }
+
+  &__main {
+    position: relative;
+  }
+}

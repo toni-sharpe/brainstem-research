@@ -1,0 +1,15 @@
+export const PrimeSymptomHistogramData = [
+  [  '0', { fatal: 150, nonFatal: 205 } ],
+  [  '5', { fatal: 100, nonFatal: 155 } ],
+  [ '10', { fatal: 235, nonFatal: 265 } ],
+  [ '15', { fatal: 90,  nonFatal: 175 } ],
+  [ '20', { fatal: 225, nonFatal: 200 } ],
+  [ '25', { fatal: 285, nonFatal: 155 } ],
+  [ '30', { fatal: 165, nonFatal: 245 } ],
+  [ '35', { fatal: 85,  nonFatal: 90  } ],
+  [ '40', { fatal: 75,  nonFatal: 175 } ],
+  [ '45', { fatal: 195, nonFatal: 295 } ],
+  [ '50', { fatal: 222, nonFatal: 134 } ],
+  [ '55', { fatal: 201, nonFatal: 155 } ],
+  [ '60', { fatal: 105, nonFatal: 125 } ],
+]
