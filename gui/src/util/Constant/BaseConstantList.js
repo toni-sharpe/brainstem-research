@@ -98,6 +98,7 @@ export const USE_HUE_CONTRAST_TOGGLE = false
  * Menu
  */
 export const ROOT_MENU_SLUGS = [
+  '',
   'Scatter',
   'PrimeSymptomList',
   'AntiBiasToolKit',

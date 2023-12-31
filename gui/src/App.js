@@ -6,6 +6,7 @@ import { withTranslation } from 'react-i18next';
 import baseApiCall from 'api-calls/BaseApiCall'
 import AntiBiasToolKit from 'screens/AntiBiasToolKit/AntiBiasToolKit';
 import Header from 'sections/Header/Header'
+import Home from 'screens/Home/Home';
 import PrimeSymptomList from 'screens/PrimeSymptomList/PrimeSymptomList';
 import Scatter from 'screens/Scatter/Scatter';
 import TimeLineStatChart from 'screens/TimeLineStatChart/TimeLineStatChart';
@@ -18,7 +19,7 @@ import { calcFilterList, isAnyFilterSet } from 'util/UtilFilter/UtilFilter'
 import { getCurrentUrl } from 'util/Util/Util'
 
 function App() {
-  const currentUrl = getCurrentUrl() || 'Scatter'
+  const currentUrl = getCurrentUrl() || ''
 
   const [data, setData] = useState([])
 
@@ -38,14 +39,6 @@ function App() {
     ? ramda.pipe(...calcFilterList({ currentFilterList }))(data)
     : data
 
-  const scatterElem = (
-    <Scatter
-      data={filteredData}
-      setTimeLineBarDetailList={setTimeLineBarDetailList}
-      timeLineBarDetailList={timeLineBarDetailList}
-    />
-  )
-
   return (
     <article className='app-wrapper'>
       <Header 
@@ -56,7 +49,11 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={scatterElem}
+          element={<Home />}
+        />
+        <Route
+          path="/Home"
+          element={<Home />}
         />
         <Route
           path="AntiBiasToolKit"
@@ -68,7 +65,13 @@ function App() {
         />
         <Route
           path="Scatter"
-          element={scatterElem}
+          element={
+            <Scatter
+              data={filteredData}
+              setTimeLineBarDetailList={setTimeLineBarDetailList}
+              timeLineBarDetailList={timeLineBarDetailList}
+            />
+          }
         />
         <Route
           path="TimeLineStatChart"

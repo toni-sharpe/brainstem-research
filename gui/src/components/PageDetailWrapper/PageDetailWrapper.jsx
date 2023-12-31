@@ -1,3 +1,4 @@
+import { isNil, isNotNil } from 'ramda'
 import i18next from 'util/i18next/i18next'
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -30,9 +31,17 @@ function PageDetailWrapper({
           </section>
         </div>
         <div className='row-layout space-children--wide-with-border'>
-          <span className='page-detail-wrapper__full-count'>
-            <span><i>N</i>={count}</span>
-          </span>
+          { isNotNil(count)
+            && (
+              <span className='page-detail-wrapper__full-count'>
+                {
+                  <span>
+                    <i>N</i>={count}
+                  </span>
+                }
+              </span>
+            )
+          }
           <LanguageToggle />
         </div>
       </header>
@@ -42,14 +51,14 @@ function PageDetailWrapper({
 } 
 
 PageDetailWrapper.defaultProps = {
-  count: 0,
+  count: null,
   secondaryNav: null,
   subHeading: null,
 }
 
 function HeadingOrI18nBasePropType(props) {
-  if (!props.heading && !props.i18nBase) {
-    return new Error('either heaing or i18nBase must be provided to the PageDetailWrapper component')
+  if (!props.heading && isNil(props.i18nBase)) {
+    return new Error('either heading or i18nBase must be provided to the PageDetailWrapper component')
   }
 }
 

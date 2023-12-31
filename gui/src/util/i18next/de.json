@@ -36,12 +36,13 @@
   },
 
   "MainPageHeading": {
+    "": "Hirnstamm-Forschung",
     "Scatter": "Punktwolke",
-    "PrimeSymptomList": "Hauptsymptomliste",
-    "AntiBiasToolKit": "Anti-Bias-Toolkit",
-    "TimeLineStatChart": "Zeitleiste Stat. Diagramm",
+    "PrimeSymptomList": "Hauptsymptom",
+    "AntiBiasToolKit": "Anti-Bias",
+    "TimeLineStatChart": "Zeitleiste Diagramm",
     "TimeLine": "Zeitleiste",
-    "HistogramMaker": "Histogramm-Ersteller",
+    "HistogramMaker": "Histogramm",
     "CorrelationHeatmap": "Korr. Heatmap",
     "nIs": "N ist {{n}}"
   },
@@ -69,6 +70,77 @@
     "nonFatal": "NT",
     "secondOrMore": "2+",
     "thirdOrMore": "3+"
+  },
+
+  "Home": {
+    "backgroundPanelLabel": "Hintergrund",
+    "motivationPanelLabel": "Motivation",
+    "techStackPanelLabel": "Technischer Stapel",
+    "testingPanelLabel": "Prüfung"
+  },
+
+  "Background": {
+    "paragraph1": "Bei diesem Projekt handelt es sich im Wesentlichen um eine statistische Analyse einiger medizinischer Forschungsarbeiten, die ich während eines durch Einsparungen unterstützten Sabbatjahrs durchgeführt habe. Die Forschung selbst besteht aus einer Hypothese und einer Fülle von Belegen, darunter 289 Fälle. Die Fälle oder \"Ereignisse\", wie ich sie nenne, haben jeweils etwa 70 Datenpunkte, und diese Website soll bestimmte unterstützende Beweise grafisch darstellen, Methoden zur Anfechtung dieser Beweise bereitstellen und erforschen, wie falsch ich liegen kann (Voreingenommenheit ist real), und auch dem Benutzer die Möglichkeit geben, selbst zu interagieren, entweder um die Daten anzufechten oder um sie selbst zu erforschen.",
+    "paragraph2-1": "Ich habe eine Möglichkeit gesehen, Leben zu retten, habe nachgeforscht und etwas Neues über den Hirnstamm entdeckt und diese Daten dann auf dieser Website auf meinem GitHub hier modelliert: ",
+    "paragraph2Link": "/toni-sharpe/brainstem-research",
+    "paragraph2-2": "- Ich habe das alles selbst gemacht und es hat sogar meine Jobsuche verzögert; allerdings muss es von medizinisch ausgebildeten Leuten überprüft werden.",
+    "paragraph3": "Die medizinische Forschung ist real, die Ereignisse sind real und jedes einzelne stellt die Erfahrung einer realen Person dar, von denen viele, etwa 90, jetzt als Folge davon tot sind. Aus diesem Grund ist die Seite absichtlich generisch gehalten, um die Würde sowohl der Toten als auch der Lebenden zu wahren, und weil meine Hypothese noch nicht von jemandem, der über die entsprechenden Referenzen verfügt, verifiziert oder auch nur inspiziert worden ist."
+  },
+
+  "Motivation": {
+    "paragraph4": "Die Rettung von Menschenleben war die Hauptmotivation, auch wenn sich dies mit der Zeit verkompliziert hat (siehe unten).Die Möglichkeit von Entdeckungen motivierte mich, und die Durchbrüche, von denen es mehrere gab, waren aufregend und hielten diese Motivation aufrecht.",
+    "paragraph5": "Forschung gibt es auch ein ausgesprochen komplexes und nuanciertes Geflecht medizinethischer Probleme, die ich identifiziert habe und für die ich Ideen habe, um sie in einigen Fällen zu mildern. Die Ethik kommt ins Spiel, weil man sich das Problem am besten als eine Art Vergiftung vorstellen kann, eine absichtlich weit gefasste Begriffswahl (ich werde die Details nicht preisgeben, bevor nicht andere Fachleute zu Rate gezogen wurden), aber eine bemerkenswerte Wahl, weil es sich um etwas handelt, das von einem räuberischen Individuum böswillig an einem verletzlichen Individuum begangen werden kann. Das sind keine leichten Themen, und wenn sie sich gruppieren, überschneiden und vermehren, wird es schwierig. Ich mag Herausforderungen, aber ich würde lieber keinen \"fatalen\" Filter brauchen."
+  },
+
+  "TechStack": {
+    "paragraph6": "The website is a complete build, starting from SQL that builds and populates a database to the visual screens that display that data and allow user interaction. The full, detailed stack is as follows - not all of these are specific technologies, techniques and libraries etc. are included.",
+    "techStack1Label": "PostGreSQL",
+    "techStack1": " - ein RDBM, das 289 Ereignisse mit jeweils etwa 70 Datenpunkten enthält und Berechnungen zum Einfügen, Erstellen und Auffüllen von Tabellen verwendet.",
+    "techStack2Label": "PL-SQL",
+    "techStack2": " - Prozeduren für SQL, die für die Durchführung einiger komplexerer Berechnungen im Zusammenhang mit der Bewertung von Ereignissen verwendet werden",
+    "techStack3Label": "Python",
+    "techStack3": " - die serverseitige Skriptsprache. Verarbeitung einiger Dinge, Bedienung von Endpunkten, die JSON-Daten an Clients liefern, und Abfrage der Datenbank.",
+    "techStack4Label": "Flask",
+    "techStack4": " - ein Python-Paket zur Beschleunigung der Entwicklung von Endpunkten.",
+    "techStack5Label": "JS",
+    "techStack5": " - eine clientseitige Skriptsprache.",
+    "techStack6Label": "ReactJS",
+    "techStack6": " - Rahmenwerk zur Erleichterung der Komponentisierung von Frontends und der Verwaltung des Zustands.",
+    "techStack7Label": "PropTypes",
+    "techStack7": " - über TypeScript gewählt - IMO TS ist Overkill für Front-End-Komponenten, wenn PropTypes richtig, vollständig und konsequent verwendet wird.",
+    "techStack8Label": "Ramda",
+    "techStack8": " - eine brillante Reihe von Funktionen, die JS aufwerten und eine funktionalere Note auf den Tisch bringen.",
+    "techStack9Label": "Sass",
+    "techStack9": " - super-powered CSS, bringt volle Programmiersprache Fähigkeiten, um diese Sprache, sondern so dass regelmäßige CSS leicht zu schreiben, auch.",
+    "techStack10Label": "Flex-box-Modell",
+    "techStack10": " - ein sehr gut durchdachtes Layoutsystem für Webseiten, das ich schon seit Jahren erfolgreich verwende und sehr gut kenne.",
+    "techStack11Label": "HTML",
+    "techStack11": " - immer übersehen, aber ich schreibe keine \"Div-Suppe\" - ich verwende HTML, um die verfügbare Barrierefreiheit und andere Funktionen, die es bietet, zu maximieren.",
+    "techStack12Label": "Aria",
+    "techStack12": " - Barrierefreie Informationen, die mit diesem Tool bereitgestellt werden, mit vielen verschiedenen zusätzlichen Markup-Tags, die speziell für die Abdeckung von weniger gut sehenden Benutzern gedacht sind.",
+    "techStack13Label": "Benutzererfahrung",
+    "techStack13": " - Ich hätte gerne ein paar tatsächliche Benutzer, mit denen ich normalerweise eng zusammenarbeiten würde.",
+    "techStack14Label": "React-Testing-Bibliothek",
+    "techStack14": " - verwendet, um Hilfsprogramme und komplexere Komponenten abzudecken, aber isoliert vom Server.",
+    "techStack15Label": "Zypresse",
+    "techStack15": " - zum Ausführen der gesamten Website, zum Aufrufen von URLs, zum direkten Zugriff auf die DB und zum Anzeigen der Seite - dies sind eher Tests vom Typ \"Sinnesprüfung\", zu viele bedeuten zu viel Zeitaufwand.",
+    "techStack16Label": "Geschichtenbuch",
+    "techStack16": " - für die Visualisierung einfacher Anzeigen oder \"dummer\" Komponenten, einige sind sogar recht komplex. Der Punkt ist hier, dass wir vor API-Aufrufen aufhören und uns nur auf das Frontend beschränken. Kann gehostet und als QA-Check verwendet werden.",
+    "techStack17Label": "I18next",
+    "techStack17": " - die Website ist für die Übersetzung eingerichtet. Ein Teil meines Deutsch kommt von DeepL.",
+    "techStack18Label": "Zusammensetzbare Komponenten",
+    "techStack18": " - Build zur Wiederverwendung und gemeinsamen Nutzung.",
+    "techStack19Label": "Sauberer Code",
+    "techStack19": " - Es gibt mehrere Akronyme, an die ich mich nicht erinnere, aber im Allgemeinen versuche ich, die Dinge konsistent zu halten, Dinge wiederzuverwenden, Dinge mit Tests zu vergleichen und all die anderen Dinge. Natürlich gelingt mir das nicht immer, die Aufregung über die Bewährung eines Konzepts nimmt überhand, oder es muss etwas getan werden und wir haben es aufgeschrieben, um darauf zurückzukommen. Meiner Erfahrung nach geschieht das nicht so oft, wie ich es mir wünschen würde..",
+    "techStack20Label": "Leistung.",
+    "techStack20": " - Es ist schnell und zugänglich, weil ich HTML (richtig), Canvas und CSS direkt verwende."
+  },
+
+  "Testing": {
+    "paragraph7": "StoryBook ist großartig. Es ermöglicht das Testen durch die Nachahmung von Augen auf dem Bildschirm, unter Verwendung von Menschen und kann von Entwicklern, Prüfern, QA und jedem anderen durchgeführt werden. Es kann aus der Ferne gehostet werden, so dass sie auch nicht vor Ort sein müssen. Beim Testen wollen Sie das reale System so genau wie möglich nachahmen, daher ist es sinnvoll, eine Funktion zu testen, die von einem Computer benutzt wird. Bei der bildschirmbasierten Benutzeroberfläche besteht das reale System aus menschlichen Augen, die auf einen Bildschirm schauen, daher meine Meinung zu StoryBook.",
+    "paragraph8": "Visuelle Komponententests sind sowieso Zeitverschwendung, sie sind spröde und oft ziemlich zahlreich (z.B. N Schaltflächengrößen in N Zuständen), und alles, was man testen kann, ist, dass die richtige Requisite eingegeben wurde - wenn man die Requisite \"disabled\" auf true setzt, kann man nicht feststellen, ob jemand die deaktivierten Schaltflächenstile versehentlich löscht.",
+    "paragraph9": "Komplexere Komponenten und alle Util-Funktionen werden getestet. Util-Funktionen werden verwendet, um Komponenten einfacher zu halten und die Testbarkeit zu verbessern.",
+    "paragraph10": "FDie vollständigen Integrationstests werden mit leichter Hand und für einige Randfälle durchgeführt (je nach Bedarf). Wenn wir uns zum Beispiel anmelden müssen, weil es sich um einen echten, vollständigen Website-Test handelt, dann steigt die Zeit schnell an, ein Test könnte zwei Minuten dauern, weil der Benutzer zehn Minuten braucht, um sich anzumelden, zu navigieren, das Formular auszufüllen und es abzuschicken, also müssen wir vorsichtig sein. Es gibt auch Situationen, in denen alles fehlgeschlagen ist, weil das Internet zusammengebrochen ist."
   },
 
   "Scatter": {
