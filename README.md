@@ -1,8 +1,6 @@
 # The Project
 
-This project is essentially a statistical analysis of some medical research that I have done during my period without proper work. The research itself commprises of a hypothesis and a wealth of supporting evidence including 289 cases. The cases, or "events" as I call them, each have about 70 data points and this site is intended to graphically display certain supporting evidence, provide methods of challenging that and exploring how wrong I can be (bias is real) and also, give the user the chance to interact themselves, either to challenge the data or to explore it themselves.
-
-The medical research is real and involves brainstem injury. The events are real and each one represents the experience of a real person, many of whom, around 90, are now dead as a result. For this reason the site is purposefully genericised for the sake of the dignity of both the dead and living and because as of yet, my hypothesis has not been verified or even inspected by anyone who has the right credentials. A good analogue however is covid-19, one can imagine that is the pathology being examined and find their way around fairly successfully.
+This project is essentially a statistical analysis of some medical research that I have done during a sabbatical period.
 
 It's pretty complicated stuff, grouped bar graphs, scatters, time lines, medians, quantiles, etc. so dive in, it's a visual experience, even if stats aren't your thing.
 
