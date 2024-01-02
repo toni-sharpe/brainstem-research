@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/brainstem-research/static/css/main.2373f26a.css",
+    "main.js": "/brainstem-research/static/js/main.4970fbbd.js",
+    "static/js/651.26707712.chunk.js": "/brainstem-research/static/js/651.26707712.chunk.js",
+    "index.html": "/brainstem-research/index.html",
+    "main.2373f26a.css.map": "/brainstem-research/static/css/main.2373f26a.css.map",
+    "main.4970fbbd.js.map": "/brainstem-research/static/js/main.4970fbbd.js.map",
+    "651.26707712.chunk.js.map": "/brainstem-research/static/js/651.26707712.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2373f26a.css",
+    "static/js/main.4970fbbd.js"
+  ]
+}
