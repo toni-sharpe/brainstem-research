@@ -520,28 +520,202 @@
 	"buffers":
 	[
 		{
-			"file": "/Users/brainstem/brainstem/gui/src/screens/Home/Home.jsx",
+			"file": "/Users/brainstem/brainstem/gui/src/screens/TimeLine/TimeLine.jsx",
 			"settings":
 			{
-				"buffer_size": 1538,
+				"buffer_size": 3348,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
+			},
+			"undo_stack":
+			[
+				[
+					4,
+					1,
+					"sort_lines",
+					{
+						"case_sensitive": false
+					},
+					"AQAAAEMCAAAAAAAA+gIAAAAAAAC3AAAAICBjYWxjQ29sb3JWYWwsCiAgY2FsY0RhdGVLZXksCiAgY2FsY01vbnRobHlEYXRhVmFsdWVzLAogIGNhbGNNb250aHNMZWZ0VGhpc1llYXIsCiAgY2FsY01vbnRoVHlwZSwKICBleHRyYWN0T3V0cHV0VmFsc0Zvck1vbnRoLAogIGNhbGNSYW5nZSwKICBjYWxjU2hvd25Nb250aFRvdGFsLAogIGNhbGNUaGlzTW9udGhLZXks",
+					"AQAAAAAAAAABAAAAUAIAAAAAAAD6AgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					9,
+					1,
+					"left_delete",
+					null,
+					"AQAAAEUHAAAAAAAARQcAAAAAAAAaAAAAIHN0eWxlPXt7IHdpZHRoOiAnMTAwJScgfX0",
+					"AQAAAAAAAAABAAAARQcAAAAAAABfBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					19,
+					1,
+					"insert",
+					{
+						"characters": "\n<li>"
+					},
+					"CAAAACoKAAAAAAAAKwoAAAAAAAAAAAAAKwoAAAAAAAA1CgAAAAAAAAAAAAArCgAAAAAAACsKAAAAAAAACgAAACAgICAgICAgICArCgAAAAAAADcKAAAAAAAAAAAAADcKAAAAAAAAOAoAAAAAAAAAAAAAOAoAAAAAAAA5CgAAAAAAAAAAAAA5CgAAAAAAADoKAAAAAAAAAAAAADoKAAAAAAAAOwoAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAKgoAAAAAAAAqCgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					22,
+					1,
+					"indent",
+					null,
+					"DgAAADwKAAAAAAAAPgoAAAAAAAAAAAAAVgoAAAAAAABYCgAAAAAAAAAAAACKCgAAAAAAAIwKAAAAAAAAAAAAALYKAAAAAAAAuAoAAAAAAAAAAAAA4AoAAAAAAADiCgAAAAAAAAAAAAAHCwAAAAAAAAkLAAAAAAAAAAAAACQLAAAAAAAAJgsAAAAAAAAAAAAAQQsAAAAAAABDCwAAAAAAAAAAAABjCwAAAAAAAGULAAAAAAAAAAAAAIcLAAAAAAAAiQsAAAAAAAAAAAAAuQsAAAAAAAC7CwAAAAAAAAAAAADOCwAAAAAAANALAAAAAAAAAAAAAOELAAAAAAAA4wsAAAAAAAAAAAAAIgwAAAAAAAAkDAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAATAoAAAAAAAAWDAAAAAAAAAAAAAAAAFxA"
+				],
+				[
+					24,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AgAAADIMAAAAAAAAMwwAAAAAAAAAAAAAMwwAAAAAAABBDAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAMgwAAAAAAAAyDAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					25,
+					1,
+					"left_delete",
+					null,
+					"AQAAAD8MAAAAAAAAPwwAAAAAAAACAAAAICA",
+					"AQAAAAAAAAABAAAAQQwAAAAAAABBDAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					26,
+					1,
+					"insert",
+					{
+						"characters": "</li>"
+					},
+					"BQAAAD8MAAAAAAAAQAwAAAAAAAAAAAAAQAwAAAAAAABBDAAAAAAAAAAAAABBDAAAAAAAAEIMAAAAAAAAAAAAAEIMAAAAAAAAQwwAAAAAAAAAAAAAQwwAAAAAAABEDAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAPwwAAAAAAAA/DAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					35,
+					1,
+					"paste",
+					null,
+					"AgAAADoKAAAAAAAAWgoAAAAAAAAAAAAApgcAAAAAAADGBwAAAAAAAAAAAAA",
+					"AQAAAAAAAAACAAAApgcAAAAAAACmBwAAAAAAAAAAAAAAAPC/OgoAAAAAAAA6CgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					37,
+					8,
+					"left_delete",
+					null,
+					"EAAAAHgKAAAAAAAAeAoAAAAAAAABAAAAcMQHAAAAAAAAxAcAAAAAAAABAAAAcHYKAAAAAAAAdgoAAAAAAAABAAAAYcMHAAAAAAAAwwcAAAAAAAABAAAAYXQKAAAAAAAAdAoAAAAAAAABAAAAbcIHAAAAAAAAwgcAAAAAAAABAAAAbXIKAAAAAAAAcgoAAAAAAAABAAAALcEHAAAAAAAAwQcAAAAAAAABAAAALXAKAAAAAAAAcAoAAAAAAAABAAAAdMAHAAAAAAAAwAcAAAAAAAABAAAAdG4KAAAAAAAAbgoAAAAAAAABAAAAYb8HAAAAAAAAvwcAAAAAAAABAAAAYWwKAAAAAAAAbAoAAAAAAAABAAAAZb4HAAAAAAAAvgcAAAAAAAABAAAAZWoKAAAAAAAAagoAAAAAAAABAAAAaL0HAAAAAAAAvQcAAAAAAAABAAAAaA",
+					"AQAAAAAAAAACAAAAxQcAAAAAAADFBwAAAAAAAAAAAAAAAPC/eQoAAAAAAAB5CgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					38,
+					1,
+					"insert",
+					{
+						"characters": "month"
+					},
+					"CgAAAGkKAAAAAAAAagoAAAAAAAAAAAAAvQcAAAAAAAC+BwAAAAAAAAAAAABrCgAAAAAAAGwKAAAAAAAAAAAAAL4HAAAAAAAAvwcAAAAAAAAAAAAAbQoAAAAAAABuCgAAAAAAAAAAAAC/BwAAAAAAAMAHAAAAAAAAAAAAAG8KAAAAAAAAcAoAAAAAAAAAAAAAwAcAAAAAAADBBwAAAAAAAAAAAABxCgAAAAAAAHIKAAAAAAAAAAAAAMEHAAAAAAAAwgcAAAAAAAAAAAAA",
+					"AQAAAAAAAAACAAAAvQcAAAAAAAC9BwAAAAAAAAAAAAAAAPC/aQoAAAAAAABpCgAAAAAAAAAAAAAAAPC/"
+				]
+			]
 		},
 		{
-			"file": "/Users/brainstem/brainstem/gui/src/screens/AntiBiasToolKit/AntiBiasToolKit.jsx",
+			"file": "/Users/brainstem/brainstem/gui/src/screens/TimeLine/TimeLine.scss",
 			"settings":
 			{
-				"buffer_size": 2312,
+				"buffer_size": 90,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/brainstem/brainstem/gui/src/screens/TimeLineStatChart/TimeLineStatChart.jsx",
-			"settings":
-			{
-				"buffer_size": 1972,
-				"line_ending": "Unix"
-			}
+			},
+			"undo_stack":
+			[
+				[
+					3,
+					1,
+					"insert",
+					{
+						"characters": "\n&__"
+					},
+					"BQAAADEAAAAAAAAAMgAAAAAAAAAAAAAAMgAAAAAAAAA0AAAAAAAAAAAAAAA0AAAAAAAAADUAAAAAAAAAAAAAADUAAAAAAAAANgAAAAAAAAAAAAAANgAAAAAAAAA3AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAMQAAAAAAAAAxAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					4,
+					1,
+					"insert",
+					{
+						"characters": "month"
+					},
+					"BQAAADcAAAAAAAAAOAAAAAAAAAAAAAAAOAAAAAAAAAA5AAAAAAAAAAAAAAA5AAAAAAAAADoAAAAAAAAAAAAAADoAAAAAAAAAOwAAAAAAAAAAAAAAOwAAAAAAAAA8AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAANwAAAAAAAAA3AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					5,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAADwAAAAAAAAAPQAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAPAAAAAAAAAA8AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					6,
+					1,
+					"insert_snippet",
+					{
+						"contents": "{$0}"
+					},
+					"AQAAAD0AAAAAAAAAPwAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAPQAAAAAAAAA9AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					7,
+					1,
+					"run_macro_file",
+					{
+						"file": "res://Packages/Default/Add Line in Braces.sublime-macro"
+					},
+					"BgAAAD4AAAAAAAAAPwAAAAAAAAAAAAAAPwAAAAAAAABBAAAAAAAAAAAAAABBAAAAAAAAAEIAAAAAAAAAAAAAAEIAAAAAAAAARAAAAAAAAAAAAAAAPwAAAAAAAAA/AAAAAAAAAAIAAAAgID8AAAAAAAAAQwAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAPgAAAAAAAAA+AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					8,
+					1,
+					"insert",
+					{
+						"characters": "dis"
+					},
+					"AwAAAEMAAAAAAAAARAAAAAAAAAAAAAAARAAAAAAAAABFAAAAAAAAAAAAAABFAAAAAAAAAEYAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAQwAAAAAAAABDAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					9,
+					1,
+					"insert_completion",
+					{
+						"completion": "display: $0;",
+						"format": "snippet",
+						"keep_prefix": false,
+						"must_insert": false,
+						"trigger": "display"
+					},
+					"AgAAAEMAAAAAAAAAQwAAAAAAAAADAAAAZGlzQwAAAAAAAABNAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAARgAAAAAAAABGAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					10,
+					1,
+					"insert",
+					{
+						"characters": "inline"
+					},
+					"BgAAAEwAAAAAAAAATQAAAAAAAAAAAAAATQAAAAAAAABOAAAAAAAAAAAAAABOAAAAAAAAAE8AAAAAAAAAAAAAAE8AAAAAAAAAUAAAAAAAAAAAAAAAUAAAAAAAAABRAAAAAAAAAAAAAABRAAAAAAAAAFIAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAATAAAAAAAAABMAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
 		}
 	],
 	"build_system": "",
@@ -582,7 +756,6 @@
 		"/Users/brainstem/brainstem/gui/src/screens",
 		"/Users/brainstem/brainstem/gui/src/screens/AntiBiasToolKit",
 		"/Users/brainstem/brainstem/gui/src/screens/Home",
-		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page",
 		"/Users/brainstem/brainstem/gui/src/screens/PrimeSymptomList",
 		"/Users/brainstem/brainstem/gui/src/screens/Scatter",
 		"/Users/brainstem/brainstem/gui/src/screens/TimeLine",
@@ -594,13 +767,15 @@
 	],
 	"file_history":
 	[
+		"/Users/brainstem/brainstem/gui/src/screens/TimeLineStatChart/TimeLineStatChart.jsx",
+		"/Users/brainstem/brainstem/gui/src/screens/AntiBiasToolKit/AntiBiasToolKit.jsx",
+		"/Users/brainstem/brainstem/gui/src/screens/Home/Home.jsx",
 		"/Users/brainstem/brainstem/gui/src/sections/SecondaryNavSumAndFilterList/SecondaryNavSumAndFilterList.jsx",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Testing/Testing.jsx",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/TechStack/TechStack.jsx",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Motivation/Motivation.jsx",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Background/Background.jsx",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Background/Background.test.js",
-		"/Users/brainstem/brainstem/gui/src/screens/Home/Home.jsx",
 		"/Users/brainstem/brainstem/gui/src/components/HeadingAndTextPanel/HeadingAndTextPanel.jsx",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Motivation/Motivation.test.js",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/TechStack/TechStack.test.js",
@@ -615,7 +790,6 @@
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/TechStack/TechStack.stories.js",
 		"/Users/brainstem/brainstem/gui/src/util/i18next/de.json",
 		"/Users/brainstem/brainstem/gui/src/components/HeadingAndTextPanel/HeadingAndTextPanel.stories.js",
-		"/Users/brainstem/brainstem/gui/src/screens/AntiBiasToolKit/AntiBiasToolKit.jsx",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Motivation/Motivation.stories.js",
 		"/Users/brainstem/brainstem/gui/src/index.css",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/Home.test.js",
@@ -720,8 +894,7 @@
 		"/Users/brainstem/brainstem/sql/full-data-set.sql",
 		"/Users/brainstem/brainstem/gui/src/example-data/APIPrimeSymptomList.example-data.js",
 		"/Users/brainstem/brainstem/gui/src/screens/CorrelationHeatmap/CorrelationHeatmap.test.js",
-		"/Users/brainstem/brainstem/gui/src/screens/AntiBiasToolKit/sub-page/BiasedTimingSim/BiasedTimingSim.test.js",
-		"/Users/brainstem/brainstem/gui/src/screens/AntiBiasToolKit/sub-page/BiasedCorrelationSim/BiasedCorrelationSim.test.js"
+		"/Users/brainstem/brainstem/gui/src/screens/AntiBiasToolKit/sub-page/BiasedTimingSim/BiasedTimingSim.test.js"
 	],
 	"find":
 	{
@@ -1036,20 +1209,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/brainstem/brainstem/gui/src/screens/Home/Home.jsx",
+					"file": "/Users/brainstem/brainstem/gui/src/screens/TimeLine/TimeLine.jsx",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1538,
+						"buffer_size": 3348,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1986,
+								1986
+							],
+							[
+								2675,
+								2675
 							]
 						],
 						"settings":
@@ -1059,7 +1236,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 653.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1068,24 +1245,24 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/brainstem/brainstem/gui/src/screens/AntiBiasToolKit/AntiBiasToolKit.jsx",
+					"file": "/Users/brainstem/brainstem/gui/src/screens/TimeLine/TimeLine.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2312,
+						"buffer_size": 90,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								82,
+								82
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSX.sublime-syntax",
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1094,37 +1271,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/brainstem/brainstem/gui/src/screens/TimeLineStatChart/TimeLineStatChart.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1972,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"stack_multiselect": false,
 					"type": "text"
 				}
@@ -1697,9 +1843,13 @@
 	"select_project":
 	{
 		"height": 700.0,
-		"last_filter": "",
+		"last_filter": "35",
 		"selected_items":
 		[
+			[
+				"35",
+				"~/brainstem/sublime-projects/00035.sublime-project"
+			],
 			[
 				"",
 				"~/home-climate/home-climate.sublime-workspace"

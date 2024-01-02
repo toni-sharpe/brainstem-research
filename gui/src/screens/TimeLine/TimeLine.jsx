@@ -14,10 +14,10 @@ import {
   calcMonthlyDataValues,
   calcMonthsLeftThisYear,
   calcMonthType,
-  extractOutputValsForMonth,
   calcRange,
   calcShownMonthTotal,
   calcThisMonthKey,
+  extractOutputValsForMonth,
 } from 'util/UtilTimeLine/UtilTimeLine'
 
 import './TimeLine.scss'
@@ -58,10 +58,10 @@ function TimeLine({ data }) {
         />
       )}
     >
-      <ul className='time-line__heat-map' style={{ width: '100%' }}>
+      <ul className='time-line__heat-map'>
         { calcRange({ num: monthsLeftThisYear }).map(ml => {
           return (
-            <li key={`future-month-${0-ml}`}>
+            <li className='time-line__month' key={`future-month-${0-ml}`}>
               <MonthBlock
                 colorVal={null}
                 monthType='future'
@@ -77,20 +77,22 @@ function TimeLine({ data }) {
           const thisMonth = thisMonthKey === `${currentYear}-${currentMonth}`
 
           return (
-            <MonthBlock
-              colorVal={calcColorVal({ valSum })}
-              currentMonth={currentMonth}
-              currentYear={currentYear}
-              key={`month-${month}`}
-              monthText={(
-                <MonthText
-                  month={month}
-                  valSum={valSum}
-                  valOutputList={valOutputList}
-                />
-              )}
-              monthType={calcMonthType({ thisMonth, valSum })}
-            />
+            <li className='time-line__month'>
+              <MonthBlock
+                colorVal={calcColorVal({ valSum })}
+                currentMonth={currentMonth}
+                currentYear={currentYear}
+                key={`month-${month}`}
+                monthText={(
+                  <MonthText
+                    month={month}
+                    valSum={valSum}
+                    valOutputList={valOutputList}
+                  />
+                )}
+                monthType={calcMonthType({ thisMonth, valSum })}
+              />
+            </li>
           )
         })}
       </ul>
