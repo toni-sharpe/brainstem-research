@@ -1,6 +1,7 @@
 {
   "name": "gui",
-  "version": "0.1.0",
+  "homepage": "https://toni-sharpe.github.io/brainstem-research",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@storybook/addon-a11y": "^7.5.3",

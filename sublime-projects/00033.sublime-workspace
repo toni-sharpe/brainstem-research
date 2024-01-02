@@ -523,39 +523,7 @@
 			"file": "/Users/brainstem/brainstem/gui/src/screens/Home/Home.jsx",
 			"settings":
 			{
-				"buffer_size": 1538,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Testing/Testing.jsx",
-			"settings":
-			{
-				"buffer_size": 730,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/TechStack/TechStack.jsx",
-			"settings":
-			{
-				"buffer_size": 2907,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Motivation/Motivation.jsx",
-			"settings":
-			{
-				"buffer_size": 685,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Background/Background.jsx",
-			"settings":
-			{
-				"buffer_size": 888,
+				"buffer_size": 1429,
 				"line_ending": "Unix"
 			}
 		}
@@ -593,32 +561,15 @@
 	"expanded_folders":
 	[
 		"/Users/brainstem/brainstem",
-		"/Users/brainstem/brainstem/gui",
-		"/Users/brainstem/brainstem/gui/src",
-		"/Users/brainstem/brainstem/gui/src/components",
-		"/Users/brainstem/brainstem/gui/src/components/HeadingAndTextPanel",
-		"/Users/brainstem/brainstem/gui/src/screens",
-		"/Users/brainstem/brainstem/gui/src/screens/AntiBiasToolKit",
-		"/Users/brainstem/brainstem/gui/src/screens/AntiBiasToolKit/sub-page",
-		"/Users/brainstem/brainstem/gui/src/screens/AntiBiasToolKit/sub-page/BiasedCorrelationSim",
-		"/Users/brainstem/brainstem/gui/src/screens/Home",
-		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page",
-		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Background",
-		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Motivation",
-		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/TechStack",
-		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Testing",
-		"/Users/brainstem/brainstem/gui/src/util",
-		"/Users/brainstem/brainstem/gui/src/util/Constant",
-		"/Users/brainstem/brainstem/gui/src/util/i18next",
-		"/Users/brainstem/brainstem/sql"
+		"/Users/brainstem/brainstem/sublime-projects"
 	],
 	"file_history":
 	[
-		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Background/Background.test.js",
-		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Background/Background.jsx",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Motivation/Motivation.jsx",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/TechStack/TechStack.jsx",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Testing/Testing.jsx",
+		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Background/Background.jsx",
+		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Background/Background.test.js",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/Home.jsx",
 		"/Users/brainstem/brainstem/gui/src/components/HeadingAndTextPanel/HeadingAndTextPanel.jsx",
 		"/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Motivation/Motivation.test.js",
@@ -1057,135 +1008,11 @@
 				{
 					"buffer": 0,
 					"file": "/Users/brainstem/brainstem/gui/src/screens/Home/Home.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1538,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Testing/Testing.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 730,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/TechStack/TechStack.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2907,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Motivation/Motivation.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 685,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/Users/brainstem/brainstem/gui/src/screens/Home/sub-page/Background/Background.jsx",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 888,
+						"buffer_size": 1429,
 						"regions":
 						{
 						},
@@ -1779,9 +1606,17 @@
 	"select_project":
 	{
 		"height": 700.0,
-		"last_filter": "",
+		"last_filter": "34",
 		"selected_items":
 		[
+			[
+				"34",
+				"~/brainstem/sublime-projects/00034.sublime-project"
+			],
+			[
+				"23",
+				"~/brainstem/sublime-projects/00023.sublime-project"
+			],
 			[
 				"",
 				"~/home-climate/home-climate.sublime-workspace"
