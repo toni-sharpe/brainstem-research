@@ -36,5 +36,4 @@ test('PrimeSymptomList - ', async () => {
   expect(screen.getByText('Fatal: 11')).toBeTruthy()
   expect(screen.getByText('Non Fatal: 9')).toBeTruthy()
   expect(screen.getByText('Unknown:')).toBeTruthy()
-
 })

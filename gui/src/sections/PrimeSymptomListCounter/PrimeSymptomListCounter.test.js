@@ -16,6 +16,7 @@ test('PrimeSymptomListCounter', async () => {
   )
 
   expect(screen.getByText('Increase data as added')).toBeTruthy()
+
   PRIME_SYMPTOM_BUTTON_SET.map(pointChange => {
     expect(screen.getByText(pointChange > 0 ? `+${pointChange}` : pointChange)).toBeTruthy()
   })

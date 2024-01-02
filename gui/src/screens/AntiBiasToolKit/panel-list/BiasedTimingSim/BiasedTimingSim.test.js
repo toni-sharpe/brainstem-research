@@ -20,4 +20,14 @@ test('BiasedTimingSim - ', async () => {
   expect(screen.getByText("Assumes poor timing, with interactive percentage to define how far off I am")).toBeTruthy()
   expect(screen.getByText("Biased")).toBeTruthy()
   expect(screen.getByText("V. Biased")).toBeTruthy()
+
+
+  /*
+   * Simple tests of on screen specifics, not always needed
+   */
+  expect(screen.getByText("Increase data as added")).toBeTruthy()
+  expect(screen.getByText("Outcome column summary")).toBeTruthy()
+  expect(screen.getByText("Factor is on")).toBeTruthy()
+  expect(screen.getByText("NB: this graph always counts from the first entry made, therefore filtering may return numbers that don't immediately make sense")).toBeTruthy()
+  expect(screen.getByText("Prime symptom bar graph")).toBeTruthy()
 })

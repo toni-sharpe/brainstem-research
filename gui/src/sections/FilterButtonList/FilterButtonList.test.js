@@ -31,9 +31,32 @@ test('FilterButtonList', async () => {
   expect(screen.getByText('NF', { pressed: true })).toBeTruthy()
 })
 
-test('FilterButtonList - time-line page disables correct button', async () => {
+test('FilterButtonList - scatter page enables remove dubious', async () => {
   renderFilterButtonList({ currentUrl: 'time-line' })
 
-  expect(screen.getByText('FT', { disabled: true })).toBeTruthy()
-  expect(screen.getByText('HR', { disabled: false })).toBeTruthy()
+  expect(screen.getByText('Rm Dub.', { selected: true })).toBeTruthy()
+})
+
+test('FilterButtonList - prime-symptom page enables remove dubious', async () => {
+  renderFilterButtonList({ currentUrl: 'time-line' })
+
+  expect(screen.getByText('Rm Dub.', { selected: true })).toBeTruthy()
+})
+
+test('FilterButtonList - TimeLineStatChart page enables remove dubious', async () => {
+  renderFilterButtonList({ currentUrl: 'TimeLineStatChart' })
+
+  expect(screen.getByText('Rm Dub.', { selected: true })).toBeTruthy()
+})
+
+test('FilterButtonList - PrimeSymptomList page disables correct button', async () => {
+  renderFilterButtonList({ currentUrl: 'PrimeSymptomList' })
+
+  expect(screen.getByText('Rm Dub.', { selected: true })).toBeTruthy()
+})
+
+test('FilterButtonList - HistogramMaker page enables remove dubious', async () => {
+  renderFilterButtonList({ currentUrl: 'HistogramMaker' })
+
+  expect(screen.getByText('Rm Dub.', { selected: true })).toBeTruthy()
 })
