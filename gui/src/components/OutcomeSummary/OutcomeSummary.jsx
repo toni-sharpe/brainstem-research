@@ -3,7 +3,7 @@ import React from 'react'
 
 import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 import PercOutput from 'components/PercOutput/PercOutput'
-import SingleLabelButtonGroup from 'components/SingleLabelButtonGroup/SingleLabelButtonGroup'
+import SingleLabelButtonList from 'components/SingleLabelButtonList/SingleLabelButtonList'
 
 import './OutcomeSummary.scss'
 
@@ -37,7 +37,7 @@ function OutcomeSummary({
   )
 
   return ( 
-    <SingleLabelButtonGroup
+    <SingleLabelButtonList
       label={titleAndPercBar}
     >
       <ul className='outcome-summary row-layout space-children--wide-with-border'>
@@ -60,7 +60,7 @@ function OutcomeSummary({
            <span className='outcome-summary__label outcome-summary__unknown-count'>{unknownCount}</span>
         </li>
       </ul>
-    </SingleLabelButtonGroup>
+    </SingleLabelButtonList>
   )
 }
 

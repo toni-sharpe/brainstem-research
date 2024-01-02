@@ -7,7 +7,7 @@ import {
   InteractiveStatChartUserChoiceGroupedExampleData,
   UserChoiceGroupedExampleData,
   UserChoiceGroupingListAfterStatMapping,
-} from 'screens/TimeLineStatChart/sub-page/InteractiveTimeLineStatChart/InteractiveTimeLineStatChart.example-data.js'
+} from 'screens/TimeLineStatChart/panel-list/InteractiveTimeLineStatChart/InteractiveTimeLineStatChart.example-data.js'
 
 import { calcInteractiveTimeLineBarStatList, userChoiceGroupedStatMapper } from './UtilInteractiveTimeLineBarStatList'
 

@@ -1,16 +1,14 @@
-import { map, pipe } from 'ramda'
 import i18next from 'util/i18next/i18next'
 import React, { useState } from 'react'
 
-import Button from 'components/Button/Button'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
-import { secondaryNavProps } from 'util/UtilNav/UtilNav'
+import SecondaryNavButtonList from 'components/SecondaryNavButtonList/SecondaryNavButtonList'
 
-import Background from './sub-page/Background/Background'
-import Motivation from './sub-page/Motivation/Motivation'
-import TechStack from './sub-page/TechStack/TechStack'
-import Testing from './sub-page/Testing/Testing'
+import Background from './panel-list/Background/Background'
+import Motivation from './panel-list/Motivation/Motivation'
+import TechStack from './panel-list/TechStack/TechStack'
+import Testing from './panel-list/Testing/Testing'
 
 import './Home.scss'
 
@@ -22,6 +20,7 @@ function Home() {
   const commonNavProps = {
     currentPanel,
     i18nBase,
+    panelList: ['background', 'motivation', 'techStack', 'testing'],
     setCurrentPanel,
   }
 
@@ -30,10 +29,7 @@ function Home() {
       i18nBase={''}
       secondaryNav={(
         <SecondaryNav ariaLabel={i18next.t(`${i18nBase}.secondaryNav`)}>
-          { pipe(
-              map(k => <li key={k}><Button {...secondaryNavProps({ ...commonNavProps, k })} /></li>),
-            )(['background', 'motivation', 'techStack', 'testing'])
-          }
+          <SecondaryNavButtonList {...commonNavProps} />
         </SecondaryNav>
       )}
     >

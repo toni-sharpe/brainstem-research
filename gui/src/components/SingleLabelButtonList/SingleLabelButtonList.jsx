@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import './SingleLabelButtonGroup.scss'
+import './SingleLabelButtonList.scss'
 
-export function SingleLabelButtonGroup({
+export function SingleLabelButtonList({
   children,
   label,
 }) {
@@ -17,9 +17,9 @@ export function SingleLabelButtonGroup({
   )
 }
 
-SingleLabelButtonGroup.propTypes = {
+SingleLabelButtonList.propTypes = {
   children: PropTypes.node,
   label: PropTypes.node,
 }
 
-export default SingleLabelButtonGroup
+export default SingleLabelButtonList

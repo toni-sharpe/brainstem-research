@@ -3,12 +3,11 @@ import React, { useState } from 'react'
 
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
-import Button from 'components/Button/Button'
-import { secondaryNavProps } from 'util/UtilNav/UtilNav'
+import SecondaryNavButtonList from 'components/SecondaryNavButtonList/SecondaryNavButtonList'
 
-import BiasedCorrelationSim from './sub-page/BiasedCorrelationSim/BiasedCorrelationSim'
-import BiasedJudgementSim from './sub-page/BiasedJudgementSim/BiasedJudgementSim'
-import BiasedTimingSim from './sub-page/BiasedTimingSim/BiasedTimingSim'
+import BiasedCorrelationSim from './panel-list/BiasedCorrelationSim/BiasedCorrelationSim'
+import BiasedJudgementSim from './panel-list/BiasedJudgementSim/BiasedJudgementSim'
+import BiasedTimingSim from './panel-list/BiasedTimingSim/BiasedTimingSim'
 
 const i18nBase = 'AntiBiasToolKit'
 
@@ -24,6 +23,7 @@ function AntiBiasToolKit({ data }) {
   const commonNavProps = {
     currentPanel: antiBiasToolKitPanel,
     i18nBase,
+    panelList: ['judgement', 'timing', 'correlation'],
     setCurrentPanel: setAntiBiasToolKitPanel,
   }
 
@@ -49,9 +49,7 @@ function AntiBiasToolKit({ data }) {
       i18nBase={i18nBase}
       secondaryNav={(
         <SecondaryNav ariaLabel={i18next.t(`${i18nBase}.secondaryNav`)}>
-          <li><Button {...secondaryNavProps({ ...commonNavProps, k: 'judgement' })} /></li>
-          <li><Button {...secondaryNavProps({ ...commonNavProps, k: 'timing' })} /></li>
-          <li><Button {...secondaryNavProps({ ...commonNavProps, k: 'correlation' })} /></li>
+          <SecondaryNavButtonList {...commonNavProps} />
         </SecondaryNav>
       )}
     >

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18next from 'util/i18next/i18next'
 
 import Button from 'components/Button/Button'
-import SingleLabelButtonGroup from 'components/SingleLabelButtonGroup/SingleLabelButtonGroup'
+import SingleLabelButtonList from 'components/SingleLabelButtonList/SingleLabelButtonList'
 import { PRIME_SYMPTOM_BUTTON_SET, PRIME_SYMPTOM_MINIMUM_COUNT } from 'util/Constant/BaseConstantList'
 import { writeLabelForPointChange } from 'util/UtilPrimeSymptomHistogram/UtilPrimeSymptomHistogram'
 
@@ -23,7 +23,7 @@ function PrimeSymptomListCounter({
   })
 
   return (
-    <SingleLabelButtonGroup label={i18next.t(`${i18nBase}.counterLabel`)}>
+    <SingleLabelButtonList label={i18next.t(`${i18nBase}.counterLabel`)}>
       <ul className='row-layout space-children'>
         { PRIME_SYMPTOM_BUTTON_SET.map((pointChange, i) => {
           const nextPoints =
@@ -48,7 +48,7 @@ function PrimeSymptomListCounter({
           )
         })}
       </ul>
-    </SingleLabelButtonGroup>
+    </SingleLabelButtonList>
   )
 }
 

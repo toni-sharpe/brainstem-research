@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18next from 'util/i18next/i18next'
 
-import SingleLabelButtonGroup from 'components/SingleLabelButtonGroup/SingleLabelButtonGroup'
+import SingleLabelButtonList from 'components/SingleLabelButtonList/SingleLabelButtonList'
 
 const i18nBase = 'FactorToggle'
 
@@ -14,7 +14,7 @@ export function FactorToggle({
   const altState = state === 'on' ? 'off' : 'on'
 
   return (
-    <SingleLabelButtonGroup label={i18next.t(`${i18nBase}.${state}`)}>
+    <SingleLabelButtonList label={i18next.t(`${i18nBase}.${state}`)}>
       <button
         aria-label={i18next.t(`${i18nBase}.ariaLabel`, { state, altState })}
         onClick={() => { setCurrentFactorOn(!currentFactorOn)} }
@@ -24,7 +24,7 @@ export function FactorToggle({
           : i18next.t(`${i18nBase}.turnOn`)
         }
       </button>
-    </SingleLabelButtonGroup>
+    </SingleLabelButtonList>
   )
 }
 

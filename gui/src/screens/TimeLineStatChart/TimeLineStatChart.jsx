@@ -3,12 +3,11 @@ import React, { useState } from 'react'
 
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
-import Button from 'components/Button/Button'
-import { secondaryNavProps } from 'util/UtilNav/UtilNav'
+import SecondaryNavButtonList from 'components/SecondaryNavButtonList/SecondaryNavButtonList'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 
-import GeneralResponseTimeLineStatChart from './sub-page/GeneralResponseTimeLineStatChart/GeneralResponseTimeLineStatChart'
-import InteractiveTimeLineStatChart from './sub-page/InteractiveTimeLineStatChart/InteractiveTimeLineStatChart'
+import GeneralResponseTimeLineStatChart from './panel-list/GeneralResponseTimeLineStatChart/GeneralResponseTimeLineStatChart'
+import InteractiveTimeLineStatChart from './panel-list/InteractiveTimeLineStatChart/InteractiveTimeLineStatChart'
 
 const i18nBase = 'TimeLineStatChart'
 
@@ -25,6 +24,7 @@ function TimeLineStatChart({
   const commonNavProps = {
     currentPanel: statisticListPanel,
     i18nBase,
+    panelList: ['general','interactive'],
     setCurrentPanel: setTimeLineStatChartPanel,
   }
 
@@ -41,8 +41,7 @@ function TimeLineStatChart({
       i18nBase={i18nBase}
       secondaryNav={(
         <SecondaryNav ariaLabel={i18next.t(`${i18nBase}.secondaryNav`)}>
-          <li><Button {...secondaryNavProps({ ...commonNavProps, k: 'general' })} /></li>
-          <li><Button {...secondaryNavProps({ ...commonNavProps, k: 'interactive' })} /></li>
+          <SecondaryNavButtonList {...commonNavProps} />
         </SecondaryNav>
       )}
     >

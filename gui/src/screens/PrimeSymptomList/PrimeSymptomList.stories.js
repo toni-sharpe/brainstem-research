@@ -8,7 +8,7 @@ export default {
   component: PrimeSymptomList,
 };
 
-const PrimeSymptomListProps = {
+const basePrimeSymptomListProps = {
   data: APIPrimeSymptomListData
 }
 
@@ -16,7 +16,7 @@ export const RegularPage = {
   render: () => {
     return (
       <StoryBookPaddedWrapper>
-        <PrimeSymptomList {...PrimeSymptomListProps} />
+        <PrimeSymptomList {...basePrimeSymptomListProps} />
       </StoryBookPaddedWrapper>
     )
   }

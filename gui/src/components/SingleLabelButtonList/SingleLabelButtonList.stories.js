@@ -1,22 +1,22 @@
-// SingleLabelButtonGroup.story.js
+// SingleLabelButtonList.story.js
 import Button from 'components/Button/Button'
 
-import SingleLabelButtonGroup from './SingleLabelButtonGroup';
+import SingleLabelButtonList from './SingleLabelButtonList';
 
 export default {
-  component: SingleLabelButtonGroup,
+  component: SingleLabelButtonList,
 };
 
 export const WithButtonGroup = {
   render: () => {
     return (
-      <SingleLabelButtonGroup label='Button group'>
+      <SingleLabelButtonList label='Button group'>
         <ul className='row-layout space-children--with-border'>
           <li><Button label='one' /></li>
           <li><Button label='two' /></li>
           <li><Button label='three' /></li>
         </ul>
-      </SingleLabelButtonGroup>
+      </SingleLabelButtonList>
     )
   }
 };
@@ -24,11 +24,11 @@ export const WithButtonGroup = {
 export const OneIsPossibleToo = {
   render: () => {
     return (
-      <SingleLabelButtonGroup label='Button group'>
+      <SingleLabelButtonList label='Button group'>
         <ul className='row-layout space-children--with-border'>
           <li><Button label='one' /></li>
         </ul>
-      </SingleLabelButtonGroup>
+      </SingleLabelButtonList>
     )
   }
 };
