@@ -70,7 +70,6 @@ export function calcHistogramBarPos({
   return {
     height: height || `${HISTORGRAM_HEIGHT}vh`,
     left: left || 0,
-    position: 'absolute',
     top: top || 0,
     width: width || 'auto'
   }

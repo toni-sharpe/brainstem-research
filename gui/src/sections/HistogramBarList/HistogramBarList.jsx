@@ -70,7 +70,7 @@ function HistogramBarList({
 
                   const count = v.toFixed(v < 100 ? 1 : 0)
                   const graphBarSize = (histogramHeight * graphBarFraction).toPrecision(4)
-                  const graphBarTop = histogramHeight - graphBarSize
+                  const graphBarTop = (histogramHeight - graphBarSize).toPrecision(4)
 
                   return (
                     <HistogramBar
