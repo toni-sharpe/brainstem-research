@@ -15,7 +15,6 @@ test('calcHistogramBarPos() base styles', () => {
   expect(calcHistogramBarPos(args)).toEqual({
     height: 11,
     left: 19,
-    position: 'absolute',
     top: 37,
     width: 101,
   })
@@ -26,7 +25,6 @@ test('calcHistogramBarPos() class', () => {
   expect(calcHistogramBarPos(args)).toEqual({
     height: 11,
     left: 19,
-    position: 'absolute',
     top: 37,
     width: 101,
   })
@@ -37,7 +35,6 @@ test('calcHistogramBarPos() background color', () => {
   expect(calcHistogramBarPos(args)).toEqual({
     height: 11,
     left: 19,
-    position: 'absolute',
     top: 37,
     width: 101,
   })
@@ -48,7 +45,6 @@ test('calcHistogramBarPos() background color over-rides class', () => {
   expect(calcHistogramBarPos(args)).toEqual({
     height: 11,
     left: 19,
-    position: 'absolute',
     top: 37,
     width: 101,
   })
@@ -59,7 +55,6 @@ test('calcHistogramBarPos() uses defaults', () => {
   expect(calcHistogramBarPos(args)).toEqual({
     height: '70vh',
     left: 0,
-    position: 'absolute',
     top: 0,
     width: 'auto',
   })

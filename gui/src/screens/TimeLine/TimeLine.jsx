@@ -77,12 +77,11 @@ function TimeLine({ data }) {
           const thisMonth = thisMonthKey === `${currentYear}-${currentMonth}`
 
           return (
-            <li className='time-line__month'>
+            <li className='time-line__month' key={`month-${month}`}>
               <MonthBlock
                 colorVal={calcColorVal({ valSum })}
                 currentMonth={currentMonth}
                 currentYear={currentYear}
-                key={`month-${month}`}
                 monthText={(
                   <MonthText
                     month={month}
