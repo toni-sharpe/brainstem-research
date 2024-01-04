@@ -11,30 +11,35 @@ import './MonthText.scss'
 function makeSumMapper({ crossover, month }) {
   return (v, i) => {
     return (
-      <SumOutput
-        crossover={crossover}
-        key={`${month}-v-${i}`}
-        v={v}
+      <dd
+        className='month-text__elem row-layout space-children--narrowest'
+        key='val-list'
+      >
+        <SumOutput
+          crossover={crossover}
+          key={`${month}-v-${i}`}
+          v={v}
         />
-      )
+      </dd>
+    )
   }
 }
 
-function MonthText({ crossover, month, valSum, valOutputList }) {
+function MonthText({
+  crossover,
+  month,
+  valSum,
+  valOutputList
+}) {
   return (valSum || valOutputList) && (
-    <dl>
-      <dt>
+    <dl className='month-text row-layout space-children--narrowest'>
+      <dt className='month-text__elem'>
         <SumOutput fullSum key='total' v={valSum} />
       </dt>
-      <dd
-        className='month-text row-layout space-children--narrowest'
-        key='val-list'
-      >
-        {valOutputList
-          .sort(sortFn)
-          .map(makeSumMapper({ crossover, month }))
-        }
-      </dd>
+      {valOutputList
+        .sort(sortFn)
+        .map(makeSumMapper({ crossover, month }))
+      }
     </dl>
   )
 }

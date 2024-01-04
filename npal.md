@@ -35,8 +35,12 @@
 
 ## Acceptable abbreviations
 * Generally abbreviations should be avoided, but these are acceptable they are so common
+* Crucially, they should be either so well recognised that ambiguity is overcome, or remain unambiguous after abbreviation
 * `btn` for `button`
 * `fn` for `function`
+* `k` for `key`
+* `val` or `v` for `value`
+* `calc` for `calculate`
 
 
 ## Events
