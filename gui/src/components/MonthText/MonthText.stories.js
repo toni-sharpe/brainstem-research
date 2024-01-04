@@ -8,7 +8,7 @@ export default {
 const baseMonthTextProps = {
   crossover: 70,
   month: '06',
-  valOutput: [59, 37, 143, 167, 31, 87, 101, 13, 107, 93, 11, 19],
+  valOutputList: [59, 37, 143, 167, 31, 87, 101, 13, 107, 93, 11, 19],
   valSum: 726,
 }
 
