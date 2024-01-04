@@ -1,4 +1,7 @@
 .month-text {
   flex-wrap: wrap;
-  white-space: nowrap;
+  &__elem {
+    margin-bottom: var(--spacing--narrowest);
+    white-space: nowrap;
+  }
 }
