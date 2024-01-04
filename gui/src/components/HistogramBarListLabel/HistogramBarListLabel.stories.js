@@ -1,12 +1,12 @@
-// HistogramBarGroupLabel.story.js
-import HistogramBarGroupLabel from './HistogramBarGroupLabel';
+// HistogramBarListLabel.story.js
+import HistogramBarListLabel from './HistogramBarListLabel';
 import { PRIME_SYMPTOM_HISTOGRAM_BAR_GROUP_MAP } from 'util/Constant/BaseConstantList'
 
 export default {
-  component: HistogramBarGroupLabel,
+  component: HistogramBarListLabel,
 };
 
-const baseHistogramBarGroupLabelProps = {
+const baseHistogramBarListLabelProps = {
   allBlocks: PRIME_SYMPTOM_HISTOGRAM_BAR_GROUP_MAP,
   barCountPerBlock: 3,
   barMargin: 8,
@@ -19,7 +19,7 @@ const baseHistogramBarGroupLabelProps = {
 export const Primary = {
   render: () => {
     return (
-      <HistogramBarGroupLabel {...baseHistogramBarGroupLabelProps} />
+      <HistogramBarListLabel {...baseHistogramBarListLabelProps} />
     )
   }
 };
@@ -27,14 +27,14 @@ export const Primary = {
 export const Smaller = {
   render: () => {
     const props = {
-      ...baseHistogramBarGroupLabelProps,
+      ...baseHistogramBarListLabelProps,
       barCountPerBlock: 16,
       blockSize: 8,
       label: 50,
     }
 
     return (
-      <HistogramBarGroupLabel {...props} />
+      <HistogramBarListLabel {...props} />
     )
   }
 };
@@ -42,12 +42,12 @@ export const Smaller = {
 export const SkipI18n = {
   render: () => {
     const props = {
-      ...baseHistogramBarGroupLabelProps,
+      ...baseHistogramBarListLabelProps,
       i18nKeyOnly: true
     }
 
     return (
-      <HistogramBarGroupLabel {...props} />
+      <HistogramBarListLabel {...props} />
     )
   }
 };

@@ -8,7 +8,7 @@ import './HistogramBarLabel.scss'
 
 function HistogramBarLabel({
   blockSize,
-  histogramHistogramBarGroupLabel,
+  histogramHistogramBarListLabel,
   children,
   isShown,
 }) {

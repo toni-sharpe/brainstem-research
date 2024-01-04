@@ -12,7 +12,7 @@ import {
 import HistogramBarLabel from 'components/HistogramBarLabel/HistogramBarLabel'
 import HistogramDataPropType from 'prop-types/HistogramData.prop-type'
 import HistogramBar from 'components/HistogramBar/HistogramBar'
-import HistogramBarGroupLabel from 'components/HistogramBarGroupLabel/HistogramBarGroupLabel'
+import HistogramBarListLabel from 'components/HistogramBarListLabel/HistogramBarListLabel'
 
 function HistogramBarList({
   barCountPerBlock,
@@ -25,15 +25,15 @@ function HistogramBarList({
   i18nKeyOnly,
   mostMaxOfAllThings,
 }) {
-  return histogramBarGroupList.map(([histogramHistogramBarGroupLabel, data], i) => {
-    const ariaLabel = i18next.t(`HistogramBarGroupLabel.${histogramHistogramBarGroupLabel}`)
+  return histogramBarGroupList.map(([histogramHistogramBarListLabel, data], i) => {
+    const ariaLabel = i18next.t(`HistogramBarListLabel.${histogramHistogramBarListLabel}`)
     const outerLeft = i * (barCountPerBlock * blockSize + barMargin)
     const subBars = toPairs(data)
 
     return (
       <ol
         aria-label={ariaLabel}
-        key={`${histogramHistogramBarGroupLabel}`}
+        key={`${histogramHistogramBarListLabel}`}
       >
         <li>
           <ol>
@@ -103,12 +103,12 @@ function HistogramBarList({
               })
             }
           </ol>
-          <HistogramBarGroupLabel
+          <HistogramBarListLabel
             barCountPerBlock={barCountPerBlock}
             blockSize={blockSize}
-            i18nKey={histogramHistogramBarGroupLabel}
+            i18nKey={histogramHistogramBarListLabel}
             i18nKeyOnly={i18nKeyOnly}
-            key={histogramHistogramBarGroupLabel}
+            key={histogramHistogramBarListLabel}
             left={outerLeft}
             top={`${histogramHeight}vh`}
           />

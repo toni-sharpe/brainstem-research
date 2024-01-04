@@ -5,11 +5,11 @@ import React from 'react'
 import { HISTOGRAM_BAR_GROUP_COUNT, HISTOGRAM_BAR_WIDTH } from 'util/Constant/BaseConstantList'
 import AllBlocksPropType from 'prop-types/AllBlocks.prop-type'
 
-import './HistogramBarGroupLabel.scss'
+import './HistogramBarListLabel.scss'
 
-const i18nBase = 'HistogramBarGroupLabel'
+const i18nBase = 'HistogramBarListLabel'
 
-function HistogramBarGroupLabel({
+function HistogramBarListLabel({
   barCountPerBlock,
   blockMap,
   blockSize,
@@ -36,13 +36,13 @@ function HistogramBarGroupLabel({
   )
 }
 
-HistogramBarGroupLabel.defaultProps = {
+HistogramBarListLabel.defaultProps = {
   barCountPerBlock: HISTOGRAM_BAR_GROUP_COUNT,
   blockSize: HISTOGRAM_BAR_WIDTH,
   i18nKeyOnly: false,
 }
 
-HistogramBarGroupLabel.propTypes = {
+HistogramBarListLabel.propTypes = {
   barCountPerBlock: PropTypes.number,
   blockMap: AllBlocksPropType,
   blockSize: PropTypes.number,
@@ -52,4 +52,4 @@ HistogramBarGroupLabel.propTypes = {
   top: PropTypes.string.isRequired,
 }
 
-export default HistogramBarGroupLabel
+export default HistogramBarListLabel

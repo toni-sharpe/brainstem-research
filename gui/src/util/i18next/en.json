@@ -197,7 +197,7 @@
     "scaleFor": "Scale for {{ariaLabel}}"
   },
 
-  "HistogramBarGroupLabel": {
+  "HistogramBarListLabel": {
     "0": "0..5 days",
     "5": "5..10 days",
     "10": "10..15 days",

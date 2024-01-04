@@ -186,9 +186,9 @@
 
   "PrimeSymptomHistogram": {
     "factoredBy": "mit um {{factor}} faktorisierten nicht-tödlich Spalten",
-    "fatal": "{{count}} Tödliche Fälle in {{histogramHistogramBarGroupLabel}}",
+    "fatal": "{{count}} Tödliche Fälle in {{histogramHistogramBarListLabel}}",
     "name": "Balkendiagramm zur Hauptsymptom",
-    "nonFatal": "{{count}} nicht tödliche Fälle in {{histogramHistogramBarGroupLabel}}",
+    "nonFatal": "{{count}} nicht tödliche Fälle in {{histogramHistogramBarListLabel}}",
     "numberExplanation": "NB: Dieses Diagramm zählt immer ab dem ersten Eintrag, daher kann die Filterung Zahlen liefern, die nicht sofort Sinn ergeben.",
     "primeSymptomHistogramTools": "Tools und Feedback zur Interaktion mit dem Diagramm"
   },
@@ -197,7 +197,7 @@
     "scaleFor": "Skala für {{AriaLabel}}"
   },
 
-  "HistogramBarGroupLabel": {
+  "HistogramBarListLabel": {
     "0": "0..5 Tage",
     "5": "5..10 Tage",
     "10": "10..15 Tage",
