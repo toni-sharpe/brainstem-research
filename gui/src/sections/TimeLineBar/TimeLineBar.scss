@@ -1,0 +1,64 @@
+.time-line-bar {
+  height: var(--time-line-bar-height);
+  position: absolute;
+  bottom: 1px;
+  width: 100%;
+
+  &__label-main {
+    background-color: var(--grey--very-light);
+    white-space: nowrap;
+    position: absolute;
+    z-index: var(--step-right-forward);
+    right: 1px;
+    padding: 1px 6px 2px;
+    text-align: left;
+    top: -27px;
+    &-text {
+      background-color: var(--grey--very-light);
+    }
+  }
+
+  &__label {
+    white-space: nowrap;
+    position: absolute;
+    z-index: var(--step-right-forward);
+    &--bar-number {
+      font-size: var(--font-size--medium-small);
+    }
+    &--mean {
+      left: 5px;
+      top: 15px;
+    }
+    &--range {
+      bottom: 1px;
+    }
+    &--stddev {
+      top: 1px;
+    }
+  }
+
+  &__label-text {
+    padding-right: var(--padding--small-tiny);
+    padding-left: var(--padding--small-tiny);
+  }
+  &__mark {
+    width: 2px;
+  }
+  &__range {
+    opacity: 0.3;
+  }
+  &--good { background-color: var(--green); }
+  &--notGood { background-color: #da7; }
+  &--bad { background-color: var(--red--dark); }
+  &--veryBad { background-color: var(--grey--dull-dark); }
+  &--neutral { background-color: var(--blue); }
+  &--good-dark { background-color: var(--green--dark) }
+  &--notGood-dark { background-color: #a81; }
+  &--bad-dark { background-color: var(--red--black); }
+  &--veryBad-dark { background-color: var(--grey--black); }
+  &--neutral-dark { background-color: var(--blue--dark); }
+
+  .time-line-bar-label {
+    background-color: rgba(255,255,255,0.8);
+  }
+}
