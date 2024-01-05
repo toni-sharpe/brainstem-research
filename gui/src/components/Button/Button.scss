@@ -1,0 +1,31 @@
+button {
+  background-color: var(--grey--very-light);
+  border: none;
+  padding: 12px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button.is-selected {
+  background-color: var(--grey--dark);
+  color: var(--white);
+}
+button.is-selected--secondary {
+  background-color:var(--blue--dark);
+  color: var(--white);
+}
+button.is-disabled {
+  background-color: var(--grey--light);
+  color: var(--grey--lightest);
+}
+button.button--medium {
+  padding: var(--padding--medium);
+}
+button.button--small {
+  padding: var(--padding--small);
+}
+button.button--small-tiny {
+  padding: var(--padding--small-tiny);
+}

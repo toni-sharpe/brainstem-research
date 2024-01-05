@@ -1,0 +1,20 @@
+.sum-output {
+  &__total,
+  &__high-tot,
+  &__low-tot {
+    color: var(--white);
+    font-weight: bold;
+    padding: var(--padding--small-tiny);
+  }
+  &__total {
+    background-color: var(--blue--dark);
+    line-height: 1.8em;
+  }
+  &__high-tot {
+    background-color: var(--red--dark);
+  }
+  &__low-tot {
+    color: var(--grey--dull-dark);
+    background-color: var(--grey--very-light);
+  }
+}

@@ -1,0 +1,9 @@
+.time-line-bar-quantile-list {
+  &__line {
+    background-color: var(--grey--dull-dark);
+    height: var(--time-line-bar-quantile-height);
+    position: absolute;
+    width: 2px;
+    z-index: var(--step-right-forward);
+  }
+}

@@ -1,0 +1,26 @@
+.scatter-statistic-output {
+  &__key-vals {
+    width: 100%;
+    justify-content: center;
+  }
+  &__key {
+    width: 250px;
+    text-align: right;
+  }
+  &__value {
+    width: 100px;
+    font-weight: bold;
+    text-align: left;
+  }
+  &__time-line-bar-list-scale {
+    position: relative;
+    margin-top: 60px;
+  }
+  &__time-line-bar-list {
+    border-bottom: 2px solid var(--grey--light);
+    height: 144px;
+    margin-top: 70px;
+    width: 100%;
+  }
+}
+

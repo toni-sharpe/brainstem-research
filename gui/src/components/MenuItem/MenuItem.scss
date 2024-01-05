@@ -1,0 +1,10 @@
+.menu-item {
+  display: inline-block;
+  padding: var(--padding--medium-large) var(--padding--large);
+  white-space: nowrap;
+
+  &--current {
+    background-color: var(--blue--dark);
+    color: var(--white);
+  }
+}

@@ -1,0 +1,383 @@
+{
+  "CommonClinicalResponses": {
+    "care_error_level": "Care error level",
+    "care_technique_1": "Care technique 1",
+    "death_response_1": "Death response 1",
+    "death_response_2": "Death response 2",
+    "event_number": "Pathological event order",
+    "fatal_symptom_1": "Fatal symptom 1",
+    "fatal_symptom_2": "Fatal symptom 2",
+    "first_prime_symptom": "1st moment of prime symptom",
+    "intro_symptom_duration": "Possible start duration",
+    "intro_symptom_start": "Possible start",
+    "mild_symptom_1": "Mild symptom 1",
+    "mild_symptom_1_2": "Mild symptom 1 second time",
+    "mild_symptom_1_duration": "Mild symptom 1 duration",
+    "mild_symptom_2": "Mild symptom 2",
+    "mild_symptom_2_duration": "Mild symptom 2 duration",
+    "overall_patient_rating": "Overall patient rating",
+    "pathogenesis_duration": "Pathogenesis duration",
+    "pathological_event_duration": "Pathogical event duration",
+    "pathological_severity": "Pathogical severity",
+    "prime_symptom_1": "Prime symptom 1",
+    "prime_symptom_1_duration": "Prime symptom 1 duration",
+    "prime_symptom_2": "Prime symptom 2",
+    "prime_symptom_2_duration": "Prime symptom 2 duration",
+    "prime_symptom_3": "Prime symptom 3",
+    "prime_symptom_3_duration": "Prime symptom 3 duration",
+    "prime_symptom_duration": "Prime symptom duration",
+    "prime_symptom_level": "Prime symptom severity",
+    "prime_symptom_proportion": "Prime symptom proportion",
+    "recovery_duration": "Recovery duration",
+    "recovery_proportion": "Recovery proportion",
+    "slight_death_response_1": "Death response 1 (pos)",
+    "slight_death_response_2": "Death response 2 (pos)",
+    "time_of_death": "Time of death"
+  },
+
+  "MainPageHeading": {
+    "": "Brainstem Research",
+    "Scatter": "Scatter Plot",
+    "PrimeSymptomList": "Prime Symptom",
+    "AntiBiasToolKit": "Anti-bias Tool Kit",
+    "TimeLineStatChart": "Time Line Stat. Chart",
+    "TimeLine": "Time Line",
+    "HistogramMaker": "Histogram",
+    "CorrelationHeatmap": "Corr. Heatmap",
+    "nIs": "N is {{n}}"
+  },
+
+  "Menu": {
+    "ariaLabel": "Main menu"
+  },
+
+  "LanguageToggle": {
+    "languageToggle": "Switch language to",
+    "de": "Deutsche",
+    "en": "English"
+  },
+
+  "FilterButtonLabel": {
+    "confirmedActors": "Cnf",
+    "fatal": "FT",
+    "primeSymptomType": "Rdgt.",
+    "fjp": "Prev",
+    "hardEventOnly": "HE",
+    "hardPrimeSymptom": "HR",
+    "rmDubious": "Rm Dub.",
+    "longTime": "Long",
+    "moderateTime": "Med",
+    "nonFatal": "NF",
+    "secondOrMore": "2+",
+    "thirdOrMore": "3+"
+  },
+
+  "Home": {
+    "backgroundPanelLabel": "Background",
+    "motivationPanelLabel": "Motivation",
+    "techStackPanelLabel": "Tech Stack",
+    "testingPanelLabel": "Testing"
+  },
+
+  "Background": {
+    "paragraph1": "This project is essentially a statistical analysis of some medical research that I have done during a sabbatical period supported by savings. The research itself commprises of a hypothesis and a wealth of supporting evidence including 289 cases. The cases, or \"events\" as I call them, each have about 70 data points and this site is intended to graphically display certain supporting evidence, provide methods of challenging that and exploring how wrong I can be (bias is real) and also, give the user the chance to interact themselves, either to challenge the data or to explore it themselves.",
+    "paragraph2-1": "I noticed a possibility to save lives, investigated and discovered something new about the brainstem then modeled that data on this website on my GitHub here: ",
+    "paragraph2Link": "/toni-sharpe/brainstem-research",
+    "paragraph2-2": "- I did this all myself and it even delayed my job searching; however, it needs verification from medically trained folk.",
+    "paragraph3": "The medical research is real, the events are real and each one represents the experience of a real person, many of whom, around 90, are now dead as a result. For this reason the site is purposefully genericised for the sake of the dignity of both the dead and living and because as of yet, my hypothesis has not been verified or even inspected by anyone who has the right credentials. "
+  },
+
+  "Motivation": {
+    "paragraph4": "The saving of lives was the core motivation, though that was complicated as the nuances emerged (see below). The possibility of discovery motivated me and the breakthroughs, of which there were several, were both exciting and kept that motivation going.",
+    "paragraph5": "On top the web work and the medical research there is also a decidedly complex and nuanced web of medical ethics problems which I identified and have ideas to mitigate in some cases. The ethics comes in because the problem would best be thought of as a type of poisoning, a deliberately broad choice of term (I will remain secretive with the details until some other expertise has been consulted) but a notable choice because it is something that can be done maliciously by a predatory individual to a vulnerable individual. These are not light spaces to deal with, and when they group, overlap and multiply, that gets challenging. I like challenging though, I'd just rather not need a \"fatal\" filter."
+  },
+
+  "TechStack": {
+    "paragraph6": "The website is a complete build, starting from SQL that builds and populates a database to the visual screens that display that data and allow user interaction. The full, detailed stack is as follows - not all of these are specific technologies, techniques and libraries etc. are included.",
+    "techStack1Label": "PostGreSQL",
+    "techStack1": " - an RDBM, holding 289 events with roughly 70 data points each, utilising calculations on insert, building and populating tables.",
+    "techStack2Label": "PL SQL",
+    "techStack2": " - procedures for SQL, used for performing some more complex calculations around ratings for events.",
+    "techStack3Label": "Python",
+    "techStack3": " - the server side scripting language. Processing some things, serving end points delivering JSON data to clients, and querying the database.",
+    "techStack4Label": "Flask",
+    "techStack4": " - a Python package to speed up developing end-points.",
+    "techStack5Label": "JS",
+    "techStack5": " - client side scripting language.",
+    "techStack6Label": "ReactJS",
+    "techStack6": " - frame-work that facilitates the componentisation of front-ends and the management of state.",
+    "techStack7Label": "PropTypes",
+    "techStack7": " - chosen over TypeScript - IMO TS is overkill for front-end components when PropTypes is used properly, fully and consistently.",
+    "techStack8Label": "Ramda",
+    "techStack8": " - a brilliant set of functions that power up JS and bring a more functional flavour to the table.",
+    "techStack9Label": "Sass",
+    "techStack9": " - super-powered CSS, bringing full programming language capabilities to this language but allowing regular CSS to be easily written too.",
+    "techStack10Label": "Flex-box model",
+    "techStack10": " - very well designed layout system for web-pages, I have been using this successfully for years and know it very well.",
+    "techStack11Label": "HTML",
+    "techStack11": " - always overlooked, but I do not write “div soup” - I use HTML to maximise the available accessibility and other features it provides.",
+    "techStack12Label": "Aria",
+    "techStack12": " - accessibility information provided using this tool with a lot of different extra mark-up tags specifically for covering less well-sighted user experiences.",
+    "techStack13Label": "User experience",
+    "techStack13": " - well I would have loved some actual users, typically I would be working closely with them.",
+    "techStack14Label": "React Testing Library",
+    "techStack14": " - used to cover utils and more complex components but isolated from the server.",
+    "techStack15Label": "Cypress",
+    "techStack15": " - used to run the entire site, calling URLs, going right through to the DB and displaying the page - these are more “sense check” type tests, too many means too much time taken.",
+    "techStack16Label": "Storybook",
+    "techStack16": " - for visualising simple display or “dumb” components, in fact, some are quite complex. The point is here that we stop before API calls and stick just to the front-end. Can be hosted and used as a QA check.",
+    "techStack17Label": "I18next",
+    "techStack17": " - the site is set up to translate. Some of my German comes from DeepL.",
+    "techStack18Label": "Composable components",
+    "techStack18": " - build to be re-used and shared.",
+    "techStack19Label": "Clean code",
+    "techStack19": " - there are several acronyms I don’t remember, but, generally I try to keep things consistent, reuse things, factor stuff out against tests and all the other things. Of course I don’t manage this all the time, the excitement of proving a concept takes over, or something needs to be done and we’ve got it written down to come back to. In my experience this doesn’t happen as much as I would like.",
+    "techStack20Label": "Performance.",
+    "techStack20": " - It's fast and accessible, because I use HTML (properly), canvas and CSS directly"
+  },
+
+  "Testing": {
+    "paragraph7": "StoryBook is great. It allows testing by mimicking eyes on screen, using humans and can be done by developer, reviewer, QA and anyone else. It can be remotely hosted, so they don’t need to be here either. With testing you want to mimic the real system as closely as possible so it makes sense to unit test a util function, you use a computer to test what a computer will use. With the screen based UI stuff the real system is human eyes looking at a screen, hence my feelings about StoryBook.",
+    "paragraph8": "Visual component unit tests are a bit of waste of time anyway, they’re brittle and often rather high in number (N button sizes in N states, for example) plus all you can test is that the right prop went in - catching prop “disabled” is set to true isn’t going to catch someone deleting the disabled button styles by mistake.",
+    "paragraph9": "More complex components and any util functions are tested. Util functions are used to keep components more simple and improve testability too.",
+    "paragraph10": "Full integration testing is done with a light touch and for some edge cases (decided as and when). If we need to log in for example because it’s a real, full website test, then the time quickly mounts up, a test might take two mins because it would take the user ten to log in, navigate, fill the form, submit so we need to be careful. Also we can find situations where it all failed because the internet broke."
+  },
+
+  "Scatter": {
+    "description": "Interactive scatter diagram set to hypothesis as default",
+    "interactiveChart": "Interactive chart"
+  },
+
+  "ScatterChart": {
+    "notEnoughData": "Not enough data to display a chart"
+  },
+
+  "HypothesisScatterChart": {
+    "hypothesisCorrelationDescription": "Represents the correlation described in the document",
+    "hypothesisChart": "Hypothesis chart"
+  },
+
+  "AxisSelector": {
+    "axisSTATS": "Stats per grouping",
+    "axisGROUPBY": "Groupings (bars)",
+    "axisX": "X Axis (bottom)",
+    "axisY": "Y Axis (side)",
+    "shownOnX": "shown on X axis",
+    "shownOnY": "shown on Y axis",
+    "shownOnSTATS": "shown on stats axis",
+    "shownOnGROUPBY": "shown on group by axis",
+    "primaryMark": "this selection for the axis conveys the primary information"
+  },
+
+  "ScatterStatisticOutput": {
+    "label": "List of statistics based on scatter output",
+    "notEnoughData": "Not enough data to perform statistic operations",
+    "sampleCorrelation": "Sample correlation",
+    "sampleCovariance": "Sample covariance"
+  },
+
+  "PrimeSymptomList": {
+    "GraphHeading": "Shows prime symptom appearing earlier as the set who survive increases"
+  },
+
+  "PrimeSymptomListCounter": {
+    "counterLabel": "Increase data as added"
+  },
+
+  "PrimeSymptomHistogram": {
+    "factoredBy": "{{ariaName}} with non fatal columns factored by {{factor}}",
+    "fatal": "{{count}} fatal cases in {{ariaLabel}}",
+    "name": "Prime symptom bar graph",
+    "nonFatal": "{{count}} non fatal cases in {{ariaLabel}}",
+    "numberExplanation": "NB: this graph always counts from the first entry made, therefore filtering may return numbers that don't immediately make sense",
+    "primeSymptomHistogramTools": "Tools and feedback to interact with the graph"
+  },
+
+  "TimeLineBarListScale": {
+    "scaleFor": "Scale for {{ariaLabel}}"
+  },
+
+  "HistogramBarListLabel": {
+    "0": "0..5 days",
+    "5": "5..10 days",
+    "10": "10..15 days",
+    "15": "15..20 days",
+    "20": "20..25 days",
+    "25": "25..30 days",
+    "30": "30..35 days",
+    "35": "35..40 days",
+    "40": "40..45 days",
+    "45": "45..50 days",
+    "50": "50..55 days",
+    "55": "55..60 days",
+    "60": "60 days +",
+    "sb-example": "Storybook Example"
+  },
+
+  "HistogramBarLabel": {
+    "sb-3": "{{count}} cases in {{ariaLabel}}"
+  },
+
+  "AverageLineList": {
+    "averageList": "Averages from this graph are {{ariaAverages}}",
+    "average": "Average from this graph is {{ariaAverages}}",
+    "sb-1": "collection",
+    "sb-3": "some things",
+    "sb-5": "everything else in the world",
+    "sb-4": "those things I want",
+    "and": "and",
+    "fatal": "fatal",
+    "non-fatal": "non fatal"
+  },
+
+  "FactorToggle": {
+    "ariaLabel": "Factor toggle button: currently {{state}} click to toggle to {{altState}}",
+    "on": "Factor is on",
+    "off": "Factor is off",
+    "turnOn": "Turn on",
+    "turnOff": "Turn off"
+  },
+
+  "AntiBiasToolKit": {
+    "secondaryNav": "Secondary nav for selecting which error simulation to look at",
+    "correlationPanelLabel": "Biased correlation simulation",
+    "judgementPanelLabel": "Biased judgement simulation",
+    "timingPanelLabel": "Biased timing simulation"
+  },
+
+  "BiasedJudgementSim": {
+    "summary": "Repeatedly, and randomly each time, assumes ~50% of my assessments turn out to be incorrect"
+  },
+
+  "BiasedTimingSim": {
+    "biased": "Biased",
+    "summary": "Assumes poor timing, with interactive percentage to define how far off I am",
+    "timingShorthand": "d",
+    "veryBiased": "V. Biased"
+  },
+
+  "BiasedCorrelationSim": {
+    "biasedCorrelationSimChart": "Biased correlation sim chart",
+    "random": "Random",
+    "summary": "Alters the correlated values randomly up or down limited to button value",
+    "timingShorthand": "d"
+  },
+
+  "OutcomeSummmary": {
+    "total": "Total",
+    "fatal": "Fatal",
+    "nonFatal": "Non Fatal",
+    "outcomeSummary": "Outcome column summary",
+    "unknown": "Unknown"
+  },
+
+  "TimeLineStatChart": {
+    "subHeading": "Basic timing statistics, across common responses and with interactive cross referencing",
+    "interactivePanelLabel": "Interactive time line",
+    "generalPanelLabel": "General clinical time line",
+    "ariaLabel": "{{label}}; range {{range}} with mean {{mean}} Standard deviation {{stddev}}",
+    "secondaryNav": "See response time statistics or interactive where you can choose what to group and see time statistics about"
+  },
+
+  "GeneralResponseTimeLineStatChart": {
+    "GraphHeading": "Filterable ranges and basic statistics for both agonal and recovery responses"
+  },
+
+  "InteractiveTimeLineStatChart": {
+    "GraphHeading": "Interactive stat list allowing the user to choose what is grouped and see the timing stats for those groups",
+    "group": "{{k}} (N={{count}})"
+  },
+
+  "TimeLineBar": {
+    "good": "Recovery responses",
+    "notGood": "Serious responses",
+    "bad": "Serious and / or agonal responses",
+    "veryBad": "Agonal responses in fatality",
+    "neutral": "Impact without bearing"
+  },
+
+  "TimeLineBarList": {
+    "ariaLabel": "{{valueList}}",
+    "mAndM": "Mean | Medn",
+    "mda": "Median absolute dev.",
+    "mean": "Mean",
+    "median": "Md",
+    "quantile": "Qu (10ths)",
+    "range": "Range",
+    "ranges": "lo | MDA | hi",
+    "skewness": "Skew",
+    "stddev": "MdA dev"
+  },
+
+  "TimeLineBarDetailToggleList": {
+    "mean": "Mean",
+    "range": "Range",
+    "min": "Min",
+    "max": "Max",
+    "median": "Median",
+    "quantile": "Quantile",
+    "quantileNumber": "Quantile Numbers",
+    "deviation": "MDA Deviation",
+    "label": "Label",
+    "statList": "Stats",
+    "fatLines": "Fat lines"
+  },
+
+  "TimeLine": {
+    "overall_patient_ratingPanelLabel": "Rating",
+    "pathological_severityPanelLabel": "Severity",
+    "care_error_levelPanelLabel": "Prognosis",
+    "secondaryNavSumAndFilterList": "A set of options for the months"
+  },
+
+  "HistogramMaker": {
+    "countPanelLabel": "Count",
+    "avePanelLabel": "Median",
+    "mdaPanelLabel": "Deviation",
+    "minPanelLabel": "Min",
+    "maxPanelLabel": "Max",
+    "rangePanelLabel": "Range"
+  },
+
+  "ErrorList": {
+    "calcInteractiveTimeBarArgs": "data to calcInteractiveTimeLineBarStatList must be an array and current user choices must be strings",
+    "calcLeft": "calcLeft function requires a val",
+    "calcPercentage": "calcPercentage function requires a val",
+    "calcScaleToFitUI": "calcScaleToFitUI requires scale argument with numeric properties stepDivision and totalSteps",
+    "calcWidth": "calcWidth function requires a min and max value provided",
+    "fnMustBeProvidedTo": "{{fnName}} must be provided to {{caller}} and must be a function",
+    "fullStatBase": "fullStatBase needs a k",
+    "generalResponseTimeBarDataIsArray": "General stat list calc needs an array for data",
+    "graphBlockLengthInvalid": "histogramBarGroupList is not correct in {{callingFn}} - receiving: {{typeOf}} | {{val}}",
+    "graphBlockLengthZero": "histogramBarGroupList has length 0, there should be something in histogramBarGroupList for {{callingFn}}",
+    "isOrIsInArrayNeedsValues": "isOrIsInArray value error. {{missing}}",
+    "makeWidth": "makeWidth requires a min and max value provided",
+    "mapToTimeLineBars": "mapToTimeLineBars needs data with length and an i18nBase",
+    "noHistogramData": "This histogram config has zero results",
+    "primeSymptomHistogramBarGroup": "Prime symptom graph block list must be an array with positive count",
+    "secondaryNavProps": "all four args are required, currentPanel, k and i18nBase are all strings and setCurrentPanel should be a function",
+    "testError": "Test {{addToError}} {{alsoAddToError}}",
+    "userChoiceStatMapper": "userChoiceStatMapper needs a string for currentResponse",
+    "utilKeyPairXYMakeMapFn": "makeMapFn needs both x and y to refence the correct keys in each point"
+  },
+
+  "ReactTestLibrary": {
+    "key1": "Test the label",
+    "test-aPanelLabel": "Test Panel A"
+  },
+
+  "StoryBook": {
+    "secondaryNav": "Storybook secondary nav",
+    "secondaryNavSumAndFilterList": "Storybook secondary nav sum and filter list",
+    "test-aPanelLabel": "Test Panel A",
+    "test-bPanelLabel": "Test Panel B",
+    "test-cPanelLabel": "Test Panel C",
+    "test-dPanelLabel": "Test Panel D",
+    "test-ePanelLabel": "Test Panel E",
+    "aPanelLabel": "A",
+    "bPanelLabel": "B",
+    "cPanelLabel": "C",
+    "dPanelLabel": "D",
+    "ePanelLabel": "E"
+  }
+}
