@@ -1,0 +1,32 @@
+.axis-selector {
+  &__heading {
+    box-shadow: none;
+    font-size: var(--font-size--large);
+    font-weight: bold;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  h3 {
+    font-size: var(--font-size--medium-large);
+  }
+  &.left {
+    .axis-selector__heading {
+      text-align: left;
+    }
+  }
+  &__button {
+    white-space: nowrap;
+  }
+  &__break-line {
+    background-color:var(--blue--dark);
+    height: 1px;
+  }
+  &__primary {
+    &--left {
+      border-left: 24px solid var(--green);
+    }
+    &--right {
+      border-right: 24px solid var(--green);
+    }
+  }
+}

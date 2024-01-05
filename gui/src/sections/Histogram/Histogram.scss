@@ -1,0 +1,26 @@
+.histogram {
+  margin-bottom: var(--histogram-bar-group-height);
+  margin-left: var(--histogram-bar-group-height);
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  &__caption {
+    display: block;
+    font-size: var(--font-size--large);
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__columns {
+    position: absolute;
+    bottom: var(--histogram-bar-group-height);
+    top: var(--histogram-bar-group-height);
+  }
+
+  &__error-wrapper {
+    justify-content: center;
+  }
+}

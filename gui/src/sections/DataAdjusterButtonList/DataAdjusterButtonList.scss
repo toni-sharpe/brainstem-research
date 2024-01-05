@@ -1,0 +1,13 @@
+.data-adjuster-button-list {
+  align-items: stretch;
+  min-width: 70px;
+
+  &__button {
+    width:  100%;
+  }
+  &__label {
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+  }
+}

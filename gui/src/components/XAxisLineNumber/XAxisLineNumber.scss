@@ -1,0 +1,12 @@
+.x-axis-line-number {
+  left: calc(0px - (var(--histogram-bar-group-height) + 6px));
+  position: absolute;
+  text-align: right;
+  width: var(--histogram-bar-group-height);
+
+  &__num {
+    background-color: var(--grey--dark);
+    color: var(--white);
+    padding: var(--padding--small-tiny);
+  }
+}

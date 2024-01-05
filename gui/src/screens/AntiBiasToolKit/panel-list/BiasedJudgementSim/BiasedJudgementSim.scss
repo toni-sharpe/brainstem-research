@@ -1,0 +1,10 @@
+.biased-judgement-sim {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  &__example {
+    padding: var(--padding--large);
+    position: relative;
+  }
+}

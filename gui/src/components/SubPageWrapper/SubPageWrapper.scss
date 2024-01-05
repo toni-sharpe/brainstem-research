@@ -1,0 +1,15 @@
+.sub-page-wrapper {
+  position: relative;
+  align-items: center;
+  width: 100%;
+
+  &__child-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+
+  &__h2,
+  &__h3 {
+    box-shadow: none;
+  }
+}

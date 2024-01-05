@@ -1,0 +1,12 @@
+.perc-output {
+  background-color: var(--grey--light);
+  width: 100px;
+  &__current {
+    background-color:var(--blue--dark);
+    height: 20px;
+  }
+  &__unknown {
+    background-color:var(--orange--light);
+    height: 20px;
+  }
+}

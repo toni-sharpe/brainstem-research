@@ -1,0 +1,36 @@
+.outcome-summary {
+  align-items: center;
+  font-size: var(--font-size--medium-large);
+  padding: var(--padding--medium-large);
+  white-space: nowrap;
+
+  &__total {
+    align-items: center;
+  }
+
+  &__total-marker {
+    background-color: var(--black);
+  }
+
+  &__label {
+    color: var(--white);
+    padding: var(--padding--small-tiny) var(--padding--small);
+  }
+  &__fatal-ave {
+    background-color:var(--red--dark);
+  }
+  &__non-fatal-ave {
+    background-color:var(--blue--dark);
+  }
+  &__lowest-median-marker {
+    border-left: 20px solid var(--green);
+  }
+
+  &__unknown-count {
+    background-color: var(--orange--light);
+    color: var(--black);
+    &.outcome-summary__unknown-count {
+      padding-right: var(--spacing--narrow);
+    }
+  }
+}
