@@ -1,0 +1,19 @@
+.histogram-bar-group-label {
+  align-items: center;
+  background-color: var(--grey--lightest);
+  box-sizing: border-box;
+  display: flex;
+  height: var(--histogram-bar-group-height);
+  justify-content: center;
+  padding: 0 var(--padding--small-tiny);
+  position: absolute;
+  text-align: center;
+  z-index: var(--step-back--at-the-back);
+
+  &.font-small {
+    font-size: var(--font-size--small);
+  }
+  &.font-regular {
+    font-size: var(--font-size--medium);
+  }
+}

@@ -1,0 +1,29 @@
+import PropTypes from 'prop-types'
+import React from 'react'
+
+import AriaLevelPropType from 'prop-types/AriaLive.prop-type'
+
+import './ErrorOutput.scss'
+
+function ErrorOutput({ ariaLive, message }) {
+  return (
+    <span
+      aria-live={ariaLive}
+      className='error-output'
+    >
+      <span className='error-output__text'>{message}</span>
+    </span>
+  )
+}
+
+ErrorOutput.defaultProps = {
+  ariaLive: 'polite',
+  message: 'An error has occured',
+}
+
+ErrorOutput.propTypes = {
+  ariaLive: AriaLevelPropType,
+  message: PropTypes.string,
+}
+
+export default ErrorOutput

@@ -1,0 +1,41 @@
+.time-line-bar-list-scale {
+  width: 100%;
+  height: 2px;
+  background-color: var(--grey--dark);
+  position: relative;
+  top: var(--spacing--narrow);
+  &__line {
+    background-color: var(--grey--light);
+    width: 2px;
+    opacity: 0.8;
+    top: 0px;
+    position: absolute;
+    z-index: var(--step-right-back);
+  }
+  &__label {
+    background-color: var(--grey--dark);
+    color: var(--white);
+    font-size: var(--font-size--medium-large);
+    font-weight: bold;
+    margin-right: -9px;
+    padding: var(--padding--small-tiny);
+    position: absolute;
+    top: 2px;
+    z-index: var(--step-right-forward);
+  }
+  &__sub-label {
+    background-color: var(--blue--light);
+    color: var(--black);
+    top: 2px;
+  }
+  &__total-label {
+    background-color:var(--blue--dark);
+    top: -22px;
+    right: var(--spacing--narrow);
+  }
+  &__bar-toggle-interface {
+    position: absolute;
+    top: -22px;
+    left: -1px;
+  }
+}
