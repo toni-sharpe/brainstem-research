@@ -6,7 +6,7 @@ import APIAntiBiasToolKitData from 'example-data/APIAntiBiasToolKit.example-data
 
 import AntiBiasToolKit from './AntiBiasToolKit'
 
-test.skip('AntiBiasToolKit - ', async () => {
+test('AntiBiasToolKit - ', async () => {
   render(
     <AntiBiasToolKit
       data={APIAntiBiasToolKitData}
