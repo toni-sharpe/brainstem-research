@@ -38,35 +38,7 @@ create table if not exists pathological_event (
   event_record_length int default null,
   intro_symptom_start int default null,
   intro_symptom_end int default null,
-  intro_symptom_duration int generated always as (
-    case
-      when
-        intro_symptom_start is not null
-        and
-        intro_symptom_end is not null
-      then
-          intro_symptom_start + intro_symptom_end
-      when
-        intro_symptom_start is not null
-        and (
-          pathogenesis_duration is not null
-          or
-          recovery_duration is not null
-        )
-      then
-        intro_symptom_start
-        -
-        coalesce (
-          greatest (
-            pathogenesis_duration,
-            recovery_duration
-          ),
-          0
-        )
-      else
-        null
-    end
-  ) stored,
+  intro_symptom_duration int null,
   mild_symptom_1 int default null,
   mild_symptom_1_1_end int default null,
   mild_symptom_1_2 int default null,
