@@ -43,7 +43,7 @@ const DURATION_MAP = concat(BASE_DURATION_MAP, EXTRA_DURATION_MAP)
 // fatal_symptom_2
 // first_prime_symptom
 // care_error_level
-// event_number
+// event_count
 // pathological_severity
 // death_response_1
 // recovery_duration
@@ -72,7 +72,7 @@ export const SEVERITY_MEASUREMENT_MAP = [
   ['pathological_severity', { tone: 'neutral' }],
   ['care_error_level', { tone: 'neutral' }],
   ['overall_patient_rating', { tone: 'neutral' }],
-  ['event_number', { tone: 'neutral' }],
+  ['event_count', { tone: 'neutral' }],
   ['prime_symptom_level', { tone: 'neutral' }],
   ['recovery_proportion', { tone: 'neutral' }],
   ['prime_symptom_proportion', { tone: 'neutral' }],

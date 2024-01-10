@@ -133,7 +133,7 @@ def read_fatal_data(cur, only_confirmed = ONLY_CONFIRMED, cut_suspect = CUT_SUSP
       prime_symptom_2,
       first_prime_symptom,
       first_prime_symptom_type,
-      event_number
+      event_count
       consultant_doctor,
       death_response_1,
       recovery_duration,
@@ -170,7 +170,7 @@ def read_prime_symptom_data(cur, only_confirmed = ONLY_CONFIRMED, cut_suspect = 
       first_prime_symptom_type,
       consultant_doctor,
       prime_symptom_level,
-      event_number,
+      event_count,
       fatal_symptom_1,
       fatal_symptom_2,
       mild_symptom_1_duration,
