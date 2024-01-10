@@ -84,8 +84,8 @@ test('fullStatBase()', () => {
     label: 'Test the label',
     mda: 24,
     quantile,
-    skewness: '-0.006136',
-    std: '24.696491',
+    skewness: -0.0061362,
+    std: 24.696,
     tone: 'good',
   }).toEqual(key1Stats)
 })
@@ -130,8 +130,8 @@ test('mapToTimeLineBars()', () => {
       median: 30,
       min: 1,
       quantile: [1, 5, 5, 9, 30, 51, 53, 53, 58],
-      skewness: "-0.006136",
-      std: "24.696491",
+      skewness: -0.0061362,
+      std: 24.696,
       tone: 'neutral',
     },
   }

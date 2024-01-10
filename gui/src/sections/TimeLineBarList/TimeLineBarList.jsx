@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { toPairs } from 'ramda'
 
-import { SCALE_DEFAULT, STAT_BAR_DETAIL_LIST } from 'util/Constant/BaseConstantList'
+import { PRECISION, SCALE_DEFAULT, STAT_BAR_DETAIL_LIST } from 'util/Constant/BaseConstantList'
 import TimeLineBarListScalePropType from 'prop-types/TimeLineBarListScale.prop-type'
 import TimeLineBar from 'sections/TimeLineBar/TimeLineBar'
 import TimeLineBarWrapper from 'components/TimeLineBarWrapper/TimeLineBarWrapper'
@@ -31,10 +31,10 @@ function TimeLineBarList({
         }
 
         const { mda, mean, median, std, quantile } = bData
-        const minStd = (mean - std).toFixed(1)
-        const maxStd = ((mean - std) + std * 2).toFixed(1)
-        const minMda = (median - mda).toFixed(1)
-        const maxMda = ((median - mda) + mda * 2).toFixed(1)
+        const minStd = Number((mean - std).toPrecision(PRECISION))
+        const maxStd = Number(((mean - std) + std * 2).toPrecision(PRECISION))
+        const minMda = Number((median - mda).toPrecision(PRECISION))
+        const maxMda = Number(((median - mda) + mda * 2).toPrecision(PRECISION))
 
         const barData = { ...bData, minStd, maxStd, minMda, maxMda }
         const labelList = {
