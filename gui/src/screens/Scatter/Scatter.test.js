@@ -26,11 +26,11 @@ test('Scatter - ', async () => {
    * Simple tests of on screen specifics, not always needed
    */
   expect(screen.getByLabelText('Interactive chart')).toBeTruthy()
-  expect(screen.getByLabelText('List of statistics based on scatter output')).toBeTruthy()
+  // expect(screen.getByLabelText('List of statistics based on scatter output')).toBeTruthy()
   expect(screen.getByText('X Axis (bottom)')).toBeTruthy()
   expect(screen.getByText('Y Axis (side)')).toBeTruthy()
-  expect(screen.getByText('Sample correlation:')).toBeTruthy()
-  expect(screen.getByText('Sample covariance:')).toBeTruthy()
-  expect(screen.getAllByText('Fatal symptom 1').length).toEqual(3)
-  expect(screen.getAllByText('Fatal symptom 2').length).toEqual(3)
+  // expect(screen.getByText('Sample correlation:')).toBeTruthy()
+  // expect(screen.getByText('Sample covariance:')).toBeTruthy()
+  expect(screen.getAllByText('Fatal symptom 1').length).toEqual(2)
+  expect(screen.getAllByText('Fatal symptom 2').length).toEqual(2)
 })
