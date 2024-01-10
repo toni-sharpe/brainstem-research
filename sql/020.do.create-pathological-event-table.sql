@@ -42,76 +42,7 @@ create table if not exists pathological_event (
   mild_symptom_1 int default null,
   mild_symptom_1_1_end int default null,
   mild_symptom_1_2 int default null,
-  mild_symptom_1_duration int generated always as (
-    case
-      when
-        mild_symptom_1 is not null
-      then
-        case
-          when
-            outcome = 'FAT'
-          then
-            greatest (
-              fatal_symptom_1,
-              fatal_symptom_2
-            )
-            -
-            mild_symptom_1
-            -
-            (
-              coalesce (
-                mild_symptom_1_2,
-                0
-              )
-              -
-              coalesce (
-                mild_symptom_1_1_end,
-                0
-              )
-            )
-          when
-            outcome = 'NFT'
-          then
-            nullif (
-              coalesce (
-                greatest (
-                  mild_symptom_1,
-                  mild_symptom_2,
-                  prime_symptom_1,
-                  prime_symptom_2,
-                  prime_symptom_3,
-                  pathogenesis_duration
-                  +
-                  coalesce (
-                    recovery_duration,
-                    0
-                  )
-                )
-                -
-                mild_symptom_1
-                -
-                (
-                  coalesce (
-                    mild_symptom_1_2,
-                    0
-                  )
-                  -
-                  coalesce (
-                    mild_symptom_1_1_end,
-                    0
-                  )
-                ),
-                0
-              ),
-              0
-            )
-          else
-            null
-        end
-      else
-        null
-    end
-  ) stored,
+  mild_symptom_1_duration int null,
   mild_symptom_2 int default null,
   mild_symptom_2_duration int generated always as (
     case
