@@ -8,10 +8,10 @@ begin
     pe.outcome = 'UNK'
   then
     pathological_event_duration =
-	    coalesce_to_zero(pe.pathogenesis_duration)
-	    +
-	    coalesce_to_zero(pe.recovery_duration);
-	  
+      coalesce_to_zero(pe.pathogenesis_duration)
+      +
+      coalesce_to_zero(pe.recovery_duration);
+
     return greatest (
       pe.mild_symptom_1,
       pe.mild_symptom_2,
