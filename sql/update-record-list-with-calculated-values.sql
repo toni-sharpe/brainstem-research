@@ -1,8 +1,6 @@
 create or replace function calc_after_add() returns numeric as $$
 declare
   pe record;
-  this_intro_symptom_duration int := 0;
-  this_mild_symptom_1_duration int := 0;
 begin
   --
   -- retrieve all records
@@ -34,33 +32,16 @@ begin
     from
       pathological_event pe
   loop
-    --
-    -- intro symptom duration
-    --
-    select
-      calc_intro_symptom_duration(
+    update
+      pathological_event
+    set
+      intro_symptom_duration = calc_intro_symptom_duration(
         pe.intro_symptom_start,
         pe.intro_symptom_end
-      )
-    into
-      this_intro_symptom_duration;
-
-    --
-    -- mild symptom 1 duration
-    --
-    select
-      calc_mild_symptom_1_duration(pe)
-    into
-      this_mild_symptom_1_duration;
-
-  update
-    pathological_event
-  set
-    intro_symptom_duration = this_intro_symptom_duration,
-    mild_symptom_1_duration = this_mild_symptom_1_duration
-  where
-    pathological_event_id = pe.pathological_event_id;
-
+      ),
+      mild_symptom_1_duration = calc_mild_symptom_1_duration(pe)
+    where
+      pathological_event_id = pe.pathological_event_id;
   end loop;
   return this_intro_symptom_duration;
 end;
