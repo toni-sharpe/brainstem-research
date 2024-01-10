@@ -19,8 +19,8 @@ const GeneralResponseStatChartExampleData = [
         16,
         18
       ],
-      skewness: '0.529437',
-      std: '4.359082',
+      skewness: 0.52944,
+      std: 4.3591,
       tone: 'notGood'
     }
   },
@@ -30,7 +30,7 @@ const GeneralResponseStatChartExampleData = [
       label: 'Mild symptom 2',
       max: 54,
       mda: 3,
-      mean: 18.10810810810811,
+      mean: 18.108,
       median: 16,
       min: 10,
       quantile: [
@@ -44,8 +44,8 @@ const GeneralResponseStatChartExampleData = [
         20,
         32
       ],
-      skewness: '2.368189',
-      std: '8.809650',
+      skewness: 2.3682,
+      std: 8.8097,
       tone: 'notGood'
     }
   },
@@ -55,7 +55,7 @@ const GeneralResponseStatChartExampleData = [
       label: 'Prime symptom 1',
       max: 54,
       mda: 4,
-      mean: 23.51851851851852,
+      mean: 23.519,
       median: 20,
       min: 11,
       quantile: [
@@ -69,8 +69,8 @@ const GeneralResponseStatChartExampleData = [
         31,
         39
       ],
-      skewness: '1.468678',
-      std: '9.870909',
+      skewness: 1.4687,
+      std: 9.8709,
       tone: 'bad'
     }
   },
@@ -80,7 +80,7 @@ const GeneralResponseStatChartExampleData = [
       label: 'Prime symptom 2',
       max: 94,
       mda: 4,
-      mean: 23.933333333333334,
+      mean: 23.933,
       median: 20,
       min: 11,
       quantile: [
@@ -94,8 +94,8 @@ const GeneralResponseStatChartExampleData = [
         29,
         33.5
       ],
-      skewness: '3.441917',
-      std: '15.481028',
+      skewness: 3.4419,
+      std: 15.481,
       tone: 'bad'
     }
   },
@@ -120,7 +120,7 @@ const GeneralResponseStatChartExampleData = [
       label: 'Prime symptom 3',
       max: 54,
       mda: 6,
-      mean: 22.580645161290324,
+      mean: 22.581,
       median: 20,
       min: 11,
       quantile: [
@@ -134,8 +134,8 @@ const GeneralResponseStatChartExampleData = [
         29,
         36
       ],
-      skewness: '1.367222',
-      std: '10.111553',
+      skewness: 1.3672,
+      std: 10.112,
       tone: 'bad'
     }
   },
@@ -145,7 +145,7 @@ const GeneralResponseStatChartExampleData = [
       label: 'Fatal symptom 1',
       max: 220,
       mda: 34,
-      mean: 97.71794871794872,
+      mean: 97.718,
       median: 103,
       min: 14,
       quantile: [
@@ -159,8 +159,8 @@ const GeneralResponseStatChartExampleData = [
         137,
         163
       ],
-      skewness: '0.473468',
-      std: '53.379122',
+      skewness: 0.47347,
+      std: 53.379,
       tone: 'veryBad'
     }
   },

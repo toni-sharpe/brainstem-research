@@ -11,7 +11,7 @@ import {
   medianAbsoluteDeviation,
 } from 'simple-statistics'
 
-import { QUANTILE_LIST } from 'util/Constant/BaseConstantList'
+import { PRECISION, QUANTILE_LIST } from 'util/Constant/BaseConstantList'
 import { throwError } from 'util/Util/Util'
 
 
@@ -40,7 +40,7 @@ export function getStatBase({
     map(stFn => ([
       stFn.name,
       count > 0
-        ? stFn(vals)
+        ? Number(stFn(vals).toPrecision(PRECISION))
         : 0
     ])),
     fromPairs
@@ -64,8 +64,8 @@ export function fullStatBase({
       label: i18nBase ? i18next.t(`${i18nBase}.${k}`) : k,
       quantile: count > 0 ? quantile(vals, QUANTILE_LIST) : null,
       mda: count > 1 ? medianAbsoluteDeviation(vals) : 0,
-      std: count > 1 ? standardDeviation(vals).toFixed(6) : 0,
-      skewness: count > 2 ? sampleSkewness(vals).toFixed(6) : 0,
+      std: count > 1 ? Number(standardDeviation(vals).toPrecision(PRECISION)) : 0,
+      skewness: count > 2 ? Number(sampleSkewness(vals).toPrecision(PRECISION)) : 0,
       tone,
     }
   })
