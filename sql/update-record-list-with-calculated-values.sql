@@ -1,6 +1,9 @@
 create or replace function calc_after_add() returns numeric as $$
 declare
   pe record;
+  first_prime_time int :=0;
+  first_pair_prime_time int :=0;
+  greatest_value int :=0;
 begin
   --
   -- retrieve all records
@@ -32,6 +35,10 @@ begin
     from
       pathological_event pe
   loop
+    first_prime_time = calc_earliest_prime_symptom(pe);
+    first_pair_prime_time = calc_earliest_prime_symptom_from_pair(pe);
+    greatest_value = calc_greatest(pe);
+
     update
       pathological_event
     set
@@ -40,10 +47,16 @@ begin
         pe.intro_symptom_end
       ),
       mild_symptom_1_duration = calc_mild_symptom_1_duration(pe),
-      mild_symptom_2_duration = calc_duration_to_greatest(pe, pe.mild_symptom_2),
-      prime_symptom_1_duration = calc_duration_to_greatest(pe, pe.prime_symptom_1),
-      prime_symptom_2_duration = calc_duration_to_greatest(pe, pe.prime_symptom_2),
-      prime_symptom_3_duration = calc_duration_to_greatest(pe, pe.prime_symptom_3)
+      mild_symptom_2_duration = calc_duration(pe.mild_symptom_2, greatest_value),
+      prime_symptom_1_duration = calc_duration(pe.prime_symptom_1, greatest_value),
+      prime_symptom_2_duration = calc_duration(pe.prime_symptom_2, greatest_value),
+      prime_symptom_3_duration = calc_duration(pe.prime_symptom_3, greatest_value),
+      first_prime_symptom = first_prime_time,
+      first_prime_symptom_type = calc_earliest_prime_symptom_type(pe, first_prime_time),
+      prime_symptom_any = prime_symptom_occured(pe),
+      full_prime_symptom_duration = calc_duration(first_prime_time, greatest_value),
+      prime_symptom_duration = calc_duration(first_pair_prime_time, greatest_value),
+      prime_symptom_proportion = first_prime_time::float / greatest_value::float
     where
       pathological_event_id = pe.pathological_event_id;
   end loop;

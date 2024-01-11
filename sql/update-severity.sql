@@ -41,7 +41,7 @@ begin
       pathogenesis_duration,
       pathological_event_duration,
       pathological_event_id,
-      prime_symptom_1_2,
+      prime_symptom_any,
       prime_symptom_3_duration,
       prime_symptom_duration,
       prime_symptom_level,
@@ -223,7 +223,7 @@ begin
     end if;
 
     if
-      pe.prime_symptom_1_2 = true
+      pe.prime_symptom_any = true
     then
       incidental_bad := incidental_bad
       +

@@ -49,89 +49,11 @@ create table if not exists pathological_event (
   prime_symptom_1_duration int default null,
   prime_symptom_2 int default null,
   prime_symptom_2_duration int default null,
-  first_prime_symptom int generated always as (
-    least(
-      prime_symptom_1,
-      prime_symptom_2
-    )
-  ) stored,
-  first_prime_symptom_type varchar(3) generated always as (
-    case
-      when
-        least(
-          prime_symptom_1,
-          prime_symptom_2
-        ) >= prime_symptom_1
-      then
-        'DCB'
-      when
-        least(
-          prime_symptom_1,
-          prime_symptom_2
-        ) >= prime_symptom_2
-      then
-        'DCT'
-      else
-        null
-    end
-  ) stored,
-  prime_symptom_duration int generated always as (
-    case
-      when
-        outcome = 'FAT'
-      then
-        greatest (
-          fatal_symptom_1,
-          fatal_symptom_2
-        )
-        -
-        least (
-          prime_symptom_1,
-          prime_symptom_2
-        )
-      when
-        outcome = 'NFT'
-      then
-        nullif (
-          coalesce (
-            greatest (
-              mild_symptom_1,
-              mild_symptom_2,
-              prime_symptom_1,
-              prime_symptom_2,
-              prime_symptom_3,
-              pathogenesis_duration
-              +
-              coalesce (
-                recovery_duration,
-                0
-              )
-            )
-            -
-            least(
-              prime_symptom_1,
-              prime_symptom_2
-            ),
-            0
-          ),
-          0
-        )
-      else
-        null
-    end
-  ) stored,
-  prime_symptom_1_2 boolean generated always as (
-    case 
-      when
-        prime_symptom_1 is not null
-        and
-        prime_symptom_2 is not null
-      then
-        true
-      else
-        false
-    end
-  ) stored,
+  first_prime_symptom int default null,
+  first_prime_symptom_type varchar(3) default null,
+  prime_symptom_duration int default null,
+  full_prime_symptom_duration int default null,
+  prime_symptom_any boolean default false,
   prime_symptom_level int default 2,
   prime_symptom_3 int default null,
   prime_symptom_3_duration int default null,
@@ -164,77 +86,7 @@ create table if not exists pathological_event (
         null
     end
   ) stored,
-  prime_symptom_proportion numeric(5, 2) generated always as (
-    case
-      when
-        outcome = 'FAT'
-      then
-        case
-          when
-            prime_symptom_1 is not null
-            or
-            prime_symptom_2 is not null
-          then
-            least(
-              prime_symptom_1::float,
-              prime_symptom_2::float
-            )
-            /
-            greatest (
-              fatal_symptom_1,
-              fatal_symptom_2
-            )::float
-            *
-            100.0
-          else
-            0.0
-        end
-      when
-        outcome = 'NFT'
-      then
-        case
-          when
-            pathogenesis_duration is not null
-          then
-            coalesce (
-              greatest (
-                mild_symptom_1,
-                mild_symptom_2,
-                prime_symptom_1,
-                prime_symptom_2,
-                prime_symptom_3,
-                pathogenesis_duration
-                +
-                coalesce (
-                  recovery_duration,
-                  0.0
-                )
-              )
-              -
-              least(
-                prime_symptom_1,
-                prime_symptom_2
-              ),
-              0.0
-            )::float
-            /
-            (
-              pathogenesis_duration
-              +
-              coalesce (
-                recovery_duration,
-                0.0
-              )
-            )::float
-            *
-            100.0
-          else
-            0.0
-        end
-      else
-        0.0
-    end
-  ) stored,
+  prime_symptom_proportion numeric(6, 4) default null,
   pathological_event_duration int generated always as (
     case
       when
@@ -324,7 +176,7 @@ comment on column
   is
     'To record some possibly related symnptom seen in many cases';
 comment on column
-  pathological_event.prime_symptom_1_2
+  pathological_event.prime_symptom_any
   is
     'Specifically important to the NDA investigation';
 comment on column
