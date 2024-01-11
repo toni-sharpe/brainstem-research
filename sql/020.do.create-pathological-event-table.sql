@@ -84,12 +84,12 @@ create table if not exists pathological_event (
   overall_patient_rating numeric (5, 2) default 0.00,
 
   patient_id int not null,
-  event_number int not null,
+  event_count int not null,
   event_title varchar(24),
   notes text,
   unique(
     patient_id,
-    event_number
+    event_count
   )
 );
 

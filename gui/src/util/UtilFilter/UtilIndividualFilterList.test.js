@@ -273,8 +273,8 @@ test('secondOrMore() - when off does nothing', () => {
 
 test('secondOrMore()', () => {
   const filterFn = filterOn({ fn: secondOrMore, key: 'secondOrMore' })
-  expect(filterFn({ event_number: 1 })).toBeFalsy()
-  expect(filterFn({ event_number: 2 })).toBeTruthy()
+  expect(filterFn({ event_count: 1 })).toBeFalsy()
+  expect(filterFn({ event_count: 2 })).toBeTruthy()
 })
 
 
@@ -287,6 +287,6 @@ test('thirdOrMore() - when off does nothing', () => {
 
 test('thirdOrMore()', () => {
   const filterFn = filterOn({ fn: thirdOrMore, key: 'thirdOrMore' })
-  expect(filterFn({ event_number: 2 })).toBeFalsy()
-  expect(filterFn({ event_number: 3 })).toBeTruthy()
+  expect(filterFn({ event_count: 2 })).toBeFalsy()
+  expect(filterFn({ event_count: 3 })).toBeTruthy()
 })

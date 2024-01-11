@@ -66,7 +66,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 126.7,
     "patient_id": 200,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": "Possibly covered by FJP"
   },
@@ -137,7 +137,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 12,
     "patient_id": 192,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -208,7 +208,7 @@ const RealFullData = [
     "care_error_level": 1,
     "overall_patient_rating": 2.39,
     "patient_id": 115,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -279,7 +279,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 167.3,
     "patient_id": 27,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -350,7 +350,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 6,
     "patient_id": 61,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -421,7 +421,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 75.6,
     "patient_id": 62,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -492,7 +492,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 68.6,
     "patient_id": 63,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -563,7 +563,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 7,
     "patient_id": 65,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -634,7 +634,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 237.8,
     "patient_id": 66,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -705,7 +705,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 156.7,
     "patient_id": 118,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -776,7 +776,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 111.8,
     "patient_id": 28,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -847,7 +847,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 111.8,
     "patient_id": 68,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -918,7 +918,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 4,
     "patient_id": 69,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -989,7 +989,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 212.7,
     "patient_id": 70,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1060,7 +1060,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 6,
     "patient_id": 71,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1131,7 +1131,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 102.7,
     "patient_id": 72,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1202,7 +1202,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 6,
     "patient_id": 30,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1273,7 +1273,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 80.1,
     "patient_id": 31,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1344,7 +1344,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 185.5,
     "patient_id": 74,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1415,7 +1415,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 232.7,
     "patient_id": 77,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1486,7 +1486,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 6,
     "patient_id": 78,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1557,7 +1557,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 6,
     "patient_id": 79,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1628,7 +1628,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 80.7,
     "patient_id": 80,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1699,7 +1699,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 128.1,
     "patient_id": 83,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1770,7 +1770,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 32.1,
     "patient_id": 84,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1841,7 +1841,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 148.8,
     "patient_id": 85,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1912,7 +1912,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 148.8,
     "patient_id": 86,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -1983,7 +1983,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 339.2,
     "patient_id": 87,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2054,7 +2054,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 77.7,
     "patient_id": 88,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2125,7 +2125,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 231.1,
     "patient_id": 89,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2196,7 +2196,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 126.4,
     "patient_id": 90,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2267,7 +2267,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 117.2,
     "patient_id": 91,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2338,7 +2338,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 38.4,
     "patient_id": 94,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2409,7 +2409,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 19.5,
     "patient_id": 99,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2480,7 +2480,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 3,
     "patient_id": 181,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2551,7 +2551,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 250.4,
     "patient_id": 53,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2622,7 +2622,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 128.1,
     "patient_id": 54,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2693,7 +2693,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 128.1,
     "patient_id": 133,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2764,7 +2764,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 128.1,
     "patient_id": 127,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2835,7 +2835,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 103.8,
     "patient_id": 126,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2906,7 +2906,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 103.8,
     "patient_id": 125,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -2977,7 +2977,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 150.6,
     "patient_id": 124,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3048,7 +3048,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 7,
     "patient_id": 123,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3119,7 +3119,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 56.1,
     "patient_id": 140,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3190,7 +3190,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 8,
     "patient_id": 145,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3261,7 +3261,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 10,
     "patient_id": 146,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3332,7 +3332,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 18,
     "patient_id": 147,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3403,7 +3403,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 10,
     "patient_id": 148,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3474,7 +3474,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 79.3,
     "patient_id": 149,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3545,7 +3545,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 79.3,
     "patient_id": 150,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3616,7 +3616,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 821.9,
     "patient_id": 151,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3687,7 +3687,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 104.8,
     "patient_id": 152,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3758,7 +3758,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 104.8,
     "patient_id": 153,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3829,7 +3829,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 104.8,
     "patient_id": 154,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3900,7 +3900,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 104.8,
     "patient_id": 155,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -3971,7 +3971,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 16,
     "patient_id": 156,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4042,7 +4042,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 63.3,
     "patient_id": 157,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4113,7 +4113,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 41.6,
     "patient_id": 158,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4184,7 +4184,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 57.6,
     "patient_id": 159,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4255,7 +4255,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 12,
     "patient_id": 160,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4326,7 +4326,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 41.1,
     "patient_id": 161,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4397,7 +4397,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 25,
     "patient_id": 162,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4468,7 +4468,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 23,
     "patient_id": 163,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4539,7 +4539,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 23,
     "patient_id": 164,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4610,7 +4610,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 59.4,
     "patient_id": 165,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4681,7 +4681,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 59.4,
     "patient_id": 166,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4752,7 +4752,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 25,
     "patient_id": 167,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4823,7 +4823,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 25,
     "patient_id": 168,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4894,7 +4894,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 25,
     "patient_id": 169,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -4965,7 +4965,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 25,
     "patient_id": 170,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5036,7 +5036,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 25,
     "patient_id": 171,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5107,7 +5107,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 28,
     "patient_id": 172,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5178,7 +5178,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 28,
     "patient_id": 173,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5249,7 +5249,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 61.5,
     "patient_id": 174,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5320,7 +5320,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 114.5,
     "patient_id": 175,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5391,7 +5391,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 192.5,
     "patient_id": 176,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5462,7 +5462,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 12,
     "patient_id": 177,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5533,7 +5533,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 28,
     "patient_id": 178,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5604,7 +5604,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 12,
     "patient_id": 179,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5675,7 +5675,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 12,
     "patient_id": 180,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5746,7 +5746,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 72.8,
     "patient_id": 182,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5817,7 +5817,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 12,
     "patient_id": 183,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5888,7 +5888,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 34.5,
     "patient_id": 184,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -5959,7 +5959,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 108.7,
     "patient_id": 185,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6030,7 +6030,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 73.6,
     "patient_id": 186,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6101,7 +6101,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 213,
     "patient_id": 187,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6172,7 +6172,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 18,
     "patient_id": 188,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6243,7 +6243,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 12,
     "patient_id": 189,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6314,7 +6314,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 9,
     "patient_id": 190,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6385,7 +6385,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 101.8,
     "patient_id": 191,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6456,7 +6456,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 14,
     "patient_id": 193,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6527,7 +6527,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 14,
     "patient_id": 194,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6598,7 +6598,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 100.8,
     "patient_id": 195,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6669,7 +6669,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 9,
     "patient_id": 196,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6740,7 +6740,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 9,
     "patient_id": 197,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6811,7 +6811,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 134.6,
     "patient_id": 198,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6882,7 +6882,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 126.7,
     "patient_id": 199,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -6953,7 +6953,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 126.7,
     "patient_id": 201,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -7024,7 +7024,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 126.7,
     "patient_id": 202,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -7095,7 +7095,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 126.7,
     "patient_id": 203,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -7166,7 +7166,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 126.7,
     "patient_id": 204,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": "On the day I started this, my birthday"
   },
@@ -7237,7 +7237,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 137.1,
     "patient_id": 205,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -7308,7 +7308,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 85,
     "patient_id": 206,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -7379,7 +7379,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 138.1,
     "patient_id": 207,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -7450,7 +7450,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 139.8,
     "patient_id": 208,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -7521,7 +7521,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 114.3,
     "patient_id": 211,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -7592,7 +7592,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 114.3,
     "patient_id": 212,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -7663,7 +7663,7 @@ const RealFullData = [
     "care_error_level": 17,
     "overall_patient_rating": 10.4,
     "patient_id": 82,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "NT04",
     "notes": ""
   },
@@ -7734,7 +7734,7 @@ const RealFullData = [
     "care_error_level": 33.9,
     "overall_patient_rating": 22.92,
     "patient_id": 9,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -7805,7 +7805,7 @@ const RealFullData = [
     "care_error_level": 72.5,
     "overall_patient_rating": 55.61,
     "patient_id": 4,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "DIYJ06",
     "notes": ""
   },
@@ -7876,7 +7876,7 @@ const RealFullData = [
     "care_error_level": 42.5,
     "overall_patient_rating": 30.87,
     "patient_id": 3,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -7947,7 +7947,7 @@ const RealFullData = [
     "care_error_level": 62,
     "overall_patient_rating": 38.85,
     "patient_id": 64,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -8018,7 +8018,7 @@ const RealFullData = [
     "care_error_level": 74,
     "overall_patient_rating": 49.91,
     "patient_id": 4,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "NT11",
     "notes": ""
   },
@@ -8089,7 +8089,7 @@ const RealFullData = [
     "care_error_level": 37,
     "overall_patient_rating": 27.65,
     "patient_id": 67,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "ABD",
     "notes": ""
   },
@@ -8160,7 +8160,7 @@ const RealFullData = [
     "care_error_level": 25,
     "overall_patient_rating": 18.92,
     "patient_id": 3,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "ROM4-2",
     "notes": ""
   },
@@ -8231,7 +8231,7 @@ const RealFullData = [
     "care_error_level": 65.5,
     "overall_patient_rating": 56.29,
     "patient_id": 29,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -8302,7 +8302,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 1.89,
     "patient_id": 1,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -8373,7 +8373,7 @@ const RealFullData = [
     "care_error_level": 86,
     "overall_patient_rating": 62.75,
     "patient_id": 1,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -8444,7 +8444,7 @@ const RealFullData = [
     "care_error_level": 13,
     "overall_patient_rating": 12.15,
     "patient_id": 92,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "RN56",
     "notes": ""
   },
@@ -8515,7 +8515,7 @@ const RealFullData = [
     "care_error_level": 47.3,
     "overall_patient_rating": 41.99,
     "patient_id": 1,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -8586,7 +8586,7 @@ const RealFullData = [
     "care_error_level": 98.8,
     "overall_patient_rating": 73.99,
     "patient_id": 2,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -8657,7 +8657,7 @@ const RealFullData = [
     "care_error_level": 68.9,
     "overall_patient_rating": 52.13,
     "patient_id": 2,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -8728,7 +8728,7 @@ const RealFullData = [
     "care_error_level": 9.7,
     "overall_patient_rating": 12.66,
     "patient_id": 73,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "ACGIAJ02",
     "notes": ""
   },
@@ -8799,7 +8799,7 @@ const RealFullData = [
     "care_error_level": 92,
     "overall_patient_rating": 55.6,
     "patient_id": 32,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "RN44",
     "notes": ""
   },
@@ -8870,7 +8870,7 @@ const RealFullData = [
     "care_error_level": 29.5,
     "overall_patient_rating": 25.35,
     "patient_id": 75,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "UX2-1",
     "notes": ""
   },
@@ -8941,7 +8941,7 @@ const RealFullData = [
     "care_error_level": 33.2,
     "overall_patient_rating": 21.49,
     "patient_id": 76,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -9012,7 +9012,7 @@ const RealFullData = [
     "care_error_level": 20,
     "overall_patient_rating": 13.15,
     "patient_id": 81,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "RN52",
     "notes": ""
   },
@@ -9083,7 +9083,7 @@ const RealFullData = [
     "care_error_level": 84,
     "overall_patient_rating": 74.46,
     "patient_id": 13,
-    "event_number": 6,
+    "event_count": 6,
     "event_title": "",
     "notes": ""
   },
@@ -9154,7 +9154,7 @@ const RealFullData = [
     "care_error_level": 64,
     "overall_patient_rating": 54.48,
     "patient_id": 13,
-    "event_number": 7,
+    "event_count": 7,
     "event_title": "",
     "notes": ""
   },
@@ -9225,7 +9225,7 @@ const RealFullData = [
     "care_error_level": 90,
     "overall_patient_rating": 75.71,
     "patient_id": 119,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -9296,7 +9296,7 @@ const RealFullData = [
     "care_error_level": 45,
     "overall_patient_rating": 35.3,
     "patient_id": 5,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -9367,7 +9367,7 @@ const RealFullData = [
     "care_error_level": 15,
     "overall_patient_rating": 10.29,
     "patient_id": 5,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -9438,7 +9438,7 @@ const RealFullData = [
     "care_error_level": 70.3,
     "overall_patient_rating": 53.32,
     "patient_id": 5,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -9509,7 +9509,7 @@ const RealFullData = [
     "care_error_level": 29,
     "overall_patient_rating": 23.22,
     "patient_id": 6,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "DIYJ04",
     "notes": ""
   },
@@ -9580,7 +9580,7 @@ const RealFullData = [
     "care_error_level": 94,
     "overall_patient_rating": 62.17,
     "patient_id": 6,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "LICH01",
     "notes": ""
   },
@@ -9651,7 +9651,7 @@ const RealFullData = [
     "care_error_level": 18,
     "overall_patient_rating": 16.14,
     "patient_id": 6,
-    "event_number": 4,
+    "event_count": 4,
     "event_title": "ACGIAJ01",
     "notes": ""
   },
@@ -9722,7 +9722,7 @@ const RealFullData = [
     "care_error_level": 21.4,
     "overall_patient_rating": 20.52,
     "patient_id": 6,
-    "event_number": 5,
+    "event_count": 5,
     "event_title": "2ST",
     "notes": ""
   },
@@ -9793,7 +9793,7 @@ const RealFullData = [
     "care_error_level": 18.5,
     "overall_patient_rating": 17.42,
     "patient_id": 6,
-    "event_number": 6,
+    "event_count": 6,
     "event_title": "NT12",
     "notes": ""
   },
@@ -9864,7 +9864,7 @@ const RealFullData = [
     "care_error_level": 52,
     "overall_patient_rating": 40.02,
     "patient_id": 6,
-    "event_number": 7,
+    "event_count": 7,
     "event_title": "RN60_1",
     "notes": ""
   },
@@ -9935,7 +9935,7 @@ const RealFullData = [
     "care_error_level": 80.3,
     "overall_patient_rating": 57.03,
     "patient_id": 6,
-    "event_number": 8,
+    "event_count": 8,
     "event_title": "RN61_1",
     "notes": ""
   },
@@ -10006,7 +10006,7 @@ const RealFullData = [
     "care_error_level": 43,
     "overall_patient_rating": 32.68,
     "patient_id": 93,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "DSYN01",
     "notes": ""
   },
@@ -10077,7 +10077,7 @@ const RealFullData = [
     "care_error_level": 19.5,
     "overall_patient_rating": 12.57,
     "patient_id": 22,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -10148,7 +10148,7 @@ const RealFullData = [
     "care_error_level": 47.8,
     "overall_patient_rating": 44.21,
     "patient_id": 7,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -10219,7 +10219,7 @@ const RealFullData = [
     "care_error_level": 21.1,
     "overall_patient_rating": 15.48,
     "patient_id": 7,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -10290,7 +10290,7 @@ const RealFullData = [
     "care_error_level": 56,
     "overall_patient_rating": 43.08,
     "patient_id": 33,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "UX01",
     "notes": ""
   },
@@ -10361,7 +10361,7 @@ const RealFullData = [
     "care_error_level": 17,
     "overall_patient_rating": 11.13,
     "patient_id": 8,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -10432,7 +10432,7 @@ const RealFullData = [
     "care_error_level": 67.3,
     "overall_patient_rating": 42.56,
     "patient_id": 8,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -10503,7 +10503,7 @@ const RealFullData = [
     "care_error_level": 5,
     "overall_patient_rating": 6.07,
     "patient_id": 9,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -10574,7 +10574,7 @@ const RealFullData = [
     "care_error_level": 38,
     "overall_patient_rating": 26.32,
     "patient_id": 10,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "ACGIAJ02",
     "notes": ""
   },
@@ -10645,7 +10645,7 @@ const RealFullData = [
     "care_error_level": 25.5,
     "overall_patient_rating": 20.73,
     "patient_id": 10,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -10716,7 +10716,7 @@ const RealFullData = [
     "care_error_level": 5,
     "overall_patient_rating": 5.58,
     "patient_id": 37,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -10787,7 +10787,7 @@ const RealFullData = [
     "care_error_level": 11.5,
     "overall_patient_rating": 9.08,
     "patient_id": 22,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -10858,7 +10858,7 @@ const RealFullData = [
     "care_error_level": 65.4,
     "overall_patient_rating": 43.55,
     "patient_id": 95,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": "Dupe, for sure"
   },
@@ -10929,7 +10929,7 @@ const RealFullData = [
     "care_error_level": 58.4,
     "overall_patient_rating": 38.13,
     "patient_id": 96,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -11000,7 +11000,7 @@ const RealFullData = [
     "care_error_level": 35.5,
     "overall_patient_rating": 31.06,
     "patient_id": 97,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -11071,7 +11071,7 @@ const RealFullData = [
     "care_error_level": 80,
     "overall_patient_rating": 52,
     "patient_id": 98,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -11142,7 +11142,7 @@ const RealFullData = [
     "care_error_level": 28.5,
     "overall_patient_rating": 20,
     "patient_id": 100,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -11213,7 +11213,7 @@ const RealFullData = [
     "care_error_level": 3,
     "overall_patient_rating": 6.93,
     "patient_id": 101,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -11284,7 +11284,7 @@ const RealFullData = [
     "care_error_level": 37.2,
     "overall_patient_rating": 24.62,
     "patient_id": 20,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -11355,7 +11355,7 @@ const RealFullData = [
     "care_error_level": 22,
     "overall_patient_rating": 15.28,
     "patient_id": 102,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -11426,7 +11426,7 @@ const RealFullData = [
     "care_error_level": 60.5,
     "overall_patient_rating": 40.8,
     "patient_id": 21,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -11497,7 +11497,7 @@ const RealFullData = [
     "care_error_level": 26,
     "overall_patient_rating": 19.47,
     "patient_id": 11,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -11568,7 +11568,7 @@ const RealFullData = [
     "care_error_level": 5,
     "overall_patient_rating": 6.01,
     "patient_id": 11,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -11639,7 +11639,7 @@ const RealFullData = [
     "care_error_level": 65.2,
     "overall_patient_rating": 46.96,
     "patient_id": 11,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -11710,7 +11710,7 @@ const RealFullData = [
     "care_error_level": 13,
     "overall_patient_rating": 12.37,
     "patient_id": 12,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -11781,7 +11781,7 @@ const RealFullData = [
     "care_error_level": 53.5,
     "overall_patient_rating": 49.41,
     "patient_id": 12,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -11852,7 +11852,7 @@ const RealFullData = [
     "care_error_level": 20.5,
     "overall_patient_rating": 15.64,
     "patient_id": 13,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -11923,7 +11923,7 @@ const RealFullData = [
     "care_error_level": 16.5,
     "overall_patient_rating": 12.15,
     "patient_id": 13,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -11994,7 +11994,7 @@ const RealFullData = [
     "care_error_level": 20.5,
     "overall_patient_rating": 15.37,
     "patient_id": 13,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -12065,7 +12065,7 @@ const RealFullData = [
     "care_error_level": 14.5,
     "overall_patient_rating": 11.61,
     "patient_id": 13,
-    "event_number": 4,
+    "event_count": 4,
     "event_title": "",
     "notes": ""
   },
@@ -12136,7 +12136,7 @@ const RealFullData = [
     "care_error_level": 19.4,
     "overall_patient_rating": 15.14,
     "patient_id": 13,
-    "event_number": 5,
+    "event_count": 5,
     "event_title": "",
     "notes": ""
   },
@@ -12207,7 +12207,7 @@ const RealFullData = [
     "care_error_level": 103.8,
     "overall_patient_rating": 86.1,
     "patient_id": 14,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -12278,7 +12278,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 2.16,
     "patient_id": 14,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -12349,7 +12349,7 @@ const RealFullData = [
     "care_error_level": 19,
     "overall_patient_rating": 13.35,
     "patient_id": 14,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -12420,7 +12420,7 @@ const RealFullData = [
     "care_error_level": 19,
     "overall_patient_rating": 12.78,
     "patient_id": 14,
-    "event_number": 4,
+    "event_count": 4,
     "event_title": "",
     "notes": ""
   },
@@ -12491,7 +12491,7 @@ const RealFullData = [
     "care_error_level": 32.8,
     "overall_patient_rating": 23.9,
     "patient_id": 14,
-    "event_number": 5,
+    "event_count": 5,
     "event_title": "",
     "notes": ""
   },
@@ -12562,7 +12562,7 @@ const RealFullData = [
     "care_error_level": 43,
     "overall_patient_rating": 27.69,
     "patient_id": 103,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -12633,7 +12633,7 @@ const RealFullData = [
     "care_error_level": 31.5,
     "overall_patient_rating": 25.95,
     "patient_id": 104,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -12704,7 +12704,7 @@ const RealFullData = [
     "care_error_level": 16.9,
     "overall_patient_rating": 13.81,
     "patient_id": 105,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -12775,7 +12775,7 @@ const RealFullData = [
     "care_error_level": 1,
     "overall_patient_rating": 3.09,
     "patient_id": 15,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -12846,7 +12846,7 @@ const RealFullData = [
     "care_error_level": 16,
     "overall_patient_rating": 13.65,
     "patient_id": 15,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -12917,7 +12917,7 @@ const RealFullData = [
     "care_error_level": 38,
     "overall_patient_rating": 26.18,
     "patient_id": 15,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -12988,7 +12988,7 @@ const RealFullData = [
     "care_error_level": 24.5,
     "overall_patient_rating": 20.23,
     "patient_id": 24,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -13059,7 +13059,7 @@ const RealFullData = [
     "care_error_level": 16.9,
     "overall_patient_rating": 12.62,
     "patient_id": 106,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13130,7 +13130,7 @@ const RealFullData = [
     "care_error_level": 25,
     "overall_patient_rating": 20.27,
     "patient_id": 107,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13201,7 +13201,7 @@ const RealFullData = [
     "care_error_level": 18.9,
     "overall_patient_rating": 13.97,
     "patient_id": 108,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13272,7 +13272,7 @@ const RealFullData = [
     "care_error_level": 13.7,
     "overall_patient_rating": 11.91,
     "patient_id": 109,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13343,7 +13343,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 1.7,
     "patient_id": 110,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13414,7 +13414,7 @@ const RealFullData = [
     "care_error_level": 46.5,
     "overall_patient_rating": 35.97,
     "patient_id": 111,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13485,7 +13485,7 @@ const RealFullData = [
     "care_error_level": 0.5,
     "overall_patient_rating": 3.14,
     "patient_id": 25,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13556,7 +13556,7 @@ const RealFullData = [
     "care_error_level": 35,
     "overall_patient_rating": 24.84,
     "patient_id": 112,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13627,7 +13627,7 @@ const RealFullData = [
     "care_error_level": 1,
     "overall_patient_rating": 4.04,
     "patient_id": 113,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13698,7 +13698,7 @@ const RealFullData = [
     "care_error_level": 38,
     "overall_patient_rating": 26.24,
     "patient_id": 20,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13769,7 +13769,7 @@ const RealFullData = [
     "care_error_level": 3,
     "overall_patient_rating": 5.01,
     "patient_id": 114,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13840,7 +13840,7 @@ const RealFullData = [
     "care_error_level": -1,
     "overall_patient_rating": 0.85,
     "patient_id": 116,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13911,7 +13911,7 @@ const RealFullData = [
     "care_error_level": -1,
     "overall_patient_rating": 0.85,
     "patient_id": 117,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -13982,7 +13982,7 @@ const RealFullData = [
     "care_error_level": 4,
     "overall_patient_rating": 4.7,
     "patient_id": 41,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -14053,7 +14053,7 @@ const RealFullData = [
     "care_error_level": -1,
     "overall_patient_rating": 1.12,
     "patient_id": 16,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -14124,7 +14124,7 @@ const RealFullData = [
     "care_error_level": 41.5,
     "overall_patient_rating": 28.26,
     "patient_id": 16,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -14195,7 +14195,7 @@ const RealFullData = [
     "care_error_level": 11,
     "overall_patient_rating": 9.69,
     "patient_id": 42,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -14266,7 +14266,7 @@ const RealFullData = [
     "care_error_level": 16.9,
     "overall_patient_rating": 12.57,
     "patient_id": 43,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -14337,7 +14337,7 @@ const RealFullData = [
     "care_error_level": 44,
     "overall_patient_rating": 27.76,
     "patient_id": 17,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -14408,7 +14408,7 @@ const RealFullData = [
     "care_error_level": 42,
     "overall_patient_rating": 27.62,
     "patient_id": 17,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -14479,7 +14479,7 @@ const RealFullData = [
     "care_error_level": -1,
     "overall_patient_rating": 1.82,
     "patient_id": 17,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -14550,7 +14550,7 @@ const RealFullData = [
     "care_error_level": 1,
     "overall_patient_rating": 2.12,
     "patient_id": 44,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -14621,7 +14621,7 @@ const RealFullData = [
     "care_error_level": 36.5,
     "overall_patient_rating": 24.79,
     "patient_id": 10,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -14692,7 +14692,7 @@ const RealFullData = [
     "care_error_level": -1,
     "overall_patient_rating": 1.52,
     "patient_id": 38,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -14763,7 +14763,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 1.97,
     "patient_id": 39,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -14834,7 +14834,7 @@ const RealFullData = [
     "care_error_level": 18.5,
     "overall_patient_rating": 13.91,
     "patient_id": 18,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -14905,7 +14905,7 @@ const RealFullData = [
     "care_error_level": 18.5,
     "overall_patient_rating": 14.23,
     "patient_id": 18,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -14976,7 +14976,7 @@ const RealFullData = [
     "care_error_level": 37,
     "overall_patient_rating": 25.2,
     "patient_id": 19,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -15047,7 +15047,7 @@ const RealFullData = [
     "care_error_level": 52.5,
     "overall_patient_rating": 36.33,
     "patient_id": 19,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -15118,7 +15118,7 @@ const RealFullData = [
     "care_error_level": 17,
     "overall_patient_rating": 10.84,
     "patient_id": 45,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -15189,7 +15189,7 @@ const RealFullData = [
     "care_error_level": 34.5,
     "overall_patient_rating": 23.46,
     "patient_id": 46,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -15260,7 +15260,7 @@ const RealFullData = [
     "care_error_level": 9.5,
     "overall_patient_rating": 9.48,
     "patient_id": 47,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -15331,7 +15331,7 @@ const RealFullData = [
     "care_error_level": 25.5,
     "overall_patient_rating": 18.41,
     "patient_id": 48,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -15402,7 +15402,7 @@ const RealFullData = [
     "care_error_level": 25,
     "overall_patient_rating": 18.08,
     "patient_id": 49,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -15473,7 +15473,7 @@ const RealFullData = [
     "care_error_level": 22.5,
     "overall_patient_rating": 18.72,
     "patient_id": 50,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -15544,7 +15544,7 @@ const RealFullData = [
     "care_error_level": 34.5,
     "overall_patient_rating": 24.73,
     "patient_id": 21,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -15615,7 +15615,7 @@ const RealFullData = [
     "care_error_level": 35.4,
     "overall_patient_rating": 26.56,
     "patient_id": 51,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -15686,7 +15686,7 @@ const RealFullData = [
     "care_error_level": 8,
     "overall_patient_rating": 5.9,
     "patient_id": 15,
-    "event_number": 4,
+    "event_count": 4,
     "event_title": "",
     "notes": ""
   },
@@ -15757,7 +15757,7 @@ const RealFullData = [
     "care_error_level": 31,
     "overall_patient_rating": 21.38,
     "patient_id": 52,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -15828,7 +15828,7 @@ const RealFullData = [
     "care_error_level": 64,
     "overall_patient_rating": 43.93,
     "patient_id": 8,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -15899,7 +15899,7 @@ const RealFullData = [
     "care_error_level": 13,
     "overall_patient_rating": 10.34,
     "patient_id": 55,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "RN62",
     "notes": ""
   },
@@ -15970,7 +15970,7 @@ const RealFullData = [
     "care_error_level": 37,
     "overall_patient_rating": 26.79,
     "patient_id": 56,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -16041,7 +16041,7 @@ const RealFullData = [
     "care_error_level": 22,
     "overall_patient_rating": 15.39,
     "patient_id": 40,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -16112,7 +16112,7 @@ const RealFullData = [
     "care_error_level": 36.9,
     "overall_patient_rating": 23.2,
     "patient_id": 23,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "RN16",
     "notes": ""
   },
@@ -16183,7 +16183,7 @@ const RealFullData = [
     "care_error_level": 36.9,
     "overall_patient_rating": 23.26,
     "patient_id": 23,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "RN16",
     "notes": ""
   },
@@ -16254,7 +16254,7 @@ const RealFullData = [
     "care_error_level": 35.9,
     "overall_patient_rating": 23.11,
     "patient_id": 23,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "RN16",
     "notes": ""
   },
@@ -16325,7 +16325,7 @@ const RealFullData = [
     "care_error_level": 35.9,
     "overall_patient_rating": 23.08,
     "patient_id": 23,
-    "event_number": 4,
+    "event_count": 4,
     "event_title": "RN16",
     "notes": ""
   },
@@ -16396,7 +16396,7 @@ const RealFullData = [
     "care_error_level": 18,
     "overall_patient_rating": 11.44,
     "patient_id": 57,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "RN22-2",
     "notes": ""
   },
@@ -16467,7 +16467,7 @@ const RealFullData = [
     "care_error_level": 22,
     "overall_patient_rating": 16.98,
     "patient_id": 58,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "RN51",
     "notes": ""
   },
@@ -16538,7 +16538,7 @@ const RealFullData = [
     "care_error_level": 87.8,
     "overall_patient_rating": 68.08,
     "patient_id": 6,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "ALITD01",
     "notes": ""
   },
@@ -16609,7 +16609,7 @@ const RealFullData = [
     "care_error_level": 49,
     "overall_patient_rating": 34.93,
     "patient_id": 24,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "ADS01",
     "notes": ""
   },
@@ -16680,7 +16680,7 @@ const RealFullData = [
     "care_error_level": 30,
     "overall_patient_rating": 20.67,
     "patient_id": 59,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -16751,7 +16751,7 @@ const RealFullData = [
     "care_error_level": 33,
     "overall_patient_rating": 25.38,
     "patient_id": 25,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -16822,7 +16822,7 @@ const RealFullData = [
     "care_error_level": 1.5,
     "overall_patient_rating": 3.91,
     "patient_id": 26,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -16893,7 +16893,7 @@ const RealFullData = [
     "care_error_level": 61,
     "overall_patient_rating": 43.05,
     "patient_id": 26,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -16964,7 +16964,7 @@ const RealFullData = [
     "care_error_level": 17.2,
     "overall_patient_rating": 14.15,
     "patient_id": 60,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -17035,7 +17035,7 @@ const RealFullData = [
     "care_error_level": -12,
     "overall_patient_rating": -4.39,
     "patient_id": 4,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -17106,7 +17106,7 @@ const RealFullData = [
     "care_error_level": 36,
     "overall_patient_rating": 26.48,
     "patient_id": 4,
-    "event_number": 4,
+    "event_count": 4,
     "event_title": "",
     "notes": ""
   },
@@ -17177,7 +17177,7 @@ const RealFullData = [
     "care_error_level": 86.8,
     "overall_patient_rating": 56.02,
     "patient_id": 6,
-    "event_number": 9,
+    "event_count": 9,
     "event_title": "I23",
     "notes": ""
   },
@@ -17248,7 +17248,7 @@ const RealFullData = [
     "care_error_level": 45.3,
     "overall_patient_rating": 34.19,
     "patient_id": 6,
-    "event_number": 10,
+    "event_count": 10,
     "event_title": "RN65_1",
     "notes": ""
   },
@@ -17319,7 +17319,7 @@ const RealFullData = [
     "care_error_level": 46.3,
     "overall_patient_rating": 34.25,
     "patient_id": 6,
-    "event_number": 11,
+    "event_count": 11,
     "event_title": "RN59-1",
     "notes": ""
   },
@@ -17390,7 +17390,7 @@ const RealFullData = [
     "care_error_level": 31.5,
     "overall_patient_rating": 23.98,
     "patient_id": 6,
-    "event_number": 12,
+    "event_count": 12,
     "event_title": "NT01",
     "notes": ""
   },
@@ -17461,7 +17461,7 @@ const RealFullData = [
     "care_error_level": 32,
     "overall_patient_rating": 24.99,
     "patient_id": 6,
-    "event_number": 13,
+    "event_count": 13,
     "event_title": "RN63-2",
     "notes": ""
   },
@@ -17532,7 +17532,7 @@ const RealFullData = [
     "care_error_level": 46,
     "overall_patient_rating": 34.59,
     "patient_id": 120,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "RN57",
     "notes": ""
   },
@@ -17603,7 +17603,7 @@ const RealFullData = [
     "care_error_level": 85.5,
     "overall_patient_rating": 84.17,
     "patient_id": 121,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -17674,7 +17674,7 @@ const RealFullData = [
     "care_error_level": 66.5,
     "overall_patient_rating": 52.87,
     "patient_id": 132,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": "Possible dupe"
   },
@@ -17745,7 +17745,7 @@ const RealFullData = [
     "care_error_level": -1,
     "overall_patient_rating": 1.28,
     "patient_id": 131,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -17816,7 +17816,7 @@ const RealFullData = [
     "care_error_level": -2,
     "overall_patient_rating": 2.45,
     "patient_id": 131,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -17887,7 +17887,7 @@ const RealFullData = [
     "care_error_level": -1,
     "overall_patient_rating": 1.52,
     "patient_id": 130,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -17958,7 +17958,7 @@ const RealFullData = [
     "care_error_level": -1,
     "overall_patient_rating": 2.17,
     "patient_id": 130,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -18029,7 +18029,7 @@ const RealFullData = [
     "care_error_level": -1,
     "overall_patient_rating": 2.25,
     "patient_id": 130,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -18100,7 +18100,7 @@ const RealFullData = [
     "care_error_level": 8.3,
     "overall_patient_rating": 7.53,
     "patient_id": 129,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -18171,7 +18171,7 @@ const RealFullData = [
     "care_error_level": -4,
     "overall_patient_rating": -0.22,
     "patient_id": 128,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -18242,7 +18242,7 @@ const RealFullData = [
     "care_error_level": 97.5,
     "overall_patient_rating": 64.43,
     "patient_id": 122,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -18313,7 +18313,7 @@ const RealFullData = [
     "care_error_level": 39.8,
     "overall_patient_rating": 30.7,
     "patient_id": 122,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -18384,7 +18384,7 @@ const RealFullData = [
     "care_error_level": 7.2,
     "overall_patient_rating": 7.09,
     "patient_id": 134,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -18455,7 +18455,7 @@ const RealFullData = [
     "care_error_level": 7.2,
     "overall_patient_rating": 7.09,
     "patient_id": 135,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -18526,7 +18526,7 @@ const RealFullData = [
     "care_error_level": 7.2,
     "overall_patient_rating": 7.09,
     "patient_id": 136,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -18597,7 +18597,7 @@ const RealFullData = [
     "care_error_level": 7.2,
     "overall_patient_rating": 7.09,
     "patient_id": 137,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -18668,7 +18668,7 @@ const RealFullData = [
     "care_error_level": 75,
     "overall_patient_rating": 56.35,
     "patient_id": 138,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -18739,7 +18739,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 2.35,
     "patient_id": 139,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -18810,7 +18810,7 @@ const RealFullData = [
     "care_error_level": 1.5,
     "overall_patient_rating": 2.56,
     "patient_id": 139,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -18881,7 +18881,7 @@ const RealFullData = [
     "care_error_level": 107.8,
     "overall_patient_rating": 93.21,
     "patient_id": 141,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -18952,7 +18952,7 @@ const RealFullData = [
     "care_error_level": 26,
     "overall_patient_rating": 20.79,
     "patient_id": 130,
-    "event_number": 4,
+    "event_count": 4,
     "event_title": "",
     "notes": ""
   },
@@ -19023,7 +19023,7 @@ const RealFullData = [
     "care_error_level": 15.2,
     "overall_patient_rating": 11.58,
     "patient_id": 142,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -19094,7 +19094,7 @@ const RealFullData = [
     "care_error_level": 38.5,
     "overall_patient_rating": 30.89,
     "patient_id": 143,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "RN34",
     "notes": ""
   },
@@ -19165,7 +19165,7 @@ const RealFullData = [
     "care_error_level": 46.3,
     "overall_patient_rating": 29.4,
     "patient_id": 144,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -19236,7 +19236,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 1.48,
     "patient_id": 209,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -19307,7 +19307,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 1.7,
     "patient_id": 209,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -19378,7 +19378,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 1.94,
     "patient_id": 209,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -19449,7 +19449,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 2.27,
     "patient_id": 209,
-    "event_number": 4,
+    "event_count": 4,
     "event_title": "",
     "notes": ""
   },
@@ -19520,7 +19520,7 @@ const RealFullData = [
     "care_error_level": -2,
     "overall_patient_rating": 0.54,
     "patient_id": 210,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -19591,7 +19591,7 @@ const RealFullData = [
     "care_error_level": -2,
     "overall_patient_rating": 0.75,
     "patient_id": 210,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -19662,7 +19662,7 @@ const RealFullData = [
     "care_error_level": 18.5,
     "overall_patient_rating": 13.48,
     "patient_id": 210,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -19733,7 +19733,7 @@ const RealFullData = [
     "care_error_level": -1,
     "overall_patient_rating": 2.98,
     "patient_id": 210,
-    "event_number": 4,
+    "event_count": 4,
     "event_title": "",
     "notes": ""
   },
@@ -19804,7 +19804,7 @@ const RealFullData = [
     "care_error_level": 59.5,
     "overall_patient_rating": 45.05,
     "patient_id": 213,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -19875,7 +19875,7 @@ const RealFullData = [
     "care_error_level": 16.5,
     "overall_patient_rating": 13.77,
     "patient_id": 213,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -19946,7 +19946,7 @@ const RealFullData = [
     "care_error_level": 31.5,
     "overall_patient_rating": 24.76,
     "patient_id": 213,
-    "event_number": 3,
+    "event_count": 3,
     "event_title": "",
     "notes": ""
   },
@@ -20017,7 +20017,7 @@ const RealFullData = [
     "care_error_level": 3.5,
     "overall_patient_rating": 5.77,
     "patient_id": 213,
-    "event_number": 4,
+    "event_count": 4,
     "event_title": "",
     "notes": ""
   },
@@ -20088,7 +20088,7 @@ const RealFullData = [
     "care_error_level": -6,
     "overall_patient_rating": -1.03,
     "patient_id": 214,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -20159,7 +20159,7 @@ const RealFullData = [
     "care_error_level": 6.5,
     "overall_patient_rating": 6.74,
     "patient_id": 215,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -20230,7 +20230,7 @@ const RealFullData = [
     "care_error_level": -1.5,
     "overall_patient_rating": 2.24,
     "patient_id": 215,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -20301,7 +20301,7 @@ const RealFullData = [
     "care_error_level": 14.5,
     "overall_patient_rating": 10.82,
     "patient_id": 216,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -20372,7 +20372,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 2.16,
     "patient_id": 217,
-    "event_number": 2,
+    "event_count": 2,
     "event_title": "",
     "notes": ""
   },
@@ -20443,7 +20443,7 @@ const RealFullData = [
     "care_error_level": 0,
     "overall_patient_rating": 2.05,
     "patient_id": 217,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   },
@@ -20514,7 +20514,7 @@ const RealFullData = [
     "care_error_level": 38.8,
     "overall_patient_rating": 30.09,
     "patient_id": 24,
-    "event_number": 1,
+    "event_count": 1,
     "event_title": "",
     "notes": ""
   }

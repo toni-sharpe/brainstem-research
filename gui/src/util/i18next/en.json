@@ -4,7 +4,7 @@
     "care_technique_1": "Care technique 1",
     "death_response_1": "Death response 1",
     "death_response_2": "Death response 2",
-    "event_number": "Pathological event order",
+    "event_count": "Pathological event order",
     "fatal_symptom_1": "Fatal symptom 1",
     "fatal_symptom_2": "Fatal symptom 2",
     "first_prime_symptom": "1st moment of prime symptom",
