@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { isNil } from 'ramda'
 
 import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 import { CROSSOVER_TO_SERIOUS } from 'util/Constant/BaseConstantList'
@@ -13,7 +14,7 @@ function writeClassName({ crossover, fullSum, v }) {
 }
 
 function SumOutput({ crossover, fullSum, k, v, }) {
-  if (!v) {
+  if (isNil(v)) {
     return null
   }
 
