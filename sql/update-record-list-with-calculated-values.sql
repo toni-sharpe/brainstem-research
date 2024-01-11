@@ -39,10 +39,14 @@ begin
         pe.intro_symptom_start,
         pe.intro_symptom_end
       ),
-      mild_symptom_1_duration = calc_mild_symptom_1_duration(pe)
+      mild_symptom_1_duration = calc_mild_symptom_1_duration(pe),
+      mild_symptom_2_duration = calc_duration_to_greatest(pe, pe.mild_symptom_2),
+      prime_symptom_1_duration = calc_duration_to_greatest(pe, pe.prime_symptom_1),
+      prime_symptom_2_duration = calc_duration_to_greatest(pe, pe.prime_symptom_2),
+      prime_symptom_3_duration = calc_duration_to_greatest(pe, pe.prime_symptom_3)
     where
       pathological_event_id = pe.pathological_event_id;
   end loop;
-  return this_intro_symptom_duration;
+  return null;
 end;
 $$ language plpgsql;
