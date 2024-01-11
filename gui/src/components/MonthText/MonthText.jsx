@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { isNotNil } from 'ramda'
 
 import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 
@@ -11,16 +12,13 @@ import './MonthText.scss'
 function makeSumMapper({ crossover, month }) {
   return (v, i) => {
     return (
-      <dd
-        className='month-text__elem row-layout space-children--narrowest'
-        key={`val-list-${i}`}
-      >
+      <div className='month-text__sum-val-output'>
         <SumOutput
           crossover={crossover}
           key={`${month}-v-${i}`}
           v={v}
         />
-      </dd>
+      </div>
     )
   }
 }
@@ -31,15 +29,19 @@ function MonthText({
   valSum,
   valOutputList
 }) {
-  return (valSum || valOutputList) && (
-    <dl className='month-text row-layout space-children--narrowest'>
+  return (isNotNil(valSum) || valOutputList?.length > 0) && (
+    <dl className='month-text column-layout space-children--narrowest'>
       <dt className='month-text__elem'>
         <SumOutput fullSum key='total' v={valSum} />
       </dt>
-      {valOutputList
-        .sort(sortFn)
-        .map(makeSumMapper({ crossover, month }))
-      }
+      <dd
+        className='month-text__elem row-layout space-children--narrowest'
+      >
+        {valOutputList
+          .sort(sortFn)
+          .map(makeSumMapper({ crossover, month }))
+        }
+      </dd>
     </dl>
   )
 }
@@ -47,7 +49,6 @@ function MonthText({
 MonthText.defaultProps = {
   crossover: CROSSOVER_TO_SERIOUS,
   month: '01',
-  valSum: 0,
 }
 
 MonthText.propTypes = {
