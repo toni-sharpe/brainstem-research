@@ -12,10 +12,12 @@ import './MonthText.scss'
 function makeSumMapper({ crossover, month }) {
   return (v, i) => {
     return (
-      <div className='month-text__sum-val-output'>
+      <div
+        className='month-text__sum-val-output'
+        key={`${month}-v-${i}`}
+      >
         <SumOutput
           crossover={crossover}
-          key={`${month}-v-${i}`}
           v={v}
         />
       </div>

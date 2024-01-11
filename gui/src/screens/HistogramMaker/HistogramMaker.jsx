@@ -8,6 +8,7 @@ import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
 import Button from 'components/Button/Button'
 import { secondaryNavProps } from 'util/UtilNav/UtilNav'
+import { HISTOGRAM_BAR_LIST_MARGIN } from 'util/Constant/BaseConstantList'
 
 import { calcHistogramBarGroupList, dataFnList } from './HistogramMakerDataFunctions'
 import './HistogramMaker.scss'
@@ -30,7 +31,16 @@ function HistogramMaker({ data }) {
     data,
   })
 
-  const blockSize = Math.min(1124/7/currentPathogenStepList.length, 72)
+  const totalBarListCount = 7
+  const marginCount = 6
+  const leftAfterMargins = 98 - marginCount
+  const blockSize =
+    leftAfterMargins
+    /
+    totalBarListCount
+    /
+    currentPathogenStepList.length
+
   const barCountPerBlock = currentPathogenStepList.length
 
   const commonNavProps = {
@@ -53,7 +63,7 @@ function HistogramMaker({ data }) {
         </SecondaryNav>
       )}
     >
-      <div className='histogram-maker row-layout space-children--wide'>
+      <div className='histogram-maker row-layout space-children'>
         <AxisSelector
           align='right'
           axis='stats'
@@ -64,10 +74,8 @@ function HistogramMaker({ data }) {
         />
         <div className='histogram-maker__data'>
           <Histogram
-            averageLineList={[]}
             barCountPerBlock={barCountPerBlock}
-            barMargin={8}
-            blockDataSize={blockSize}
+            barMargin={HISTOGRAM_BAR_LIST_MARGIN}
             blockSize={blockSize}
             histogramBarGroupList={histogramBarGroupList}
             heightPaddingLines={0}

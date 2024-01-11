@@ -25,8 +25,7 @@ test('HistogramMaker - ', async () => {
   /*
    * Simple tests of on screen specifics, not always needed
    */
-  expect(screen.getByText('Stats per grouping')).toBeTruthy()
-  expect(screen.getByText('Groupings (bars)')).toBeTruthy()
+  expect(screen.getByText('Bars')).toBeTruthy()
   expect(screen.getByText('Durations')).toBeTruthy()
   expect(screen.getByText('Single measures')).toBeTruthy()
 })

@@ -53,23 +53,26 @@ function AxisSelector({
 
   function makeButton({ k }) {
     const isPrimaryMarked = primaryMark === k
-    const label = i18next.t(`CommonClinicalResponses.${k}`)
+    const abbrevLabel = i18next.t(`CommonClinicalResponses.${k}_abbrev`)
+    const fullLabel = i18next.t(`CommonClinicalResponses.${k}`)
     const primaryMarkAriaExtra = isPrimaryMarked
       ? `, ${i18next.t(`${i18nBase}.primaryMark`)}`
       : ''
-    const ariaLabel = `${label} ${i18next.t(`${i18nBase}.shownOn${axis}`)}${primaryMarkAriaExtra}`
+    const ariaLabel = `${fullLabel} ${i18next.t(`${i18nBase}.shownOn${axis}`)}${primaryMarkAriaExtra}`
 
     const buttonProps = {
       ariaLabel,
       extraClass: 'axis-selector__button',
       isDisabled: isOrIsInArray({ arr: disabledSelection, k }),
+      isPrimaryMarked,
       isSelected: isOrIsInArray({ arr: currentAxisSelection, k }),
-      label,
+      label: abbrevLabel,
       onClick: () => makeSelectionFn({
         currentAxisSelection,
         setCurrentAxisSelection,
       })(k),
       size: 'small',
+      title: fullLabel,
     }
 
     const primaryMarkClass = isPrimaryMarked

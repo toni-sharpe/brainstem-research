@@ -2,7 +2,7 @@ import * as ramda from 'ramda'
 
 import { throwFnError, throwError } from 'util/Util/Util'
 import { calcHistogramBarHeight } from 'util/UtilHistogram/UtilHistogram'
-import { PRIME_SYMPTOM_HISTOGRAM_BAR_GROUP_MAP } from 'util/Constant/BaseConstantList'
+import { PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_MAP } from 'util/Constant/BaseConstantList'
 
 export const primeSymptomHistogramBarGrouper = ({ first_prime_symptom } = {}) => {
   if (first_prime_symptom > 60) { return 60; }
@@ -89,7 +89,7 @@ export function calcPrimeSymptomHistogramBarGroup({
   })
   return ramda.pipe(
     ramda.groupBy(primeSymptomHistogramBarGrouper),
-    ramda.mergeRight(PRIME_SYMPTOM_HISTOGRAM_BAR_GROUP_MAP),
+    ramda.mergeRight(PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_MAP),
     ramda.toPairs,
     ramda.map(([k, v]) => {
       const { FAT, NFT } = groupByOutcome(v)

@@ -1,10 +1,12 @@
 .x-axis-line-list {
   position: relative;
+  width: 100%;
   &__line {
     background-color: var(--grey--light);
     position: absolute;
     height: 2px;
     opacity: 0.5;
+    width: 98%;
     z-index: var(--step-right-back);
     &--highlight {
       background-color:var(--blue--dark);

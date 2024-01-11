@@ -1,10 +1,10 @@
 .histogram {
   margin-bottom: var(--histogram-bar-group-height);
-  margin-left: var(--histogram-bar-group-height);
   position: relative;
   display: flex;
-  width: 100%;
+  width: 98%;
   justify-content: center;
+  padding-left: 2%;
 
   &__caption {
     display: block;

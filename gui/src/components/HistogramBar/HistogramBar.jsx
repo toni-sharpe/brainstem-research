@@ -19,9 +19,9 @@ function HistogramBar({
   const endStyles = calcHistogramBarPos({
     className: extraClass,
     height,
-    left,
+    left: `${left}%`,
     top,
-    width: blockSize,
+    width: `${blockSize}%`,
   })
 
   return (

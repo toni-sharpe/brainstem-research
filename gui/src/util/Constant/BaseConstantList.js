@@ -82,13 +82,13 @@ export const ORDERED_FILTERS = [
 /*
  * Histogram
  */
-export const HISTOGRAM_BAR_GROUP_COUNT = 1
-export const HISTOGRAM_BAR_GROUP_MARGIN = 8
+export const HISTOGRAM_BAR_LIST_COUNT = 1
+export const HISTOGRAM_BAR_LIST_MARGIN = 1
 export const HISTOGRAM_BAR_WIDTH = 1
 export const CONTRAST_TOGGLE_MINIMUM = 4 // contrast toggling doesn't work with small numbers that
                                          // naturally contrast when spread around the wheel
 export const HISTORGRAM_HEIGHT = 70.0 // vh units
-export const TOP_SPACER = 1.1 // Add a bit of space above the largest bar
+export const TOP_SPACER = 1.1 // Add a bit of space above the largest bar, in YAxis units
 export const USE_HUE_WHEEL = false
 export const USE_HUE_CONTRAST_TOGGLE = false
 
@@ -153,8 +153,8 @@ export const TIMING_ERROR = 0
  */
 export const PRIME_SYMPTOM_BAR_MARGIN = 24
 export const PRIME_SYMPTOM_COUNT = 98
-export const PRIME_SYMPTOM_HISTOGRAM_BAR_GROUP_SIZE = 5
-export const PRIME_SYMPTOM_HISTOGRAM_BAR_GROUP_MAP = {
+export const PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_SIZE = 5
+export const PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_MAP = {
    0: [],  5: [], 10: [], 15: [],
   20: [], 25: [], 30: [], 35: [],
   40: [], 45: [], 50: [], 55: [],

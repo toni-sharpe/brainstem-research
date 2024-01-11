@@ -14,7 +14,6 @@ import './XAxisLineList.scss'
 
 function XAxisLineList({
   histogramHeight,
-  graphWidth,
   mostMaxOfAllThings,
   showNumberList,
 }) {
@@ -28,7 +27,7 @@ function XAxisLineList({
   for (let heightCount = 0; heightCount <= histogramHeight ; heightCount += stepDown) {
     const lineNumber = Math.round(heightCount / stepDown)
     const top = `calc(${histogramHeight - heightCount}vh - ${centreLineAdjuster}px)`
-    const lineNumberTop = `calc(${histogramHeight - heightCount}vh - ${centreLineAdjuster}px - 8px)`
+    const lineNumberTop = `calc(${histogramHeight - heightCount}vh - ${centreLineAdjuster}px - 9px)`
     const lineHighlight = calcLineHighlight({ lineNumber, maxBasedDisplay })
 
     const showLine = hasLine({ lineNumber, maxBasedDisplay })
@@ -48,7 +47,7 @@ function XAxisLineList({
         { showLine && (
           <dd
             className={`x-axis-line-list__line ${lineHighlight ? 'x-axis-line-list__line--highlight' : ''}`}
-            style={{ top, width: graphWidth }}
+            style={{ top }}
           />
         ) }
       </div>
@@ -72,7 +71,6 @@ XAxisLineList.defaultProps = {
 
 XAxisLineList.propTypes = {
   histogramHeight: NumberOrStringPropType.isRequired,
-  graphWidth: NumberOrStringPropType.isRequired,
   showNumberList: PropTypes.bool,
 }
 

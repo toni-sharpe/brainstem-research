@@ -11,8 +11,8 @@ test('InteractiveTimeLineStatChart - ', async () => {
   render(<InteractiveTimeLineStatChart data={APITimeLineStatChartData} />)
 
   expect(screen.getByLabelText('Scale for interactive statistics list')).toBeTruthy()
-  expect(screen.getByText('Stats per grouping')).toBeTruthy()
-  expect(screen.getByText('Groupings (bars)')).toBeTruthy()
+  expect(screen.getByText('Bars')).toBeTruthy()
+  expect(screen.getByText('Groupings')).toBeTruthy()
 
 
   /*

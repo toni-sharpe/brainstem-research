@@ -1,11 +1,13 @@
 .x-axis-line-number {
-  left: calc(0px - (var(--histogram-bar-group-height) + 6px));
   position: absolute;
   text-align: right;
-  width: var(--histogram-bar-group-height);
+  left: -2%;
+  width: 2%;
+  z-index: var(--step-right-forward);
 
   &__num {
-    background-color: var(--grey--dark);
+    background-color: var(--blue--dark);
+    box-shadow: 0 0 0 1px inset var(--white);
     color: var(--white);
     padding: var(--padding--small-tiny);
   }

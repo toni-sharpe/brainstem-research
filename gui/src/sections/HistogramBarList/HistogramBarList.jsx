@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import i18next from 'util/i18next/i18next'
 
 import {
-  HISTOGRAM_BAR_GROUP_COUNT,
-  HISTOGRAM_BAR_GROUP_MARGIN,
+  HISTOGRAM_BAR_LIST_COUNT,
+  HISTOGRAM_BAR_LIST_MARGIN,
   HISTOGRAM_BAR_WIDTH,
   HISTORGRAM_HEIGHT,
 } from 'util/Constant/BaseConstantList'
@@ -137,8 +137,8 @@ function HistogramBarList({
 }
 
 HistogramBarList.defaultProps = {
-  barCountPerBlock: HISTOGRAM_BAR_GROUP_COUNT,
-  barMargin: HISTOGRAM_BAR_GROUP_MARGIN,
+  barCountPerBlock: HISTOGRAM_BAR_LIST_COUNT,
+  barMargin: HISTOGRAM_BAR_LIST_MARGIN,
   blockSize: HISTOGRAM_BAR_WIDTH,
   histogramHeight: HISTORGRAM_HEIGHT,
   i18nBaseOverride: undefined,

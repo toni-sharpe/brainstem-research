@@ -31,15 +31,15 @@ test('AxisSelector', async () => {
     />
   )
 
-  expect(screen.getByText('X Axis (bottom)')).toBeTruthy()
+  expect(screen.getByText('X Axis')).toBeTruthy()
   expect(screen.getByRole(
     'button', {
       pressed: true,
-      text: 'Mild symptom 1'
+      text: 'Mld symp 1'
     }
   )).toBeTruthy()
 
-  const nextButton = screen.getByText('Mild symptom 1 duration')
+  const nextButton = screen.getByText('Mld symp 1 dur')
   await userEvent.click(nextButton)
   expect(setCurrentAxisSelectionMock).toHaveBeenCalledWith('mild_symptom_1_duration')
 
@@ -58,11 +58,11 @@ test('AxisSelector array button always has one', async () => {
     />
   )
 
-  expect(screen.getByText('X Axis (bottom)')).toBeTruthy()
+  expect(screen.getByText('X Axis')).toBeTruthy()
   const currentButton = screen.getByRole(
     'button', {
       pressed: true,
-      text: 'Mild symptom 1'
+      text: 'Mld symp 1'
     }
   )
   expect(currentButton).toBeTruthy()
@@ -70,7 +70,7 @@ test('AxisSelector array button always has one', async () => {
   const onlyButtonSelectedStaysPressed = screen.getByRole(
     'button', {
       pressed: true,
-      text: 'Mild symptom 1'
+      text: 'Mld symp 1'
     }
   )
   expect(onlyButtonSelectedStaysPressed).toBeTruthy()

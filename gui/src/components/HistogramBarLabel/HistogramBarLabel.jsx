@@ -13,14 +13,12 @@ function HistogramBarLabel({
   isShown,
 }) {
   const positionStyles = {
-    height: blockSize * 0.4,
     top: 4,
-    width: blockSize - 8
   }
 
   const className = children
     ? `histogram-bar-label${
-      blockSize < 24
+      blockSize < 4
         ? ' histogram-bar-label__small-font'
         : ''
     }`
