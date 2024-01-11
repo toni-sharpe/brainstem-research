@@ -36,7 +36,7 @@
   },
 
   "MainPageHeading": {
-    "": "Brainstem Research",
+    "": "Research",
     "Scatter": "Scatter Plot",
     "PrimeSymptomList": "Prime Symptom",
     "AntiBiasToolKit": "Anti-bias Tool Kit",
@@ -185,19 +185,6 @@
   },
 
   "PrimeSymptomHistogram": {
-    "factoredBy": "{{ariaName}} with non fatal columns factored by {{factor}}",
-    "fatal": "{{count}} fatal cases in {{ariaLabel}}",
-    "name": "Prime symptom bar graph",
-    "nonFatal": "{{count}} non fatal cases in {{ariaLabel}}",
-    "numberExplanation": "NB: this graph always counts from the first entry made, therefore filtering may return numbers that don't immediately make sense",
-    "primeSymptomHistogramTools": "Tools and feedback to interact with the graph"
-  },
-
-  "TimeLineBarListScale": {
-    "scaleFor": "Scale for {{ariaLabel}}"
-  },
-
-  "HistogramBarListLabel": {
     "0": "0..5 days",
     "5": "5..10 days",
     "10": "10..15 days",
@@ -211,7 +198,24 @@
     "50": "50..55 days",
     "55": "55..60 days",
     "60": "60 days +",
-    "sb-example": "Storybook Example"
+    "factoredBy": "{{ariaName}} with non fatal columns factored by {{factor}}",
+    "fatal": "{{count}} fatal cases in {{ariaLabel}}",
+    "fatalOnly": "fatal",
+    "name": "Prime symptom bar graph",
+    "nonFatal": "{{count}} non fatal cases in {{ariaLabel}}",
+    "nonFatalOnly": "non fatal",
+    "numberExplanation": "NB: this graph always counts from the first entry made, therefore filtering may return numbers that don't immediately make sense",
+    "primeSymptomHistogramTools": "Tools and feedback to interact with the graph",
+    "time": "Time"
+  },
+
+  "TimeLineBarListScale": {
+    "scaleFor": "Scale for {{ariaLabel}}"
+  },
+
+  "HistogramBarListLabel": {
+    "sb-example": "Storybook Example",
+    "aria-label": "{{groupBy}} values {{histogramHistogramBarListLabel}} with bars for {{barList}}"
   },
 
   "HistogramBarLabel": {

@@ -9,10 +9,11 @@ import {
   HISTOGRAM_BAR_WIDTH,
   HISTORGRAM_HEIGHT,
 } from 'util/Constant/BaseConstantList'
-import HistogramBarLabel from 'components/HistogramBarLabel/HistogramBarLabel'
-import HistogramDataPropType from 'prop-types/HistogramData.prop-type'
 import HistogramBar from 'components/HistogramBar/HistogramBar'
+import HistogramBarLabel from 'components/HistogramBarLabel/HistogramBarLabel'
 import HistogramBarListLabel from 'components/HistogramBarListLabel/HistogramBarListLabel'
+import HistogramDataPropType from 'prop-types/HistogramData.prop-type'
+import HistogramTranslationPropType from 'prop-types/HistogramTranslation.prop-type'
 
 function HistogramBarList({
   barCountPerBlock,
@@ -24,9 +25,25 @@ function HistogramBarList({
   i18nBaseOverride,
   i18nKeyOnly,
   mostMaxOfAllThings,
+  translationSet,
 }) {
   return histogramBarGroupList.map(([histogramHistogramBarListLabel, data], i) => {
-    const ariaLabel = i18next.t(`HistogramBarListLabel.${histogramHistogramBarListLabel}`)
+    const ariaLabel = translationSet?.barList && translationSet?.groupBy
+      ? i18next.t(
+        'HistogramBarListLabel.aria-label', {
+          ...translationSet,
+          barList: join(', ', translationSet.barList),
+          histogramHistogramBarListLabel,
+        }
+      )
+      : i18next.t(
+        'HistogramBarListLabel.aria-label', {
+          groupBy: i18next.t(`${i18nBaseOverride}.time`),
+          barList: `${i18next.t(`${i18nBaseOverride}.fatalOnly`)}, ${i18next.t(`${i18nBaseOverride}.nonFatalOnly`)}`,
+          histogramHistogramBarListLabel: i18next.t(`${i18nBaseOverride}.${histogramHistogramBarListLabel}`),
+        }
+      )
+
     const outerLeft = i * (barCountPerBlock * blockSize + barMargin)
     const subBars = toPairs(data)
 
@@ -106,6 +123,7 @@ function HistogramBarList({
           <HistogramBarListLabel
             barCountPerBlock={barCountPerBlock}
             blockSize={blockSize}
+            i18nBaseOverride={i18nBaseOverride}
             i18nKey={histogramHistogramBarListLabel}
             i18nKeyOnly={i18nKeyOnly}
             key={histogramHistogramBarListLabel}
@@ -123,6 +141,7 @@ HistogramBarList.defaultProps = {
   barMargin: HISTOGRAM_BAR_GROUP_MARGIN,
   blockSize: HISTOGRAM_BAR_WIDTH,
   histogramHeight: HISTORGRAM_HEIGHT,
+  i18nBaseOverride: undefined,
   i18nKeyOnly: null,
 }
 
@@ -136,6 +155,7 @@ HistogramBarList.propTypes = {
   i18nBaseOverride: PropTypes.string, // this base will be used to provide translations for the histogram
   i18nKeyOnly: PropTypes.bool, // lets any graph take charge of it's bar labelling
   mostMaxOfAllThings: PropTypes.number,
+  translationSet: HistogramTranslationPropType,
 }
 
 export default HistogramBarList

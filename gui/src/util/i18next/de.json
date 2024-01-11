@@ -36,7 +36,7 @@
   },
 
   "MainPageHeading": {
-    "": "Hirnstamm-Forschung",
+    "": "Forschung",
     "Scatter": "Punktwolke",
     "PrimeSymptomList": "Hauptsymptom",
     "AntiBiasToolKit": "Anti-Bias",
@@ -185,19 +185,6 @@
   },
 
   "PrimeSymptomHistogram": {
-    "factoredBy": "mit um {{factor}} faktorisierten nicht-tödlich Spalten",
-    "fatal": "{{count}} Tödliche Fälle in {{histogramHistogramBarListLabel}}",
-    "name": "Balkendiagramm zur Hauptsymptom",
-    "nonFatal": "{{count}} nicht tödliche Fälle in {{histogramHistogramBarListLabel}}",
-    "numberExplanation": "NB: Dieses Diagramm zählt immer ab dem ersten Eintrag, daher kann die Filterung Zahlen liefern, die nicht sofort Sinn ergeben.",
-    "primeSymptomHistogramTools": "Tools und Feedback zur Interaktion mit dem Diagramm"
-  },
-
-  "TimeLineBarListScale": {
-    "scaleFor": "Skala für {{AriaLabel}}"
-  },
-
-  "HistogramBarListLabel": {
     "0": "0..5 Tage",
     "5": "5..10 Tage",
     "10": "10..15 Tage",
@@ -210,7 +197,24 @@
     "45": "45..50 Tage",
     "50": "50..55 Tage",
     "55": "55..60 Tage",
-    "60": "Über 60 Tage"
+    "60": "Über 60 Tage",
+    "factoredBy": "mit um {{factor}} faktorisierten nicht-tödlich Spalten",
+    "fatal": "{{count}} Tödliche Fälle in {{histogramHistogramBarListLabel}}",
+    "fatalOnly": "tödliche",
+    "name": "Balkendiagramm zur Hauptsymptom",
+    "nonFatal": "{{count}} nicht tödliche Fälle in {{histogramHistogramBarListLabel}}",
+    "nonFatalOnly": "nicht tödliche",
+    "numberExplanation": "NB: Dieses Diagramm zählt immer ab dem ersten Eintrag, daher kann die Filterung Zahlen liefern, die nicht sofort Sinn ergeben.",
+    "primeSymptomHistogramTools": "Tools und Feedback zur Interaktion mit dem Diagramm",
+    "time": "Zeit"
+  },
+
+  "TimeLineBarListScale": {
+    "scaleFor": "Skala für {{AriaLabel}}"
+  },
+
+  "HistogramBarListLabel": {
+    "aria-label": "{{groupBy}} Werte {{histogramHistogramBarListLabel}} mit Balken fur {{barList}}"
   },
 
   "AverageLineList": {

@@ -13,7 +13,7 @@ test('Home - ', async () => {
   /*
    * Base screen tests, has it rendered
    */
-  expect(screen.getByText('Brainstem Research')).toBeTruthy()
+  expect(screen.getByText('Research')).toBeTruthy()
   expect(screen.getByText('English')).toBeTruthy()
   expect(screen.getByText('Deutsche')).toBeTruthy()
 

@@ -14,6 +14,7 @@ const baseHistogramProps = {
   blockSize: 1,
   histogramBarGroupList: SingleHistogramData,
   graphLabel: 'StoryBook test graph',
+  i18nBaseOverride: 'PrimeSymptomHistogram',
 }
 
 
@@ -27,6 +28,30 @@ test('Histogram', async () => {
   expect(screen.getByRole('figure')).toBeTruthy()
   expect(screen.getByText('StoryBook test graph')).toBeTruthy()
   expect(screen.getByText('0..5 days')).toBeTruthy()
+  expect(screen.getByLabelText('Time values 5..10 days with bars for fatal, non fatal')).toBeTruthy()
+})
+
+
+test('Histogram with translation set', async () => {
+  const props = {
+    ...baseHistogramProps,
+    i18nBaseOverride: undefined,
+    i18nKeyOnly: true,
+    translationSet: {
+      barList: ['doing OK'],
+      groupBy: 'Symptom'
+    }
+  }
+  render(
+    <Histogram
+      {...props}
+    />
+  )
+
+  expect(screen.getByRole('figure')).toBeTruthy()
+  expect(screen.getByText('StoryBook test graph')).toBeTruthy()
+  expect(screen.getByText('15')).toBeTruthy()
+  expect(screen.getByLabelText('Symptom values 0 with bars for doing OK')).toBeTruthy()
 })
 
 

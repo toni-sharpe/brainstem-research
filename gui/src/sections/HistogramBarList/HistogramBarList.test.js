@@ -15,6 +15,7 @@ const baseHistogramBarListProps = {
   histogramBarGroupList: SingleHistogramData,
   histogramHeight: 70,
   graphLabel: 'StoryBook test graph bar list',
+  i18nBaseOverride: 'PrimeSymptomHistogram'
 }
 
 

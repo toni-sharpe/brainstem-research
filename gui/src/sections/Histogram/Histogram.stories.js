@@ -25,6 +25,7 @@ const baseHistogramProps = {
   blockSize: 72,
   histogramBarGroupList: SingleHistogramData,
   graphLabel: 'Straightforward histogram',
+  i18nKeyOnly: true,
   minGraphHeight: 5,
   useHueWheel: true,
   useHueContrastToggle: true,
