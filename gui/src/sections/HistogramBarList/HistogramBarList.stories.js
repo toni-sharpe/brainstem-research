@@ -24,6 +24,7 @@ const baseHistogramBarListProps = {
   blockSize: 30,
   histogramBarGroupList: ThreeHistogramData,
   hueFn,
+  i18nKeyOnly: true,
   mostMaxOfAllThings,
 }
 

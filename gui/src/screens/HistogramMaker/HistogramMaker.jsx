@@ -73,6 +73,10 @@ function HistogramMaker({ data }) {
             heightPaddingLines={0}
             i18nKeyOnly
             minGraphHeight={0}
+            translationSet={{
+              barList: currentPathogenStepList.map(step => i18next.t(`CommonClinicalResponses.${step}`)),
+              groupBy: i18next.t(`CommonClinicalResponses.${currentGroupBy}`),
+            }}
             useHueContrastToggle
             useHueWheel
           />
