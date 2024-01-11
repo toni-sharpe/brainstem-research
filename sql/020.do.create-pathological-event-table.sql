@@ -35,16 +35,20 @@ create table if not exists pathological_event (
 
   observed_movement_response_1 boolean default false,
   observed_movement_response_2 boolean default false,
+
   event_record_length int default null,
+
   intro_symptom_start int default null,
   intro_symptom_end int default null,
   intro_symptom_duration int null,
+
   mild_symptom_1 int default null,
   mild_symptom_1_1_end int default null,
   mild_symptom_1_2 int default null,
   mild_symptom_1_duration int null,
   mild_symptom_2 int default null,
   mild_symptom_2_duration int default null,
+
   prime_symptom_1 int default null,
   prime_symptom_1_duration int default null,
   prime_symptom_2 int default null,
@@ -57,98 +61,28 @@ create table if not exists pathological_event (
   prime_symptom_level int default 2,
   prime_symptom_3 int default null,
   prime_symptom_3_duration int default null,
+
   fatal_symptom_1 int default null,
   fatal_symptom_2 int default null,
   slight_death_response_1 int default null,
   death_response_1 int default null,
   slight_death_response_2 int default null,
   death_response_2 int default null,
+
   time_of_death int default null,
+
   pathogenesis_duration int,
   recovery_duration int,
-  recovery_proportion numeric(5, 2) generated always as (
-    case
-      when
-        pathogenesis_duration is not null
-        and
-        recovery_duration is not null
-      then
-        recovery_duration::float
-        /
-        (
-          pathogenesis_duration::float
-          +
-          recovery_duration::float
-        )
-        *
-        100.0
-      else
-        null
-    end
-  ) stored,
+  recovery_proportion numeric(6, 4) default null,
   prime_symptom_proportion numeric(6, 4) default null,
-  pathological_event_duration int generated always as (
-    case
-      when
-        outcome = 'FAT'
-      then
-        greatest(
-          fatal_symptom_1,
-          fatal_symptom_2
-        )
-      when
-        outcome = 'NFT'
-      then
-        nullif (
-          coalesce (
-            greatest (
-              intro_symptom_end,
-              mild_symptom_1,
-              mild_symptom_1_2,
-              mild_symptom_2,
-              prime_symptom_1,
-              prime_symptom_2,
-              prime_symptom_3,
-              pathogenesis_duration
-              +
-              coalesce (
-                recovery_duration,
-                0
-              )
-            ),
-            0
-          ),
-          0
-        )
-      else
-        null
-    end
-  ) stored,
-  event_record_is_complete boolean generated always as (
-    case
-      when
-        outcome = 'FAT'
-        and
-        fatal_symptom_1 is null
-        and
-        fatal_symptom_2 is null
-        and
-        time_of_death is null
-      then
-        false
-      when
-        outcome = 'NFT'
-        and
-        recovery_duration is null
-      then
-        false
-      else
-        true
-    end
-  ) stored,
+  pathological_event_duration int default null,
+
+  event_record_is_complete boolean default false,
+
   pathological_severity numeric(4, 1) default 0.0,
   care_error_level numeric(4, 1) default 0.0,
   overall_patient_rating numeric (5, 2) default 0.00,
+
   patient_id int not null,
   event_number int not null,
   event_title varchar(24),

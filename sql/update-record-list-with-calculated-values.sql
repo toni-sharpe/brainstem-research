@@ -31,7 +31,8 @@ begin
       prime_symptom_1,
       prime_symptom_2,
       prime_symptom_3,
-      recovery_duration
+      recovery_duration,
+      time_of_death
     from
       pathological_event pe
   loop
@@ -56,7 +57,10 @@ begin
       prime_symptom_any = prime_symptom_occured(pe),
       full_prime_symptom_duration = calc_duration(first_prime_time, greatest_value),
       prime_symptom_duration = calc_duration(first_pair_prime_time, greatest_value),
-      prime_symptom_proportion = first_prime_time::float / greatest_value::float
+      prime_symptom_proportion = first_prime_time::float / greatest_value::float,
+      recovery_proportion = pe.recovery_duration::float / calc_survived_event_duration(pe)::float,
+      pathological_event_duration = calc_duration(0, greatest_value),
+      event_record_is_complete = calc_event_record_is_complete(pe)
     where
       pathological_event_id = pe.pathological_event_id;
   end loop;
