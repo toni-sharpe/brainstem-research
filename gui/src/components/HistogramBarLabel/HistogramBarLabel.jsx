@@ -14,7 +14,7 @@ function HistogramBarLabel({
 }) {
   const positionStyles = {
     height: blockSize * 0.4,
-    top: `-${blockSize * 0.35}px`,
+    top: 4,
     width: blockSize - 8
   }
 

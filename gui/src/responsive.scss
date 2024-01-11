@@ -1,0 +1,102 @@
+$media-switch--small: 600px;
+$media-switch--medium: 800px;
+$media-switch--large: 1200px;
+
+.row-layout,
+.row-to-column-layout {
+  display: flex;
+}
+.column-layout,
+.column-to-row-layout {
+  display: flex;
+  flex-direction: column;
+  &.right {
+    align-items: flex-end;
+  }
+}
+
+.space-children {
+  & > * {
+    margin-right: var(--spacing--narrow);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &--with-border {
+    & > * {
+      border-right: 1px solid var(--grey--light);
+      margin-right: var(--spacing--narrow);
+      padding-right: var(--spacing--narrow);
+      &:last-child {
+        border-right: none;
+        margin-right: 0;
+        padding-right: unset;
+      }
+    }
+  }
+  &--wide > * {
+    margin-right: var(--spacing--wide);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &--wide-with-border > * {
+    border-right: 1px solid var(--grey--light);
+    margin-right: var(--spacing--wide);
+    padding-right: var(--spacing--wide);
+    &:last-child {
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+  }
+
+  &--narrowest > * {
+    margin-right: var(--spacing--narrowest);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+
+.space-children--column {
+  & > * {
+    margin-bottom: var(--spacing--narrow);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.space-children--wide-column {
+  & > * {
+    margin-bottom: var(--spacing--wide);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &-with-border > * {
+    border-bottom: 1px solid var(--grey--very-light);
+    margin-bottom: var(--spacing--wide);
+    padding-bottom: var(--spacing--wide);
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: $media-switch--medium) {
+  .row-to-column-layout {
+    & > * {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: var(--spacing--narrow);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
