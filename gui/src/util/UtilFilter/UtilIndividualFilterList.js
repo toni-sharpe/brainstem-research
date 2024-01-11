@@ -105,15 +105,15 @@ export function primeSymptomFilter({ currentFilterList }) {
 }
 
 export function secondOrMore({ currentFilterList }) {
-  return ({ event_number }) => {
+  return ({ event_count }) => {
     if (!currentFilterList.secondOrMore) return true
-    return parseInt(event_number, 10) >= 2
+    return parseInt(event_count, 10) >= 2
   }
 }
 
 export function thirdOrMore({ currentFilterList }) {
-  return ({ event_number }) => {
+  return ({ event_count }) => {
     if (!currentFilterList.thirdOrMore) return true
-    return parseInt(event_number, 10) >= 3
+    return parseInt(event_count, 10) >= 3
   }
 }

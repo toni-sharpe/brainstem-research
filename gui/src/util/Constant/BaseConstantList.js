@@ -20,7 +20,7 @@ export const CORRELATION_HEATMAP_FIELD_LIST = [
   'presented_gender',
   'source_country',
   'consultant_doctor',
-  'event_number',
+  'event_count',
   'care_site',
 
   // 17

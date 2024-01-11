@@ -4,7 +4,6 @@ declare
   care_technique_1_severity int := 0;
   care_technique_2_severity int := 0;
   care_technique_3_severity int := 0;
-  event_number_addition int := 0;
   first_prime_symptom_severity numeric := 0.0;
   incidental_bad numeric := 0.0;
   incidental_good numeric := 0.0;
@@ -34,7 +33,7 @@ begin
       care_technique_6,
       care_technique_7,
       etiology,
-      event_number,
+      event_count,
       first_prime_symptom,
       mild_symptom_1,
       mild_symptom_1_duration,
@@ -180,7 +179,7 @@ begin
       (
         first_prime_symptom_severity
         +
-        coalesce(pe.event_number, 0)
+        coalesce(pe.event_count, 0)
       )
       *
       prime_symptom_level_adjuster;
@@ -358,7 +357,7 @@ begin
     -- multiple events are factored in
     --
     previous_pathological_severity :=0;
-    previous_events = coalesce(pe.event_number, 0);
+    previous_events = coalesce(pe.event_count, 0);
     if
       previous_events > 1
     then

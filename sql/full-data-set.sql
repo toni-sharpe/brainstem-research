@@ -40,7 +40,7 @@ insert into
     time_of_death,
     pathogenesis_duration,
     recovery_duration,
-    event_number,
+    event_count,
     patient_id,
 
     observed_movement_response_1,

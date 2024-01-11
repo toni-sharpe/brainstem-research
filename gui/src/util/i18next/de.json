@@ -4,7 +4,7 @@
     "care_technique_1": "Pflegetechnik 1",
     "death_response_1": "Reaktion auf den Tod 1",
     "death_response_2": "Reaktion auf den Tod 2",
-    "event_number": "Pathologische Ereignisfolge",
+    "event_count": "Pathologische Ereignisfolge",
     "fatal_symptom_1": "Tödliches Symptom 1",
     "fatal_symptom_2": "Tödliches Symptom 2",
     "first_prime_symptom": "Erste Moment des Hauptsymptoms",
