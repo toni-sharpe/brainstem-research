@@ -18,6 +18,8 @@ import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import { calcFilterList, isAnyFilterSet } from 'util/UtilFilter/UtilFilter'
 import { getCurrentUrl } from 'util/Util/Util'
 
+import './responsive.scss'
+
 function App() {
   const currentUrl = getCurrentUrl() || ''
 
