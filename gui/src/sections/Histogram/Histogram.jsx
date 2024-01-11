@@ -14,6 +14,7 @@ import {
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
 import HistogramBarList from 'sections/HistogramBarList/HistogramBarList'
 import HistogramDataPropType from 'prop-types/HistogramData.prop-type'
+import HistogramTranslationPropType from 'prop-types/HistogramTranslation.prop-type'
 import XAxisLineList from 'components/XAxisLineList/XAxisLineList'
 import { calcHistogramBarHue, calcHistogramWidth } from 'util/UtilHistogram/UtilHistogram'
 import { calcMostMaxOfAllTheThings } from 'util/UtilHistogram/UtilHistogramMaxThing'
@@ -31,6 +32,7 @@ function Histogram({
   graphLabel,
   i18nBaseOverride,
   i18nKeyOnly,
+  translationSet,
   useHueContrastToggle,
   useHueWheel,
 }) {
@@ -58,6 +60,7 @@ function Histogram({
     histogramHeight,
     i18nKeyOnly,
     mostMaxOfAllThings,
+    translationSet,
   }
 
   const hueFn = calcHistogramBarHue({
@@ -111,6 +114,7 @@ Histogram.propTypes = {
   histogramHeight: PropTypes.number,
   graphLabel: PropTypes.string,
   i18nKeyOnly: PropTypes.bool, // lets any graph take charge of it's bar labelling
+  translationSet: HistogramTranslationPropType,
   useHueContrastToggle: PropTypes.bool,
   useHueWheel: PropTypes.bool,
 }

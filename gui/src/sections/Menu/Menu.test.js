@@ -28,7 +28,7 @@ test('Menu', async () => {
   /*
    * Menu items
    */
-  expect(screen.getByText('Brainstem Research', ariaOther)).toBeTruthy()
+  expect(screen.getByText('Research', ariaOther)).toBeTruthy()
   expect(screen.getByText('Scatter Plot', ariaOther)).toBeTruthy()
   expect(screen.getByText('Prime Symptom', ariaOther)).toBeTruthy()
   expect(screen.getByText('Anti-bias Tool Kit', ariaOther)).toBeTruthy()

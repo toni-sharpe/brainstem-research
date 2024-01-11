@@ -21,3 +21,17 @@ export const Primary = {
     )
   }
 };
+
+export const TranslationsForAria = {
+  render: () => {
+    const props = {
+      ...basePrimeSymptomHistogramProps,
+      translationSet: {
+        barData: ['x', 'y']
+      }
+    }
+    return (
+      <PrimeSymptomHistogram {...basePrimeSymptomHistogramProps} />
+    )
+  }
+};
