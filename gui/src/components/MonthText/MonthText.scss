@@ -1,7 +1,13 @@
 .month-text {
-  flex-wrap: wrap;
+  background-color: var(--white);
+  padding: var(--padding--small-tiny);
   &__elem {
+    flex-wrap: wrap;
     margin-bottom: var(--spacing--narrowest);
     white-space: nowrap;
+  }
+  &__sum-val-output {
+    display: inline-flex;
+    margin-top: var(--spacing--narrowest);
   }
 }

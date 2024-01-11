@@ -118,3 +118,39 @@ export const NoCrossoverUsesDefault = {
     )
   }
 };
+
+export const NoValsSumZero = {
+  render: () => {
+    const props = {
+      ...baseMonthTextProps,
+      valOutputList: [],
+      valSum: 0,
+    }
+    return (
+      <StoryBookPaddedWrapper>
+        <MonthBlock
+          {...monthBlockProps}
+          monthText={<MonthText {...props} />}
+        />
+      </StoryBookPaddedWrapper>
+    )
+  }
+};
+
+export const NoValsOrSum = {
+  render: () => {
+    const props = {
+      ...baseMonthTextProps,
+      valOutputList: undefined,
+      valSum: undefined,
+    }
+    return (
+      <StoryBookPaddedWrapper>
+        <MonthBlock
+          {...monthBlockProps}
+          monthText={<MonthText {...props} />}
+        />
+      </StoryBookPaddedWrapper>
+    )
+  }
+};

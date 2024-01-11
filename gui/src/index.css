@@ -36,6 +36,7 @@ h1, h2, h3, h4, h5, h6, p {
   --spacing--wide: 20px;
 
   /* padding */
+  --padding--tiniest: 1px;
   --padding--small-tiny: 3px;
   --padding--small: 6px;
   --padding--medium: 8px;
