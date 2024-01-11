@@ -43,10 +43,7 @@ begin
     update
       pathological_event
     set
-      intro_symptom_duration = calc_intro_symptom_duration(
-        pe.intro_symptom_start,
-        pe.intro_symptom_end
-      ),
+      intro_symptom_duration = calc_duration(pe.intro_symptom_start, pe.intro_symptom_end),
       mild_symptom_1_duration = calc_mild_symptom_1_duration(pe),
       mild_symptom_2_duration = calc_duration(pe.mild_symptom_2, greatest_value),
       prime_symptom_1_duration = calc_duration(pe.prime_symptom_1, greatest_value),
