@@ -8,7 +8,10 @@ begin
     and
     symptom_end is not null
   then
-    return symptom_end - symptom_start;
+    return nullif(
+      symptom_end - symptom_start,
+      0
+    );
   end if;
 
   return null;

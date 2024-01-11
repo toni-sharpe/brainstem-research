@@ -137,7 +137,7 @@ function CorrelationHeatmap({ data }) {
       if (val === 'F') return 15;
       return 0
     },
-    prime_symptom_1_2: boolMap,
+    prime_symptom_any: boolMap,
     source_country: val => {
       if (val === 'US') return 10;
       if (val === 'RU') return 20;

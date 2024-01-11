@@ -41,7 +41,7 @@ export const CORRELATION_HEATMAP_FIELD_LIST = [
 
   // 35
   'first_prime_symptom', 'first_prime_symptom_type',
-  'prime_symptom_1', 'prime_symptom_1_duration', 'prime_symptom_1_2',
+  'prime_symptom_1', 'prime_symptom_1_duration', 'prime_symptom_any',
   'prime_symptom_2', 'prime_symptom_2_duration',
   'prime_symptom_3', 'prime_symptom_3_duration',
   'prime_symptom_duration', 'prime_symptom_level', 'prime_symptom_proportion',
