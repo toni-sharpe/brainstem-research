@@ -115,9 +115,9 @@
 
   "Background": {
     "paragraph1": "Bei diesem Projekt handelt es sich im Wesentlichen um eine statistische Analyse einiger medizinischer Forschungsarbeiten, die ich während eines durch Einsparungen unterstützten Sabbatjahrs durchgeführt habe. Die Forschung selbst besteht aus einer Hypothese und einer Fülle von Belegen, darunter 289 Fälle. Die Fälle oder \"Ereignisse\", wie ich sie nenne, haben jeweils etwa 70 Datenpunkte, und diese Website soll bestimmte unterstützende Beweise grafisch darstellen, Methoden zur Anfechtung dieser Beweise bereitstellen und erforschen, wie falsch ich liegen kann (Voreingenommenheit ist real), und auch dem Benutzer die Möglichkeit geben, selbst zu interagieren, entweder um die Daten anzufechten oder um sie selbst zu erforschen.",
-    "paragraph2-1": "Ich habe eine Möglichkeit gesehen, Leben zu retten, habe nachgeforscht und etwas Neues über den Hirnstamm entdeckt und diese Daten dann auf dieser Website auf meinem GitHub hier modelliert: ",
-    "paragraph2Link": "/toni-sharpe/brainstem-research",
-    "paragraph2-2": "- Ich habe das alles selbst gemacht und es hat sogar meine Jobsuche verzögert; allerdings muss es von medizinisch ausgebildeten Leuten überprüft werden.",
+    "paragraph2-1": "Ich habe eine Möglichkeit gesehen, habe nachgeforscht und etwas Neues über den Hirnstamm entdeckt und diese Daten dann auf dieser Website hier modelliert. ",
+    "paragraph2Link": "",
+    "paragraph2-2": "Ich habe das alles selbst gemacht und es hat sogar meine Jobsuche verzögert; allerdings muss es von medizinisch ausgebildeten Leuten überprüft werden.",
     "paragraph3": "Die medizinische Forschung ist real, die Ereignisse sind real und jedes einzelne stellt die Erfahrung einer realen Person dar, von denen viele, etwa 90, jetzt als Folge davon tot sind. Aus diesem Grund ist die Seite absichtlich generisch gehalten, um die Würde sowohl der Toten als auch der Lebenden zu wahren, und weil meine Hypothese noch nicht von jemandem, der über die entsprechenden Referenzen verfügt, verifiziert oder auch nur inspiziert worden ist."
   },
 
