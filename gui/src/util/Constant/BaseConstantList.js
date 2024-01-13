@@ -152,7 +152,6 @@ export const TIMING_ERROR = 0
  * Prime symptom
  */
 export const PRIME_SYMPTOM_BAR_MARGIN = 24
-export const PRIME_SYMPTOM_COUNT = 98
 export const PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_SIZE = 5
 export const PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_MAP = {
    0: [],  5: [], 10: [], 15: [],

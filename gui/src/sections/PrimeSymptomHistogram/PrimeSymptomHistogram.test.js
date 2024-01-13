@@ -2,7 +2,6 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 
-import { PRIME_SYMPTOM_COUNT } from 'util/Constant/BaseConstantList'
 import APIPrimeSymptomListData from 'example-data/APIPrimeSymptomList.example-data'
 
 import PrimeSymptomHistogram from './PrimeSymptomHistogram'
