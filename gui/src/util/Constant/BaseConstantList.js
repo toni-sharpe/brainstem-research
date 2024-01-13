@@ -95,7 +95,6 @@ export const ROOT_MENU_SLUGS = [
   'Scatter',
   'PrimeSymptomList',
   'AntiBiasToolKit',
-  'TimeLineStatChart',
   'TimeLine',
   'HistogramMaker',
 ]

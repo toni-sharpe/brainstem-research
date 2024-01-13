@@ -32,7 +32,6 @@ test('Menu', async () => {
   expect(screen.getByText('Scatter Plot', ariaOther)).toBeTruthy()
   expect(screen.getByText('Prime Symptom', ariaOther)).toBeTruthy()
   expect(screen.getByText('Anti-bias Tool Kit', ariaOther)).toBeTruthy()
-  expect(screen.getByText('Time Line Stat. Chart', ariaCurrent)).toBeTruthy()
   expect(screen.getByText('Time Line', ariaOther)).toBeTruthy()
   expect(screen.getByText('Histogram', ariaOther)).toBeTruthy()
 })
