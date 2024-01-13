@@ -2,8 +2,8 @@ import { type } from 'ramda'
 import i18next from 'util/i18next/i18next'
 
 import {
-  HISTOGRAM_BAR_GROUP_COUNT,
-  HISTOGRAM_BAR_GROUP_MARGIN,
+  HISTOGRAM_BAR_LIST_COUNT,
+  HISTOGRAM_BAR_LIST_MARGIN,
   HISTOGRAM_BAR_WIDTH,
   CONTRAST_TOGGLE_MINIMUM,
   HISTORGRAM_HEIGHT,
@@ -35,9 +35,9 @@ export function calcHistogramBarHeight({
 
 
 export function calcHistogramWidth({
-  barCountPerBlock = HISTOGRAM_BAR_GROUP_COUNT,
+  barCountPerBlock = HISTOGRAM_BAR_LIST_COUNT,
   blockSize = HISTOGRAM_BAR_WIDTH,
-  barMargin = HISTOGRAM_BAR_GROUP_MARGIN,
+  barMargin = HISTOGRAM_BAR_LIST_MARGIN,
   histogramBarGroupList,
 }) {
   const graphBlockLength = histogramBarGroupListErrorCheck({

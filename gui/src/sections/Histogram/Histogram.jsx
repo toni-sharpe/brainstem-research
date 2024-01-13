@@ -3,8 +3,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import {
-  HISTOGRAM_BAR_GROUP_COUNT,
-  HISTOGRAM_BAR_GROUP_MARGIN,
+  HISTOGRAM_BAR_LIST_COUNT,
+  HISTOGRAM_BAR_LIST_MARGIN,
   HISTOGRAM_BAR_WIDTH,
   HISTORGRAM_HEIGHT,
   USE_HUE_CONTRAST_TOGGLE,
@@ -16,14 +16,13 @@ import HistogramBarList from 'sections/HistogramBarList/HistogramBarList'
 import HistogramDataPropType from 'prop-types/HistogramData.prop-type'
 import HistogramTranslationPropType from 'prop-types/HistogramTranslation.prop-type'
 import XAxisLineList from 'components/XAxisLineList/XAxisLineList'
-import { calcHistogramBarHue, calcHistogramWidth } from 'util/UtilHistogram/UtilHistogram'
+import { calcHistogramBarHue } from 'util/UtilHistogram/UtilHistogram'
 import { calcMostMaxOfAllTheThings } from 'util/UtilHistogram/UtilHistogramMaxThing'
 
 import './Histogram.scss'
 import './Histogram.story.scss'
 
 function Histogram({
-  averageLineList,
   barCountPerBlock,
   barMargin,
   blockSize,
@@ -44,13 +43,6 @@ function Histogram({
     )
   }
 
-  const graphWidth = calcHistogramWidth({
-    barCountPerBlock,
-    blockSize,
-    barMargin,
-    histogramBarGroupList,
-  })
-
   const mostMaxOfAllThings = calcMostMaxOfAllTheThings({ histogramBarGroupList })
 
   const commonProps = {
@@ -68,27 +60,20 @@ function Histogram({
     useHueWheel,
   })
 
-  const styleHack = {
-    left: '50%',
-    marginLeft: 0 - (graphWidth / 2),
-    width: graphWidth
-  }
-
   return (
-    <figure className='histogram column-layout' style={styleHack}>
+    <figure className='histogram column-layout'>
       <figcaption className='histogram__caption'>{graphLabel}</figcaption>
-      <div className='histogram__columns' style={{ width: graphWidth }}>
+      <div className='histogram__columns' style={{ width: '100%' }}>
+        <XAxisLineList
+          {...commonProps}
+          extraLineCount={4}
+          histogramBarGroupList={histogramBarGroupList}
+        />
         <HistogramBarList
           {...commonProps}
           histogramBarGroupList={histogramBarGroupList}
           hueFn={hueFn}
           i18nBaseOverride={i18nBaseOverride}
-        />
-        <XAxisLineList
-          {...commonProps}
-          extraLineCount={4}
-          histogramBarGroupList={histogramBarGroupList}
-          graphWidth={graphWidth}
         />
       </div>
     </figure>
@@ -96,8 +81,8 @@ function Histogram({
 }
 
 Histogram.defaultProps = {
-  barCountPerBlock: HISTOGRAM_BAR_GROUP_COUNT,
-  barMargin: HISTOGRAM_BAR_GROUP_MARGIN,
+  barCountPerBlock: HISTOGRAM_BAR_LIST_COUNT,
+  barMargin: HISTOGRAM_BAR_LIST_MARGIN,
   blockSize: HISTOGRAM_BAR_WIDTH,
   histogramHeight: HISTORGRAM_HEIGHT,
   i18nKeyOnly: null,
@@ -108,7 +93,6 @@ Histogram.defaultProps = {
 Histogram.propTypes = {
   barCountPerBlock: PropTypes.number,
   barMargin: PropTypes.number,
-  blockDataSize: PropTypes.number,
   blockSize: PropTypes.number,
   histogramBarGroupList: HistogramDataPropType,
   histogramHeight: PropTypes.number,

@@ -11,10 +11,12 @@ function Button({
   ariaLabel,
   extraClass,
   isDisabled,
+  isPrimaryMarked,
   isSelected,
   label,
   onClick,
   size,
+  title,
 }) {
   const disabledClass = isDisabled ? ' is-disabled' : ''
   const selectedClass = isSelected ? ' is-selected' : ''
@@ -28,7 +30,8 @@ function Button({
     className,
     onClick: isDisabled
       ? null
-      : onClick
+      : onClick,
+    title: `${title}${isDisabled ? ' (is currently disabled)' : ''}${isPrimaryMarked ? ' - primary' : ''}`,
   }
 
   return (
@@ -44,16 +47,19 @@ Button.defaultProps = {
   isSelected: false,
   label: "Label needs to be set!",
   size: null,
+  title: null,
 }
 
 Button.propTypes = {
   ariaLabel: PropTypes.string,
   extraClass: PropTypes.string,
   isDisabled: PropTypes.bool,
+  isPrimaryMarked: PropTypes.bool,
   isSelected: PropTypes.bool,
   label: NumberOrStringPropType,
   onClick: OnClickPropType,
   size: ButtonSizePropType,
+  title: PropTypes.string,
 }
 
 export default Button

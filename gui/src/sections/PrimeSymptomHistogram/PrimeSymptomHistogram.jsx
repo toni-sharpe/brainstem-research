@@ -9,7 +9,7 @@ import PrimeSymptomListCounter from 'sections/PrimeSymptomListCounter/PrimeSympt
 import {
   BAD_TIMING_ERROR,
   HISTOGRAM_BAR_WIDTH,
-  PRIME_SYMPTOM_BAR_MARGIN,
+  HISTOGRAM_BAR_LIST_MARGIN,
   PRIME_SYMPTOM_MINIMUM_COUNT,
   TIMING_ERROR,
 } from 'util/Constant/BaseConstantList'
@@ -120,7 +120,7 @@ function PrimeSymptomHistogram({
         </span>
         <Histogram
           barCountPerBlock={2}
-          barMargin={PRIME_SYMPTOM_BAR_MARGIN}
+          barMargin={HISTOGRAM_BAR_LIST_MARGIN}
           blockSize={blockSize}
           histogramBarGroupList={histogramBarGroupList}
           histogramHeight={histogramHeight}

@@ -2,7 +2,7 @@ import i18next from 'util/i18next/i18next'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { HISTOGRAM_BAR_GROUP_COUNT, HISTOGRAM_BAR_WIDTH } from 'util/Constant/BaseConstantList'
+import { HISTOGRAM_BAR_LIST_COUNT, HISTOGRAM_BAR_WIDTH } from 'util/Constant/BaseConstantList'
 import AllBlocksPropType from 'prop-types/AllBlocks.prop-type'
 
 import './HistogramBarListLabel.scss'
@@ -19,7 +19,7 @@ function HistogramBarListLabel({
   left,
   top,
 }) {
-  const width = barCountPerBlock * blockSize
+  const width = `${barCountPerBlock * blockSize}%`
   const simpleNumbers = width < 10
 
   const className = `
@@ -30,7 +30,7 @@ function HistogramBarListLabel({
   return (
     <span
       className={className}
-      style={{ left, top, width }}
+      style={{ left: `${left}%`, top, width }}
     >
       <span>{i18nKeyOnly ? i18nKey : i18next.t(`${i18nBaseOverride || i18nBase}.${i18nKey}`)}</span>
     </span>
@@ -38,7 +38,7 @@ function HistogramBarListLabel({
 }
 
 HistogramBarListLabel.defaultProps = {
-  barCountPerBlock: HISTOGRAM_BAR_GROUP_COUNT,
+  barCountPerBlock: HISTOGRAM_BAR_LIST_COUNT,
   blockSize: HISTOGRAM_BAR_WIDTH,
   i18nKeyOnly: false,
 }

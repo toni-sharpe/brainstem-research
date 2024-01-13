@@ -10,6 +10,7 @@ const commonButtonProps = {
   label: 'filter',
   isDisabled: false,
   isSelected: false,
+  title: 'Test title',
 }
 
 export const Primary = {
