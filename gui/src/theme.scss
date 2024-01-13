@@ -1,0 +1,139 @@
+/* spacing  */
+$spacing--narrowest: 2px;
+$spacing--narrow: 8px;
+$spacing--wide: 20px;
+/* padding */
+$padding--tiniest: 1px;
+$padding--small-tiny: 3px;
+$padding--small: 6px;
+$padding--medium: 8px;
+$padding--medium-large: 10px;
+$padding--large: 12px;
+$padding--very-large: 20px;
+
+
+/* colours  */
+$blue--dark: #13a;
+$blue: #49d;
+$blue--light: #80c0fc;
+$red--black: #700;
+$red--dark: #b22;
+$red--medium: #f77;
+$red--dulled-light: #f99;
+$red--light: #fbb;
+$red--very-light: #fdd;
+$green--dark: #096;
+$green: #4e8;
+$orange--dark: #870;
+$orange: #cb4;
+$orange--light: #ed6;
+/* greyscale  */
+$black: #000;
+$grey--black: #181818;
+$grey--dark: #333;
+$grey--dull-dark: #555;
+$grey--light: #aaa;
+$grey--very-light: #cacaca;
+$grey--lightest: #e7e7e7;
+$grey--white: #f6f6f6;
+$white: #fff;
+
+
+/* font size */
+$font-size--small: 10px;
+$font-size--medium-small: 12px;
+$font-size--medium: 14px;
+$font-size--medium-large: 16px;
+$font-size--large: 18px;
+$line-height--small: 1.2em;
+$line-height--large: 1.5em;
+
+
+/* histogram */
+$histogram-bar-group-height: 45px;
+
+
+/* time-line-stat-chart  */
+$time-line-bar-height: 44px;
+$time-line-bar-quantile-height: 42px;
+
+
+/* z-index */
+$step-right-back: -2;
+$step-back: -1;
+$step-right-forward: 2;
+$front-guaranteed: 1000;
+
+
+:root {
+  /* spacing  */
+  --spacing--narrowest: #{$spacing--narrowest};
+  --spacing--narrow: #{$spacing--narrow};
+  --spacing--wide: #{$spacing--wide};
+
+  /* padding */
+  --padding--tiniest: #{$padding--tiniest};
+  --padding--small-tiny: #{$padding--small-tiny};
+  --padding--small: #{$padding--small};
+  --padding--medium: #{$padding--medium};
+  --padding--medium-large: #{$padding--medium-large};
+  --padding--large: #{$padding--large};
+  --padding--very-large: #{$padding--very-large};
+
+
+  /* colours  */
+  --blue--dark: #{$blue--dark};
+  --blue: #{$blue};
+  --blue--light: #{$blue--light};
+
+  --red--black: #{$red--black};
+  --red--dark: #{$red--dark};
+  --red--medium: #{$red--medium};
+  --red--dulled-light: #{$red--dulled-light};
+  --red--light: #{$red--light};
+  --red--very-light: #{$red--very-light};
+
+  --green--dark: #{$green--dark};
+  --green: #{$green};
+
+  --orange--dark: #{$orange--dark};
+  --orange: #{$orange};
+  --orange--light: #{$orange--light};
+
+  /* greyscale  */
+  --black: #{$black};
+  --grey--black: #{$grey--black};
+  --grey--dark: #{$grey--dark};
+  --grey--dull-dark: #{$grey--dull-dark};
+  --grey--light: #{$grey--light};
+  --grey--very-light: #{$grey--very-light};
+  --grey--lightest: #{$grey--lightest};
+  --grey--white: #{$grey--white};
+  --white: #{$white};
+
+
+  /* font size */
+  --font-size--small: #{$font-size--small};
+  --font-size--medium-small: #{$font-size--medium-small};
+  --font-size--medium: #{$font-size--medium};
+  --font-size--medium-large: #{$font-size--medium-large};
+  --font-size--large: #{$font-size--large};
+  --line-height--small: #{$line-height--small};
+  --line-height--large: #{$line-height--large};
+
+
+  /* histogram */
+  --histogram-bar-group-height: #{$histogram-bar-group-height};
+
+
+  /* time-line-stat-chart  */
+  --time-line-bar-height: #{$time-line-bar-height};
+  --time-line-bar-quantile-height: #{$time-line-bar-quantile-height};
+
+
+  /* z-index */
+  --step-right-back: #{$step-right-back};
+  --step-back: #{$step-back};
+  --step-right-forward: #{$step-right-forward};
+  --front-guaranteed: #{$front-guaranteed};
+}
