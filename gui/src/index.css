@@ -100,8 +100,3 @@ h1, h2, h3, h4, h5, h6, p {
   --step-right-forward: 2;
   --front-guaranteed: 1000;
 }
-
-
-.app-wrapper {
-  margin: var(--padding--medium) var(--padding--medium) 200px;
-}
