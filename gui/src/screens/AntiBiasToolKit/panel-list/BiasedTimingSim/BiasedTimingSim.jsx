@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import i18next from 'util/i18next/i18next'
 import React, { useState } from 'react'
 
-import { BAD_TIMING_SIM_ERROR_LIST } from 'util/Constant/BaseConstantList'
+import { BAD_TIMING_SIM_ERROR_LIST, PRIME_SYMPTOM_BLOCK_SIZE } from 'util/Constant/BaseConstantList'
 import DataAdjusterButtonList from 'sections/DataAdjusterButtonList/DataAdjusterButtonList'
 import PrimeSymptomHistogram from 'sections/PrimeSymptomHistogram/PrimeSymptomHistogram'
 import SubPageWrapper from 'components/SubPageWrapper/SubPageWrapper'
@@ -39,7 +39,7 @@ function BiasedTimingSim({ antiBiasToolKitData }) {
       </div>
       <PrimeSymptomHistogram
         badTimingError={badTimingError}
-        blockSize={36}
+        blockSize={PRIME_SYMPTOM_BLOCK_SIZE}
         histogramHeight={56}
         primeSymptomData={antiBiasToolKitData}
         timingError={timingError}
