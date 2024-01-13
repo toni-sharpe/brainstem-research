@@ -1,0 +1,74 @@
+@import './util/Constant/sass-variable-list.scss';
+
+:root {
+  /* spacing  */
+  --spacing--narrowest: #{$spacing--narrowest};
+  --spacing--narrow: #{$spacing--narrow};
+  --spacing--wide: #{$spacing--wide};
+
+  /* padding */
+  --padding--tiniest: #{$padding--tiniest};
+  --padding--small-tiny: #{$padding--small-tiny};
+  --padding--small: #{$padding--small};
+  --padding--medium: #{$padding--medium};
+  --padding--medium-large: #{$padding--medium-large};
+  --padding--large: #{$padding--large};
+  --padding--very-large: #{$padding--very-large};
+
+
+  /* colours  */
+  --blue--dark: #{$blue--dark};
+  --blue: #{$blue};
+  --blue--light: #{$blue--light};
+
+  --red--black: #{$red--black};
+  --red--dark: #{$red--dark};
+  --red--medium: #{$red--medium};
+  --red--dulled-light: #{$red--dulled-light};
+  --red--light: #{$red--light};
+  --red--very-light: #{$red--very-light};
+
+  --green--dark: #{$green--dark};
+  --green: #{$green};
+
+  --orange--dark: #{$orange--dark};
+  --orange: #{$orange};
+  --orange--light: #{$orange--light};
+
+  /* greyscale  */
+  --black: #{$black};
+  --grey--black: #{$grey--black};
+  --grey--dark: #{$grey--dark};
+  --grey--dull-dark: #{$grey--dull-dark};
+  --grey--light: #{$grey--light};
+  --grey--very-light: #{$grey--very-light};
+  --grey--lightest: #{$grey--lightest};
+  --grey--white: #{$grey--white};
+  --white: #{$white};
+
+
+  /* font size */
+  --font-size--small: #{$font-size--small};
+  --font-size--medium-small: #{$font-size--medium-small};
+  --font-size--medium: #{$font-size--medium};
+  --font-size--medium-large: #{$font-size--medium-large};
+  --font-size--large: #{$font-size--large};
+  --line-height--small: #{$line-height--small};
+  --line-height--large: #{$line-height--large};
+
+
+  /* histogram */
+  --histogram-bar-group-height: #{$histogram-bar-group-height};
+
+
+  /* time-line-stat-chart  */
+  --time-line-bar-height: #{$time-line-bar-height};
+  --time-line-bar-quantile-height: #{$time-line-bar-quantile-height};
+
+
+  /* z-index */
+  --step-right-back: #{$step-right-back};
+  --step-back: #{$step-back};
+  --step-right-forward: #{$step-right-forward};
+  --front-guaranteed: #{$front-guaranteed};
+}

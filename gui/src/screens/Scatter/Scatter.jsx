@@ -38,7 +38,7 @@ function Scatter({
       i18nBase={i18nBase}
     >
       <div className='column-layout space-children--column-wide'>
-        <div className='row-layout space-children--with-border'>
+        <div className='row-layout space-children'>
           <AxisSelector
             align='right'
             axis='x'

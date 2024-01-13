@@ -33,7 +33,7 @@ function HistogramMaker({ data }) {
 
   const totalBarListCount = 7
   const marginCount = 6
-  const leftAfterMargins = 98 - marginCount
+  const leftAfterMargins = 100 - marginCount
   const blockSize =
     leftAfterMargins
     /

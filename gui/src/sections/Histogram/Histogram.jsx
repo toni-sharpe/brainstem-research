@@ -63,7 +63,7 @@ function Histogram({
   return (
     <figure className='histogram column-layout'>
       <figcaption className='histogram__caption'>{graphLabel}</figcaption>
-      <div className='histogram__columns' style={{ width: '100%' }}>
+      <div className='histogram__columns' style={{ width: '98%' }}>
         <XAxisLineList
           {...commonProps}
           extraLineCount={4}

@@ -1,4 +1,13 @@
-@import './util/SassVariableList/sass-variable-list.scss';
+@import './util/Constant/sass-variable-list.scss';
+
+
+.app-wrapper {
+  margin: var(--padding--medium) var(--padding--medium) 200px;
+  @media (max-width: $media-switch--medium) {
+    margin: var(--padding--small-tiny) var(--padding--small-tiny) 100px;
+  }
+}
+
 
 .row-layout {
   display: flex;
@@ -10,6 +19,7 @@
     align-items: flex-end;
   }
 }
+
 
 .space-children {
   & > * {
