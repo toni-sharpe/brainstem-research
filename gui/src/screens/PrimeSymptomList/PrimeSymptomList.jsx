@@ -14,7 +14,7 @@ function PrimeSymptomList({ data }) {
       subHeading={i18next.t(`${i18nBase}.GraphHeading`)}
     >
       <PrimeSymptomHistogram
-        blockSize={(98 - 12) / 26}
+        blockSize={(100 - 12) / 26}
         histogramHeight={60}
         primeSymptomData={data}
       />
