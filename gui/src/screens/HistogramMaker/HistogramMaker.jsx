@@ -63,7 +63,7 @@ function HistogramMaker({ data }) {
         </SecondaryNav>
       )}
     >
-      <div className='histogram-maker row-layout space-children'>
+      <div className='histogram-maker row-layout space-children--wide'>
         <AxisSelector
           align='right'
           axis='stats'

@@ -18,7 +18,7 @@ function HistogramBarLabel({
 
   const className = children
     ? `histogram-bar-label${
-      blockSize < 4
+      blockSize < 1.5
         ? ' histogram-bar-label__small-font'
         : ''
     }`
