@@ -1,3 +1,5 @@
+import { keys } from 'ramda'
+
 /***********************************/
 /*
  * Correlation heatmap
@@ -143,8 +145,6 @@ export const TIMING_ERROR = 0
 /*
  * Prime symptom
  */
-export const PRIME_SYMPTOM_BAR_MARGIN = 24
-export const PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_SIZE = 5
 export const PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_MAP = {
    0: [],  5: [], 10: [], 15: [],
   20: [], 25: [], 30: [], 35: [],
@@ -160,6 +160,22 @@ export const PRIME_SYMPTOM_BUTTON_SET = [
   +3,
   +12
 ]
+const barListCount = keys(PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_MAP).length
+export const PRIME_SYMPTOM_BLOCK_SIZE = (
+  100
+  -
+  (
+    barListCount
+    -
+    1
+  )
+)
+/
+(
+  barListCount
+  *
+  2
+)
 
 
 /***********************************/
