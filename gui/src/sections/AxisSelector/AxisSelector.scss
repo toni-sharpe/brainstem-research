@@ -1,4 +1,16 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
+$axis-selector__base-width: 110px;
+$axis-selector__full-width: $axis-selector__base-width + $padding--medium;
+
 .axis-selector {
+  background-color: var(--white);
+  padding-left: var(--padding--medium);
+  padding-right: var(--padding--medium);
+  position: relative;
+  width: $axis-selector__full-width;
+  box-sizing: border-box;
+
   &__heading {
     box-shadow: none;
     font-size: var(--font-size--large);
@@ -6,19 +18,12 @@
     padding-left: 0;
     padding-right: 0;
   }
-  h3 {
-    font-size: var(--font-size--medium-large);
-  }
-  &.left {
-    .axis-selector__heading {
-      text-align: left;
-    }
-  }
+
   &__button {
     white-space: nowrap;
   }
   &__break-line {
-    background-color:var(--blue--dark);
+    background-color: var(--blue--dark);
     height: 1px;
   }
   &__primary {
@@ -28,5 +33,71 @@
     &--right {
       border-right: 24px solid var(--green);
     }
+  }
+  &__open-button,
+  &__close-button {
+    position: absolute;
+    top: 0;
+    @media (min-width: $media-switch--medium) {
+      display: none;
+    }
+  }
+
+
+  h3 {
+    font-size: var(--font-size--medium-large);
+  }
+
+
+  &.left {
+    .axis-selector__heading {
+      text-align: left;
+    }
+
+    .axis-selector__open-button {
+      right: 120px;
+    }
+
+    .axis-selector__close-button {
+      left: -30px;
+    }
+
+    @media (max-width: $media-switch--medium) {
+      right: 0 - $axis-selector__full-width;
+      transition: right 1s;
+    }
+
+    &.open {
+      @media (max-width: $media-switch--medium) {
+        right: 0;
+      }
+    }
+  }
+
+  &.right {
+    .axis-selector__open-button {
+      left: 120px;
+    }
+
+    .axis-selector__close-button {
+      right: -30px;
+    }
+
+    @media (max-width: $media-switch--medium) {
+      left: 0 - $axis-selector__full-width;
+      transition: left 1s;
+    }
+
+    &.open {
+      @media (max-width: $media-switch--medium) {
+        left: 0;
+      }
+    }
+  }
+
+
+  @media (max-width: $media-switch--medium) {
+    position: absolute;
+    z-index: var(--front-guaranteed);
   }
 }

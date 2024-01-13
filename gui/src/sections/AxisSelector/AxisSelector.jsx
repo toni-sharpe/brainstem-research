@@ -1,6 +1,6 @@
 import i18next from 'util/i18next/i18next'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import { concat, indexOf, remove, type } from 'ramda'
 
 import AlignPropType from 'prop-types/Align.prop-type'
@@ -44,11 +44,14 @@ function AxisSelector({
   setCurrentAxisSelection,
   showDurationOptions,
 }) {
+  const [isOpen, setIsOpen] = useState(false)
+
   const axis = axs.toUpperCase()
   const axisOptions = showDurationOptions && !defineDurationOptions
     ? concat(axsOptions, DURATION_MAP)
     : axsOptions
-  const axisSelectorClassNameList = `axis-selector column-layout space-children--column ${align}`
+  const openClass = isOpen ? 'open' : ''
+  const axisSelectorClassNameList = `axis-selector column-layout space-children--column-wide ${align} ${openClass}`
   const axisSelectorHeading = i18next.t(`${i18nBase}.axis${axis}`)
 
   function makeButton({ k }) {
@@ -88,8 +91,23 @@ function AxisSelector({
 
   return (
     <div className={axisSelectorClassNameList}>
+      { !isOpen && (
+        <Button
+          extraClass='axis-selector__open-button'
+          label='Open'
+          onClick={() => setIsOpen(true)}
+        />
+      ) }
+      { isOpen && (
+        <Button
+          extraClass='axis-selector__close-button'
+          label='X'
+          onClick={() => setIsOpen(false)}
+          title='Close'
+        />
+      ) }
       { React.createElement(`h${headingLevelStart}`, { children: axisSelectorHeading, className: 'axis-selector__heading' }) }
-      <ul className={axisSelectorClassNameList}>
+      <ul className={`column-layout space-children--column ${align}`}>
         { defineDurationOptions
           && (
             <>
