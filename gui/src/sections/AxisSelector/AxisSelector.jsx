@@ -94,7 +94,7 @@ function AxisSelector({
       { !isOpen && (
         <Button
           extraClass='axis-selector__open-button'
-          label='Open'
+          label={i18next.t(`${i18nBase}.open`)}
           onClick={() => setIsOpen(true)}
         />
       ) }
@@ -103,7 +103,7 @@ function AxisSelector({
           extraClass='axis-selector__close-button'
           label='X'
           onClick={() => setIsOpen(false)}
-          title='Close'
+          title={i18next.t(`${i18nBase}.close`)}
         />
       ) }
       { React.createElement(`h${headingLevelStart}`, { children: axisSelectorHeading, className: 'axis-selector__heading' }) }

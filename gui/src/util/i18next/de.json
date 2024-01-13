@@ -32,7 +32,41 @@
     "recovery_proportion": "Anteil der Verwertung",
     "slight_death_response_1": "Reaktion auf den Tod 1 (möglich)",
     "slight_death_response_2": "Reaktion auf den Tod 2 (möglich)",
-    "time_of_death": "Zeitpunkt des Todes"
+    "time_of_death": "Zeitpunkt des Todes",
+
+    "care_error_level_abbrev": "Pflege-Fehlerniveau",
+    "care_technique_1_abbrev": "Pflegetechnik 1",
+    "death_response_1_abbrev": "R'kt Tod 1",
+    "death_response_2_abbrev": "R'kt Tod 2",
+    "event_count_abbrev": "P'logische Ereignisfolge",
+    "fatal_symptom_1_abbrev": "Töd Symp 1",
+    "fatal_symptom_2_abbrev": "Töd Symp 2",
+    "first_prime_symptom_abbrev": "1st H'symp",
+    "intro_symptom_duration_abbrev": "Möglicher Start D'r",
+    "intro_symptom_start_abbrev": "Möglicher Start",
+    "mild_symptom_1_abbrev": "Mld Symp 1",
+    "mild_symptom_1_2_abbrev": "Mld Symp 1 2",
+    "mild_symptom_1_duration_abbrev": "Mld Symp 1 D'r",
+    "mild_symptom_2_abbrev": "Mld Symp 2",
+    "mild_symptom_2_duration_abbrev": "Mld Symp 2 D'r",
+    "overall_patient_rating_abbrev": "Gesamtbewertung der Patienten",
+    "pathogenesis_duration_abbrev": "P'genesis D'r",
+    "pathological_event_duration_abbrev": "D'r des p'logischen",
+    "pathological_severity_abbrev": "P'logischer Sch'grad",
+    "prime_symptom_1_abbrev": "H'symp 1",
+    "prime_symptom_1_duration_abbrev": "H'symp 1 D'r",
+    "prime_symptom_2_abbrev": "H'symp 2",
+    "prime_symptom_2_duration_abbrev": "H'symp 2 D'r",
+    "prime_symptom_3_abbrev": "H'symp 3",
+    "prime_symptom_3_duration_abbrev": "H'symp 3 D'r",
+    "prime_symptom_duration_abbrev": "H'symp D'r",
+    "prime_symptom_level_abbrev": "H'symp Schweregrad",
+    "prime_symptom_proportion_abbrev": "Anteil H'symp",
+    "recovery_duration_abbrev": "Verwertung D'r",
+    "recovery_proportion_abbrev": "Anteil Verwertung",
+    "slight_death_response_1_abbrev": "R'kt Tod 1 (möglich)",
+    "slight_death_response_2_abbrev": "R'kt Tod 2 (möglich)",
+    "time_of_death_abbrev": "Zeit des Todes"
   },
 
   "MainPageHeading": {
@@ -153,15 +187,17 @@
   },
 
   "AxisSelector": {
-    "axisSTATS": "Stats pro Gruppe",
     "axisGROUPBY": "Gruppen (Balken)",
+    "axisSTATS": "Stats pro Gruppe",
     "axisX": "x-Achse (unten)",
     "axisY": "y-Achse (seite)",
-    "shownOnX": "auf der X-Achse dargestellt",
-    "shownOnY": "auf der Y-Achse dargestellt",
-    "shownOnSTATS": "auf der Gruppe-Achse dargestellt",
+    "close": "schließen",
+    "open": "Öffnen",
+    "primaryMark": "diese Auswahl für die Achse vermittelt die wichtigsten Informationen",
     "shownOnGROUPBY": "auf der Gruppen (Balken)-Achse dargestellt",
-    "primaryMark": "diese Auswahl für die Achse vermittelt die wichtigsten Informationen"
+    "shownOnSTATS": "auf der Gruppe-Achse dargestellt",
+    "shownOnX": "auf der X-Achse dargestellt",
+    "shownOnY": "auf der Y-Achse dargestellt"
   },
 
   "AxisSelectorButton": {

@@ -191,15 +191,17 @@
   },
 
   "AxisSelector": {
-    "axisSTATS": "Bars",
     "axisGROUPBY": "Groupings",
+    "axisSTATS": "Bars",
     "axisX": "X Axis",
     "axisY": "Y Axis",
-    "shownOnX": "shown on X axis",
-    "shownOnY": "shown on Y axis",
-    "shownOnSTATS": "shown on stats axis",
+    "close": "Close",
+    "open": "Open",
+    "primaryMark": "this selection for the axis conveys the primary information",
     "shownOnGROUPBY": "shown on group by axis",
-    "primaryMark": "this selection for the axis conveys the primary information"
+    "shownOnSTATS": "shown on stats axis",
+    "shownOnX": "shown on X axis",
+    "shownOnY": "shown on Y axis"
   },
 
   "ScatterStatisticOutput": {
