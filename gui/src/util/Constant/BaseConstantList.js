@@ -1,12 +1,5 @@
 /***********************************/
 /*
- * Average lines on graphs
- */
-export const AVERAGE_LINE_DRAWN_WIDTH = 4
-
-
-/***********************************/
-/*
  * Correlation heatmap
  */
 export const CORRELATION_HEATMAP_FIELD_LIST = [
