@@ -8,9 +8,7 @@ const i18nBase = 'Testing'
 
 function Testing() {
   return (
-    <SubPageWrapper
-      heading={i18next.t('Home.testingPanelLabel')}
-    >
+    <SubPageWrapper heading={i18next.t('Home.testingPanelLabel')}>
       <HeadingAndTextPanel
         heading={i18next.t(`${i18nBase}.heading4`)}
         text={(

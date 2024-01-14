@@ -8,9 +8,7 @@ const i18nBase = 'TechStack'
 
 function TechStack() {
   return (
-    <SubPageWrapper
-      heading={i18next.t('Home.techStackPanelLabel')}
-    >
+    <SubPageWrapper heading={i18next.t('Home.techStackPanelLabel')}>
       <HeadingAndTextPanel
         text={(
           <>

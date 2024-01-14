@@ -22,7 +22,7 @@ function BiasedTimingSim({ antiBiasToolKitData }) {
   }
 
   return (
-    <SubPageWrapper heading={i18next.t(`${i18nBase}.summary`)} width='92%'>
+    <SubPageWrapper heading={i18next.t(`${i18nBase}.summary`)}>
       <div className='row-layout space-children--with-border'>
         <DataAdjusterButtonList
           {...commonAdjusterProps}
