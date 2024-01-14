@@ -1,7 +1,53 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .ui-header-bar {
+  @include row-layout();
   border-bottom: 1px solid var(--grey--black);
-  display: flex;
   justify-content: space-between;
   padding-bottom: var(--spacing--narrow);
+  transition: left 1s;
   width: 100%;
+
+  &__open-button {
+    position: absolute;
+    top: var(--padding--medium);
+    @media (max-width: $media-switch--medium) {
+      top: var(--padding--small-tiny);
+    }
+    @media (min-width: $media-switch--large) {
+      display: none;
+    }
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @media (min-width: $media-switch--large) {
+      display: none;
+    }
+  }
+
+  &.open {
+    @media (max-width: $media-switch--large) {
+      left: 0;
+    }
+  }
+
+  @media (max-width: $media-switch--large) {
+    @include column-layout();
+    & > * {
+      @include space-column--wide-add-border();
+    }
+    background-color: var(--white);
+    border-bottom: 1px solid var(--grey--black);
+    border-right: 1px solid var(--grey--black);
+    border-top: var(--padding--medium) solid var(--white);
+    border-left: var(--padding--medium) solid var(--white);
+    left: -210px;
+    position: absolute;
+    top: 0 - $padding--small-tiny;
+    width: 200px;
+    z-index: var(--menu-guaranteed);
+  }
 }

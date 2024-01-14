@@ -81,6 +81,12 @@
     "nIs": "N ist {{n}}"
   },
 
+  "Header": {
+    "close": "schließen",
+    "open": "Öffnen",
+    "openMenu": "Menü öffnen"
+  },
+
   "Menu": {
     "ariaLabel": "Hauptmenü"
   },

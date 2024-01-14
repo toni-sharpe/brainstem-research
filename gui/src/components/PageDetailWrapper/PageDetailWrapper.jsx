@@ -14,7 +14,6 @@ function PageDetailWrapper({
   heading: headingProp,
   i18nBase,
   secondaryNav,
-  subHeading,
 }) {
   const heading = headingProp?.length
     ? headingProp
@@ -26,7 +25,6 @@ function PageDetailWrapper({
         <div className='row-layout space-children--wide'>
           <h1 className='page-detail-wrapper__heading'>{heading}</h1>
           <section className='page-detail-wrapper__secondary row-layout space-children--wide-with-border'>
-            {subHeading && (<div><h2>{subHeading}</h2></div>)}
             {secondaryNav && (<div>{secondaryNav}</div>)}
           </section>
         </div>
@@ -53,7 +51,6 @@ function PageDetailWrapper({
 PageDetailWrapper.defaultProps = {
   count: null,
   secondaryNav: null,
-  subHeading: null,
 }
 
 function HeadingOrI18nBasePropType(props) {
@@ -68,7 +65,6 @@ PageDetailWrapper.propTypes = {
   heading: HeadingOrI18nBasePropType,
   i18nBase: HeadingOrI18nBasePropType,
   secondaryNav: PropTypes.node,
-  subHeading: PropTypes.string,
 }
 
 export default PageDetailWrapper

@@ -2,7 +2,7 @@
   SCREEN POINTS
  */
 $media-switch--small: 600px;
-$media-switch--medium: 800px;
+$media-switch--medium: 960px;
 $media-switch--large: 1200px;
 
 
@@ -74,11 +74,20 @@ $step-right-back: -2;
 $step-back: -1;
 $step-right-forward: 2;
 $front-guaranteed: 1000;
+$menu-guaranteed: 1500;
 
 
 /*
   MIXINS
  */
+@mixin column-layout() {
+  display: flex;
+  flex-direction: column;
+  &.right {
+    align-items: flex-end;
+  }
+}
+
 @mixin space-column() {
   margin-bottom: var(--spacing--narrow);
   &:last-child {
@@ -102,6 +111,10 @@ $front-guaranteed: 1000;
     margin-bottom: 0;
     padding-bottom: 0;
   }
+}
+
+@mixin row-layout() {
+  display: flex;
 }
 
 @mixin space-row() {
