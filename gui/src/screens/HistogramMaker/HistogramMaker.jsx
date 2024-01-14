@@ -54,7 +54,10 @@ function HistogramMaker({ data }) {
       count={data?.length}
       i18nBase={i18nBase}
       secondaryNav={(
-        <SecondaryNav ariaLabel={i18next.t(`${i18nBase}.secondaryNav`)}>
+        <SecondaryNav
+          ariaLabel={i18next.t(`${i18nBase}.secondaryNav`)}
+          extraClass='histogram-maker'
+        >
           { pipe(
               keys,
               map(k => (<li key={k}><Button {...secondaryNavProps({ ...commonNavProps, k })} /></li>)),

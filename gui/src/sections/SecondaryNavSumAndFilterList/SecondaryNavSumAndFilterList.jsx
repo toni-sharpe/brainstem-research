@@ -8,6 +8,7 @@ import { secondaryNavProps } from 'util/UtilNav/UtilNav'
 function SecondaryNavSumAndFilterList({
   dataPointSumList,
   dataPointSumPerMonth,
+  extraClass,
   i18nBase,
   setDataPointSumPerMonth,
 }) {
@@ -18,7 +19,10 @@ function SecondaryNavSumAndFilterList({
   }
 
   return (
-    <SecondaryNav ariaLabel={i18next.t(`${i18nBase}.secondaryNavSumAndFilterList`)}>
+    <SecondaryNav
+      ariaLabel={i18next.t(`${i18nBase}.secondaryNavSumAndFilterList`)}
+      extraClass={extraClass}
+    >
       <li className='row-layout space-children--wide-with-border'>
         <ol key='sum-list' className='row-layout space-children'>
           {dataPointSumList.map(k => (

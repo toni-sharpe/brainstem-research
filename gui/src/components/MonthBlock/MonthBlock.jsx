@@ -30,13 +30,13 @@ function MonthBlock({
         &&
         (
           <span
-            className='month-block__content'
+            className='column-layout space-children--narrowest month-block__content'
             key='children'
           >
             { jan
               &&
               (
-                <span className='month-block__text'>
+                <span className='month-block__text month-block__year'>
                   {currentYear}
                 </span>
               )
@@ -45,7 +45,7 @@ function MonthBlock({
               &&
               (
                 <span className='month-block__text'>
-                  { `${jan ? ': ' : ''}` }{monthText}
+                  {monthText}
                 </span>
               )
             }

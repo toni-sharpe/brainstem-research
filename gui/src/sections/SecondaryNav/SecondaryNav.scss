@@ -1,8 +1,35 @@
 .secondary-nav {
   flex-wrap: wrap;
-  & > * {
-    @media (max-width: 1113px) {
-      margin-top: var(--spacing--narrow);
+
+  &.anti-bias {
+    & > * {
+      @media (max-width: 1113px) {
+        margin-top: var(--spacing--narrow);
+      }
+    }
+  }
+
+  &.histogram-maker {
+    & > * {
+      @media (max-width: 1071px) {
+        margin-top: var(--spacing--narrow);
+      }
+    }
+  }
+
+  &.research {
+    & > * {
+      @media (max-width: 984px) {
+        margin-top: var(--spacing--narrow);
+      }
+    }
+  }
+
+  &.time-line {
+    & > * {
+      @media (max-width: 718px) {
+        margin-top: var(--spacing--narrow);
+      }
     }
   }
 }

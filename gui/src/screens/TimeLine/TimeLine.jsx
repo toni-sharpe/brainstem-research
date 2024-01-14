@@ -51,6 +51,7 @@ function TimeLine({ data }) {
         <SecondaryNavSumAndFilterList
           dataPointSumList={DATA_POINT_SUM_LIST}
           dataPointSumPerMonth={dataPointSumPerMonth}
+          extraClass='time-line'
           i18nBase={i18nBase}
           setDataPointSumPerMonth={setDataPointSumPerMonth}
         />
