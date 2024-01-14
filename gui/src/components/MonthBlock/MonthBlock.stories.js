@@ -35,24 +35,26 @@ export const BlocksTogether = {
     return (
       <StoryBookPaddedWrapper>
         <div className='column-layout space-children--wide-column'>
-          <ul className='row-layout space-children--wide'>
+          <div className='row-layout space-children--wide'>
             <MonthBlock {...futureProps} />
+            <MonthBlock {...thisMonthProps} />
+          </div>
+          <div className='row-layout space-children--wide'>
             <MonthBlock {...janProps} />
             <MonthBlock {...defaultYearProps} />
             <MonthBlock {...janClassProps} />
             <MonthBlock {...janColorProps} />
             <MonthBlock {...eventFreeProps} />
-            <MonthBlock {...thisMonthProps} />
-          </ul>
-          <ul className='row-layout space-children--wide'>
             <MonthBlock {...noText} />
+          </div>
+          <div className='row-layout space-children--wide'>
             <MonthBlock {...lightProps} />
             <MonthBlock {...mediumProps} />
             <MonthBlock {...heavyProps} />
             <MonthBlock {...veryHeavyProps} />
             <MonthBlock {...exceptionalProps} />
             <MonthBlock {...frighteningProps} />
-          </ul>
+          </div>
         </div>
       </StoryBookPaddedWrapper>
     )
