@@ -28,7 +28,6 @@ function BiasedJudgementSim({ antiBiasToolKitData = [] }) {
     <SubPageWrapper
       heading={i18next.t(`${i18nBase}.summary`)}
       headingLevel='h2'
-      width='100%'
     >
       <canvas
         ref={canvasRef}

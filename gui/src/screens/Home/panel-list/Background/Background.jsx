@@ -8,9 +8,7 @@ const i18nBase = 'Background'
 
 function Background() {
   return (
-    <SubPageWrapper
-      heading={i18next.t('Home.backgroundPanelLabel')}
-    >
+    <SubPageWrapper heading={i18next.t('Home.backgroundPanelLabel')}>
       <HeadingAndTextPanel
         heading={i18next.t(`${i18nBase}.heading1`)}
         text={(
