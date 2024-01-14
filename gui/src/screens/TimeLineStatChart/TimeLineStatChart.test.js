@@ -21,8 +21,8 @@ test('TimeLineStatChart - ', async () => {
    */
   expect(screen.getByText('Time Line Stat. Chart')).toBeTruthy()
   expect(screen.getByLabelText('See response time statistics or interactive where you can choose what to group and see time statistics about')).toBeTruthy()
-  expect(screen.getByText('English')).toBeTruthy()
-  expect(screen.getByText('Deutsche')).toBeTruthy()
+  expect(screen.getByText('EN')).toBeTruthy()
+  expect(screen.getByText('DE')).toBeTruthy()
 
 
   /*

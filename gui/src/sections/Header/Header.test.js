@@ -11,7 +11,7 @@ const setCurrentFilterListMock = jest.fn()
 
 
 const baseHeaderProps = {
-  currentUrl: 'TimeLineStatChart',
+  currentUrl: 'TimeLine',
   currentFilterList: CURRENT_FILTER_LIST,
   setCurrentFilterList: setCurrentFilterListMock,
 }

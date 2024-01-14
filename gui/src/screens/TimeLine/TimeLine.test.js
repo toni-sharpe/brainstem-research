@@ -19,8 +19,8 @@ test('TimeLine - ', async () => {
    */
   expect(screen.getByText('Time Line')).toBeTruthy()
   expect(screen.getByLabelText('A set of options for the months')).toBeTruthy()
-  expect(screen.getByText('English')).toBeTruthy()
-  expect(screen.getByText('Deutsche')).toBeTruthy()
+  expect(screen.getByText('EN')).toBeTruthy()
+  expect(screen.getByText('DE')).toBeTruthy()
 
 
   /*

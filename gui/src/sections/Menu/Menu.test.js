@@ -9,7 +9,7 @@ import Menu from './Menu'
 test('Menu', async () => {
   render(
     <Menu
-      currentUrl='TimeLineStatChart'
+      currentUrl='TimeLine'
     />
   )
 
