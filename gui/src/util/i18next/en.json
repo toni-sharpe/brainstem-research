@@ -114,7 +114,7 @@
 
   "Background": {
     "paragraph1": "This project is essentially a statistical analysis of some medical research that I have done during a sabbatical period supported by savings. The research itself comprises of a hypothesis and a wealth of supporting evidence including 289 cases. The cases, or \"events\" as I call them, each have about 70 data points and this site is intended to graphically display certain supporting evidence, provide methods of challenging that and exploring how wrong I can be (bias is real) and also, give the user the chance to interact themselves, either to challenge the data or to explore it themselves.",
-    "paragraph2-1": "I noticed, investigated and discovered something new about the brainstem then modeled that data on this website. ",
+    "paragraph2-1": "I noticed, investigated and and may have discovered something new about the brainstem under certain conditions and this website is all about looking at that data from different angles. ",
     "paragraph2Link": "",
     "paragraph2-2": "I did this all myself and it even delayed my job searching; however, it needs verification from medically trained folk.",
     "paragraph3": "The medical research is real, the events are real and each one represents the experience of a real person, many of whom, around 90, are now dead as a result. For this reason the site is purposefully genericised for the sake of the dignity of both the dead and living and because as of yet, my hypothesis has not been verified or even inspected by anyone who has the right credentials. "
@@ -166,7 +166,7 @@
     "techStack19Label": "Clean code",
     "techStack19": " - there are several acronyms I don’t remember, but, generally I try to keep things consistent, reuse things, factor stuff out against tests and all the other things. Of course I don’t manage this all the time, the excitement of proving a concept takes over, or something needs to be done and we’ve got it written down to come back to. In my experience this doesn’t happen as much as I would like.",
     "techStack20Label": "Performance.",
-    "techStack20": " - It's fast and accessible, because I use HTML (properly), canvas and CSS directly"
+    "techStack20": " - It's fast and accessible, because I use HTML, aria, SVG (or canvas) and CSS directly. I also try to keep things simple and avoid just adding another library."
   },
 
   "Testing": {

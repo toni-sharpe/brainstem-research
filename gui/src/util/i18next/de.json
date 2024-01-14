@@ -115,7 +115,7 @@
 
   "Background": {
     "paragraph1": "Bei diesem Projekt handelt es sich im Wesentlichen um eine statistische Analyse einiger medizinischer Forschungsarbeiten, die ich während eines durch Einsparungen unterstützten Sabbatjahrs durchgeführt habe. Die Forschung selbst besteht aus einer Hypothese und einer Fülle von Belegen, darunter 289 Fälle. Die Fälle oder \"Ereignisse\", wie ich sie nenne, haben jeweils etwa 70 Datenpunkte, und diese Website soll bestimmte unterstützende Beweise grafisch darstellen, Methoden zur Anfechtung dieser Beweise bereitstellen und erforschen, wie falsch ich liegen kann (Voreingenommenheit ist real), und auch dem Benutzer die Möglichkeit geben, selbst zu interagieren, entweder um die Daten anzufechten oder um sie selbst zu erforschen.",
-    "paragraph2-1": "Ich habe eine Möglichkeit gesehen, habe nachgeforscht und etwas Neues über den Hirnstamm entdeckt und diese Daten dann auf dieser Website hier modelliert. ",
+    "paragraph2-1": "Ich habe etwas Neues über den Hirnstamm unter bestimmten Bedingungen festgestellt, untersucht und vielleicht auch entdeckt, und auf dieser Website geht es darum, diese Daten aus verschiedenen Blickwinkeln zu betrachten. ",
     "paragraph2Link": "",
     "paragraph2-2": "Ich habe das alles selbst gemacht und es hat sogar meine Jobsuche verzögert; allerdings muss es von medizinisch ausgebildeten Leuten überprüft werden.",
     "paragraph3": "Die medizinische Forschung ist real, die Ereignisse sind real und jedes einzelne stellt die Erfahrung einer realen Person dar, von denen viele, etwa 90, jetzt als Folge davon tot sind. Aus diesem Grund ist die Seite absichtlich generisch gehalten, um die Würde sowohl der Toten als auch der Lebenden zu wahren, und weil meine Hypothese noch nicht von jemandem, der über die entsprechenden Referenzen verfügt, verifiziert oder auch nur inspiziert worden ist."
@@ -167,7 +167,7 @@
     "techStack19Label": "Sauberer Code",
     "techStack19": " - Es gibt mehrere Akronyme, an die ich mich nicht erinnere, aber im Allgemeinen versuche ich, die Dinge konsistent zu halten, Dinge wiederzuverwenden, Dinge mit Tests zu vergleichen und all die anderen Dinge. Natürlich gelingt mir das nicht immer, die Aufregung über die Bewährung eines Konzepts nimmt überhand, oder es muss etwas getan werden und wir haben es aufgeschrieben, um darauf zurückzukommen. Meiner Erfahrung nach geschieht das nicht so oft, wie ich es mir wünschen würde..",
     "techStack20Label": "Leistung.",
-    "techStack20": " - Es ist schnell und zugänglich, weil ich HTML (richtig), Canvas und CSS direkt verwende."
+    "techStack20": " - Es ist schnell und zugänglich, weil ich HTML, Aria, SVG (oder Canvas) und CSS direkt verwende. Ich versuche auch, die Dinge einfach zu halten und nicht einfach eine weitere Bibliothek hinzuzufügen."
   },
 
   "Testing": {
