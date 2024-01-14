@@ -1,3 +1,13 @@
+@import '../../../../util/Constant/sass-variable-list.scss';
+
 .biased-correlation-sim {
-  width: 70%;
+  width: 92%;
+
+  @media (min-width: $media-switch--medium) {
+    width: 70%;
+  }
+
+  @media (min-width: $media-switch--large) {
+    width: 56%;
+  }
 }

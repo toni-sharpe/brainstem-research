@@ -56,7 +56,6 @@ function BiasedCorrelationSim({ antiBiasToolKitData: scatterData }) {
   return (
     <SubPageWrapper
       heading={i18next.t(`${i18nBase}.summary`)}
-      width='70%'
     >
       <div className='biased-correlation-sim row-layout space-children--wide'>
         <DataAdjusterButtonList
