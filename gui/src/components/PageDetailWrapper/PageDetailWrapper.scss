@@ -28,6 +28,12 @@ h3 {
     align-items: center;
     display: flex;
   }
+
+  &__left {
+    max-width: 45%;
+    flex-wrap: wrap;
+  }
+
   &__header {
     align-items: center;
     border-bottom: 1px solid var(--grey--dark);
@@ -36,8 +42,17 @@ h3 {
     width: 100%;
     box-sizing: border-box;
     @media (max-width: $media-switch--large) {
-      padding-left: 110px;
       padding-top: 0;
+    }
+
+    @media (max-width: $media-switch--medium) {
+      padding-bottom: var(--padding--small-tiny);
+    }
+
+    &.page-detail-wrapper__header {
+      @media (max-width: $media-switch--large) {
+        margin-bottom: var(--spacing--narrow);
+      }
     }
   }
   &__secondary {

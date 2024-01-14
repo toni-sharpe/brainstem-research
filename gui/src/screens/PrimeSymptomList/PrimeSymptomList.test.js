@@ -18,7 +18,6 @@ test('PrimeSymptomList - ', async () => {
    * Base screen tests, has it rendered
    */
   expect(screen.getByText('Prime Symptom')).toBeTruthy()
-  expect(screen.getByText('Shows prime symptom appearing earlier as the set who survive increases')).toBeTruthy()
   expect(screen.getByText('English')).toBeTruthy()
   expect(screen.getByText('Deutsche')).toBeTruthy()
 

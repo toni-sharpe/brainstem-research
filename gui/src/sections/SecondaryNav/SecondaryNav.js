@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import './SecondaryNav.scss'
+
 function SecondaryNav({ ariaLabel, children }) {
   return (
     <nav aria-label={ariaLabel}>
-      <ol className='row-layout space-children'>
+      <ol className='secondary-nav row-layout space-children'>
         {children}
       </ol>
     </nav>
