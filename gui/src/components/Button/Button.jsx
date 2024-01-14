@@ -31,7 +31,7 @@ function Button({
     onClick: isDisabled
       ? null
       : onClick,
-    title: `${title}${isDisabled ? ' (is currently disabled)' : ''}${isPrimaryMarked ? ' - primary' : ''}`,
+    title: `${title ? title : ''}${isDisabled ? ' (is currently disabled)' : ''}${isPrimaryMarked ? ' - primary' : ''}`,
   }
 
   return (
@@ -47,7 +47,7 @@ Button.defaultProps = {
   isSelected: false,
   label: "Label needs to be set!",
   size: null,
-  title: null,
+  title: undefined,
 }
 
 Button.propTypes = {

@@ -45,6 +45,18 @@ export const Selected = {
   }
 }
 
+export const NoTitleNoHoverText = {
+  render: () => {
+    const props = {
+      ...commonButtonProps,
+      title: undefined,
+    }
+    return(
+      <Button {...props} />
+    )
+  }
+}
+
 export const DisabledAndSelected = {
   render: () => {
     const props = {
