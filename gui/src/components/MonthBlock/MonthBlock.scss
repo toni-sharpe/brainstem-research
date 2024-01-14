@@ -1,9 +1,16 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .month-block {
   display: inline-block;
   margin: 0 2px;
   padding-bottom: 7.8%;
   position: relative;
   width: 7.8%;
+
+  @media (max-width: $media-switch--medium) {
+    padding-bottom: 15.8%;
+    width: 15.8%;
+  }
 
   &--event-free {
     background-color: var(--grey--white);
@@ -63,5 +70,15 @@
   &__text {
     background-color: var(--white);
     color: var(--black);
+  }
+
+  &__year {
+    align-self: flex-start;
+    background-color: var(--grey--dark);
+    color: var(--white);
+    font-size: var(--font-size--medium);
+    font-weight: var(--font-weight--bold);
+    margin-bottom: var(--spacing--narrowest);
+    padding: var(--padding--tiniest) var(--padding--small-tiny);
   }
 }

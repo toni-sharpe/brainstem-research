@@ -24,7 +24,7 @@ export const BlocksTogether = {
     const thisMonthProps = { ...baseMonthBlockProps, monthText: 'This Month', monthType: 'this-month' }
     const defaultYearProps = { ...baseMonthBlockProps, currentMonth: '01', currentYear: undefined, monthText: 'This year - uses default', monthType: 'event-free' }
 
-    const noText     =       { ...baseMonthBlockProps, colorVal: '201' }
+    const noText =           { ...baseMonthBlockProps, colorVal: '201' }
     const lightProps =       { ...baseMonthBlockProps, colorVal: '201', monthText: 'Light' }
     const mediumProps =      { ...baseMonthBlockProps, colorVal: '161', monthText: 'Medium' }
     const heavyProps =       { ...baseMonthBlockProps, colorVal: '121', monthText: 'Heavy' }
