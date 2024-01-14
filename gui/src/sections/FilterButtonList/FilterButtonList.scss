@@ -7,7 +7,7 @@
   }
 
   @media (max-width: $media-switch--large) {
-    @include column-layout();
+    flex-wrap: wrap;
     & > * {
       @include space-column();
     }

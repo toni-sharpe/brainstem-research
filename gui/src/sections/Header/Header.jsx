@@ -18,7 +18,7 @@ function Header({
   currentUrl,
   setCurrentFilterList,
 }) {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   const openClass = isOpen ? 'open' : ''
 
@@ -44,12 +44,14 @@ function Header({
             title={i18next.t(`${i18nBase}.close`)}
           />
         ) }
-        <Menu currentUrl={currentUrl} />
-        <FilterButtonList
-          currentFilterList={currentFilterList}
-          currentUrl={currentUrl}
-          setCurrentFilterList={setCurrentFilterList}
-        />
+        <div className='ui-header-bar__nav-and-filter'>
+          <Menu currentUrl={currentUrl} />
+          <FilterButtonList
+            currentFilterList={currentFilterList}
+            currentUrl={currentUrl}
+            setCurrentFilterList={setCurrentFilterList}
+          />
+        </div>
       </header>
     </div>
   )  
