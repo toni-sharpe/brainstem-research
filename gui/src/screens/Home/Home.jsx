@@ -28,7 +28,10 @@ function Home() {
     <PageDetailWrapper
       i18nBase={''}
       secondaryNav={(
-        <SecondaryNav ariaLabel={i18next.t(`${i18nBase}.secondaryNav`)}>
+        <SecondaryNav
+          ariaLabel={i18next.t(`${i18nBase}.secondaryNav`)}
+          extraClass='research'
+        >
           <SecondaryNavButtonList {...commonNavProps} />
         </SecondaryNav>
       )}

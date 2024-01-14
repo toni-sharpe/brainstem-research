@@ -48,7 +48,10 @@ function AntiBiasToolKit({ data }) {
       count={antiBiasToolKitData?.length}
       i18nBase={i18nBase}
       secondaryNav={(
-        <SecondaryNav ariaLabel={i18next.t(`${i18nBase}.secondaryNav`)}>
+        <SecondaryNav
+          ariaLabel={i18next.t(`${i18nBase}.secondaryNav`)}
+          extraClass='anti-bias'
+        >
           <SecondaryNavButtonList {...commonNavProps} />
         </SecondaryNav>
       )}
