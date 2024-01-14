@@ -18,6 +18,6 @@ test('CorrelationHeatmap - ', async () => {
    * Base screen tests, has it rendered
    */
   expect(screen.getByText('Corr. Heatmap')).toBeTruthy()
-  expect(screen.getByText('English')).toBeTruthy()
-  expect(screen.getByText('Deutsche')).toBeTruthy()
+  expect(screen.getByText('EN')).toBeTruthy()
+  expect(screen.getByText('DE')).toBeTruthy()
 })

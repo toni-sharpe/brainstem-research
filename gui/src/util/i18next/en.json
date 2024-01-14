@@ -80,14 +80,20 @@
     "nIs": "N is {{n}}"
   },
 
+  "Header": {
+    "close": "Close",
+    "open": "Open",
+    "openMenu": "Open menu"
+  },
+
   "Menu": {
     "ariaLabel": "Main menu"
   },
 
   "LanguageToggle": {
     "languageToggle": "Switch language to",
-    "de": "Deutsche",
-    "en": "English"
+    "de": "DE",
+    "en": "EN"
   },
 
   "FilterButtonLabel": {
@@ -278,10 +284,10 @@
   },
 
   "AntiBiasToolKit": {
-    "secondaryNav": "Secondary nav for selecting which error simulation to look at",
-    "correlationPanelLabel": "Biased correlation simulation",
-    "judgementPanelLabel": "Biased judgement simulation",
-    "timingPanelLabel": "Biased timing simulation"
+    "secondaryNav": "Secondary nav for selecting which bias sim. to look at",
+    "correlationPanelLabel": "Correlation sim.",
+    "judgementPanelLabel": "Judgement sim.",
+    "timingPanelLabel": "Timing sim."
   },
 
   "BiasedJudgementSim": {

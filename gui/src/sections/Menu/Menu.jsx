@@ -18,7 +18,7 @@ function Menu({
     <nav
       aria-label={i18next.t(`${i18nBase}.ariaLabel`)}
     >
-      <ul role='menu' className='menu row-layout space-children--with-border'>
+      <ul role='menu' className='menu'>
         {rootMenuSlugs.map(urlSlug => {
           return (
             <li key={urlSlug}>

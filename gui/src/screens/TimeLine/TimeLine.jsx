@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { format } from 'date-fns'
-import { reverse } from 'ramda'
+import { map, pipe, reverse, toPairs } from 'ramda'
 
+import Button from 'components/Button/Button'
 import MonthBlock from 'components/MonthBlock/MonthBlock'
 import MonthText from 'components/MonthText/MonthText'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
@@ -50,14 +51,32 @@ function TimeLine({ data }) {
         <SecondaryNavSumAndFilterList
           dataPointSumList={DATA_POINT_SUM_LIST}
           dataPointSumPerMonth={dataPointSumPerMonth}
-          filterBy={filterBy}
           i18nBase={i18nBase}
           setDataPointSumPerMonth={setDataPointSumPerMonth}
-          setFilterBy={setFilterBy}
-          timeLineFilterList={TIME_LINE_FILTER_LIST}
         />
       )}
     >
+      <ol key='filter-list' className='row-layout space-children'>
+        {
+          pipe(
+            toPairs,
+            map(([label, filter]) => {
+              const isSelected = filter[1] === filterBy[1]
+
+              return (
+                <li key={label}>
+                  <Button
+                    isSelected={isSelected}
+                    label={label}
+                    onClick={() => setFilterBy(filter)}
+                    size='medium'
+                  />
+                </li>
+              )
+            })
+          )(TIME_LINE_FILTER_LIST)
+        }
+      </ol>
       <ul className='time-line__heat-map'>
         { calcRange({ num: monthsLeftThisYear }).map(ml => {
           return (

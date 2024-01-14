@@ -18,7 +18,7 @@ test('AntiBiasToolKit - ', async () => {
    * Base screen tests, has it rendered
    */
   expect(screen.getByText('Anti-bias Tool Kit')).toBeTruthy()
-  expect(screen.getByLabelText('Secondary nav for selecting which error simulation to look at')).toBeTruthy()
-  expect(screen.getByText('English')).toBeTruthy()
-  expect(screen.getByText('Deutsche')).toBeTruthy()
+  expect(screen.getByLabelText('Secondary nav for selecting which bias sim. to look at')).toBeTruthy()
+  expect(screen.getByText('EN')).toBeTruthy()
+  expect(screen.getByText('DE')).toBeTruthy()
 })

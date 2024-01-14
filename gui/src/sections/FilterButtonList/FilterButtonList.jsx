@@ -8,6 +8,8 @@ import CurrentUrlPropType from 'prop-types/CurrentUrl.prop-type'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 
+import './FilterButtonList.scss'
+
 import isFilterDisabled from './isFilterDisabled'
 
 function FilterButtonList({
@@ -33,7 +35,7 @@ function FilterButtonList({
 
   return (
     <ul
-      className='row-layout space-children'
+      className='filter-button-list'
       data-testid='filter-button-list'
       role='group'
     >

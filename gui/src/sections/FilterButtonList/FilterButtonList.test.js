@@ -6,7 +6,7 @@ import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 
 import FilterButtonList from './FilterButtonList'
 
-function renderFilterButtonList({ currentUrl = 'TimeLineStatChart', mock = () => {} } = {}) {
+function renderFilterButtonList({ currentUrl = 'TimeLine', mock = () => {} } = {}) {
   return render(
     <FilterButtonList
       currentUrl={currentUrl}
@@ -32,19 +32,19 @@ test('FilterButtonList', async () => {
 })
 
 test('FilterButtonList - scatter page enables remove dubious', async () => {
-  renderFilterButtonList({ currentUrl: 'time-line' })
+  renderFilterButtonList({ currentUrl: 'TimeLine' })
 
   expect(screen.getByText('Rm Dub.', { selected: true })).toBeTruthy()
 })
 
 test('FilterButtonList - prime-symptom page enables remove dubious', async () => {
-  renderFilterButtonList({ currentUrl: 'time-line' })
+  renderFilterButtonList({ currentUrl: 'TimeLine' })
 
   expect(screen.getByText('Rm Dub.', { selected: true })).toBeTruthy()
 })
 
 test('FilterButtonList - TimeLineStatChart page enables remove dubious', async () => {
-  renderFilterButtonList({ currentUrl: 'TimeLineStatChart' })
+  renderFilterButtonList({ currentUrl: 'TimeLine' })
 
   expect(screen.getByText('Rm Dub.', { selected: true })).toBeTruthy()
 })

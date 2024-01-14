@@ -10,14 +10,10 @@
 
 
 .row-layout {
-  display: flex;
+  @include row-layout();
 }
 .column-layout {
-  display: flex;
-  flex-direction: column;
-  &.right {
-    align-items: flex-end;
-  }
+  @include column-layout();
 }
 
 

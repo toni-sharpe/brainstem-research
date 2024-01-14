@@ -81,14 +81,20 @@
     "nIs": "N ist {{n}}"
   },
 
+  "Header": {
+    "close": "schließen",
+    "open": "Öffnen",
+    "openMenu": "Menü öffnen"
+  },
+
   "Menu": {
     "ariaLabel": "Hauptmenü"
   },
 
   "LanguageToggle": {
     "languageToggle": "Sprache wechseln zu",
-    "de": "Deutsche",
-    "en": "English"
+    "de": "DE",
+    "en": "EN"
   },
 
   "FilterButtonLabel": {
@@ -270,10 +276,10 @@
   },
 
   "AntiBiasToolKit": {
-    "secondaryNav": "Sekundäre Navigation für die Auswahl der zu untersuchenden schlechten Simulation",
-    "correlationPanelLabel": "Simulation der verzerrten Korrelation",
-    "judgementPanelLabel": "Simulation eines verzerrten Urteils",
-    "timingPanelLabel": "Verzerrte Zeitsimulation"
+    "secondaryNav": "Sekundäre Navigation für die Auswahl der zu untersuchenden bias Sim",
+    "correlationPanelLabel": "Korrelation Sim",
+    "judgementPanelLabel": "Urteils Sim",
+    "timingPanelLabel": "Zeitsim"
   },
 
   "BiasedJudgementSim": {

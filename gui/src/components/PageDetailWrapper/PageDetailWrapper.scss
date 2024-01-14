@@ -1,3 +1,5 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 h1, h2 {
   display: inline;
   font-size: var(--font-size--large);
@@ -20,17 +22,38 @@ h3 {
 
 .page-detail-wrapper {
   align-items: center;
+  justify-content: space-between;
 
   &__full-count {
     align-items: center;
     display: flex;
   }
+
+  &__left {
+    max-width: 45%;
+    flex-wrap: wrap;
+  }
+
   &__header {
     align-items: center;
     border-bottom: 1px solid var(--grey--dark);
     justify-content: space-between;
     padding: var(--padding--medium) 0;
     width: 100%;
+    box-sizing: border-box;
+    @media (max-width: $media-switch--large) {
+      padding-top: 0;
+    }
+
+    @media (max-width: $media-switch--medium) {
+      padding-bottom: var(--padding--small-tiny);
+    }
+
+    &.page-detail-wrapper__header {
+      @media (max-width: $media-switch--large) {
+        margin-bottom: var(--spacing--narrow);
+      }
+    }
   }
   &__secondary {
     align-items: center;

@@ -1,11 +1,13 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
-.menu {
+.filter-button-list {
   @include row-layout();
-  list-style: none;
+  & > * {
+    @include space-row();
+  }
 
   @media (max-width: $media-switch--large) {
-    @include column-layout();
+    flex-wrap: wrap;
     & > * {
       @include space-column();
     }
