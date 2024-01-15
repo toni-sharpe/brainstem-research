@@ -16,7 +16,7 @@ function PrimeSymptomList({ data }) {
     >
       <PrimeSymptomHistogram
         blockSize={PRIME_SYMPTOM_BLOCK_SIZE}
-        histogramHeight={60}
+        histogramHeight={56}
         primeSymptomData={data}
       />
     </PageDetailWrapper>
