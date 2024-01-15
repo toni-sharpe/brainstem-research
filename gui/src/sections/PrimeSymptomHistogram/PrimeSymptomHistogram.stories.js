@@ -1,5 +1,6 @@
 // PrimeSymptomHistogram.story.js
 import PrimeSymptomHistogramData from 'example-data/APIPrimeSymptomList.example-data'
+import { PRIME_SYMPTOM_BLOCK_SIZE } from 'util/Constant/BaseConstantList'
 
 import PrimeSymptomHistogram from './PrimeSymptomHistogram';
 
@@ -9,7 +10,7 @@ export default {
 
 const basePrimeSymptomHistogramProps = {
   biasedTimingError: 0,
-  blockSize: 30,
+  blockSize: PRIME_SYMPTOM_BLOCK_SIZE,
   primeSymptomData: PrimeSymptomHistogramData,
   timingError: 0,
 }
