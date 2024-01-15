@@ -1,7 +1,7 @@
 import { reduce } from 'ramda'
 
 import {
-  currentPathogenStepList,
+  currentPathogenesisStepList,
   currentGroupBy,
   maxGroupBy,
   groupList,
@@ -73,7 +73,7 @@ test('groupByPathogenStep()', () => {
  */
 test('groupPathologicalEventList()', () => {
   const pathoGenListGrouperFn = groupPathologicalEventList({
-    currentPathogenStepList,
+    currentPathogenesisStepList,
     currentGroupBy,
     groupList,
     maxGroupBy,
@@ -99,7 +99,7 @@ test('groupByProvidedGroupList() runs things in the right order and converts as 
   expect(groupByProvidedGroupList({
     builtGroupList,
     currentGroupBy,
-    currentPathogenStepList,
+    currentPathogenesisStepList,
     groupList,
     maxGroupBy,
   })(histogramRawData)).toEqual(histogramReadyData)

@@ -7,8 +7,6 @@ import {
   HISTOGRAM_BAR_LIST_MARGIN,
   HISTOGRAM_BAR_WIDTH,
   HISTORGRAM_HEIGHT,
-  USE_HUE_CONTRAST_TOGGLE,
-  USE_HUE_WHEEL,
 } from 'util/Constant/BaseConstantList'
 
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
@@ -16,7 +14,6 @@ import HistogramBarList from 'sections/HistogramBarList/HistogramBarList'
 import HistogramDataPropType from 'prop-types/HistogramData.prop-type'
 import HistogramTranslationPropType from 'prop-types/HistogramTranslation.prop-type'
 import XAxisLineList from 'components/XAxisLineList/XAxisLineList'
-import { calcHistogramBarHue } from 'util/UtilHistogram/UtilHistogram'
 import { calcMostMaxOfAllTheThings } from 'util/UtilHistogram/UtilHistogramMaxThing'
 
 import './Histogram.scss'
@@ -29,6 +26,7 @@ function Histogram({
   histogramBarGroupList,
   histogramHeight,
   graphLabel,
+  hueFn,
   i18nBaseOverride,
   i18nKeyOnly,
   translationSet,
@@ -54,11 +52,6 @@ function Histogram({
     mostMaxOfAllThings,
     translationSet,
   }
-
-  const hueFn = calcHistogramBarHue({
-    useHueContrastToggle,
-    useHueWheel,
-  })
 
   return (
     <figure className='histogram column-layout'>
@@ -86,8 +79,6 @@ Histogram.defaultProps = {
   blockSize: HISTOGRAM_BAR_WIDTH,
   histogramHeight: HISTORGRAM_HEIGHT,
   i18nKeyOnly: null,
-  useHueContrastToggle: USE_HUE_CONTRAST_TOGGLE,
-  useHueWheel: USE_HUE_WHEEL,
 }
 
 Histogram.propTypes = {
