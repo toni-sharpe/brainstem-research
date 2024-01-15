@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { primeSymptomHistogramBarGrouper, calcPrimeSymptomHistogramBarGroup } from './UtilPrimeSymptomHistogram'
 
 const histogramData = [

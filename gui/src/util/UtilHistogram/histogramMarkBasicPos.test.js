@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { calcHistogramBarPos } from './UtilHistogram'
 
 const scale = { totalSteps: 10, stepDivision: 100 }

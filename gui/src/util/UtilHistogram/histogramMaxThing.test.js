@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom'
-
 import { calcMostMaxOfAllTheThings } from './UtilHistogramMaxThing'
 
 test('calcMostMaxOfAllTheThings() with no arrays', () => {

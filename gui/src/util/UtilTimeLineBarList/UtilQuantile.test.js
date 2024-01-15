@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { calcQuantileDetail, hasSufficientData } from './UtilQuantile'
 
 

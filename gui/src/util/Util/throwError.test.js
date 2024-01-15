@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom'
-
 import { throwError } from './Util'
 
 const throwErrorArgs = {

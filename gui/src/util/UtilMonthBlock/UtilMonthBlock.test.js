@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { isJan, calcMonthTypeClass, calcSeverityClass } from './UtilMonthBlock'
 
 

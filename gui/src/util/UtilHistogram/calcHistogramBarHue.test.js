@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom'
-
 import { calcHistogramBarHue } from './UtilHistogram'
 
 test('calcHistogramBarHue() useHueWheel false returns null', () => {

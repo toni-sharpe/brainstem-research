@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { calcHistogramBarHeight } from './UtilHistogram'
 
 const histogramBarGroupList = [

@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom'
-
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 
 import {

@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { reduce } from 'ramda'
 
 import {

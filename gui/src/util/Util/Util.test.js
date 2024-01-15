@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom'
-
 import { sortFn } from './Util'
 
 test('sortFn() returns -1 if A is greater than B', () => {

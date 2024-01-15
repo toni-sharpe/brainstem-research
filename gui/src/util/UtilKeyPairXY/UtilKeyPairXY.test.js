@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import utilKeyPairXY from './UtilKeyPairXY'
 
 test('utilKeyPairXY()', () => {

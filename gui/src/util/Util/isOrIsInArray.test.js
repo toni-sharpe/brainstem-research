@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom'
-
 import { isOrIsInArray } from './Util'
 
 test('true if arr is key', () => {

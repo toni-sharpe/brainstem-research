@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { calcScale, getStatBase, fullStatBase, mapToTimeLineBars } from './UtilTimeLineBarList'
 
 const quantile = [1, 5, 5, 9, 30, 51, 53, 53, 58]

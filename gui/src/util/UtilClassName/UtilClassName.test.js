@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { bemWithExtraClass } from './UtilClassName'
 
 test('bemWithExtraClass() without extraClass', () => {

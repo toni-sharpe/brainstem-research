@@ -1,5 +1,4 @@
 import { take } from 'ramda'
-import '@testing-library/jest-dom'
 
 import APITimeLineStatChartData from 'example-data/APITimeLineStatChart.example-data'
 import GeneralResponseStatListExampleData from 'screens/TimeLineStatChart/panel-list/GeneralResponseTimeLineStatChart/GeneralResponseTimeLineStatChart.example-data.js'

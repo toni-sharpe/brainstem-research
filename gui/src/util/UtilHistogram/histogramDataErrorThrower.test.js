@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom'
-
 import { histogramBarGroupListErrorCheck } from './UtilHistogram'
 
 test('histogramBarGroupListErrorCheck() with [] throws error', () => {

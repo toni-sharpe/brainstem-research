@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { map } from 'ramda'
 
 import APITimeLineStatChartData from 'example-data/APITimeLineStatChart.example-data'
