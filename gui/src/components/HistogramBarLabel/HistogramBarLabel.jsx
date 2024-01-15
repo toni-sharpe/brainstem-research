@@ -11,22 +11,9 @@ function HistogramBarLabel({
   children,
   isShown,
 }) {
-  const positionStyles = {
-    top: 4,
-  }
-
-  const className = children
-    ? `histogram-bar-label${
-      blockSize < 1.5
-        ? ' histogram-bar-label__small-font'
-        : ''
-    }`
-    : ''
-
   return (
     <span
-      className={className}
-      style={positionStyles}
+      className='histogram-bar-label'
     >
       { children }
     </span>
