@@ -8,11 +8,7 @@ import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
 import Button from 'components/Button/Button'
 import { secondaryNavProps } from 'util/UtilNav/UtilNav'
-import {
-  HISTOGRAM_BAR_LIST_MARGIN,
-  USE_HUE_CONTRAST_TOGGLE,
-  USE_HUE_WHEEL,
-} from 'util/Constant/BaseConstantList'
+import { HISTOGRAM_BAR_LIST_MARGIN } from 'util/Constant/BaseConstantList'
 import { calcHistogramBarHue } from 'util/UtilHistogram/UtilHistogram'
 import { calcHistogramBarGroupList, dataFnList } from './HistogramMakerDataFunctions'
 import './HistogramMaker.scss'

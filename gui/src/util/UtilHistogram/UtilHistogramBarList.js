@@ -1,7 +1,6 @@
 import { join, type } from 'ramda'
 import i18next from 'util/i18next/i18next'
 
-import { HISTOGRAM_BAR_SEGMENT_ALPHA_STEP } from 'util/Constant/BaseConstantList'
 import { throwError } from 'util/Util/Util'
 
 
