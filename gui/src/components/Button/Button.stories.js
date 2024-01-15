@@ -105,3 +105,22 @@ export const SmallestPadding = {
     )
   }
 }
+
+export const WithSomeStyles = {
+  render: () => {
+    const props = {
+      ...commonButtonProps,
+      style: {
+        backgroundColor: '#118',
+        color: '#fff',
+        fontSize: 40,
+        fontWeight: 900,
+        padding: 50,
+        textTransform: 'uppercase',
+      },
+    }
+    return(
+      <Button {...props} />
+    )
+  }
+}
