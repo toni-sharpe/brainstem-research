@@ -12,7 +12,7 @@ import BiasedTimingSim from './panel-list/BiasedTimingSim/BiasedTimingSim'
 const i18nBase = 'AntiBiasToolKit'
 
 function AntiBiasToolKit({ data }) {
-  const [antiBiasToolKitPanel, setAntiBiasToolKitPanel] = useState('judgement')
+  const [antiBiasToolKitPanel, setAntiBiasToolKitPanel] = useState('correlation')
 
   const {
     biased_test_cases: biasedTestCases,
@@ -23,7 +23,7 @@ function AntiBiasToolKit({ data }) {
   const commonNavProps = {
     currentPanel: antiBiasToolKitPanel,
     i18nBase,
-    panelList: ['judgement', 'timing', 'correlation'],
+    panelList: ['correlation', 'timing', 'judgement'],
     setCurrentPanel: setAntiBiasToolKitPanel,
   }
 
