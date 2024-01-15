@@ -80,7 +80,7 @@ export const ORDERED_FILTERS = [
 export const HISTOGRAM_BAR_LIST_COUNT = 1
 export const HISTOGRAM_BAR_LIST_MARGIN = 1
 export const HISTOGRAM_BAR_WIDTH = 1
-export const CONTRAST_TOGGLE_MINIMUM = 4 // contrast toggling doesn't work with small numbers that
+export const CONTRAST_TOGGLE_MINIMUM = 11 // contrast toggling doesn't work with small numbers that
                                          // naturally contrast when spread around the wheel
 export const HISTORGRAM_HEIGHT = 70.0 // vh units
 export const TOP_SPACER = 1.1 // Add a bit of space above the largest bar, in YAxis units
