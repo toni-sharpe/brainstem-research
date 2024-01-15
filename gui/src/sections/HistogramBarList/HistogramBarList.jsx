@@ -14,6 +14,7 @@ import HistogramBarLabel from 'components/HistogramBarLabel/HistogramBarLabel'
 import HistogramBarListLabel from 'components/HistogramBarListLabel/HistogramBarListLabel'
 import HistogramDataPropType from 'prop-types/HistogramData.prop-type'
 import HistogramTranslationPropType from 'prop-types/HistogramTranslation.prop-type'
+import { calcBarSegmentAlpha, writeHistogramBarListAriaLabel } from 'util/UtilHistogram/UtilHistogramBarList'
 
 function HistogramBarList({
   barCountPerBlock,
@@ -27,22 +28,12 @@ function HistogramBarList({
   mostMaxOfAllThings,
   translationSet,
 }) {
-  return histogramBarGroupList.map(([histogramHistogramBarListLabel, data], i) => {
-    const ariaLabel = translationSet?.barList && translationSet?.groupBy
-      ? i18next.t(
-        'HistogramBarListLabel.aria-label', {
-          ...translationSet,
-          barList: join(', ', translationSet.barList),
-          histogramHistogramBarListLabel,
-        }
-      )
-      : i18next.t(
-        'HistogramBarListLabel.aria-label', {
-          groupBy: i18next.t(`${i18nBaseOverride}.time`),
-          barList: `${i18next.t(`${i18nBaseOverride}.fatalOnly`)}, ${i18next.t(`${i18nBaseOverride}.nonFatalOnly`)}`,
-          histogramHistogramBarListLabel: i18next.t(`${i18nBaseOverride}.${histogramHistogramBarListLabel}`),
-        }
-      )
+  return histogramBarGroupList.map(([histogramBarListLabel, data], i) => {
+    const ariaLabel = writeHistogramBarListAriaLabel({
+      histogramBarListLabel,
+      i18nBaseOverride,
+      translationSet,
+    })
 
     const outerLeft = i * (barCountPerBlock * blockSize + barMargin)
     const subBars = toPairs(data)
@@ -50,7 +41,7 @@ function HistogramBarList({
     return (
       <ol
         aria-label={ariaLabel}
-        key={`${histogramHistogramBarListLabel}`}
+        key={`${histogramBarListLabel}`}
       >
         <li>
           <ol>
@@ -65,23 +56,7 @@ function HistogramBarList({
                 const barSegmentCount = valCondensed.length
 
                 function makeHistogramBarMapper(v, i) {
-                  const aLevel = barSegmentCount === i + 1
-                    ? 1.0
-                    : 1.0
-                      /
-                      (
-                        barSegmentCount
-                        -
-                        (
-                          0.25
-                          *
-                          (
-                            barSegmentCount
-                            -
-                            1
-                          )
-                        )
-                      )
+                  const aLevel = calcBarSegmentAlpha({ barSegmentCount, i })
 
                   const graphBarFraction = (v / mostMaxOfAllThings).toPrecision(3)
 
@@ -124,11 +99,12 @@ function HistogramBarList({
             barCountPerBlock={barCountPerBlock}
             blockSize={blockSize}
             i18nBaseOverride={i18nBaseOverride}
-            i18nKey={histogramHistogramBarListLabel}
+            i18nKey={histogramBarListLabel}
             i18nKeyOnly={i18nKeyOnly}
-            key={histogramHistogramBarListLabel}
+            key={histogramBarListLabel}
             left={outerLeft}
             top={`${histogramHeight}vh`}
+            translationSet={translationSet}
           />
         </li>
       </ol>

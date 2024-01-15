@@ -18,12 +18,13 @@ function HistogramBarListLabel({
   i18nKey,
   left,
   top,
+  translationSet,
 }) {
   const width = `${barCountPerBlock * blockSize}%`
   const simpleNumbers = width < 10
 
   const className = `
-    histogram-bar-list-label
+    histogram-bar-list-label column-layout
     ${simpleNumbers ? 'font-small' : 'font-regular'}
   `
 
@@ -32,6 +33,7 @@ function HistogramBarListLabel({
       className={className}
       style={{ left: `${left}%`, top, width }}
     >
+      { translationSet?.groupBy && (<span>{translationSet?.groupBy}</span>) }
       <span>{i18nKeyOnly ? i18nKey : i18next.t(`${i18nBaseOverride || i18nBase}.${i18nKey}`)}</span>
     </span>
   )

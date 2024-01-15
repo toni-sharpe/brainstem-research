@@ -5,7 +5,8 @@
   display: flex;
   height: var(--histogram-bar-group-height);
   justify-content: center;
-  padding: 0 var(--padding--small-tiny);
+  line-height: var(--line-height--large);
+  padding: var(--padding--small-tiny);
   position: absolute;
   text-align: center;
   z-index: var(--step-back--at-the-back);
