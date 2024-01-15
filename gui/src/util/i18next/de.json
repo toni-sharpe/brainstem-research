@@ -241,10 +241,10 @@
     "55": "55..60 Tage",
     "60": "Über 60 Tage",
     "factoredBy": "mit um {{factor}} faktorisierten nicht-tödlich Spalten",
-    "fatal": "{{count}} Tödliche Fälle in {{histogramHistogramBarListLabel}}",
+    "fatal": "{{count}} Tödliche Fälle in {{histogramBarListLabel}}",
     "fatalOnly": "tödliche",
     "name": "Balkendiagramm zur Hauptsymptom",
-    "nonFatal": "{{count}} nicht tödliche Fälle in {{histogramHistogramBarListLabel}}",
+    "nonFatal": "{{count}} nicht tödliche Fälle in {{histogramBarListLabel}}",
     "nonFatalOnly": "nicht tödliche",
     "numberExplanation": "NB: Dieses Diagramm zählt immer ab dem ersten Eintrag, daher kann die Filterung Zahlen liefern, die nicht sofort Sinn ergeben.",
     "primeSymptomHistogramTools": "Tools und Feedback zur Interaktion mit dem Diagramm",
@@ -256,7 +256,7 @@
   },
 
   "HistogramBarListLabel": {
-    "aria-label": "{{groupBy}} Werte {{histogramHistogramBarListLabel}} mit Balken fur {{barList}}"
+    "aria-label": "{{groupBy}} Werte {{histogramBarListLabel}} mit Balken fur {{barList}}"
   },
 
   "AverageLineList": {
@@ -384,19 +384,21 @@
   },
 
   "ErrorList": {
+    "ariaTranslationSet": "wenn translationSet verwendet wird, muss es ein Objekt sein, bei dem barList ein Array und groupBy eine Zeichenkette ist",
     "calcLeft": "calcLeft Funktion erfordert eine val bereitgestellt",
     "calcPercentage": "calcPercentage Funktion erfordert eine val bereitgestellt",
+    "calcWidth": "calcWidth erfordert die Angabe eines Mindest- und Höchstwerts",
     "calcWidth": "calcWidth Funktion erfordert eine min und max val",
     "fnMustBeProvidedTo": "{{fnName}} muss {{caller}} zur Verfügung gestellt werden und muss eine Funktion sein",
     "fullStatBase": "fullStatBase Funktion benötigt ein k",
     "graphBlockLengthInvalid": "histogramBarGroupList ist nicht korrekt in {{callingFn}} - Empfangen: {{typeOf}} | {{val}}",
     "graphBlockLengthZero": "histogramBarGroupList hat die Länge 0, es sollte etwas in histogramBarGroupList für {{callingFn}} enthalten sein",
-    "calcWidth": "calcWidth erfordert die Angabe eines Mindest- und Höchstwerts",
     "mapToTimeLineBars": "mapToTimeLineBars benötigt data mit Länge und eine i18nBase",
     "noHistogramData": "Diese Histogramm-Konfiguration hat null Ergebnisse",
     "primeSymptomHistogramBarGroup": "Prime symptom graph block list muss ein Array mit positiver Anzahl sein",
     "secondaryNavProps": "alle vier Args sind erforderlich, currentPanel, k und i18nBase sind alle Strings und setCurrentPanel sollte eine Funktion sein",
-    "utilKeyPairXYMakeMapFn": "makeMapFn benötigt sowohl x als auch y, um die richtigen Schlüssel in jedem Punkt zu referenzieren"
+    "utilKeyPairXYMakeMapFn": "makeMapFn benötigt sowohl x als auch y, um die richtigen Schlüssel in jedem Punkt zu referenzieren",
+    "writeHistogramBarListAriaLabel": "writeHistogramBarListAriaLabel erfordert histogramBarListLabel param"
   },
 
   "ReactTestLibrary": {

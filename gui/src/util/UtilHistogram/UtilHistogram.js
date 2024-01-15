@@ -101,16 +101,18 @@ function calcHue({ i, total }) {
 export function calcHistogramBarHue({
   useHueContrastToggle = true,
   useHueWheel = true,
-}) {
+} = {}) {
   if (!useHueWheel) {
     return null
   }
 
   return function({ i, total, aLevel = 1 }) {
-    const hue =
+    const hue = Number((
       calcHue({ i, total })
       +
       calcContrastToggle({ i, total, useHueContrastToggle })
-    return `hsla(${hue} 80% 50% / ${aLevel})`
+    ).toPrecision(4))
+    const hueCircled = hue > 360 ? hue % 360 : hue
+    return `hsla(${hueCircled} 80% 50% / ${aLevel})`
   }
 }

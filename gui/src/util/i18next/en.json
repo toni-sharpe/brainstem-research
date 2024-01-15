@@ -256,7 +256,7 @@
 
   "HistogramBarListLabel": {
     "sb-example": "Storybook Example",
-    "aria-label": "{{groupBy}} values {{histogramHistogramBarListLabel}} with bars for {{barList}}"
+    "aria-label": "{{groupBy}} values {{histogramBarListLabel}} with bars for {{barList}}"
   },
 
   "HistogramBarLabel": {
@@ -385,6 +385,7 @@
   },
 
   "ErrorList": {
+    "ariaTranslationSet": "if translationSet is used, it must be an object where barList is an array and groupBy a string",
     "calcInteractiveTimeBarArgs": "data to calcInteractiveTimeLineBarStatList must be an array and current user choices must be strings",
     "calcLeft": "calcLeft function requires a val",
     "calcPercentage": "calcPercentage function requires a val",
@@ -403,7 +404,8 @@
     "secondaryNavProps": "all four args are required, currentPanel, k and i18nBase are all strings and setCurrentPanel should be a function",
     "testError": "Test {{addToError}} {{alsoAddToError}}",
     "userChoiceStatMapper": "userChoiceStatMapper needs a string for currentResponse",
-    "utilKeyPairXYMakeMapFn": "makeMapFn needs both x and y to refence the correct keys in each point"
+    "utilKeyPairXYMakeMapFn": "makeMapFn needs both x and y to refence the correct keys in each point",
+    "writeHistogramBarListAriaLabel": "writeHistogramBarListAriaLabel requires histogramBarListLabel param"
   },
 
   "ReactTestLibrary": {

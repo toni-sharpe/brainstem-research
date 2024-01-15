@@ -40,6 +40,7 @@ function AxisSelector({
   defineDurationOptions,
   disabledSelection,
   headingLevelStart,
+  hueFn,
   primaryMark,
   setCurrentAxisSelection,
   showDurationOptions,
@@ -50,11 +51,14 @@ function AxisSelector({
   const axisOptions = showDurationOptions && !defineDurationOptions
     ? concat(axsOptions, DURATION_MAP)
     : axsOptions
+  const hiddenBorderAligner = { borderRight: '24px solid var(--white)' }
   const openClass = isOpen ? 'open' : ''
   const axisSelectorClassNameList = `axis-selector column-layout space-children--column-wide ${align} ${openClass}`
   const axisSelectorHeading = i18next.t(`${i18nBase}.axis${axis}`)
 
-  function makeButton({ k }) {
+  let selectedCount = 0
+
+  function makeButton({ i, k }) {
     const isPrimaryMarked = primaryMark === k
     const abbrevLabel = i18next.t(`CommonClinicalResponses.${k}_abbrev`)
     const fullLabel = i18next.t(`CommonClinicalResponses.${k}`)
@@ -62,25 +66,46 @@ function AxisSelector({
       ? `, ${i18next.t(`${i18nBase}.primaryMark`)}`
       : ''
     const ariaLabel = `${fullLabel} ${i18next.t(`${i18nBase}.shownOn${axis}`)}${primaryMarkAriaExtra}`
+    const isSelected = isOrIsInArray({ arr: currentAxisSelection, k })
+
+    const primaryMarkClass = isPrimaryMarked
+      ? `axis-selector__primary--${align}`
+      : null
+
+    const barColor =
+      hueFn
+        ? !isPrimaryMarked && isSelected
+          ? {
+              borderRight: `24px solid ${
+                hueFn({
+                  aLevel: 1,
+                  i: selectedCount,
+                  total: currentAxisSelection.length,
+                })
+              }`
+          }
+          : hiddenBorderAligner
+        : null
+
+    if (isSelected) {
+      selectedCount++
+    }
 
     const buttonProps = {
       ariaLabel,
       extraClass: 'axis-selector__button',
       isDisabled: isOrIsInArray({ arr: disabledSelection, k }),
       isPrimaryMarked,
-      isSelected: isOrIsInArray({ arr: currentAxisSelection, k }),
+      isSelected,
       label: abbrevLabel,
       onClick: () => makeSelectionFn({
         currentAxisSelection,
         setCurrentAxisSelection,
       })(k),
       size: 'small',
+      style: barColor,
       title: fullLabel,
     }
-
-    const primaryMarkClass = isPrimaryMarked
-      ? `axis-selector__primary--${align}`
-      : null
 
     return (
       <li key={k} className={primaryMarkClass}>
@@ -106,7 +131,13 @@ function AxisSelector({
           title={i18next.t(`${i18nBase}.close`)}
         />
       ) }
-      { React.createElement(`h${headingLevelStart}`, { children: axisSelectorHeading, className: 'axis-selector__heading' }) }
+      { React.createElement(
+        `h${headingLevelStart}`, {
+          children: axisSelectorHeading,
+          className: 'axis-selector__heading',
+          style: hueFn ? hiddenBorderAligner : null
+        }
+      ) }
       <ul className={`column-layout space-children--column ${align}`}>
         { defineDurationOptions
           && (
@@ -114,7 +145,7 @@ function AxisSelector({
               <li>
                 { React.createElement(`h${headingLevelStart + 1}`, { children: 'Durations' }) }
               </li>
-              { DURATION_MAP.map(([k, _]) => makeButton({ k })) }
+              { DURATION_MAP.map(([k, _], i) => makeButton({ i, k })) }
               <li>
                 <hr className='axis-selector__break-line' />
               </li>
@@ -124,7 +155,7 @@ function AxisSelector({
             </>
           )
         }
-        { axisOptions.map(([k, _]) => makeButton({ k })) }
+        { axisOptions.map(([k, _], i) => makeButton({ i, k })) }
       </ul>
     </div>
   )
@@ -134,7 +165,9 @@ AxisSelector.defaultProps = {
   align: 'left',
   axisOptions: USER_FACING_SET,
   axis: 'x',
+  currentAxisSelection: [],
   headingLevelStart: 2,
+  hueFn: null,
   defineDurationOptions: false,
   showDurationOptions: true,
 }
@@ -146,6 +179,7 @@ AxisSelector.propTypes = {
   defineDurationOptions: PropTypes.bool,
   disabledSelection: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   headingLevelStart: HeadingLevelStartPropType,
+  hueFn: PropTypes.func,
   primaryMark: ClinicalResponsePropType,
   setCurrentAxisSelection: PropTypes.func,
   showDurationOptions: PropTypes.bool,

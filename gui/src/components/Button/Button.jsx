@@ -16,6 +16,7 @@ function Button({
   label,
   onClick,
   size,
+  style,
   title,
 }) {
   const disabledClass = isDisabled ? ' is-disabled' : ''
@@ -31,6 +32,7 @@ function Button({
     onClick: isDisabled
       ? null
       : onClick,
+    style,
     title: `${title ? title : ''}${isDisabled ? ' (is currently disabled)' : ''}${isPrimaryMarked ? ' - primary' : ''}`,
   }
 

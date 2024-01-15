@@ -65,13 +65,13 @@ export function groupByPathogenStep({ currentGroupBy, groupList }) {
 
 
 export function groupPathologicalEventList({
-  currentPathogenStepList,
+  currentPathogenesisStepList,
   currentGroupBy,
   groupList,
   maxGroupBy,
 }) {
   return pathologicalEventList => {
-    return currentPathogenStepList.map(pathoGenStep => {
+    return currentPathogenesisStepList.map(pathoGenStep => {
 
       const primedData = restrictDataPointsToGroupList({
         currentGroupBy,
@@ -104,15 +104,15 @@ export function reducePathogenStepListToGroupBy(acc, curr) {
 export function groupByProvidedGroupList({
   builtGroupList,
   currentGroupBy,
-  currentPathogenStepList,
+  currentPathogenesisStepList,
   groupList,
   maxGroupBy,
 }) {
   return pipe(
-    map(d => pick([currentGroupBy, ...currentPathogenStepList], d)),
+    map(d => pick([currentGroupBy, ...currentPathogenesisStepList], d)),
     groupPathologicalEventList({
       currentGroupBy,
-      currentPathogenStepList,
+      currentPathogenesisStepList,
       groupList,
       maxGroupBy,
     }),

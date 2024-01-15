@@ -25,7 +25,7 @@ import {
 
 import './PrimeSymptomHistogram.scss'
 
-const i18nBase = 'PrimeSymptomHistogram'
+export const i18nBase = 'PrimeSymptomHistogram'
 
 function PrimeSymptomHistogram({
   badTimingError,

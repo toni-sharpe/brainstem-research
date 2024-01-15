@@ -1,5 +1,4 @@
 .histogram {
-  margin-bottom: var(--histogram-bar-group-height);
   position: relative;
   display: flex;
   width: 98%;
@@ -16,7 +15,7 @@
 
   &__columns {
     position: absolute;
-    bottom: var(--histogram-bar-group-height);
+    bottom: 10px;
     top: var(--histogram-bar-group-height);
   }
 

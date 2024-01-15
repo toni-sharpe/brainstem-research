@@ -52,7 +52,7 @@ test('calcHistogramBarPos() background color over-rides class', () => {
 test('calcHistogramBarPos() uses defaults', () => {
   const args = {  className: 'test' }
   expect(calcHistogramBarPos(args)).toEqual({
-    height: '70vh',
+    height: '74vh',
     left: 0,
     top: 0,
     width: 'auto',

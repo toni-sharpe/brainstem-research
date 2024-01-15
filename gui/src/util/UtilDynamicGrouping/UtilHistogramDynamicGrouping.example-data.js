@@ -1,4 +1,4 @@
-export const currentPathogenStepList = ['symp_1', 'symp_2'] // left hand list selection
+export const currentPathogenesisStepList = ['symp_1', 'symp_2'] // left hand list selection
 export const currentGroupBy = 'test_1'
 export const maxGroupBy = '20'
 

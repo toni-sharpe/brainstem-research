@@ -1,6 +1,6 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
-$axis-selector__base-width: 110px;
+$axis-selector__base-width: 135px;
 $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
 
 .axis-selector {
@@ -38,7 +38,7 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
   &__close-button {
     position: absolute;
     top: 0;
-    @media (min-width: $media-switch--medium) {
+    @media (min-width: $media-switch--large) {
       display: none;
     }
   }
@@ -50,53 +50,57 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
 
 
   &.left {
+    border-left: 1px solid var(--grey--lightest);
+
     .axis-selector__heading {
       text-align: left;
     }
 
     .axis-selector__open-button {
-      right: 120px;
+      right: $axis-selector__full-width;
     }
 
     .axis-selector__close-button {
-      left: -30px;
+      left: -34px;
     }
 
-    @media (max-width: $media-switch--medium) {
+    @media (max-width: $media-switch--large) {
       right: 0 - $axis-selector__full-width;
       transition: right 1s;
     }
 
     &.open {
-      @media (max-width: $media-switch--medium) {
+      @media (max-width: $media-switch--large) {
         right: 0;
       }
     }
   }
 
   &.right {
+    border-right: 1px solid var(--grey--lightest);
+
     .axis-selector__open-button {
-      left: 120px;
+      left: $axis-selector__full-width;
     }
 
     .axis-selector__close-button {
-      right: -30px;
+      right: -34px;
     }
 
-    @media (max-width: $media-switch--medium) {
+    @media (max-width: $media-switch--large) {
       left: 0 - $axis-selector__full-width;
       transition: left 1s;
     }
 
     &.open {
-      @media (max-width: $media-switch--medium) {
+      @media (max-width: $media-switch--large) {
         left: 0;
       }
     }
   }
 
 
-  @media (max-width: $media-switch--medium) {
+  @media (max-width: $media-switch--large) {
     position: absolute;
     z-index: var(--front-guaranteed);
   }

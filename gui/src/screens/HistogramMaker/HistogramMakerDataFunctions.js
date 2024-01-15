@@ -6,7 +6,7 @@ import { groupByProvidedGroupList, pathogenesisToGroupMapper } from 'util/UtilDy
 export function calcHistogramBarGroupList({
   currentBarFn,
   currentGroupBy,
-  currentPathogenStepList,
+  currentPathogenesisStepList,
   data,
 }) {
   const allCurrentGroupBy = pipe(
@@ -30,7 +30,7 @@ export function calcHistogramBarGroupList({
     groupByProvidedGroupList({
       builtGroupList,
       currentGroupBy,
-      currentPathogenStepList,
+      currentPathogenesisStepList,
       groupList,
       maxGroupBy: groupRange,
     }),

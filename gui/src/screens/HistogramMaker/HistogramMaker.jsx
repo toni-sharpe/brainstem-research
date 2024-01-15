@@ -8,15 +8,19 @@ import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
 import Button from 'components/Button/Button'
 import { secondaryNavProps } from 'util/UtilNav/UtilNav'
-import { HISTOGRAM_BAR_LIST_MARGIN } from 'util/Constant/BaseConstantList'
-
+import {
+  HISTOGRAM_BAR_LIST_MARGIN,
+  USE_HUE_CONTRAST_TOGGLE,
+  USE_HUE_WHEEL,
+} from 'util/Constant/BaseConstantList'
+import { calcHistogramBarHue } from 'util/UtilHistogram/UtilHistogram'
 import { calcHistogramBarGroupList, dataFnList } from './HistogramMakerDataFunctions'
 import './HistogramMaker.scss'
 
 const i18nBase = 'HistogramMaker'
 
 function HistogramMaker({ data }) {
-  const [currentPathogenStepList, setCurrentPathogenStepList] = useState(['mild_symptom_1', 'prime_symptom_3'])
+  const [currentPathogenesisStepList, setCurrentPathogenesisStepList] = useState(['mild_symptom_1', 'prime_symptom_3'])
   const [currentGroupBy, setCurrentGroupBy] = useState('fatal_symptom_1')
   const [currentBarFn, setCurrentBarFn] = useState('count')
 
@@ -27,7 +31,7 @@ function HistogramMaker({ data }) {
   const histogramBarGroupList = calcHistogramBarGroupList({
     currentBarFn,
     currentGroupBy,
-    currentPathogenStepList,
+    currentPathogenesisStepList,
     data,
   })
 
@@ -39,9 +43,11 @@ function HistogramMaker({ data }) {
     /
     totalBarListCount
     /
-    currentPathogenStepList.length
+    currentPathogenesisStepList.length
 
-  const barCountPerBlock = currentPathogenStepList.length
+  const barCountPerBlock = currentPathogenesisStepList.length
+
+  const hueFn = calcHistogramBarHue()
 
   const commonNavProps = {
     currentPanel: currentBarFn,
@@ -70,9 +76,10 @@ function HistogramMaker({ data }) {
         <AxisSelector
           align='right'
           axis='stats'
-          currentAxisSelection={currentPathogenStepList}
+          currentAxisSelection={currentPathogenesisStepList}
           disabledSelection={currentGroupBy}
-          setCurrentAxisSelection={setCurrentPathogenStepList}
+          hueFn={hueFn}
+          setCurrentAxisSelection={setCurrentPathogenesisStepList}
           showDurationOptions={currentBarFn !== 'count'}
         />
         <div className='histogram-maker__data'>
@@ -82,10 +89,11 @@ function HistogramMaker({ data }) {
             blockSize={blockSize}
             histogramBarGroupList={histogramBarGroupList}
             heightPaddingLines={0}
+            hueFn={hueFn}
             i18nKeyOnly
             minGraphHeight={0}
             translationSet={{
-              barList: currentPathogenStepList.map(step => i18next.t(`CommonClinicalResponses.${step}`)),
+              barList: currentPathogenesisStepList.map(step => i18next.t(`CommonClinicalResponses.${step}`)),
               groupBy: i18next.t(`CommonClinicalResponses.${currentGroupBy}`),
             }}
             useHueContrastToggle
@@ -96,7 +104,7 @@ function HistogramMaker({ data }) {
           axis='groupBy'
           currentAxisSelection={currentGroupBy}
           defineDurationOptions
-          disabledSelection={currentPathogenStepList}
+          disabledSelection={currentPathogenesisStepList}
           setCurrentAxisSelection={setCurrentGroupBy}
         />
       </div>
