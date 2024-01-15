@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom'
-
 import APITimeLineData from 'example-data/APITimeLine.example-data'
 
 import {
