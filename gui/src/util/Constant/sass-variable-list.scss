@@ -88,6 +88,9 @@ $menu-guaranteed: 1500;
 /*
   MIXINS
  */
+/*
+ * column layout
+ */
 @mixin column-layout() {
   display: flex;
   flex-direction: column;
@@ -110,19 +113,44 @@ $menu-guaranteed: 1500;
   }
 }
 
-@mixin space-column--wide-add-border {
+@mixin self-space-column-remove-border {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: unset;
+}
+
+@mixin self-space-column-add-border {
   border-bottom: 1px solid var(--grey--very-light);
-  margin-bottom: var(--spacing--wide);
-  padding-bottom: var(--spacing--wide);
+  margin-bottom: var(--spacing--narrow);
+  padding-bottom: var(--spacing--narrow);
+}
+@mixin space-column-add-border {
+  @include self-space-column-add-border();
   &:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    @include self-space-column-remove-border();
   }
 }
 
+@mixin self-space-column--wide-add-border {
+  border-bottom: 1px solid var(--grey--very-light);
+  margin-bottom: var(--spacing--wide);
+  padding-bottom: var(--spacing--wide);
+}
+
+@mixin space-column--wide-add-border {
+  @include self-space-column--wide-add-border();
+  &:last-child {
+    @include self-space-column-remove-border();
+  }
+}
+
+
+/*
+ * row layout
+ */
 @mixin row-layout() {
   display: flex;
+  flex-direction: row;
 }
 
 @mixin space-row() {
@@ -146,24 +174,32 @@ $menu-guaranteed: 1500;
   }
 }
 
-@mixin space-row-add-border() {
+@mixin self-space-row-remove-border {
+  border-right: none;
+  margin-right: 0;
+  padding-right: unset;
+}
+
+@mixin self-space-row-add-border {
   border-right: 1px solid var(--grey--light);
   margin-right: var(--spacing--narrow);
   padding-right: var(--spacing--narrow);
+}
+@mixin space-row-add-border() {
+  @include self-space-row-add-border();
   &:last-child {
-    border-right: none;
-    margin-right: 0;
-    padding-right: unset;
+    @include self-space-row-remove-border();
   }
 }
 
-@mixin space-row--wide-add-border() {
+@mixin self-space-row--wide-add-border {
   border-right: 1px solid var(--grey--light);
   margin-right: var(--spacing--wide);
   padding-right: var(--spacing--wide);
+}
+@mixin space-row--wide-add-border() {
+  @include self-space-row--wide-add-border();
   &:last-child {
-    border-right: none;
-    margin-right: 0;
-    padding-right: 0;
+    @include self-space-row-remove-border();
   }
 }

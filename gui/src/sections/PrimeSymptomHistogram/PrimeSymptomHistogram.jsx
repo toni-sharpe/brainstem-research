@@ -80,10 +80,13 @@ function PrimeSymptomHistogram({
     : ariaName
 
   return (
-    <div className='prime-symptom-histogram column-layout space-children--wide-column'>
+    <div className='prime-symptom-histogram'>
+      <span className='prime-symptom-histogram__number-explanation' role='note'>
+        {i18next.t(`${i18nBase}.numberExplanation`)}
+      </span>
       <section
         aria-label={i18next.t(`${i18nBase}.primeSymptomHistogramTools`)}
-        className='row-layout space-children--wide-with-border prime-symptom-histogram__interaction-tools'
+        className='prime-symptom-histogram__interaction-tools'
       >
         <div className='prime-symptom-histogram__tool'>
           { primeSymptomData.length && (
@@ -93,16 +96,6 @@ function PrimeSymptomHistogram({
               totalAvailableDataPoints={totalAvailableDataPoints}
             />
           ) }
-        </div>
-        <div className='prime-symptom-histogram__tool'>
-          <OutcomeSummary
-            fatalAve={fatalAve}
-            fatalCount={fatalCount}
-            nonFatalAve={nonFatalAve}
-            nonFatalCount={nonFatalCount}
-            totalAvailableDataPoints={totalAvailableDataPoints}
-            unknownCount={unknownCount}
-          />
         </div>
         <div className='prime-symptom-histogram__tool'>
           <FactorToggle
@@ -115,18 +108,27 @@ function PrimeSymptomHistogram({
         aria-label={ariaLabel}
         className='column-layout space-children--column prime-symptom-histogram__graph'
       >
-        <span className='prime-symptom-histogram__number-explanation' role='note'>
-          {i18next.t(`${i18nBase}.numberExplanation`)}
-        </span>
-        <Histogram
-          barCountPerBlock={2}
-          barMargin={HISTOGRAM_BAR_LIST_MARGIN}
-          blockSize={blockSize}
-          histogramBarGroupList={histogramBarGroupList}
-          histogramHeight={histogramHeight}
-          graphLabel={ariaLabel}
-          i18nBaseOverride={i18nBase}
-        />
+        <div className='prime-symptom-histogram__tool'>
+          <OutcomeSummary
+            fatalAve={fatalAve}
+            fatalCount={fatalCount}
+            nonFatalAve={nonFatalAve}
+            nonFatalCount={nonFatalCount}
+            totalAvailableDataPoints={totalAvailableDataPoints}
+            unknownCount={unknownCount}
+          />
+        </div>
+        <div className='prime-symptom-histogram__figure'>
+          <Histogram
+            barCountPerBlock={2}
+            barMargin={HISTOGRAM_BAR_LIST_MARGIN}
+            blockSize={blockSize}
+            histogramBarGroupList={histogramBarGroupList}
+            histogramHeight={histogramHeight}
+            graphLabel={ariaLabel}
+            i18nBaseOverride={i18nBase}
+          />
+        </div>
       </section>
     </div>
   );

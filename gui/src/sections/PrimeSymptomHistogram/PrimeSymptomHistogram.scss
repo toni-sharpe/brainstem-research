@@ -1,17 +1,40 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .prime-symptom-histogram {
+  @include column-layout();
   width: 100%;
   align-items: center;
+
+  & > * {
+    @include space-column();
+  }
+
+  &__interaction-tools {
+    @include row-layout();
+    font-size: var(--font-size--medium);
+    justify-content: space-around;
+    width: 100%;
+    @include self-space-column-add-border();
+    // @media (min-width: )
+  }
 
   &__tool {
     align-items: center;
     display: flex;
+    h3 {
+      font-size: var(--font-size--medium);
+    }
   }
 
   &__graph {
     width: 100%;
   }
+  &__figure {
+    width: 98%;
+  }
   &__number-explanation {
     display: block;
+    font-size: var(--font-size--small);
     text-align: center;
     width: 100%;
   }
