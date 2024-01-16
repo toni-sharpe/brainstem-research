@@ -21,7 +21,7 @@ function DataAdjusterButtonList({
             <li key={adjustBy}>
               <button
                 aria-pressed={isSelected}
-                className={`data-adjuster-button-list__button ${isSelected ? 'is-selected' : ''}`}
+                className={`data-adjuster-button-list__button button--small ${isSelected ? 'is-selected' : ''}`}
                 onClick={onClickHandler({ adjustBy })}
               >
                 {labelFn ? labelFn({ adjustBy }) : adjustBy}
