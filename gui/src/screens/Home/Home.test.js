@@ -21,5 +21,5 @@ test('Home - ', async () => {
   /*
    * Simple tests of on screen specifics, not always needed
    */
-  expect(screen.getByText('The medical research is real, the events are real and each one represents the experience of a real person, many of whom, around 90, have not fared so well and cannot be said to be fully better, if they ever are. For this reason the site is purposefully genericised for the sake of those who aren\'t necessarily in a position to voice concerns, compounded by my hypothesis standing firmly enough from my perspective but not yet examined by someone who knows the real detail.')).toBeTruthy()
+  expect(screen.getByText('The medical research is real, the events are real and each one represents the experience of a real person, many of whom, around 90, have not fared so well and cannot be said to be fully better, if they ever will be. The site is purposefully genericised for the sake of those folk and because my hypothesis has stood up my own attempts to discredit it but has never been validated by an expert who would be accepted generally as capable of speaking on such matters.')).toBeTruthy()
 })

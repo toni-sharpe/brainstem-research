@@ -32,7 +32,7 @@
     "recovery_proportion": "Anteil der Verwertung",
     "slight_death_response_1": "Reaktion auf den Sev 1 (möglich)",
     "slight_death_response_2": "Reaktion auf den Sev 2 (möglich)",
-    "time_of_death": "Zeitpunkt des Seves",
+    "time_of_death": "Zeitpunkt des Severity",
 
     "care_error_level_abbrev": "Pflege-Fehlerniveau",
     "care_technique_1_abbrev": "Pflegetechnik 1",

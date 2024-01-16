@@ -39,20 +39,20 @@ export function calcHistogramBarGroupList({
 }
 
 export const dataFnList = {
-  count: ({ pathogenStepData }) => pathogenStepData.length,
-  min: ({ pathogenStepData }) => Math.min(...pathogenStepData),
-  max: ({ pathogenStepData }) => Math.max(...pathogenStepData),
-  range: ({ pathogenStepData }) => ([Math.min(...pathogenStepData), Math.max(...pathogenStepData)]),
-  ave: ({ pathogenStepData }) => {
-    return pathogenStepData?.length > 0
-      ? median(pathogenStepData)
+  count: ({ pathogenesisStepData }) => pathogenesisStepData.length,
+  min: ({ pathogenesisStepData }) => Math.min(...pathogenesisStepData),
+  max: ({ pathogenesisStepData }) => Math.max(...pathogenesisStepData),
+  range: ({ pathogenesisStepData }) => ([Math.min(...pathogenesisStepData), Math.max(...pathogenesisStepData)]),
+  ave: ({ pathogenesisStepData }) => {
+    return pathogenesisStepData?.length > 0
+      ? median(pathogenesisStepData)
       : 0
   },
-  mda: ({ pathogenStepData }) => {
-    const dev = pathogenStepData?.length > 1
-      ? medianAbsoluteDeviation(pathogenStepData)
+  mda: ({ pathogenesisStepData }) => {
+    const dev = pathogenesisStepData?.length > 1
+      ? medianAbsoluteDeviation(pathogenesisStepData)
       : 0
-    const mdn = median(pathogenStepData)
+    const mdn = median(pathogenesisStepData)
     return [mdn - dev, mdn, mdn + dev]
   }
 }
