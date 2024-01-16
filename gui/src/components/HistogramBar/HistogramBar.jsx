@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { HISTOGRAM_BAR_WIDTH } from 'util/Constant/BaseConstantList'
 import { bemWithExtraClass } from 'util/UtilClassName/UtilClassName'
-import { calcHistogramBarPos } from 'util/UtilHistogram/UtilHistogram'
+import { calcHistogramBarPosition } from 'util/UtilHistogram/UtilHistogram'
 
 import './HistogramBar.scss'
 
@@ -17,7 +17,7 @@ function HistogramBar({
   title,
   top,
 }) {
-  const endStyles = calcHistogramBarPos({
+  const endStyles = calcHistogramBarPosition({
     className: extraClass,
     height,
     left: `${left}%`,

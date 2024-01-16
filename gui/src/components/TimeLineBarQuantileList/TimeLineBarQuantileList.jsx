@@ -6,7 +6,7 @@ import { SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
 import TimeLineBarQuantilePropType from 'prop-types/TimeLineBarQuantile.prop-type'
 import TimeLineBarListScalePropType from 'prop-types/TimeLineBarListScale.prop-type'
 import { calcLineFattener } from 'util/UtilTimeLineBarList/UtilTimeLineBar'
-import { calcQuantileListPos } from 'util/UtilTimeLineBarList/UtilQuantile'
+import { calcQuantileListPosition } from 'util/UtilTimeLineBarList/UtilQuantile'
 
 import './TimeLineBarQuantileList.scss'
 
@@ -17,7 +17,7 @@ function TimeLineBarQuantileList({
   quantile,
   scale,
 }) {
-  const quantileList = calcQuantileListPos({
+  const quantileList = calcQuantileListPosition({
     count,
     quantile,
     scale,
@@ -33,30 +33,18 @@ function TimeLineBarQuantileList({
     <>
       { quantileList.map((quantileElem, i) => {
 
-        const {
-          leftPos,
-          numberTop,
-          val,
-        } = quantileElem
+        const { left } = quantileElem
 
         return (
           <li
             key={`qu-${i}`}
             className={'time-line-bar-quantile-list__line'}
             style={{
-              ...leftPos,
+              left: `${left}%`,
               ...lineFattener,
             }}
           >
-            {
-              numberShown && (
-                <QuantileListNumberLabel
-                  leftPos={leftPos}
-                  numberTop={numberTop}
-                  val={val}
-                />
-              )
-            }
+            { numberShown && (<QuantileListNumberLabel {...quantileElem} />) }
           </li>
         )
       }) }

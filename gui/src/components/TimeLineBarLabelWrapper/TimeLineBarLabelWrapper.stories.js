@@ -8,7 +8,7 @@ export default {
 };
 
 const baseTimeLineBarLabelWrapperProps = {
-  labelListPos: 100,
+  labelListPosition: 100,
   scale: {
     stepDivision: 60,
     totalSteps: 5

@@ -1,5 +1,4 @@
 // SecondaryNavButtonList.story.js
-import Button from 'components/Button/Button'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav';
 
 import SecondaryNavButtonList from './SecondaryNavButtonList';

@@ -1,4 +1,4 @@
-import { calcHistogramBarPos } from './UtilHistogram'
+import { calcHistogramBarPosition } from './UtilHistogram'
 
 const scale = { totalSteps: 10, stepDivision: 100 }
 
@@ -9,9 +9,9 @@ const baseStyles = {
   width: 101,
 }
 
-test('calcHistogramBarPos() base styles', () => {
+test('calcHistogramBarPosition() base styles', () => {
   const args = { ...baseStyles, className: null }
-  expect(calcHistogramBarPos(args)).toEqual({
+  expect(calcHistogramBarPosition(args)).toEqual({
     height: 11,
     left: 19,
     top: 37,
@@ -19,9 +19,9 @@ test('calcHistogramBarPos() base styles', () => {
   })
 })
 
-test('calcHistogramBarPos() class', () => {
+test('calcHistogramBarPosition() class', () => {
   const args = { ...baseStyles, className: 'test' }
-  expect(calcHistogramBarPos(args)).toEqual({
+  expect(calcHistogramBarPosition(args)).toEqual({
     height: 11,
     left: 19,
     top: 37,
@@ -29,9 +29,9 @@ test('calcHistogramBarPos() class', () => {
   })
 })
 
-test('calcHistogramBarPos() background color', () => {
+test('calcHistogramBarPosition() background color', () => {
   const args = { ...baseStyles, className: null }
-  expect(calcHistogramBarPos(args)).toEqual({
+  expect(calcHistogramBarPosition(args)).toEqual({
     height: 11,
     left: 19,
     top: 37,
@@ -39,9 +39,9 @@ test('calcHistogramBarPos() background color', () => {
   })
 })
 
-test('calcHistogramBarPos() background color over-rides class', () => {
+test('calcHistogramBarPosition() background color over-rides class', () => {
   const args = { ...baseStyles, className: 'test' }
-  expect(calcHistogramBarPos(args)).toEqual({
+  expect(calcHistogramBarPosition(args)).toEqual({
     height: 11,
     left: 19,
     top: 37,
@@ -49,9 +49,9 @@ test('calcHistogramBarPos() background color over-rides class', () => {
   })
 })
 
-test('calcHistogramBarPos() uses defaults', () => {
+test('calcHistogramBarPosition() uses defaults', () => {
   const args = {  className: 'test' }
-  expect(calcHistogramBarPos(args)).toEqual({
+  expect(calcHistogramBarPosition(args)).toEqual({
     height: '74vh',
     left: 0,
     top: 0,

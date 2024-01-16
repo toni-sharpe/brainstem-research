@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './QuantileListNumberLabel.scss'
 
 function QuantileListNumberLabel({
-  leftPos,
+  left,
   numberTop,
   val,
 }) {
@@ -12,7 +12,7 @@ function QuantileListNumberLabel({
     <span
       className='quantile-list-number'
       style={{
-        ...leftPos,
+        left: `${left}%`,
         top: numberTop,
       }}
     >
@@ -22,7 +22,7 @@ function QuantileListNumberLabel({
 }
 
 QuantileListNumberLabel.propTypes = {
-  leftPos: PropTypes.shape({ left: PropTypes.string }),
+  left: PropTypes.number,
   numberTop: PropTypes.number,
   val: PropTypes.number,
 }

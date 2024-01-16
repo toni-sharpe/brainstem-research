@@ -9,13 +9,13 @@ import './TimeLineBarLabelWrapper.scss'
 
 function TimeLineBarLabelWrapper({
   children,
-  labelListPos,
+  labelListPosition,
   scale,
 }) {
   return (
     <div
       className='time-line-bar-label-wrapper column-layout'
-      style={calcLeft({ scale, val: labelListPos })}
+      style={{ left: `${calcLeft({ scale, val: labelListPosition })}%` }}
     >
       {children}
     </div>
@@ -24,7 +24,7 @@ function TimeLineBarLabelWrapper({
 
 TimeLineBarLabelWrapper.propTypes = {
   children: PropTypes.node,
-  labelListPos: NumberOrStringPropType.isRequired,
+  labelListPosition: NumberOrStringPropType.isRequired,
   scale: TimeLineBarListScalePropType.isRequired
 }
 
