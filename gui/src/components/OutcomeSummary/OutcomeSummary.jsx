@@ -9,17 +9,17 @@ import './OutcomeSummary.scss'
 const i18nBase = 'OutcomeSummmary'
 
 function OutcomeSummary({
-  fatalCount,
-  nonFatalCount,
-  fatalAve,
-  nonFatalAve,
+  severeCount,
+  nonSevereCount,
+  severeAve,
+  nonSevereAve,
   totalAvailableDataPoints,
   unknownCount,
 }) {
   const aveClassPrefix = 'outcome-summary__label outcome-summary__'
-  const fatalAveClassNames = `${(fatalAve < nonFatalAve) && 'outcome-summary__lowest-median-marker'} ${aveClassPrefix}fatal-ave`
-  const nonFatalAveClassNames = `${(fatalAve >= nonFatalAve) && 'outcome-summary__lowest-median-marker'} ${aveClassPrefix}non-fatal-ave`
-  const total = nonFatalCount + fatalCount
+  const severeAveClassNames = `${(severeAve < nonSevereAve) && 'outcome-summary__lowest-median-marker'} ${aveClassPrefix}severe-ave`
+  const nonSevereAveClassNames = `${(severeAve >= nonSevereAve) && 'outcome-summary__lowest-median-marker'} ${aveClassPrefix}non-severe-ave`
+  const total = nonSevereCount + severeCount
 
   return (
     <div className='outcome-summary'>
@@ -42,12 +42,12 @@ function OutcomeSummary({
           </span>
         </li>
         <li className='row-layout space-children'>
-          <span>{i18next.t(`${i18nBase}.fatal`)}: {fatalCount}</span>
-          { fatalCount > 0 && (<div><span className='hide'>Median: </span><span className={fatalAveClassNames}>{fatalAve}</span></div>) }
+          <span>{i18next.t(`${i18nBase}.severe`)}: {severeCount}</span>
+          { severeCount > 0 && (<div><span className='hide'>Median: </span><span className={severeAveClassNames}>{severeAve}</span></div>) }
         </li>
         <li className='row-layout space-children'>
-          <span>{i18next.t(`${i18nBase}.nonFatal`)}: {nonFatalCount}</span>
-          { nonFatalCount > 0 && (<div><span className='hide'>Median: </span><span className={nonFatalAveClassNames}>{nonFatalAve}</span></div>) }
+          <span>{i18next.t(`${i18nBase}.nonSevere`)}: {nonSevereCount}</span>
+          { nonSevereCount > 0 && (<div><span className='hide'>Median: </span><span className={nonSevereAveClassNames}>{nonSevereAve}</span></div>) }
         </li>
         <li>
            <span>{i18next.t(`${i18nBase}.unknown`)}: </span>
@@ -59,14 +59,14 @@ function OutcomeSummary({
 }
 
 OutcomeSummary.defaultProps = {
-  fatalCount: 0,
-  nonFatalCount: 0,
+  severeCount: 0,
+  nonSevereCount: 0,
   unknownCount: 0,
 }
 
 OutcomeSummary.propTypes = {
-  fatalCount: NumberOrStringPropType,
-  nonFatalCount: NumberOrStringPropType,
+  severeCount: NumberOrStringPropType,
+  nonSevereCount: NumberOrStringPropType,
   unknownCount: NumberOrStringPropType,
 }
 

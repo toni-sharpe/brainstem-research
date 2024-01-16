@@ -4,12 +4,12 @@ import baseTimeLineBarListProps from './baseTimeLineBarListProps'
 const baseProps = {
   currentFilterList: {
     confirmedActors: false,
-    fatal: false,
+    severe: false,
     fjp: false,
     hardEventOnly: false,
     hardPrimeSymptom: false,
     rmDubious: true,
-    nonFatal: false,
+    nonSevere: false,
   },
   maxOfAll: 180,
   scale: {

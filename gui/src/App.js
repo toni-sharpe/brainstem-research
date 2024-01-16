@@ -12,7 +12,6 @@ import Scatter from 'screens/Scatter/Scatter';
 import TimeLineStatChart from 'screens/TimeLineStatChart/TimeLineStatChart';
 import TimeLine from 'screens/TimeLine/TimeLine';
 import HistogramMaker from 'screens/HistogramMaker/HistogramMaker';
-import CorrelationHeatmap from 'screens/CorrelationHeatmap/CorrelationHeatmap';
 import { STAT_BAR_DETAIL_LIST } from 'util/Constant/BaseConstantList'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import { calcFilterList, isAnyFilterSet } from 'util/UtilFilter/UtilFilter'
@@ -28,7 +27,7 @@ function App() {
 
   CURRENT_FILTER_LIST.primeSymptomType = ['anti-bias-tool-kit', 'prime-symptom-list'].includes(currentUrl)
   CURRENT_FILTER_LIST.rmDubious = !['AntiBiasToolKit'].includes(currentUrl)
-  CURRENT_FILTER_LIST.nonFatal = ['TimeLine'].includes(currentUrl)
+  CURRENT_FILTER_LIST.nonSevere = ['TimeLine'].includes(currentUrl)
   const [currentFilterList, setCurrentFilterList] = useState(CURRENT_FILTER_LIST)
 
   const [timeLineBarDetailList, setTimeLineBarDetailList] = useState(STAT_BAR_DETAIL_LIST)
@@ -93,10 +92,6 @@ function App() {
         <Route
           path="HistogramMaker"
           element={<HistogramMaker data={filteredData} />}
-        />
-        <Route
-          path="CorrelationHeatmap"
-          element={<CorrelationHeatmap data={filteredData} />}
         />
       </Routes>
     </article>

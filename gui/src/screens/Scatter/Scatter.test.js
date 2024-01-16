@@ -31,6 +31,6 @@ test('Scatter - ', async () => {
   expect(screen.getByText('Y Axis')).toBeTruthy()
   // expect(screen.getByText('Sample correlation:')).toBeTruthy()
   // expect(screen.getByText('Sample covariance:')).toBeTruthy()
-  expect(screen.getAllByText('Fat symp 1').length).toEqual(2)
-  expect(screen.getAllByText('Fat symp 2').length).toEqual(2)
+  expect(screen.getAllByText('Sev symp 1').length).toEqual(2)
+  expect(screen.getAllByText('Sev symp 2').length).toEqual(2)
 })

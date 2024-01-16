@@ -28,11 +28,11 @@ test('Header', async () => {
   /*
    * Filter items
    */
-  await userEvent.click(screen.getByText('NF'))
+  await userEvent.click(screen.getByText('NS'))
   expect(setCurrentFilterListMock).toHaveBeenCalledWith(
     {
       ...CURRENT_FILTER_LIST,
-      nonFatal: true
+      nonSevere: true
     }
   )
   await userEvent.click(screen.getByText('Rm Dub.'))
@@ -43,7 +43,7 @@ test('Header', async () => {
     }
   )
 
-  expect(screen.getByText('NF', { pressed: true })).toBeTruthy()
+  expect(screen.getByText('NS', { pressed: true })).toBeTruthy()
   expect(screen.getByText('Rm Dub.', { pressed: false })).toBeTruthy()
 
 

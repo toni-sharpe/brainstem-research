@@ -22,10 +22,10 @@ test('primeSymptomTimingError() - FIR example', () => {
   expect(mapper(args)).toEqual(expected)
 })
 
-test('primeSymptomTimingError() - timing error & no bad error - effects non-fatal', () => {
+test('primeSymptomTimingError() - timing error & no bad error - effects non-severe', () => {
   const args = {
     first_prime_symptom: 19,
-    outcome: 'NFT',
+    outcome: 'NSV',
     theRest: 'returned unchanged',
   }
   const expected = {
@@ -36,10 +36,10 @@ test('primeSymptomTimingError() - timing error & no bad error - effects non-fata
   expect(mapper(args)).toEqual(expected)
 })
 
-test('primeSymptomTimingError() - timing error & no bad error - no effect on fatal', () => {
+test('primeSymptomTimingError() - timing error & no bad error - no effect on severe', () => {
   const args = {
     first_prime_symptom: 19,
-    outcome: 'FAT',
+    outcome: 'SEV',
     returned: 'unchanged',
   }
   const expected = args
@@ -48,25 +48,25 @@ test('primeSymptomTimingError() - timing error & no bad error - no effect on fat
 })
 
 test('primeSymptomTimingError() - bad timing error & no timing error - effects both', () => {
-  const argsNFT = {
+  const argsNSV = {
     first_prime_symptom: 19,
-    outcome: 'NFT',
+    outcome: 'NSV',
     theRest: 'returned unchanged',
   }
-  const expectedNFT = {
-    ...argsNFT,
+  const expectedNSV = {
+    ...argsNSV,
     first_prime_symptom: 29,
   }
-  const argsFAT = {
+  const argsSEV = {
     first_prime_symptom: 19,
-    outcome: 'FAT',
+    outcome: 'SEV',
     theRest: 'returned unchanged',
   }
-  const expectedFAT = {
-    ...argsFAT,
+  const expectedSEV = {
+    ...argsSEV,
     first_prime_symptom: 9,
   }
   const mapper = primeSymptomTimingError({ badTimingError: 10, timingError: 0 })
-  expect(mapper(argsNFT)).toEqual(expectedNFT)
-  expect(mapper(argsFAT)).toEqual(expectedFAT)
+  expect(mapper(argsNSV)).toEqual(expectedNSV)
+  expect(mapper(argsSEV)).toEqual(expectedSEV)
 })

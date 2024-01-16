@@ -20,15 +20,15 @@ test('FilterButtonList', async () => {
   const setCurrentFilterListMock = jest.fn()
   renderFilterButtonList({ mock: setCurrentFilterListMock })
 
-  await userEvent.click(screen.getByText('NF'))
+  await userEvent.click(screen.getByText('NS'))
   expect(setCurrentFilterListMock).toHaveBeenCalledWith(
     {
       ...CURRENT_FILTER_LIST,
-      nonFatal: true
+      nonSevere: true
     }
   )
 
-  expect(screen.getByText('NF', { pressed: true })).toBeTruthy()
+  expect(screen.getByText('NS', { pressed: true })).toBeTruthy()
 })
 
 test('FilterButtonList - scatter page enables remove dubious', async () => {

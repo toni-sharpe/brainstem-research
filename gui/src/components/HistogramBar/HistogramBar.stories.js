@@ -19,7 +19,7 @@ export const Primary = {
     return (
       <ul>
         <HistogramBar {...baseHistogramBarProps}>
-          <HistogramBarLabel count={6} i18nKey='nonFatalCases' />
+          <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
         </HistogramBar>
       </ul>
     )
@@ -35,7 +35,7 @@ export const WithSuffixClass = {
     return (
       <ul>
         <HistogramBar {...props}>
-          <HistogramBarLabel count={6} i18nKey='nonFatalCases' />
+          <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
         </HistogramBar>
       </ul>
     )
@@ -51,7 +51,7 @@ export const BackgroundColorOverride = {
     return (
       <ul>
         <HistogramBar {...props}>
-          <HistogramBarLabel count={6} i18nKey='nonFatalCases' />
+          <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
         </HistogramBar>
       </ul>
     )
@@ -68,7 +68,7 @@ export const FallbackColour = {
     return (
       <ul>
         <HistogramBar {...props}>
-          <HistogramBarLabel count={6} i18nKey='nonFatalCases' />
+          <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
         </HistogramBar>
       </ul>
     )
@@ -86,7 +86,7 @@ export const SizesChanged = {
     return (
       <ul>
         <HistogramBar {...props}>
-          <HistogramBarLabel count={2.5} i18nKey='nonFatalCases' />
+          <HistogramBarLabel count={2.5} i18nKey='nonSevereCases' />
         </HistogramBar>
       </ul>
     )

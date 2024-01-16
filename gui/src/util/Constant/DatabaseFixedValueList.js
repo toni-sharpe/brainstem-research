@@ -13,11 +13,11 @@ export const CONSULTANT_DOCTOR = [
 ]
 
 export const OUTCOME = [
-  'fatal',
-  'non-fatal',
+  'severe',
+  'non-severe',
   'unknown',
-  'FAT',
-  'NFT',
+  'SEV',
+  'NSV',
   'UNK',
 ]
 

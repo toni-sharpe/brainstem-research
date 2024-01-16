@@ -21,11 +21,11 @@ export function removeDubiousFilter({ currentFilterList }) {
   }
 }
 
-export function fatalFilter({ currentFilterList }) {
+export function severeFilter({ currentFilterList }) {
   return ({ outcome }) => {
-    if (!currentFilterList.fatal && !currentFilterList.nonFatal) { return true }
-    if (currentFilterList.fatal && outcome === 'FAT') { return true }
-    if (currentFilterList.nonFatal && outcome === 'NFT') { return true }
+    if (!currentFilterList.severe && !currentFilterList.nonSevere) { return true }
+    if (currentFilterList.severe && outcome === 'SEV') { return true }
+    if (currentFilterList.nonSevere && outcome === 'NSV') { return true }
     return false
   }
 }

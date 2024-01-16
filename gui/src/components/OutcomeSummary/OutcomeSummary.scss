@@ -59,10 +59,10 @@
     color: var(--white);
     padding: var(--padding--small-tiny) var(--padding--small);
   }
-  &__fatal-ave {
+  &__severe-ave {
     background-color:var(--red--dark);
   }
-  &__non-fatal-ave {
+  &__non-severe-ave {
     background-color:var(--blue--dark);
   }
   &__lowest-median-marker {

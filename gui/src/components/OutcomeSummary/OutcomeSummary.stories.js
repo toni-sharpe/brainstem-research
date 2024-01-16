@@ -6,10 +6,10 @@ export default {
 };
 
 const baseOutcomeSummaryProps = {
-  fatalAve: 23,
-  fatalCount: 17,
-  nonFatalAve: 18,
-  nonFatalCount: 59,
+  severeAve: 23,
+  severeCount: 17,
+  nonSevereAve: 18,
+  nonSevereCount: 59,
   totalAvailableDataPoints: 100,
   unknownCount: 11,
 }
@@ -22,11 +22,11 @@ export const WithNumbers = {
   }
 };
 
-export const OnlyFatal = {
+export const OnlySevere = {
   render: () => {
     const props = {
       ...baseOutcomeSummaryProps,
-      nonFatalCount: undefined,
+      nonSevereCount: undefined,
     }
     return (
       <OutcomeSummary {...props} />
@@ -34,11 +34,11 @@ export const OnlyFatal = {
   }
 };
 
-export const OnlyNonFatal = {
+export const OnlyNonSevere = {
   render: () => {
     const props = {
       ...baseOutcomeSummaryProps,
-      fatalCount: undefined,
+      severeCount: undefined,
     }
     return (
       <OutcomeSummary {...props} />
@@ -50,8 +50,8 @@ export const Neither = {
   render: () => {
     const props = {
       ...baseOutcomeSummaryProps,
-      fatalCount: undefined,
-      nonFatalCount: undefined,
+      severeCount: undefined,
+      nonSevereCount: undefined,
     }
     return (
       <OutcomeSummary {...props} />
