@@ -17,7 +17,7 @@ test('BiasedTimingSim - ', async () => {
   /*
    * Base screen tests, has it rendered
    */
-  expect(screen.getByText("Assumes poor timing, with interactive percentage to define how far off I am")).toBeTruthy()
+  expect(screen.getByText("Simulates prime symptom timing bias towards the hypothesis")).toBeTruthy()
   expect(screen.getByText("Biased")).toBeTruthy()
   expect(screen.getByText("V. Biased")).toBeTruthy()
 

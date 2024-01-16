@@ -31,7 +31,7 @@ test('writeHistogramBarListAriaLabel() - fallback onto prime symptom graph parla
   expect(writeHistogramBarListAriaLabel({
     histogramBarListLabel: '35',
     i18nBaseOverride: 'PrimeSymptomHistogram',
-  })).toEqual('Time values 35..40 days with bars for fatal, non fatal')
+  })).toEqual('Time values 35-40 d with bars for fatal, non fatal')
 })
 
 
