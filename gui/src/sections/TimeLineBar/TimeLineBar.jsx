@@ -49,7 +49,7 @@ function TimeLineBar({
     }
     : (args = {}) => ({})
 
-  const labelListPos = maxMda > max ? maxMda : max
+  const labelListPosition = maxMda > max ? maxMda : max
 
   return (min !== 0 || max !== 0) && (
     <dl
@@ -95,8 +95,8 @@ function TimeLineBar({
               className={markClass}
               style={{
                 ...hueStyle({ lightness: 45 }),
-                ...calcLeft({ scale, val: min }),
                 ...lineFattener,
+                left: `${calcLeft({ scale, val: min })}%`,
               }}
             />
           ) }
@@ -116,7 +116,7 @@ function TimeLineBar({
               className={markClass}
               style={{
                 ...hueStyle(),
-                ...calcLeft({ scale, val: mean })
+                left: `${calcLeft({ scale, val: mean })}%`
               }}
             />
           ) }
@@ -126,8 +126,8 @@ function TimeLineBar({
               className={markClassDark}
               style={{
                 ...hueStyle({ lightness: 30 }),
-                ...calcLeft({ scale, val: median }),
                 ...lineFattener,
+                left: `${calcLeft({ scale, val: median })}%`,
               }}
             />
           ) }
@@ -137,15 +137,15 @@ function TimeLineBar({
               className={markClass}
               style={{
                 ...hueStyle({ lightness: 45 }),
-                ...calcLeft({ scale, val: max }),
                 ...lineFattener,
+                left: `${calcLeft({ scale, val: max })}%`,
               }}
             />
           ) }
           { timeLineBarDetailList?.statList && (
             <li key={`statlab-1`} >
               <TimeLineBarLabelWrapper
-                labelListPos={labelListPos}
+                labelListPosition={labelListPosition}
                 scale={scale}
               >
                 <TimeLineBarLabel

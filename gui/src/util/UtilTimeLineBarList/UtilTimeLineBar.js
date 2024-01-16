@@ -20,7 +20,7 @@ export function calcLeft({
 }) {
   throwError({ check: isNotNil(val), i18nKey: 'calcLeft' })
   const percentage = calcPercentage({ scale, val: val - fattenerOffset })
-  return { left: val > 0 ? `${percentage}%` : null }
+  return val > 0 ? percentage : null
 }
 
 
@@ -32,7 +32,7 @@ export function calcWidth({
   throwError({ check: isNotNil(min) && isNotNil(max), i18nKey: 'calcWidth' })
   const width = calcPercentage({ scale, val: (max - min) })
   return {
-    ...calcLeft({ scale, val: min }),
+    left: `${calcLeft({ scale, val: min })}%`,
     width: `${width}%`,
   }
 }

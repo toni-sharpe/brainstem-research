@@ -29,7 +29,7 @@ export function calcQuantileDetail({ count }) {
 }
 
 
-export function calcQuantileListPos({
+export function calcQuantileListPosition({
   count,
   quantile,
   scale = SCALE_DEFAULT,
@@ -44,7 +44,7 @@ export function calcQuantileListPos({
     const val = Math.round(quantile[i])
     return ({
       val,
-      leftPos: calcLeft({ scale, val }),
+      left: calcLeft({ scale, val }),
       numberTop: (i - 1) * 4 + 4,
     })
   })

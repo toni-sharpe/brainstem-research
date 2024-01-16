@@ -32,7 +32,7 @@ export const TranslationsForAria = {
       }
     }
     return (
-      <PrimeSymptomHistogram {...basePrimeSymptomHistogramProps} />
+      <PrimeSymptomHistogram {...props} />
     )
   }
 };

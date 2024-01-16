@@ -61,7 +61,7 @@ export function calcHistogramWidth({
 }
 
 
-export function calcHistogramBarPos({
+export function calcHistogramBarPosition({
   height,
   left,
   top,

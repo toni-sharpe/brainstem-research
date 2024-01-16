@@ -1,5 +1,4 @@
 // SecondaryNavSumAndFilterList.story.js
-import Button from 'components/Button/Button'
 import SecondaryNavSumAndFilterList from './SecondaryNavSumAndFilterList';
 
 export default {

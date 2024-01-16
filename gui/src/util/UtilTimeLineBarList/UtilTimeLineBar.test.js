@@ -24,10 +24,10 @@ test('calcPercentage()', () => {
  * calcLeft()
  */
 test('calcLeft()', () => {
-  expect(calcLeft({ scale, val: 0 })).toEqual({ left: null })
-  expect(calcLeft({ scale, val: 50 })).toEqual({ left: '5%' })
-  expect(calcLeft({ scale, val: 1000 })).toEqual({ left: '100%' })
-  expect(calcLeft({ val: 180 })).toEqual({ left: '60%' })
+  expect(calcLeft({ scale, val: 0 })).toEqual(null)
+  expect(calcLeft({ scale, val: 50 })).toEqual(5)
+  expect(calcLeft({ scale, val: 1000 })).toEqual(100)
+  expect(calcLeft({ val: 180 })).toEqual(60)
   expect(() => calcLeft({ scale })).toThrow('calcLeft function requires a val')
 })
 
