@@ -12,7 +12,6 @@ import Scatter from 'screens/Scatter/Scatter';
 import TimeLineStatChart from 'screens/TimeLineStatChart/TimeLineStatChart';
 import TimeLine from 'screens/TimeLine/TimeLine';
 import HistogramMaker from 'screens/HistogramMaker/HistogramMaker';
-import CorrelationHeatmap from 'screens/CorrelationHeatmap/CorrelationHeatmap';
 import { STAT_BAR_DETAIL_LIST } from 'util/Constant/BaseConstantList'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import { calcFilterList, isAnyFilterSet } from 'util/UtilFilter/UtilFilter'
@@ -93,10 +92,6 @@ function App() {
         <Route
           path="HistogramMaker"
           element={<HistogramMaker data={filteredData} />}
-        />
-        <Route
-          path="CorrelationHeatmap"
-          element={<CorrelationHeatmap data={filteredData} />}
         />
       </Routes>
     </article>
