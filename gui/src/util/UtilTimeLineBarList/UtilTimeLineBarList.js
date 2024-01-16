@@ -1,8 +1,6 @@
 import i18next from 'util/i18next/i18next'
-import { map, pipe, fromPairs, toPairs } from 'ramda'
+import { toPairs } from 'ramda'
 import {
-  min,
-  max,
   mean,
   median,
   quantile,
@@ -35,16 +33,12 @@ export function getStatBase({
   count = 0,
   vals = [],
 }) {
-  const statFns = [max, min, mean, median]
-  return pipe(
-    map(stFn => ([
-      stFn.name,
-      count > 0
-        ? Number(stFn(vals).toPrecision(PRECISION))
-        : 0
-    ])),
-    fromPairs
-  )(statFns)
+  return {
+    max: count > 0 ? Math.max(...vals) : 0,
+    min: count > 0 ? Math.min(...vals) : 0,
+    mean: count > 0 ? Number(mean(vals).toPrecision(PRECISION)) : 0,
+    median: count > 0 ? Number(median(vals).toPrecision(PRECISION)) : 0,
+  }
 }
 
 

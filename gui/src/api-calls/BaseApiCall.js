@@ -43,6 +43,3 @@ function baseApiCall ({
 }
 
 export default baseApiCall
-
-
-// export default baseApiCall

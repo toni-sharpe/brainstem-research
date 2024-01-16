@@ -37,6 +37,7 @@ function TimeLineBarList({
         const maxMda = Number(((median - mda) + mda * 2).toPrecision(PRECISION))
 
         const barData = { ...bData, minStd, maxStd, minMda, maxMda }
+
         const labelList = {
           mda: i18next.t(`${i18nBase}.mda`),
           mean: i18next.t(`${i18nBase}.mean`),
@@ -64,7 +65,6 @@ function TimeLineBarList({
           timeLineBarDetailList,
           valueList,
         }
-
         return (
           <TimeLineBarWrapper {...dataBarWrapperProps}>
             <TimeLineBar {...dataBarProps} />
