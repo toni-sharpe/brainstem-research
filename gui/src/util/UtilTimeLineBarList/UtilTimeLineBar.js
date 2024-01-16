@@ -20,7 +20,9 @@ export function calcLeft({
 }) {
   throwError({ check: isNotNil(val), i18nKey: 'calcLeft' })
   const percentage = calcPercentage({ scale, val: val - fattenerOffset })
-  return val > 0 ? percentage : null
+  return val > 0
+    ? Number(percentage.toPrecision(5))
+    : null
 }
 
 
