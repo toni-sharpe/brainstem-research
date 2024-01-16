@@ -5,14 +5,14 @@ import { fromPairs, pluck } from 'ramda'
 import { sampleCorrelation, sampleCovariance } from 'simple-statistics'
 
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
-import TimeLineBarListScale from 'sections/TimeLineBarListScale/TimeLineBarListScale'
+import GanttScale from 'sections/GanttScale/GanttScale'
 import ScatterPointListPropType from 'prop-types/ScatterPointList.prop-type'
-import StatBarDetailListPropType from 'prop-types/TimeLineBarDetailList.prop-type'
-import TimeLineBarList from 'sections/TimeLineBarList/TimeLineBarList'
+import StatBarDetailListPropType from 'prop-types/GanttToggleList.prop-type'
+import GanttBarList from 'sections/GanttBarList/GanttBarList'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import { FULL_DATA_POINT_LIST } from 'util/Constant/FullDataPointList'
-import { calcScale, mapToTimeLineBars } from 'util/UtilTimeLineBarList/UtilTimeLineBarList'
-import { STAT_BAR_DETAIL_LIST } from 'util/Constant/BaseConstantList'
+import { calcScale, mapToGanttBars } from 'util/UtilGanttBarList/UtilGanttBarList'
+import { GANTT_TOGGLE_LIST } from 'util/Constant/BaseConstantList'
 
 import './ScatterStatisticOutput.scss'
 
@@ -34,8 +34,8 @@ function makeStatisticOutput({ i18nKey, statisticFn, x, y }) {
 function ScatterStatisticOutput({
   pointList,
   showBars,
-  setTimeLineBarDetailList,
-  timeLineBarDetailList,
+  setGanttToggleList,
+  ganttToggleList,
   xKey,
   yKey
 }) {
@@ -49,12 +49,12 @@ function ScatterStatisticOutput({
     y = pluck('y', pointList)
   }
 
-  xStatList = mapToTimeLineBars({
+  xStatList = mapToGanttBars({
     data: [xKey, { _: '_', tone: fromPairs(FULL_DATA_POINT_LIST)[xKey].tone }],
     i18nBase: 'CommonClinicalResponses'
   })(x)
 
-  yStatList = mapToTimeLineBars({
+  yStatList = mapToGanttBars({
     data: [yKey, { _: '_', tone: fromPairs(FULL_DATA_POINT_LIST)[yKey].tone }],
     i18nBase: 'CommonClinicalResponses'
   })(y)
@@ -72,20 +72,20 @@ function ScatterStatisticOutput({
         { showBars && (
           <li>
             <div className='scatter-statistic-output__time-line-bar-list-scale'>
-              <TimeLineBarListScale
+              <GanttScale
                 ariaLabel='scatter statistic output'
                 lineHeight='210px'
                 scale={scale}
-                setTimeLineBarDetailList={setTimeLineBarDetailList}
-                timeLineBarDetailList={timeLineBarDetailList}
+                setGanttToggleList={setGanttToggleList}
+                ganttToggleList={ganttToggleList}
               />
             </div>
             <div className='scatter-statistic-output__time-line-bar-list'>
-              <TimeLineBarList
+              <GanttBarList
                 currentFilterList={CURRENT_FILTER_LIST}
                 scale={scale}
                 statDataList={[xStatList, yStatList]}
-                timeLineBarDetailList={timeLineBarDetailList}
+                ganttToggleList={ganttToggleList}
               />
             </div>
           </li>
@@ -101,15 +101,15 @@ function ScatterStatisticOutput({
 
 ScatterStatisticOutput.defaultProps = {
   pointList: [],
-  timeLineBarDetailList: STAT_BAR_DETAIL_LIST,
+  ganttToggleList: GANTT_TOGGLE_LIST,
   showBars: true,
 }
 
 ScatterStatisticOutput.propTypes = {
   pointList: ScatterPointListPropType,
-  setTimeLineBarDetailList: PropTypes.func,
+  setGanttToggleList: PropTypes.func,
   showBars: PropTypes.bool,
-  timeLineBarDetailList: StatBarDetailListPropType,
+  ganttToggleList: StatBarDetailListPropType,
   xKey: PropTypes.string.isRequired,
   yKey: PropTypes.string.isRequired,
 }

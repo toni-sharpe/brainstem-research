@@ -74,10 +74,9 @@
     "Scatter": "Punktwolke",
     "PrimeSymptomList": "Hauptsymptom",
     "AntiBiasToolKit": "Anti-Bias",
-    "TimeLineStatChart": "Zeitleiste Diagramm",
+    "Gantt": "Gantt",
     "TimeLine": "Zeitleiste",
     "HistogramMaker": "Histogramm",
-    "CorrelationHeatmap": "Korr. Heatmap",
     "nIs": "N ist {{n}}"
   },
 
@@ -251,7 +250,7 @@
     "time": "Zeit"
   },
 
-  "TimeLineBarListScale": {
+  "GanttScale": {
     "scaleFor": "Skala für {{AriaLabel}}"
   },
 
@@ -308,7 +307,7 @@
     "unknown": "Unbekannt"
   },
 
-  "TimeLineStatChart": {
+  "Gantt": {
     "subHeading": "Grundlegende Zeitstatistiken, über gemeinsame Antworten und mit interaktiven Querverweisen",
     "interactivePanelLabel": "Interaktive Zeitleiste",
     "generalPanelLabel": "Allgemeiner klinischer Zeitleiste",
@@ -316,16 +315,16 @@
     "secondaryNav": "Siehe Antwortzeitstatistiken oder interaktiv, wo Sie auswählen können, was gruppiert werden soll und wo Sie Statistiken über"
   },
 
-  "GeneralResponseTimeLineStatChart": {
+  "GeneralResponseGantt": {
     "GraphHeading": "Filterbare Bereiche und grundlegende Statistiken für agonale und Erholungsreaktionen"
   },
 
-  "InteractiveTimeLineStatChart": {
+  "InteractiveGantt": {
     "GraphHeading": "Interaktive Statistikliste, die es dem Benutzer ermöglicht, auszuwählen, was gruppiert werden soll, und die Zeitstatistiken für diese Gruppen anzuzeigen",
     "group": "{{k}} N={{count}}"
   },
 
-  "TimeLineBar": {
+  "GanntBar": {
     "good": "Wiederherstellungsantworten",
     "notGood": "Schwerwiegende Reaktionen",
     "bad": "Schwerwiegende und / oder agonale Reaktionen",
@@ -333,7 +332,7 @@
     "neutral": "Aufprall ohne Lager"
   },
 
-  "TimeLineBarList": {
+  "GanttBarList": {
     "mean": "Mtlwrt",
     "range": "Bereich",
     "stddev": "Mdaabw",
@@ -345,7 +344,7 @@
     "ranges": "lo | MDA | hi"
   },
 
-  "TimeLineBarDetailToggleList": {
+  "GanttToggleList": {
     "mean": "Mtlwrt",
     "range": "Bereich",
     "min": "Min",
@@ -385,7 +384,7 @@
 
   "ErrorList": {
     "ariaTranslationSet": "wenn translationSet verwendet wird, muss es ein Objekt sein, bei dem barList ein Array und groupBy eine Zeichenkette ist",
-    "calcInteractiveTimeBarArgs": "Die Daten für calcInteractiveTimeLineBarStatList müssen ein Array sein und die aktuellen Benutzerauswahlen müssen Strings sein",
+    "calcInteractiveTimeBarArgs": "Die Daten für calcInteractiveGantt müssen ein Array sein und die aktuellen Benutzerauswahlen müssen Strings sein",
     "calcScaleToFitUI": "calcScaleToFitUI erfordert ein scale-Argument mit den numerischen Eigenschaften stepDivision und totalSteps",
     "calcLeft": "calcLeft Funktion erfordert eine val bereitgestellt",
     "calcPercentage": "calcPercentage Funktion erfordert eine val bereitgestellt",
@@ -397,7 +396,7 @@
     "graphBlockLengthZero": "histogramBarGroupList hat die Länge 0, es sollte etwas in histogramBarGroupList für {{callingFn}} enthalten sein",
     "isOrIsInArrayNeedsValues": "isOrIsInArray Wert Fehler. {{missing}}",
     "makeWidth": "makeWidth erfordert die Angabe eines Mindest- und Höchstwerts",
-    "mapToTimeLineBars": "mapToTimeLineBars benötigt data mit Länge und eine i18nBase",
+    "mapToGanttBars": "mapToGanttBars benötigt data mit Länge und eine i18nBase",
     "noHistogramData": "Diese Histogramm-Konfiguration hat null Ergebnisse",
     "primeSymptomHistogramBarGroup": "Prime symptom graph block list muss ein Array mit positiver Anzahl sein",
     "secondaryNavProps": "alle vier Args sind erforderlich, currentPanel, k und i18nBase sind alle Strings und setCurrentPanel sollte eine Funktion sein",

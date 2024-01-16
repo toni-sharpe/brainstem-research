@@ -21,7 +21,7 @@ function baseApiCall ({
       if (endPoint === 'Scatter') {
         setData(RealFullData)
       }
-      if (endPoint === 'TimeLineStatChart') {
+      if (endPoint === 'Gantt') {
         setData(RealFullData)
       }
       if (endPoint === 'TimeLine') {

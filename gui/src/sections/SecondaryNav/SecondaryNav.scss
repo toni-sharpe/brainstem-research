@@ -32,4 +32,12 @@
       }
     }
   }
+
+  &.gantt {
+    & > * {
+      @media (max-width: 840px) {
+        margin-top: var(--spacing--narrow);
+      }
+    }
+  }
 }

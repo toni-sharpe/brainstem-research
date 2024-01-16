@@ -9,10 +9,9 @@ import Header from 'sections/Header/Header'
 import Home from 'screens/Home/Home';
 import PrimeSymptomList from 'screens/PrimeSymptomList/PrimeSymptomList';
 import Scatter from 'screens/Scatter/Scatter';
-import TimeLineStatChart from 'screens/TimeLineStatChart/TimeLineStatChart';
+import Gantt from 'screens/Gantt/Gantt';
 import TimeLine from 'screens/TimeLine/TimeLine';
 import HistogramMaker from 'screens/HistogramMaker/HistogramMaker';
-import { STAT_BAR_DETAIL_LIST } from 'util/Constant/BaseConstantList'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import { calcFilterList, isAnyFilterSet } from 'util/UtilFilter/UtilFilter'
 import { getCurrentUrl } from 'util/Util/Util'
@@ -29,8 +28,6 @@ function App() {
   CURRENT_FILTER_LIST.rmDubious = !['AntiBiasToolKit'].includes(currentUrl)
   CURRENT_FILTER_LIST.nonSevere = ['TimeLine'].includes(currentUrl)
   const [currentFilterList, setCurrentFilterList] = useState(CURRENT_FILTER_LIST)
-
-  const [timeLineBarDetailList, setTimeLineBarDetailList] = useState(STAT_BAR_DETAIL_LIST)
 
   useEffect(baseApiCall({ // eslint-disable-line react-hooks/exhaustive-deps
     endPoint: currentUrl,
@@ -67,23 +64,11 @@ function App() {
         />
         <Route
           path="Scatter"
-          element={
-            <Scatter
-              data={filteredData}
-              setTimeLineBarDetailList={setTimeLineBarDetailList}
-              timeLineBarDetailList={timeLineBarDetailList}
-            />
-          }
+          element={<Scatter data={filteredData} />}
         />
         <Route
-          path="TimeLineStatChart"
-          element={
-            <TimeLineStatChart
-              data={filteredData}
-              setTimeLineBarDetailList={setTimeLineBarDetailList}
-              timeLineBarDetailList={timeLineBarDetailList}
-            />
-          }
+          path="Gantt"
+          element={<Gantt data={filteredData} />}
         />
         <Route
           path="TimeLine"
