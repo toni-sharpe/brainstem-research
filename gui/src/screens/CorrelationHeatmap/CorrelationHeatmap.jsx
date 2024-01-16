@@ -118,8 +118,8 @@ function CorrelationHeatmap({ data }) {
       return 0
     },
     outcome: val => {
-      if (val === 'FAT') return 30;
-      if (val === 'NFT') return 15;
+      if (val === 'SEV') return 30;
+      if (val === 'NSV') return 15;
       return 0
     },
     outcome_type: val => {

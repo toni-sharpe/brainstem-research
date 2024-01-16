@@ -1,6 +1,6 @@
 const RealPrimeSymptomData = [
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 19,
     "outlier": false,
     "pathological_event_duration": 120,
@@ -18,7 +18,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 20
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 20,
     "outlier": false,
     "pathological_event_duration": 46,
@@ -36,7 +36,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 21
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 18,
     "outlier": false,
     "pathological_event_duration": 28,
@@ -54,7 +54,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 10
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 59,
     "outlier": true,
     "pathological_event_duration": 125,
@@ -72,7 +72,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 31,
     "outlier": false,
     "pathological_event_duration": 62,
@@ -90,7 +90,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 19
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 15,
     "outlier": false,
     "pathological_event_duration": 33,
@@ -108,7 +108,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 18,
     "outlier": false,
     "pathological_event_duration": 40,
@@ -126,7 +126,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 20
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 20,
     "outlier": false,
     "pathological_event_duration": 165,
@@ -144,7 +144,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 16
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 20,
     "outlier": false,
     "pathological_event_duration": 22,
@@ -162,7 +162,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 17
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 15,
     "outlier": false,
     "pathological_event_duration": 17,
@@ -180,7 +180,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 22,
     "outlier": false,
     "pathological_event_duration": 113,
@@ -198,7 +198,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 17
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 14,
     "outlier": false,
     "pathological_event_duration": 102,
@@ -234,7 +234,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 13
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 24,
     "outlier": false,
     "pathological_event_duration": 60,
@@ -252,7 +252,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 20
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 13,
     "outlier": false,
     "pathological_event_duration": 74,
@@ -270,7 +270,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 12,
     "outlier": false,
     "pathological_event_duration": 42,
@@ -288,7 +288,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 17
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 18,
     "outlier": false,
     "pathological_event_duration": 60,
@@ -306,7 +306,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 17
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 10,
     "outlier": false,
     "pathological_event_duration": 34,
@@ -324,7 +324,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 16
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 16,
     "outlier": false,
     "pathological_event_duration": null,
@@ -342,7 +342,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 21,
     "outlier": false,
     "pathological_event_duration": 124,
@@ -360,7 +360,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 22
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 11,
     "outlier": false,
     "pathological_event_duration": null,
@@ -378,7 +378,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 13
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 43,
     "outlier": false,
     "pathological_event_duration": 85,
@@ -396,7 +396,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 32
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 31,
     "outlier": false,
     "pathological_event_duration": 31,
@@ -414,7 +414,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 14
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 11,
     "outlier": false,
     "pathological_event_duration": null,
@@ -432,7 +432,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 24
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 20,
     "outlier": false,
     "pathological_event_duration": 55,
@@ -450,7 +450,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 14
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 10,
     "outlier": false,
     "pathological_event_duration": 35,
@@ -468,7 +468,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 14,
     "outlier": false,
     "pathological_event_duration": 111,
@@ -486,7 +486,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 34,
     "outlier": false,
     "pathological_event_duration": 34,
@@ -504,7 +504,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 18
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 19,
     "outlier": false,
     "pathological_event_duration": 135,
@@ -522,7 +522,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 21
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 20,
     "outlier": false,
     "pathological_event_duration": null,
@@ -558,7 +558,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 52
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 44,
     "outlier": false,
     "pathological_event_duration": 104,
@@ -576,7 +576,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 23,
     "outlier": false,
     "pathological_event_duration": 104,
@@ -594,7 +594,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 11,
     "outlier": false,
     "pathological_event_duration": 52,
@@ -612,7 +612,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 21
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 12,
     "outlier": false,
     "pathological_event_duration": 74,
@@ -630,7 +630,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 15
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 17,
     "outlier": false,
     "pathological_event_duration": 42,
@@ -648,7 +648,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 19
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 13,
     "outlier": false,
     "pathological_event_duration": 63,
@@ -666,7 +666,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 12,
     "outlier": false,
     "pathological_event_duration": 37,
@@ -684,7 +684,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 10,
     "outlier": false,
     "pathological_event_duration": 35,
@@ -702,7 +702,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 30
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 10,
     "outlier": false,
     "pathological_event_duration": 57,
@@ -738,7 +738,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 24
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 20,
     "outlier": false,
     "pathological_event_duration": 176,
@@ -756,7 +756,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 14
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 30,
     "outlier": false,
     "pathological_event_duration": 138,
@@ -774,7 +774,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 15
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 20,
     "outlier": false,
     "pathological_event_duration": 78,
@@ -792,7 +792,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 17
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 21,
     "outlier": false,
     "pathological_event_duration": 78,
@@ -810,7 +810,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 23
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 16,
     "outlier": false,
     "pathological_event_duration": 30,
@@ -828,7 +828,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 18
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 18,
     "outlier": false,
     "pathological_event_duration": 52,
@@ -846,7 +846,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 23
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 9,
     "outlier": false,
     "pathological_event_duration": 18,
@@ -864,7 +864,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 6,
     "outlier": false,
     "pathological_event_duration": 36,
@@ -882,7 +882,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 20
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 14,
     "outlier": false,
     "pathological_event_duration": 15,
@@ -900,7 +900,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 12,
     "outlier": false,
     "pathological_event_duration": 29,
@@ -918,7 +918,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 22,
     "outlier": false,
     "pathological_event_duration": 25,
@@ -936,7 +936,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 20
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 14,
     "outlier": false,
     "pathological_event_duration": 14,
@@ -954,7 +954,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 32,
     "outlier": false,
     "pathological_event_duration": 50,
@@ -972,7 +972,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 14,
     "outlier": true,
     "pathological_event_duration": 28,
@@ -990,7 +990,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 14
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 21,
     "outlier": false,
     "pathological_event_duration": 34,
@@ -1008,7 +1008,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 10,
     "outlier": false,
     "pathological_event_duration": 34,
@@ -1026,7 +1026,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 10
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 10,
     "outlier": false,
     "pathological_event_duration": 14,
@@ -1044,7 +1044,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 12,
     "outlier": false,
     "pathological_event_duration": 29,
@@ -1062,7 +1062,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 28
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 8,
     "outlier": false,
     "pathological_event_duration": 37,
@@ -1080,7 +1080,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 18,
     "outlier": false,
     "pathological_event_duration": 24,
@@ -1098,7 +1098,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 16
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 18,
     "outlier": false,
     "pathological_event_duration": 53,
@@ -1116,7 +1116,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 17
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 15,
     "outlier": false,
     "pathological_event_duration": 97,
@@ -1134,7 +1134,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 40
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 35,
     "outlier": false,
     "pathological_event_duration": 41,
@@ -1152,7 +1152,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 30
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 12,
     "outlier": false,
     "pathological_event_duration": 24,
@@ -1170,7 +1170,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 22,
     "outlier": false,
     "pathological_event_duration": 30,
@@ -1188,7 +1188,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 12
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 19,
     "outlier": false,
     "pathological_event_duration": 47,
@@ -1206,7 +1206,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 12,
     "outlier": false,
     "pathological_event_duration": 18,
@@ -1224,7 +1224,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 25,
     "outlier": false,
     "pathological_event_duration": 25,
@@ -1242,7 +1242,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 55,
     "outlier": true,
     "pathological_event_duration": 55,
@@ -1260,7 +1260,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 30,
     "outlier": false,
     "pathological_event_duration": 30,
@@ -1278,7 +1278,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 24
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 11,
     "outlier": false,
     "pathological_event_duration": 27,
@@ -1296,7 +1296,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 12
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 23,
     "outlier": false,
     "pathological_event_duration": 153,
@@ -1314,7 +1314,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 32
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 24,
     "outlier": false,
     "pathological_event_duration": 74,
@@ -1332,7 +1332,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 18
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 23,
     "outlier": false,
     "pathological_event_duration": 38,
@@ -1350,7 +1350,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 23,
     "outlier": false,
     "pathological_event_duration": 23,
@@ -1368,7 +1368,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 23,
     "outlier": false,
     "pathological_event_duration": 23,
@@ -1386,7 +1386,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 37,
     "outlier": false,
     "pathological_event_duration": 71,
@@ -1404,7 +1404,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 30,
     "outlier": false,
     "pathological_event_duration": 47,
@@ -1422,7 +1422,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 70,
     "outlier": false,
     "pathological_event_duration": 93,
@@ -1440,7 +1440,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 20,
     "outlier": false,
     "pathological_event_duration": 35,
@@ -1458,7 +1458,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 10,
     "outlier": false,
     "pathological_event_duration": 27,
@@ -1476,7 +1476,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 13,
     "outlier": false,
     "pathological_event_duration": 31,
@@ -1494,7 +1494,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 25
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 10,
     "outlier": false,
     "pathological_event_duration": 26,
@@ -1512,7 +1512,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 20
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 12,
     "outlier": false,
     "pathological_event_duration": 23,
@@ -1530,7 +1530,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 10,
     "outlier": false,
     "pathological_event_duration": 26,
@@ -1548,7 +1548,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 9
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 18,
     "outlier": false,
     "pathological_event_duration": 83,
@@ -1584,7 +1584,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 7
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 16,
     "outlier": false,
     "pathological_event_duration": 51,
@@ -1602,7 +1602,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 16
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 15,
     "outlier": false,
     "pathological_event_duration": 20,
@@ -1620,7 +1620,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 20
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 20,
     "outlier": true,
     "pathological_event_duration": 67,
@@ -1656,7 +1656,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 21
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 22,
     "outlier": false,
     "pathological_event_duration": 95,
@@ -1674,7 +1674,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 53
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 35,
     "outlier": false,
     "pathological_event_duration": 90,
@@ -1692,7 +1692,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 19,
     "outlier": false,
     "pathological_event_duration": 37,
@@ -1710,7 +1710,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 24
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 18,
     "outlier": true,
     "pathological_event_duration": null,
@@ -1728,7 +1728,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 22,
     "outlier": false,
     "pathological_event_duration": 38,
@@ -1746,7 +1746,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 14
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 21,
     "outlier": false,
     "pathological_event_duration": 92,
@@ -1764,7 +1764,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 31
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 6,
     "outlier": false,
     "pathological_event_duration": 22,
@@ -1782,7 +1782,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 10,
     "outlier": false,
     "pathological_event_duration": null,
@@ -1800,7 +1800,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 15
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 14,
     "outlier": false,
     "pathological_event_duration": null,
@@ -1818,7 +1818,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 18,
     "outlier": false,
     "pathological_event_duration": null,
@@ -1836,7 +1836,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 11,
     "outlier": false,
     "pathological_event_duration": null,
@@ -1854,7 +1854,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 15,
     "outlier": false,
     "pathological_event_duration": 55,
@@ -1890,7 +1890,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 23
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 26,
     "outlier": true,
     "pathological_event_duration": 476,
@@ -1908,7 +1908,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 26
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 46,
     "outlier": true,
     "pathological_event_duration": 88,
@@ -1962,7 +1962,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 27
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 10,
     "outlier": false,
     "pathological_event_duration": null,
@@ -1980,7 +1980,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 15
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 70,
     "outlier": false,
     "pathological_event_duration": 99,
@@ -1998,7 +1998,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 85
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 52,
     "outlier": false,
     "pathological_event_duration": 52,
@@ -2016,7 +2016,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 13,
     "outlier": false,
     "pathological_event_duration": 38,
@@ -2034,7 +2034,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 15
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 20,
     "outlier": false,
     "pathological_event_duration": null,
@@ -2052,7 +2052,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 12,
     "outlier": false,
     "pathological_event_duration": 30,
@@ -2070,7 +2070,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 27
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 13,
     "outlier": false,
     "pathological_event_duration": null,
@@ -2088,7 +2088,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 18
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 23,
     "outlier": false,
     "pathological_event_duration": 48,
@@ -2124,7 +2124,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 15,
     "outlier": false,
     "pathological_event_duration": null,
@@ -2142,7 +2142,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 23
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 30,
     "outlier": false,
     "pathological_event_duration": null,
@@ -2160,7 +2160,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 31
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 22,
     "outlier": false,
     "pathological_event_duration": 39,
@@ -2178,7 +2178,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 24
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 12,
     "outlier": false,
     "pathological_event_duration": 58,
@@ -2196,7 +2196,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 25
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 25,
     "outlier": false,
     "pathological_event_duration": 118,
@@ -2214,7 +2214,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 18
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 28,
     "outlier": false,
     "pathological_event_duration": null,
@@ -2232,7 +2232,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 29
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 27,
     "outlier": false,
     "pathological_event_duration": 57,
@@ -2250,7 +2250,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 27
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 63,
     "outlier": false,
     "pathological_event_duration": null,
@@ -2268,7 +2268,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 24,
     "outlier": false,
     "pathological_event_duration": 35,
@@ -2286,7 +2286,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 30
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 19,
     "outlier": false,
     "pathological_event_duration": 76,
@@ -2304,7 +2304,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 40
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 13,
     "outlier": false,
     "pathological_event_duration": 50,
@@ -2322,7 +2322,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 38
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 28,
     "outlier": false,
     "pathological_event_duration": 130,
@@ -2340,7 +2340,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 28
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 30,
     "outlier": false,
     "pathological_event_duration": null,
@@ -2358,7 +2358,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 24
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 30,
     "outlier": false,
     "pathological_event_duration": null,
@@ -2376,7 +2376,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 20,
     "outlier": false,
     "pathological_event_duration": 73,
@@ -2394,7 +2394,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 32
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 15,
     "outlier": false,
     "pathological_event_duration": null,
@@ -2412,7 +2412,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 23,
     "outlier": false,
     "pathological_event_duration": null,
@@ -2430,7 +2430,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 31
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 28,
     "outlier": false,
     "pathological_event_duration": 73,
@@ -2448,7 +2448,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 15
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 26,
     "outlier": false,
     "pathological_event_duration": null,
@@ -2466,7 +2466,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 15
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 15,
     "outlier": false,
     "pathological_event_duration": 75,
@@ -2484,7 +2484,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 28
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 13,
     "outlier": false,
     "pathological_event_duration": 70,
@@ -2556,7 +2556,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 22
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 27,
     "outlier": false,
     "pathological_event_duration": 82,
@@ -2574,7 +2574,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 27
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 29,
     "outlier": false,
     "pathological_event_duration": 60,
@@ -2592,7 +2592,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 25
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 50,
     "outlier": false,
     "pathological_event_duration": 125,
@@ -2610,7 +2610,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 23,
     "outlier": false,
     "pathological_event_duration": 90,
@@ -2628,7 +2628,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 33
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "first_prime_symptom": 39,
     "outlier": false,
     "pathological_event_duration": 88,
@@ -2664,7 +2664,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 25
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 19,
     "outlier": false,
     "pathological_event_duration": 32,
@@ -2682,7 +2682,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 19,
     "outlier": false,
     "pathological_event_duration": 19,
@@ -2700,7 +2700,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": null
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 63,
     "outlier": false,
     "pathological_event_duration": 63,
@@ -2718,7 +2718,7 @@ const RealPrimeSymptomData = [
     "prime_symptom_3": 60
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "first_prime_symptom": 40,
     "outlier": false,
     "pathological_event_duration": 56,

@@ -72,7 +72,7 @@ function Scatter({
   see https://github.com/toni-sharpe/brainstem-research/issues/59
   let's get the Scatter showing as it's key, this can be replaced later
   Note also the three commented out lines as well, to get a green build
-  And three lines in the test for this file, as well as the two fatal symptom
+  And three lines in the test for this file, as well as the two severe symptom
     counts, 3 becomes 2 for a pass until this is replaced
 
   <ScatterStatisticOutput

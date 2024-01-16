@@ -14,5 +14,5 @@ test('Background - ', async () => {
    * Base screen tests, has it rendered
    */
   expect(screen.getByText('Background')).toBeTruthy()
-  expect(screen.getByText('The medical research is real, the events are real and each one represents the experience of a real person, many of whom, around 90, are now dead as a result. For this reason the site is purposefully genericised for the sake of the dignity of both the dead and living and because as of yet, my hypothesis has not been verified or even inspected by anyone who has the right credentials.')).toBeTruthy()
+  expect(screen.getByText('The medical research is real, the events are real and each one represents the experience of a real person, many of whom, around 90, have not fared so well and cannot be said to be fully better, if they ever are. For this reason the site is purposefully genericised for the sake of those who aren\'t necessarily in a position to voice concerns, compounded by my hypothesis standing firmly enough from my perspective but not yet examined by someone who knows the real detail.')).toBeTruthy()
 })

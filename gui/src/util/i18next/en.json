@@ -2,11 +2,11 @@
   "CommonClinicalResponses": {
     "care_error_level": "Care error level",
     "care_technique_1": "Care technique 1",
-    "death_response_1": "Death response 1",
-    "death_response_2": "Death response 2",
+    "death_response_1": "Severe response 1",
+    "death_response_2": "Severe response 2",
     "event_count": "Pathological event order",
-    "fatal_symptom_1": "Fatal symptom 1",
-    "fatal_symptom_2": "Fatal symptom 2",
+    "fatal_symptom_1": "Severe symptom 1",
+    "fatal_symptom_2": "Severe symptom 2",
     "first_prime_symptom": "1st moment of prime symptom",
     "intro_symptom_duration": "Possible start duration",
     "intro_symptom_start": "Possible start",
@@ -30,16 +30,16 @@
     "prime_symptom_proportion": "Prime symptom proportion",
     "recovery_duration": "Recovery duration",
     "recovery_proportion": "Recovery proportion",
-    "slight_death_response_1": "Death response 1 (pos)",
-    "slight_death_response_2": "Death response 2 (pos)",
+    "slight_death_response_1": "Severe response 1 (pos)",
+    "slight_death_response_2": "Severe response 2 (pos)",
     "time_of_death": "Time of death",
     "care_error_level_abbrev": "Care errors",
     "care_technique_1_abbrev": "Care technique 1",
-    "death_response_1_abbrev": "Death res 1",
-    "death_response_2_abbrev": "Death res 2",
+    "death_response_1_abbrev": "Sev res 1",
+    "death_response_2_abbrev": "Sev res 2",
     "event_count_abbrev": "Event count",
-    "fatal_symptom_1_abbrev": "Fat symp 1",
-    "fatal_symptom_2_abbrev": "Fat symp 2",
+    "fatal_symptom_1_abbrev": "Sev symp 1",
+    "fatal_symptom_2_abbrev": "Sev symp 2",
     "first_prime_symptom_abbrev": "1st PrSymp time",
     "intro_symptom_duration_abbrev": "Intro dur.",
     "intro_symptom_start_abbrev": "Intro",
@@ -63,9 +63,9 @@
     "prime_symptom_proportion_abbrev": "PrSymp prption",
     "recovery_duration_abbrev": "Recovery dur",
     "recovery_proportion_abbrev": "Recovery prption",
-    "slight_death_response_1_abbrev": "Death res 1 mn",
-    "slight_death_response_2_abbrev": "Death res 2 mn",
-    "time_of_death_abbrev": "Time of death"
+    "slight_death_response_1_abbrev": "Sev res 1 mn",
+    "slight_death_response_2_abbrev": "Sev res 2 mn",
+    "time_of_death_abbrev": "Time of sev"
   },
 
   "MainPageHeading": {
@@ -98,7 +98,7 @@
 
   "FilterButtonLabel": {
     "confirmedActors": "Cnf",
-    "fatal": "FT",
+    "severe": "SV",
     "primeSymptomType": "Rdgt.",
     "fjp": "Prev",
     "hardEventOnly": "HE",
@@ -106,7 +106,7 @@
     "rmDubious": "Rm Dub.",
     "longTime": "Long",
     "moderateTime": "Med",
-    "nonFatal": "NF",
+    "nonSevere": "NS",
     "secondOrMore": "2+",
     "thirdOrMore": "3+"
   },
@@ -123,12 +123,12 @@
     "paragraph2-1": "I noticed, investigated and and may have discovered something new about the brainstem under certain conditions and this website is all about looking at that data from different angles. ",
     "paragraph2Link": "",
     "paragraph2-2": "I did this all myself and it even delayed my job searching; however, it needs verification from medically trained folk.",
-    "paragraph3": "The medical research is real, the events are real and each one represents the experience of a real person, many of whom, around 90, are now dead as a result. For this reason the site is purposefully genericised for the sake of the dignity of both the dead and living and because as of yet, my hypothesis has not been verified or even inspected by anyone who has the right credentials. "
+    "paragraph3": "The medical research is real, the events are real and each one represents the experience of a real person, many of whom, around 90, have not fared so well and cannot be said to be fully better, if they ever are. For this reason the site is purposefully genericised for the sake of those who aren't necessarily in a position to voice concerns, compounded by my hypothesis standing firmly enough from my perspective but not yet examined by someone who knows the real detail."
   },
 
   "Motivation": {
-    "paragraph4": "The saving of lives was the core motivation, though that was complicated as the nuances emerged (see below). The possibility of discovery motivated me and the breakthroughs, of which there were several, were both exciting and kept that motivation going.",
-    "paragraph5": "On top the web work and the medical research there is also a decidedly complex and nuanced web of medical ethics problems which I identified and have ideas to mitigate in some cases. The ethics comes in because the problem would best be thought of as a type of poisoning, a deliberately broad choice of term (I will remain secretive with the details until some other expertise has been consulted) but a notable choice because it is something that can be done maliciously by a predatory individual to a vulnerable individual. These are not light spaces to deal with, and when they group, overlap and multiply, that gets challenging. I like challenging though, I'd just rather not need a \"fatal\" filter."
+    "paragraph4": "I have been a bit nerdy about medical things for a long time, since a long family illness saw me in hospitals as a relative while a child, then a book by Ben Goldacre, and a natural curiosity that means it's been a base that's gradually built for years. This time I really quite casually looked at something that was curious and over a series of notable events and more focused, full-time work, building up to nine months, I may have made the discovery that something not so well understood is more complex than we thought and I can even see useful avenues for this knowledge in society, though, that has been complicated as the nuances emerged (see below). All this possibility of discovery, breakthroughs, connections, visualisations and learning, way outside my professional field, were both exciting and kept that motivation going and going, longer indeed than it should have, give neither wage nor benefit for my efforts.",
+    "paragraph5": "On top the web work and the medical research there is also a decidedly complex and nuanced web of medical ethics problems which I identified and have ideas to mitigate in some cases. The ethics comes in because the problem would best be thought of as a type of poisoning, a deliberately broad choice of term (I will remain secretive with the details until some other expertise has been consulted) but a notable choice because it is something that can be done maliciously by a predatory individual to a vulnerable individual and it is very dangerous. These are not light spaces to deal with, and when they group, overlap and multiply, that gets challenging. Challenging is good, and when it's all put together, this has been the most challenging problem I've tackled in my life, but the suffering of people "
   },
 
   "TechStack": {
@@ -170,16 +170,16 @@
     "techStack18Label": "Composable components",
     "techStack18": " - build to be re-used and shared.",
     "techStack19Label": "Clean code",
-    "techStack19": " - there are several acronyms I don’t remember, but, generally I try to keep things consistent, reuse things, factor stuff out against tests and all the other things. Of course I don’t manage this all the time, the excitement of proving a concept takes over, or something needs to be done and we’ve got it written down to come back to. In my experience this doesn’t happen as much as I would like.",
+    "techStack19": " - there are several acronyms I don't remember, but, generally I try to keep things consistent, reuse things, factor stuff out against tests and all the other things. Of course I don't manage this all the time, the excitement of proving a concept takes over, or something needs to be done and we've got it written down to come back to. In my experience this doesn't happen as much as I would like.",
     "techStack20Label": "Performance.",
     "techStack20": " - It's fast and accessible, because I use HTML, aria, SVG (or canvas) and CSS directly. I also try to keep things simple and avoid just adding another library."
   },
 
   "Testing": {
-    "paragraph7": "StoryBook is great. It allows testing by mimicking eyes on screen, using humans and can be done by developer, reviewer, QA and anyone else. It can be remotely hosted, so they don’t need to be here either. With testing you want to mimic the real system as closely as possible so it makes sense to unit test a util function, you use a computer to test what a computer will use. With the screen based UI stuff the real system is human eyes looking at a screen, hence my feelings about StoryBook.",
-    "paragraph8": "Visual component unit tests are a bit of waste of time anyway, they’re brittle and often rather high in number (N button sizes in N states, for example) plus all you can test is that the right prop went in - catching prop “disabled” is set to true isn’t going to catch someone deleting the disabled button styles by mistake.",
+    "paragraph7": "StoryBook is great. It allows testing by mimicking eyes on screen, using humans and can be done by developer, reviewer, QA and anyone else. It can be remotely hosted, so they don't need to be here either. With testing you want to mimic the real system as closely as possible so it makes sense to unit test a util function, you use a computer to test what a computer will use. With the screen based UI stuff the real system is human eyes looking at a screen, hence my feelings about StoryBook.",
+    "paragraph8": "Visual component unit tests are a bit of waste of time anyway, they're brittle and often rather high in number (N button sizes in N states, for example) plus all you can test is that the right prop went in - catching prop “disabled” is set to true isn't going to catch someone deleting the disabled button styles by mistake.",
     "paragraph9": "More complex components and any util functions are tested. Util functions are used to keep components more simple and improve testability too.",
-    "paragraph10": "Full integration testing is done with a light touch and for some edge cases (decided as and when). If we need to log in for example because it’s a real, full website test, then the time quickly mounts up, a test might take two mins because it would take the user ten to log in, navigate, fill the form, submit so we need to be careful. Also we can find situations where it all failed because the internet broke."
+    "paragraph10": "Full integration testing is done with a light touch and for some edge cases (decided as and when). If we need to log in for example because it's a real, full website test, then the time quickly mounts up, a test might take two mins because it would take the user ten to log in, navigate, fill the form, submit so we need to be careful. Also we can find situations where it all failed because the internet broke."
   },
 
   "Scatter": {
@@ -239,12 +239,12 @@
     "50": "50-55 d",
     "55": "55-60 d",
     "60": "60 d +",
-    "factoredBy": "{{ariaName}} with non fatal columns factored by {{factor}}",
-    "fatal": "{{count}} fatal cases in {{ariaLabel}}",
-    "fatalOnly": "fatal",
+    "factoredBy": "{{ariaName}} with non severe columns factored by {{factor}}",
+    "severe": "{{count}} severe cases in {{ariaLabel}}",
+    "severeOnly": "severe",
     "name": "Prime symptom bar graph",
-    "nonFatal": "{{count}} non fatal cases in {{ariaLabel}}",
-    "nonFatalOnly": "non fatal",
+    "nonSevere": "{{count}} non severe cases in {{ariaLabel}}",
+    "nonSevereOnly": "non severe",
     "numberExplanation": "NB: this graph always counts from the first entry made, therefore filtering may return numbers that don't immediately make sense",
     "primeSymptomHistogramTools": "Tools and feedback to interact with the graph",
     "time": "Time"
@@ -271,8 +271,8 @@
     "sb-5": "everything else in the world",
     "sb-4": "those things I want",
     "and": "and",
-    "fatal": "fatal",
-    "non-fatal": "non fatal"
+    "severe": "severe",
+    "non-severe": "non severe"
   },
 
   "FactorToggle": {
@@ -310,8 +310,8 @@
 
   "OutcomeSummmary": {
     "total": "Total",
-    "fatal": "Fatal",
-    "nonFatal": "Non Fatal",
+    "severe": "Severe",
+    "nonSevere": "Non Severe",
     "outcomeSummary": "Outcome column summary",
     "unknown": "Unknown"
   },
@@ -337,7 +337,7 @@
     "good": "Recovery responses",
     "notGood": "Serious responses",
     "bad": "Serious and / or agonal responses",
-    "veryBad": "Agonal responses in fatality",
+    "veryBad": "Agonal responses in severity",
     "neutral": "Impact without bearing"
   },
 
@@ -404,7 +404,7 @@
     "secondaryNavProps": "all four args are required, currentPanel, k and i18nBase are all strings and setCurrentPanel should be a function",
     "testError": "Test {{addToError}} {{alsoAddToError}}",
     "userChoiceStatMapper": "userChoiceStatMapper needs a string for currentResponse",
-    "utilKeyPairXYMakeMapFn": "makeMapFn needs both x and y to refence the correct keys in each point",
+    "utilKeyPairXYMakeMapFn": "makeMapFn needs both x and y to reference the correct keys in each point",
     "writeHistogramBarListAriaLabel": "writeHistogramBarListAriaLabel requires histogramBarListLabel param"
   },
 

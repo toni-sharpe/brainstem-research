@@ -15,7 +15,6 @@
     justify-content: space-around;
     width: 100%;
     @include self-space-column-add-border();
-    // @media (min-width: )
   }
 
   &__tool {
@@ -35,10 +34,10 @@
     text-align: center;
     width: 100%;
   }
-  .histogram-bar--nonFatal {
+  .histogram-bar--nonSevere {
     background-color:var(--blue--dark);
   }
-  .histogram-bar--fatal {
+  .histogram-bar--severe {
     background-color:var(--red--dark);
   }
 }

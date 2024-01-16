@@ -3,7 +3,7 @@ import { CURRENT_FILTER_LIST, FILTER_TOTAL } from 'util/Constant/FilterConstantL
 import {
   calcFilterList,
   isAnyFilterSet,
-  showBasedOnFatalFilter,
+  showBasedOnSevereFilter,
 } from './UtilFilter'
 
 
@@ -26,35 +26,35 @@ test('isAnyFilterSet()', () => {
 
 
 /*
- * showBasedOnFatalFilter()
+ * showBasedOnSevereFilter()
  */
-test('showBasedOnFatalFilter() - both false', () => {
-  const currentFilterList = { fatal: false, nonFatal: false }
-  expect(showBasedOnFatalFilter({ currentFilterList, k: '_' })).toBeTruthy()
+test('showBasedOnSevereFilter() - both false', () => {
+  const currentFilterList = { severe: false, nonSevere: false }
+  expect(showBasedOnSevereFilter({ currentFilterList, k: '_' })).toBeTruthy()
 })
 
-test('showBasedOnFatalFilter() - neither set', () => {
+test('showBasedOnSevereFilter() - neither set', () => {
   const currentFilterList = {  }
-  expect(showBasedOnFatalFilter({ currentFilterList, k: '_' })).toBeTruthy()
+  expect(showBasedOnSevereFilter({ currentFilterList, k: '_' })).toBeTruthy()
 })
 
-test('showBasedOnFatalFilter() - fatal key and fatal set', () => {
-  const currentFilterList = { fatal: true }
-  expect(showBasedOnFatalFilter({ currentFilterList, k: 'death_response_1' })).toBeTruthy()
+test('showBasedOnSevereFilter() - severe key and severe set', () => {
+  const currentFilterList = { severe: true }
+  expect(showBasedOnSevereFilter({ currentFilterList, k: 'death_response_1' })).toBeTruthy()
 })
 
-test('showBasedOnFatalFilter() - fatal key and fatal not set', () => {
-  const currentFilterList = { fatal: false, nonFatal: true }
-  expect(showBasedOnFatalFilter({ currentFilterList, k: 'death_response_1' })).toBeFalsy()
+test('showBasedOnSevereFilter() - severe key and severe not set', () => {
+  const currentFilterList = { severe: false, nonSevere: true }
+  expect(showBasedOnSevereFilter({ currentFilterList, k: 'death_response_1' })).toBeFalsy()
 })
 
-test('showBasedOnFatalFilter() - non-fatal key and non-fatal set', () => {
-  const currentFilterList = { nonFatal: true }
-  expect(showBasedOnFatalFilter({ currentFilterList, k: 'good' })).toBeTruthy()
+test('showBasedOnSevereFilter() - non-severe key and non-severe set', () => {
+  const currentFilterList = { nonSevere: true }
+  expect(showBasedOnSevereFilter({ currentFilterList, k: 'good' })).toBeTruthy()
 
 })
 
-test('showBasedOnFatalFilter() - non-fatal key and non-fatal not set', () => {
-  const currentFilterList = { nonFatal: false, fatal: true }
-  expect(showBasedOnFatalFilter({ currentFilterList, k: 'good' })).toBeFalsy()
+test('showBasedOnSevereFilter() - non-severe key and non-severe not set', () => {
+  const currentFilterList = { nonSevere: false, severe: true }
+  expect(showBasedOnSevereFilter({ currentFilterList, k: 'good' })).toBeFalsy()
 })

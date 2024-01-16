@@ -28,7 +28,7 @@ test('Histogram', async () => {
   expect(screen.getByRole('figure')).toBeTruthy()
   expect(screen.getByText('StoryBook test graph')).toBeTruthy()
   expect(screen.getByText('0-5 d')).toBeTruthy()
-  expect(screen.getByLabelText('Time values 5-10 d with bars for fatal, non fatal')).toBeTruthy()
+  expect(screen.getByLabelText('Time values 5-10 d with bars for severe, non severe')).toBeTruthy()
 })
 
 

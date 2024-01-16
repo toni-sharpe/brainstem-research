@@ -25,11 +25,11 @@ export const groupByOutcome = ramda.groupBy(ramda.prop('outcome'))
 
 export function applyFactor({
   currentFactorOn = true,
-  fatalCount = 0,
-  nonFatalCount = 0,
+  severeCount = 0,
+  nonSevereCount = 0,
 }) {
-  return fatalCount > 0 && nonFatalCount > 0 && currentFactorOn
-    ? (fatalCount / nonFatalCount).toFixed(2)
+  return severeCount > 0 && nonSevereCount > 0 && currentFactorOn
+    ? (severeCount / nonSevereCount).toFixed(2)
     : 1
 }
 
@@ -53,14 +53,14 @@ export function primeSymptomTimingError({ badTimingError = 0, timingError = 0 })
     ) { return event }
 
     let adjustedPrimeSymptom = event.first_prime_symptom
-    if (timingError > 0 && badTimingError === 0 && event.outcome === 'NFT') {
+    if (timingError > 0 && badTimingError === 0 && event.outcome === 'NSV') {
       adjustedPrimeSymptom = event.first_prime_symptom + timingError
     }
     if (timingError === 0 && badTimingError > 0 ) {
-      if (event.outcome === 'NFT') {
+      if (event.outcome === 'NSV') {
         adjustedPrimeSymptom = event.first_prime_symptom + badTimingError
       }
-      if (event.outcome === 'FAT') {
+      if (event.outcome === 'SEV') {
         adjustedPrimeSymptom = event.first_prime_symptom - badTimingError
       }
     }
@@ -92,16 +92,16 @@ export function calcPrimeSymptomHistogramBarGroup({
     ramda.mergeRight(PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_MAP),
     ramda.toPairs,
     ramda.map(([k, v]) => {
-      const { FAT, NFT } = groupByOutcome(v)
+      const { SEV, NSV } = groupByOutcome(v)
       return [
         k, {
-          fatal: calcHistogramBarHeight({
+          severe: calcHistogramBarHeight({
             blockSize: 1,
-            elems: FAT
+            elems: SEV
           }),
-          nonFatal: calcHistogramBarHeight({
+          nonSevere: calcHistogramBarHeight({
             blockSize: 1,
-            elems: NFT
+            elems: NSV
           }) * factor
         }
       ]

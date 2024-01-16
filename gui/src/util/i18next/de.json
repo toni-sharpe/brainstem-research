@@ -2,11 +2,11 @@
   "CommonClinicalResponses": {
     "care_error_level": "Pflege-Fehlerniveau",
     "care_technique_1": "Pflegetechnik 1",
-    "death_response_1": "Reaktion auf den Tod 1",
-    "death_response_2": "Reaktion auf den Tod 2",
+    "death_response_1": "Reaktion auf den Sev 1",
+    "death_response_2": "Reaktion auf den Sev 2",
     "event_count": "Pathologische Ereignisfolge",
-    "fatal_symptom_1": "Tödliches Symptom 1",
-    "fatal_symptom_2": "Tödliches Symptom 2",
+    "fatal_symptom_1": "Schwere Symptom 1",
+    "fatal_symptom_2": "Schwere Symptom 2",
     "first_prime_symptom": "Erste Moment des Hauptsymptoms",
     "intro_symptom_duration": "Möglicher Start Dauer",
     "intro_symptom_start": "Möglicher Start",
@@ -30,17 +30,17 @@
     "prime_symptom_proportion": "Anteil der Hauptsymptome",
     "recovery_duration": "Dauer der Wiederherstellung",
     "recovery_proportion": "Anteil der Verwertung",
-    "slight_death_response_1": "Reaktion auf den Tod 1 (möglich)",
-    "slight_death_response_2": "Reaktion auf den Tod 2 (möglich)",
-    "time_of_death": "Zeitpunkt des Todes",
+    "slight_death_response_1": "Reaktion auf den Sev 1 (möglich)",
+    "slight_death_response_2": "Reaktion auf den Sev 2 (möglich)",
+    "time_of_death": "Zeitpunkt des Seves",
 
     "care_error_level_abbrev": "Pflege-Fehlerniveau",
     "care_technique_1_abbrev": "Pflegetechnik 1",
-    "death_response_1_abbrev": "R'kt Tod 1",
-    "death_response_2_abbrev": "R'kt Tod 2",
+    "death_response_1_abbrev": "R'kt Sev 1",
+    "death_response_2_abbrev": "R'kt Sev 2",
     "event_count_abbrev": "P'logische Ereignisfolge",
-    "fatal_symptom_1_abbrev": "Töd Symp 1",
-    "fatal_symptom_2_abbrev": "Töd Symp 2",
+    "fatal_symptom_1_abbrev": "Sev Symp 1",
+    "fatal_symptom_2_abbrev": "Sev Symp 2",
     "first_prime_symptom_abbrev": "1st H'symp",
     "intro_symptom_duration_abbrev": "Möglicher Start D'r",
     "intro_symptom_start_abbrev": "Möglicher Start",
@@ -64,9 +64,9 @@
     "prime_symptom_proportion_abbrev": "Anteil H'symp",
     "recovery_duration_abbrev": "Verwertung D'r",
     "recovery_proportion_abbrev": "Anteil Verwertung",
-    "slight_death_response_1_abbrev": "R'kt Tod 1 (möglich)",
-    "slight_death_response_2_abbrev": "R'kt Tod 2 (möglich)",
-    "time_of_death_abbrev": "Zeit des Todes"
+    "slight_death_response_1_abbrev": "R'kt Sev 1 (möglich)",
+    "slight_death_response_2_abbrev": "R'kt Sev 2 (möglich)",
+    "time_of_death_abbrev": "Zeit des Sev"
   },
 
   "MainPageHeading": {
@@ -99,7 +99,7 @@
 
   "FilterButtonLabel": {
     "confirmedActors": "S. sicher",
-    "fatal": "TL",
+    "severe": "SV",
     "primeSymptomType": "H.symp",
     "fjp": "Vorh.",
     "hardEventOnly": "HE",
@@ -107,7 +107,7 @@
     "rmDubious": "Auch Fr.",
     "longTime": "Lang",
     "moderateTime": "Mittel",
-    "nonFatal": "NT",
+    "nonSevere": "NSV",
     "secondOrMore": "2+",
     "thirdOrMore": "3+"
   },
@@ -124,12 +124,12 @@
     "paragraph2-1": "Ich habe etwas Neues über den Hirnstamm unter bestimmten Bedingungen festgestellt, untersucht und vielleicht auch entdeckt, und auf dieser Website geht es darum, diese Daten aus verschiedenen Blickwinkeln zu betrachten. ",
     "paragraph2Link": "",
     "paragraph2-2": "Ich habe das alles selbst gemacht und es hat sogar meine Jobsuche verzögert; allerdings muss es von medizinisch ausgebildeten Leuten überprüft werden.",
-    "paragraph3": "Die medizinische Forschung ist real, die Ereignisse sind real und jedes einzelne stellt die Erfahrung einer realen Person dar, von denen viele, etwa 90, jetzt als Folge davon tot sind. Aus diesem Grund ist die Seite absichtlich generisch gehalten, um die Würde sowohl der Toten als auch der Lebenden zu wahren, und weil meine Hypothese noch nicht von jemandem, der über die entsprechenden Referenzen verfügt, verifiziert oder auch nur inspiziert worden ist."
+    "paragraph3": "Die medizinische Forschung ist real, die Ereignisse sind real, und jedes einzelne stellt die Erfahrung einer realen Person dar, von denen es vielen, die um die 90 Jahre alt sind, nicht so gut geht und von denen man nicht sagen kann, dass sie sich vollständig erholt haben, wenn sie es jemals tun. Aus diesem Grund ist die Seite absichtlich allgemein gehalten, um denjenigen zu helfen, die nicht unbedingt in der Lage sind, ihre Bedenken zu äußern, was dadurch verstärkt wird, dass meine Hypothese aus meiner Sicht fundiert genug ist, aber noch nicht von jemandem geprüft wurde, der die wirklichen Details kennt."
   },
 
   "Motivation": {
-    "paragraph4": "Die Rettung von Menschenleben war die Hauptmotivation, auch wenn sich dies mit der Zeit verkompliziert hat (siehe unten).Die Möglichkeit von Entdeckungen motivierte mich, und die Durchbrüche, von denen es mehrere gab, waren aufregend und hielten diese Motivation aufrecht.",
-    "paragraph5": "Forschung gibt es auch ein ausgesprochen komplexes und nuanciertes Geflecht medizinethischer Probleme, die ich identifiziert habe und für die ich Ideen habe, um sie in einigen Fällen zu mildern. Die Ethik kommt ins Spiel, weil man sich das Problem am besten als eine Art Vergiftung vorstellen kann, eine absichtlich weit gefasste Begriffswahl (ich werde die Details nicht preisgeben, bevor nicht andere Fachleute zu Rate gezogen wurden), aber eine bemerkenswerte Wahl, weil es sich um etwas handelt, das von einem räuberischen Individuum böswillig an einem verletzlichen Individuum begangen werden kann. Das sind keine leichten Themen, und wenn sie sich gruppieren, überschneiden und vermehren, wird es schwierig. Ich mag Herausforderungen, aber ich würde lieber keinen \"fatalen\" Filter brauchen."
+    "paragraph4": "Ich bin schon seit langem ein kleiner medizinischer Nerd, seit ich als Kind wegen einer langen Familienkrankheit als Angehöriger in Krankenhäusern war, dann ein Buch von Ben Goldacre und eine natürliche Neugier, die dazu geführt hat, dass sich diese Basis über Jahre hinweg allmählich aufgebaut hat. Diesmal habe ich mich wirklich ganz beiläufig mit etwas befasst, das mich neugierig machte, und im Laufe einer Reihe bemerkenswerter Ereignisse und einer konzentrierteren Vollzeitarbeit, die sich über neun Monate hinzog, habe ich vielleicht die Entdeckung gemacht, dass etwas, das noch nicht so gut verstanden wird, komplexer ist, als wir dachten, und ich kann sogar nützliche Wege für dieses Wissen in der Gesellschaft sehen, was allerdings kompliziert war, als die Nuancen auftauchten (siehe unten). All diese Möglichkeiten der Entdeckung, der Durchbrüche, der Verbindungen, der Visualisierungen und des Lernens, die weit außerhalb meines Berufsfeldes liegen, waren aufregend und hielten die Motivation aufrecht, und zwar länger, als es nötig gewesen wäre, ohne dass ich für meine Bemühungen einen Lohn oder einen Nutzen erhielt.",
+    "paragraph5": "Neben der Webarbeit und der medizinischen Forschung gibt es auch ein ausgesprochen komplexes und nuanciertes Geflecht medizinisch-ethischer Probleme, die ich identifiziert habe und für die ich Ideen habe, um sie in einigen Fällen zu entschärfen. Die Ethik kommt ins Spiel, weil man sich das Problem am besten als eine Art Vergiftung vorstellen kann, eine absichtlich weit gefasste Begriffswahl (ich werde mich mit den Details zurückhalten, bis andere Fachleute konsultiert wurden), aber eine bemerkenswerte Wahl, weil es sich um etwas handelt, das von einem räuberischen Individuum böswillig an einem verletzlichen Individuum begangen werden kann, und das sehr gefährlich ist. Das sind keine leichten Themen, und wenn sie sich gruppieren, überschneiden und vervielfachen, wird es schwierig. Herausfordernd ist gut, und wenn man alles zusammennimmt, war dies das schwierigste Problem, das ich in meinem Leben in Angriff genommen habe."
   },
 
   "TechStack": {
@@ -240,12 +240,12 @@
     "50": "50-55 Tg",
     "55": "55-60 Tg",
     "60": "60+ Tg",
-    "factoredBy": "mit um {{factor}} faktorisierten nicht-tödlich Spalten",
-    "fatal": "{{count}} Tödliche Fälle in {{histogramBarListLabel}}",
-    "fatalOnly": "tödliche",
+    "factoredBy": "mit um {{factor}} faktorisierten nicht-schwer Spalten",
+    "severe": "{{count}} Schwere Fälle in {{histogramBarListLabel}}",
+    "severeOnly": "schwere",
     "name": "Balkendiagramm zur Hauptsymptom",
-    "nonFatal": "{{count}} nicht tödliche Fälle in {{histogramBarListLabel}}",
-    "nonFatalOnly": "nicht tödliche",
+    "nonSevere": "{{count}} nicht schwere Fälle in {{histogramBarListLabel}}",
+    "nonSevereOnly": "nicht schwere",
     "numberExplanation": "NB: Dieses Diagramm zählt immer ab dem ersten Eintrag, daher kann die Filterung Zahlen liefern, die nicht sofort Sinn ergeben.",
     "primeSymptomHistogramTools": "Tools und Feedback zur Interaktion mit dem Diagramm",
     "time": "Zeit"
@@ -263,8 +263,8 @@
     "average": "Der Durchschnitt dieses Diagramms beträgt {{ariaAverages}}",
     "averageList": "Die Durchschnittswerte aus diesem Diagramm sind {{ariaAverages}}",
     "and": "und",
-    "fatal": "Tödlich",
-    "non-fatal": "Nicht tödlich"
+    "severe": "Schwre",
+    "non-severe": "Nicht schwer"
   },
 
   "FactorToggle": {
@@ -302,8 +302,8 @@
 
   "OutcomeSummmary": {
     "total": "Alles",
-    "fatal": "Tödlich",
-    "nonFatal": "Nicht tödlich",
+    "severe": "Schwre",
+    "nonSevere": "Nicht schwer",
     "outcomeSummary": "Zusammenfassung der Ergebnisspalte",
     "unknown": "Unbekannt"
   },
@@ -329,7 +329,7 @@
     "good": "Wiederherstellungsantworten",
     "notGood": "Schwerwiegende Reaktionen",
     "bad": "Schwerwiegende und / oder agonale Reaktionen",
-    "veryBad": "Aggressive Reaktionen mit tödlichem Ausgang",
+    "veryBad": "Aggressive Reaktionen mit schwerem Ausgang",
     "neutral": "Aufprall ohne Lager"
   },
 
@@ -366,10 +366,10 @@
     "mild_symptom_1PanelLabel": "Mildes Symptom",
     "prime_symptom_1PanelLabel": "Hauptsymptom 1",
     "first_prime_symptomPanelLabel": "Primärer Start",
-    "death_response_1PanelLabel": "Tödliches 1",
+    "death_response_1PanelLabel": "Schwere 1",
     "pathogenesis_durationPanelLabel": "Pathogenesis Dauer",
     "pathological_event_durationPanelLabel": "Dauer",
-    "death_response_2PanelLabel": "Tödliches 2",
+    "death_response_2PanelLabel": "Schwere 2",
     "care_technique_1PanelLabel": "Pflegetechnik 1",
     "secondaryNav": "Eine Reihe von Optionen für die Monate"
   },
@@ -385,18 +385,24 @@
 
   "ErrorList": {
     "ariaTranslationSet": "wenn translationSet verwendet wird, muss es ein Objekt sein, bei dem barList ein Array und groupBy eine Zeichenkette ist",
+    "calcInteractiveTimeBarArgs": "Die Daten für calcInteractiveTimeLineBarStatList müssen ein Array sein und die aktuellen Benutzerauswahlen müssen Strings sein",
+    "calcScaleToFitUI": "calcScaleToFitUI erfordert ein scale-Argument mit den numerischen Eigenschaften stepDivision und totalSteps",
     "calcLeft": "calcLeft Funktion erfordert eine val bereitgestellt",
     "calcPercentage": "calcPercentage Funktion erfordert eine val bereitgestellt",
-    "calcWidth": "calcWidth erfordert die Angabe eines Mindest- und Höchstwerts",
     "calcWidth": "calcWidth Funktion erfordert eine min und max val",
     "fnMustBeProvidedTo": "{{fnName}} muss {{caller}} zur Verfügung gestellt werden und muss eine Funktion sein",
     "fullStatBase": "fullStatBase Funktion benötigt ein k",
+    "generalResponseTimeBarDataIsArray": "Allgemeine Statistiklistenberechnung benötigt ein Array für Daten",
     "graphBlockLengthInvalid": "histogramBarGroupList ist nicht korrekt in {{callingFn}} - Empfangen: {{typeOf}} | {{val}}",
     "graphBlockLengthZero": "histogramBarGroupList hat die Länge 0, es sollte etwas in histogramBarGroupList für {{callingFn}} enthalten sein",
+    "isOrIsInArrayNeedsValues": "isOrIsInArray Wert Fehler. {{missing}}",
+    "makeWidth": "makeWidth erfordert die Angabe eines Mindest- und Höchstwerts",
     "mapToTimeLineBars": "mapToTimeLineBars benötigt data mit Länge und eine i18nBase",
     "noHistogramData": "Diese Histogramm-Konfiguration hat null Ergebnisse",
     "primeSymptomHistogramBarGroup": "Prime symptom graph block list muss ein Array mit positiver Anzahl sein",
     "secondaryNavProps": "alle vier Args sind erforderlich, currentPanel, k und i18nBase sind alle Strings und setCurrentPanel sollte eine Funktion sein",
+    "testError": "Test {{addToError}} {{alsoAddToError}}",
+    "userChoiceStatMapper": "userChoiceStatMapper benötigt einen String für currentResponse",
     "utilKeyPairXYMakeMapFn": "makeMapFn benötigt sowohl x als auch y, um die richtigen Schlüssel in jedem Punkt zu referenzieren",
     "writeHistogramBarListAriaLabel": "writeHistogramBarListAriaLabel erfordert histogramBarListLabel param"
   },

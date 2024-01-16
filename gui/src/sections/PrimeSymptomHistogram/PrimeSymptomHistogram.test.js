@@ -28,8 +28,8 @@ test('PrimeSymptomHistogram - user key interaction', async () => {
   expect(screen.getByText('Increase data as added')).toBeTruthy()
   expect(screen.getByText('Total:')).toBeTruthy()
   expect(screen.getByText('20')).toBeTruthy()
-  expect(screen.getByText('Fatal: 11')).toBeTruthy()
-  expect(screen.getByText('Non Fatal: 9')).toBeTruthy()
+  expect(screen.getByText('Severe: 11')).toBeTruthy()
+  expect(screen.getByText('Non Severe: 9')).toBeTruthy()
 
 
   /*

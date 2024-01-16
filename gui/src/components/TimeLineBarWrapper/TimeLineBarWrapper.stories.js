@@ -9,8 +9,8 @@ export default {
 
 const dataBarWrapperBaseProps = {
   currentFilterList: {
-    fatal: true,
-    nonFatal: true,
+    severe: true,
+    nonSevere: true,
   }
 }
 

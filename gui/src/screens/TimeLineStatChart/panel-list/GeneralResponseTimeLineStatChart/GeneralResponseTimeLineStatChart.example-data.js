@@ -142,7 +142,7 @@ const GeneralResponseStatChartExampleData = [
   {
     fatal_symptom_1: {
       count: 39,
-      label: 'Fatal symptom 1',
+      label: 'Severe symptom 1',
       max: 220,
       mda: 34,
       mean: 97.718,
@@ -167,7 +167,7 @@ const GeneralResponseStatChartExampleData = [
   {
     fatal_symptom_2: {
       count: 0,
-      label: 'Fatal symptom 2',
+      label: 'Severe symptom 2',
       max: 0,
       mda: 0,
       mean: 0,
@@ -182,7 +182,7 @@ const GeneralResponseStatChartExampleData = [
   {
     death_response_1: {
       count: 0,
-      label: 'Death response 1',
+      label: 'Severe response 1',
       max: 0,
       mda: 0,
       mean: 0,
@@ -197,7 +197,7 @@ const GeneralResponseStatChartExampleData = [
   {
     slight_death_response_1: {
       count: 0,
-      label: 'Death response 1 (pos)',
+      label: 'Severe response 1 (pos)',
       max: 0,
       mda: 0,
       mean: 0,
@@ -212,7 +212,7 @@ const GeneralResponseStatChartExampleData = [
   {
     death_response_2: {
       count: 0,
-      label: 'Death response 2',
+      label: 'Severe response 2',
       max: 0,
       mda: 0,
       mean: 0,
@@ -227,7 +227,7 @@ const GeneralResponseStatChartExampleData = [
   {
     slight_death_response_2: {
       count: 0,
-      label: 'Death response 2 (pos)',
+      label: 'Severe response 2 (pos)',
       max: 0,
       mda: 0,
       mean: 0,

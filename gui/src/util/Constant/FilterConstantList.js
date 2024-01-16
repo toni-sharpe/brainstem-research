@@ -1,13 +1,13 @@
 // export const CURRENT_FILTER_LIST = {
 //   confirmedActors: false,
-//   fatal: false,
+//   severe: false,
 //   primeSymptomType: false,
 //   fjp: false,
 //   hardPrimeSymptom: false,
 //   rmDubious: false,
 //   longTime: false,
 //   moderateTime: false,
-//   nonFatal: false,
+//   nonSevere: false,
 //   secondOrMore: false,
 //   thirdOrMore: false,
 // }
@@ -22,23 +22,23 @@
 //   'hardPrimeSymptom',
 //   'secondOrMore',
 //   'thirdOrMore',
-//   'fatal',
-//   'nonFatal'
+//   'severe',
+//   'nonSevere'
 // ]
 
 export const FILTER_TOTAL = 10
 
 export const CURRENT_FILTER_LIST = {
   confirmedActors: false,
-  fatal: false,
+  severe: false,
   fjp: false,
   hardEventOnly: false,
   hardPrimeSymptom: false,
   rmDubious: true,
-  nonFatal: false,
+  nonSevere: false,
 }
 
-export const FATAL_KEYS = [
+export const SEVERE_KEYS = [
   'fatal_symptom_1',
   'fatal_symptom_2',
   'time_of_death',
@@ -50,7 +50,7 @@ export const FATAL_KEYS = [
   'veryBad',
 ]
 
-export const NON_FATAL_KEYS = [
+export const NON_SEVERE_KEYS = [
   'pathogenesis_duration',
   'recovery_duration',
   'web_test_key__SB2',

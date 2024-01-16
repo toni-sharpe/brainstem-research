@@ -1,11 +1,11 @@
 import * as ramda from 'ramda'
 
-import { FATAL_KEYS, NON_FATAL_KEYS } from 'util/Constant/FilterConstantList'
+import { SEVERE_KEYS, NON_SEVERE_KEYS } from 'util/Constant/FilterConstantList'
 
 import {
   confirmedActorFilter,
   removeDubiousFilter,
-  fatalFilter,
+  severeFilter,
   fjpFilter,
   pathologicalEventDurationFilter,
   hardEventOnlyFilter,
@@ -20,7 +20,7 @@ export function calcFilterList({ currentFilterList }) {
   return [
     ramda.filter(confirmedActorFilter({ currentFilterList })),
     ramda.filter(removeDubiousFilter({ currentFilterList })),
-    ramda.filter(fatalFilter({ currentFilterList })),
+    ramda.filter(severeFilter({ currentFilterList })),
     ramda.filter(fjpFilter({ currentFilterList })),
     ramda.filter(pathologicalEventDurationFilter({ currentFilterList })),
     ramda.filter(hardEventOnlyFilter({ currentFilterList })),
@@ -37,14 +37,14 @@ export function isAnyFilterSet({ currentFilterList }) {
 }
 
 
-export function showBasedOnFatalFilter({ currentFilterList, k }) {
-  if (!currentFilterList.fatal && !currentFilterList.nonFatal) {
+export function showBasedOnSevereFilter({ currentFilterList, k }) {
+  if (!currentFilterList.severe && !currentFilterList.nonSevere) {
     return true
   }
-  if (FATAL_KEYS.includes(k) && !currentFilterList.fatal) {
+  if (SEVERE_KEYS.includes(k) && !currentFilterList.severe) {
     return false
   }
-  if (NON_FATAL_KEYS.includes(k) && !currentFilterList.nonFatal) {
+  if (NON_SEVERE_KEYS.includes(k) && !currentFilterList.nonSevere) {
     return false
   }
   return true

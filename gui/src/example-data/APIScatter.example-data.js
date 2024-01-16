@@ -1,5 +1,5 @@
 const APIScatterData = [{
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -8,7 +8,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -17,7 +17,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -26,7 +26,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -35,7 +35,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 19,
     "prime_symptom_2": 21,
@@ -44,7 +44,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 120,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": true,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -53,7 +53,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": true,
     "prime_symptom_1": 79,
     "prime_symptom_2": 59,
@@ -62,7 +62,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 125,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 31,
     "prime_symptom_2": 33,
@@ -71,7 +71,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 62,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -80,7 +80,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -89,7 +89,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 20,
     "prime_symptom_2": 24,
@@ -98,7 +98,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 157,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 22,
     "prime_symptom_2": 39,
@@ -107,7 +107,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 103,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 14,
     "prime_symptom_2": 35,
@@ -116,7 +116,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 102,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 16,
     "prime_symptom_2": null,
@@ -125,7 +125,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 21,
     "prime_symptom_2": 60,
@@ -134,7 +134,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 124,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 11,
     "prime_symptom_2": 26,
@@ -143,7 +143,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 43,
@@ -152,7 +152,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 75,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 11,
     "prime_symptom_2": null,
@@ -161,7 +161,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 20,
     "prime_symptom_2": null,
@@ -170,7 +170,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 55,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": true,
     "prime_symptom_1": 14,
     "prime_symptom_2": null,
@@ -179,7 +179,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 19,
     "prime_symptom_2": 68,
@@ -188,7 +188,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 123,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 20,
     "prime_symptom_2": 31,
@@ -197,7 +197,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": true,
     "prime_symptom_1": 29,
     "prime_symptom_2": 32,
@@ -206,7 +206,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 44,
@@ -215,7 +215,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 104,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -224,7 +224,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 54,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -233,7 +233,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 33,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": true,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -242,7 +242,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 242,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 36,
     "prime_symptom_2": null,
@@ -251,7 +251,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 20,
     "prime_symptom_2": 49,
@@ -260,7 +260,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 176,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -269,7 +269,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 129,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 30,
     "prime_symptom_2": 34,
@@ -278,7 +278,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 129,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 20,
     "prime_symptom_2": null,
@@ -287,7 +287,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 78,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 21,
     "prime_symptom_2": 51,
@@ -296,7 +296,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 51,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 32,
     "prime_symptom_2": null,
@@ -305,7 +305,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 50,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": true,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -314,7 +314,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 23,
     "prime_symptom_2": 63,
@@ -323,7 +323,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 153,
   },
   {
-    "outcome": "FAT",
+    "outcome": "SEV",
     "outlier": false,
     "prime_symptom_1": 24,
     "prime_symptom_2": null,
@@ -332,7 +332,7 @@ const APIScatterData = [{
     "fatal_symptom_2": 63,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 20,
@@ -341,7 +341,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 18,
     "prime_symptom_2": null,
@@ -350,7 +350,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 16,
     "prime_symptom_2": null,
@@ -359,7 +359,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 18,
     "prime_symptom_2": null,
@@ -368,7 +368,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 20,
     "prime_symptom_2": 22,
@@ -377,7 +377,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 15,
     "prime_symptom_2": null,
@@ -386,7 +386,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": true,
     "prime_symptom_1": 23,
     "prime_symptom_2": 50,
@@ -395,7 +395,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 24,
     "prime_symptom_2": null,
@@ -404,7 +404,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -413,7 +413,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 13,
@@ -422,7 +422,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 12,
     "prime_symptom_2": 23,
@@ -431,7 +431,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 18,
     "prime_symptom_2": 23,
@@ -440,7 +440,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 10,
     "prime_symptom_2": 24,
@@ -449,7 +449,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 31,
     "prime_symptom_2": null,
@@ -458,7 +458,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 10,
     "prime_symptom_2": null,
@@ -467,7 +467,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 34,
     "prime_symptom_2": null,
@@ -476,7 +476,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -485,7 +485,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 23,
     "prime_symptom_2": null,
@@ -494,7 +494,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 11,
     "prime_symptom_2": null,
@@ -503,7 +503,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 12,
     "prime_symptom_2": null,
@@ -512,7 +512,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 23,
     "prime_symptom_2": 17,
@@ -521,7 +521,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -530,7 +530,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 13,
@@ -539,7 +539,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -548,7 +548,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -557,7 +557,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 12,
     "prime_symptom_2": null,
@@ -566,7 +566,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -575,7 +575,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -584,7 +584,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -593,7 +593,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 10,
@@ -602,7 +602,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 10,
@@ -611,7 +611,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -620,7 +620,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 16,
     "prime_symptom_2": null,
@@ -629,7 +629,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -638,7 +638,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 18,
     "prime_symptom_2": 32,
@@ -647,7 +647,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 9,
     "prime_symptom_2": null,
@@ -656,7 +656,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 6,
     "prime_symptom_2": 11,
@@ -665,7 +665,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 14,
@@ -674,7 +674,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -683,7 +683,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 12,
     "prime_symptom_2": null,
@@ -692,7 +692,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": true,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -701,7 +701,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -710,7 +710,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": true,
     "prime_symptom_1": null,
     "prime_symptom_2": 22,
@@ -719,7 +719,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 28,
     "prime_symptom_2": null,
@@ -728,7 +728,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 14,
@@ -737,7 +737,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -746,7 +746,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 14,
     "prime_symptom_2": null,
@@ -755,7 +755,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": true,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -764,7 +764,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -773,7 +773,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -782,7 +782,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 10,
@@ -791,7 +791,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -800,7 +800,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -809,7 +809,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -818,7 +818,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 12,
     "prime_symptom_2": null,
@@ -827,7 +827,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -836,7 +836,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -845,7 +845,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 8,
     "prime_symptom_2": 8,
@@ -854,7 +854,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 18,
     "prime_symptom_2": null,
@@ -863,7 +863,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 18,
     "prime_symptom_2": null,
@@ -872,7 +872,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -881,7 +881,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -890,7 +890,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -899,7 +899,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -908,7 +908,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 15,
     "prime_symptom_2": null,
@@ -917,7 +917,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -926,7 +926,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -935,7 +935,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 35,
@@ -944,7 +944,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 12,
     "prime_symptom_2": null,
@@ -953,7 +953,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 22,
     "prime_symptom_2": null,
@@ -962,7 +962,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -971,7 +971,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -980,7 +980,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -989,7 +989,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -998,7 +998,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1007,7 +1007,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1016,7 +1016,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": true,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1025,7 +1025,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": true,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1034,7 +1034,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1043,7 +1043,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 19,
@@ -1052,7 +1052,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1061,7 +1061,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1070,7 +1070,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 12,
@@ -1079,7 +1079,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": true,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1088,7 +1088,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1097,7 +1097,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1106,7 +1106,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1115,7 +1115,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1124,7 +1124,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1133,7 +1133,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1142,7 +1142,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1151,7 +1151,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1160,7 +1160,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": true,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1169,7 +1169,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1178,7 +1178,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1187,7 +1187,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1196,7 +1196,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1205,7 +1205,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1214,7 +1214,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1223,7 +1223,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1232,7 +1232,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1241,7 +1241,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1250,7 +1250,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1259,7 +1259,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1268,7 +1268,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1277,7 +1277,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1286,7 +1286,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 30,
     "prime_symptom_2": null,
@@ -1295,7 +1295,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1304,7 +1304,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1313,7 +1313,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1322,7 +1322,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1331,7 +1331,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": 11,
@@ -1340,7 +1340,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1349,7 +1349,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 23,
     "prime_symptom_2": null,
@@ -1358,7 +1358,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1367,7 +1367,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 23,
     "prime_symptom_2": null,
@@ -1376,7 +1376,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1385,7 +1385,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 23,
     "prime_symptom_2": null,
@@ -1394,7 +1394,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1403,7 +1403,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1412,7 +1412,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1421,7 +1421,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 37,
     "prime_symptom_2": 47,
@@ -1430,7 +1430,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1439,7 +1439,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1448,7 +1448,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1457,7 +1457,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 30,
     "prime_symptom_2": null,
@@ -1466,7 +1466,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
@@ -1475,7 +1475,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": 70,
     "prime_symptom_2": null,
@@ -1484,7 +1484,7 @@ const APIScatterData = [{
     "fatal_symptom_2": null,
   },
   {
-    "outcome": "NFT",
+    "outcome": "NSV",
     "outlier": false,
     "prime_symptom_1": null,
     "prime_symptom_2": null,

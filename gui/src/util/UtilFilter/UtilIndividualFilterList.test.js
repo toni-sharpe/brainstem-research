@@ -3,7 +3,7 @@ import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import {
   confirmedActorFilter,
   removeDubiousFilter,
-  fatalFilter,
+  severeFilter,
   fjpFilter,
   pathologicalEventDurationFilter,
   hardEventOnlyFilter,
@@ -27,7 +27,7 @@ const confirmedActorFilterMapper = confirmedActorFilter({
 const removeDubiousFilterMapper = removeDubiousFilter({
   currentFilterList: CURRENT_FILTER_LIST
 })
-const fatalFilterMapper = fatalFilter({
+const severeFilterMapper = severeFilter({
   currentFilterList: CURRENT_FILTER_LIST
 })
 const fjpFilterMapper = fjpFilter({
@@ -92,19 +92,19 @@ test('removeDubiousFilter()', () => {
 
 
 /*
- * fatalFilter()
+ * severeFilter()
  */
-test('fatalFilter() - when off does nothing', () => {
-  expect(fatalFilterMapper({})).toBeTruthy()
+test('severeFilter() - when off does nothing', () => {
+  expect(severeFilterMapper({})).toBeTruthy()
 })
 
-test('fatalFilter()', () => {
-  const fatalFilterFn = filterOn({ fn: fatalFilter, key: 'fatal' })
-  expect(fatalFilterFn({ outcome: 'FAT' })).toBeTruthy()
-  expect(fatalFilterFn({ outcome: 'NFT' })).toBeFalsy()
-  const nonFatalFilterFn = filterOn({ fn: fatalFilter, key: 'nonFatal' })
-  expect(nonFatalFilterFn({ outcome: 'FAT' })).toBeFalsy()
-  expect(nonFatalFilterFn({ outcome: 'NFT' })).toBeTruthy()
+test('severeFilter()', () => {
+  const severeFilterFn = filterOn({ fn: severeFilter, key: 'severe' })
+  expect(severeFilterFn({ outcome: 'SEV' })).toBeTruthy()
+  expect(severeFilterFn({ outcome: 'NSV' })).toBeFalsy()
+  const nonSevereFilterFn = filterOn({ fn: severeFilter, key: 'nonSevere' })
+  expect(nonSevereFilterFn({ outcome: 'SEV' })).toBeFalsy()
+  expect(nonSevereFilterFn({ outcome: 'NSV' })).toBeTruthy()
 })
 
 
@@ -165,21 +165,21 @@ test('hardEventOnlyFilter() - when everything indicates a softer event returns f
   expect(filterFn(baseArgsAllNull)).toBeFalsy()
 })
 
-test('hardEventOnlyFilter() - with any prime or fatal symptom returns true', () => {
+test('hardEventOnlyFilter() - with any prime or severe symptom returns true', () => {
   const filterFn = filterOn({ fn: hardEventOnlyFilter, key: 'hardEventOnly' })
-  // Fatal symptom 1
-  const argsFatalSymptom1 = {
+  // Severe symptom 1
+  const argsSevereSymptom1 = {
     ...baseArgsAllNull,
     fatal_symptom_1: 19,
   }
-  expect(filterFn(argsFatalSymptom1)).toBeTruthy()
+  expect(filterFn(argsSevereSymptom1)).toBeTruthy()
 
-  // Fatal symptom 2
-  const argsFatalSymptom2 = {
+  // Severe symptom 2
+  const argsSevereSymptom2 = {
     ...baseArgsAllNull,
     fatal_symptom_2: 23,
   }
-  expect(filterFn(argsFatalSymptom2)).toBeTruthy()
+  expect(filterFn(argsSevereSymptom2)).toBeTruthy()
 
   // First prime symptom
   const argsPrimeSymptom = {

@@ -68,8 +68,8 @@ export const ORDERED_FILTERS = [
   'confirmedActors',
   'hardEventOnly',
   'hardPrimeSymptom',
-  'fatal',
-  'nonFatal'
+  'severe',
+  'nonSevere'
 ]
 
 
@@ -261,7 +261,7 @@ export const TIME_LINE_FILTER_LIST = {
   DEE: ['outcome_type', 'DEE'],
   DNT: ['outcome_type', 'DNT'],
   DCI: ['outcome_type', 'DCI'],
-  NFT: ['outcome', 'NFT'],
+  NSV: ['outcome', 'NSV'],
   UNK: ['outcome', 'UNK'],
 }
 

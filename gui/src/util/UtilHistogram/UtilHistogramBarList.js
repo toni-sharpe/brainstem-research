@@ -72,7 +72,7 @@ export function writeHistogramBarListAriaLabel({
     : i18next.t(
       'HistogramBarListLabel.aria-label', {
         groupBy: i18next.t(`${i18nBaseOverride}.time`),
-        barList: `${i18next.t(`${i18nBaseOverride}.fatalOnly`)}, ${i18next.t(`${i18nBaseOverride}.nonFatalOnly`)}`,
+        barList: `${i18next.t(`${i18nBaseOverride}.severeOnly`)}, ${i18next.t(`${i18nBaseOverride}.nonSevereOnly`)}`,
         histogramBarListLabel: i18next.t(`${i18nBaseOverride}.${histogramBarListLabel}`),
       }
     )

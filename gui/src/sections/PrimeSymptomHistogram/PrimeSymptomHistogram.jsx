@@ -58,12 +58,12 @@ function PrimeSymptomHistogram({
     ramda.map(primeSymptomTimingError({ badTimingError, timingError }))
   )(primeSymptomData)
 
-  const { FAT, NFT, UNK } = groupByOutcome(histogramData)
-  const fatalCount = FAT?.length || 0
-  const nonFatalCount = NFT?.length || 0
+  const { SEV, NSV, UNK } = groupByOutcome(histogramData)
+  const severeCount = SEV?.length || 0
+  const nonSevereCount = NSV?.length || 0
   const unknownCount = UNK?.length || 0
 
-  const factor = applyFactor({ currentFactorOn, fatalCount, nonFatalCount })
+  const factor = applyFactor({ currentFactorOn, severeCount, nonSevereCount })
 
   const histogramBarGroupList = calcPrimeSymptomHistogramBarGroup({
     factor,
@@ -71,8 +71,8 @@ function PrimeSymptomHistogram({
     primeSymptomHistogramBarGrouper,
   })
 
-  const fatalAve = calcAverage(FAT)
-  const nonFatalAve = calcAverage(NFT)
+  const severeAve = calcAverage(SEV)
+  const nonSevereAve = calcAverage(NSV)
 
   const ariaName = i18next.t(`${i18nBase}.name`)
   const ariaLabel = currentFactorOn && factor !==1
@@ -110,10 +110,10 @@ function PrimeSymptomHistogram({
       >
         <div className='prime-symptom-histogram__tool'>
           <OutcomeSummary
-            fatalAve={fatalAve}
-            fatalCount={fatalCount}
-            nonFatalAve={nonFatalAve}
-            nonFatalCount={nonFatalCount}
+            severeAve={severeAve}
+            severeCount={severeCount}
+            nonSevereAve={nonSevereAve}
+            nonSevereCount={nonSevereCount}
             totalAvailableDataPoints={totalAvailableDataPoints}
             unknownCount={unknownCount}
           />

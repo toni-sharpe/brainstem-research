@@ -6,7 +6,7 @@ function isFilterDisabled({ currentUrl, k }) {
   ) || (
     currentUrl === 'time-line'
     &&
-    k === 'fatal'
+    k === 'severe'
   ) || false
 }
 
