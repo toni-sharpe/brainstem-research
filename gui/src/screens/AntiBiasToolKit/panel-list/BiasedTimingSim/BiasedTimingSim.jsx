@@ -7,6 +7,8 @@ import DataAdjusterButtonList from 'sections/DataAdjusterButtonList/DataAdjuster
 import PrimeSymptomHistogram from 'sections/PrimeSymptomHistogram/PrimeSymptomHistogram'
 import SubPageWrapper from 'components/SubPageWrapper/SubPageWrapper'
 
+import './BiasedTimingSim.scss'
+
 const i18nBase = 'BiasedTimingSim'
 
 function BiasedTimingSim({ antiBiasToolKitData }) {
@@ -17,25 +19,31 @@ function BiasedTimingSim({ antiBiasToolKitData }) {
   const commonAdjusterProps = {
     adjusterList: BAD_TIMING_SIM_ERROR_LIST,
     labelFn: function labelFn({ adjustBy }) {
-      return adjustBy === 0 ? 'OK' : `+ ${adjustBy} ${i18next.t(`${i18nBase}.timingShorthand`)}`
+      return adjustBy === 0 ? 'OK' : adjustBy
     }
   }
 
   return (
-    <SubPageWrapper heading={i18next.t(`${i18nBase}.summary`)}>
-      <div className='row-layout space-children--with-border'>
+    <SubPageWrapper
+      extraClass='biased-timing-sim'
+      heading={i18next.t(`${i18nBase}.summary`)}
+      withBorder={false}
+    >
+      <div className='row-layout space-children'>
         <DataAdjusterButtonList
           {...commonAdjusterProps}
           listLabel={i18next.t(`${i18nBase}.biased`)}
           onClickHandler={({ adjustBy }) => () => { setTimingError(adjustBy); setBiasedTimingError(0) }}
           selectedFn={({ curr }) => timingError === curr && badTimingError === 0}
         />
-        <DataAdjusterButtonList
-          {...commonAdjusterProps}
-          listLabel={i18next.t(`${i18nBase}.veryBiased`)}
-          onClickHandler={({ adjustBy }) => () => { setBiasedTimingError(adjustBy); setTimingError(0) }}
-          selectedFn={({ curr }) => badTimingError === curr && timingError === 0}
-        />
+        <div className='hide'>
+          <DataAdjusterButtonList
+            {...commonAdjusterProps}
+            listLabel={i18next.t(`${i18nBase}.veryBiased`)}
+            onClickHandler={({ adjustBy }) => () => { setBiasedTimingError(adjustBy); setTimingError(0) }}
+            selectedFn={({ curr }) => badTimingError === curr && timingError === 0}
+          />
+        </div>
       </div>
       <PrimeSymptomHistogram
         badTimingError={badTimingError}

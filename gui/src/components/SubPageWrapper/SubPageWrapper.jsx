@@ -5,9 +5,15 @@ import HeadingLevelPropType from 'prop-types/HeadingLevel.prop-type'
 
 import './SubPageWrapper.scss'
 
-function SubPageWrapper({ children, heading, headingLevel }) {
+function SubPageWrapper({
+  children,
+  extraClass,
+  heading,
+  headingLevel,
+  withBorder,
+}) {
   return (
-    <section className='sub-page-wrapper column-layout space-children--wide-column'>
+    <section className={`sub-page-wrapper column-layout space-children--wide-column${extraClass ? ` ${extraClass}` : ''}`}>
       {heading
         &&
         React.createElement(
@@ -17,7 +23,7 @@ function SubPageWrapper({ children, heading, headingLevel }) {
           }
         )
       }
-      <div className='sub-page-wrapper__child-wrapper row-layout space-children--with-border'>
+      <div className={`sub-page-wrapper__child-wrapper row-layout space-children${withBorder ? '--with-border' : ''}`}>
         {children}
       </div>
     </section>
@@ -25,13 +31,17 @@ function SubPageWrapper({ children, heading, headingLevel }) {
 }
 
 SubPageWrapper.defaultProps = {
+  extraClass: undefined,
   headingLevel: 'h2',
+  withBorder: true,
 }
 
 SubPageWrapper.propTypes = {
   children: PropTypes.node,
+  extraClass: PropTypes.string,
   heading: PropTypes.string,
   headingLevel: HeadingLevelPropType,
+  withBorder: PropTypes.bool,
 }
 
 export default SubPageWrapper

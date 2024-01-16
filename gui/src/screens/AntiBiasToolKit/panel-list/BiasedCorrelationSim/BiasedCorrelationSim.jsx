@@ -45,7 +45,7 @@ function BiasedCorrelationSim({ antiBiasToolKitData: scatterData }) {
     labelFn: ({ adjustBy }) =>
       adjustBy === 0
         ? 'OK'
-        : `R: ${adjustBy} ${i18next.t(`${i18nBase}.timingShorthand`)}`,
+        : adjustBy,
     onClickHandler: ({ adjustBy }) =>
       () => {
         setTimingError(adjustBy)

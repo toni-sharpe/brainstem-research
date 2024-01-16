@@ -1,9 +1,11 @@
 .data-adjuster-button-list {
   align-items: stretch;
-  min-width: 70px;
+  font-size: var(--font-size--medium);
+  width: 40px;
 
   &__button {
     width:  100%;
+    white-space: nowrap;
   }
   &__label {
     text-align: center;

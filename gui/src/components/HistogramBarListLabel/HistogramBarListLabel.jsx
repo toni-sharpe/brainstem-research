@@ -21,16 +21,10 @@ function HistogramBarListLabel({
   translationSet,
 }) {
   const width = `${barCountPerBlock * blockSize}%`
-  const simpleNumbers = width < 10
-
-  const className = `
-    histogram-bar-list-label column-layout
-    ${simpleNumbers ? 'font-small' : 'font-regular'}
-  `
 
   return (
     <span
-      className={className}
+      className='histogram-bar-list-label column-layout'
       style={{ left: `${left}%`, top, width }}
     >
       { translationSet?.groupBy && (<span>{translationSet?.groupBy}</span>) }

@@ -8,12 +8,9 @@ export default {
 };
 
 const baseXAxisLineListProps = {
-  barMargin: 10,
-  blockSize: 1,
-  histogramHeight: 10,
-  graphWidth: '95%',
+  histogramHeight: 70,
+  mostMaxOfAllThings: 300,
   showNumberList: true,
-  twoFullBars: 110,
 }
 
 export const Primary = {
@@ -21,6 +18,48 @@ export const Primary = {
     return (
       <StoryBookPaddedWrapper>
         <XAxisLineList {...baseXAxisLineListProps}/>
+      </StoryBookPaddedWrapper>
+    )
+  }
+};
+
+export const MassiveNumber = {
+  render: () => {
+    const props = {
+      ...baseXAxisLineListProps,
+      mostMaxOfAllThings: 12500,
+    }
+    return (
+      <StoryBookPaddedWrapper>
+        <XAxisLineList {...props}/>
+      </StoryBookPaddedWrapper>
+    )
+  }
+};
+
+export const One = {
+  render: () => {
+    const props = {
+      ...baseXAxisLineListProps,
+      mostMaxOfAllThings: 1,
+    }
+    return (
+      <StoryBookPaddedWrapper>
+        <XAxisLineList {...props}/>
+      </StoryBookPaddedWrapper>
+    )
+  }
+};
+
+export const Two = {
+  render: () => {
+    const props = {
+      ...baseXAxisLineListProps,
+      mostMaxOfAllThings: 2,
+    }
+    return (
+      <StoryBookPaddedWrapper>
+        <XAxisLineList {...props}/>
       </StoryBookPaddedWrapper>
     )
   }

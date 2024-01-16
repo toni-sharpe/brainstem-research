@@ -26,5 +26,5 @@ test('HistogramBarList', async () => {
     />
   )
 
-  expect(screen.getByText('0..5 days')).toBeTruthy()
+  expect(screen.getByText('0-5 d')).toBeTruthy()
 })

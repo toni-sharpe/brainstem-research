@@ -11,7 +11,7 @@ function DataAdjusterStoryWidthSim({ children }) {
 
 const baseDataAdjusterButtonListProps = {
   adjusterList: [1, 2, 3, 5, 7, 11],
-  labelFn: ({ adjustBy }) => `Output ${adjustBy}`,
+  labelFn: ({ adjustBy }) => `±${adjustBy}`,
   listLabel: 'List',
   onClickHandler: () => {},
   selectedFn: () => {},
