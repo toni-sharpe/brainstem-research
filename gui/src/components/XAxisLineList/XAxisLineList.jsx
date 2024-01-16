@@ -26,8 +26,9 @@ function XAxisLineList({
 
   for (let heightCount = 0; heightCount <= histogramHeight ; heightCount += stepDown) {
     const lineNumber = Math.round(heightCount / stepDown)
-    const top = `calc(${histogramHeight - heightCount}vh - ${centreLineAdjuster}px)`
-    const lineNumberTop = `calc(${histogramHeight - heightCount}vh - ${centreLineAdjuster}px - 9px)`
+    const lineBasePosition = (histogramHeight - heightCount).toPrecision(4)
+    const top = `calc(${lineBasePosition}vh - ${centreLineAdjuster}px)`
+    const lineNumberTop = `calc(${lineBasePosition}vh - ${centreLineAdjuster}px - 9px)`
     const lineHighlight = calcLineHighlight({ lineNumber, maxBasedDisplay })
 
     const showLine = hasLine({ lineNumber, maxBasedDisplay })
