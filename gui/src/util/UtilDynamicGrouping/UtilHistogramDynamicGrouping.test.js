@@ -34,7 +34,7 @@ test('pathogenesisToGroupMapper() - throws error if a function is not provided',
 })
 
 test('pathogenesisToGroupMapper - provides a mapper that applies our function', () => {
-  const mapper = pathogenesisToGroupMapper({ dataFn: ({ pathogenStepData }) => pathogenStepData * 2 })
+  const mapper = pathogenesisToGroupMapper({ dataFn: ({ pathogenesisStepData }) => pathogenesisStepData * 2 })
   const testData = [['a', { x: [{ x: 2, z: 4 }] }], ['b', { y: [{ y: 4, z: 6 }] }]]
   expect(testData.map(mapper)).toEqual([['a', {x: 4}], ['b', {y: 8}]])
 })

@@ -24,11 +24,11 @@ export function pathogenesisToGroupMapper({ dataFn } = {}) {
   return function ([group, data]) {
     return [
       group,
-      mergeAll(keys(data).map(pathogenStep => {
-        const pathogenStepData = pluck(pathogenStep, data[pathogenStep])
+      mergeAll(keys(data).map(pathogenesisStep => {
+        const pathogenesisStepData = pluck(pathogenesisStep, data[pathogenesisStep])
         return ({
-          [pathogenStep]: pathogenStepData?.length > 0
-            ? dataFn({ pathogenStepData })
+          [pathogenesisStep]: pathogenesisStepData?.length > 0
+            ? dataFn({ pathogenesisStepData })
             : 0
         })
       })),
