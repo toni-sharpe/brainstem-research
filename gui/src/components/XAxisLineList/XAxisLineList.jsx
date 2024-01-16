@@ -39,6 +39,17 @@ function XAxisLineList({
         { showNumber && (
             <dt>
               <XAxisLineNumber
+                align='left'
+                lineNumber={lineNumber}
+                top={lineNumberTop}
+              />
+              <XAxisLineNumber
+                align='center'
+                lineNumber={lineNumber}
+                top={lineNumberTop}
+              />
+              <XAxisLineNumber
+                align='right'
                 lineNumber={lineNumber}
                 top={lineNumberTop}
               />

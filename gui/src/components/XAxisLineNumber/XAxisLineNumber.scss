@@ -1,14 +1,30 @@
 .x-axis-line-number {
   position: absolute;
-  text-align: right;
-  left: -2%;
-  width: 2%;
-  z-index: var(--step-right-forward);
+  width: 8%;
+
+  &.left {
+    text-align: left;
+    left: 0;
+  }
+  &.right {
+    text-align: right;
+    right: 0;
+  }
+  &.center {
+    left: 50%;
+    margin-left: -4%;
+    text-align: center;
+
+    .x-axis-line-number__num {
+      background-color: var(--blue--light);
+      color: var(--blue--dark);
+    }
+  }
 
   &__num {
     background-color: var(--blue--dark);
     box-shadow: 0 0 0 1px inset var(--white);
     color: var(--white);
-    padding: var(--padding--small-tiny);
+    padding: var(--padding--small-tiny) var(--padding--small);
   }
 }

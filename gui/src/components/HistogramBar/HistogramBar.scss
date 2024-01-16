@@ -6,4 +6,10 @@
   &--suffix-class-story-book-example {
     background-color: #0a3;
   }
+
+  &:hover {
+    .histogram-bar-label {
+      display: flex;
+    }
+  }
 }
