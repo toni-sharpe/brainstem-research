@@ -19,7 +19,7 @@ function TimeLineStatChart({
 }) {
   const [statisticListPanel, setTimeLineStatChartPanel] = useState('general')
 
-  if (!data) { return null }
+  if (!data || !data.length) { return null }
 
   const commonNavProps = {
     currentPanel: statisticListPanel,
