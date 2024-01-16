@@ -16,6 +16,8 @@ import HistogramDataPropType from 'prop-types/HistogramData.prop-type'
 import HistogramTranslationPropType from 'prop-types/HistogramTranslation.prop-type'
 import { calcBarSegmentAlpha, writeHistogramBarListAriaLabel } from 'util/UtilHistogram/UtilHistogramBarList'
 
+import './HistogramBarList.scss'
+
 function HistogramBarList({
   barCountPerBlock,
   barMargin,
@@ -28,6 +30,8 @@ function HistogramBarList({
   mostMaxOfAllThings,
   translationSet,
 }) {
+  const innerBlockSize = 100 / barCountPerBlock
+
   return histogramBarGroupList.map(([histogramBarListLabel, data], i) => {
     const ariaLabel = writeHistogramBarListAriaLabel({
       histogramBarListLabel,
@@ -35,19 +39,27 @@ function HistogramBarList({
       translationSet,
     })
 
-    const outerLeft = i * (barCountPerBlock * blockSize + barMargin)
+    const barGroupWidth = barCountPerBlock * blockSize
+    const outerLeft = i * (barGroupWidth + barMargin)
     const subBars = toPairs(data)
 
     return (
       <ol
         aria-label={ariaLabel}
+        className='histogram-bar-list'
         key={`${histogramBarListLabel}`}
+        style={{
+          left: `${outerLeft}%`,
+          height: `${histogramHeight}vh`,
+          width: `${barGroupWidth}%`,
+        }}
+        tabIndex={0}
       >
         <li>
           <ol>
             {
               subBars.map(([k, val], j) => {
-                const innerLeft = outerLeft + blockSize * j
+                const innerLeft = innerBlockSize * j
 
                 const valCondensed = type(val) === 'Array'
                   ? reverse(uniq(val))
@@ -71,11 +83,12 @@ function HistogramBarList({
                           ? hueFn({ i: j, total: barCountPerBlock, aLevel })
                           : null
                       }
-                      blockSize={blockSize}
+                      blockSize={innerBlockSize}
+                      extraClass={k}
                       height={`${graphBarSize}vh`}
                       key={`${innerLeft}-${k}-${v}-${i}`}
                       left={innerLeft}
-                      extraClass={k}
+                      title={pipe(reverse, join(', '))(valCondensed)}
                       top={`${graphBarTop}vh`}
                     >
                       <HistogramBarLabel
@@ -83,7 +96,7 @@ function HistogramBarList({
                         blockSize={blockSize}
                         isShown
                       >
-                        <span title={pipe(reverse, join(', '))(valCondensed)}>{ count }</span>
+                        <span>{ count }</span>
                       </HistogramBarLabel>
                     </HistogramBar>
                   )

@@ -1,7 +1,10 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .histogram-maker {
   width: 100%;
   position: relative;
   &__data {
     flex: 1;
+    @include self-space-row-remove-border()
   }
 }

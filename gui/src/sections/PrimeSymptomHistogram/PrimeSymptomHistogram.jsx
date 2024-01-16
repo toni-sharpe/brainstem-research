@@ -118,17 +118,15 @@ function PrimeSymptomHistogram({
             unknownCount={unknownCount}
           />
         </div>
-        <div className='prime-symptom-histogram__figure'>
-          <Histogram
-            barCountPerBlock={2}
-            barMargin={HISTOGRAM_BAR_LIST_MARGIN}
-            blockSize={blockSize}
-            histogramBarGroupList={histogramBarGroupList}
-            histogramHeight={histogramHeight}
-            graphLabel={ariaLabel}
-            i18nBaseOverride={i18nBase}
-          />
-        </div>
+        <Histogram
+          barCountPerBlock={2}
+          barMargin={HISTOGRAM_BAR_LIST_MARGIN}
+          blockSize={blockSize}
+          histogramBarGroupList={histogramBarGroupList}
+          histogramHeight={histogramHeight}
+          graphLabel={ariaLabel}
+          i18nBaseOverride={i18nBase}
+        />
       </section>
     </div>
   );

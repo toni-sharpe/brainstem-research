@@ -14,6 +14,7 @@ function HistogramBar({
   extraClass,
   height,
   left,
+  title,
   top,
 }) {
   const endStyles = calcHistogramBarPos({
@@ -28,6 +29,7 @@ function HistogramBar({
     <li
       className={bemWithExtraClass({ bemBase: 'histogram-bar', extraClass })}
       style={{ ...endStyles, backgroundColor }}
+      title={title}
     >
       {children}
     </li>

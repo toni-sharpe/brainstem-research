@@ -20,12 +20,10 @@ function HistogramBarListLabel({
   top,
   translationSet,
 }) {
-  const width = `${barCountPerBlock * blockSize}%`
-
   return (
     <span
       className='histogram-bar-list-label column-layout'
-      style={{ left: `${left}%`, top, width }}
+      style={{ left: 0, top, width: '100%' }}
     >
       { translationSet?.groupBy && (<span>{translationSet?.groupBy}</span>) }
       <span>{i18nKeyOnly ? i18nKey : i18next.t(`${i18nBaseOverride || i18nBase}.${i18nKey}`)}</span>
