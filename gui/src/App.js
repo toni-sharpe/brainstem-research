@@ -24,7 +24,6 @@ function App() {
 
   const [data, setData] = useState([])
 
-  CURRENT_FILTER_LIST.primeSymptomType = ['anti-bias-tool-kit', 'prime-symptom-list'].includes(currentUrl)
   CURRENT_FILTER_LIST.rmDubious = !['AntiBiasToolKit'].includes(currentUrl)
   CURRENT_FILTER_LIST.nonSevere = ['TimeLine'].includes(currentUrl)
   const [currentFilterList, setCurrentFilterList] = useState(CURRENT_FILTER_LIST)
