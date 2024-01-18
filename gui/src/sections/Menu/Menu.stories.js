@@ -6,7 +6,7 @@ export default {
 };
 
 const baseMenuProps = {
-  currentUrl: 'TimeLineBarList'
+  currentUrl: 'GanttBarList'
 }
 
 export const Primary = {

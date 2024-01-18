@@ -98,6 +98,7 @@ export const ROOT_MENU_SLUGS = [
   'PrimeSymptomList',
   'AntiBiasToolKit',
   'TimeLine',
+  'Gantt',
   'HistogramMaker',
 ]
 
@@ -190,7 +191,7 @@ export const HYPOTHESIS_SYMPTOM_X_Y = {
 
 /***********************************/
 /*
- * Time Line Stat Chart Bars
+ * Gantt Bars
  */
 export const BAR_HEIGHT = 44
 export const BAR_SPACER = 29
@@ -214,7 +215,7 @@ export const TONE_KEY_LIST = [
   'veryBad',
   'neutral',
 ]
-export const STAT_BAR_DETAIL_LIST = {
+export const GANTT_TOGGLE_LIST = {
   deviation: true,
   label: true,
   statList: true,
@@ -223,8 +224,6 @@ export const STAT_BAR_DETAIL_LIST = {
   mean: true,
   median: true,
   range: true,
-  min: false,
-  max: false,
   fatLines: false,
 }
 

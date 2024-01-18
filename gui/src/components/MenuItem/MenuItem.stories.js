@@ -6,9 +6,9 @@ export default {
 };
 
 const baseMenuItemProps = {
-  currentUrl: 'TimeLineBarList',
+  currentUrl: 'GanttBarList',
   label: 'Statistics',
-  url: 'TimeLineBarList',
+  url: 'GanttBarList',
 }
 
 export const Selected = {

@@ -16,8 +16,8 @@ const i18nBase = 'Scatter'
 
 function Scatter({
   data,
-  setTimeLineBarDetailList,
-  timeLineBarDetailList,
+  setGanttTogglelList,
+  ganttToggleList,
 }) {
   const [x, setX] = useState(HYPOTHESIS_SYMPTOM_X_Y.x)
   const [y, setY] = useState(HYPOTHESIS_SYMPTOM_X_Y.y)
@@ -68,24 +68,17 @@ function Scatter({
   );
 }
 
-/*
-  see https://github.com/toni-sharpe/brainstem-research/issues/59
-  let's get the Scatter showing as it's key, this can be replaced later
-  Note also the three commented out lines as well, to get a green build
-  And three lines in the test for this file, as well as the two severe symptom
-    counts, 3 becomes 2 for a pass until this is replaced
-
-  <ScatterStatisticOutput
-    pointList={pointList}
-    setTimeLineBarDetailList={setTimeLineBarDetailList}
-    timeLineBarDetailList={timeLineBarDetailList}
-    xKey={x}
-    yKey={y}
-  />
-*/
-
 Scatter.propTypes = {
   data: ScatterDataPropType
 }
+
+
+        // <ScatterStatisticOutput
+        //   pointList={pointList}
+        //   setGanttTogglelList={setGanttTogglelList}
+        //   ganttToggleList={ganttToggleList}
+        //   xKey={x}
+        //   yKey={y}
+        // />
 
 export default Scatter;

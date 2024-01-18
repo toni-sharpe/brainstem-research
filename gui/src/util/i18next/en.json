@@ -73,10 +73,9 @@
     "Scatter": "Scatter Plot",
     "PrimeSymptomList": "Prime Symptom",
     "AntiBiasToolKit": "Anti-bias Tool Kit",
-    "TimeLineStatChart": "Time Line Stat. Chart",
+    "Gantt": "Gantt",
     "TimeLine": "Time Line",
     "HistogramMaker": "Histogram",
-    "CorrelationHeatmap": "Corr. Heatmap",
     "nIs": "N is {{n}}"
   },
 
@@ -250,7 +249,7 @@
     "time": "Time"
   },
 
-  "TimeLineBarListScale": {
+  "GanttScale": {
     "scaleFor": "Scale for {{ariaLabel}}"
   },
 
@@ -316,24 +315,24 @@
     "unknown": "Unknown"
   },
 
-  "TimeLineStatChart": {
+  "Gantt": {
     "subHeading": "Basic timing statistics, across common responses and with interactive cross referencing",
-    "interactivePanelLabel": "Interactive time line",
-    "generalPanelLabel": "General clinical time line",
+    "interactivePanelLabel": "Interactive Gantt",
+    "generalPanelLabel": "Pathogenesis Gantt",
     "ariaLabel": "{{label}}; range {{range}} with mean {{mean}} Standard deviation {{stddev}}",
     "secondaryNav": "See response time statistics or interactive where you can choose what to group and see time statistics about"
   },
 
-  "GeneralResponseTimeLineStatChart": {
+  "GeneralResponseGantt": {
     "GraphHeading": "Filterable ranges and basic statistics for both agonal and recovery responses"
   },
 
-  "InteractiveTimeLineStatChart": {
+  "InteractiveGantt": {
     "GraphHeading": "Interactive stat list allowing the user to choose what is grouped and see the timing stats for those groups",
     "group": "{{k}} (N={{count}})"
   },
 
-  "TimeLineBar": {
+  "GanttBar": {
     "good": "Recovery responses",
     "notGood": "Serious responses",
     "bad": "Serious and / or agonal responses",
@@ -341,7 +340,7 @@
     "neutral": "Impact without bearing"
   },
 
-  "TimeLineBarList": {
+  "GanttBarList": {
     "ariaLabel": "{{valueList}}",
     "mAndM": "Mean | Medn",
     "mda": "Median absolute dev.",
@@ -354,15 +353,15 @@
     "stddev": "MdA dev"
   },
 
-  "TimeLineBarDetailToggleList": {
+  "GanttToggleList": {
     "mean": "Mean",
     "range": "Range",
     "min": "Min",
     "max": "Max",
     "median": "Median",
     "quantile": "Quantile",
-    "quantileNumber": "Quantile Numbers",
-    "deviation": "MDA Deviation",
+    "quantileNumber": "Qu' Numbers",
+    "deviation": "MDA",
     "label": "Label",
     "statList": "Stats",
     "fatLines": "Fat lines"
@@ -386,7 +385,7 @@
 
   "ErrorList": {
     "ariaTranslationSet": "if translationSet is used, it must be an object where barList is an array and groupBy a string",
-    "calcInteractiveTimeBarArgs": "data to calcInteractiveTimeLineBarStatList must be an array and current user choices must be strings",
+    "calcInteractiveTimeBarArgs": "data to calcInteractiveGantt must be an array and current user choices must be strings",
     "calcLeft": "calcLeft function requires a val",
     "calcPercentage": "calcPercentage function requires a val",
     "calcScaleToFitUI": "calcScaleToFitUI requires scale argument with numeric properties stepDivision and totalSteps",
@@ -398,7 +397,7 @@
     "graphBlockLengthZero": "histogramBarGroupList has length 0, there should be something in histogramBarGroupList for {{callingFn}}",
     "isOrIsInArrayNeedsValues": "isOrIsInArray value error. {{missing}}",
     "makeWidth": "makeWidth requires a min and max value provided",
-    "mapToTimeLineBars": "mapToTimeLineBars needs data with length and an i18nBase",
+    "mapToGanttBars": "mapToGanttBars needs data with length and an i18nBase",
     "noHistogramData": "This histogram config has zero results",
     "primeSymptomHistogramBarGroup": "Prime symptom graph block list must be an array with positive count",
     "secondaryNavProps": "all four args are required, currentPanel, k and i18nBase are all strings and setCurrentPanel should be a function",

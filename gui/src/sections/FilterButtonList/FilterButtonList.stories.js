@@ -9,7 +9,7 @@ export default {
 
 const baseFilterButtonListProps = {
   currentFilterList: CURRENT_FILTER_LIST,
-  currentUrl: 'TimeLineBarList'
+  currentUrl: 'GanttBarList'
 }
 
 export const Primary = {
