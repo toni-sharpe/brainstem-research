@@ -7,6 +7,7 @@ import AlignPropType from 'prop-types/Align.prop-type'
 import AxisPropType from 'prop-types/Axis.prop-type'
 import CurrentAxisSelectionPropType from 'prop-types/CurrentAxisSelection.prop-type'
 import Button from 'components/Button/Button'
+import MenuButton from 'components/MenuButton/MenuButton'
 import ClinicalResponsePropType from 'prop-types/ClinicalResponse.prop-type'
 import USER_FACING_SET, { DURATION_MAP } from 'util/Constant/FullDataPointList'
 import { HeadingLevelStartPropType } from 'prop-types/HeadingLevel.prop-type'
@@ -117,19 +118,21 @@ function AxisSelector({
   return (
     <div className={axisSelectorClassNameList}>
       { !isOpen && (
-        <Button
-          extraClass='axis-selector__open-button'
-          label={i18next.t(`${i18nBase}.open`)}
-          onClick={() => setIsOpen(true)}
-        />
+        <div className='axis-selector__open-button'>
+          <MenuButton
+            label={i18next.t(`${i18nBase}.open`)}
+            onClick={() => setIsOpen(true)}
+          />
+        </div>
       ) }
       { isOpen && (
-        <Button
-          extraClass='axis-selector__close-button'
-          label='X'
-          onClick={() => setIsOpen(false)}
-          title={i18next.t(`${i18nBase}.close`)}
-        />
+        <div className='axis-selector__close-button'>
+          <MenuButton
+            label='X'
+            onClick={() => setIsOpen(false)}
+            title={i18next.t(`${i18nBase}.close`)}
+          />
+        </div>
       ) }
       { React.createElement(
         `h${headingLevelStart}`, {

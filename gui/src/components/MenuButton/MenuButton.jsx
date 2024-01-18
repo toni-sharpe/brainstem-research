@@ -8,6 +8,7 @@ import './MenuButton.scss'
 function MenuButton({
   label,
   onClick,
+  size,
   title,
 }) {
   return (
@@ -15,9 +16,14 @@ function MenuButton({
       extraClass='menu-button'
       label={label}
       onClick={onClick}
+      size={size}
       title={title}
     />
   )
+}
+
+MenuButton.defaultProps = {
+  size: 'medium',
 }
 
 MenuButton.propTypes = {
