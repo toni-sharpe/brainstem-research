@@ -317,8 +317,8 @@
 
   "Gantt": {
     "subHeading": "Basic timing statistics, across common responses and with interactive cross referencing",
-    "interactivePanelLabel": "Interactive time line",
-    "generalPanelLabel": "General clinical time line",
+    "interactivePanelLabel": "Interactive Gantt",
+    "generalPanelLabel": "Pathogenesis Gantt",
     "ariaLabel": "{{label}}; range {{range}} with mean {{mean}} Standard deviation {{stddev}}",
     "secondaryNav": "See response time statistics or interactive where you can choose what to group and see time statistics about"
   },

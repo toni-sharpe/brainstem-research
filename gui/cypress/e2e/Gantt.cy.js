@@ -1,4 +1,4 @@
-const urlSlug = 'TimeLineStatChart'
+const urlSlug = 'Gantt'
 
 export default describe(`${urlSlug} - `, () => {
   it('visits', () => {
