@@ -2,7 +2,7 @@ import i18next from 'util/i18next/i18next'
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-import Button from 'components/Button/Button'
+import MenuButton from 'components/MenuButton/MenuButton'
 import CurrentFilterListPropType from 'prop-types/CurrentFilterList.prop-type'
 import CurrentUrlPropType from 'prop-types/CurrentUrl.prop-type'
 import FilterButtonList from 'sections/FilterButtonList/FilterButtonList'
@@ -25,24 +25,34 @@ function Header({
   return (
     <div>
       { !isOpen && (
-        <Button
-          extraClass='ui-header-bar__open-button'
-          label={i18next.t(`${i18nBase}.openMenu`)}
-          onClick={() => setIsOpen(true)}
-          size='medium'
-        />
+        <div className='ui-header-bar__main-button'>
+          <MenuButton
+            label={i18next.t(`${i18nBase}.openMenu`)}
+            onClick={() => setIsOpen(true)}
+          />
+        </div>
+      ) }
+      { isOpen && (
+        <div className='ui-header-bar__main-button'>
+          <MenuButton
+            label={i18next.t(`${i18nBase}.close`)}
+            onClick={() => setIsOpen(false)}
+            title={i18next.t(`${i18nBase}.close`)}
+          />
+        </div>
       ) }
       <header
         className={`ui-header-bar ${openClass}`}
         data-testid='ui-header'
       >
         { isOpen && (
-          <Button
-            extraClass='ui-header-bar__close-button'
-            label='X'
-            onClick={() => setIsOpen(false)}
-            title={i18next.t(`${i18nBase}.close`)}
-          />
+          <div className='ui-header-bar__close-x-button'>
+            <MenuButton
+              label='X'
+              onClick={() => setIsOpen(false)}
+              title={i18next.t(`${i18nBase}.close`)}
+            />
+          </div>
         ) }
         <div className='ui-header-bar__nav-and-filter'>
           <Menu currentUrl={currentUrl} />

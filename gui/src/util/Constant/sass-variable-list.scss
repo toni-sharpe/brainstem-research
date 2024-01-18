@@ -68,13 +68,18 @@ $font-weight--bold: 700;
 $font-weight--black: 900;
 
 
-/* histogram */
-$histogram-bar-group-height: 45px;
-
-
 /* gantt-stat-chart  */
 $gantt-bar-height: 44px;
 $gantt-bar-quantile-height: 42px;
+
+
+/* menu */
+$menu--green: $green--dark;
+$menu--green-hover: $green;
+
+
+/* histogram */
+$histogram-bar-group-height: 45px;
 
 
 /* z-index */

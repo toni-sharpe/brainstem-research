@@ -63,13 +63,18 @@
   --font-weight--black: #{$font-weight--black};
 
 
+  /* gantt-stat-chart  */
+  --gantt-bar-height: #{$gantt-bar-height};
+  --gantt-bar-quantile-height: #{$gantt-bar-quantile-height};
+
+
   /* histogram */
   --histogram-bar-group-height: #{$histogram-bar-group-height};
 
 
-  /* gantt-stat-chart  */
-  --gantt-bar-height: #{$gantt-bar-height};
-  --gantt-bar-quantile-height: #{$gantt-bar-quantile-height};
+  /* menu */
+  --menu--green: #{$menu--green};
+  --menu--green-hover: #{$menu--green-hover};
 
 
   /* z-index */
