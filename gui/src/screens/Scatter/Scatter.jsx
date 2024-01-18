@@ -6,8 +6,8 @@ import AxisSelector from 'sections/AxisSelector/AxisSelector'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import ScatterChart from 'sections/ScatterChart/ScatterChart'
 import ScatterDataPropType from 'prop-types/ScatterData.prop-type'
-import ScatterStatisticOutput from 'components/ScatterStatisticOutput/ScatterStatisticOutput'
-import calcKeyPairXy from 'util/UtilKeyPairXY/UtilKeyPairXY'
+// import ScatterStatisticOutput from 'components/ScatterStatisticOutput/ScatterStatisticOutput'
+// import calcKeyPairXy from 'util/UtilKeyPairXY/UtilKeyPairXY'
 import { HYPOTHESIS_SYMPTOM_X_Y } from 'util/Constant/BaseConstantList'
 
 import './Scatter.scss'
@@ -30,7 +30,7 @@ function Scatter({
     ([a, b]) => ([Math.floor(a) * 10, Math.ceil(b) * 10])
   )(data)
 
-  const pointList = calcKeyPairXy({ data, xKey: x, yKey: y })
+  // const pointList = calcKeyPairXy({ data, xKey: x, yKey: y })
 
   return (
     <PageDetailWrapper
@@ -63,13 +63,6 @@ function Scatter({
             setCurrentAxisSelection={setY}
           />
         </div>
-        <ScatterStatisticOutput
-          pointList={pointList}
-          setGanttTogglelList={setGanttTogglelList}
-          ganttToggleList={ganttToggleList}
-          xKey={x}
-          yKey={y}
-        />
       </div>
     </PageDetailWrapper>
   );
@@ -78,5 +71,14 @@ function Scatter({
 Scatter.propTypes = {
   data: ScatterDataPropType
 }
+
+
+        // <ScatterStatisticOutput
+        //   pointList={pointList}
+        //   setGanttTogglelList={setGanttTogglelList}
+        //   ganttToggleList={ganttToggleList}
+        //   xKey={x}
+        //   yKey={y}
+        // />
 
 export default Scatter;

@@ -71,7 +71,7 @@ function ScatterStatisticOutput({
         {makeStatisticOutput({ statisticFn: sampleCovariance, x, y })}
         { showBars && (
           <li>
-            <div className='scatter-statistic-output__time-line-bar-list-scale'>
+            <div className='scatter-statistic-output__gantt-bar-list-scale'>
               <GanttScale
                 ariaLabel='scatter statistic output'
                 lineHeight='210px'
@@ -80,7 +80,7 @@ function ScatterStatisticOutput({
                 ganttToggleList={ganttToggleList}
               />
             </div>
-            <div className='scatter-statistic-output__time-line-bar-list'>
+            <div className='scatter-statistic-output__gantt-bar-list'>
               <GanttBarList
                 currentFilterList={CURRENT_FILTER_LIST}
                 scale={scale}
