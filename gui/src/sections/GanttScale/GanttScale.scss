@@ -13,19 +13,13 @@
     z-index: var(--step-right-back);
   }
   &__label {
-    background-color: var(--grey--dark);
-    color: var(--white);
-    font-size: var(--font-size--medium-large);
-    font-weight: bold;
-    margin-right: -9px;
-    padding: var(--padding--small-tiny);
-    position: absolute;
-    top: 2px;
-    z-index: var(--step-right-forward);
-  }
-  &__sub-label {
     background-color: var(--blue--light);
     color: var(--black);
+    font-size: var(--font-size--medium-large);
+    font-weight: bold;
+    padding: var(--padding--small-tiny);
+    position: absolute;
+    left: 2px;
     top: 2px;
   }
   &__total-label {

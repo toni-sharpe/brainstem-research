@@ -28,13 +28,15 @@ function InteractiveGantt({
   return (
     <SubPageWrapper>
       <div className='interactive-gantt row-layout space-children--wide'>
-        <AxisSelector
-          align='right'
-          axis='stats'
-          currentAxisSelection={currentResponse}
-          disabledSelection={currentGroupBy}
-          setCurrentAxisSelection={setCurrentResponse}
-        />
+        <div className='interactive-gantt__bar-selector'>
+          <AxisSelector
+            align='right'
+            axis='stats'
+            currentAxisSelection={currentResponse}
+            disabledSelection={currentGroupBy}
+            setCurrentAxisSelection={setCurrentResponse}
+          />
+        </div>
         <figure className='interactive-gantt__data'>
           <div className='interactive-gantt__scale'>
             <GanttScale

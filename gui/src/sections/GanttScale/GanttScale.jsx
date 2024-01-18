@@ -24,8 +24,6 @@ function GanttScale({
 }) {
   const { stepDivision, totalSteps } = calcScaleToFitUI({ scale })
 
-  const totalDivisions = totalSteps * stepDivision
-
   return (
     <ol
       aria-label={i18next.t('GanttScale.scaleFor', { ariaLabel })}
@@ -33,11 +31,9 @@ function GanttScale({
       style={style}
     >
       { ramda.range(0, totalSteps + 1).map(step => {
-        const lastStep = step === totalSteps
-        const scalePerc = step / totalSteps * 100
-        const positionScaleStep = { left: `calc(${scalePerc}% ${lastStep ? '- 18px' : '- 1px'})`}
-        const positionScaleLine = { left: `calc(${scalePerc}% - 1px)`, height: lineHeight || '149vh' }
-        const positionScaleSubStep = { left: `calc(${scalePerc}% ${lastStep ? '- 55px' : '+ 30px'})`}
+        const scalePerc = (step / totalSteps * 100).toPrecision(5)
+        const positionScaleStep = { left: `calc(${scalePerc}% + 1px)`}
+        const positionScaleLine = { left: `calc(${scalePerc}% - 1px)`, height: `${ganttHeight}px` }
 
         return (
           <li key={step} >
@@ -46,14 +42,7 @@ function GanttScale({
               key='step'
               style={positionScaleStep}
             >
-              {step}
-            </span>
-            <span
-              className='gantt-scale__label gantt-scale__sub-label'
-              key='stepDivision'
-              style={positionScaleSubStep}
-            >
-              {stepDivision}
+              {step * stepDivision}
             </span>
             <div
               className={`gantt-scale__line`}
@@ -72,13 +61,6 @@ function GanttScale({
     </ol>
   )
 }
-      // <li key='all-steps'>
-      //   <span
-      //     className='gantt-scale__label gantt-scale__total-label'
-      //   >
-      //     {totalDivisions}
-      //   </span>
-      // </li>
 
 GanttScale.defaultProps = {
   scale: SCALE_DEFAULT,
