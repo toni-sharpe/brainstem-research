@@ -12,7 +12,10 @@ test('GanttScale', async () => {
   )
 
   expect(screen.getByLabelText('Scale for test graph')).toBeTruthy()
-  expect(screen.getByText('1')).toBeTruthy()
+  expect(screen.getByText('0')).toBeTruthy()
+  expect(screen.getByText('5')).toBeTruthy()
+  expect(screen.getByText('10')).toBeTruthy()
+  expect(screen.getByText('15')).toBeTruthy()
+  expect(screen.getByText('20')).toBeTruthy()
   expect(screen.getByText('25')).toBeTruthy()
-  expect(screen.getAllByText('5').length).toEqual(7)
 })

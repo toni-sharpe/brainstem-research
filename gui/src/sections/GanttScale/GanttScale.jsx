@@ -14,17 +14,15 @@ import './GanttScale.scss'
 
 function GanttScale({
   ariaLabel,
-  lineHeight,
-  scale,
-  showBarControls,
-  style,
-  setGanttTogglelList,
   ganttToggleList,
   ganttToggleListIsActive,
+  ganttHeight,
+  scale,
+  setGanttTogglelList,
+  showBarControls,
+  style,
 }) {
   const { stepDivision, totalSteps } = calcScaleToFitUI({ scale })
-
-  const totalDivisions = totalSteps * stepDivision
 
   return (
     <ol
@@ -34,10 +32,11 @@ function GanttScale({
     >
       { ramda.range(0, totalSteps + 1).map(step => {
         const lastStep = step === totalSteps
-        const scalePerc = step / totalSteps * 100
-        const positionScaleStep = { left: `calc(${scalePerc}% ${lastStep ? '- 18px' : '- 1px'})`}
-        const positionScaleLine = { left: `calc(${scalePerc}% - 1px)`, height: lineHeight || '149vh' }
-        const positionScaleSubStep = { left: `calc(${scalePerc}% ${lastStep ? '- 55px' : '+ 30px'})`}
+        const scalePerc = (step / totalSteps * 100).toPrecision(5)
+        const positionScaleStep = lastStep
+          ? { right: `1px` }
+          : { left: `calc(${scalePerc}% + 1px)`}
+        const positionScaleLine = { left: `calc(${scalePerc}% - 1px)`, height: `${ganttHeight}px` }
 
         return (
           <li key={step} >
@@ -46,14 +45,7 @@ function GanttScale({
               key='step'
               style={positionScaleStep}
             >
-              {step}
-            </span>
-            <span
-              className='gantt-scale__label gantt-scale__sub-label'
-              key='stepDivision'
-              style={positionScaleSubStep}
-            >
-              {stepDivision}
+              {step * stepDivision}
             </span>
             <div
               className={`gantt-scale__line`}
@@ -69,13 +61,6 @@ function GanttScale({
           ganttToggleList={ganttToggleList}
         />
       </li>
-      <li key='all-steps'>
-        <span
-          className='gantt-scale__label gantt-scale__total-label'
-        >
-          {totalDivisions}
-        </span>
-      </li>
     </ol>
   )
 }
@@ -83,15 +68,16 @@ function GanttScale({
 GanttScale.defaultProps = {
   scale: SCALE_DEFAULT,
   showBarControls: true,
+  ganttHeight: '149vh',
   ganttToggleList: GANTT_TOGGLE_LIST,
   ganttToggleListIsActive: true,
 }
 
 GanttScale.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
+  ganttHeight: NumberOrStringPropType,
   ganttToggleList: GanttToggleListPropType,
   ganttToggleListIsActive: PropTypes.bool,
-  lineHeight: NumberOrStringPropType,
   scale: GanttScalePropType,
   setGanttToggleList: PropTypes.func,
   showBarControls: PropTypes.bool,

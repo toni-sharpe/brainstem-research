@@ -2,57 +2,6 @@ import { keys } from 'ramda'
 
 /***********************************/
 /*
- * Correlation heatmap
- */
-export const CORRELATION_HEATMAP_FIELD_LIST = [
-  // 0
-  'care_technique_1', 'care_equipment_1', 'care_technique_2', 'care_technique_3', 'care_technique_4',
-  'care_technique_5', 'care_equipment_2', 'care_equipment_3', 'care_technique_6', 'care_technique_7',
-  'care_equipment_4',
-
-  // 11
-  'patient_weight',
-  'presented_gender',
-  'source_country',
-  'consultant_doctor',
-  'event_count',
-  'care_site',
-
-  // 17
-  'etiology',
-  'outcome',
-  'outcome_type',
-  'care_error_level',
-  'overall_patient_rating',
-  'pathological_severity',
-  'pathogenesis_duration',
-  'pathological_event_duration',
-  'outlier',
-
-  // 26
-  'intro_symptom_start', 'intro_symptom_end', 'intro_symptom_duration',
-  'mild_symptom_1', 'mild_symptom_1_1_end', 'mild_symptom_1_2', 'mild_symptom_1_duration',
-  'mild_symptom_2', 'mild_symptom_2_duration',
-
-  // 35
-  'first_prime_symptom', 'first_prime_symptom_type',
-  'prime_symptom_1', 'prime_symptom_1_duration', 'prime_symptom_any',
-  'prime_symptom_2', 'prime_symptom_2_duration',
-  'prime_symptom_3', 'prime_symptom_3_duration',
-  'prime_symptom_duration', 'prime_symptom_level', 'prime_symptom_proportion',
-
-  // 48
-  'recovery_duration', 'recovery_proportion',
-
-  // 50
-  'fatal_symptom_1', 'fatal_symptom_2',
-  'death_response_1', 'death_response_2', 'slight_death_response_1', 'slight_death_response_2',
-  'time_of_death',
-]
-
-
-/***********************************/
-/*
  * Errors
  */
 export const I18N_ERROR_KEY = 'ErrorList'
@@ -193,8 +142,8 @@ export const HYPOTHESIS_SYMPTOM_X_Y = {
 /*
  * Gantt Bars
  */
-export const BAR_HEIGHT = 44
-export const BAR_SPACER = 29
+export const GANTT_BAR_HEIGHT = 44
+export const GANTT_BAR_SPACER = 29
 export const PRECISION = 5
 export const QUANTILE_LIST = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 export const QUANTILE_LIST_LONG = QUANTILE_LIST

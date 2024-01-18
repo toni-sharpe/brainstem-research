@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import KeyPropType from 'prop-types/Key.prop-type'
 
 import './GanttBarWrapper.scss'
-import { BAR_HEIGHT, BAR_SPACER } from 'util/Constant/BaseConstantList'
+import { GANTT_BAR_HEIGHT, GANTT_BAR_SPACER } from 'util/Constant/BaseConstantList'
 
 function GanttBarWrapper({
   barHeight,
@@ -14,7 +14,7 @@ function GanttBarWrapper({
   i,
   offset,
 }) {
-  const fullHeight = BAR_HEIGHT + BAR_SPACER
+  const fullHeight = GANTT_BAR_HEIGHT + GANTT_BAR_SPACER
 
   return (
     <li
@@ -31,8 +31,8 @@ function GanttBarWrapper({
 }
 
 GanttBarWrapper.defaultProps = {
-  barHeight: BAR_HEIGHT,
-  barSpacer: BAR_SPACER,
+  barHeight: GANTT_BAR_HEIGHT,
+  barSpacer: GANTT_BAR_SPACER,
   i: 1,
   offset: 35,
 }

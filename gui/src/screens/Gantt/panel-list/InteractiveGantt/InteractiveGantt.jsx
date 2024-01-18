@@ -5,7 +5,7 @@ import GanttScale from 'sections/GanttScale/GanttScale'
 import GanttBarList from 'sections/GanttBarList/GanttBarList'
 import SubPageWrapper from 'components/SubPageWrapper/SubPageWrapper'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
-import { calcScale } from 'util/UtilGanttBarList/UtilGanttBarList'
+import { calcGanttListHeight, calcScale } from 'util/UtilGanttBarList/UtilGanttBarList'
 import { calcInteractiveGantt } from 'util/UtilGanttBarList/UtilInteractiveGantt'
 
 import './InteractiveGantt.scss'
@@ -21,26 +21,31 @@ function InteractiveGantt({
 
   const statDataList = calcInteractiveGantt({ currentGroupBy, currentResponse, data })
 
+  const ganttHeight = calcGanttListHeight({ statDataList })
+
   const { maxOfAll, scale } = calcScale({ statDataList })
 
   return (
     <SubPageWrapper>
       <div className='interactive-gantt row-layout space-children--wide'>
-        <AxisSelector
-          align='right'
-          axis='stats'
-          currentAxisSelection={currentResponse}
-          disabledSelection={currentGroupBy}
-          setCurrentAxisSelection={setCurrentResponse}
-        />
+        <div className='interactive-gantt__bar-selector'>
+          <AxisSelector
+            align='right'
+            axis='stats'
+            currentAxisSelection={currentResponse}
+            disabledSelection={currentGroupBy}
+            setCurrentAxisSelection={setCurrentResponse}
+          />
+        </div>
         <figure className='interactive-gantt__data'>
           <div className='interactive-gantt__scale'>
             <GanttScale
               ariaLabel='interactive statistics list'
-              scale={scale}
-              setGanttTogglelList={setGanttTogglelList}
+              ganttHeight={ganttHeight}
               ganttToggleList={ganttToggleList}
               ganttToggleListIsActive
+              scale={scale}
+              setGanttTogglelList={setGanttTogglelList}
             />
           </div>
           <GanttBarList

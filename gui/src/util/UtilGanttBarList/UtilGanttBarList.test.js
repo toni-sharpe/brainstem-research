@@ -1,4 +1,12 @@
-import { calcScale, getStatBase, fullStatBase, mapToGanttBars } from './UtilGanttBarList'
+import {
+  calcGanttListHeight,
+  calcScale,
+  fullStatBase,
+  getStatBase,
+  mapToGanttBars,
+} from './UtilGanttBarList'
+
+import { GANTT_BAR_HEIGHT, GANTT_BAR_SPACER } from 'util/Constant/BaseConstantList'
 
 const quantile = [1, 5, 5, 9, 30, 51, 53, 53, 58]
 
@@ -14,6 +22,24 @@ const statBaseZeroes = { max: 0, mean: 0, median: 0, min: 0 }
 const vals = [1, 5, 9, 53, 58, 51]
 
 const i18nBase = 'ReactTestLibrary'
+
+
+/*
+ * calcGanttListHeight()
+ */
+test('calcGanttListHeight() with nothing', () => {
+  expect(calcGanttListHeight()).toEqual(GANTT_BAR_HEIGHT + GANTT_BAR_SPACER)
+})
+test('calcGanttListHeight() with empty array', () => {
+  expect(calcGanttListHeight({ statDataList: [] })).toEqual(GANTT_BAR_HEIGHT + GANTT_BAR_SPACER)
+})
+test('calcGanttListHeight() with array with contents', () => {
+  const statDataList = [1, 2, 3]
+  const result = (GANTT_BAR_HEIGHT + GANTT_BAR_SPACER) * (statDataList.length + 1)
+
+  expect(calcGanttListHeight({ statDataList })).toEqual(result)
+})
+
 
 
 /*

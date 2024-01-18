@@ -2,6 +2,11 @@
 
 .interactive-gantt {
   width: 100%;
+  &__bar-selector {
+    &.interactive-gantt__bar-selector {
+      @include self-space-row-remove-border();
+    }
+  }
   &__data {
     width: 100%;
     position: relative;

@@ -55,7 +55,8 @@ test('userChoiceGroupedStatMapper() returns good data if everything is provided'
   expect(
     UserChoiceGroupedExampleData.map(
       userChoiceGroupedStatMapper({
-        currentResponse: 'prime_symptom_1'
+        currentGroupBy: 'mild_symptom_2',
+        currentResponse: 'prime_symptom_1',
       })
     )
   ).toEqual(UserChoiceGroupingListAfterStatMapping)
