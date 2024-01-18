@@ -46,7 +46,7 @@ export function userChoiceGroupedStatMapper({ currentResponse, currentGroupBy })
       tone: null,
     })
 
-    mappedStatList[k].label = `${clinicalPrefix} - ${k}`
+    mappedStatList[k].label = `${clinicalPrefix} [@${k}]`
 
     return mappedStatList
   }
