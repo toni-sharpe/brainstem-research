@@ -3,15 +3,14 @@
 .interactive-gantt {
   width: 100%;
   &__data {
-    margin-top: 61px;
     width: 100%;
     position: relative;
+    top: 80px;
     &.interactive-gantt__data {
       @include self-space-row-remove-border();
     }
   }
   &__scale {
-    height: 30px;
     position: relative;
   }
 }

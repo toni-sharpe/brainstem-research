@@ -21,11 +21,11 @@ test('GanttToggleList', async () => {
     />
   )
 
-  expect(screen.getByText('MDA Deviation')).toBeTruthy()
+  expect(screen.getByText('MDA')).toBeTruthy()
   expect(screen.getByText('Label')).toBeTruthy()
   expect(screen.getByText('Stats')).toBeTruthy()
   expect(screen.getByText('Quantile')).toBeTruthy()
-  expect(screen.getByText('Quantile Numbers')).toBeTruthy()
+  expect(screen.getByText('Qu\' Numbers')).toBeTruthy()
   expect(screen.getByText('Mean')).toBeTruthy()
   expect(screen.getByText('Median')).toBeTruthy()
   expect(screen.getByText('Range')).toBeTruthy()

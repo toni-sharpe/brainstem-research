@@ -11,7 +11,8 @@ function GanttBarWrapper({
   barSpacer,
   children,
   k,
-  i
+  i,
+  offset,
 }) {
   const fullHeight = BAR_HEIGHT + BAR_SPACER
 
@@ -20,7 +21,7 @@ function GanttBarWrapper({
       className='gantt-bar-wrapper'
       key={k}
       style={{
-        top: `${i * (fullHeight)}px`,
+        top: `${i * (fullHeight) + offset}px`,
         height: `${fullHeight - 1}px`
       }}
     >
@@ -33,6 +34,7 @@ GanttBarWrapper.defaultProps = {
   barHeight: BAR_HEIGHT,
   barSpacer: BAR_SPACER,
   i: 1,
+  offset: 35,
 }
 
 GanttBarWrapper.propTypes = {
@@ -41,6 +43,7 @@ GanttBarWrapper.propTypes = {
   children: PropTypes.node,
   k: KeyPropType,
   i: PropTypes.number,
+  offset: PropTypes.number,
 }
 
 export default GanttBarWrapper

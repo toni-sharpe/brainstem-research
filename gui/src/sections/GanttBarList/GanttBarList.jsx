@@ -20,7 +20,7 @@ function GanttBarList({
   statDataList
 }) {
   return (
-    <ol className='time-line-bar-list'>
+    <ol className='gantt-bar-list'>
       {statDataList.map((statData, i) => {
         const [k, bData] = toPairs(statData)[0]
 
