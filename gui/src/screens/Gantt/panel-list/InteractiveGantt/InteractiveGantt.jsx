@@ -5,7 +5,7 @@ import GanttScale from 'sections/GanttScale/GanttScale'
 import GanttBarList from 'sections/GanttBarList/GanttBarList'
 import SubPageWrapper from 'components/SubPageWrapper/SubPageWrapper'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
-import { calcScale } from 'util/UtilGanttBarList/UtilGanttBarList'
+import { calcGanttListHeight, calcScale } from 'util/UtilGanttBarList/UtilGanttBarList'
 import { calcInteractiveGantt } from 'util/UtilGanttBarList/UtilInteractiveGantt'
 
 import './InteractiveGantt.scss'
@@ -20,6 +20,8 @@ function InteractiveGantt({
   const [currentGroupBy, setCurrentGroupBy] = useState('mild_symptom_1')
 
   const statDataList = calcInteractiveGantt({ currentGroupBy, currentResponse, data })
+
+  const ganttHeight = calcGanttListHeight({ statDataList })
 
   const { maxOfAll, scale } = calcScale({ statDataList })
 
@@ -37,10 +39,11 @@ function InteractiveGantt({
           <div className='interactive-gantt__scale'>
             <GanttScale
               ariaLabel='interactive statistics list'
-              scale={scale}
-              setGanttTogglelList={setGanttTogglelList}
+              ganttHeight={ganttHeight}
               ganttToggleList={ganttToggleList}
               ganttToggleListIsActive
+              scale={scale}
+              setGanttTogglelList={setGanttTogglelList}
             />
           </div>
           <GanttBarList

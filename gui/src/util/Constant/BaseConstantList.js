@@ -142,8 +142,8 @@ export const HYPOTHESIS_SYMPTOM_X_Y = {
 /*
  * Gantt Bars
  */
-export const BAR_HEIGHT = 44
-export const BAR_SPACER = 29
+export const GANTT_BAR_HEIGHT = 44
+export const GANTT_BAR_SPACER = 29
 export const PRECISION = 5
 export const QUANTILE_LIST = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 export const QUANTILE_LIST_LONG = QUANTILE_LIST

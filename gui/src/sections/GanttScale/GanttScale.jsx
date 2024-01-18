@@ -14,13 +14,13 @@ import './GanttScale.scss'
 
 function GanttScale({
   ariaLabel,
-  lineHeight,
-  scale,
-  showBarControls,
-  style,
-  setGanttTogglelList,
   ganttToggleList,
   ganttToggleListIsActive,
+  ganttHeight,
+  scale,
+  setGanttTogglelList,
+  showBarControls,
+  style,
 }) {
   const { stepDivision, totalSteps } = calcScaleToFitUI({ scale })
 
@@ -69,29 +69,30 @@ function GanttScale({
           ganttToggleList={ganttToggleList}
         />
       </li>
-      <li key='all-steps'>
-        <span
-          className='gantt-scale__label gantt-scale__total-label'
-        >
-          {totalDivisions}
-        </span>
-      </li>
     </ol>
   )
 }
+      // <li key='all-steps'>
+      //   <span
+      //     className='gantt-scale__label gantt-scale__total-label'
+      //   >
+      //     {totalDivisions}
+      //   </span>
+      // </li>
 
 GanttScale.defaultProps = {
   scale: SCALE_DEFAULT,
   showBarControls: true,
+  ganttHeight: '149vh',
   ganttToggleList: GANTT_TOGGLE_LIST,
   ganttToggleListIsActive: true,
 }
 
 GanttScale.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
+  ganttHeight: NumberOrStringPropType,
   ganttToggleList: GanttToggleListPropType,
   ganttToggleListIsActive: PropTypes.bool,
-  lineHeight: NumberOrStringPropType,
   scale: GanttScalePropType,
   setGanttToggleList: PropTypes.func,
   showBarControls: PropTypes.bool,

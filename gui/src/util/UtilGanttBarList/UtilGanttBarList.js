@@ -9,8 +9,26 @@ import {
   medianAbsoluteDeviation,
 } from 'simple-statistics'
 
-import { PRECISION, QUANTILE_LIST } from 'util/Constant/BaseConstantList'
+import {
+  GANTT_BAR_HEIGHT,
+  GANTT_BAR_SPACER,
+  PRECISION,
+  QUANTILE_LIST
+} from 'util/Constant/BaseConstantList'
 import { throwError } from 'util/Util/Util'
+
+
+export function calcGanttListHeight({ statDataList = [] } = {}) {
+  const fullBarHeight = GANTT_BAR_HEIGHT + GANTT_BAR_SPACER
+
+  return (
+    statDataList.length
+    +
+    1
+  )
+  *
+  fullBarHeight
+}
 
 
 export function calcScale({ statDataList = [] } = {}) {
