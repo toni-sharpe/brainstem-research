@@ -1,7 +1,7 @@
 .gantt-scale {
   width: 100%;
   height: 2px;
-  background-color: var(--grey--dark);
+  background-color: var(--grey--light);
   position: relative;
   top: var(--spacing--narrow);
   &__line {
@@ -19,7 +19,6 @@
     font-weight: bold;
     padding: var(--padding--small-tiny);
     position: absolute;
-    left: 2px;
     top: 2px;
   }
   &__total-label {

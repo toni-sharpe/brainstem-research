@@ -31,8 +31,11 @@ function GanttScale({
       style={style}
     >
       { ramda.range(0, totalSteps + 1).map(step => {
+        const lastStep = step === totalSteps
         const scalePerc = (step / totalSteps * 100).toPrecision(5)
-        const positionScaleStep = { left: `calc(${scalePerc}% + 1px)`}
+        const positionScaleStep = lastStep
+          ? { right: `1px` }
+          : { left: `calc(${scalePerc}% + 1px)`}
         const positionScaleLine = { left: `calc(${scalePerc}% - 1px)`, height: `${ganttHeight}px` }
 
         return (
