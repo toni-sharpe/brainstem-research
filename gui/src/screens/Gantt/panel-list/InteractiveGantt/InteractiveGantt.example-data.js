@@ -59,7 +59,7 @@ export const UserChoiceGroupedExampleData = [
 export const UserChoiceGroupingListAfterStatMapping = [{
   10: {
     count: 3,
-    label: 10,
+    label: 'Mild symptom 2 - 10',
     max: 31,
     mda: 7,
     mean: 22,
@@ -70,12 +70,11 @@ export const UserChoiceGroupingListAfterStatMapping = [{
     std: 6.9761,
     tone: null
   },
-  label: '10 3'
 },
 {
   '10-19': {
     count: 20,
-    label: '10-19',
+    label: 'Mild symptom 2 - 10-19',
     max: 43,
     mda: 3,
     mean: 21.9,
@@ -84,13 +83,13 @@ export const UserChoiceGroupingListAfterStatMapping = [{
     quantile: [14, 15.5, 17.5, 19.5, 20, 20, 21.5, 26.5, 37.5],
     skewness: 1.3498,
     std: 8.4137,
-    tone: null},
-  label: '10-19 20'
+    tone: null
+  },
 },
 {
   '20-29': {
     count: 2,
-    label: '20-29',
+    label: 'Mild symptom 2 - 20-29',
     max: 20,
     mda: 2.5,
     mean: 17.5,
@@ -101,12 +100,11 @@ export const UserChoiceGroupingListAfterStatMapping = [{
     std: 2.5,
     tone: null
   },
-  label: '20-29 2'
 },
 {
   '30-39': {
     count: 2,
-    label: '30-39',
+    label: 'Mild symptom 2 - 30-39',
     max: 31,
     mda: 5,
     mean: 26,
@@ -117,12 +115,11 @@ export const UserChoiceGroupingListAfterStatMapping = [{
     std: 5,
     tone: null
   },
-  label: '30-39 2'
 },
 {
   '50-59': {
     count: 1,
-    label: '50-59',
+    label: 'Mild symptom 2 - 50-59',
     max: 20,
     mda: 0,
     mean: 20,
@@ -133,7 +130,6 @@ export const UserChoiceGroupingListAfterStatMapping = [{
     std: 0,
     tone: null
   },
-  label: '50-59 1'
 }]
 
 export const InteractiveGanttExampleData = [{
@@ -220,7 +216,7 @@ export const InteractiveGanttExampleData = [{
 export const InteractiveGanttFullyProcessedExampleData = [{
   10: {
     count: 3,
-    label: '10',
+    label: 'Mild symptom 2 - 10',
     max: 31,
     mda: 7,
     mean: 22,
@@ -231,12 +227,11 @@ export const InteractiveGanttFullyProcessedExampleData = [{
     std: 6.9761,
     tone: null
   },
-  label: '10 3'
 },
 {
   '10-19': {
     count: 15,
-    label: '10-19',
+    label: 'Mild symptom 2 - 10-19',
     max: 43,
     mda: 4,
     mean: 22.067,
@@ -247,12 +242,11 @@ export const InteractiveGanttFullyProcessedExampleData = [{
     std: 9.2265,
     tone: null
   },
-  label: '10-19 15'
 },
 {
   '20-29': {
     count: 2,
-    label: '20-29',
+    label: 'Mild symptom 2 - 20-29',
     max: 20,
     mda: 2.5,
     mean: 17.5,
@@ -263,12 +257,11 @@ export const InteractiveGanttFullyProcessedExampleData = [{
     std: 2.5,
     tone: null
   },
-  label: '20-29 2'
 },
 {
   '30-39': {
     count: 2,
-    label: '30-39',
+    label: 'Mild symptom 2 - 30-39',
     max: 31,
     mda: 5,
     mean: 26,
@@ -279,12 +272,11 @@ export const InteractiveGanttFullyProcessedExampleData = [{
     std: 5,
     tone: null
   },
-  label: '30-39 2'
 },
 {
   '50-59': {
     count: 1,
-    label: '50-59',
+    label: 'Mild symptom 2 - 50-59',
     max: 20,
     mda: 0,
     mean: 20,
@@ -295,5 +287,4 @@ export const InteractiveGanttFullyProcessedExampleData = [{
     std: 0,
     tone: null
   },
-  label: '50-59 1'
 }]
