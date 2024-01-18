@@ -6,26 +6,18 @@
   transition: left 1s;
   width: 100%;
 
-  &__open-button {
-    background-color: var(--green--dark);
-    color: var(--white);
-    font-weight: var(--font-weight--bold);
+  &__main-button {
     left: 50%;
-    margin-left: -50px;
+    margin-left: -55px;
     position: absolute;
     top: 0;
-    width: 100px;
-    &:focus,
-    &:hover {
-      background-color: var(--green);
-      color: var(--black);
-    }
+    width: 110px;
     @media (min-width: $media-switch--large) {
       display: none;
     }
   }
 
-  &__close-button {
+  &__close-x-button {
     position: absolute;
     top: -5px;
     right: 0;
