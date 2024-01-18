@@ -6,7 +6,7 @@ export default {
 };
 
 const commonMenuButtonProps = {
-  onClick: null,
+  onClick: () => {},
   label: 'Open',
   title: 'Open',
 }
@@ -14,7 +14,9 @@ const commonMenuButtonProps = {
 export const Primary = {
   render: () => {
     return(
-      <MenuButton {...commonMenuButtonProps} />
+      <div style={{ width: '100px', margin: '0 auto' }}>
+        <MenuButton {...commonMenuButtonProps} />
+      </div>
     )
   }
 }

@@ -8,10 +8,10 @@
 
   &__main-button {
     left: 50%;
-    margin-left: -50px;
+    margin-left: -55px;
     position: absolute;
     top: 0;
-    width: 100px;
+    width: 110px;
     @media (min-width: $media-switch--large) {
       display: none;
     }

@@ -89,14 +89,25 @@ h1, h2, h3, h4, h5, h6, p {
   --line-height--small: 1.2em;
   --line-height--large: 1.5em;
 
+  /* font weight */
+  --font-weight--light: 200;
+  --font-weight--regular: 500;
+  --font-weight--bold: 700;
+  --font-weight--black: 900;
+
+
+  /* gantt  */
+  --gantt-bar-height: 44px;
+  --gantt-bar-quantile-height: 42px;
+
 
   /* histogram */
   --histogram-bar-group-height: 45px;
 
 
-  /* time-line-stat-chart  */
-  --time-line-bar-height: 44px;
-  --time-line-bar-quantile-height: 42px;
+  /* menu */
+  --menu--green: #085;
+  --menu--green-hover: #4e8;
 
 
   /* z-index */
