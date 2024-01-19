@@ -420,6 +420,7 @@
     "calcLeft": "calcLeft Funktion erfordert eine val bereitgestellt",
     "calcPercentage": "calcPercentage Funktion erfordert eine val bereitgestellt",
     "calcWidth": "calcWidth Funktion erfordert eine min und max val",
+    "dragGraphLabelValProp": "Die labelValList muss ein Array aus [string, number]-Arrays sein",
     "fnMustBeProvidedTo": "{{fnName}} muss {{caller}} zur Verfügung gestellt werden und muss eine Funktion sein",
     "fullStatBase": "fullStatBase Funktion benötigt ein k",
     "generalResponseTimeBarDataIsArray": "Allgemeine Statistiklistenberechnung benötigt ein Array für Daten",

@@ -7,7 +7,17 @@ export default {
 
 const baseDragGraphProps = {
   color: 'green',
-  valList: [5, 17, 7, 23, 27, 23, 41, 11, 19],
+  labelValList: [
+    ['a', 5],
+    ['b', 17],
+    ['c', 7],
+    ['d', 23],
+    ['e', 27],
+    ['f', 23],
+    ['g', 41],
+    ['h', 11],
+    ['i', 19],
+  ]
 }
 
 export const Primary = {
@@ -25,7 +35,10 @@ export const TwoPoints = {
     const props = {
       ...baseDragGraphProps,
       color: 'red',
-      valList: [7, 13],
+      labelValList: [
+        ['a', 7],
+        ['b', 13],
+      ]
     }
     return (
       <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
@@ -40,7 +53,11 @@ export const ThreePoints = {
     const props = {
       ...baseDragGraphProps,
       color: '#9900cc',
-      valList: [7, 13, 9],
+      labelValList: [
+        ['a', 7],
+        ['b', 13],
+        ['c', 9],
+      ],
     }
     return (
       <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
@@ -55,7 +72,12 @@ export const FourPoints = {
     const props = {
       ...baseDragGraphProps,
       color: 'red',
-      valList: [7, 13, 3, 5],
+      labelValList: [
+        ['a', 7],
+        ['b', 13],
+        ['c', 3],
+        ['d', 5],
+      ],
     }
     return (
       <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
@@ -70,7 +92,13 @@ export const FivePoints = {
     const props = {
       ...baseDragGraphProps,
       color: 'blue',
-      valList: [19, 23, 41, 31, 29],
+      labelValList: [
+        ['a', 19],
+        ['b', 23],
+        ['c', 41],
+        ['d', 31],
+        ['e', 29]
+      ],
     }
     return (
       <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
@@ -85,7 +113,30 @@ export const LotsOfPoints = {
     const props = {
       ...baseDragGraphProps,
       color: '#0055bb',
-      valList: [19, 23, 41, 31, 29, 5, 17, 7, 23, 27, 23, 41, 11, 19, 11, 39, 51, 7, 7, 33, 27, 43],
+      labelValList: [
+        ['a', 19],
+        ['b', 23],
+        ['c', 41],
+        ['d', 31],
+        ['e', 29],
+        ['f', 5],
+        ['g', 17],
+        ['h', 7],
+        ['i', 23],
+        ['j', 27],
+        ['k', 23],
+        ['l', 41],
+        ['m', 11],
+        ['n', 19],
+        ['o', 11],
+        ['p', 39],
+        ['q', 51],
+        ['r', 7],
+        ['s', 7],
+        ['t', 33],
+        ['u', 27],
+        ['v', 43],
+      ],
     }
     return (
       <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
@@ -100,7 +151,16 @@ export const BigRange = {
     const props = {
       ...baseDragGraphProps,
       color: '#333',
-      valList: [19, 1001, 1, 517, 307, 219, 137, 998],
+      labelValList: [
+        ['a', 19],
+        ['b', 1001],
+        ['c', 1],
+        ['d', 517],
+        ['e', 307],
+        ['f', 219],
+        ['g', 137],
+        ['h', 998],
+      ],
     }
     return (
       <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>

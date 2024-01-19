@@ -68,6 +68,15 @@
     "time_of_death_abbrev": "Time of sev"
   },
 
+  "CommonClinicalDefinitions": {
+    "care_equipment_4": "Care Equipment 4",
+    "outcome_type": "Outcome Type",
+    "etiology": "Etiology",
+    "care_equipment_1": "Care Equipment 1",
+    "care_technique_2": "Care Technique 2",
+    "care_technique_3": "Care Technique 3"
+  },
+
   "MainPageHeading": {
     "": "Research",
     "Scatter": "Scatter Plot",
@@ -421,6 +430,7 @@
     "calcPercentage": "calcPercentage function requires a val",
     "calcScaleToFitUI": "calcScaleToFitUI requires scale argument with numeric properties stepDivision and totalSteps",
     "calcWidth": "calcWidth function requires a min and max value provided",
+    "dragGraphLabelValProp": "The labelValList must be an array of [string, number] arrays",
     "fnMustBeProvidedTo": "{{fnName}} must be provided to {{caller}} and must be a function",
     "fullStatBase": "fullStatBase needs a k",
     "generalResponseTimeBarDataIsArray": "General stat list calc needs an array for data",
