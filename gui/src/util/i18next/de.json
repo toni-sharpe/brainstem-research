@@ -70,12 +70,14 @@
   },
 
   "CommonClinicalDefinitions": {
-    "care_equipment_4": "Pflegemittel 4",
-    "outcome_type": "Ergebnis Typ",
-    "etiology": "Ätiologie",
     "care_equipment_1": "Pflegemittel 1",
+    "care_equipment_4": "Pflegemittel 4",
     "care_technique_2": "Pflegetechnik 2",
-    "care_technique_3": "Pflegetechnik 3"
+    "care_technique_3": "Pflegetechnik 3",
+    "etiology": "Ätiologie",
+    "event_count": "Pathologische Ereignisfolge",
+    "outcome_type": "Ergebnis Typ",
+    "prime_symptom_level": "Hauptsymptom Schweregrad"
   },
 
   "MainPageHeading": {

@@ -20,6 +20,8 @@ function SVG({ data }) {
     'care_equipment_1',
     'care_technique_2',
     'care_technique_3',
+    'event_count',
+    'prime_symptom_level',
   ]
 
   const graphCount = graphKeyList.length
@@ -30,7 +32,11 @@ function SVG({ data }) {
     >
       <div className='svg__drag-graph-list row-layout'>
         { graphKeyList.map((graphKey, i) => {
-          const labelValList = groupByPipe({ k: graphKey })(data)
+          const labelValList = groupByPipe({ k: graphKey })(
+            graphKey === 'event_count'
+              ? data.filter(({ event_count }) => event_count > 1)
+              : data
+          )
           return (
             <DragGraph
               color={`hsl(${calcHue({ i, total: graphCount })} 80% 50%`}

@@ -7,10 +7,10 @@
 
     & > * {
       width: 100%;
-      @media (min-width: $media-switch__small) {
+      @media (min-width: $media-switch__medium) {
         width: 50%;
       }
-      @media (min-width: $media-switch__medium) {
+      @media (min-width: $media-switch__large) {
         width: 33%;
       }
     }

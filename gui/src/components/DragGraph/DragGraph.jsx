@@ -24,7 +24,7 @@ function DragGraph({
   heading,
   labelValList,
 }) {
-  if (!labelValList || !type(labelValList) === 'Array' || labelValList.length < 2) {
+  if (!labelValList || type(labelValList) !== 'Array' || labelValList.length < 2) {
     return (
       <div className='drag-graph column-layout space-children--column'>
         <h2
@@ -76,6 +76,13 @@ function DragGraph({
             />
           )
         })}
+        <circle
+          cx={SVG_SCALE_RADIUS}
+          cy={SVG_SCALE_RADIUS}
+          key='center'
+          r={5}
+          fill='#999'
+        />
         { scaleRadiusList.map((svgRadius, i) => {
           const finalCircle = i === scaleRadiusList.length - 1
 
@@ -97,6 +104,26 @@ function DragGraph({
           points={calcPolygonCoordString({ coordList: dragLineCoordList })}
           stroke={color}
         />
+        { dragLineCoordList.map(([x, y], i) => {
+          return valList[i] > max / 10
+            ? (
+              <foreignObject
+                x={x - 15}
+                y={y - 31}
+                width='30'
+                height='46'
+              >
+                <div className='drag-graph__graph-point-label'>{labelValList[i][0]}</div>
+                <div
+                  className='drag-graph__graph-point'
+                  tabindex={0}
+                >
+                  {valList[i]}
+                </div>
+              </foreignObject>
+            )
+            : null
+        })}
       </svg>
     </div>
   )
