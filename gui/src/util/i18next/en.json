@@ -33,6 +33,7 @@
     "slight_death_response_1": "Severe response 1 (pos)",
     "slight_death_response_2": "Severe response 2 (pos)",
     "time_of_death": "Time of severity",
+
     "care_error_level_abbrev": "Care errors",
     "care_technique_1_abbrev": "Care technique 1",
     "death_response_1_abbrev": "Sev res 1",
@@ -69,12 +70,14 @@
   },
 
   "CommonClinicalDefinitions": {
-    "care_equipment_4": "Care Equipment 4",
-    "outcome_type": "Outcome Type",
-    "etiology": "Etiology",
     "care_equipment_1": "Care Equipment 1",
+    "care_equipment_4": "Care Equipment 4",
     "care_technique_2": "Care Technique 2",
-    "care_technique_3": "Care Technique 3"
+    "care_technique_3": "Care Technique 3",
+    "etiology": "Etiology",
+    "event_count": "Pathological event order",
+    "outcome_type": "Outcome Type",
+    "prime_symptom_level": "Prime symptom severity"
   },
 
   "MainPageHeading": {

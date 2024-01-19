@@ -5,6 +5,8 @@ export default {
   component: DragGraph,
 };
 
+const divWrapper = { boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }
+
 const baseDragGraphProps = {
   color: 'green',
   heading: 'Graph Heading',
@@ -24,7 +26,7 @@ const baseDragGraphProps = {
 export const Primary = {
   render: () => {
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
+      <div style={{...divWrapper}}>
         <DragGraph {...baseDragGraphProps} />
       </div>
     )
@@ -42,7 +44,7 @@ export const TwoPoints = {
       ]
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
+      <div style={{...divWrapper}}>
         <DragGraph {...props} />
       </div>
     )
@@ -61,7 +63,7 @@ export const ThreePoints = {
       ],
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
+      <div style={{...divWrapper}}>
         <DragGraph {...props} />
       </div>
     )
@@ -81,7 +83,7 @@ export const FourPoints = {
       ],
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
+      <div style={{...divWrapper}}>
         <DragGraph {...props} />
       </div>
     )
@@ -102,7 +104,7 @@ export const FivePoints = {
       ],
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
+      <div style={{...divWrapper}}>
         <DragGraph {...props} />
       </div>
     )
@@ -140,7 +142,7 @@ export const LotsOfPoints = {
       ],
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
+      <div style={{...divWrapper}}>
         <DragGraph {...props} />
       </div>
     )
@@ -164,7 +166,7 @@ export const BigRange = {
       ],
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
+      <div style={{...divWrapper}}>
         <DragGraph {...props} />
       </div>
     )
@@ -174,18 +176,50 @@ export const BigRange = {
 export const Smaller = {
   render: () => {
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '180px', width: '180px' }}>
+      <div style={{ boxShadow: '0 0 100px 0 #000', height: '275px', width: '180px' }}>
         <DragGraph {...baseDragGraphProps} />
       </div>
     )
   }
 };
 
-export const Tiny = {
+export const NoData = {
   render: () => {
+    const props = {
+      ...baseDragGraphProps,
+      labelValList: undefined,
+    }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '50px', width: '50px' }}>
-        <DragGraph {...baseDragGraphProps} />
+      <div style={{...divWrapper}}>
+        <DragGraph {...props} />
+      </div>
+    )
+  }
+};
+
+export const NotAnArray = {
+  render: () => {
+    const props = {
+      ...baseDragGraphProps,
+      labelValList: 1,
+    }
+    return (
+      <div style={{...divWrapper}}>
+        <DragGraph {...props} />
+      </div>
+    )
+  }
+};
+
+export const NotEnoughData = {
+  render: () => {
+    const props = {
+      ...baseDragGraphProps,
+      labelValList: [1],
+    }
+    return (
+      <div style={{...divWrapper}}>
+        <DragGraph {...props} />
       </div>
     )
   }
