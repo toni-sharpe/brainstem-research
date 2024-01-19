@@ -69,6 +69,15 @@
     "time_of_death_abbrev": "Zeit des Sev"
   },
 
+  "CommonClinicalDefinitions": {
+    "care_equipment_4": "Pflegemittel 4",
+    "outcome_type": "Ergebnis Typ",
+    "etiology": "Ätiologie",
+    "care_equipment_1": "Pflegemittel 1",
+    "care_technique_2": "Pflegetechnik 2",
+    "care_technique_3": "Pflegetechnik 3"
+  },
+
   "MainPageHeading": {
     "": "Forschung",
     "Scatter": "Punktwolke",
