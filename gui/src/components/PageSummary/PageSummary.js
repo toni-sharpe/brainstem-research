@@ -14,7 +14,7 @@ function PageSummary() {
       <div className='column-layout space-children--column'>
         <h3>{i18next.t(`${i18nBase}.heading2`)}</h3>
         <a href={i18next.t(`${i18nBase}.link2`)}>{i18next.t(`${i18nBase}.heading2`)}</a>
-        <p>{i18next.t(`${i18nBase}.paragraph3`)}</p>
+        <p>{i18next.t(`${i18nBase}.paragraph2`)}</p>
         <p>{i18next.t(`${i18nBase}.paragraph3`)}</p>
       </div>
       <div className='column-layout space-children--column'>
