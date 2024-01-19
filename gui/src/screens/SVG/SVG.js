@@ -3,6 +3,7 @@ import React from 'react'
 
 import DragGraph from 'components/DragGraph/DragGraph'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
+import { calcHue } from 'util/Util/UtilHue'
 import { groupByPipe } from 'util/Util/Util'
 
 import './SVG.scss'

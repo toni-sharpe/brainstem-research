@@ -436,6 +436,7 @@
     "generalResponseTimeBarDataIsArray": "General stat list calc needs an array for data",
     "graphBlockLengthInvalid": "histogramBarGroupList is not correct in {{callingFn}} - receiving: {{typeOf}} | {{val}}",
     "graphBlockLengthZero": "histogramBarGroupList has length 0, there should be something in histogramBarGroupList for {{callingFn}}",
+    "hueTotalError": "calcHue must have a positive integer in the \"total\" property",
     "isOrIsInArrayNeedsValues": "isOrIsInArray value error. {{missing}}",
     "makeWidth": "makeWidth requires a min and max value provided",
     "mapToGanttBars": "mapToGanttBars needs data with length and an i18nBase",
