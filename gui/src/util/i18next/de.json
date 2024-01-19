@@ -422,6 +422,10 @@
     "comingSoon": "Diese Seite wird in Kürze erscheinen ..."
   },
 
+  "DragGraph": {
+    "scaleDetail": "Äußerer Skalenring ist {{outerScale}} und Schritte sind {{scaleUnit}}"
+  },
+
   "ErrorList": {
     "ariaTranslationSet": "wenn translationSet verwendet wird, muss es ein Objekt sein, bei dem barList ein Array und groupBy eine Zeichenkette ist",
     "calcInteractiveTimeBarArgs": "Die Daten für calcInteractiveGantt müssen ein Array sein und die aktuellen Benutzerauswahlen müssen Strings sein",

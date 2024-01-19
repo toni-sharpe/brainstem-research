@@ -56,13 +56,19 @@ export function calcRadiusUnit({ max }) {
 
 export function calcScaleRadiusList({ max }) {
   const { highlight, show } = calcMaxBasedDisplay({ max })
-  const scaleUnit = highlight || show || 1
+  const scaleUnit = highlight || (show && show !== true) || 1
   const radiusUnit = calcRadiusUnit({ max })
   const scaleRadiusList = []
 
-  for (let x = scaleUnit; x <= max; x = x + scaleUnit) {
+  let x = scaleUnit
+
+  for (; x <= max; x = x + scaleUnit) {
     scaleRadiusList.push(graphPrecision({ val: x * radiusUnit }))
   }
 
-  return scaleRadiusList
+  return {
+    scaleRadiusList,
+    scaleUnit,
+    outerScale: x,
+  }
 }

@@ -17,6 +17,8 @@ import LabelValPropType from 'prop-types/LabelVal.prop-type'
 
 import './DragGraph.scss'
 
+const i18nBase = 'DragGraph'
+
 function DragGraph({
   color,
   heading,
@@ -41,7 +43,12 @@ function DragGraph({
   const angle = calcAngleInRadians({ valList })
   const dragLineCoordList = calcPolygonCoordList({ angle, max, radiusUnit, valList })
   const baseLineCoordList = calcBaseLineCoordList({ angle, valList })
-  const scaleRadiusList = calcScaleRadiusList({ max })
+
+  const {
+    outerScale,
+    scaleUnit,
+    scaleRadiusList,
+  } = calcScaleRadiusList({ max })
 
   return (
     <div className='drag-graph column-layout space-children--column'>
@@ -51,6 +58,7 @@ function DragGraph({
       >
         {heading}
       </h2>
+      <span className='drag-graph__scale-detail'>{i18next.t(`${i18nBase}.scaleDetail`, { outerScale, scaleUnit})}</span>
       <svg
         key='svg'
         viewBox={`0 0 ${SVG_SCALE} ${SVG_SCALE}`}
@@ -68,16 +76,18 @@ function DragGraph({
             />
           )
         })}
-        { scaleRadiusList.map((scaleRadius, i) => {
+        { scaleRadiusList.map((svgRadius, i) => {
+          const finalCircle = i === scaleRadiusList.length - 1
+
           return (
-              <circle
-                cx={SVG_SCALE_RADIUS}
-                cy={SVG_SCALE_RADIUS}
-                fillOpacity='0.0'
-                key={`scale-${i}`}
-                r={scaleRadius}
-                stroke={i === scaleRadiusList.length - 1 ? '#777' : '#eee'}
-              />
+            <circle
+              cx={SVG_SCALE_RADIUS}
+              cy={SVG_SCALE_RADIUS}
+              fillOpacity='0.0'
+              key={`scale-${i}`}
+              r={svgRadius}
+              stroke={finalCircle ? '#777' : '#eee'}
+            />
           )
         })}
         <polygon
