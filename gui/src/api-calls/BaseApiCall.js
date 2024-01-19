@@ -15,16 +15,7 @@ function baseApiCall ({
       // const dataJson = await data.json()
       // setData(dataJson)
 
-      if (endPoint === 'HistogramMaker') {
-        setData(RealFullData)
-      }
       if (endPoint === 'Scatter') {
-        setData(RealFullData)
-      }
-      if (endPoint === 'Gantt') {
-        setData(RealFullData)
-      }
-      if (endPoint === 'TimeLine') {
         setData(RealFullData)
       }
       if (endPoint === 'PrimeSymptomList') {
@@ -36,6 +27,18 @@ function baseApiCall ({
           prime_symptom_cases: RealPrimeSymptomListData,
           scatter_cases: RealScatterData,
         })
+      }
+      if (endPoint === 'TimeLine') {
+        setData(RealFullData)
+      }
+      if (endPoint === 'Gantt') {
+        setData(RealFullData)
+      }
+      if (endPoint === 'HistogramMaker') {
+        setData(RealFullData)
+      }
+      if (endPoint === 'SVG') {
+        setData(RealFullData)
       }
     }
     getData()

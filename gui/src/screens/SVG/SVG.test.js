@@ -25,5 +25,10 @@ test('SVG - ', async () => {
   /*
    * Simple tests of on screen specifics, not always needed
    */
-  expect(screen.getByText('This page is coming soon ...')).toBeTruthy()
+  expect(screen.getByText('Care Equipment 4')).toBeTruthy()
+  expect(screen.getByText('Outcome Type')).toBeTruthy()
+  expect(screen.getByText('Etiology')).toBeTruthy()
+  expect(screen.getByText('Care Equipment 1')).toBeTruthy()
+  expect(screen.getByText('Care Technique 2')).toBeTruthy()
+  expect(screen.getByText('Care Technique 3')).toBeTruthy()
 })
