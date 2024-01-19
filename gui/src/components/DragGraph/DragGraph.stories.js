@@ -7,6 +7,7 @@ export default {
 
 const baseDragGraphProps = {
   color: 'green',
+  heading: 'Graph Heading',
   labelValList: [
     ['a', 5],
     ['b', 17],
@@ -23,7 +24,7 @@ const baseDragGraphProps = {
 export const Primary = {
   render: () => {
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
+      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
         <DragGraph {...baseDragGraphProps} />
       </div>
     )
@@ -41,7 +42,7 @@ export const TwoPoints = {
       ]
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
+      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
         <DragGraph {...props} />
       </div>
     )
@@ -60,7 +61,7 @@ export const ThreePoints = {
       ],
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
+      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
         <DragGraph {...props} />
       </div>
     )
@@ -80,7 +81,7 @@ export const FourPoints = {
       ],
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
+      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
         <DragGraph {...props} />
       </div>
     )
@@ -101,7 +102,7 @@ export const FivePoints = {
       ],
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
+      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
         <DragGraph {...props} />
       </div>
     )
@@ -139,7 +140,7 @@ export const LotsOfPoints = {
       ],
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
+      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
         <DragGraph {...props} />
       </div>
     )
@@ -163,7 +164,7 @@ export const BigRange = {
       ],
     }
     return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '300px', width: '300px' }}>
+      <div style={{ boxShadow: '0 0 100px 0 #000', height: '500px', width: '400px' }}>
         <DragGraph {...props} />
       </div>
     )
