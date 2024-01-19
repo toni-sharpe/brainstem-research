@@ -441,6 +441,7 @@
     "makeWidth": "makeWidth requires a min and max value provided",
     "mapToGanttBars": "mapToGanttBars needs data with length and an i18nBase",
     "noHistogramData": "This histogram config has zero results",
+    "noDragGraphData": "This drag graph config has zero results",
     "primeSymptomHistogramBarGroup": "Prime symptom graph block list must be an array with positive count",
     "secondaryNavProps": "all four args are required, currentPanel, k and i18nBase are all strings and setCurrentPanel should be a function",
     "testError": "Test {{addToError}} {{alsoAddToError}}",

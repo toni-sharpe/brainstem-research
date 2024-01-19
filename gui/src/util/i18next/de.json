@@ -440,6 +440,7 @@
     "makeWidth": "makeWidth erfordert die Angabe eines Mindest- und Höchstwerts",
     "mapToGanttBars": "mapToGanttBars benötigt data mit Länge und eine i18nBase",
     "noHistogramData": "Diese Histogramm-Konfiguration hat null Ergebnisse",
+    "noDragGraphData": "Diese DragGraph-Konfiguration hat null Ergebnisse",
     "primeSymptomHistogramBarGroup": "Prime symptom graph block list muss ein Array mit positiver Anzahl sein",
     "secondaryNavProps": "alle vier Args sind erforderlich, currentPanel, k und i18nBase sind alle Strings und setCurrentPanel sollte eine Funktion sein",
     "testError": "Test {{addToError}} {{alsoAddToError}}",

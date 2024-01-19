@@ -1,24 +1,35 @@
+import {
+  SVG_COORD_PRECISION,
+  SVG_SCALE,
+  SVG_SCALE_RADIUS,
+} from 'util/Constant/BaseConstantList'
+import { calcMaxBasedDisplay } from 'util/Util/UtilScaleGranularity'
+
 function calcX({ a, r }) {
-  return r * Math.sin(a) + 50
+  return r * Math.sin(a) + (SVG_SCALE_RADIUS)
 }
 
 function calcY({ a, r }) {
-  return 100 - (r * Math.cos(a) + 50)
+  return SVG_SCALE - (r * Math.cos(a) + (SVG_SCALE_RADIUS))
 }
 
 function calcXY({ a, r }) {
   return [
-    Number(calcX({ a, r }).toPrecision(6)),
-    Number(calcY({ a, r }).toPrecision(6)),
+    graphPrecision({ val: calcX({ a, r }) }),
+    graphPrecision({ val: calcY({ a, r }) }),
   ]
 }
 
+function graphPrecision({ val }) {
+  return Number(val.toPrecision(SVG_COORD_PRECISION))
+}
+
 export function calcAngleInRadians({ valList }) {
-  return Number((360 / valList.length * (Math.PI / 180)).toPrecision(6))
+  return graphPrecision({ val: (360 / valList.length * (Math.PI / 180)) })
 }
 
 export function calcBaseLineCoordList({ angle, valList }) {
-  const r = 48
+  const r = (SVG_SCALE_RADIUS * 0.94)
 
   return valList.map((val, i) => {
     const a = angle * i
@@ -26,10 +37,7 @@ export function calcBaseLineCoordList({ angle, valList }) {
   })
 }
 
-export function calcPolygonCoordList({ angle, valList }) {
-  const max = Math.max(...valList)
-  const radiusUnit = Number((42 / max).toPrecision(6))
-
+export function calcPolygonCoordList({ angle, max, radiusUnit, valList }) {
   return valList.map((val, i) => {
     const r = val * radiusUnit
     const a = angle * i
@@ -40,4 +48,21 @@ export function calcPolygonCoordList({ angle, valList }) {
 export function calcPolygonCoordString({ coordList }) {
   const mappedList = coordList.map(([x, y]) => `${x},${y}`)
   return `${mappedList.join(' ')} ${coordList[0][0]},${coordList[0][1]}`
+}
+
+export function calcRadiusUnit({ max }) {
+  return graphPrecision({ val: ((SVG_SCALE_RADIUS * 0.84) / max) })
+}
+
+export function calcScaleRadiusList({ max }) {
+  const { highlight, show } = calcMaxBasedDisplay({ max })
+  const scaleUnit = highlight || show || 1
+  const radiusUnit = calcRadiusUnit({ max })
+  const scaleRadiusList = []
+
+  for (let x = scaleUnit; x <= max; x = x + scaleUnit) {
+    scaleRadiusList.push(graphPrecision({ val: x * radiusUnit }))
+  }
+
+  return scaleRadiusList
 }
