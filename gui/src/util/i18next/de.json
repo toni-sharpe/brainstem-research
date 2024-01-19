@@ -116,7 +116,8 @@
     "backgroundPanelLabel": "Hintergrund",
     "motivationPanelLabel": "Motivation",
     "techStackPanelLabel": "Technischer Stapel",
-    "testingPanelLabel": "Prüfung"
+    "testingPanelLabel": "Prüfung",
+    "summaryPanelLabel": "Seite Zusammenfassung"
   },
 
   "Background": {
@@ -181,6 +182,31 @@
     "paragraph8": "Visuelle Komponententests sind sowieso Zeitverschwendung, sie sind spröde und oft ziemlich zahlreich (z.B. N Schaltflächengrößen in N Zuständen), und alles, was man testen kann, ist, dass die richtige Requisite eingegeben wurde - wenn man die Requisite \"disabled\" auf true setzt, kann man nicht feststellen, ob jemand die deaktivierten Schaltflächenstile versehentlich löscht.",
     "paragraph9": "Komplexere Komponenten und alle Util-Funktionen werden getestet. Util-Funktionen werden verwendet, um Komponenten einfacher zu halten und die Testbarkeit zu verbessern.",
     "paragraph10": "FDie vollständigen Integrationstests werden mit leichter Hand und für einige Randfälle durchgeführt (je nach Bedarf). Wenn wir uns zum Beispiel anmelden müssen, weil es sich um einen echten, vollständigen Website-Test handelt, dann steigt die Zeit schnell an, ein Test könnte zwei Minuten dauern, weil der Benutzer zehn Minuten braucht, um sich anzumelden, zu navigieren, das Formular auszufüllen und es abzuschicken, also müssen wir vorsichtig sein. Es gibt auch Situationen, in denen alles fehlgeschlagen ist, weil das Internet zusammengebrochen ist."
+  },
+
+  "PageSummary": {
+    "heading1": "Punktwolke",
+    "link1": "/Scatter",
+    "paragraph1": "Das Streudiagramm dient dazu, die beobachtete Korrelation zu zeigen, die für die Hypothese von zentraler Bedeutung ist. Die Hypothese besagt, dass die beiden beim Laden der Seite dargestellten Symptome aus einem bestimmten Grund stark korreliert sind, der die derzeit akzeptierte Hypothese widerlegt. Beachten Sie, dass die beiden ausgewählten Parameter, die sich auf die Hypothese beziehen, markiert bleiben, so dass der Benutzer, wenn er beschließt, andere Möglichkeiten des Streudiagramms über die Menüs auf der Seite zu untersuchen, leicht zu den ursprünglichen Einstellungen zurückkehren kann.",
+    "heading2": "Hauptsymptom",
+    "link2": "/PrimeSymptomList",
+    "paragraph2": "Entscheidend für die Hypothese ist das Auftreten eines bestimmten Symptoms. Es gibt zwar drei Symptome, die als Hauptsymptome bezeichnet werden, aber hier geht es um zwei, die sich sehr ähnlich sind, und der erste Punkt, an dem eines von beiden auftritt, wird als Zahl in der Grafik verwendet. Zu Beginn der Datenerhebung wurde die Vorhersage getroffen, dass mit zunehmender Anzahl von Ereignissen auch die Anzahl derer zunehmen wird, die den Prozess wiederholen können, und dass mit zunehmender Anzahl von Ereignissen auch die Anzahl derer zunehmen wird, die die Pathogenese mehr als einmal durchlaufen haben. Wenn die Hypothese richtig ist, dann tritt dieses Symptom auf eine Art und Weise auf, die nicht wie normal heilt, und daher ist es wahrscheinlich, dass die Gesamtverteilungskurve und die Mediane in der Gruppe, die die Pathogenese mehr als einmal durchlaufen kann, gleich bleiben und sich nach unten bewegen, wenn die Menge zunimmt.",
+    "paragraph3": "In diesem Diagramm werden die Datensätze so geladen, wie sie bei der Entdeckung hinzugefügt wurden, beginnend mit 5. Die Vorhersage selbst wurde getroffen, als etwa 30 Beispiele gesammelt worden waren. Der Benutzer kann dann die Hinzufügung von Daten zum Gesamtsatz verfolgen und sehen, wie sich der Median und die Verteilungskurven mit der Zunahme der Sätze verhalten. Das Diagramm ist auch faktorisiert, so dass jede Diskrepanz zwischen den Gesamtwerten in beiden Gruppen geglättet wird, um vergleichbare Kurven zu erhalten. Der Benutzer wird feststellen, dass das Ausschalten des Faktors keine Auswirkung auf die Mediane hat, aber die Balken aktualisiert, die alle ganze Zahlen sind, wenn das Faktoring ausgeschaltet ist, aber Bruchteile sein können, wenn es angewendet wird.",
+    "heading3": "Anti-Bias",
+    "link3": "/AntiBiasToolKit",
+    "paragraph4": "Auf drei Unterseiten wird die Datenerfassung auf Fehleranfälligkeit und Verzerrungen hin untersucht. Das Streudiagramm der korrelierenden Symptome kann so eingestellt werden, dass es in hohem Maße falsche Zeitpunkte darstellt, um zu sehen, wie weit die Zeitpunkte dieser Ereignisse voneinander abweichen müssten, um die Hypothese zu widerlegen. Ebenso kann der Prädiktor für das Hauptsymptom erweitert werden, diesmal so, dass die Daten von der Hypothese abweichen, um das \"Wunschdenken\" des Datenerfassers zu erkennen. Die letzte Seite ist ein WIP, eine bessere Berechnung ist geplant.",
+    "heading4": "Zeitleiste",
+    "link4": "/TimeLine",
+    "paragrpah5": "Diese Seite stellt die aggregierten Werte pro Monat für die drei abgeleiteten Schweregrade in der Datenbank dar und bietet dann einige Filterfunktionen für eine genauere Betrachtung der verschiedenen Variablen und ihrer Auswirkungen auf den Schweregrad. Die abgeleiteten Schweregrade wurden mit Bedacht erstellt, aber noch nicht mit der Strenge untersucht und definiert, die erforderlich ist, damit sie von wissenschaftlichem Wert sind; daher sollte diese Seite als experimentell betrachtet werden.",
+    "heading5": "Gantt",
+    "link5": "/Gantt",
+    "paragraph6": "Diese Seite folgt der Standard-Pathogenese, indem sie den vollständigen Datensatz für jedes Ereignis aggregiert (beachten Sie, dass nicht alle Ereignisse alle Schritte der Pathogenese aufweisen) und dann jedes Ereignis als Balken ausgibt, der zeigt, wo es im Verhältnis zu anderen Schritten der Pathogenese steht. Verschiedene, umschaltbare Statistiken wie Quantile (10.), Medianabweichung, Bereich und Schiefe sind verfügbar und werden auf jeden Balken im Diagramm angewandt, außerdem kann der Benutzer \"interaktiv\" auswählen, um einen Pathogeneseschritt zu gruppieren und zu sehen, wie ein anderer im Vergleich zu diesen Gruppierungen abschneidet. Die Gruppierungen werden automatisch auf einzelne Ziffern heruntergebrochen, gefolgt von 10er-Gruppen von 10.",
+    "heading6": "Histogramm",
+    "link6": "/HistogramMaker",
+    "paragraph7": "Diese Seite hat nichts mit der ursprünglichen Arbeit zu tun, sondern ist eher das Ergebnis der Zusammenführung früherer Teile, die es dem Benutzer ermöglichen, die Daten auf eine etwas andere Weise zu betrachten. Auch hier werden die Achsen ausgewählt, aber in diesem Fall können mehrere Balken pro Gruppierung festgelegt werden, dann werden Statistiken wie Bereich und Abweichung ausgewählt, damit diese Balken verschiedene Details anzeigen.",
+    "heading7": "SVG",
+    "link7": "/SVG",
+    "paragraph8": "Diese Seite wird bald erscheinen und verschiedene SVG-Grafiken enthalten."
   },
 
   "Scatter": {

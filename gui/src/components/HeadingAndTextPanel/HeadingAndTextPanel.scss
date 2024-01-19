@@ -1,5 +1,16 @@
 .heading-and-text-panel {
   font-size: var(--font-size--large);
   line-height: var(--line-height--large);
-  width: 800px;
+  max-width: 800px;
+
+  h2,
+  h3 {
+      box-shadow: none;
+  }
+
+  h3 {
+    color: var(--blue--dark);
+    font-size: var(--font-size--very-large);
+    font-weight: var(--font-weight--bold);
+  }
 }

@@ -115,7 +115,8 @@
     "backgroundPanelLabel": "Background",
     "motivationPanelLabel": "Motivation",
     "techStackPanelLabel": "Tech Stack",
-    "testingPanelLabel": "Testing"
+    "testingPanelLabel": "Testing",
+    "summaryPanelLabel": "Page Summary"
   },
 
   "Background": {
@@ -180,6 +181,31 @@
     "paragraph8": "Visual component unit tests are a bit of waste of time anyway, they're brittle and often rather high in number (N button sizes in N states, for example) plus all you can test is that the right prop went in - catching prop “disabled” is set to true isn't going to catch someone deleting the disabled button styles by mistake.",
     "paragraph9": "More complex components and any util functions are tested. Util functions are used to keep components more simple and improve testability too.",
     "paragraph10": "Full integration testing is done with a light touch and for some edge cases (decided as and when). If we need to log in for example because it's a real, full website test, then the time quickly mounts up, a test might take two mins because it would take the user ten to log in, navigate, fill the form, submit so we need to be careful. Also we can find situations where it all failed because the internet broke."
+  },
+
+  "PageSummary": {
+    "heading1": "Scatter Plot",
+    "link1": "/Scatter",
+    "paragraph1": "The scatter diagram serves to show the correlation observed that is central to the hypothesis. The hypothesis states that the two symptoms graphed on page load are strongly correlated for a specific reason that disputes the currently accepted hypothesis. Note that these two chosen parameters that relate to the hypothesis remain marked so if the user decides to examine other scatter graph possibilities by using the menus in the page they can choose to the original settings easily.",
+    "heading2": "Prime Symptom",
+    "link2": "/PrimeSymptomList",
+    "paragraph2": "Key to the hypothesis is the appearance of a certain symptom. While there are three symptoms noted as prime symptoms, this focuses on two that are very similar and uses the first point at which either appear as the graphed number. Early in data gathering the prediction was made that as the set of events increases the set of those able to repeat the process will also increase; and, as that set increases there will be a greater number in it that have undergone the pathogenesis more than once. If the hypothesis is correct then this symptom occurs in a way that doesn't heal like normal and therefore as the sets increase it probable that the overall distribution curve and medians will stay and move lower in the set capable of undergoing the pathogenesis more than once.",
+    "paragraph3": "This graph loads the records as they were added on discovery, starting with 5. The prediction itself was made when about 30 examples had been gathered. The user can then follow the addition of data to the overall set and see how the median and distribution curves behave as the sets increase. The graph is also factored, so that any discrepancy between the totals in either set is smoothed out to provide comparable curves. This can be toggled and the user will notice that toggling it off will have no effect on the medians but will update the bars, all of which are whole numbers when the factoring is off but could be fractions when it is applied.",
+    "heading3": "Anti-bias Tool Kit",
+    "link3": "/AntiBiasToolKit",
+    "paragraph4": "Three sub-pages are provided here to examine the data gathering in the context of it being error-prone or bias creeping into the process. The scatter graph of correlating symptoms can be set to represent mistaken timings to a high degree, to see how far off the timing of these events would need to be to break the hypothesis. Likewise, the prime symptom predictor can be augmented, this time in such a way as to bias the data away from the hypothesis, intending to catch \"wishful thinking\" on behalf of the data gatherer. The final page is a WIP, a better calculation is planned.",
+    "heading4": "Time Line",
+    "link4": "/TimeLine",
+    "paragraph5": "This plots the aggregated values per month for the three derived severity values in the database then provides some in page filtering for a closer look at different variables and how they effect that severity. The derived severity values have been created with consideration but not yet examined and defined with the rigour required for them to be of scientific value, therefore this page should be taken as experimental.",
+    "heading5": "Gantt",
+    "link5": "/Gantt",
+    "paragraph6": "This page follows the standard pathogenesis, aggregating the full data set for each one (note, not all events exhibit all pathogenesis steps) then outputs each one as a bar showing where it sits in relation to other steps in the pathogenesis. Various, toggleable, stats, such as quantiles (10th), median deviation, range and skew are available, applied to each bar in the chart, plus the user can select \"interactive\" where they can set one pathogenesis step to be grouped and see how another times against those groupings. The groupings automatically break down to single digits followed by groups of 10 from 10.",
+    "heading6": "Histogram",
+    "link6": "/HistogramMaker",
+    "paragraph7": "This page is not related to the original work but was more a result of earlier parts coming together to allow the user to look at the data in a slightly different way. Again they select axes, but in this case they can set several bars per grouping, then choose stats like range and deviation to have those bars show various details.",
+    "heading7": "SVG",
+    "link7": "/SVG",
+    "paragraph8": "This page is coming soon and will be various SVG built graphs."
   },
 
   "Scatter": {

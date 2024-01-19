@@ -9,6 +9,7 @@ import Background from './panel-list/Background/Background'
 import Motivation from './panel-list/Motivation/Motivation'
 import TechStack from './panel-list/TechStack/TechStack'
 import Testing from './panel-list/Testing/Testing'
+import Summary from './panel-list/Summary/Summary'
 
 import './Home.scss'
 
@@ -20,7 +21,7 @@ function Home() {
   const commonNavProps = {
     currentPanel,
     i18nBase,
-    panelList: ['background', 'motivation', 'techStack', 'testing'],
+    panelList: ['background', 'motivation', 'techStack', 'testing', 'summary'],
     setCurrentPanel,
   }
 
@@ -47,6 +48,9 @@ function Home() {
       ) }
       { currentPanel === 'testing' && (
         <Testing />
+      ) }
+      { currentPanel === 'summary' && (
+        <Summary />
       ) }
     </PageDetailWrapper>
   );

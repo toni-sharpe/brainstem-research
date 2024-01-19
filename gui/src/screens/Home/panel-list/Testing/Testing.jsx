@@ -10,7 +10,6 @@ function Testing() {
   return (
     <SubPageWrapper heading={i18next.t('Home.testingPanelLabel')}>
       <HeadingAndTextPanel
-        heading={i18next.t(`${i18nBase}.heading4`)}
         text={(
           <>
             <p>{i18next.t(`${i18nBase}.paragraph7`)}</p>
