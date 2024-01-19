@@ -10,7 +10,6 @@ function Motivation() {
   return (
     <SubPageWrapper heading={i18next.t('Home.motivationPanelLabel')}>
       <HeadingAndTextPanel
-        heading={i18next.t(`${i18nBase}.heading2`)}
         text={(
           <>
             <p>{i18next.t(`${i18nBase}.paragraph4`)}</p>
