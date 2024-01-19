@@ -69,6 +69,6 @@ export function calcScaleRadiusList({ max }) {
   return {
     scaleRadiusList,
     scaleUnit,
-    outerScale: x,
+    outerScale: x - scaleUnit,
   }
 }

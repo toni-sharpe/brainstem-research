@@ -5,5 +5,3 @@ export default describe(`${urlSlug} - `, () => {
     cy.visit(urlSlug)
   })
 })
-
-

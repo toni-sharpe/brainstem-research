@@ -41,7 +41,7 @@ test('calcPolygonCoordString()', () => {
 })
 test('calcScaleRadiusList() - low max', () => {
   expect(calcScaleRadiusList({ max: 4 })).toEqual({
-    outerScale: 5,
+    outerScale: 4,
     scaleRadiusList: [
       52.5,
       105,
@@ -53,7 +53,7 @@ test('calcScaleRadiusList() - low max', () => {
 })
 test('calcScaleRadiusList() - max 2', () => {
   expect(calcScaleRadiusList({ max: 2 })).toEqual({
-    outerScale: 3,
+    outerScale: 2,
     scaleRadiusList: [
       105,
       210,
@@ -63,7 +63,7 @@ test('calcScaleRadiusList() - max 2', () => {
 })
 test('calcScaleRadiusList() - high max', () => {
   expect(calcScaleRadiusList({ max: 5000 })).toEqual({
-    outerScale: 6000,
+    outerScale: 5000,
     scaleRadiusList: [
       42,
       84,
