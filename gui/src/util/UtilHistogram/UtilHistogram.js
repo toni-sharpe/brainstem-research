@@ -1,5 +1,6 @@
-import { type } from 'ramda'
 import i18next from 'util/i18next/i18next'
+import { calcHue } from 'util/Util/UtilHue'
+import { type } from 'ramda'
 
 import {
   HISTOGRAM_BAR_LIST_COUNT,
@@ -86,15 +87,6 @@ function calcContrastToggle({ i, total, useHueContrastToggle }) {
   }
 
   return (i % 2) * 180
-}
-
-
-function calcHue({ i, total }) {
-  return 360
-    /
-    total
-    *
-    i
 }
 
 

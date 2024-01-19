@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 import XAxisLineNumber from 'components/XAxisLineNumber/XAxisLineNumber'
+import { calcMaxBasedDisplay } from 'util/Util/UtilScaleGranularity'
 import {
   calcLineHighlight,
-  calcMaxBasedDisplay,
   hasLine,
   hasNumber,
 } from 'util/UtilHistogram/UtilXAxisLine'
@@ -22,7 +22,7 @@ function XAxisLineList({
 
   const stepDown = histogramHeight / mostMaxOfAllThings
 
-  const maxBasedDisplay = calcMaxBasedDisplay({ mostMaxOfAllThings })
+  const maxBasedDisplay = calcMaxBasedDisplay({ max: mostMaxOfAllThings })
 
   for (let heightCount = 0; heightCount <= histogramHeight ; heightCount += stepDown) {
     const lineNumber = Math.round(heightCount / stepDown)

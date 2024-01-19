@@ -180,6 +180,16 @@ export const GANTT_TOGGLE_LIST = {
 
 /***********************************/
 /*
+ * SVG
+ */
+export const SVG_SCALE = 500
+export const SVG_SCALE_RADIUS = SVG_SCALE / 2
+export const SVG_COORD_PRECISION = 6
+
+
+
+/***********************************/
+/*
  * Time-line heatmap
  */
 export const CROSSOVER_TO_SERIOUS = 20

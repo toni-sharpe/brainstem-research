@@ -422,6 +422,10 @@
     "comingSoon": "Diese Seite wird in Kürze erscheinen ..."
   },
 
+  "DragGraph": {
+    "scaleDetail": "Äußerer Skalenring ist {{outerScale}} und Schritte sind {{scaleUnit}}"
+  },
+
   "ErrorList": {
     "ariaTranslationSet": "wenn translationSet verwendet wird, muss es ein Objekt sein, bei dem barList ein Array und groupBy eine Zeichenkette ist",
     "calcInteractiveTimeBarArgs": "Die Daten für calcInteractiveGantt müssen ein Array sein und die aktuellen Benutzerauswahlen müssen Strings sein",
@@ -435,10 +439,12 @@
     "generalResponseTimeBarDataIsArray": "Allgemeine Statistiklistenberechnung benötigt ein Array für Daten",
     "graphBlockLengthInvalid": "histogramBarGroupList ist nicht korrekt in {{callingFn}} - Empfangen: {{typeOf}} | {{val}}",
     "graphBlockLengthZero": "histogramBarGroupList hat die Länge 0, es sollte etwas in histogramBarGroupList für {{callingFn}} enthalten sein",
+    "hueTotalError": "calcHue muss eine positive ganze Zahl in der Eigenschaft \"total\" enthalten",
     "isOrIsInArrayNeedsValues": "isOrIsInArray Wert Fehler. {{missing}}",
     "makeWidth": "makeWidth erfordert die Angabe eines Mindest- und Höchstwerts",
     "mapToGanttBars": "mapToGanttBars benötigt data mit Länge und eine i18nBase",
     "noHistogramData": "Diese Histogramm-Konfiguration hat null Ergebnisse",
+    "noDragGraphData": "Diese DragGraph-Konfiguration hat null Ergebnisse",
     "primeSymptomHistogramBarGroup": "Prime symptom graph block list muss ein Array mit positiver Anzahl sein",
     "secondaryNavProps": "alle vier Args sind erforderlich, currentPanel, k und i18nBase sind alle Strings und setCurrentPanel sollte eine Funktion sein",
     "testError": "Test {{addToError}} {{alsoAddToError}}",
