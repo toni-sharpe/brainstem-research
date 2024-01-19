@@ -9,8 +9,6 @@ import {
   calcPolygonCoordString,
 } from 'util/UtilDragGraph/UtilDragGraph'
 
-import './DragGraph.scss'
-
 function DragGraph({
   color,
   valList,
