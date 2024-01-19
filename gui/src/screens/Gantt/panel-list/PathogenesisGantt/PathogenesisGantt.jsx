@@ -17,7 +17,7 @@ function PathogenesisGantt({
 }) {
   const statDataList = calcPathogenesisGantt({ currentFilterList, data })
 
-  const scale = { totalSteps: 5, stepDivision: 60 }
+  const scale = { totalSteps: 4, stepDivision: 100 }
 
   const ganttHeight = calcGanttListHeight({ statDataList })
 
