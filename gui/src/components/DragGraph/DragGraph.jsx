@@ -108,15 +108,16 @@ function DragGraph({
           return valList[i] > max / 10
             ? (
               <foreignObject
+                height='46'
+                key={labelValList[i][0]}
+                width='30'
                 x={x - 15}
                 y={y - 31}
-                width='30'
-                height='46'
               >
                 <div className='drag-graph__graph-point-label'>{labelValList[i][0]}</div>
                 <div
                   className='drag-graph__graph-point'
-                  tabindex={0}
+                  tabIndex={0}
                 >
                   {valList[i]}
                 </div>
