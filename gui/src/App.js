@@ -12,6 +12,7 @@ import Scatter from 'screens/Scatter/Scatter';
 import Gantt from 'screens/Gantt/Gantt';
 import TimeLine from 'screens/TimeLine/TimeLine';
 import HistogramMaker from 'screens/HistogramMaker/HistogramMaker';
+import SVG from 'screens/SVG/SVG';
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import { calcFilterList, isAnyFilterSet } from 'util/UtilFilter/UtilFilter'
 import { getCurrentUrl } from 'util/Util/Util'
@@ -76,6 +77,10 @@ function App() {
         <Route
           path="HistogramMaker"
           element={<HistogramMaker data={filteredData} />}
+        />
+        <Route
+          path="SVG"
+          element={<SVG data={filteredData} />}
         />
       </Routes>
     </article>

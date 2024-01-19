@@ -76,6 +76,7 @@
     "Gantt": "Gantt",
     "TimeLine": "Time Line",
     "HistogramMaker": "Histogram",
+    "SVG": "SVG",
     "nIs": "N is {{n}}"
   },
 
@@ -381,6 +382,10 @@
     "minPanelLabel": "Min",
     "maxPanelLabel": "Max",
     "rangePanelLabel": "Range"
+  },
+
+  "SVG": {
+    "comingSoon": "This page is coming soon ..."
   },
 
   "ErrorList": {
