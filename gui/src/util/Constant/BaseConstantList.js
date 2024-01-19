@@ -49,6 +49,7 @@ export const ROOT_MENU_SLUGS = [
   'TimeLine',
   'Gantt',
   'HistogramMaker',
+  'SVG',
 ]
 
 
