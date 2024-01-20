@@ -3,6 +3,7 @@
 .drag-graph {
   &__heading {
     box-shadow: none;
+    box-sizing: border-box;
     text-align: center;
     width: 100%;
   }
