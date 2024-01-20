@@ -50,9 +50,9 @@ test('calcScale() with nothing ([])', () => {
     maxOfAll: 0,
     scale: {
       firstStep: 0,
-      lastStep: 4,
+      lastStep: 8,
       stepDivision: 0,
-      totalSteps: 4,
+      totalSteps: 8,
     }
   })
 })
@@ -70,9 +70,9 @@ test('calcScale() will build scale using max provided', () => {
     maxOfAll: 15,
     scale: {
       firstStep: 0,
-      lastStep: 4,
-      stepDivision: 5,
-      totalSteps: 4,
+      lastStep: 8,
+      stepDivision: 2,
+      totalSteps: 8,
     }
   })
 })

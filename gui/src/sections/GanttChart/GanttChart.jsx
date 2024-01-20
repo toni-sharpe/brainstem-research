@@ -1,3 +1,4 @@
+import { range } from 'ramda'
 import React, { useState } from 'react'
 
 import Button from 'components/Button/Button'
@@ -15,10 +16,9 @@ function GanttChart({
   scale,
   statDataList,
 }) {
-  const [firstStep, setFirstStep] = useState(0)
-  const [lastStep, setLastStep] = useState(scale.totalSteps)
-
-  const zoomLevel = lastStep - firstStep
+  const { totalSteps } = scale
+  const [stepPair, setStepPair] = useState({ first: 0, last: totalSteps, lastSet: 'first' })
+  const scaleRange = range(0, totalSteps + 1)
 
   const ganttHeight = calcGanttListHeight({ statDataList })
 
@@ -26,35 +26,65 @@ function GanttChart({
     <figure
       className='gantt-chart column-layout space-children--wide-column'
     >
-      <div className='gantt-chart__zoom-buttons row-layout'>
+      <div className='gantt-chart__zoom-button-list row-layout'>
         <ol className='row-layout space-children'>
-          <li><Button label='1' onClick={() => { setFirstStep(0); setLastStep(1) }}/></li>
-          <li><Button label='2' onClick={() => { setFirstStep(1); setLastStep(2) }}/></li>
-          <li><Button label='3' onClick={() => { setFirstStep(2); setLastStep(3) }}/></li>
-          <li><Button label='4' onClick={() => { setFirstStep(3); setLastStep(4) }}/></li>
-        </ol>
-        <ol className='row-layout space-children'>
-          <li><Button label='1-2' onClick={() => { setFirstStep(0); setLastStep(2) }}/></li>
-          <li><Button label='2-3' onClick={() => { setFirstStep(1); setLastStep(3) }}/></li>
-          <li><Button label='3-4' onClick={() => { setFirstStep(2); setLastStep(4) }}/></li>
-        </ol>
-        <ol className='row-layout space-children'>
-          <li><Button label='1-3' onClick={() => { setFirstStep(0); setLastStep(3) }}/></li>
-          <li><Button label='2-4' onClick={() => { setFirstStep(1); setLastStep(4) }}/></li>
-        </ol>
-        <ol className='row-layout space-children'>
-          <li><Button label='All' onClick={() => { setFirstStep(0); setLastStep(4) }}/></li>
+          {scaleRange.map(i => {
+            return (
+              <li key={`zoom-${i}`}>
+                <Button
+                  extraClass={`gantt-chart__zoom-button${
+                    (
+                      i <= stepPair.last
+                      &&
+                      i >= stepPair.first
+                    )
+                      ? ' is-selected'
+                      : ''
+                  }`}
+                  isDisabled={
+                    (
+                      i < stepPair.first
+                      &&
+                      stepPair.lastSet === 'first'
+                    )
+                    ||
+                    (
+                      i > stepPair.last
+                      &&
+                      stepPair.lastSet === 'last'
+                    )
+                  }
+                  label={(i * scale.stepDivision)}
+                  onClick={
+                    () => {
+                      const pair = stepPair.lastSet === 'first'
+                        ? {
+                          first: stepPair.first,
+                          last: i,
+                          lastSet: 'last',
+                        } : {
+                          first: i,
+                          last: stepPair.last,
+                          lastSet: 'first',
+                        }
+                      setStepPair(pair)
+                    }
+                  }
+                />
+              </li>
+            )
+          })}
         </ol>
       </div>
       <GanttScale
         ariaLabel='clinical response timings'
         ganttHeight={ganttHeight}
-        scale={{ ...scale, firstStep, lastStep }}
+        scale={{ ...scale, firstStep: stepPair.first, lastStep: stepPair.last }}
       />
       <GanttBarList
         currentFilterList={currentFilterList}
         maxOfAll={maxOfAll}
-        scale={{ ...scale, firstStep, lastStep }}
+        scale={{ ...scale, firstStep: stepPair.first, lastStep: stepPair.last }}
         ganttToggleList={ganttToggleList}
         statDataList={statDataList}
       />

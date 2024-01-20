@@ -6,10 +6,11 @@
   width: 100%;
   &__line {
     background-color: var(--green--dark);
-    opacity: 0.7;
+    opacity: 0.3;
     position: absolute;
     top: 0px;
     width: 2px;
+    z-index: var(--step-right-back);
   }
   &__label {
     background-color: var(--green--dark);

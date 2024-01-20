@@ -1,3 +1,5 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .gantt-bar {
   height: var(--gantt-bar-height);
   position: absolute;
@@ -5,7 +7,7 @@
   width: 100%;
 
   &__label-main {
-    background-color: var(--grey--very-light);
+    background-color: rgba($green--dark, 0.15);
     white-space: nowrap;
     position: absolute;
     z-index: var(--step-right-forward);
@@ -13,9 +15,6 @@
     padding: 1px 6px 2px;
     text-align: left;
     top: -27px;
-    &-text {
-      background-color: var(--grey--very-light);
-    }
   }
 
   &__label {

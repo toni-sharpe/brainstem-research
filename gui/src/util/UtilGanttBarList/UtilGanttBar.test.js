@@ -14,7 +14,7 @@ const scaleFullZoom = { firstStep: 5, lastStep: 6, totalSteps: 10, stepDivision:
  * calcPercentage()
  */
 test('calcPercentage()', () => {
-  expect(calcPercentage({ val: 180 })).toEqual(45)
+  expect(calcPercentage({ val: 180 })).toEqual(50)
   expect(calcPercentage({ scale: scaleFull, val: 200 })).toEqual(20)
   expect(calcPercentage({ scale: scaleFull, val: 0 })).toEqual(0)
   expect(calcPercentage({ scale: scaleFull, val: 1000 })).toEqual(100)
@@ -29,7 +29,7 @@ test('calcLeft()', () => {
   expect(calcLeft({ scale: scaleFull, val: 0 })).toEqual(null)
   expect(calcLeft({ scale: scaleFull, val: 50 })).toEqual(5)
   expect(calcLeft({ scale: scaleFull, val: 1000 })).toEqual(100)
-  expect(calcLeft({ val: 180 })).toEqual(45)
+  expect(calcLeft({ val: 180 })).toEqual(50)
   expect(() => calcLeft({ scale: scaleFull })).toThrow('calcLeft function requires a val')
 })
 test('calcLeft() with scale factor', () => {
@@ -54,7 +54,7 @@ test('calcWidth()', () => {
   expect(calcWidth({ scale: scaleFull, min: 100, max: 200 })).toEqual({ left: '10%', width: '10%' })
   expect(calcWidth({ scale: scaleFull, min: 200, max: 1000 })).toEqual({ left: '20%', width: '80%' })
   expect(calcWidth({ scale: scaleFull, min: 1, max: 2 })).toEqual({ left: '0.1%', width: '0.1%' })
-  expect(calcWidth({ min: 4, max: 8 })).toEqual({ left: '1%', width: '1%' })
+  expect(calcWidth({ min: 4, max: 8 })).toEqual({ left: '1.1111%', width: '1.1111%' })
   expect(() => calcWidth({ scale: scaleFull })).toThrow('calcWidth function requires a min and max value provided')
 })
 test('calcWidth() with scale factor', () => {
