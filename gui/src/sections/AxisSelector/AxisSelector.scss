@@ -51,7 +51,7 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
 
 
   &.left {
-    border-left: 1px solid var(--green--dark);
+    border-left: 2px solid var(--green--dark);
 
     .axis-selector__heading {
       text-align: left;
@@ -78,7 +78,7 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
   }
 
   &.right {
-    border-right: 1px solid var(--green--dark);
+    border-right: 2px solid var(--green--dark);
 
     .axis-selector__open-button {
       left: $axis-selector__full-width;

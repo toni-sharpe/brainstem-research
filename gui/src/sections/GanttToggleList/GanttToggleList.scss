@@ -1,8 +1,14 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .gantt-toggle-list {
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: var(--spacing--narrow);
   width: 100%;
+
   &__button {
-    margin-top: var(--spacing--narrow);
+    @media (max-width: $media-switch--small) {
+      padding-top: var(--spacing--narrow);
+    }
   }
 }

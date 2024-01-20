@@ -6,7 +6,11 @@ import i18next from 'util/i18next/i18next'
 import GanttScalePropType from 'prop-types/GanttScale.prop-type'
 import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 import { GANTT_SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
-import { calcScaleToFitUI } from 'util/UtilGanttBarList/UtilGanttScale'
+import {
+  calcLeftScalePerc,
+  calcScaleToFitUI,
+  calcStepDiff,
+} from 'util/UtilGanttBarList/UtilGanttScale'
 
 import './GanttScale.scss'
 
@@ -14,23 +18,30 @@ function GanttScale({
   ariaLabel,
   ganttHeight,
   scale,
-  style,
 }) {
   const { firstStep, lastStep, stepDivision } = calcScaleToFitUI({ scale })
+
+  const stepDiff = calcStepDiff({ firstStep, lastStep })
 
   return (
     <ol
       aria-label={i18next.t('GanttScale.scaleFor', { ariaLabel })}
       className='gantt-scale'
-      style={style}
     >
       { ramda.range(firstStep, lastStep + 1).map(step => {
-        const isLastStep = step === lastStep
-        const scalePerc = (step / (lastStep - firstStep) * 100).toPrecision(5)
-        const positionScaleStep = isLastStep
-          ? { right: `1px` }
-          : { left: `calc(${scalePerc}% - ${100 / (lastStep - firstStep) * firstStep}% + 1px)`}
-        const positionScaleLine = { left: `calc(${scalePerc}%  - ${100 / (lastStep - firstStep) * firstStep}% - 1px)`, height: `${ganttHeight}px` }
+        const stepLeftPerc = calcLeftScalePerc({
+          firstStep,
+          step,
+          stepDiff,
+        })
+
+        const positionScaleStep = step === lastStep
+          ? { right: 0 }
+          : { left: `calc(${stepLeftPerc}%)`}
+
+        const positionScaleLine = step === lastStep
+          ? { height: `${ganttHeight}px`, right: 0 }
+          : { height: `${ganttHeight}px`, left: `calc(${stepLeftPerc}%)` }
 
         return (
           <li key={step} >
@@ -62,7 +73,6 @@ GanttScale.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
   ganttHeight: NumberOrStringPropType,
   scale: GanttScalePropType,
-  style: PropTypes.object,
 }
 
 export default GanttScale;

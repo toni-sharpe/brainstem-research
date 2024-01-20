@@ -14,7 +14,6 @@ import { statisticBarListi18nBase } from 'sections/GanttBarList/GanttBarList'
 import './GanttBar.scss'
 
 function GanttBar({
-  ariaLabel,
   barData,
   barPosition,
   maxOfAll,
@@ -41,6 +40,7 @@ function GanttBar({
   const barClass = `gantt-bar gantt-bar__range ${tone ? `gantt-bar--${tone}` : '' }`
   const markClass = `${markClassPrefix} ${tone ? `gantt-bar--${tone}` : '' }`
   const markClassDark = `${markClassPrefix} ${tone ? `gantt-bar--${tone}-dark` : '' }`
+
   const hueStyle = maxOfAll && !tone
     ? ({ lightness = 60 } = {}) => {
       return {
@@ -52,11 +52,7 @@ function GanttBar({
   const labelListPosition = maxMda > max ? maxMda : max
 
   return (min !== 0 || max !== 0) && (
-    <dl
-      aria-label={ariaLabel}
-      className='gantt-bar'
-      title={ariaLabel}
-    >
+    <dl className='gantt-bar'>
       <dt className='row-layout space-children--with-border gantt-bar__label-main'>
         { ganttToggleList?.label && (
           <span
@@ -181,7 +177,6 @@ GanttBar.defaultProps = {
 }
 
 GanttBar.propTypes = {
-  ariaLabel: PropTypes.string,
   barData: GanttBarDataPropType,
   barPosition: PropTypes.number.isRequired,
   maxOfAll: PropTypes.number,

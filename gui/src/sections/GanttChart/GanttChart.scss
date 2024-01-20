@@ -1,9 +1,25 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .gantt-chart {
   position: relative;
-  top: 80px;
+  top:80px;
   width: 100%;
-  &__scale {
-    height: 30px;
-    position: relative;
+
+  &__zoom-button-list {
+    box-sizing: border-box;
+    height: 40px;
+    justify-content: center ;
+    padding: 0 var(--spacing--narrow);
+    top: -40px;
+    position: absolute;
+    width: 100%;
+  }
+
+  &__zoom-button {
+    &.is-selected {
+      background-color: rgba($green--dark, 0.15);
+      box-shadow: 0 0 2px 0 inset var(--green);
+      color: var(---black)
+    }
   }
 }

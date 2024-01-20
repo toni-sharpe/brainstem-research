@@ -22,11 +22,11 @@ test('GanttChart', async () => {
     />
   )
 
-  expect(screen.getByText('0')).toBeTruthy()
-  expect(screen.getByText('100')).toBeTruthy()
-  expect(screen.getByText('200')).toBeTruthy()
-  expect(screen.getByText('300')).toBeTruthy()
-  expect(screen.getByText('400')).toBeTruthy()
+  expect(screen.getAllByText('0').length).toEqual(2)
+  expect(screen.getAllByText('90').length).toEqual(2)
+  expect(screen.getAllByText('180').length).toEqual(2)
+  expect(screen.getAllByText('270').length).toEqual(2)
+  expect(screen.getAllByText('360').length).toEqual(2)
   expect(screen.getAllByText('=1').length).toEqual(2)
   expect(screen.getByText('=2')).toBeTruthy()
   expect(screen.getAllByText('=3').length).toEqual(2)

@@ -49,15 +49,15 @@ test('calcQuantileListPosition() returns short list at insufficient + 1', () => 
     }
   )).toEqual([
     {
-      left: 0.25,
+      left: 0.27778,
       numberTop: 0,
       val: 1,
     }, {
-      left: 0.75,
+      left: 0.83333,
       numberTop: 4,
       val: 3,
     }, {
-      left: 1.25,
+      left: 1.3889,
       numberTop: 8,
       val: 5,
     }
@@ -71,15 +71,15 @@ test('calcQuantileListPosition() returns short list at detail threshold', () => 
     }
   )).toEqual([
     {
-      left: 0.25,
+      left: 0.27778,
       numberTop: 0,
       val: 1,
     }, {
-      left: 0.5,
+      left: 0.55556,
       numberTop: 4,
       val: 2,
     }, {
-      left: 0.75,
+      left: 0.83333,
       numberTop: 8,
       val: 3,
     }
@@ -93,39 +93,39 @@ test('calcQuantileListPosition() returns long list at detail threshold + 1', () 
     }
   )).toEqual([
     {
-      left: 0.25,
+      left: 0.27778,
       numberTop: 0,
       val: 1,
     }, {
-      left: 0.5,
+      left: 0.55556,
       numberTop: 4,
       val: 2,
     }, {
-      left: 0.75,
+      left: 0.83333,
       numberTop: 8,
       val: 3,
     }, {
-      left: 1.25,
+      left: 1.3889,
       numberTop: 12,
       val: 5,
     }, {
-      left: 1.75,
+      left: 1.9444,
       numberTop: 16,
       val: 7,
     }, {
-      left: 3.25,
+      left: 3.6111,
       numberTop: 20,
       val: 13,
     }, {
-      left: 4.25,
+      left: 4.7222,
       numberTop: 24,
       val: 17,
     }, {
-      left: 4.75,
+      left: 5.2778,
       numberTop: 28,
       val: 19,
     }, {
-      left: 5.75,
+      left: 6.3889,
       numberTop: 32,
       val: 23,
     },

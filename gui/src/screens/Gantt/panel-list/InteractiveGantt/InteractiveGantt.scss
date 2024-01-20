@@ -1,7 +1,9 @@
 @import '../../../../util/Constant/sass-variable-list.scss';
 
 .interactive-gantt {
-  width: 100%;
+  &__wrapper {
+    width: 100%;
+  }
   &__bar-selector {
     &.interactive-gantt__bar-selector {
       @include self-space-row-remove-border();
