@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { toPairs } from 'ramda'
 
-import { PRECISION, SCALE_DEFAULT, GANTT_TOGGLE_LIST } from 'util/Constant/BaseConstantList'
+import { PRECISION, GANTT_SCALE_DEFAULT, GANTT_TOGGLE_LIST } from 'util/Constant/BaseConstantList'
 import GanttScalePropType from 'prop-types/GanttScale.prop-type'
 import GanttBar from 'sections/GanttBar/GanttBar'
 import GanttBarWrapper from 'components/GanttBarWrapper/GanttBarWrapper'
@@ -77,7 +77,7 @@ function GanttBarList({
 
 GanttBarList.defaultProps = {
   maxOfAll: null,
-  scale: SCALE_DEFAULT,
+  scale: GANTT_SCALE_DEFAULT,
   ganttToggleList: GANTT_TOGGLE_LIST,
 }
 

@@ -10,7 +10,6 @@ import InteractiveGantt from './InteractiveGantt'
 test('InteractiveGantt - ', async () => {
   render(<InteractiveGantt data={APIGanttData} />)
 
-  expect(screen.getByLabelText('Scale for interactive statistics list')).toBeTruthy()
   expect(screen.getByText('Bars')).toBeTruthy()
   expect(screen.getByText('Groupings')).toBeTruthy()
 

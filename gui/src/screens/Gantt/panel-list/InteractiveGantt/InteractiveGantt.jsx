@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
 import AxisSelector from 'sections/AxisSelector/AxisSelector'
-import GanttScale from 'sections/GanttScale/GanttScale'
-import GanttBarList from 'sections/GanttBarList/GanttBarList'
+import GanttChart from 'sections/GanttChart/GanttChart'
+import GanttToggleList from 'sections/GanttToggleList/GanttToggleList'
 import SubPageWrapper from 'components/SubPageWrapper/SubPageWrapper'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
-import { calcGanttListHeight, calcScale } from 'util/UtilGanttBarList/UtilGanttBarList'
+import { calcScale } from 'util/UtilGanttBarList/UtilGanttBarList'
 import { calcInteractiveGantt } from 'util/UtilGanttBarList/UtilInteractiveGantt'
 
 import './InteractiveGantt.scss'
@@ -21,46 +21,38 @@ function InteractiveGantt({
 
   const statDataList = calcInteractiveGantt({ currentGroupBy, currentResponse, data })
 
-  const ganttHeight = calcGanttListHeight({ statDataList })
-
   const { maxOfAll, scale } = calcScale({ statDataList })
 
   return (
     <SubPageWrapper>
-      <div className='interactive-gantt row-layout space-children--wide'>
-        <div className='interactive-gantt__bar-selector'>
-          <AxisSelector
-            align='right'
-            axis='stats'
-            currentAxisSelection={currentResponse}
-            disabledSelection={currentGroupBy}
-            setCurrentAxisSelection={setCurrentResponse}
-          />
-        </div>
-        <figure className='interactive-gantt__data'>
-          <div className='interactive-gantt__scale'>
-            <GanttScale
-              ariaLabel='interactive statistics list'
-              ganttHeight={ganttHeight}
-              ganttToggleList={ganttToggleList}
-              ganttToggleListIsActive
-              scale={scale}
-              setGanttTogglelList={setGanttTogglelList}
+      <div style={{ width: '100%' }}>
+        <div className='interactive-gantt row-layout space-children--wide'>
+          <div className='interactive-gantt__bar-selector'>
+            <AxisSelector
+              align='right'
+              axis='stats'
+              currentAxisSelection={currentResponse}
+              disabledSelection={currentGroupBy}
+              setCurrentAxisSelection={setCurrentResponse}
             />
           </div>
-          <GanttBarList
+          <GanttChart
             currentFilterList={currentFilterList}
+            ganttToggleList={ganttToggleList}
             maxOfAll={maxOfAll}
             scale={scale}
             statDataList={statDataList}
-            ganttToggleList={ganttToggleList}
           />
-        </figure>
-        <AxisSelector
-          axis='groupBy'
-          currentAxisSelection={currentGroupBy}
-          disabledSelection={currentResponse}
-          setCurrentAxisSelection={setCurrentGroupBy}
+          <AxisSelector
+            axis='groupBy'
+            currentAxisSelection={currentGroupBy}
+            disabledSelection={currentResponse}
+            setCurrentAxisSelection={setCurrentGroupBy}
+          />
+        </div>
+        <GanttToggleList
+          setGanttTogglelList={setGanttTogglelList}
+          ganttToggleList={ganttToggleList}
         />
       </div>
     </SubPageWrapper>

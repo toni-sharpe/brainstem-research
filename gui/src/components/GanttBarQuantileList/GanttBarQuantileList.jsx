@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import QuantileListNumberLabel from 'components/QuantileListNumberLabel/QuantileListNumberLabel'
-import { SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
+import { GANTT_SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
 import GanttBarQuantilePropType from 'prop-types/GanttBarQuantile.prop-type'
 import GanttScalePropType from 'prop-types/GanttScale.prop-type'
 import { calcLineFattener } from 'util/UtilGanttBarList/UtilGanttBar'
@@ -55,7 +55,7 @@ function GanttBarQuantileList({
 GanttBarQuantileList.defaultProps = {
   fatLines: false,
   numberShown: true,
-  scale: SCALE_DEFAULT,
+  scale: GANTT_SCALE_DEFAULT,
 }
 
 GanttBarQuantileList.propTypes = {

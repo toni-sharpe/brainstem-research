@@ -49,6 +49,8 @@ test('calcScale() with nothing ([])', () => {
   expect(calcScale()).toEqual({
     maxOfAll: 0,
     scale: {
+      firstStep: 0,
+      lastStep: 4,
       stepDivision: 0,
       totalSteps: 4,
     }
@@ -67,6 +69,8 @@ test('calcScale() will build scale using max provided', () => {
   })).toEqual({
     maxOfAll: 15,
     scale: {
+      firstStep: 0,
+      lastStep: 4,
       stepDivision: 5,
       totalSteps: 4,
     }

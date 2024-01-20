@@ -154,9 +154,11 @@ export const QUANTILE_LIST_SHORT = [
   QUANTILE_LIST[7],
 ]
 export const QUANTILE_DETAIL_THRESHOLD = 5
-export const SCALE_DEFAULT = {
-  totalSteps: 5,
-  stepDivision: 60,
+export const GANTT_SCALE_DEFAULT = {
+  firstStep: 0,
+  lastStep: 4,
+  totalSteps: 4,
+  stepDivision: 100,
 }
 export const TONE_KEY_LIST = [
   'good',

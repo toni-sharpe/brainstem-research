@@ -5,11 +5,12 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
 
 .axis-selector {
   background-color: var(--white);
+  box-sizing: border-box;
   padding-left: var(--padding--medium);
   padding-right: var(--padding--medium);
   position: relative;
   width: $axis-selector__full-width;
-  box-sizing: border-box;
+  z-index: var(--front-guaranteed);
 
   &__heading {
     box-shadow: none;
@@ -102,6 +103,5 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
 
   @media (max-width: $media-switch--large) {
     position: absolute;
-    z-index: var(--front-guaranteed);
   }
 }

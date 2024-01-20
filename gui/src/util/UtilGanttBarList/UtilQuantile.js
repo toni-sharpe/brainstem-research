@@ -2,7 +2,7 @@ import {
   QUANTILE_DETAIL_THRESHOLD,
   QUANTILE_LIST_LONG,
   QUANTILE_LIST_SHORT,
-  SCALE_DEFAULT,
+  GANTT_SCALE_DEFAULT,
 } from 'util/Constant/BaseConstantList'
 
 import { calcLeft } from './UtilGanttBar'
@@ -32,7 +32,7 @@ export function calcQuantileDetail({ count }) {
 export function calcQuantileListPosition({
   count,
   quantile,
-  scale = SCALE_DEFAULT,
+  scale = GANTT_SCALE_DEFAULT,
 }) {
   if (!hasSufficientData({ count, quantile })) {
     return null

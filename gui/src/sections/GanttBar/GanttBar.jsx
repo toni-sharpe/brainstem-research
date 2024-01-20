@@ -2,7 +2,7 @@ import i18next from 'util/i18next/i18next'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { SCALE_DEFAULT, GANTT_TOGGLE_LIST } from 'util/Constant/BaseConstantList'
+import { GANTT_SCALE_DEFAULT, GANTT_TOGGLE_LIST } from 'util/Constant/BaseConstantList'
 import GanttBarLabel from 'components/GanttBarLabel/GanttBarLabel'
 import GanttBarLabelWrapper from 'components/GanttBarLabelWrapper/GanttBarLabelWrapper'
 import GanttBarQuantileList from 'components/GanttBarQuantileList/GanttBarQuantileList'
@@ -175,7 +175,7 @@ function GanttBar({
 
 GanttBar.defaultProps = {
   heading: "Heading needs to be set!",
-  scale: SCALE_DEFAULT,
+  scale: GANTT_SCALE_DEFAULT,
   showAllQuantiles: true,
   ganttToggleList: GANTT_TOGGLE_LIST,
 }

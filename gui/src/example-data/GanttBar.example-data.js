@@ -1,7 +1,7 @@
 import i18next from 'util/i18next/i18next'
 import { map, mergeAll, pipe } from 'ramda'
 
-import { SCALE_DEFAULT, TONE_KEY_LIST } from 'util/Constant/BaseConstantList'
+import { GANTT_SCALE_DEFAULT, TONE_KEY_LIST } from 'util/Constant/BaseConstantList'
 
 const statisticList = {
   good :{
@@ -64,7 +64,7 @@ export const GanttBarDataToneSet = pipe(
     barPosition++
     return ({
       [tone]: {
-        scale: SCALE_DEFAULT,
+        scale: GANTT_SCALE_DEFAULT,
         barData: {
           ...statisticList[tone],
           label: i18next.t(`GanttBar.${tone}`),

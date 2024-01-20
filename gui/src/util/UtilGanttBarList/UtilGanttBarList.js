@@ -40,6 +40,8 @@ export function calcScale({ statDataList = [] } = {}) {
   return {
     maxOfAll,
     scale: {
+      firstStep: 0,
+      lastStep: 4,
       totalSteps: 4,
       stepDivision: parseInt((maxOfAll / 3).toFixed(0), 10)
     }
