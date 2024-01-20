@@ -40,6 +40,9 @@
   & > * {
     @include space-column()
   }
+  &-with-border > * {
+    @include space-column-add-border()
+  }
 }
 
 .space-children--wide-column {

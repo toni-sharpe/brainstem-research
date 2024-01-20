@@ -20,7 +20,7 @@ function PageDetailWrapper({
     : i18next.t(`MainPageHeading.${i18nBase}`)
 
   return ( 
-    <article className='page-detail-wrapper column-layout space-children--wide-column'>
+    <article className='page-detail-wrapper column-layout space-children--column'>
       <header className='row-layout page-detail-wrapper__header'>
         <div className='page-detail-wrapper__left row-layout space-children'>
           <h1 className='page-detail-wrapper__heading'>{heading}</h1>

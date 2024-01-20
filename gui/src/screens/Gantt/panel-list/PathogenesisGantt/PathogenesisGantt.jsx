@@ -18,7 +18,7 @@ function PathogenesisGantt({
 
   return (
     <SubPageWrapper>
-      <div style={{ width: '100%' }}>
+       <div className='pathogenesis-gantt__wrapper column-layout space-children--column-with-border'>
         <GanttToggleList
           setGanttTogglelList={setGanttTogglelList}
           ganttToggleList={ganttToggleList}

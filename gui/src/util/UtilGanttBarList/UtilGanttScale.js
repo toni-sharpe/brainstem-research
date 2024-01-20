@@ -18,34 +18,63 @@ function scaleAdjust({ factor, stepDivision, totalSteps }) {
 
 
 export function calcScaleToFitUI({ scale = {} } = {}) {
-  const { firstStep, lastStep, stepDivision, totalSteps } = scale
+  const { totalSteps } = scale
 
   throwError({
-    check: type(stepDivision) === 'Number' && type(totalSteps) === 'Number',
+    check: type(scale.stepDivision) === 'Number' && type(totalSteps) === 'Number',
     i18nKey: 'calcScaleToFitUI'
   })
 
   let factoredScale = scale
 
   if (totalSteps > 20 && totalSteps <= 200) {
-    factoredScale = scaleAdjust({ factor: 10, stepDivision, totalSteps })
+    factoredScale = scaleAdjust({ factor: 10, ...scale })
   }
 
   if (totalSteps > 200 && totalSteps <= 2000) {
-    factoredScale = scaleAdjust({ factor: 100, stepDivision, totalSteps })
+    factoredScale = scaleAdjust({ factor: 100, ...scale })
   }
 
   if (totalSteps > 2000 && totalSteps <= 20000) {
-    factoredScale = scaleAdjust({ factor: 1000, stepDivision, totalSteps })
+    factoredScale = scaleAdjust({ factor: 1000, ...scale })
   }
 
   if (totalSteps > 20000 && totalSteps <= 200000) {
-    factoredScale = scaleAdjust({ factor: 10000, stepDivision, totalSteps })
+    factoredScale = scaleAdjust({ factor: 10000, ...scale })
   }
 
   if (totalSteps > 200000 && totalSteps <= 2000000) {
-    factoredScale = scaleAdjust({ factor: 100000, stepDivision, totalSteps })
+    factoredScale = scaleAdjust({ factor: 100000, ...scale })
   }
 
-  return { ...factoredScale, firstStep, lastStep }
+  return { ...scale, ...factoredScale }
+}
+
+export function calcStepDiff({ firstStep, lastStep }) {
+  return lastStep - firstStep
+}
+
+export function calcScalePerc({ step, stepDiff }) {
+  return (
+    step
+    /
+    stepDiff
+    *
+    100
+  )
+}
+
+export function calcLeftScalePerc({ firstStep, step, stepDiff }) {
+  const scalePerc = calcScalePerc({ step, stepDiff })
+
+  return (
+    scalePerc
+    - (
+      100
+      /
+      stepDiff
+      *
+      firstStep
+    )
+  )
 }

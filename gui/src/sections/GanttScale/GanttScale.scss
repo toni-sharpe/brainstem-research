@@ -1,35 +1,23 @@
 .gantt-scale {
-  width: 100%;
+  background-color: var(--green--dark);
   height: 2px;
-  background-color: var(--grey--light);
   position: relative;
   top: var(--spacing--narrow);
+  width: 100%;
   &__line {
-    background-color: var(--grey--light);
-    width: 2px;
-    opacity: 0.8;
-    top: 0px;
+    background-color: var(--green--dark);
+    opacity: 0.7;
     position: absolute;
-    z-index: var(--step-right-back);
+    top: 0px;
+    width: 2px;
   }
   &__label {
-    background-color: var(--blue--light);
-    color: var(--black);
+    background-color: var(--green--dark);
+    color: var(--white);
     font-size: var(--font-size--medium-large);
     font-weight: bold;
     padding: var(--padding--small-tiny);
     position: absolute;
     top: 2px;
-  }
-  &__total-label {
-    background-color:var(--blue--dark);
-    top: -22px;
-    right: var(--spacing--narrow);
-  }
-  &__bar-toggle-interface {
-    position: absolute;
-    top: -60px;
-    width: 100%;
-    box-sizing: border-box;
   }
 }

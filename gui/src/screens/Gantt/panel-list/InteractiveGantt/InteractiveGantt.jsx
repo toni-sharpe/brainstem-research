@@ -25,7 +25,7 @@ function InteractiveGantt({
 
   return (
     <SubPageWrapper>
-      <div style={{ width: '100%' }}>
+      <div className='interactive-gantt__wrapper column-layout space-children--column-with-border'>
         <GanttToggleList
           setGanttTogglelList={setGanttTogglelList}
           ganttToggleList={ganttToggleList}

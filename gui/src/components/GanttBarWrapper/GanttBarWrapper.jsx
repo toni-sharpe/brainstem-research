@@ -7,8 +7,6 @@ import './GanttBarWrapper.scss'
 import { GANTT_BAR_HEIGHT, GANTT_BAR_SPACER } from 'util/Constant/BaseConstantList'
 
 function GanttBarWrapper({
-  barHeight,
-  barSpacer,
   children,
   k,
   i,

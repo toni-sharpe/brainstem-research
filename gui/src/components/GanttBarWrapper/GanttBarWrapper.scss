@@ -1,5 +1,6 @@
 .gantt-bar-wrapper {
-  border-top: 1px solid var(--grey--lightest);
+  border-bottom: 1px solid var(--grey--lightest);
   position: absolute;
   width: 100%;
+  z-index: var(--step-right-back);
 }
