@@ -19,13 +19,13 @@ function PathogenesisGantt({
   return (
     <SubPageWrapper>
       <div style={{ width: '100%' }}>
+        <GanttToggleList
+          setGanttTogglelList={setGanttTogglelList}
+          ganttToggleList={ganttToggleList}
+        />
         <GanttChart
           currentFilterList={currentFilterList}
           statDataList={statDataList}
-          ganttToggleList={ganttToggleList}
-        />
-        <GanttToggleList
-          setGanttTogglelList={setGanttTogglelList}
           ganttToggleList={ganttToggleList}
         />
       </div>

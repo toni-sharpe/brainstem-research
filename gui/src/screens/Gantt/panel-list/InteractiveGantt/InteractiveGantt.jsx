@@ -26,6 +26,10 @@ function InteractiveGantt({
   return (
     <SubPageWrapper>
       <div style={{ width: '100%' }}>
+        <GanttToggleList
+          setGanttTogglelList={setGanttTogglelList}
+          ganttToggleList={ganttToggleList}
+        />
         <div className='interactive-gantt row-layout space-children--wide'>
           <div className='interactive-gantt__bar-selector'>
             <AxisSelector
@@ -50,10 +54,6 @@ function InteractiveGantt({
             setCurrentAxisSelection={setCurrentGroupBy}
           />
         </div>
-        <GanttToggleList
-          setGanttTogglelList={setGanttTogglelList}
-          ganttToggleList={ganttToggleList}
-        />
       </div>
     </SubPageWrapper>
   );
