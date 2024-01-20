@@ -5,18 +5,20 @@ import {
   calcWidth,
 } from './UtilGanttBar'
 
-const scale = { totalSteps: 10, stepDivision: 100 }
+const scaleFull = { firstStep: 0, lastStep: 10, totalSteps: 10, stepDivision: 100 }
+const scalePartial = { firstStep: 2, lastStep: 8, totalSteps: 10, stepDivision: 100 }
+const scaleFullZoom = { firstStep: 5, lastStep: 6, totalSteps: 10, stepDivision: 100 }
 
 
 /*
  * calcPercentage()
  */
 test('calcPercentage()', () => {
-  expect(calcPercentage({ val: 180 })).toEqual(60)
-  expect(calcPercentage({ scale, val: 200 })).toEqual(20)
-  expect(calcPercentage({ scale, val: 0 })).toEqual(0)
-  expect(calcPercentage({ scale, val: 1000 })).toEqual(100)
-  expect(() => calcPercentage({ scale })).toThrow('calcPercentage function requires a val')
+  expect(calcPercentage({ val: 180 })).toEqual(45)
+  expect(calcPercentage({ scale: scaleFull, val: 200 })).toEqual(20)
+  expect(calcPercentage({ scale: scaleFull, val: 0 })).toEqual(0)
+  expect(calcPercentage({ scale: scaleFull, val: 1000 })).toEqual(100)
+  expect(() => calcPercentage({ scale: scaleFull })).toThrow('calcPercentage function requires a val')
 })
 
 
@@ -24,11 +26,24 @@ test('calcPercentage()', () => {
  * calcLeft()
  */
 test('calcLeft()', () => {
-  expect(calcLeft({ scale, val: 0 })).toEqual(null)
-  expect(calcLeft({ scale, val: 50 })).toEqual(5)
-  expect(calcLeft({ scale, val: 1000 })).toEqual(100)
-  expect(calcLeft({ val: 180 })).toEqual(60)
-  expect(() => calcLeft({ scale })).toThrow('calcLeft function requires a val')
+  expect(calcLeft({ scale: scaleFull, val: 0 })).toEqual(null)
+  expect(calcLeft({ scale: scaleFull, val: 50 })).toEqual(5)
+  expect(calcLeft({ scale: scaleFull, val: 1000 })).toEqual(100)
+  expect(calcLeft({ val: 180 })).toEqual(45)
+  expect(() => calcLeft({ scale: scaleFull })).toThrow('calcLeft function requires a val')
+})
+test('calcLeft() with scale factor', () => {
+  expect(calcLeft({ scale: scalePartial, val: 0 })).toEqual(null)
+  expect(calcLeft({ scale: scalePartial, val: 50 })).toEqual(-25)
+  expect(calcLeft({ scale: scalePartial, val: 1000 })).toEqual(133.33)
+  expect(calcLeft({ scale: scalePartial, val: 180 })).toEqual(-3.3333)
+  expect(() => calcLeft({ scale: scaleFull })).toThrow('calcLeft function requires a val')
+})
+test('calcLeft() with zoom right in scale factor', () => {
+  expect(calcLeft({ scale: scaleFullZoom, val: 0 })).toEqual(null)
+  expect(calcLeft({ scale: scaleFullZoom, val: 50 })).toEqual(-450)
+  expect(calcLeft({ scale: scaleFullZoom, val: 1000 })).toEqual(500)
+  expect(calcLeft({ scale: scaleFullZoom, val: 180 })).toEqual(-320)
 })
 
 
@@ -36,11 +51,27 @@ test('calcLeft()', () => {
  * calcWidth()
  */
 test('calcWidth()', () => {
-  expect(calcWidth({ scale, min: 100, max: 200 })).toEqual({ left: '10%', width: '10%' })
-  expect(calcWidth({ scale, min: 200, max: 1000 })).toEqual({ left: '20%', width: '80%' })
-  expect(calcWidth({ scale, min: 1, max: 2 })).toEqual({ left: '0.1%', width: '0.1%' })
-  expect(calcWidth({ min: 3, max: 6 })).toEqual({ left: '1%', width: '1%' })
-  expect(() => calcWidth({ scale })).toThrow('calcWidth function requires a min and max value provided')
+  expect(calcWidth({ scale: scaleFull, min: 100, max: 200 })).toEqual({ left: '10%', width: '10%' })
+  expect(calcWidth({ scale: scaleFull, min: 200, max: 1000 })).toEqual({ left: '20%', width: '80%' })
+  expect(calcWidth({ scale: scaleFull, min: 1, max: 2 })).toEqual({ left: '0.1%', width: '0.1%' })
+  expect(calcWidth({ min: 4, max: 8 })).toEqual({ left: '1%', width: '1%' })
+  expect(() => calcWidth({ scale: scaleFull })).toThrow('calcWidth function requires a min and max value provided')
+})
+test('calcWidth() with scale factor', () => {
+  expect(calcWidth({ scale: scalePartial, min: 100, max: 200 })).toEqual({ left: '-16.667%', width: '16.667%' })
+  expect(calcWidth({ scale: scalePartial, min: 200, max: 1000 })).toEqual({ left: '0%', width: '133.33%' })
+  expect(calcWidth({ scale: scalePartial, min: 200, max: 800 })).toEqual({ left: '0%', width: '100%' })
+  expect(calcWidth({ scale: scalePartial, min: 400, max: 1000 })).toEqual({ left: '33.333%', width: '100%' })
+  expect(calcWidth({ scale: scalePartial, min: 1, max: 2 })).toEqual({ left: '-33.167%', width: '0.16667%' })
+  expect(calcWidth({ scale: scalePartial, min: 3, max: 6 })).toEqual({ left: '-32.833%', width: '0.5%' })
+})
+test('calcWidth() with scale factor', () => {
+  expect(calcWidth({ scale: scaleFullZoom, min: 300, max: 500 })).toEqual({ left: '-200%', width: '200%' })
+  expect(calcWidth({ scale: scaleFullZoom, min: 500, max: 1000 })).toEqual({ left: '0%', width: '500%' })
+  expect(calcWidth({ scale: scaleFullZoom, min: 500, max: 600 })).toEqual({ left: '0%', width: '100%' })
+  expect(calcWidth({ scale: scaleFullZoom, min: 600, max: 1000 })).toEqual({ left: '100%', width: '400%' })
+  expect(calcWidth({ scale: scaleFullZoom, min: 1, max: 2 })).toEqual({ left: '-499%', width: '1%' })
+  expect(calcWidth({ scale: scaleFullZoom, min: 3, max: 6 })).toEqual({ left: '-497%', width: '3%' })
 })
 
 

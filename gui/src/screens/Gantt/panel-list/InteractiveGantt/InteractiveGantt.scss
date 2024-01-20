@@ -7,15 +7,7 @@
       @include self-space-row-remove-border();
     }
   }
-  &__data {
-    width: 100%;
-    position: relative;
-    top: 80px;
-    &.interactive-gantt__data {
-      @include self-space-row-remove-border();
-    }
-  }
-  &__scale {
-    position: relative;
+  .gantt-chart {
+    @include self-space-row-remove-border();
   }
 }

@@ -1,27 +1,29 @@
 import { isNotNil } from 'ramda'
-import { SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
+import { GANTT_SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
 import { throwError } from 'util/Util/Util'
 
 
 export function calcPercentage({
-  scale = SCALE_DEFAULT,
+  scale = GANTT_SCALE_DEFAULT,
   val
 }) {
   throwError({ check: isNotNil(val), i18nKey: 'calcPercentage' })
-  const { stepDivision, totalSteps } = scale
-  return parseFloat(val / stepDivision) / totalSteps * 100
+  const { firstStep, lastStep, stepDivision, totalSteps } = scale
+  const scaleFactor = totalSteps / (lastStep - firstStep)
+  return Number(((val / stepDivision) / totalSteps * 100 * scaleFactor).toPrecision(5))
 }
 
 
 export function calcLeft({
-  scale = SCALE_DEFAULT,
+  scale = GANTT_SCALE_DEFAULT,
   val,
   fattenerOffset = 0
 }) {
   throwError({ check: isNotNil(val), i18nKey: 'calcLeft' })
-  const percentage = calcPercentage({ scale, val: val - fattenerOffset })
+  const zoomOffset = scale.firstStep * scale.stepDivision
+  const left = calcPercentage({ scale, val: val - fattenerOffset - zoomOffset })
   return val > 0
-    ? Number(percentage.toPrecision(5))
+    ? left
     : null
 }
 
@@ -29,7 +31,7 @@ export function calcLeft({
 export function calcWidth({
   min,
   max,
-  scale = SCALE_DEFAULT,
+  scale = GANTT_SCALE_DEFAULT,
 }) {
   throwError({ check: isNotNil(min) && isNotNil(max), i18nKey: 'calcWidth' })
   const width = calcPercentage({ scale, val: (max - min) })

@@ -1,5 +1,5 @@
 // GanttBarQuantileList.story.js
-import { SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
+import { GANTT_SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
 
 import GanttBarQuantileList from './GanttBarQuantileList';
 
@@ -12,7 +12,7 @@ const baseGanttBarQuantileListProps = {
   fatLines: false,
   numberShown: true,
   quantile: [1, 5, 11, 19, 29, 37, 43, 53, 61],
-  scale: SCALE_DEFAULT,
+  scale: GANTT_SCALE_DEFAULT,
 }
 
 export const FullList = {

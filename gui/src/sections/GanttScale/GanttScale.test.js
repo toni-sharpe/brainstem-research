@@ -7,7 +7,7 @@ test('GanttScale', async () => {
   render(
     <GanttScale
       ariaLabel='test graph'
-      scale={{ totalSteps: 5, stepDivision: 5 }}
+      scale={{ firstStep: 0, lastStep: 5, totalSteps: 5, stepDivision: 5 }}
     />
   )
 

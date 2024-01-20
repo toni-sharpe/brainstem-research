@@ -18,36 +18,34 @@ function scaleAdjust({ factor, stepDivision, totalSteps }) {
 
 
 export function calcScaleToFitUI({ scale = {} } = {}) {
-  const { stepDivision, totalSteps } = scale
+  const { firstStep, lastStep, stepDivision, totalSteps } = scale
 
   throwError({
     check: type(stepDivision) === 'Number' && type(totalSteps) === 'Number',
     i18nKey: 'calcScaleToFitUI'
   })
 
-  if (totalSteps <= 20) {
-    return scale
+  let factoredScale = scale
+
+  if (totalSteps > 20 && totalSteps <= 200) {
+    factoredScale = scaleAdjust({ factor: 10, stepDivision, totalSteps })
   }
 
-  if (totalSteps <= 200) {
-    return scaleAdjust({ factor: 10, stepDivision, totalSteps })
+  if (totalSteps > 200 && totalSteps <= 2000) {
+    factoredScale = scaleAdjust({ factor: 100, stepDivision, totalSteps })
   }
 
-  if (totalSteps <= 2000) {
-    return scaleAdjust({ factor: 100, stepDivision, totalSteps })
+  if (totalSteps > 2000 && totalSteps <= 20000) {
+    factoredScale = scaleAdjust({ factor: 1000, stepDivision, totalSteps })
   }
 
-  if (totalSteps <= 20000) {
-    return scaleAdjust({ factor: 1000, stepDivision, totalSteps })
+  if (totalSteps > 20000 && totalSteps <= 200000) {
+    factoredScale = scaleAdjust({ factor: 10000, stepDivision, totalSteps })
   }
 
-  if (totalSteps <= 200000) {
-    return scaleAdjust({ factor: 10000, stepDivision, totalSteps })
+  if (totalSteps > 200000 && totalSteps <= 2000000) {
+    factoredScale = scaleAdjust({ factor: 100000, stepDivision, totalSteps })
   }
 
-  if (totalSteps <= 2000000) {
-    return scaleAdjust({ factor: 100000, stepDivision, totalSteps })
-  }
-
-  return scale
+  return { ...factoredScale, firstStep, lastStep }
 }
