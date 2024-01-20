@@ -1,4 +1,3 @@
-import i18next from 'util/i18next/i18next'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { toPairs } from 'ramda'
@@ -11,7 +10,6 @@ import GanttBarWrapper from 'components/GanttBarWrapper/GanttBarWrapper'
 import './GanttBarList.scss'
 
 export const statisticBarListi18nBase = 'GanttBarList'
-const i18nBase = statisticBarListi18nBase
 
 function GanttBarList({
   maxOfAll,
@@ -30,7 +28,7 @@ function GanttBarList({
           i,
         }
 
-        const { mda, mean, median, std, quantile } = bData
+        const { mda, mean, median, std, } = bData
 
         const minStd = Number((mean - std).toPrecision(PRECISION))
         const maxStd = Number(((mean - std) + std * 2).toPrecision(PRECISION))
@@ -65,7 +63,6 @@ GanttBarList.defaultProps = {
 GanttBarList.propTypes = {
   maxOfAll: PropTypes.number,
   scale: GanttScalePropType,
-  // statDataList
 }
 
 export default GanttBarList
