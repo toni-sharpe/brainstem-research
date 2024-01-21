@@ -12,10 +12,18 @@ function GanttBarLabelWrapper({
   labelListPosition,
   scale,
 }) {
+  let left = calcLeft({ scale, val: labelListPosition })
+  let style = { left: `${left}%` }
+  if (left > 80) {
+    style = { right: '0' }
+  }
+  if( left < 0) {
+    style = { left: `100%` }
+  }
   return (
     <div
       className='gantt-bar-label-wrapper column-layout'
-      style={{ left: `${calcLeft({ scale, val: labelListPosition })}%` }}
+      style={style}
     >
       {children}
     </div>
