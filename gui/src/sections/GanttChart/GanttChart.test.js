@@ -3,7 +3,7 @@ import '@testing-library/jest-dom'
 
 import APIGanttData from 'example-data/APIGantt.example-data'
 import { GANTT_SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
-import { calcInteractiveGantt } from 'util/UtilGanttBarList/UtilInteractiveGantt'
+import { calcInteractiveGantt } from 'util/UtilGanttScreen/UtilInteractiveGantt'
 
 import GanttChart from './GanttChart'
 

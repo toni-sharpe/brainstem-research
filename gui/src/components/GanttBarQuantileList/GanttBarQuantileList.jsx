@@ -6,7 +6,7 @@ import { GANTT_SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
 import GanttBarQuantilePropType from 'prop-types/GanttBarQuantile.prop-type'
 import GanttScalePropType from 'prop-types/GanttScale.prop-type'
 import { calcLineFattener } from 'util/UtilGanttBarList/UtilGanttBar'
-import { calcQuantileListPosition } from 'util/UtilGanttBarList/UtilQuantile'
+import { calcQuantileListPosition } from 'util/UtilQuantile/UtilQuantile'
 
 import './GanttBarQuantileList.scss'
 

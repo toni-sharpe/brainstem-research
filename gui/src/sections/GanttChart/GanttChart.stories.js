@@ -2,7 +2,7 @@
 import APIGanttData from 'example-data/APIGantt.example-data'
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
 import { GANTT_SCALE_DEFAULT, GANTT_TOGGLE_LIST } from 'util/Constant/BaseConstantList'
-import { calcInteractiveGantt } from 'util/UtilGanttBarList/UtilInteractiveGantt'
+import { calcInteractiveGantt } from 'util/UtilGanttScreen/UtilInteractiveGantt'
 
 import GanttChart from './GanttChart';
 

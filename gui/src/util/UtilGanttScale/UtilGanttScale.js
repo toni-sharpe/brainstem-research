@@ -78,3 +78,16 @@ export function calcLeftScalePerc({ firstStep, step, stepDiff }) {
     )
   )
 }
+
+export function calcScaleLinePosition({ ganttHeight, isLastStep, stepLeftPerc }) {
+  return isLastStep
+    ? { height: `${ganttHeight}px`, right: 0 }
+    : { height: `${ganttHeight}px`, left: `calc(${stepLeftPerc}%)` }
+}
+
+export function calcScaleStepPosition({ isLastStep, stepLeftPerc }) {
+  return isLastStep
+    ? { right: 0 }
+    : { left: `calc(${stepLeftPerc}%)`}
+}
+

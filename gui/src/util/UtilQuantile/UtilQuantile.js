@@ -5,7 +5,7 @@ import {
   GANTT_SCALE_DEFAULT,
 } from 'util/Constant/BaseConstantList'
 
-import { calcLeft } from './UtilGanttBar'
+import { calcLeft } from 'util/UtilGanttBarList/UtilGanttBar'
 
 
 export function hasSufficientData({

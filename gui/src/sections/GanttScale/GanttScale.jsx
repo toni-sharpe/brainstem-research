@@ -10,7 +10,9 @@ import {
   calcLeftScalePerc,
   calcScaleToFitUI,
   calcStepDiff,
-} from 'util/UtilGanttBarList/UtilGanttScale'
+  calcScaleLinePosition,
+  calcScaleStepPosition,
+} from 'util/UtilGanttScale/UtilGanttScale'
 
 import './GanttScale.scss'
 
@@ -35,13 +37,11 @@ function GanttScale({
           stepDiff,
         })
 
-        const positionScaleStep = step === lastStep
-          ? { right: 0 }
-          : { left: `calc(${stepLeftPerc}%)`}
+        const isLastStep = step === lastStep
 
-        const positionScaleLine = step === lastStep
-          ? { height: `${ganttHeight}px`, right: 0 }
-          : { height: `${ganttHeight}px`, left: `calc(${stepLeftPerc}%)` }
+        const positionScaleStep = calcScaleStepPosition({ isLastStep, stepLeftPerc })
+
+        const positionScaleLine = calcScaleLinePosition({ ganttHeight, isLastStep, stepLeftPerc })
 
         return (
           <li key={step} >
