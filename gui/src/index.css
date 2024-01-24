@@ -116,6 +116,7 @@ h1, h2, h3, h4, h5, h6, p {
   --step-back: -1;
   --step-right-forward: 2;
   --front-guaranteed: 1000;
+  --menu-guaranteed: 1500;
 }
 
 
@@ -181,6 +182,14 @@ h1, h2, h3, h4, h5, h6, p {
   margin-bottom: var(--spacing--narrow);
 }
 .space-children--column > *:last-child {
+  margin-bottom: 0;
+}
+.space-children--column-with-border > * {
+  border-bottom: 1px solid var(--grey--very-light);
+  margin-bottom: var(--spacing--narrow);
+  padding-bottom: var(--spacing--narrow);
+}
+.space-children--column-with-border > *:last-child {
   margin-bottom: 0;
 }
 

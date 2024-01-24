@@ -10,7 +10,7 @@ export default {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper heading='An SB page for showing useful stuff like CSS variables'>
+      <StoryBookPaddedWrapper>
         <StyleGuideStoryBook />
       </StoryBookPaddedWrapper>
     )
