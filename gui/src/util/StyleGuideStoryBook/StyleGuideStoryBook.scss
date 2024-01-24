@@ -16,7 +16,7 @@
 
     h5 {
       background-color: var(--blue);
-      color: var(--white);
+      color: var(--black);
       padding: var(--padding--tiniest) var(--padding--small-tiny);
     }
   }
@@ -25,8 +25,14 @@
     margin-bottom: 40px;
   }
 
-  h4::first-letter {
-    text-transform: capitalize;
+  h4 {
+    background-color: var(--blue--dark);
+    color: var(--white);
+    padding: var(--padding--tiniest) var(--padding--small-tiny);
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 
   &__blue--dark { background-color: var(--blue--dark); }
