@@ -5,6 +5,7 @@ import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
 import SecondaryNavButtonList from 'components/SecondaryNavButtonList/SecondaryNavButtonList'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
+import { secondaryNavLocalStorage } from 'util/UtilLocalStorage/UtilSecondaryNav'
 
 import PathogenesisGantt from './panel-list/PathogenesisGantt/PathogenesisGantt'
 import InteractiveGantt from './panel-list/InteractiveGantt/InteractiveGantt'
@@ -15,14 +16,15 @@ function Gantt({
   currentFilterList,
   data,
 }) {
-  const [ganttPanel, setGanttPanel] = useState('general')
+  const currentPanel = secondaryNavLocalStorage({ def: 'pathogenesis', k: i18nBase })
+  const [ganttPanel, setGanttPanel] = useState(currentPanel)
 
   if (!data || !data.length) { return null }
 
   const commonNavProps = {
     currentPanel: ganttPanel,
     i18nBase,
-    panelList: ['general','interactive'],
+    panelList: ['pathogenesis', 'interactive'],
     setCurrentPanel: setGanttPanel,
   }
 
@@ -44,7 +46,7 @@ function Gantt({
         </SecondaryNav>
       )}
     >
-      { ganttPanel === 'general' && (
+      { ganttPanel === 'pathogenesis' && (
         <PathogenesisGantt {...commonSubPageProps} />
       ) }
       { ganttPanel === 'interactive' && (

@@ -8,6 +8,7 @@ import MonthText from 'components/MonthText/MonthText'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNavSumAndFilterList from 'sections/SecondaryNavSumAndFilterList/SecondaryNavSumAndFilterList'
 import TimeLineDataPropType from 'prop-types/TimeLineData.prop-type'
+import { secondaryNavLocalStorage } from 'util/UtilLocalStorage/UtilSecondaryNav'
 import { DATA_POINT_SUM_LIST, TIME_LINE_FILTER_LIST } from 'util/Constant/BaseConstantList'
 import {
   calcColorVal,
@@ -30,7 +31,8 @@ const monthTotal = calcShownMonthTotal()
 const thisMonthKey = calcThisMonthKey()
 
 function TimeLine({ data }) {
-  const [dataPointSumPerMonth, setDataPointSumPerMonth] = useState('overall_patient_rating')
+  const currentSumPer = secondaryNavLocalStorage({ def: 'overall_patient_rating', k: i18nBase })
+  const [dataPointSumPerMonth, setDataPointSumPerMonth] = useState(currentSumPer)
   const [filterBy, setFilterBy] = useState([null, null])
 
   if (!data?.length) {

@@ -5,7 +5,7 @@ import { secondaryNavProps } from './UtilNav'
  * secondaryNavProps()
  */
 test('secondaryNavProps()', () => {
-  const setCurrentPanel = () => 'test-b'
+  const setCurrentPanel = jest.fn()
 
   const args = {
     currentPanel: 'test-b',
@@ -25,7 +25,8 @@ test('secondaryNavProps()', () => {
   expect(expected.isSelected).toEqual(result.isSelected)
   expect(expected.label).toEqual(result.label)
   expect(expected.size).toEqual(result.size)
-  expect(result.onClick()).toEqual('test-b')
+  result.onClick()
+  expect(setCurrentPanel).toHaveBeenCalledWith('test-a')
 })
 
 

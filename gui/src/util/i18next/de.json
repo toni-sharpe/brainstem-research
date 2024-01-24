@@ -348,7 +348,7 @@
   "Gantt": {
     "subHeading": "Grundlegende Zeitstatistiken, über gemeinsame Antworten und mit interaktiven Querverweisen",
     "interactivePanelLabel": "Interaktive Gantt",
-    "generalPanelLabel": "Pathogenesis Gantt",
+    "pathogenesisPanelLabel": "Pathogenesis Gantt",
     "ariaLabel": "{{label}}; Bereich {{min}} bis {{max}} mit mean {{mean}} Standardabweichung {{minStd}} bis {{maxStd}}",
     "secondaryNav": "Siehe Antwortzeitstatistiken oder interaktiv, wo Sie auswählen können, was gruppiert werden soll und wo Sie Statistiken über"
   },

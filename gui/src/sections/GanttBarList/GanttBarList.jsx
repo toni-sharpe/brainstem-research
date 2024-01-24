@@ -44,6 +44,7 @@ function GanttBarList({
           scale,
           ganttToggleList,
         }
+
         return (
           <GanttBarWrapper {...dataBarWrapperProps}>
             <GanttBar {...dataBarProps} />
