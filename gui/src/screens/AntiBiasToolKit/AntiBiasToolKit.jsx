@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
 import SecondaryNavButtonList from 'components/SecondaryNavButtonList/SecondaryNavButtonList'
+import { secondaryNavLocalStorage } from 'util/UtilLocalStorage/UtilSecondaryNav'
 
 import BiasedCorrelationSim from './panel-list/BiasedCorrelationSim/BiasedCorrelationSim'
 import BiasedJudgementSim from './panel-list/BiasedJudgementSim/BiasedJudgementSim'
@@ -12,7 +13,8 @@ import BiasedTimingSim from './panel-list/BiasedTimingSim/BiasedTimingSim'
 const i18nBase = 'AntiBiasToolKit'
 
 function AntiBiasToolKit({ data }) {
-  const [antiBiasToolKitPanel, setAntiBiasToolKitPanel] = useState('correlation')
+  const currentPanel = secondaryNavLocalStorage({ def: 'correlation', k: i18nBase })
+  const [antiBiasToolKitPanel, setAntiBiasToolKitPanel] = useState(currentPanel)
 
   const {
     biased_test_cases: biasedTestCases,

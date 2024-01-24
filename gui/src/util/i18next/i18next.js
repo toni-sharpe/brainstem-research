@@ -1,6 +1,8 @@
 import i18next from 'i18next'
 import { initReactI18next } from "react-i18next";
 
+import { getLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+
 import de from './de'
 import en from './en'
 // import mask from './mask'
@@ -8,7 +10,7 @@ import en from './en'
 i18next
   .use(initReactI18next)
   .init({
-    lng: localStorage.getItem('currentLanguage') || 'en', // if you're using a language detector, do not define the lng option
+    lng: getLocalStorage({ k: 'currentLanguage' }) || 'en', // if you're using a language detector, do not define the lng option
     debug: false,
     resources: {
       de: { translation: de },

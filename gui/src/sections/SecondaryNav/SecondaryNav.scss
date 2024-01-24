@@ -19,7 +19,7 @@
 
   &.research {
     & > * {
-      @media (max-width: 984px) {
+      @media (max-width: 1240px) {
         margin-top: var(--spacing--narrow);
       }
     }

@@ -22,6 +22,7 @@ import {
   primeSymptomHistogramBarGrouper,
   primeSymptomTimingError,
 } from 'util/UtilPrimeSymptomHistogram/UtilPrimeSymptomHistogram'
+import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './PrimeSymptomHistogram.scss'
 
@@ -31,11 +32,14 @@ function PrimeSymptomHistogram({
   badTimingError,
   blockSize,
   histogramHeight,
+  localStorageFn,
+  localStorageKey,
   primeSymptomData,
   timingError,
 }) {
-  const [currentDisplayedDataPoints, setCurrentDisplayedDataPoints] = useState(primeSymptomData?.length || PRIME_SYMPTOM_MINIMUM_COUNT)
-  const [currentFactorOn, setCurrentFactorOn] = useState(true)
+  const { count, factor: localStorageFactor } = localStorageFn({ k: localStorageKey })
+  const [currentDisplayedDataPoints, setCurrentDisplayedDataPoints] = useState(count || primeSymptomData?.length || PRIME_SYMPTOM_MINIMUM_COUNT)
+  const [currentFactorOn, setCurrentFactorOn] = useState(localStorageFactor)
 
   const totalAvailableDataPoints = primeSymptomData?.length
 
@@ -52,6 +56,8 @@ function PrimeSymptomHistogram({
   if (!primeSymptomData?.length) {
     return null
   }
+
+  setJSONLocalStorage({ k: localStorageKey, v: { count: currentDisplayedDataPoints, factor: currentFactorOn } })
 
   const histogramData = ramda.pipe(
     ramda.take(currentDisplayedDataPoints),
@@ -141,6 +147,8 @@ PrimeSymptomHistogram.defaultProps = {
 PrimeSymptomHistogram.propTypes = {
   badTimingError: PropTypes.number,
   blockSize: PropTypes.number,
+  localStorageFn: PropTypes.func,
+  localStorageKey: PropTypes.oneOf(['primeSymptom', 'primeSymptomAntiBias']),
   primeSymptomData: PropTypes.array,
   timingError: PropTypes.number,
 }

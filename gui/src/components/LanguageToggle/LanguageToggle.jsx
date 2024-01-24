@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Button from 'components/Button/Button'
+import { setLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './LanguageToggle.scss'
 
@@ -20,7 +21,7 @@ function LanguageToggleButton({ languageKey }) {
       label={i18next.t(`${i18nBase}.${languageKey}`)}
       onClick={() => {
         i18next.changeLanguage(languageKey)
-        localStorage.setItem('currentLanguage', languageKey)
+        setLocalStorage({ k: 'currentLanguage', v: languageKey })
       }}
     />
   )

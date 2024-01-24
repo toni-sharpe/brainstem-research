@@ -6,13 +6,14 @@ import { keys } from 'ramda'
 import Button from 'components/Button/Button'
 import GanttToggleListPropType from 'prop-types/GanttToggleList.prop-type'
 import { GANTT_TOGGLE_LIST } from 'util/Constant/BaseConstantList'
+import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './GanttToggleList.scss'
 
 const i18nBase = 'GanttToggleList'
 
 function GanttToggleList({
-  setGanttTogglelList,
+  setGanttToggleList,
   ganttToggleList,
 }) {
   return (
@@ -23,7 +24,11 @@ function GanttToggleList({
           isSelected,
           extraClass: `${isSelected ? ' is-selected--secondary' : ''}`,
           label: i18next.t(`${i18nBase}.${statDetail}`),
-          onClick: () => setGanttTogglelList({ ...ganttToggleList, [statDetail]: !isSelected }),
+          onClick: () => {
+            const newToggleList = { ...ganttToggleList, [statDetail]: !isSelected }
+            setGanttToggleList(newToggleList)
+            setJSONLocalStorage({ k: 'ganttToggleList', v: newToggleList })
+          },
           size: 'small',
         }
         return (
@@ -44,7 +49,7 @@ GanttToggleList.defaultProps = {
 }
 
 GanttToggleList.propTypes = {
-  setGanttTogglelList: PropTypes.func,
+  setGanttToggleList: PropTypes.func,
   ganttToggleList: GanttToggleListPropType,
 }
 

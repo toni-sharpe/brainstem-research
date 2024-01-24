@@ -3,18 +3,21 @@ import React, { useState } from 'react'
 import { shuffle } from 'simple-statistics'
 import { range } from 'ramda'
 
-import { BAD_CORRELATION_SIM_ERROR_LIST } from 'util/Constant/BaseConstantList'
 import DataAdjusterButtonList from 'sections/DataAdjusterButtonList/DataAdjusterButtonList'
-import ScatterDataPropType from 'prop-types/ScatterData.prop-type'
 import ScatterChart from 'sections/ScatterChart/ScatterChart'
+import ScatterDataPropType from 'prop-types/ScatterData.prop-type'
 import SubPageWrapper from 'components/SubPageWrapper/SubPageWrapper'
+import { BAD_CORRELATION_SIM_ERROR_LIST } from 'util/Constant/BaseConstantList'
+import { dataAdjusterLocalStorage } from 'util/UtilLocalStorage/UtilDataAdjuster'
+import { setLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './BiasedCorrelationSim.scss'
 
 const i18nBase = 'BiasedCorrelationSim'
 
 function BiasedCorrelationSim({ antiBiasToolKitData: scatterData }) {
-  const [timingError, setTimingError] = useState(0)
+  const persistedCorrelationError = dataAdjusterLocalStorage({ k: 'biasCorrelation' })
+  const [timingError, setTimingError] = useState(persistedCorrelationError)
   if (!scatterData) { return null }
 
   function mappedPointFn ({
@@ -49,6 +52,7 @@ function BiasedCorrelationSim({ antiBiasToolKitData: scatterData }) {
     onClickHandler: ({ adjustBy }) =>
       () => {
         setTimingError(adjustBy)
+        setLocalStorage({ k: 'biasCorrelation', v: adjustBy })
       },
     selectedFn: ({ curr }) => timingError === curr
   }

@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
 import SecondaryNavButtonList from 'components/SecondaryNavButtonList/SecondaryNavButtonList'
+import { secondaryNavLocalStorage } from 'util/UtilLocalStorage/UtilSecondaryNav'
 
 import Background from './panel-list/Background/Background'
 import Motivation from './panel-list/Motivation/Motivation'
@@ -16,10 +17,11 @@ import './Home.scss'
 const i18nBase = 'Home'
 
 function Home() {
-  const [currentPanel, setCurrentPanel] = useState('background')
+  const currentPanel = secondaryNavLocalStorage({ def: 'background', k: i18nBase })
+  const [currentHomePanel, setCurrentPanel] = useState(currentPanel)
 
   const commonNavProps = {
-    currentPanel,
+    currentPanel: currentHomePanel,
     i18nBase,
     panelList: ['background', 'motivation', 'techStack', 'testing', 'summary'],
     setCurrentPanel,
@@ -37,19 +39,19 @@ function Home() {
         </SecondaryNav>
       )}
     >
-      { currentPanel === 'background' && (
+      { currentHomePanel === 'background' && (
         <Background />
       ) }
-      { currentPanel === 'motivation' && (
+      { currentHomePanel === 'motivation' && (
         <Motivation />
       ) }
-      { currentPanel === 'techStack' && (
+      { currentHomePanel === 'techStack' && (
         <TechStack />
       ) }
-      { currentPanel === 'testing' && (
+      { currentHomePanel === 'testing' && (
         <Testing />
       ) }
-      { currentPanel === 'summary' && (
+      { currentHomePanel === 'summary' && (
         <Summary />
       ) }
     </PageDetailWrapper>

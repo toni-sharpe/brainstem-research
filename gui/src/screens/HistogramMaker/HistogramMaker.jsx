@@ -4,21 +4,24 @@ import { keys, map, pipe } from 'ramda'
 
 import AxisSelector from 'sections/AxisSelector/AxisSelector'
 import Histogram from 'sections/Histogram/Histogram'
+import Button from 'components/Button/Button'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
-import Button from 'components/Button/Button'
-import { secondaryNavProps } from 'util/UtilNav/UtilNav'
-import { HISTOGRAM_BAR_LIST_MARGIN } from 'util/Constant/BaseConstantList'
 import { calcHistogramBarHue } from 'util/UtilHistogram/UtilHistogram'
+import { HISTOGRAM_BAR_LIST_MARGIN } from 'util/Constant/BaseConstantList'
+import { secondaryNavLocalStorage } from 'util/UtilLocalStorage/UtilSecondaryNav'
+import { secondaryNavProps } from 'util/UtilNav/UtilNav'
+
 import { calcHistogramBarGroupList, dataFnList } from './HistogramMakerDataFunctions'
 import './HistogramMaker.scss'
 
 const i18nBase = 'HistogramMaker'
 
 function HistogramMaker({ data }) {
+  const barFn = secondaryNavLocalStorage({ def: 'count', k: i18nBase })
   const [currentPathogenesisStepList, setCurrentPathogenesisStepList] = useState(['mild_symptom_1', 'prime_symptom_3'])
   const [currentGroupBy, setCurrentGroupBy] = useState('fatal_symptom_1')
-  const [currentBarFn, setCurrentBarFn] = useState('count')
+  const [currentBarFn, setCurrentBarFn] = useState(barFn)
 
   if (!data || data.length === 0) {
     return null

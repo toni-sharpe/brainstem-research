@@ -127,6 +127,7 @@ export const PRIME_SYMPTOM_BLOCK_SIZE = (
   *
   2
 )
+export const PRIME_SYMPTOM_HISTOGRAM_HEIGHT = 56
 
 
 /***********************************/
