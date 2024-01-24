@@ -2,7 +2,6 @@ import React from 'react'
 
 import GanttChart from 'sections/GanttChart/GanttChart'
 import SubPageWrapper from 'components/SubPageWrapper/SubPageWrapper'
-import GanttToggleList from 'sections/GanttToggleList/GanttToggleList'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import { calcPathogenesisGantt } from 'util/UtilGanttBarList/UtilPathogenesisGantt'
 
@@ -11,22 +10,15 @@ import './PathogenesisGantt.scss'
 function PathogenesisGantt({
   currentFilterList,
   data,
-  setGanttTogglelList,
-  ganttToggleList,
 }) {
   const statDataList = calcPathogenesisGantt({ currentFilterList, data })
 
   return (
     <SubPageWrapper>
-       <div className='pathogenesis-gantt__wrapper column-layout space-children--column-with-border'>
-        <GanttToggleList
-          setGanttTogglelList={setGanttTogglelList}
-          ganttToggleList={ganttToggleList}
-        />
+      <div className='pathogenesis-gantt__wrapper column-layout space-children--column-with-border'>
         <GanttChart
           currentFilterList={currentFilterList}
           statDataList={statDataList}
-          ganttToggleList={ganttToggleList}
         />
       </div>
     </SubPageWrapper>

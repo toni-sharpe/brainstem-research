@@ -188,6 +188,7 @@ Use different words for other types of 'get':
 * `set` for stores
 * `Mapper` always suffixes a map fn
 * `Grouper` for an fn that groups stuff like, but not limited to Ramda's `groupBy`
+* `persisted` for anything from local storage
 
 **Don't try to compose sentences out of test strings** use a hyphen at the end and describe blocks to break up logically.
 

@@ -5,7 +5,6 @@ import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
 import SecondaryNavButtonList from 'components/SecondaryNavButtonList/SecondaryNavButtonList'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
-import { GANTT_TOGGLE_LIST } from 'util/Constant/BaseConstantList'
 
 import PathogenesisGantt from './panel-list/PathogenesisGantt/PathogenesisGantt'
 import InteractiveGantt from './panel-list/InteractiveGantt/InteractiveGantt'
@@ -17,7 +16,6 @@ function Gantt({
   data,
 }) {
   const [ganttPanel, setGanttPanel] = useState('general')
-  const [ganttToggleList, setGanttTogglelList] = useState(GANTT_TOGGLE_LIST)
 
   if (!data || !data.length) { return null }
 
@@ -31,8 +29,6 @@ function Gantt({
   const commonSubPageProps = {
     currentFilterList,
     data,
-    setGanttTogglelList,
-    ganttToggleList,
   }
 
   return (
