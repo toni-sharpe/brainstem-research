@@ -22,7 +22,16 @@ function StyleGuidePaddingAndSpacing() {
         {spacingList.map(spacing => {
           return (
             <div className='column-layout space-children--column'>
-              <h4>{spacing}</h4>
+              <h4 className='row-layout space-children--wide-with-border'>
+                <span className='main'>{spacing}</span>
+                <span className='row-layout space-children--with-border details'>
+                  {paddingList.map(padding => {
+                    return (
+                      <span>{padding}</span>
+                    )
+                  })}
+                </span>
+              </h4>
               <div className='row-layout'>
                 {
                   paddingList.map(padding => {

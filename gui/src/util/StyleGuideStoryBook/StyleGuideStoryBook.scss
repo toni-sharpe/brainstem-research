@@ -2,8 +2,13 @@
 
 .style-guide {
   h4 {
-    &::first-letter {
-      text-transform: capitalize;
+    & .main {
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+    & .details {
+      font-weight: var(--font-weight--light);
     }
   }
 
@@ -22,11 +27,14 @@
 
     li {
       align-self: flex-start;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
     }
 
     h4,
     h5 {
-      padding: var(--padding--tiniest) var(--padding--small-tiny);
+      padding: var(--padding--tiniest) var(--padding--small);
     }
 
     h4 {
@@ -35,7 +43,7 @@
     }
 
     h5 {
-      background-color: var(--blue);
+      background-color: var(--grey--very-light);
       color: var(--black);
     }
   }

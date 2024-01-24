@@ -5,7 +5,14 @@ function StyleGuideColorList() {
     <section className='style-guide style-guide__color column-layout space-children--column'>
       <h3>Colours</h3>
       <ol className='column-layout space-children--column'>
-        <li><h4>Blue</h4></li>
+        <li>
+          <h4 className='row-layout space-children--wide-with-border'>
+            <span className='main'>Blue</span>
+            <span className='row-layout space-children--with-border details'>
+              {['dark', '!--', 'light'].map(level => (<span>{level}</span>))}
+            </span>
+          </h4>
+        </li>
         <li>
           <ol className='row-layout space-children'>
             <li className='style-guide__color-block blue--dark' />
@@ -15,7 +22,21 @@ function StyleGuideColorList() {
         </li>
       </ol>
       <ol className='column-layout space-children--column'>
-        <li><h4>Red</h4></li>
+        <li>
+          <h4 className='row-layout space-children--wide-with-border'>
+            <span className='main'>Red</span>
+            <span className='row-layout space-children--with-border details'>
+              {[
+                'black',
+                'dark',
+                'medium',
+                'dulled-light',
+                'light',
+                'very-light',
+              ].map(level => (<span>{level}</span>))}
+            </span>
+          </h4>
+        </li>
         <li>
           <ol className='row-layout space-children'>
             <li className='style-guide__color-block red--black' />
@@ -28,7 +49,14 @@ function StyleGuideColorList() {
         </li>
       </ol>
       <ol className='column-layout space-children--column'>
-        <li><h4>Orange</h4></li>
+        <li>
+          <h4 className='row-layout space-children--wide-with-border'>
+            <span className='main'>Orange</span>
+            <span className='row-layout space-children--with-border details'>
+              {['dark', '!--', 'light'].map(level => (<span>{level}</span>))}
+            </span>
+          </h4>
+        </li>
         <li>
           <ol className='row-layout space-children'>
             <li className='style-guide__color-block orange--dark' />
@@ -38,7 +66,14 @@ function StyleGuideColorList() {
         </li>
       </ol>
       <ol className='column-layout space-children--column'>
-        <li><h4>Green</h4></li>
+        <li>
+          <h4 className='row-layout space-children--wide-with-border'>
+            <span className='main'>Green</span>
+            <span className='row-layout space-children--with-border details'>
+              {['dark', '!--'].map(level => (<span>{level}</span>))}
+            </span>
+          </h4>
+        </li>
         <li>
           <ol className='row-layout space-children'>
             <li className='style-guide__color-block green--dark' />
@@ -47,7 +82,14 @@ function StyleGuideColorList() {
         </li>
       </ol>
       <ol className='column-layout space-children--column'>
-        <li><h4>Menu</h4></li>
+        <li>
+          <h4 className='row-layout space-children--wide-with-border'>
+            <span className='main'>Green</span>
+            <span className='row-layout space-children--with-border details'>
+              {['!--', '-hover'].map(level => (<span>{level}</span>))}
+            </span>
+          </h4>
+        </li>
         <li>
           <ol className='row-layout space-children'>
             <li className='style-guide__color-block menu--green' />
@@ -56,7 +98,23 @@ function StyleGuideColorList() {
         </li>
       </ol>
       <ol className='column-layout space-children--column'>
-        <li><h4>Grey</h4></li>
+        <li>
+          <h4 className='row-layout space-children--wide-with-border'>
+            <span className='main'>Green</span>
+            <span className='row-layout space-children--with-border details'>
+              {[
+                'black',
+                '--black',
+                'dark',
+                'dull-dark',
+                'light',
+                'very-light',
+                'lightest',
+                'white',
+              ].map(level => (<span>{level}</span>))}
+            </span>
+          </h4>
+        </li>
         <li>
           <ol className='row-layout space-children'>
             <li className='style-guide__color-block black' />

@@ -22,26 +22,36 @@ function StyleGuideColorList() {
             <ol className='column-layout space-children--column'>
               <li><h4>{weight}</h4></li>
               <li>
-                <ol className='column-layout space-children--column'>
-                  <li><h5>Small</h5></li>
-                  <li className={`column-layout font--small-${weight}`}>
-                    {fontExample.map(fontEg => (<span>{fontEg}</span>))}
+                <ol className='column-layout space-children--column-with-border'>
+                  <li className='column-layout space-children--column'>
+                    <h5>Small | {weight}</h5>
+                    <span className={`column-layout font--small-${weight}`}>
+                      {fontExample.map(fontEg => (<span>{fontEg}</span>))}
+                    </span>
                   </li>
-                  <li><h5>Medium small</h5></li>
-                  <li className={`column-layout font--medium-small-${weight}`}>
-                    {fontExample.map(fontEg => (<span>{fontEg}</span>))}
+                  <li className='column-layout space-children--column'>
+                    <h5>Medium small | {weight}</h5>
+                    <span className={`column-layout font--medium-small-${weight}`}>
+                      {fontExample.map(fontEg => (<span>{fontEg}</span>))}
+                    </span>
                   </li>
-                  <li><h5>Medium</h5></li>
-                  <li className={`column-layout font--medium-${weight}`}>
-                    {fontExample.map(fontEg => (<span>{fontEg}</span>))}
+                  <li className='column-layout space-children--column'>
+                    <h5>Medium | {weight}</h5>
+                    <span className={`column-layout font--medium-${weight}`}>
+                      {fontExample.map(fontEg => (<span>{fontEg}</span>))}
+                    </span>
                   </li>
-                  <li><h5>Medium large</h5></li>
-                  <li className={`column-layout font--medium-large-${weight}`}>
-                    {fontExample.map(fontEg => (<span>{fontEg}</span>))}
+                  <li className='column-layout space-children--column'>
+                    <h5>Medium large | {weight}</h5>
+                    <span className={`column-layout font--medium-large-${weight}`}>
+                      {fontExample.map(fontEg => (<span>{fontEg}</span>))}
+                    </span>
                   </li>
-                  <li><h5>Large</h5></li>
-                  <li className={`column-layout font--large-${weight}`}>
-                    {fontExample.map(fontEg => (<span>{fontEg}</span>))}
+                  <li className='column-layout space-children--column'>
+                    <h5>Large | {weight}</h5>
+                    <span className={`column-layout font--large-${weight}`}>
+                      {fontExample.map(fontEg => (<span>{fontEg}</span>))}
+                    </span>
                   </li>
                 </ol>
               </li>
