@@ -1,0 +1,62 @@
+.style-guide {
+  .blue--dark { background-color: var(--blue--dark); }
+  .blue { background-color: var(--blue); }
+  .blue--light { background-color: var(--blue--light); }
+  .red--black { background-color: var(--red--black); }
+  .red--dark { background-color: var(--red--dark); }
+  .red--medium { background-color: var(--red--medium); }
+  .red--dulled-light { background-color: var(--red--dulled-light); }
+  .red--light { background-color: var(--red--light); }
+  .red--very-light { background-color: var(--red--very-light); }
+  .green { background-color: var(--green); }
+  .green--dark { background-color: var(--green--dark); }
+  .menu--green { background-color: var(--menu--green); }
+  .menu--green-hover { background-color: var(--menu--green-hover); }
+  .orange--light { background-color: var(--orange--light); }
+  .orange { background-color: var(--orange); }
+  .orange--dark { background-color: var(--orange--dark); }
+  .black { background-color: var(--black); }
+  .grey--black { background-color: var(--grey--black); }
+  .grey--dark { background-color: var(--grey--dark); }
+  .grey--dull-dark { background-color: var(--grey--dull-dark); }
+  .grey--light { background-color: var(--grey--light); }
+  .grey--very-light { background-color: var(--grey--very-light); }
+  .grey--lightest { background-color: var(--grey--lightest); }
+  .grey--white { background-color: var(--grey--white); }
+
+  .font--small-light { font-size: var(--font-size--small); font-weight: var(--font-weight--light) }
+  .font--medium-small-light { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--light) }
+  .font--medium-light { font-size: var(--font-size--medium); font-weight: var(--font-weight--light) }
+  .font--medium-large-light { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--light) }
+  .font--large-light { font-size: var(--font-size--large); font-weight: var(--font-weight--light) }
+
+  .font--small-regular { font-size: var(--font-size--small); font-weight: var(--font-weight--regular) }
+  .font--medium-small-regular { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--regular) }
+  .font--medium-regular { font-size: var(--font-size--medium); font-weight: var(--font-weight--regular) }
+  .font--medium-large-regular { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--regular) }
+  .font--large-regular { font-size: var(--font-size--large); font-weight: var(--font-weight--regular) }
+
+  .font--small-bold { font-size: var(--font-size--small); font-weight: var(--font-weight--bold) }
+  .font--medium-small-bold { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--bold) }
+  .font--medium-bold { font-size: var(--font-size--medium); font-weight: var(--font-weight--bold) }
+  .font--medium-large-bold { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--bold) }
+  .font--large-bold { font-size: var(--font-size--large); font-weight: var(--font-weight--bold) }
+
+  .font--small-black { font-size: var(--font-size--small); font-weight: var(--font-weight--black) }
+  .font--medium-small-black { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--black) }
+  .font--medium-black { font-size: var(--font-size--medium); font-weight: var(--font-weight--black) }
+  .font--medium-large-black { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--black) }
+  .font--large-black { font-size: var(--font-size--large); font-weight: var(--font-weight--black) }
+
+  .spacing--narrowest { margin: var(--spacing--narrowest) }
+  .spacing--narrow { margin: var(--spacing--narrow) }
+  .spacing--wide { margin: var(--spacing--wide) }
+
+  .padding--tiniest { padding: var(--padding--tiniest) }
+  .padding--small-tiny { padding: var(--padding--small-tiny) }
+  .padding--small { padding: var(--padding--small) }
+  .padding--medium { padding: var(--padding--medium) }
+  .padding--medium-large { padding: var(--padding--medium-large) }
+  .padding--large { padding: var(--padding--large) }
+  .padding--very-large { padding: var(--padding--very-large) }
+}

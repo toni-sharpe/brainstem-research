@@ -1,4 +1,12 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .style-guide {
+  h4 {
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+
   &__color-list {
     flex-wrap: wrap;
   }
@@ -37,56 +45,18 @@
     margin-bottom: 40px;
   }
 
-  h4 {
-    &::first-letter {
-      text-transform: capitalize;
+  &__padding-and-spacing {
+    &--outer {
+      background-color: rgba($red--medium, 0.3);
+      box-shadow: 0 0 0 1px inset var(--blue--dark);
+      box-sizing: border-box;
+      width: 100px;
+      height: 100px;
+    }
+    &--inner {
+      background-color: rgba($red--medium, 0.6);
+      box-shadow: 0 0 0 1px inset var(--blue--dark);
+      height: 100%;
     }
   }
-
-  &__blue--dark { background-color: var(--blue--dark); }
-  &__blue { background-color: var(--blue); }
-  &__blue--light { background-color: var(--blue--light); }
-  &__red--black { background-color: var(--red--black); }
-  &__red--dark { background-color: var(--red--dark); }
-  &__red--medium { background-color: var(--red--medium); }
-  &__red--dulled-light { background-color: var(--red--dulled-light); }
-  &__red--light { background-color: var(--red--light); }
-  &__red--very-light { background-color: var(--red--very-light); }
-  &__green { background-color: var(--green); }
-  &__green--dark { background-color: var(--green--dark); }
-  &__orange--light { background-color: var(--orange--light); }
-  &__orange { background-color: var(--orange); }
-  &__orange--dark { background-color: var(--orange--dark); }
-  &__black { background-color: var(--black); }
-  &__grey--black { background-color: var(--grey--black); }
-  &__grey--dark { background-color: var(--grey--dark); }
-  &__grey--dull-dark { background-color: var(--grey--dull-dark); }
-  &__grey--light { background-color: var(--grey--light); }
-  &__grey--very-light { background-color: var(--grey--very-light); }
-  &__grey--lightest { background-color: var(--grey--lightest); }
-  &__grey--white { background-color: var(--grey--white); }
-
-  &__font--small-light { font-size: var(--font-size--small); font-weight: var(--font-weight--light) }
-  &__font--medium-small-light { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--light) }
-  &__font--medium-light { font-size: var(--font-size--medium); font-weight: var(--font-weight--light) }
-  &__font--medium-large-light { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--light) }
-  &__font--large-light { font-size: var(--font-size--large); font-weight: var(--font-weight--light) }
-
-  &__font--small-regular { font-size: var(--font-size--small); font-weight: var(--font-weight--regular) }
-  &__font--medium-small-regular { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--regular) }
-  &__font--medium-regular { font-size: var(--font-size--medium); font-weight: var(--font-weight--regular) }
-  &__font--medium-large-regular { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--regular) }
-  &__font--large-regular { font-size: var(--font-size--large); font-weight: var(--font-weight--regular) }
-
-  &__font--small-bold { font-size: var(--font-size--small); font-weight: var(--font-weight--bold) }
-  &__font--medium-small-bold { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--bold) }
-  &__font--medium-bold { font-size: var(--font-size--medium); font-weight: var(--font-weight--bold) }
-  &__font--medium-large-bold { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--bold) }
-  &__font--large-bold { font-size: var(--font-size--large); font-weight: var(--font-weight--bold) }
-
-  &__font--small-black { font-size: var(--font-size--small); font-weight: var(--font-weight--black) }
-  &__font--medium-small-black { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--black) }
-  &__font--medium-black { font-size: var(--font-size--medium); font-weight: var(--font-weight--black) }
-  &__font--medium-large-black { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--black) }
-  &__font--large-black { font-size: var(--font-size--large); font-weight: var(--font-weight--black) }
 }

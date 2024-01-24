@@ -22,25 +22,25 @@ function StyleGuideColorList() {
             <ol className='column-layout space-children--column'>
               <li><h4>{weight}</h4></li>
               <li>
-                <ol className='column-layout space-children'>
+                <ol className='column-layout space-children--column'>
                   <li><h5>Small</h5></li>
-                  <li className={`column-layout style-guide__font--small-${weight}`}>
+                  <li className={`column-layout font--small-${weight}`}>
                     {fontExample.map(fontEg => (<span>{fontEg}</span>))}
                   </li>
                   <li><h5>Medium small</h5></li>
-                  <li className={`column-layout style-guide__font--medium-small-${weight}`}>
+                  <li className={`column-layout font--medium-small-${weight}`}>
                     {fontExample.map(fontEg => (<span>{fontEg}</span>))}
                   </li>
                   <li><h5>Medium</h5></li>
-                  <li className={`column-layout style-guide__font--medium-${weight}`}>
+                  <li className={`column-layout font--medium-${weight}`}>
                     {fontExample.map(fontEg => (<span>{fontEg}</span>))}
                   </li>
                   <li><h5>Medium large</h5></li>
-                  <li className={`column-layout style-guide__font--medium-large-${weight}`}>
+                  <li className={`column-layout font--medium-large-${weight}`}>
                     {fontExample.map(fontEg => (<span>{fontEg}</span>))}
                   </li>
                   <li><h5>Large</h5></li>
-                  <li className={`column-layout style-guide__font--large-${weight}`}>
+                  <li className={`column-layout font--large-${weight}`}>
                     {fontExample.map(fontEg => (<span>{fontEg}</span>))}
                   </li>
                 </ol>
