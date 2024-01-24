@@ -2,11 +2,13 @@
   &__color-list {
     flex-wrap: wrap;
   }
+
   &__color-block {
     margin-bottom: var(--spacing--narrow);
     width: 48px;
     height: 48px;
   }
+
   &__font-list {
     line-height: var(--line-height--large);
 
@@ -14,22 +16,28 @@
       align-self: flex-start;
     }
 
+    h4,
+    h5 {
+      padding: var(--padding--tiniest) var(--padding--small-tiny);
+    }
+
+    h4 {
+      background-color: var(--blue--dark);
+      color: var(--white);
+    }
+
     h5 {
       background-color: var(--blue);
       color: var(--black);
-      padding: var(--padding--tiniest) var(--padding--small-tiny);
     }
   }
+
   &__font {
     flex-wrap: wrap;
     margin-bottom: 40px;
   }
 
   h4 {
-    background-color: var(--blue--dark);
-    color: var(--white);
-    padding: var(--padding--tiniest) var(--padding--small-tiny);
-
     &::first-letter {
       text-transform: capitalize;
     }
