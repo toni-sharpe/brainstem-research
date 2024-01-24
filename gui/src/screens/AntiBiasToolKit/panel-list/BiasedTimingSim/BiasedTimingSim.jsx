@@ -10,15 +10,19 @@ import {
   PRIME_SYMPTOM_BLOCK_SIZE,
   PRIME_SYMPTOM_HISTOGRAM_HEIGHT,
 } from 'util/Constant/BaseConstantList'
+import { dataAdjusterLocalStorage } from 'util/UtilLocalStorage/UtilDataAdjuster'
 import { primeSymptomAntiBiasLocalStorage } from 'util/UtilLocalStorage/UtilPrimeSymptom'
+import { setLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './BiasedTimingSim.scss'
 
 const i18nBase = 'BiasedTimingSim'
 
 function BiasedTimingSim({ antiBiasToolKitData }) {
-  const [timingError, setTimingError] = useState(0)
-  const [badTimingError, setBiasedTimingError] = useState(0)
+  const persistedTimingError = dataAdjusterLocalStorage({ k: 'biasTiming' })
+  const persistedBadTimingError = dataAdjusterLocalStorage({ k: 'badBiasTiming' })
+  const [timingError, setTimingError] = useState(persistedTimingError)
+  const [badTimingError, setBiasedTimingError] = useState(persistedBadTimingError)
   if (!antiBiasToolKitData) { return null }
 
   const commonAdjusterProps = {
@@ -38,14 +42,24 @@ function BiasedTimingSim({ antiBiasToolKitData }) {
         <DataAdjusterButtonList
           {...commonAdjusterProps}
           listLabel={i18next.t(`${i18nBase}.biased`)}
-          onClickHandler={({ adjustBy }) => () => { setTimingError(adjustBy); setBiasedTimingError(0) }}
+          onClickHandler={({ adjustBy }) => () => {
+            setTimingError(adjustBy)
+            setBiasedTimingError(0)
+            setLocalStorage({ k: 'badBiasTiming', v: 0 })
+            setLocalStorage({ k: 'biasTiming', v: adjustBy })
+          }}
           selectedFn={({ curr }) => timingError === curr && badTimingError === 0}
         />
         <div className='hide'>
           <DataAdjusterButtonList
             {...commonAdjusterProps}
             listLabel={i18next.t(`${i18nBase}.veryBiased`)}
-            onClickHandler={({ adjustBy }) => () => { setBiasedTimingError(adjustBy); setTimingError(0) }}
+            onClickHandler={({ adjustBy }) => () => {
+              setBiasedTimingError(adjustBy)
+              setTimingError(0)
+              setLocalStorage({ k: 'biasTiming', v: 0 })
+              setLocalStorage({ k: 'badBiasTiming', v: adjustBy })
+            }}
             selectedFn={({ curr }) => badTimingError === curr && timingError === 0}
           />
         </div>
