@@ -2,10 +2,15 @@ import PropTypes from 'prop-types'
 import i18next from 'util/i18next/i18next'
 import React, { useState } from 'react'
 
-import { BAD_TIMING_SIM_ERROR_LIST, PRIME_SYMPTOM_BLOCK_SIZE } from 'util/Constant/BaseConstantList'
 import DataAdjusterButtonList from 'sections/DataAdjusterButtonList/DataAdjusterButtonList'
 import PrimeSymptomHistogram from 'sections/PrimeSymptomHistogram/PrimeSymptomHistogram'
 import SubPageWrapper from 'components/SubPageWrapper/SubPageWrapper'
+import {
+  BAD_TIMING_SIM_ERROR_LIST,
+  PRIME_SYMPTOM_BLOCK_SIZE,
+  PRIME_SYMPTOM_HISTOGRAM_HEIGHT,
+} from 'util/Constant/BaseConstantList'
+import { primeSymptomAntiBiasLocalStorage } from 'util/UtilLocalStorage/UtilPrimeSymptom'
 
 import './BiasedTimingSim.scss'
 
@@ -48,7 +53,9 @@ function BiasedTimingSim({ antiBiasToolKitData }) {
       <PrimeSymptomHistogram
         badTimingError={badTimingError}
         blockSize={PRIME_SYMPTOM_BLOCK_SIZE}
-        histogramHeight={56}
+        localStorageFn={primeSymptomAntiBiasLocalStorage}
+        localStorageKey='primeSymptomAntiBias'
+        histogramHeight={PRIME_SYMPTOM_HISTOGRAM_HEIGHT}
         primeSymptomData={antiBiasToolKitData}
         timingError={timingError}
       />

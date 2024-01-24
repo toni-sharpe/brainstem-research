@@ -6,8 +6,12 @@ import APIPrimeSymptomListData from 'example-data/APIPrimeSymptomList.example-da
 
 import PrimeSymptomHistogram from './PrimeSymptomHistogram'
 
+// test works with a full set of data so local storage stub needs to match this
+const TEST_COUNT = 20
+
 
 const basePrimeSymptomHistogramProps = {
+  localStorageFn: () => ({ count: TEST_COUNT, factor: true }),
   primeSymptomData: APIPrimeSymptomListData,
 }
 
@@ -27,7 +31,7 @@ test('PrimeSymptomHistogram - user key interaction', async () => {
    */
   expect(screen.getByText('Increase data as added')).toBeTruthy()
   expect(screen.getByText('Total:')).toBeTruthy()
-  expect(screen.getByText('20')).toBeTruthy()
+  expect(screen.getByText(TEST_COUNT)).toBeTruthy()
   expect(screen.getByText('Severe: 11')).toBeTruthy()
   expect(screen.getByText('Non Severe: 9')).toBeTruthy()
 
