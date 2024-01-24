@@ -59,4 +59,27 @@
       height: 100%;
     }
   }
+
+  .z-index {
+    &__label {
+      padding: var(--padding--small-tiny) var(--padding--small);
+    }
+
+    &--outer {
+      background-color: var(--grey--lightest);
+      box-shadow: 0 0 0 1px inset var(--grey--light);
+      position: relative;
+      width: 200px;
+      height: 200px;
+      z-index: -9999;
+    }
+
+    &--inner {
+      background-color: $red--medium;
+      box-shadow: 0 0 0 1px inset var(--grey--light);
+      position: absolute;
+      width: 80px;
+      height: 80px;
+    }
+  }
 }
