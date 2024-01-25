@@ -103,7 +103,7 @@ export function calcStepDiff({ firstStep, lastStep }) {
   const greaterThanCheck = lastStep >= firstStep
   throwError({ check: greaterThanCheck, i18nKey: 'calcStepDiffGoodDiff' })
 
-  return (lastStep + 1) - firstStep
+  return lastStep - firstStep
 }
 
 export function calcScalePerc({ step, stepDiff }) {
