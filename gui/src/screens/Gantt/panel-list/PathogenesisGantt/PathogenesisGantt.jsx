@@ -3,7 +3,7 @@ import React from 'react'
 import GanttChart from 'sections/GanttChart/GanttChart'
 import SubPageWrapper from 'components/SubPageWrapper/SubPageWrapper'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
-import { calcPathogenesisGantt } from 'util/UtilGanttBarList/UtilPathogenesisGantt'
+import { calcPathogenesisGantt } from 'util/UtilGanttScreen/UtilPathogenesisGantt'
 
 import './PathogenesisGantt.scss'
 

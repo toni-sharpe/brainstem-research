@@ -1,6 +1,6 @@
 import { filter, map, pipe } from 'ramda'
 
-import { throwError } from 'util/Util/Util'
+import { throwError } from 'util/UtilError/UtilError'
 
 
 export default function calcKeyPairXy({ data, xKey, yKey, mapFn = null }) {

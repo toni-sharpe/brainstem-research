@@ -1,6 +1,6 @@
 import { GANTT_SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
 import { isNotNil } from 'ramda'
-import { throwError } from 'util/Util/Util'
+import { throwError } from 'util/UtilError/UtilError'
 
 
 export function calcPercentage({

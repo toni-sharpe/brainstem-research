@@ -1,5 +1,6 @@
 import { type } from 'ramda'
-import { throwError } from 'util/Util/Util'
+import { PRECISION } from 'util/Constant/BaseConstantList'
+import { throwError, throwNumberError } from 'util/UtilError/UtilError'
 
 
 function scaleAdjust({ factor, stepDivision, totalSteps }) {
@@ -51,30 +52,56 @@ export function calcScaleToFitUI({ scale = {} } = {}) {
 }
 
 export function calcStepDiff({ firstStep, lastStep }) {
+  throwNumberError({ caller: 'calcStepDiff in UtilGanttScale', numberList: [['lastStep', lastStep], ['firstStep', firstStep]] })
+  const greaterThanCheck = lastStep >= firstStep
+  throwError({ check: greaterThanCheck, i18nKey: 'calcStepDiffGoodDiff' })
+
   return lastStep - firstStep
 }
 
 export function calcScalePerc({ step, stepDiff }) {
-  return (
-    step
-    /
-    stepDiff
-    *
-    100
+  throwNumberError({ caller: 'calcScalePerc in UtilGanttScale', numberList: [[ 'step', step ], ['stepDiff', stepDiff ]] })
+
+  return Number(
+    (
+      step
+      /
+      stepDiff
+      *
+      100
+    ).toPrecision(PRECISION)
   )
 }
 
 export function calcLeftScalePerc({ firstStep, step, stepDiff }) {
+  throwNumberError({ caller: 'calcLeftScalePerc in UtilGanttScale', numberList: [[ 'firstStep', firstStep ]] })
+
   const scalePerc = calcScalePerc({ step, stepDiff })
 
-  return (
-    scalePerc
-    - (
-      100
-      /
-      stepDiff
-      *
-      firstStep
-    )
+  return Number(
+    (
+      scalePerc
+      -
+      (
+        100
+        /
+        stepDiff
+        *
+        firstStep
+      )
+    ).toPrecision(PRECISION)
   )
 }
+
+export function calcScaleLinePosition({ ganttHeight, isLastStep, stepLeftPerc }) {
+  return isLastStep
+    ? { height: `${ganttHeight}px`, right: 0 }
+    : { height: `${ganttHeight}px`, left: `calc(${stepLeftPerc}%)` }
+}
+
+export function calcScaleStepPosition({ isLastStep, stepLeftPerc }) {
+  return isLastStep
+    ? { right: 0 }
+    : { left: `calc(${stepLeftPerc}%)`}
+}
+

@@ -1,7 +1,6 @@
 import { filter, groupBy, map, pipe, prop, toPairs, type } from 'ramda'
-import i18next from 'util/i18next/i18next'
 
-import { I18N_ERROR_KEY } from 'util/Constant/BaseConstantList'
+import { throwError } from 'util/UtilError/UtilError'
 
 
 export function getCurrentUrl() {
@@ -43,20 +42,3 @@ export function sortFn(a, b) {
     ? -1
     : 1
 }
-
-
-export function throwError({ check, dynamicErrorData, i18nKey }) {
-  if (!check) {
-    throw new Error(i18next.t(`${I18N_ERROR_KEY}.${i18nKey}`, dynamicErrorData))
-  }
-}
-
-
-export function throwFnError({ caller, fn, fnName }) {
-  throwError({
-    check: type(fn) === 'Function',
-    i18nKey: 'fnMustBeProvidedTo',
-    dynamicErrorData: { fnName, caller }
-  })
-}
-

@@ -5,7 +5,7 @@ import GanttChart from 'sections/GanttChart/GanttChart'
 import SubPageWrapper from 'components/SubPageWrapper/SubPageWrapper'
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import { calcScale } from 'util/UtilGanttBarList/UtilGanttBarList'
-import { calcInteractiveGantt } from 'util/UtilGanttBarList/UtilInteractiveGantt'
+import { calcInteractiveGantt } from 'util/UtilGanttScreen/UtilInteractiveGantt'
 
 import './InteractiveGantt.scss'
 

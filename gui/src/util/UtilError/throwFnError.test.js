@@ -1,4 +1,4 @@
-import { throwFnError } from './Util'
+import { throwFnError } from 'util/UtilError/UtilError'
 
 const throwFnErrorArgs = {
   caller: 'testCallerFn',

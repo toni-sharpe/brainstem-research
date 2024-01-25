@@ -1,4 +1,4 @@
-import { throwError } from './Util'
+import { throwError } from 'util/UtilError/UtilError'
 
 export function calcHue({ i, total }) {
   throwError({

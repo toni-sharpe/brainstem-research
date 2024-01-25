@@ -1,7 +1,7 @@
 import { type } from 'ramda'
 import i18next from 'util/i18next/i18next'
 
-import { throwError } from 'util/Util/Util'
+import { throwError } from 'util/UtilError/UtilError'
 import { setLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 
