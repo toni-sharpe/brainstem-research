@@ -1,6 +1,6 @@
 import { type } from 'ramda'
 import { PRECISION } from 'util/Constant/BaseConstantList'
-import { throwError } from 'util/Util/Util'
+import { throwError, throwNumberError } from 'util/UtilError/UtilError'
 
 
 function scaleAdjust({ factor, stepDivision, totalSteps }) {
@@ -52,8 +52,7 @@ export function calcScaleToFitUI({ scale = {} } = {}) {
 }
 
 export function calcStepDiff({ firstStep, lastStep }) {
-  const numberCheck = type(lastStep) === 'Number' && type(firstStep) === 'Number'
-  throwError({ check: numberCheck, i18nKey: 'calcStepDiffNumbers' })
+  throwNumberError({ caller: 'calcStepDiff in UtilGanttScale', numberList: [['lastStep', lastStep], ['firstStep', firstStep]] })
   const greaterThanCheck = lastStep >= firstStep
   throwError({ check: greaterThanCheck, i18nKey: 'calcStepDiffGoodDiff' })
 
@@ -61,8 +60,7 @@ export function calcStepDiff({ firstStep, lastStep }) {
 }
 
 export function calcScalePerc({ step, stepDiff }) {
-  const numberCheck = type(step) === 'Number' && type(stepDiff) === 'Number'
-  throwError({ check: numberCheck, i18nKey: 'calcScalePercNumbers' })
+  throwNumberError({ caller: 'calcScalePerc in UtilGanttScale', numberList: [[ 'step', step ], ['stepDiff', stepDiff ]] })
 
   return Number(
     (
@@ -76,8 +74,7 @@ export function calcScalePerc({ step, stepDiff }) {
 }
 
 export function calcLeftScalePerc({ firstStep, step, stepDiff }) {
-  const numberCheck = type(firstStep) === 'Number'
-  throwError({ check: numberCheck, i18nKey: 'calcLeftScalePercFirstStep' })
+  throwNumberError({ caller: 'calcLeftScalePerc in UtilGanttScale', numberList: [[ 'firstStep', firstStep ]] })
 
   const scalePerc = calcScalePerc({ step, stepDiff })
 

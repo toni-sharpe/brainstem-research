@@ -1,7 +1,7 @@
 import i18next from 'util/i18next/i18next'
 import { filter, map, pipe, toPairs, type } from 'ramda'
 
-import { throwError } from 'util/Util/Util'
+import { throwError } from 'util/UtilError/UtilError'
 import { getStatBase, fullStatBase } from 'util/UtilGanttBarList/UtilGanttBarList'
 import { groupByResponse, calcValsForGrouping } from 'util/UtilDynamicGrouping/UtilGanttDynamicGrouping'
 

@@ -1,6 +1,6 @@
 import { filter, pluck, pipe, type } from 'ramda'
 
-import { throwError } from 'util/Util/Util'
+import { throwError } from 'util/UtilError/UtilError'
 import { GENERAL_RESPONSE_MAP } from 'util/Constant/FullDataPointList'
 import { mapToGanttBars } from 'util/UtilGanttBarList/UtilGanttBarList'
 import { showBasedOnSevereFilter } from 'util/UtilFilter/UtilFilter'

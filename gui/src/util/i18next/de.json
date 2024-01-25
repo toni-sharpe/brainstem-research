@@ -441,6 +441,7 @@
     "calcWidth": "calcWidth Funktion erfordert eine min und max val",
     "dragGraphLabelValProp": "Die labelValList muss ein Array aus [string, number]-Arrays sein",
     "fnMustBeProvidedTo": "{{fnName}} muss {{caller}} zur Verfügung gestellt werden und muss eine Funktion sein",
+    "fnMustHaveNumbers": "{{caller}} muss Zahlen in all diesen Parametern haben [{{numberKeyString}}]",
     "fullStatBase": "fullStatBase Funktion benötigt ein k",
     "generalResponseTimeBarDataIsArray": "Allgemeine Statistiklistenberechnung benötigt ein Array für Daten",
     "graphBlockLengthInvalid": "histogramBarGroupList ist nicht korrekt in {{callingFn}} - Empfangen: {{typeOf}} | {{val}}",

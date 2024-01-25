@@ -1,6 +1,6 @@
 import * as ramda from 'ramda'
 
-import { throwFnError, throwError } from 'util/Util/Util'
+import { throwFnError, throwError } from 'util/UtilError/UtilError'
 import { calcHistogramBarHeight } from 'util/UtilHistogram/UtilHistogram'
 import { PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_MAP } from 'util/Constant/BaseConstantList'
 

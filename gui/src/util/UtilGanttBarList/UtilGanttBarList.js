@@ -15,7 +15,7 @@ import {
   PRECISION,
   QUANTILE_LIST
 } from 'util/Constant/BaseConstantList'
-import { throwError } from 'util/Util/Util'
+import { throwError } from 'util/UtilError/UtilError'
 
 
 export function calcGanttListHeight({ statDataList = [] } = {}) {

@@ -443,6 +443,7 @@
     "calcWidth": "calcWidth function requires a min and max value provided",
     "dragGraphLabelValProp": "The labelValList must be an array of [string, number] arrays",
     "fnMustBeProvidedTo": "{{fnName}} must be provided to {{caller}} and must be a function",
+    "fnMustHaveNumbers": "{{caller}} must have numbers in all these parameters [{{numberKeyString}}]",
     "fullStatBase": "fullStatBase needs a k",
     "generalResponseTimeBarDataIsArray": "General stat list calc needs an array for data",
     "graphBlockLengthInvalid": "histogramBarGroupList is not correct in {{callingFn}} - receiving: {{typeOf}} | {{val}}",

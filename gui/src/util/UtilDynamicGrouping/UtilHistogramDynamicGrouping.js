@@ -11,7 +11,7 @@ import {
   toPairs,
 } from 'ramda'
 
-import { throwFnError } from 'util/Util/Util'
+import { throwFnError } from 'util/UtilError/UtilError'
 
 
 export function pathogenesisToGroupMapper({ dataFn } = {}) {
