@@ -78,8 +78,11 @@
 
 
   /* z-index */
+  --background-guaranteed: #{$background-guaranteed};
   --step-right-back: #{$step-right-back};
   --step-back: #{$step-back};
+  --neutral: #{$neutral};
+  --step-forward: #{$step-forward};
   --step-right-forward: #{$step-right-forward};
   --front-guaranteed: #{$front-guaranteed};
   --menu-guaranteed: #{$menu-guaranteed};
