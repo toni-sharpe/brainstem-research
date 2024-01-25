@@ -82,8 +82,11 @@ $histogram-bar-group-height: 45px;
 
 
 /* z-index */
+$background-guaranteed: -1000;
 $step-right-back: -2;
 $step-back: -1;
+$neutral: 0;
+$step-forward: 1;
 $step-right-forward: 2;
 $front-guaranteed: 1000;
 $menu-guaranteed: 1500;

@@ -60,8 +60,11 @@
   .padding--large { padding: var(--padding--large) }
   .padding--very-large { padding: var(--padding--very-large) }
 
+  .background-guaranteed { z-index: var(--background-guaranteed)}
   .step-right-back { z-index: var(--step-right-back)}
   .step-back { z-index: var(--step-back)}
+  .neutral { z-index: var(--neutral)}
+  .step-forward { z-index: var(--step-right-forward)}
   .step-right-forward { z-index: var(--step-right-forward)}
   .front-guaranteed { z-index: var(--front-guaranteed)}
   .menu-guaranteed { z-index: var(--menu-guaranteed)}

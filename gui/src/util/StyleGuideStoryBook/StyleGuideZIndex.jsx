@@ -4,8 +4,11 @@ import { calcHue } from 'util/Util/UtilHue'
 
 function StyleGuideZIndex() {
   const zIndexList = [
+    'background-guaranteed',
     'step-right-back',
     'step-back',
+    'neutral',
+    'step-forward',
     'step-right-forward',
     'front-guaranteed',
     'menu-guaranteed',
@@ -23,7 +26,7 @@ function StyleGuideZIndex() {
               const innerOffset =
                 (i + 1)
                 *
-                20
+                24
 
               const hue = calcHue({ i, total: zIndexCount })
 
