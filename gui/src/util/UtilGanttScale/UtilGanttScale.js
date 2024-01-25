@@ -1,8 +1,10 @@
-import { type } from 'ramda'
 import { PRECISION } from 'util/Constant/BaseConstantList'
 import { throwError, throwNumberError } from 'util/UtilError/UtilError'
 
 
+/*
+ * Scale to fit UI
+ */
 function scaleAdjust({ factor, stepDivision, totalSteps }) {
   return {
     stepDivision:
@@ -17,14 +19,9 @@ function scaleAdjust({ factor, stepDivision, totalSteps }) {
   }
 }
 
-
 export function calcScaleToFitUI({ scale = {} } = {}) {
   const { totalSteps } = scale
-
-  throwError({
-    check: type(scale.stepDivision) === 'Number' && type(totalSteps) === 'Number',
-    i18nKey: 'calcScaleToFitUI'
-  })
+  throwNumberError({ caller: 'calcScaleToFitUI in UtilGanttScale', numberList: [['stepDivision', scale.stepDivision], ['totalSteps', totalSteps]] })
 
   let factoredScale = scale
 
@@ -51,12 +48,62 @@ export function calcScaleToFitUI({ scale = {} } = {}) {
   return { ...scale, ...factoredScale }
 }
 
+
+/*
+ * fine grained range and scale marks (zoom related)
+ */
+export function totalDivisionCount({ stepDiff, stepDivision }) {
+  return stepDiff * stepDivision
+}
+
+export function calcFineGrainedStepDivision({ firstStep, lastStep, stepDivision }) {
+  throwNumberError({ caller: 'calcFineGrainedStepDivision in UtilGanttScale', numberList: [['stepDivision', stepDivision]] })
+  const stepDiff = calcStepDiff({ firstStep, lastStep })
+  const totalDivisions = totalDivisionCount({ stepDiff, stepDivision })
+  throwError({ check: totalDivisions <= 100, i18nKey: 'calcFineGrainedStepDivision' })
+  if (totalDivisions > 50) {
+    return 10
+  }
+  if (totalDivisions > 20) {
+    return 5
+  }
+  if (totalDivisions > 10) {
+    return 2
+  }
+  return 1
+}
+
+
+export function calcRegularRange({ firstStep, lastStep, stepDivision }) {
+  const divisionCountFromStart = firstStep * stepDivision
+  const divisionMarkGranularity = calcFineGrainedStepDivision({ firstStep, lastStep, stepDivision })
+  const stepDiff = calcStepDiff({ firstStep, lastStep })
+  const totalDivisions = totalDivisionCount({ stepDiff, stepDivision })
+  const minDivision = firstStep * stepDivision
+  const maxDivision = lastStep * stepDivision
+  const firstMark = minDivision - minDivision % divisionMarkGranularity + divisionMarkGranularity
+  const results = [firstMark]
+  let nextMark = firstMark
+  while (nextMark <= maxDivision) {
+    nextMark = nextMark + divisionMarkGranularity
+    if (nextMark <+ maxDivision) {
+      results.push(nextMark)
+    }
+  }
+  console.log(results, 'results')
+  return results
+}
+
+
+/*
+ * General
+ */
 export function calcStepDiff({ firstStep, lastStep }) {
   throwNumberError({ caller: 'calcStepDiff in UtilGanttScale', numberList: [['lastStep', lastStep], ['firstStep', firstStep]] })
   const greaterThanCheck = lastStep >= firstStep
   throwError({ check: greaterThanCheck, i18nKey: 'calcStepDiffGoodDiff' })
 
-  return lastStep - firstStep
+  return (lastStep + 1) - firstStep
 }
 
 export function calcScalePerc({ step, stepDiff }) {
@@ -73,6 +120,10 @@ export function calcScalePerc({ step, stepDiff }) {
   )
 }
 
+
+/*
+ * Position scale elements
+ */
 export function calcLeftScalePerc({ firstStep, step, stepDiff }) {
   throwNumberError({ caller: 'calcLeftScalePerc in UtilGanttScale', numberList: [[ 'firstStep', firstStep ]] })
 
