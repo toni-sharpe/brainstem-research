@@ -1,69 +1,34 @@
-import { calcScaleToFitUI } from './UtilGanttScale'
-
+import {
+  calcStepDiff,
+  calcScalePerc,
+} from './UtilGanttScale'
 
 /*
- * calcScaleToFitUI() error
+ *  calcStepDiff()
  */
-test('calcScaleToFitUI() throws error when scale is missing entirely', () => {
-  const errArgs = undefined
-  const errMsg = 'calcScaleToFitUI requires scale argument with numeric properties stepDivision and totalSteps'
-  expect(() => calcScaleToFitUI(errArgs)).toThrow(errMsg)
+test('calcStepDiff() - throws error if numbers not provided', () => {
+  const error = 'calcStepDiff in GanttScale requires both values to be numbers'
+  expect(() => calcStepDiff({ firstStep: '1', lastStep: 0 })).toThrow(error)
 })
-test('calcScaleToFitUI() throws error when scale is missing stepDivision', () => {
-  const errArgs = { scale: { totalSteps: 17 }}
-  const errMsg = 'calcScaleToFitUI requires scale argument with numeric properties stepDivision and totalSteps'
-  expect(() => calcScaleToFitUI(errArgs)).toThrow(errMsg)
+test('calcStepDiff() - throws error if lastStep is less than firstStep', () => {
+  const error = 'lastStep must be equal to or greater than firstStep in calcStepDiff, GanttScale'
+  expect(() => calcStepDiff({ firstStep: 2, lastStep: 1 })).toThrow(error)
 })
-test('calcScaleToFitUI() throws error when scale stepDivision is not numeric', () => {
-  const errArgs = { scale: { stepDivision: 'wrong', totalSteps: 19 }}
-  const errMsg = 'calcScaleToFitUI requires scale argument with numeric properties stepDivision and totalSteps'
-  expect(() => calcScaleToFitUI(errArgs)).toThrow(errMsg)
+test('calcStepDiff() - does not throw error if lastStep is equal to firstStep', () => {
+  expect(() => calcStepDiff({ firstStep: 2, lastStep: 2 })).not.toThrow()
 })
-test('calcScaleToFitUI() throws error when scale is missing totalSteps', () => {
-  const errArgs = { scale: { stepDivision: 23 }}
-  const errMsg = 'calcScaleToFitUI requires scale argument with numeric properties stepDivision and totalSteps'
-  expect(() => calcScaleToFitUI(errArgs)).toThrow(errMsg)
-})
-test('calcScaleToFitUI() throws error when scale totalSteps is not numeric', () => {
-  const errArgs = { scale: { stepDivision: 29, totalSteps: 'wrong' }}
-  const errMsg = 'calcScaleToFitUI requires scale argument with numeric properties stepDivision and totalSteps'
-  expect(() => calcScaleToFitUI(errArgs)).toThrow(errMsg)
+test('calcStepDiff() - provides diff as expected when values are good', () => {
+  expect(calcStepDiff({ firstStep: 2, lastStep: 3 })).toEqual(1)
 })
 
 
 /*
- * calcScaleToFitUI() with numeric scale values
+ * calcScalePerc()
  */
-test('calcScaleToFitUI() with stepDivision less or equal to than 30 does nothing', () => {
-  expect(calcScaleToFitUI({ scale: { stepDivision: 20, totalSteps: 5 } })).toEqual({ stepDivision: 20, totalSteps: 5 })
+test('calcScalePerc() - throws error if numbers not provided', () => {
+  const error = 'calcScalePerc in GanttScale requires both values to be numbers'
+  expect(() => calcScalePerc({ step: '1', stepDiff: 100 })).toThrow(error)
 })
-test('calcScaleToFitUI() with 21 converts stepCount to 1/10th (rounded up) and divisions to *10 ', () => {
-  expect(calcScaleToFitUI({ scale: { stepDivision: 5, totalSteps: 21 } })).toEqual({ stepDivision: 50, totalSteps: 3 })
-})
-test('calcScaleToFitUI() with 200 converts stepCount to 1/10th (rounded up) and divisions to *10 ', () => {
-  expect(calcScaleToFitUI({ scale: { stepDivision: 5, totalSteps: 200 } })).toEqual({ stepDivision: 50, totalSteps: 20 })
-})
-test('calcScaleToFitUI() with 201 converts stepCount to 1/100th (rounded up) and divisions to *100 ', () => {
-  expect(calcScaleToFitUI({ scale: { stepDivision: 5, totalSteps: 201 } })).toEqual({ stepDivision: 500, totalSteps: 3 })
-})
-test('calcScaleToFitUI() with 2000 converts stepCount to 1/100th (rounded up) and divisions to *100 ', () => {
-  expect(calcScaleToFitUI({ scale: { stepDivision: 5, totalSteps: 2000 } })).toEqual({ stepDivision: 500, totalSteps: 20 })
-})
-test('calcScaleToFitUI() with 2001 converts stepCount to 1/100th (rounded up) and divisions to *100 ', () => {
-  expect(calcScaleToFitUI({ scale: { stepDivision: 5, totalSteps: 2001 } })).toEqual({ stepDivision: 5000, totalSteps: 3 })
-})
-test('calcScaleToFitUI() with 20000 converts stepCount to 1/100th (rounded up) and divisions to *100 ', () => {
-  expect(calcScaleToFitUI({ scale: { stepDivision: 5, totalSteps: 20000 } })).toEqual({ stepDivision: 5000, totalSteps: 20 })
-})
-test('calcScaleToFitUI() with 20001 converts stepCount to 1/100th (rounded up) and divisions to *100 ', () => {
-  expect(calcScaleToFitUI({ scale: { stepDivision: 5, totalSteps: 20001 } })).toEqual({ stepDivision: 50000, totalSteps: 3 })
-})
-test('calcScaleToFitUI() with 200000 converts stepCount to 1/100th (rounded up) and divisions to *100 ', () => {
-  expect(calcScaleToFitUI({ scale: { stepDivision: 5, totalSteps: 200000 } })).toEqual({ stepDivision: 50000, totalSteps: 20 })
-})
-test('calcScaleToFitUI() with 2000001 converts stepCount to 1/100th (rounded up) and divisions to *100 ', () => {
-  expect(calcScaleToFitUI({ scale: { stepDivision: 5, totalSteps: 200001 } })).toEqual({ stepDivision: 500000, totalSteps: 3 })
-})
-test('calcScaleToFitUI() with 20000000 converts stepCount to 1/100th (rounded up) and divisions to *100 ', () => {
-  expect(calcScaleToFitUI({ scale: { stepDivision: 5, totalSteps: 2000000 } })).toEqual({ stepDivision: 500000, totalSteps: 20 })
+test('calcScalePerc() - scaled perc when the numbers are good', () => {
+  expect(calcScalePerc({ step: 2, stepDiff: 4 })).toEqual(50)
 })

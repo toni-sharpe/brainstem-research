@@ -1,4 +1,5 @@
 import { type } from 'ramda'
+import { PRECISION } from 'util/Constant/BaseConstantList'
 import { throwError } from 'util/Util/Util'
 
 
@@ -51,31 +52,47 @@ export function calcScaleToFitUI({ scale = {} } = {}) {
 }
 
 export function calcStepDiff({ firstStep, lastStep }) {
+  const numberCheck = type(lastStep) === 'Number' && type(firstStep) === 'Number'
+  throwError({ check: numberCheck, i18nKey: 'calcStepDiffNumbers' })
+  const greaterThanCheck = lastStep >= firstStep
+  throwError({ check: greaterThanCheck, i18nKey: 'calcStepDiffGoodDiff' })
+
   return lastStep - firstStep
 }
 
 export function calcScalePerc({ step, stepDiff }) {
-  return (
-    step
-    /
-    stepDiff
-    *
-    100
+  const numberCheck = type(step) === 'Number' && type(stepDiff) === 'Number'
+  throwError({ check: numberCheck, i18nKey: 'calcScalePercNumbers' })
+
+  return Number(
+    (
+      step
+      /
+      stepDiff
+      *
+      100
+    ).toPrecision(PRECISION)
   )
 }
 
 export function calcLeftScalePerc({ firstStep, step, stepDiff }) {
+  const numberCheck = type(firstStep) === 'Number'
+  throwError({ check: numberCheck, i18nKey: 'calcLeftScalePercFirstStep' })
+
   const scalePerc = calcScalePerc({ step, stepDiff })
 
-  return (
-    scalePerc
-    - (
-      100
-      /
-      stepDiff
-      *
-      firstStep
-    )
+  return Number(
+    (
+      scalePerc
+      -
+      (
+        100
+        /
+        stepDiff
+        *
+        firstStep
+      )
+    ).toPrecision(PRECISION)
   )
 }
 
