@@ -4,21 +4,33 @@
   position: relative;
   top: var(--spacing--narrow);
   width: 100%;
-  &__line {
-    background-color: var(--green--dark);
+  &__line,
+  &__sub-line {
     opacity: 0.3;
     position: absolute;
     top: 0px;
     width: 2px;
     z-index: var(--step-right-back);
   }
-  &__label {
+  &__line {
     background-color: var(--green--dark);
-    color: var(--white);
+  }
+  &__sub-line {
+    background-color: var(--blue--light);
+  }
+  &__label,
+  &__sub-label {
     font-size: var(--font-size--medium-large);
     font-weight: bold;
     padding: var(--padding--small-tiny);
     position: absolute;
     top: 2px;
+  }
+  &__label {
+    background-color: var(--green--dark);
+    color: var(--white);
+  }
+  &__sub-label {
+    background-color: var(--blue--light);
   }
 }

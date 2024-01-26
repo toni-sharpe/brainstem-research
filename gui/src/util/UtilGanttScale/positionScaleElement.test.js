@@ -19,7 +19,7 @@ test('calcLeftScalePerc() - works well with the correct numbers', () => {
  * calcScaleLinePosition()
  */
 test('calcScaleLinePosition() - when not last step', () => {
-  expect(calcScaleLinePosition({ ganttHeight: 51, isLastStep: false, stepLeftPerc: 47 })).toEqual({ height: '51px', left: 'calc(47%)' })
+  expect(calcScaleLinePosition({ ganttHeight: 51, isLastStep: false, stepLeftPerc: 47 })).toEqual({ height: '51px', left: 'calc(47% - 1px)' })
 })
 test('calcScaleLinePosition() - when last step', () => {
   expect(calcScaleLinePosition({ ganttHeight: 51, isLastStep: true, stepLeftPerc: 47 })).toEqual({ height: '51px', right: 0 })
