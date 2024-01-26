@@ -1,6 +1,4 @@
-import i18next from 'util/i18next/i18next'
 import { calcHue } from 'util/Util/UtilHue'
-import { type } from 'ramda'
 
 import {
   HISTOGRAM_BAR_LIST_COUNT,
@@ -8,7 +6,6 @@ import {
   HISTOGRAM_BAR_WIDTH,
   CONTRAST_TOGGLE_MINIMUM,
   HISTORGRAM_HEIGHT,
-  I18N_ERROR_KEY,
 } from 'util/Constant/BaseConstantList'
 import { theThingListErrorCheck } from 'util/Util/UtilMaxThing'
 

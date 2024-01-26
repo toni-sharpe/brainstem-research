@@ -185,9 +185,10 @@ export const GANTT_TOGGLE_LIST = {
 /*
  * SVG
  */
-export const SVG_SCALE = 500
-export const SVG_SCALE_RADIUS = SVG_SCALE / 2
 export const SVG_COORD_PRECISION = 6
+
+export const DRAG_GRAPH_SVG_SCALE = 500
+export const DRAG_GRAPH_SVG_SCALE_RADIUS = DRAG_GRAPH_SVG_SCALE / 2
 
 
 

@@ -4,7 +4,7 @@ import React from 'react'
 import { type } from 'ramda'
 
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
-import { SVG_SCALE, SVG_SCALE_RADIUS } from 'util/Constant/BaseConstantList'
+import { DRAG_GRAPH_SVG_SCALE, DRAG_GRAPH_SVG_SCALE_RADIUS } from 'util/Constant/BaseConstantList'
 import {
   calcAngleInRadians,
   calcBaseLineCoordList,
@@ -61,7 +61,7 @@ function DragGraph({
       <span className='drag-graph__scale-detail'>{i18next.t(`${i18nBase}.scaleDetail`, { outerScale, scaleUnit})}</span>
       <svg
         key='svg'
-        viewBox={`0 0 ${SVG_SCALE} ${SVG_SCALE}`}
+        viewBox={`0 0 ${DRAG_GRAPH_SVG_SCALE} ${DRAG_GRAPH_SVG_SCALE}`}
         xmlns="http://www.w3.org/2000/svg"
       >
         { baseLineCoordList.map(([x, y], i) => {
@@ -69,16 +69,16 @@ function DragGraph({
             <line
               key={`${x}-${y}`}
               stroke='#eee'
-              x1={SVG_SCALE_RADIUS}
+              x1={DRAG_GRAPH_SVG_SCALE_RADIUS}
               x2={x}
-              y1={SVG_SCALE_RADIUS}
+              y1={DRAG_GRAPH_SVG_SCALE_RADIUS}
               y2={y}
             />
           )
         })}
         <circle
-          cx={SVG_SCALE_RADIUS}
-          cy={SVG_SCALE_RADIUS}
+          cx={DRAG_GRAPH_SVG_SCALE_RADIUS}
+          cy={DRAG_GRAPH_SVG_SCALE_RADIUS}
           key='center'
           r={5}
           fill='#999'
@@ -88,8 +88,8 @@ function DragGraph({
 
           return (
             <circle
-              cx={SVG_SCALE_RADIUS}
-              cy={SVG_SCALE_RADIUS}
+              cx={DRAG_GRAPH_SVG_SCALE_RADIUS}
+              cy={DRAG_GRAPH_SVG_SCALE_RADIUS}
               fillOpacity='0.0'
               key={`scale-${i}`}
               r={svgRadius}
