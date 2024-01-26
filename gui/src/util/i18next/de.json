@@ -430,6 +430,7 @@
 
   "ErrorList": {
     "ariaTranslationSet": "wenn translationSet verwendet wird, muss es ein Objekt sein, bei dem barList ein Array und groupBy eine Zeichenkette ist",
+    "calcFineGrainedStepDivision": ">Mehr als 100 Abteilungen sind zu viel, als dass dies gut funktionieren könnte.",
     "calcInteractiveTimeBarArgs": "Die Daten für calcInteractiveGantt müssen ein Array sein und die aktuellen Benutzerauswahlen müssen Strings sein",
     "calcLeft": "calcLeft Funktion erfordert eine val bereitgestellt",
     "calcLeftScalePercFirstStep": "firstStep in calcLeftScalePerc muss eine Zahl sein",

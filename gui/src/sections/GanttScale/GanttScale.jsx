@@ -1,4 +1,4 @@
-import * as ramda from 'ramda'
+import { range } from 'ramda'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18next from 'util/i18next/i18next'
@@ -8,10 +8,11 @@ import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 import { GANTT_SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
 import {
   calcLeftScalePerc,
-  calcScaleToFitUI,
-  calcStepDiff,
+  calcSubScaleLineList  ,
   calcScaleLinePosition,
   calcScaleStepPosition,
+  calcScaleToFitUI,
+  calcStepDiff,
 } from 'util/UtilGanttScale/UtilGanttScale'
 
 import './GanttScale.scss'
@@ -22,7 +23,6 @@ function GanttScale({
   scale,
 }) {
   const { firstStep, lastStep, stepDivision } = calcScaleToFitUI({ scale })
-
   const stepDiff = calcStepDiff({ firstStep, lastStep })
 
   return (
@@ -30,7 +30,7 @@ function GanttScale({
       aria-label={i18next.t('GanttScale.scaleFor', { ariaLabel })}
       className='gantt-scale'
     >
-      { ramda.range(firstStep, lastStep + 1).map(step => {
+      { range(firstStep, lastStep + 1).map(step => {
         const stepLeftPerc = calcLeftScalePerc({
           firstStep,
           step,
@@ -38,26 +38,56 @@ function GanttScale({
         })
 
         const isLastStep = step === lastStep
-
         const positionScaleStep = calcScaleStepPosition({ isLastStep, stepLeftPerc })
-
         const positionScaleLine = calcScaleLinePosition({ ganttHeight, isLastStep, stepLeftPerc })
 
+        // Only called when we are zoomed in to three segments or less
+        const subScaleLineList = stepDiff <= 3
+          ? calcSubScaleLineList({
+              firstStep,
+              lastStep,
+              stepDiff,
+              stepDivision,
+            })
+          : null
+
+        const scaleLineCount = step * stepDivision
+
         return (
-          <li key={step} >
-            <span
-              className='gantt-scale__label'
-              key='step'
-              style={positionScaleStep}
-            >
-              {step * stepDivision}
-            </span>
-            <div
-              className={`gantt-scale__line`}
-              key='line'
-              style={positionScaleLine}
-            />
-          </li>
+          <>
+            { subScaleLineList && subScaleLineList.map(({ perc, count }, i) => {
+              return (
+                <li key={`${count}-sub-scale`} >
+                  <span
+                    className='gantt-scale__sub-label'
+                    key={`${count}-sub-scale-label`}
+                    style={{ left: `${perc}%` }}
+                  >
+                    {count}
+                  </span>
+                  <div
+                    className={`gantt-scale__sub-line`}
+                    key={`${count}-sub-scale-line`}
+                    style={{ height: `${ganttHeight}px`, left: `calc(${perc}% - 1px)` }}
+                  />
+                </li>
+              )}
+            )}
+            <li key={`${scaleLineCount}-scale`} >
+              <span
+                className='gantt-scale__label'
+                key={`${scaleLineCount}-scale-label`}
+                style={positionScaleStep}
+              >
+                {scaleLineCount}
+              </span>
+              <div
+                className={`gantt-scale__line`}
+                key={`${scaleLineCount}-scale=line`}
+                style={positionScaleLine}
+              />
+            </li>
+          </>
         )
       })}
     </ol>
