@@ -2,7 +2,7 @@
 
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
 import { calcHistogramBarHue } from 'util/UtilHistogram/UtilHistogram'
-import { calcMostMaxOfAllTheThings } from 'util/UtilHistogram/UtilHistogramMaxThing'
+import { calcMostMaxOfAllTheThings } from 'util/Util/UtilMaxThing'
 import { ThreeHistogramData } from 'example-data/Histogram.example-data'
 
 import HistogramBarList from './HistogramBarList';
@@ -16,7 +16,7 @@ const hueFn = calcHistogramBarHue({
   useHueWheel: true,
 })
 
-const mostMaxOfAllThings = calcMostMaxOfAllTheThings({ histogramBarGroupList: ThreeHistogramData })
+const mostMaxOfAllThings = calcMostMaxOfAllTheThings({ theThingList: ThreeHistogramData })
 
 const baseHistogramBarListProps = {
   barCountPerBlock: 3,

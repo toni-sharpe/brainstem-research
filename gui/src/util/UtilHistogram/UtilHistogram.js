@@ -10,21 +10,7 @@ import {
   HISTORGRAM_HEIGHT,
   I18N_ERROR_KEY,
 } from 'util/Constant/BaseConstantList'
-
-
-export function histogramBarGroupListErrorCheck({ histogramBarGroupList, callingFn }) {
-  const graphBlockLength = type(histogramBarGroupList) === 'Array' && histogramBarGroupList?.length
-
-  if (graphBlockLength === 0) {
-    throw new Error(i18next.t(`${I18N_ERROR_KEY}.graphBlockLengthZero`, { callingFn }))
-  }
-  if (!graphBlockLength) {
-    const i18nExtras = { callingFn, typeOf: type(histogramBarGroupList), val: histogramBarGroupList?.toString() || 'null' }
-    throw new Error(i18next.t(`${I18N_ERROR_KEY}.graphBlockLengthInvalid`, i18nExtras))
-  }
-
-  return graphBlockLength
-}
+import { theThingListErrorCheck } from 'util/Util/UtilMaxThing'
 
 
 export function calcHistogramBarHeight({
@@ -41,9 +27,9 @@ export function calcHistogramWidth({
   barMargin = HISTOGRAM_BAR_LIST_MARGIN,
   histogramBarGroupList,
 }) {
-  const graphBlockLength = histogramBarGroupListErrorCheck({
+  const graphBlockLength = theThingListErrorCheck({
     callingFn: 'calcHistogramWidth',
-    histogramBarGroupList,
+    theThingList: histogramBarGroupList,
   })
 
   return (
