@@ -1,3 +1,4 @@
+import { append } from 'ramda'
 import { PRECISION } from 'util/Constant/BaseConstantList'
 import { throwError, throwNumberError } from 'util/UtilError/UtilError'
 
@@ -60,7 +61,6 @@ export function calcFineGrainedStepDivision({ firstStep, lastStep, stepDivision 
   throwNumberError({ caller: 'calcFineGrainedStepDivision in UtilGanttScale', numberList: [['stepDivision', stepDivision]] })
   const stepDiff = calcStepDiff({ firstStep, lastStep })
   const totalDivisions = totalDivisionCount({ stepDiff, stepDivision })
-  throwError({ check: totalDivisions <= 100, i18nKey: 'calcFineGrainedStepDivision' })
   if (totalDivisions > 50) {
     return 10
   }
@@ -74,23 +74,46 @@ export function calcFineGrainedStepDivision({ firstStep, lastStep, stepDivision 
 }
 
 
-export function calcRegularRange({ firstStep, lastStep, stepDivision }) {
-  const divisionCountFromStart = firstStep * stepDivision
+export function calcSubScaleLineList({
+  firstStep,
+  lastStep,
+  stepDiff,
+  stepDivision,
+}) {
   const divisionMarkGranularity = calcFineGrainedStepDivision({ firstStep, lastStep, stepDivision })
-  const stepDiff = calcStepDiff({ firstStep, lastStep })
-  const totalDivisions = totalDivisionCount({ stepDiff, stepDivision })
+
   const minDivision = firstStep * stepDivision
   const maxDivision = lastStep * stepDivision
-  const firstMark = minDivision - minDivision % divisionMarkGranularity + divisionMarkGranularity
-  const results = [firstMark]
-  let nextMark = firstMark
-  while (nextMark <= maxDivision) {
-    nextMark = nextMark + divisionMarkGranularity
-    if (nextMark <+ maxDivision) {
-      results.push(nextMark)
+  const offset = minDivision % divisionMarkGranularity
+  const onePerc = 1 / (maxDivision  - minDivision) * 100
+  const firstMark = minDivision - offset + divisionMarkGranularity
+
+  let results = []
+
+  for (
+    let m = firstMark;
+    m < maxDivision;
+    m = m + divisionMarkGranularity
+  ) {
+    const nextResult = {
+      count: m,
+      perc: Number(
+        (
+          onePerc
+          * (
+            m
+            -
+            minDivision
+          )
+        ).toPrecision(PRECISION)
+      )
     }
+    results = append(
+      nextResult,
+      results
+    )
   }
-  console.log(results, 'results')
+
   return results
 }
 
@@ -147,7 +170,7 @@ export function calcLeftScalePerc({ firstStep, step, stepDiff }) {
 export function calcScaleLinePosition({ ganttHeight, isLastStep, stepLeftPerc }) {
   return isLastStep
     ? { height: `${ganttHeight}px`, right: 0 }
-    : { height: `${ganttHeight}px`, left: `calc(${stepLeftPerc}%)` }
+    : { height: `${ganttHeight}px`, left: `calc(${stepLeftPerc}% - 1px)` }
 }
 
 export function calcScaleStepPosition({ isLastStep, stepLeftPerc }) {

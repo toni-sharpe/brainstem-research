@@ -18,7 +18,7 @@ test('calcStepDiff() - does not throw error if lastStep is equal to firstStep', 
   expect(() => calcStepDiff({ firstStep: 2, lastStep: 2 })).not.toThrow()
 })
 test('calcStepDiff() - provides diff as expected when values are good', () => {
-  expect(calcStepDiff({ firstStep: 2, lastStep: 3 })).toEqual(2)
+  expect(calcStepDiff({ firstStep: 2, lastStep: 3 })).toEqual(1)
 })
 
 
