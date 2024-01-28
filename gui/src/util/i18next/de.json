@@ -445,8 +445,6 @@
     "fnMustHaveNumbers": "{{caller}} muss Zahlen in all diesen Parametern haben [{{numberKeyString}}]",
     "fullStatBase": "fullStatBase Funktion benötigt ein k",
     "generalResponseTimeBarDataIsArray": "Allgemeine Statistiklistenberechnung benötigt ein Array für Daten",
-    "graphBlockLengthInvalid": "histogramBarGroupList ist nicht korrekt in {{callingFn}} - Empfangen: {{typeOf}} | {{val}}",
-    "graphBlockLengthZero": "histogramBarGroupList hat die Länge 0, es sollte etwas in histogramBarGroupList für {{callingFn}} enthalten sein",
     "hueTotalError": "calcHue muss eine positive ganze Zahl in der Eigenschaft \"total\" enthalten",
     "isOrIsInArrayNeedsValues": "isOrIsInArray Wert Fehler. {{missing}}",
     "makeWidth": "makeWidth erfordert die Angabe eines Mindest- und Höchstwerts",
@@ -456,6 +454,8 @@
     "primeSymptomHistogramBarGroup": "Prime symptom graph block list muss ein Array mit positiver Anzahl sein",
     "secondaryNavProps": "alle vier Args sind erforderlich, currentPanel, k und i18nBase sind alle Strings und setCurrentPanel sollte eine Funktion sein",
     "testError": "Test {{addToError}} {{alsoAddToError}}",
+    "theThingListhInvalid": "theThingList ist nicht korrekt in {{callingFn}} - Empfangen: {{typeOf}} | {{val}}",
+    "theThingListhZero": "theThingList hat die Länge 0, es sollte etwas in theThingList für {{callingFn}} enthalten sein",
     "userChoiceStatMapper": "userChoiceStatMapper benötigt einen String für currentResponse",
     "utilKeyPairXYMakeMapFn": "makeMapFn benötigt sowohl x als auch y, um die richtigen Schlüssel in jedem Punkt zu referenzieren",
     "writeHistogramBarListAriaLabel": "writeHistogramBarListAriaLabel erfordert histogramBarListLabel param"

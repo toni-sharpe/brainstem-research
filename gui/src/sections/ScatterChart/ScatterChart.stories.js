@@ -9,12 +9,19 @@ export default {
 
 const commonScatterChartProps = {
   ariaLabel: "Scatter",
-  domain: [0, 65],
   keyPair: { x: 'prime_symptom_1', y: 'prime_symptom_3' },
   scatterData: APIScatterData,
   showStatData: false,
 }
 
 export const Primary = {
-  render: () => <ScatterChart {...commonScatterChartProps} />,
+  render: () => {
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', maxWidth: '1100px' }}>
+        <div style={{ height: '80%', width: '80%' }}>
+          <ScatterChart {...commonScatterChartProps} />
+        </div>
+      </div>
+    )
+  }
 };

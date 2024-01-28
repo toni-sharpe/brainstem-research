@@ -138,6 +138,7 @@ export const HYPOTHESIS_SYMPTOM_X_Y = {
   x: 'fatal_symptom_1',
   y: 'fatal_symptom_2',
 }
+export const SCATTER_SCALE_HIGHLIGHT = 5
 
 
 /***********************************/
@@ -185,9 +186,14 @@ export const GANTT_TOGGLE_LIST = {
 /*
  * SVG
  */
-export const SVG_SCALE = 500
-export const SVG_SCALE_RADIUS = SVG_SCALE / 2
 export const SVG_COORD_PRECISION = 6
+export const BASE_SVG_SCALE = 500
+
+
+export const SCATTER_SVG_SCALE = 700
+
+export const DRAG_GRAPH_SVG_SCALE = BASE_SVG_SCALE
+export const DRAG_GRAPH_SVG_SCALE_RADIUS = DRAG_GRAPH_SVG_SCALE / 2
 
 
 

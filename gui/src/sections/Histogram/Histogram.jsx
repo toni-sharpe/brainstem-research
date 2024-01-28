@@ -14,7 +14,7 @@ import HistogramBarList from 'sections/HistogramBarList/HistogramBarList'
 import HistogramDataPropType from 'prop-types/HistogramData.prop-type'
 import HistogramTranslationPropType from 'prop-types/HistogramTranslation.prop-type'
 import XAxisLineList from 'components/XAxisLineList/XAxisLineList'
-import { calcMostMaxOfAllTheThings } from 'util/UtilHistogram/UtilHistogramMaxThing'
+import { calcMostMaxOfAllTheThings } from 'util/Util/UtilMaxThing'
 
 import './Histogram.scss'
 import './Histogram.story.scss'
@@ -41,7 +41,7 @@ function Histogram({
     )
   }
 
-  const mostMaxOfAllThings = calcMostMaxOfAllTheThings({ histogramBarGroupList })
+  const mostMaxOfAllThings = calcMostMaxOfAllTheThings({ theThingList: histogramBarGroupList })
 
   const commonProps = {
     barCountPerBlock,
