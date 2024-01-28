@@ -40,7 +40,6 @@ function ScatterChart({
   }
 
   const {
-    offset,
     plotStepSize,
     scatterGuideLine,
     show,
