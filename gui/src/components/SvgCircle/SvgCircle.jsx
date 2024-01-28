@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 function SvgCircle({
   c,
   circleRadius,
-  fillRadius,
+  fill,
+  fillOpacity,
   k,
   stroke,
 }) {
@@ -12,7 +13,8 @@ function SvgCircle({
     <circle
       cx={c.x}
       cy={c.y}
-      fillOpacity={fillRadius || 0.0}
+      fill={fill}
+      fillOpacity={fillOpacity || 0.0}
       key={k}
       r={circleRadius}
       stroke={stroke}
@@ -23,7 +25,7 @@ function SvgCircle({
 SvgCircle.propTypes = {
   c: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }),
   circleRadius: PropTypes.number,
-  fillRadius: PropTypes.number,
+  fillOpacity: PropTypes.number,
   k: PropTypes.string,
   stroke: PropTypes.string,
 }

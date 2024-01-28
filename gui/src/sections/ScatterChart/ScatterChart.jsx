@@ -23,14 +23,12 @@ const i18nBase = 'ScatterChart'
 
 function ScatterChart({
   ariaLabel,
-  domain,
   keyPair: {
     x,
     y,
   },
   mapFn,
   scatterData,
-  width,
 }) {
   const pointList = calcKeyPairXy({
     data: scatterData,
@@ -123,16 +121,13 @@ function ScatterChart({
 
 ScatterChart.defaultProps = {
   mapFn: null,
-  width: '75%',
 }
 
 ScatterChart.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
-  domain: ScatterDomainPropType.isRequired,
   keyPair: XYKeyPairPropType.isRequired,
   mapFn: PropTypes.func,
   scatterData: ScatterDataPropType.isRequired,
-  width: NumberOrStringPropType,
 }
 
 export default ScatterChart;
