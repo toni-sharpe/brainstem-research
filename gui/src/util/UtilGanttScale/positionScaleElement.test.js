@@ -12,7 +12,7 @@ test('calcLeftScalePerc() - throws error is firstStep is not a number', () => {
   expect(() => calcLeftScalePerc({ firstStep: '1' })).toThrow(error)
 })
 test('calcLeftScalePerc() - works well with the correct numbers', () => {
-  expect(calcLeftScalePerc({ firstStep: 3, step: 6, stepDiff: 7 })).toEqual(42.857)
+  expect(calcLeftScalePerc({ firstStep: 3, step: 6, stepDiff: 7 })).toEqual(42.8572)
 })
 
 /*

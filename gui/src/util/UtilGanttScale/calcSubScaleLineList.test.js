@@ -5,11 +5,11 @@ test('calcSubScaleLineList() - fits regular marks into irregular steps', () => {
   expect(calcSubScaleLineList({ firstStep: 1, lastStep: 3, stepDivision: 23 })).toEqual([
     {
       count: 25,
-      perc: 4.3478,
+      perc: 4.34783,
     },
     {
       count: 30,
-      perc: 15.217,
+      perc: 15.2174,
     },
     {
       count: 35,
@@ -17,27 +17,27 @@ test('calcSubScaleLineList() - fits regular marks into irregular steps', () => {
     },
     {
       count: 40,
-      perc: 36.957,
+      perc: 36.9565,
     },
     {
       count: 45,
-      perc: 47.826,
+      perc: 47.8261,
     },
     {
       count: 50,
-      perc: 58.696,
+      perc: 58.6957,
     },
     {
       count: 55,
-      perc: 69.565,
+      perc: 69.5652,
     },
     {
       count: 60,
-      perc: 80.435,
+      perc: 80.4348,
     },
     {
       count: 65,
-      perc: 91.304,
+      perc: 91.3043,
     },
   ])
 })
@@ -47,27 +47,27 @@ test('calcSubScaleLineList() - fits regular marks into regular steps', () => {
   expect(calcSubScaleLineList({ firstStep: 1, lastStep: 8, stepDivision: 5 })).toEqual([
     {
        count: 10,
-       perc: 14.286,
+       perc: 14.2857,
     },
     {
        count: 15,
-       perc: 28.571,
+       perc: 28.5714,
     },
     {
        count: 20,
-       perc: 42.857,
+       perc: 42.8571,
     },
     {
        count: 25,
-       perc: 57.143,
+       perc: 57.1429,
     },
     {
        count: 30,
-       perc: 71.429,
+       perc: 71.4286,
     },
     {
        count: 35,
-       perc: 85.714,
+       perc: 85.7143,
     },
   ])
 })

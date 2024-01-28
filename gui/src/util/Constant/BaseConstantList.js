@@ -2,6 +2,12 @@ import { keys } from 'ramda'
 
 /***********************************/
 /*
+ * Common
+ */
+export const PRECISION = 6
+
+/***********************************/
+/*
  * Errors
  */
 export const I18N_ERROR_KEY = 'ErrorList'
@@ -132,22 +138,10 @@ export const PRIME_SYMPTOM_HISTOGRAM_HEIGHT = 56
 
 /***********************************/
 /*
- * Scatter Hypothesis
- */
-export const HYPOTHESIS_SYMPTOM_X_Y = {
-  x: 'fatal_symptom_1',
-  y: 'fatal_symptom_2',
-}
-export const SCATTER_SCALE_HIGHLIGHT = 5
-
-
-/***********************************/
-/*
  * Gantt Bars
  */
 export const GANTT_BAR_HEIGHT = 44
 export const GANTT_BAR_SPACER = 29
-export const PRECISION = 5
 export const QUANTILE_LIST = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 export const QUANTILE_LIST_LONG = QUANTILE_LIST
 export const QUANTILE_LIST_SHORT = [
@@ -186,14 +180,26 @@ export const GANTT_TOGGLE_LIST = {
 /*
  * SVG
  */
-export const SVG_COORD_PRECISION = 6
+export const SVG_COORD_PRECISION = PRECISION
 export const BASE_SVG_SCALE = 500
+export const BASE_SVG_OFFSET = 0
 
-
-export const SCATTER_SVG_SCALE = 700
-
+/*
+ * Drag graph
+ */
 export const DRAG_GRAPH_SVG_SCALE = BASE_SVG_SCALE
 export const DRAG_GRAPH_SVG_SCALE_RADIUS = DRAG_GRAPH_SVG_SCALE / 2
+
+/*
+ * Scatter graph
+ */
+export const SCATTER_SVG_SCALE = 700
+export const HYPOTHESIS_SYMPTOM_X_Y = {
+  x: 'fatal_symptom_1',
+  y: 'fatal_symptom_2',
+}
+export const SCATTER_SCALE_HIGHLIGHT = 5
+export const SCATTER_SCALE_LABEL_OFFSET = 50
 
 
 

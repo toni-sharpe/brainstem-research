@@ -67,7 +67,7 @@ export const UserChoiceGroupingListAfterStatMapping = [{
     min: 14,
     quantile: [14, 14, 14, 21, 21, 21, 31, 31, 31],
     skewness: 0.51947,
-    std: 6.9761,
+    std: 6.97615,
     tone: null
   },
 },
@@ -81,8 +81,8 @@ export const UserChoiceGroupingListAfterStatMapping = [{
     median: 20,
     min: 11,
     quantile: [14, 15.5, 17.5, 19.5, 20, 20, 21.5, 26.5, 37.5],
-    skewness: 1.3498,
-    std: 8.4137,
+    skewness: 1.34978,
+    std: 8.41368,
     tone: null
   },
 },
@@ -143,7 +143,7 @@ export const InteractiveGanttExampleData = [{
     min: 14,
     quantile: [14, 14, 14, 21, 21, 21, 31, 31, 31],
     skewness: 0.5194,
-    std: 6.9761,
+    std: 6.97615,
     tone: null
   },
   label: '10 3'
@@ -224,7 +224,7 @@ export const InteractiveGanttFullyProcessedExampleData = [{
     min: 14,
     quantile: [14, 14, 14, 21, 21, 21, 31, 31, 31],
     skewness: 0.51947,
-    std: 6.9761,
+    std: 6.97615,
     tone: null
   },
 },
@@ -234,12 +234,12 @@ export const InteractiveGanttFullyProcessedExampleData = [{
     label: 'Mild symptom 2 [@10-19]',
     max: 43,
     mda: 4,
-    mean: 22.067,
+    mean: 22.0667,
     median: 20,
     min: 11,
     quantile: [14, 16, 16, 19, 20, 20, 22, 36, 39],
-    skewness: 1.3055,
-    std: 9.2265,
+    skewness: 1.30546,
+    std: 9.22653,
     tone: null
   },
 },

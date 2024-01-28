@@ -19,8 +19,8 @@ const PathogenesisGanttExampleData = [
         16,
         18
       ],
-      skewness: 0.52944,
-      std: 4.3591,
+      skewness: 0.529437,
+      std: 4.35908,
       tone: 'notGood'
     }
   },
@@ -30,7 +30,7 @@ const PathogenesisGanttExampleData = [
       label: 'Mild symptom 2',
       max: 54,
       mda: 3,
-      mean: 18.108,
+      mean: 18.1081,
       median: 16,
       min: 10,
       quantile: [
@@ -44,8 +44,8 @@ const PathogenesisGanttExampleData = [
         20,
         32
       ],
-      skewness: 2.3682,
-      std: 8.8097,
+      skewness: 2.36819,
+      std: 8.80965,
       tone: 'notGood'
     }
   },
@@ -55,7 +55,7 @@ const PathogenesisGanttExampleData = [
       label: 'Prime symptom 1',
       max: 54,
       mda: 4,
-      mean: 23.519,
+      mean: 23.5185,
       median: 20,
       min: 11,
       quantile: [
@@ -69,8 +69,8 @@ const PathogenesisGanttExampleData = [
         31,
         39
       ],
-      skewness: 1.4687,
-      std: 9.8709,
+      skewness: 1.46868,
+      std: 9.87091,
       tone: 'bad'
     }
   },
@@ -80,7 +80,7 @@ const PathogenesisGanttExampleData = [
       label: 'Prime symptom 2',
       max: 94,
       mda: 4,
-      mean: 23.933,
+      mean: 23.9333,
       median: 20,
       min: 11,
       quantile: [
@@ -94,7 +94,7 @@ const PathogenesisGanttExampleData = [
         29,
         33.5
       ],
-      skewness: 3.4419,
+      skewness: 3.44192,
       std: 15.481,
       tone: 'bad'
     }
@@ -120,7 +120,7 @@ const PathogenesisGanttExampleData = [
       label: 'Prime symptom 3',
       max: 54,
       mda: 6,
-      mean: 22.581,
+      mean: 22.5806,
       median: 20,
       min: 11,
       quantile: [
@@ -134,8 +134,8 @@ const PathogenesisGanttExampleData = [
         29,
         36
       ],
-      skewness: 1.3672,
-      std: 10.112,
+      skewness: 1.36722,
+      std: 10.1116,
       tone: 'bad'
     }
   },
@@ -145,7 +145,7 @@ const PathogenesisGanttExampleData = [
       label: 'Severe symptom 1',
       max: 220,
       mda: 34,
-      mean: 97.718,
+      mean: 97.7179,
       median: 103,
       min: 14,
       quantile: [
@@ -159,8 +159,8 @@ const PathogenesisGanttExampleData = [
         137,
         163
       ],
-      skewness: 0.47347,
-      std: 53.379,
+      skewness: 0.473468,
+      std: 53.3791,
       tone: 'veryBad'
     }
   },

@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { range, values } from 'ramda'
 
-import { PRECISION } from 'util/Constant/BaseConstantList'
+import { PRECISION, SCATTER_SCALE_LABEL_OFFSET } from 'util/Constant/BaseConstantList'
 import calcKeyPairXy from 'util/UtilKeyPairXY/UtilKeyPairXY'
 import { calcScatterScale, calcStroke, isHighlightLine } from 'util/UtilScatter/UtilScatter'
 
@@ -40,6 +40,7 @@ function ScatterChart({
   }
 
   const {
+    offset,
     plotStepSize,
     scatterGuideLine,
     show,
@@ -54,7 +55,7 @@ function ScatterChart({
     >
       { pointList?.length
         ? (
-            <SvgWrapper svgScale={squ}>
+            <SvgWrapper offset={SCATTER_SCALE_LABEL_OFFSET} svgScale={squ}>
               { range(1, squ).map((i) => {
                 const stroke = calcStroke({ i })
                 const line = i * scatterGuideLine

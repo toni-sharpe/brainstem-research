@@ -10,9 +10,9 @@ test('calcScatterScale() returns #eee if i is not a number', () => {
       { x: 28, y: 23 },
     ]
   })).toEqual({
-    plotStepSize: 6.9307,
-    scatterGuideLine: 34.6535,
+    plotStepSize: 6.93069,
+    scatterGuideLine: 34.65345,
     show: 5,
-    squ: 700
+    squ: 750
   })
 })
