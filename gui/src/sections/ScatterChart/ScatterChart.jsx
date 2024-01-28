@@ -13,9 +13,7 @@ import SvgLine from 'components/SvgLine/SvgLine'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 
 import XYKeyPairPropType from 'prop-types/XYKeyPair.prop-type'
-import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 import ScatterDataPropType from 'prop-types/ScatterData.prop-type'
-import ScatterDomainPropType from 'prop-types/ScatterDomain.prop-type'
 
 import './ScatterChart.scss'
 

@@ -25,4 +25,9 @@ function DragGraphHeader({
   )
 }
 
+DragGraphHeader.propTypes = {
+  heading: PropTypes.string,
+  scaleDetail: PropTypes.string,
+}
+
 export default DragGraphHeader

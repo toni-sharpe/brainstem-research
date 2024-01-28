@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import { BASE_SVG_SCALE } from 'util/Constant/BaseConstantList'
 import SvgScalePropType from 'prop-types/SvgScale.prop-type'
