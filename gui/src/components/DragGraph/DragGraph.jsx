@@ -3,7 +3,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { type } from 'ramda'
 
+import DragGraphHeader from 'components/DragGraphHeader/DragGraphHeader'
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
+import SvgCircle from 'components/SvgCircle/SvgCircle'
+import SvgLine from 'components/SvgLine/SvgLine'
+import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import { DRAG_GRAPH_SVG_SCALE, DRAG_GRAPH_SVG_SCALE_RADIUS } from 'util/Constant/BaseConstantList'
 import {
   calcAngleInRadians,
@@ -24,25 +28,21 @@ function DragGraph({
   heading,
   labelValList,
 }) {
-  if (!labelValList || type(labelValList) !== 'Array' || labelValList.length < 2) {
+  const dataError = !labelValList || type(labelValList) !== 'Array' || labelValList.length < 2
+
+  if (dataError) {
     return (
-      <div className='drag-graph column-layout space-children--column'>
-        <h2
-          className='drag-graph__heading'
-          key='heading'
-        >
-          {heading}
-        </h2>
-        <ErrorOutput message={i18next.t('ErrorList.noDragGraphData')} />
-      </div>
+      <ErrorOutput message={i18next.t('ErrorList.noDragGraphData')} />
     )
   }
+
   const valList = labelValList.map(([_, val]) => val)
   const max = Math.max(...valList)
   const radiusUnit = calcRadiusUnit({ max })
   const angle = calcAngleInRadians({ valList })
   const dragLineCoordList = calcPolygonCoordList({ angle, max, radiusUnit, valList })
   const baseLineCoordList = calcBaseLineCoordList({ angle, valList })
+  const r = DRAG_GRAPH_SVG_SCALE_RADIUS
 
   const {
     outerScale,
@@ -51,50 +51,16 @@ function DragGraph({
   } = calcScaleRadiusList({ max })
 
   return (
-    <div className='drag-graph column-layout space-children--column'>
-      <h2
-        className='drag-graph__heading'
-        key='heading'
-      >
-        {heading}
-      </h2>
-      <span className='drag-graph__scale-detail'>{i18next.t(`${i18nBase}.scaleDetail`, { outerScale, scaleUnit})}</span>
-      <svg
-        key='svg'
-        viewBox={`0 0 ${DRAG_GRAPH_SVG_SCALE} ${DRAG_GRAPH_SVG_SCALE}`}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        { baseLineCoordList.map(([x, y], i) => {
-          return (
-            <line
-              key={`${x}-${y}`}
-              stroke='#eee'
-              x1={DRAG_GRAPH_SVG_SCALE_RADIUS}
-              x2={x}
-              y1={DRAG_GRAPH_SVG_SCALE_RADIUS}
-              y2={y}
-            />
-          )
-        })}
-        <circle
-          cx={DRAG_GRAPH_SVG_SCALE_RADIUS}
-          cy={DRAG_GRAPH_SVG_SCALE_RADIUS}
-          key='center'
-          r={5}
-          fill='#999'
-        />
-        { scaleRadiusList.map((svgRadius, i) => {
-          const finalCircle = i === scaleRadiusList.length - 1
-
-          return (
-            <circle
-              cx={DRAG_GRAPH_SVG_SCALE_RADIUS}
-              cy={DRAG_GRAPH_SVG_SCALE_RADIUS}
-              fillOpacity='0.0'
-              key={`scale-${i}`}
-              r={svgRadius}
-              stroke={finalCircle ? '#777' : '#eee'}
-            />
+    <article className='drag-graph column-layout space-children--column'>
+      <DragGraphHeader
+        heading={heading}
+        scaleDetail={i18next.t(`${i18nBase}.scaleDetail`, { outerScale, scaleUnit })}
+      />
+      <SvgWrapper svgScale={DRAG_GRAPH_SVG_SCALE}>
+        { baseLineCoordList.map(([x, y]) => <SvgLine stroke='#eee' x={[r, r]} y={[x, y]} />) }
+        { scaleRadiusList.map((circleRadius, i) => {
+          const stroke = i === scaleRadiusList.length - 1 ? '#777' : '#eee'
+          return (<SvgCircle circleRadius={circleRadius} c={{ x: r, y: r }} k={`scale-${i}`} stroke={stroke} />
           )
         })}
         <polygon
@@ -105,7 +71,7 @@ function DragGraph({
           stroke={color}
         />
         { dragLineCoordList.map(([x, y], i) => {
-          return valList[i] > max / 10
+          return valList[i] > max / 50
             ? (
               <foreignObject
                 height='46'
@@ -125,8 +91,8 @@ function DragGraph({
             )
             : null
         })}
-      </svg>
-    </div>
+      </SvgWrapper>
+    </article>
   )
 }
 

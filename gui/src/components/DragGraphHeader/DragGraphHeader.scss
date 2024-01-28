@@ -1,0 +1,15 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
+.drag-graph-header {
+  &__heading {
+    &.drag-graph-header__heading {
+      box-shadow: none;
+      box-sizing: border-box;
+    }
+  }
+  &__heading,
+  &__scale-detail {
+    text-align: center;
+    width: 100%;
+  }
+}

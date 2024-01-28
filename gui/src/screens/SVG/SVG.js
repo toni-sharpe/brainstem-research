@@ -1,5 +1,6 @@
 import i18next from 'util/i18next/i18next'
 import React from 'react'
+import { type } from 'ramda'
 
 import DragGraph from 'components/DragGraph/DragGraph'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
@@ -14,13 +15,14 @@ function SVG({ data }) {
   if (!data || data.length === 0) { return null; }
 
   const graphKeyList = [
+    { k: 'care_equipment_4', fn: d => d.filter(({ care_equipment_4 }) => care_equipment_4 !== '005') },
     'care_equipment_4',
     'outcome_type',
     'etiology',
     'care_equipment_1',
     'care_technique_2',
     'care_technique_3',
-    'event_count',
+    { k: 'event_count', fn: d => d.filter(({ event_count }) => event_count > 1) },
     'prime_symptom_level',
   ]
 
@@ -32,11 +34,10 @@ function SVG({ data }) {
     >
       <div className='svg__drag-graph-list row-layout'>
         { graphKeyList.map((graphKey, i) => {
-          const labelValList = groupByPipe({ k: graphKey })(
-            graphKey === 'event_count'
-              ? data.filter(({ event_count }) => event_count > 1)
-              : data
-          )
+
+          const labelValList = type(graphKey) === 'String'
+            ? groupByPipe({ k: graphKey })(data)
+            : groupByPipe({ k: graphKey.k })(graphKey.fn(data))
           return (
             <DragGraph
               color={`hsl(${calcHue({ i, total: graphCount })} 80% 50%`}

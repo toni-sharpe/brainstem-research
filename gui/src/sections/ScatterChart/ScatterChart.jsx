@@ -1,16 +1,21 @@
 import i18next from 'util/i18next/i18next'
 import React from 'react'
 import PropTypes from 'prop-types'
-import { VictoryChart, VictoryTheme, VictoryScatter } from 'victory'
-import { toPairs } from 'ramda'
+import { range, values } from 'ramda'
 
+import { PRECISION } from 'util/Constant/BaseConstantList'
 import calcKeyPairXy from 'util/UtilKeyPairXY/UtilKeyPairXY'
+import { calcScatterScale, calcStroke, isHighlightLine } from 'util/UtilScatter/UtilScatter'
+
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
+import SvgCircle from 'components/SvgCircle/SvgCircle'
+import SvgLine from 'components/SvgLine/SvgLine'
+import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
+
+import XYKeyPairPropType from 'prop-types/XYKeyPair.prop-type'
 import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 import ScatterDataPropType from 'prop-types/ScatterData.prop-type'
 import ScatterDomainPropType from 'prop-types/ScatterDomain.prop-type'
-import XYKeyPairPropType from 'prop-types/XYKeyPair.prop-type'
-import { calcMostMaxOfAllTheThings } from 'util/Util/UtilMaxThing'
 
 import './ScatterChart.scss'
 
@@ -27,18 +32,24 @@ function ScatterChart({
   scatterData,
   width,
 }) {
-  const margin = `${(100 - width) / 2}%`
-  const pointList = calcKeyPairXy({ data: scatterData, xKey: x, yKey: y, mapFn })
+  const pointList = calcKeyPairXy({
+    data: scatterData,
+    xKey: x,
+    yKey: y,
+    mapFn,
+  })
 
   if (!pointList || pointList?.length === 0) {
     return null
   }
 
-  const pointToThingList = toPairs(pointList)
-
-  const maxThing = calcMostMaxOfAllTheThings({
-    theThingList: pointToThingList
-  })
+  const {
+    h,
+    plotStepSize,
+    scatterGuideLine,
+    show,
+    squ,
+  } = calcScatterScale({ pointList })
 
   return (
     <div
@@ -46,29 +57,69 @@ function ScatterChart({
       className='scatter-chart column-layout space-children--column-wide'
       role='region'
     >
-      <div
-        className='scatter-chart__victory-control'
-        style={{ marginLeft: margin, marginRight: margin, width: `${width}%` }}
-      >
-        { pointList?.length
-          ? (
-              <VictoryChart
-                theme={VictoryTheme.material}
-                domain={domain}
-              >
-                <VictoryScatter
-                  data={pointList}
-                  style={{ data: {
-                    fill: ({ datum }) => datum.fill || '#333' }
-                  }}
-                />
-              </VictoryChart>
-          ) : (
-            <span>
-              <ErrorOutput message={i18next.t(`${i18nBase}.notEnoughData`)} />
-            </span>
-          ) }
-      </div>
+      { pointList?.length
+        ? (
+            <SvgWrapper svgScale={squ}>
+              { range(1, squ).map((i) => {
+                const stroke = calcStroke({ h, i })
+                const line = i * scatterGuideLine
+                return (
+                  <>
+                    <>
+                      <SvgLine key={`guide-${i}`} stroke={stroke} x={[line, 0]} y={[line, squ]} />
+                      { isHighlightLine({ h, i }) && (
+                        <text
+                          className='scatter-chart__number'
+                          key={`guide-label-${i}-x`}
+                          x={line + 1}
+                          y={squ - 1}
+                        >
+                          {i * show}
+                        </text>
+                      ) }
+                    </>
+                    <>
+                      <SvgLine key={`guide-${i}`} stroke={stroke} x={[0, squ - line]} y={[squ, squ - line]} />
+                      { isHighlightLine({ h, i }) && (
+                        <text
+                          className='scatter-chart__number'
+                          key={`guide-label-${i}-y`}
+                          x={1}
+                          y={squ - line - 1}
+                        >
+                          {i * show}
+                        </text>
+                      ) }
+                    </>
+                  </>
+                )
+              })}
+              <SvgLine key='y-edge' stroke='#49d' x={[0, 0]} y={[0, squ]} />
+              <SvgLine key='x-edge' stroke='#49d' x={[0, squ]} y={[squ, squ]} />
+              <text key='zero' className='scatter-chart__number' x={1} y={squ - 1}>0</text>
+              { values(pointList).map(({ x, y }, i) => {
+                const xScaled = Number((x * plotStepSize).toPrecision(PRECISION))
+                const yScaled = Number((squ - (y * plotStepSize)).toPrecision(PRECISION))
+                console.log(`${x} ${y}`, 'x y')
+                console.log(`${xScaled} ${yScaled}`, 'x*p s-(y*p)')
+                return (
+                  <SvgCircle
+                    circleRadius={10}
+                    c={{ x: xScaled, y: yScaled }}
+                    key={`scale-${i}`}
+                    k={`scale-${i}`}
+                    stroke={'#333'}
+                  />
+                )})
+              }
+            </SvgWrapper>
+          )
+        : (
+          <span>
+            <ErrorOutput message={i18next.t(`${i18nBase}.notEnoughData`)} />
+          </span>
+        )
+      }
     </div>
   )
 }
