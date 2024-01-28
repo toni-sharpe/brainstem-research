@@ -44,7 +44,6 @@ function ScatterChart({
   }
 
   const {
-    h,
     plotStepSize,
     scatterGuideLine,
     show,
@@ -61,13 +60,13 @@ function ScatterChart({
         ? (
             <SvgWrapper svgScale={squ}>
               { range(1, squ).map((i) => {
-                const stroke = calcStroke({ h, i })
+                const stroke = calcStroke({ i })
                 const line = i * scatterGuideLine
                 return (
                   <>
                     <>
                       <SvgLine key={`guide-${i}`} stroke={stroke} x={[line, 0]} y={[line, squ]} />
-                      { isHighlightLine({ h, i }) && (
+                      { isHighlightLine({ i }) && (
                         <text
                           className='scatter-chart__number'
                           key={`guide-label-${i}-x`}
@@ -80,7 +79,7 @@ function ScatterChart({
                     </>
                     <>
                       <SvgLine key={`guide-${i}`} stroke={stroke} x={[0, squ - line]} y={[squ, squ - line]} />
-                      { isHighlightLine({ h, i }) && (
+                      { isHighlightLine({ i }) && (
                         <text
                           className='scatter-chart__number'
                           key={`guide-label-${i}-y`}
@@ -100,8 +99,6 @@ function ScatterChart({
               { values(pointList).map(({ x, y }, i) => {
                 const xScaled = Number((x * plotStepSize).toPrecision(PRECISION))
                 const yScaled = Number((squ - (y * plotStepSize)).toPrecision(PRECISION))
-                console.log(`${x} ${y}`, 'x y')
-                console.log(`${xScaled} ${yScaled}`, 'x*p s-(y*p)')
                 return (
                   <SvgCircle
                     circleRadius={10}
