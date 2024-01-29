@@ -72,13 +72,18 @@ $gantt-bar-height: 44px;
 $gantt-bar-quantile-height: 42px;
 
 
+/* histogram */
+$histogram-bar-group-height: 45px;
+
+
+/* prime symptom histogram */
+$prime-symptom--not-severe: #{$blue--dark};
+$prime-symptom--severe: #{$red--dark};
+
+
 /* menu */
 $menu--green: $green--dark;
 $menu--green-hover: $green;
-
-
-/* histogram */
-$histogram-bar-group-height: 45px;
 
 
 /* z-index */
