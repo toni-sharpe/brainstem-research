@@ -21,7 +21,7 @@ function Menu({
       <ul role='menu' className='menu'>
         {rootMenuSlugs.map(urlSlug => {
           return (
-            <li key={urlSlug}>
+            <li role='none' key={urlSlug}>
               <MenuItem
                 currentUrl={currentUrl}
                 url={urlSlug}

@@ -2,6 +2,7 @@ import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { filter, pipe } from 'ramda'
 import { render, screen } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import { simplifiedScatterData } from 'example-data/ScatterSimpleTest.example-data'
 
@@ -42,4 +43,17 @@ test('ScatterChart - with map function', async () => {
       mapFn={mapFn}
     />
   )
+})
+
+
+test('ScatterChart with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: scatterChart } = render(
+    <ScatterChart
+      {...baseScatterChartProps()}
+    />
+  )
+
+  expect(await axe(scatterChart)).toHaveNoViolations()
 })

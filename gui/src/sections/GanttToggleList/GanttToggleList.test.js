@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { render, screen } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import { GANTT_TOGGLE_LIST } from 'util/Constant/BaseConstantList'
 
@@ -72,4 +73,17 @@ test('GanttToggleList', async () => {
     range: false,
     statList: false,
   })
+})
+
+
+test('GanttToggleList with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: ganttToggleList } = render(
+    <GanttToggleList
+      {...baseGanttToggleListProps}
+    />
+  )
+
+  expect(await axe(ganttToggleList)).toHaveNoViolations()
 })

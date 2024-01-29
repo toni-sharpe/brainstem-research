@@ -37,7 +37,6 @@ function FilterButtonList({
     <ul
       className='filter-button-list'
       data-testid='filter-button-list'
-      role='group'
     >
       { orderedFilters.map(k => {
         return (

@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByLabelText, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import APIPrimeSymptomListData from 'example-data/APIPrimeSymptomList.example-data'
 import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
@@ -39,4 +40,16 @@ test('PrimeSymptomList - ', async () => {
   expect(screen.getByText('Severe: 11')).toBeTruthy()
   expect(screen.getByText('Non Severe: 9')).toBeTruthy()
   expect(screen.getByText('Unknown:')).toBeTruthy()
+})
+
+test('PrimeSymptomList with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: primeSymptomList } = render(
+    <PrimeSymptomList
+      data={APIPrimeSymptomListData}
+    />
+  )
+
+  expect(await axe(primeSymptomList)).toHaveNoViolations()
 })

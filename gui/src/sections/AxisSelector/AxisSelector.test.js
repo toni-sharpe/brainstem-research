@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByRole, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import { FULL_DATA_POINT_LIST } from 'util/Constant/FullDataPointList'
 
@@ -74,4 +75,17 @@ test('AxisSelector array button always has one', async () => {
     }
   )
   expect(onlyButtonSelectedStaysPressed).toBeTruthy()
+})
+
+
+test('AxisSelector with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: axisSelector } = render(
+    <AxisSelector
+      {...baseAxisSelectorProps()}
+    />
+  )
+
+  expect(await axe(axisSelector)).toHaveNoViolations()
 })

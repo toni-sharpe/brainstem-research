@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import GanttScale from './GanttScale'
 
@@ -18,4 +19,18 @@ test('GanttScale', async () => {
   expect(screen.getByText('15')).toBeTruthy()
   expect(screen.getByText('20')).toBeTruthy()
   expect(screen.getByText('25')).toBeTruthy()
+})
+
+
+test('GanttScale with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: ganttScale } = render(
+    <GanttScale
+      ariaLabel='test graph'
+      scale={{ firstStep: 0, lastStep: 5, totalSteps: 5, stepDivision: 5 }}
+    />
+  )
+
+  expect(await axe(ganttScale)).toHaveNoViolations()
 })

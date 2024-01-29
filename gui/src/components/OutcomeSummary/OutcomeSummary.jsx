@@ -24,7 +24,7 @@ function OutcomeSummary({
   return (
     <div className='outcome-summary'>
       <div className='outcome-summary__percentage-wrapper'>
-        <h3>{i18next.t(`${i18nBase}.outcomeSummary`)}</h3>
+        <h2>{i18next.t(`${i18nBase}.outcomeSummary`)}</h2>
         <figure className='outcome-summary__percentage'>
           <figcaption>% of <i>N</i></figcaption>
           <PercOutput

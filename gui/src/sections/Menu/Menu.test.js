@@ -1,6 +1,7 @@
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import { ROOT_MENU_SLUGS } from 'util/Constant/BaseConstantList'
 
@@ -34,4 +35,17 @@ test('Menu', async () => {
   expect(screen.getByText('Anti-bias Tool Kit', ariaOther)).toBeTruthy()
   expect(screen.getByText('Time Line', ariaOther)).toBeTruthy()
   expect(screen.getByText('Histogram', ariaOther)).toBeTruthy()
+})
+
+
+test('Menu with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: menu } = render(
+    <Menu
+      currentUrl='TimeLine'
+    />
+  )
+
+  expect(await axe(menu)).toHaveNoViolations()
 })

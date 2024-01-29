@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import { PRIME_SYMPTOM_BUTTON_SET } from 'util/Constant/BaseConstantList'
 
@@ -46,4 +47,21 @@ test('PrimeSymptomListCounter', async () => {
   expect(setCurrentDisplayedDataPointsStub.mock.calls[3]).toEqual([ 18 ])
   expect(setCurrentDisplayedDataPointsStub.mock.calls[4]).toEqual([ 20 ])
   expect(setCurrentDisplayedDataPointsStub.mock.calls[5]).toEqual([ 29 ])
+})
+
+
+test('PrimeSymptomListCounter with AXE', async () => {
+  const setCurrentDisplayedDataPointsStub = jest.fn()
+
+  expect.extend(toHaveNoViolations)
+
+  const { container: primeSymptomListCounter } = render(
+    <PrimeSymptomListCounter
+      currentDisplayedDataPoints={17}
+      setCurrentDisplayedDataPoints={setCurrentDisplayedDataPointsStub}
+      totalAvailableDataPoints={101}
+    />
+  )
+
+  expect(await axe(primeSymptomListCounter)).toHaveNoViolations()
 })

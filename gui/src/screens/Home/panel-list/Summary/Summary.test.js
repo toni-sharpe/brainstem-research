@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByLabelText, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import Summary from './Summary'
 
@@ -15,4 +16,14 @@ test('Summary - ', async () => {
    */
   expect(screen.getByText('Page Summary')).toBeTruthy()
   expect(screen.getByText('The scatter diagram serves to show the correlation observed that is central to the hypothesis. The hypothesis states that the two symptoms graphed on page load are strongly correlated for a specific reason that disputes the currently accepted hypothesis. Note that these two chosen parameters that relate to the hypothesis remain marked so if the user decides to examine other scatter graph possibilities by using the menus in the page they can choose to the original settings easily.')).toBeTruthy()
+})
+
+test('Summary with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: summary } = render(
+    <Summary />
+  )
+
+  expect(await axe(summary)).toHaveNoViolations()
 })

@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByLabelText, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import Testing from './Testing'
 
@@ -20,4 +21,14 @@ test('Testing - ', async () => {
   /*
    * Simple tests of on screen specifics, not always needed
    */
+})
+
+test('Testing with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: testing } = render(
+    <Testing />
+  )
+
+  expect(await axe(testing)).toHaveNoViolations()
 })
