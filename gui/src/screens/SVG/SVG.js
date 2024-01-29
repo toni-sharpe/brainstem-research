@@ -5,7 +5,7 @@ import { type } from 'ramda'
 import DragGraph from 'components/DragGraph/DragGraph'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import { calcHue } from 'util/Util/UtilHue'
-import { groupByPipe } from 'util/Util/Util'
+import { groupByAndCountPipe } from 'util/Util/Util'
 
 import './SVG.scss'
 
@@ -36,8 +36,8 @@ function SVG({ data }) {
         { graphKeyList.map((graphKey, i) => {
 
           const labelValList = type(graphKey) === 'String'
-            ? groupByPipe({ k: graphKey })(data)
-            : groupByPipe({ k: graphKey.k })(graphKey.fn(data))
+            ? groupByAndCountPipe({ k: graphKey })(data)
+            : groupByAndCountPipe({ k: graphKey.k })(graphKey.fn(data))
           return (
             <DragGraph
               color={`hsl(${calcHue({ i, total: graphCount })} 80% 50%`}

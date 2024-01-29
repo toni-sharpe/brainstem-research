@@ -1,5 +1,6 @@
 import { GANTT_SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
 import { isNotNil } from 'ramda'
+import { numberPrecision } from 'util/Util/Util'
 import { throwError } from 'util/UtilError/UtilError'
 
 
@@ -10,7 +11,7 @@ export function calcPercentage({
   throwError({ check: isNotNil(val), i18nKey: 'calcPercentage' })
   const { firstStep, lastStep, stepDivision, totalSteps } = scale
   const scaleFactor = totalSteps / (lastStep - firstStep)
-  return Number(((val / stepDivision) / totalSteps * 100 * scaleFactor).toPrecision(5))
+  return numberPrecision({ n: (val / stepDivision) / totalSteps * 100 * scaleFactor })
 }
 
 

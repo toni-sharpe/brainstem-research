@@ -1,4 +1,5 @@
 import { calcHue } from 'util/Util/UtilHue'
+import { numberPrecision } from 'util/Util/Util'
 
 import {
   HISTOGRAM_BAR_LIST_COUNT,
@@ -82,11 +83,13 @@ export function calcHistogramBarHue({
   }
 
   return function({ i, total, aLevel = 1 }) {
-    const hue = Number((
-      calcHue({ i, total })
-      +
-      calcContrastToggle({ i, total, useHueContrastToggle })
-    ).toPrecision(4))
+    const hueCalced = calcHue({ i, total })
+    const contractToggleCalced = calcContrastToggle({ i, total, useHueContrastToggle })
+
+    const hue = numberPrecision({
+      n: hueCalced + contractToggleCalced,
+      lessPrecise: 2,
+    })
     const hueCircled = hue > 360 ? hue % 360 : hue
     return `hsla(${hueCircled} 80% 50% / ${aLevel})`
   }

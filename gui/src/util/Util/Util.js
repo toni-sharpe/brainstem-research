@@ -10,7 +10,7 @@ export function getCurrentUrl() {
 }
 
 
-export function groupByPipe({ k }) {
+export function groupByAndCountPipe({ k }) {
   return pipe(
     groupBy(prop(k)),
     toPairs,
@@ -20,8 +20,9 @@ export function groupByPipe({ k }) {
 }
 
 
-export function numberPrecision({ n }) {
-  return Number(n.toPrecision(PRECISION))
+export function numberPrecision({ n, lessPrecise = 0 }) {
+  throwError({ check: type(n) === 'Number', i18nKey: 'numberPrecisionJustSingle' })
+  return Number(n.toPrecision(PRECISION - lessPrecise))
 }
 
 

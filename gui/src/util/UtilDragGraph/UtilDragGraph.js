@@ -1,8 +1,8 @@
 import {
-  SVG_COORD_PRECISION,
   DRAG_GRAPH_SVG_SCALE,
   DRAG_GRAPH_SVG_SCALE_RADIUS,
 } from 'util/Constant/BaseConstantList'
+import { numberPrecision } from 'util/Util/Util'
 import { calcMaxBasedDisplay } from 'util/Util/UtilScaleGranularity'
 
 function calcX({ a, r }) {
@@ -15,17 +15,13 @@ function calcY({ a, r }) {
 
 function calcXY({ a, r }) {
   return [
-    graphPrecision({ val: calcX({ a, r }) }),
-    graphPrecision({ val: calcY({ a, r }) }),
+    numberPrecision({ n: calcX({ a, r }) }),
+    numberPrecision({ n: calcY({ a, r }) }),
   ]
 }
 
-function graphPrecision({ val }) {
-  return Number(val.toPrecision(SVG_COORD_PRECISION))
-}
-
 export function calcAngleInRadians({ valList }) {
-  return graphPrecision({ val: (360 / valList.length * (Math.PI / 180)) })
+  return numberPrecision({ n: (360 / valList.length * (Math.PI / 180)) })
 }
 
 export function calcBaseLineCoordList({ angle, valList }) {
@@ -51,7 +47,7 @@ export function calcPolygonCoordString({ coordList }) {
 }
 
 export function calcRadiusUnit({ max }) {
-  return graphPrecision({ val: ((DRAG_GRAPH_SVG_SCALE_RADIUS * 0.84) / max) })
+  return numberPrecision({ n: ((DRAG_GRAPH_SVG_SCALE_RADIUS * 0.84) / max) })
 }
 
 export function calcScaleRadiusList({ max }) {
@@ -63,7 +59,7 @@ export function calcScaleRadiusList({ max }) {
   let x = scaleUnit
 
   for (; x <= max; x = x + scaleUnit) {
-    scaleRadiusList.push(graphPrecision({ val: x * radiusUnit }))
+    scaleRadiusList.push(numberPrecision({ n: x * radiusUnit }))
   }
 
   return {

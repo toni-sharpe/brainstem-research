@@ -175,7 +175,6 @@ export const GANTT_TOGGLE_LIST = {
 /*
  * SVG
  */
-export const SVG_COORD_PRECISION = PRECISION
 export const BASE_SVG_SCALE = 500
 export const BASE_SVG_OFFSET = 0
 

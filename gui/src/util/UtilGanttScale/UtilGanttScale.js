@@ -1,5 +1,5 @@
 import { append } from 'ramda'
-import { PRECISION } from 'util/Constant/BaseConstantList'
+import { numberPrecision } from 'util/Util/Util'
 import { throwError, throwNumberError } from 'util/UtilError/UtilError'
 
 
@@ -95,19 +95,17 @@ export function calcSubScaleLineList({
     m < maxDivision;
     m = m + divisionMarkGranularity
   ) {
+    const perc = numberPrecision({ n: onePerc * (
+      m
+      -
+      minDivision
+    ) })
+
     const nextResult = {
       count: m,
-      perc: Number(
-        (
-          onePerc
-          * (
-            m
-            -
-            minDivision
-          )
-        ).toPrecision(PRECISION)
-      )
+      perc
     }
+
     results = append(
       nextResult,
       results
@@ -132,15 +130,12 @@ export function calcStepDiff({ firstStep, lastStep }) {
 export function calcScalePerc({ step, stepDiff }) {
   throwNumberError({ caller: 'calcScalePerc in UtilGanttScale', numberList: [[ 'step', step ], ['stepDiff', stepDiff ]] })
 
-  return Number(
-    (
-      step
-      /
-      stepDiff
-      *
-      100
-    ).toPrecision(PRECISION)
-  )
+  return numberPrecision({ n: step
+    /
+    stepDiff
+    *
+    100
+  })
 }
 
 
@@ -152,19 +147,13 @@ export function calcLeftScalePerc({ firstStep, step, stepDiff }) {
 
   const scalePerc = calcScalePerc({ step, stepDiff })
 
-  return Number(
-    (
-      scalePerc
-      -
-      (
-        100
-        /
-        stepDiff
-        *
-        firstStep
-      )
-    ).toPrecision(PRECISION)
-  )
+  return numberPrecision({ n: scalePerc - (
+    100
+    /
+    stepDiff
+    *
+    firstStep
+  )})
 }
 
 export function calcScaleLinePosition({ ganttHeight, isLastStep, stepLeftPerc }) {
