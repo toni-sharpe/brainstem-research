@@ -1,5 +1,6 @@
 import { filter, groupBy, map, pipe, prop, toPairs, type } from 'ramda'
 
+import { PRECISION } from 'util/Constant/BaseConstantList'
 import { throwError } from 'util/UtilError/UtilError'
 
 
@@ -16,6 +17,11 @@ export function groupByPipe({ k }) {
     filter(([v, _]) => !['', 'null'].includes(v)),
     map(([v, list]) => [v, list.length]),
   )
+}
+
+
+export function numberPrecision({ n }) {
+  return Number(n.toPrecision(PRECISION))
 }
 
 

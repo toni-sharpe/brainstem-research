@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { numberPrecision } from 'util/Util/Util'
+
 function SvgLine({
   stroke,
   x,
@@ -10,10 +12,10 @@ function SvgLine({
     <line
       key={`${x[0]}-${y[0]}`}
       stroke={stroke}
-      x1={x[0]}
-      x2={y[0]}
-      y1={x[1]}
-      y2={y[1]}
+      x1={numberPrecision({ n: x[0] })}
+      x2={numberPrecision({ n: y[0] })}
+      y1={numberPrecision({ n: x[1] })}
+      y2={numberPrecision({ n: y[1] })}
     />
   )
 }
