@@ -113,8 +113,8 @@ test('fullStatBase()', () => {
     label: 'Test the label',
     mda: 24,
     quantile,
-    skewness: -0.0061362,
-    std: 24.696,
+    skewness: -0.00613619,
+    std: 24.6965,
     tone: 'good',
   }).toEqual(key1Stats)
 })
@@ -159,8 +159,8 @@ test('mapToGanttBars()', () => {
       median: 30,
       min: 1,
       quantile: [1, 5, 5, 9, 30, 51, 53, 53, 58],
-      skewness: -0.0061362,
-      std: 24.696,
+      skewness: -0.00613619,
+      std: 24.6965,
       tone: 'neutral',
     },
   }
