@@ -84,7 +84,7 @@ function StyleGuideColorList() {
       <ol className='column-layout space-children--column'>
         <li>
           <h4 className='row-layout space-children--wide-with-border'>
-            <span className='main'>Green</span>
+            <span className='main'>Menu</span>
             <span className='row-layout space-children--with-border details'>
               {['!--', '-hover'].map(level => (<span>{level}</span>))}
             </span>
@@ -100,7 +100,23 @@ function StyleGuideColorList() {
       <ol className='column-layout space-children--column'>
         <li>
           <h4 className='row-layout space-children--wide-with-border'>
-            <span className='main'>Green</span>
+            <span className='main'>Prime symptom</span>
+            <span className='row-layout space-children--with-border details'>
+              {['not-severe', 'severe'].map(level => (<span>{level}</span>))}
+            </span>
+          </h4>
+        </li>
+        <li>
+          <ol className='row-layout space-children'>
+            <li className='style-guide__color-block prime-symptom--not-severe' />
+            <li className='style-guide__color-block prime-symptom--severe' />
+          </ol>
+        </li>
+      </ol>
+      <ol className='column-layout space-children--column'>
+        <li>
+          <h4 className='row-layout space-children--wide-with-border'>
+            <span className='main'>Black, greyscale and white</span>
             <span className='row-layout space-children--with-border details'>
               {[
                 'black',
@@ -110,6 +126,7 @@ function StyleGuideColorList() {
                 'light',
                 'very-light',
                 'lightest',
+                '--white',
                 'white',
               ].map(level => (<span>{level}</span>))}
             </span>
@@ -124,7 +141,8 @@ function StyleGuideColorList() {
             <li className='style-guide__color-block grey--light' />
             <li className='style-guide__color-block grey--very-light' />
             <li className='style-guide__color-block grey--lightest' />
-            <li className='style-guide__color-block grey--white' />
+            <li className='style-guide__color-block grey--white'/>
+            <li className='style-guide__color-block white' style={{ boxShadow: '0 0 5px 0 #333' }}/>
           </ol>
         </li>
       </ol>

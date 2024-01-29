@@ -35,9 +35,9 @@
     width: 100%;
   }
   .histogram-bar--nonSevere {
-    background-color:var(--blue--dark);
+    background-color:var(--prime-symptom--not-severe);
   }
   .histogram-bar--severe {
-    background-color:var(--red--dark);
+    background-color:var(--prime-symptom--severe);
   }
 }

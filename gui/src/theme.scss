@@ -63,13 +63,18 @@
   --font-weight--black: #{$font-weight--black};
 
 
-  /* gantt-stat-chart  */
+  /* gantt */
   --gantt-bar-height: #{$gantt-bar-height};
   --gantt-bar-quantile-height: #{$gantt-bar-quantile-height};
 
 
   /* histogram */
   --histogram-bar-group-height: #{$histogram-bar-group-height};
+
+
+  /* prime symptom histogram */
+  --prime-symptom--not-severe: #{$prime-symptom--not-severe};
+  --prime-symptom--severe: #{$prime-symptom--severe};
 
 
   /* menu */
