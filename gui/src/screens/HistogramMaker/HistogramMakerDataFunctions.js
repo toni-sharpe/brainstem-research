@@ -1,6 +1,7 @@
-import { filter, map, pipe, pluck } from 'ramda'
+import { filter, map, pipe, pluck, type } from 'ramda'
 import { median, medianAbsoluteDeviation } from 'simple-statistics'
 
+import { throwError } from 'util/UtilError/UtilError'
 import { groupByProvidedGroupList, pathogenesisToGroupMapper } from 'util/UtilDynamicGrouping/UtilHistogramDynamicGrouping'
 
 export function calcHistogramBarGroupList({
@@ -9,6 +10,15 @@ export function calcHistogramBarGroupList({
   currentPathogenesisStepList,
   data,
 }) {
+  throwError({
+    check: type(currentGroupBy) === 'String',
+    i18nKey: 'calcHistogramBarGroupListGroupBy'
+  })
+  throwError({
+    check: type(currentPathogenesisStepList) === 'Array' && currentPathogenesisStepList?.length > 0,
+    i18nKey: 'calcHistogramBarGroupListPathogenesisStepList'
+  })
+
   const allCurrentGroupBy = pipe(
     pluck(currentGroupBy),
     filter(Boolean)

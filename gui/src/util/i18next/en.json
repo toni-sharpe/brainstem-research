@@ -431,6 +431,8 @@
   "ErrorList": {
     "ariaTranslationSet": "if translationSet is used, it must be an object where barList is an array and groupBy a string",
     "calcFineGrainedStepDivision": ">100 divisions is too many for this to work well",
+    "calcHistogramBarGroupListGroupBy": "calcHistogramBarGroupList must have a string groupBy",
+    "calcHistogramBarGroupListPathogenesisStepList": "calcHistogramBarGroupList must have an array of at least one pathogenesis steps",
     "calcInteractiveTimeBarArgs": "data to calcInteractiveGantt must be an array and current user choices must be strings",
     "calcLeft": "calcLeft function requires a val",
     "calcLeftScalePercFirstStep": "firstStep in calcLeftScalePerc must be a number",
