@@ -22,6 +22,10 @@ import {
   calcRadiusUnit,
   calcScaleRadiusList,
 } from 'util/UtilDragGraph/UtilDragGraph'
+import {
+  isFullMax,
+  isWithinMultiplier,
+} from 'util/UtilDragGraph/UtilDragGraphFilter'
 import LabelValPropType from 'prop-types/LabelVal.prop-type'
 import {
   setJSONLocalStorage,
@@ -52,19 +56,20 @@ function DragGraph({
 
   let labelValList = lblValList
   let valList = lblValList.map(([_, val]) => val)
-  const fullMax = Math.max(...valList)
-  let max = fullMax / zoom
+
   if (!incExtremes) {
-    valList = valList.filter(v => v !== fullMax)
-    labelValList = lblValList.filter(([_, v]) => v !== fullMax)
-    max = Math.max(...valList) / zoom
-  }
-  if (minToMaxMultiplier) {
-    const min = Math.min(...valList)
-    valList = valList.filter(v => v <= min * DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER)
-    labelValList = lblValList.filter(([_, v]) => v <= min * DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER)
+    let max = Math.max(...valList)
+    valList = valList.filter(v => !isFullMax({ max, v }))
+    labelValList = lblValList.filter(([_, v]) => !isFullMax({ max, v }))
   }
 
+  if (minToMaxMultiplier) {
+    const min = Math.min(...valList)
+    valList = valList.filter(v => isWithinMultiplier({ min, v }))
+    labelValList = lblValList.filter(([_, v]) => isWithinMultiplier({ min, v }))
+  }
+
+  const max = Math.max(...valList) / zoom
   const radiusUnit = calcRadiusUnit({ max })
   const angle = calcAngleInRadians({ valList })
   const dragLineCoordList = calcPolygonCoordList({ angle, max, radiusUnit, valList })
