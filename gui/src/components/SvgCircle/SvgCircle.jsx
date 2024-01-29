@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 function SvgCircle({
   c,
   circleRadius,
+  extraClass,
   fill,
   fillOpacity,
   k,
@@ -11,6 +12,7 @@ function SvgCircle({
 }) {
   return (
     <circle
+      className={extraClass}
       cx={c.x}
       cy={c.y}
       fill={fill}
