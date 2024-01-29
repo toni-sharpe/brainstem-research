@@ -11,6 +11,7 @@ test('calcScatterScale() returns #eee if i is not a number', () => {
     ]
   })).toEqual({
     plotStepSize: 6.93069,
+    rangeTopBound: 21,
     scatterGuideLine: 34.65345,
     show: 5,
     squ: 750

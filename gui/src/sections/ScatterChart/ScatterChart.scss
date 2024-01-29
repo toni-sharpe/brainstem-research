@@ -14,4 +14,16 @@
   &__y-label {
     transform: rotate(-90deg);
   }
+  &__outcome-severe {
+    fill: var(--prime-symptom--severe);
+  }
+  &__outcome-not-severe {
+    fill: var(--prime-symptom--not-severe);
+  }
+  &__care-level-severe {
+    stroke: var(--prime-symptom--severe);
+  }
+  &__care-level-not-severe {
+    stroke: var(--prime-symptom--not-severe);
+  }
 }
