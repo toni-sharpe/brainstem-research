@@ -42,3 +42,9 @@ test('numberPrecision() applies site precision with small numbers', () => {
   expect(numberPrecision({ n: 0.00008 })).toEqual(0.00008)
   expect(numberPrecision({ n: 0.000008 })).toEqual(0.000008)
 })
+test('numberPrecision() applies site precision and less precise if provided', () => {
+  expect(numberPrecision({ n: 10.17689, lessPrecise: 1 })).toEqual(10.177)
+})
+test('numberPrecision() applies site precision and less precise further if provided', () => {
+  expect(numberPrecision({ n: 10.17689, lessPrecise: 3 })).toEqual(10.2)
+})

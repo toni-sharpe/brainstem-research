@@ -20,9 +20,9 @@ export function groupByAndCountPipe({ k }) {
 }
 
 
-export function numberPrecision({ n }) {
+export function numberPrecision({ n, lessPrecise = 0 }) {
   throwError({ check: type(n) === 'Number', i18nKey: 'numberPrecisionJustSingle' })
-  return Number(n.toPrecision(PRECISION))
+  return Number(n.toPrecision(PRECISION - lessPrecise))
 }
 
 
