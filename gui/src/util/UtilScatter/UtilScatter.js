@@ -1,4 +1,4 @@
-import { toPairs, type } from 'ramda'
+import { map, pipe, toPairs, type } from 'ramda'
 
 import {
   SCATTER_SCALE_HIGHLIGHT,
@@ -10,7 +10,10 @@ import { calcMostMaxOfAllTheThings } from 'util/Util/UtilMaxThing'
 import { numberPrecision } from 'util/Util/Util'
 
 export function calcScatterScale({ pointList }) {
-  const pointToThingList = toPairs(pointList)
+  const pointToThingList = pipe(
+    toPairs,
+    map(([k, { x, y }]) => ([k, { x, y }])),
+  )(pointList)
   const max = calcMostMaxOfAllTheThings({
     theThingList: pointToThingList
   })
