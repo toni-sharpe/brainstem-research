@@ -5,6 +5,8 @@
   flex: 1;
   padding: var(--padding--very-large);
   width: 100%;
+  max-width: 90vh;
+  max-height: 90vh;
   &__number {
     fill: var(--black);
     fill-opacity: 1;
