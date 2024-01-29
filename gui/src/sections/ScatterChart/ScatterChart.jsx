@@ -38,7 +38,9 @@ function ScatterChart({
     data: scatterData,
     xKey,
     yKey,
-    mapFn: (data) => {
+    mapFn: mapFn
+      ? mapFn
+      : (data) => {
       const {
         care_error_level: careErrors,
         outcome,
