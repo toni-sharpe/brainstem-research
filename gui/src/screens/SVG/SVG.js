@@ -34,7 +34,6 @@ function SVG({ data }) {
     >
       <div className='svg__drag-graph-list row-layout'>
         { graphKeyList.map((graphKey, i) => {
-
           const labelValList = type(graphKey) === 'String'
             ? groupByAndCountPipe({ k: graphKey })(data)
             : groupByAndCountPipe({ k: graphKey.k })(graphKey.fn(data))
@@ -42,7 +41,7 @@ function SVG({ data }) {
             <DragGraph
               color={`hsl(${calcHue({ i, total: graphCount })} 80% 50%`}
               heading={i18next.t(`CommonClinicalDefinitions.${graphKey}`)}
-              key={graphKey}
+              key={`${graphKey}-${i}`}
               labelValList={labelValList}
             />
           )

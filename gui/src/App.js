@@ -50,38 +50,58 @@ function App() {
           path="/"
           element={<Home />}
         />
-        <Route
-          path="/Home"
-          element={<Home />}
-        />
-        <Route
-          path="AntiBiasToolKit"
-          element={<AntiBiasToolKit data={filteredData} />}
-        />
-        <Route
-          path="PrimeSymptomList"
-          element={<PrimeSymptomList data={filteredData} />}
-        />
-        <Route
-          path="Scatter"
-          element={<Scatter data={filteredData} />}
-        />
-        <Route
-          path="Gantt"
-          element={<Gantt data={filteredData} />}
-        />
-        <Route
-          path="TimeLine"
-          element={<TimeLine data={filteredData} />}
-        />
-        <Route
-          path="HistogramMaker"
-          element={<HistogramMaker data={filteredData} />}
-        />
-        <Route
-          path="SVG"
-          element={<SVG data={filteredData} />}
-        />
+        { (
+          currentUrl === ''
+          ||
+          currentUrl === 'Home'
+        ) && (
+          <Route
+            path="/Home"
+            element={<Home />}
+          />
+        ) }
+        { currentUrl === 'AntiBiasToolKit' && (
+          <Route
+            path="AntiBiasToolKit"
+            element={<AntiBiasToolKit data={filteredData} />}
+          />
+        )}
+        { currentUrl === 'PrimeSymptomList' && (
+          <Route
+            path="PrimeSymptomList"
+            element={<PrimeSymptomList data={filteredData} />}
+          />
+        )}
+        { currentUrl === 'Scatter' && (
+          <Route
+            path="Scatter"
+            element={<Scatter data={filteredData} />}
+          />
+        )}
+        { currentUrl === 'Gantt' && (
+          <Route
+            path="Gantt"
+            element={<Gantt data={filteredData} />}
+          />
+        )}
+        { currentUrl === 'TimeLine' && (
+          <Route
+            path="TimeLine"
+            element={<TimeLine data={filteredData} />}
+          />
+        )}
+        { currentUrl === 'HistogramMaker' && (
+          <Route
+            path="HistogramMaker"
+            element={<HistogramMaker data={filteredData} />}
+          />
+        )}
+        { currentUrl === 'SVG' && (
+          <Route
+            path="SVG"
+            element={<SVG data={filteredData} />}
+          />
+        )}
       </Routes>
     </article>
   );

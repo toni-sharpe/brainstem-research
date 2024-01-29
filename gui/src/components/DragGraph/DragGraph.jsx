@@ -57,10 +57,10 @@ function DragGraph({
         scaleDetail={i18next.t(`${i18nBase}.scaleDetail`, { outerScale, scaleUnit })}
       />
       <SvgWrapper svgScale={DRAG_GRAPH_SVG_SCALE}>
-        { baseLineCoordList.map(([x, y]) => <SvgLine stroke='#eee' x={[r, r]} y={[x, y]} />) }
+        { baseLineCoordList.map(([x, y], i) => <SvgLine key={`${x}-${y}-${i}`} stroke='#eee' x={[r, r]} y={[x, y]} />) }
         { scaleRadiusList.map((circleRadius, i) => {
           const stroke = i === scaleRadiusList.length - 1 ? '#777' : '#eee'
-          return (<SvgCircle circleRadius={circleRadius} c={{ x: r, y: r }} k={`scale-${i}`} stroke={stroke} />
+          return (<SvgCircle circleRadius={circleRadius} c={{ x: r, y: r }} key={`scale-${i}`} stroke={stroke} />
           )
         })}
         <polygon

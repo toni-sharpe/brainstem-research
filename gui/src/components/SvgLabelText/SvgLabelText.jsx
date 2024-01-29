@@ -1,21 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 import { numberPrecision } from 'util/Util/Util'
 
 function SvgLabelText({
   extraClass,
-  k,
   label,
   x,
   y,
 }) {
   return (
     <text
-      key={k}
       className={extraClass}
-      dominant-baseline='middle'
-      text-anchor='middle'
+      dominantBaseline='middle'
+      textAnchor='middle'
       x={numberPrecision({ n: x })}
       y={numberPrecision({ n: y })}
     >
@@ -25,7 +24,7 @@ function SvgLabelText({
 }
 
 SvgLabelText.propTypes = {
-  label: PropTypes.string,
+  label: NumberOrStringPropType,
   x: PropTypes.number,
   y: PropTypes.number,
 }

@@ -88,66 +88,64 @@ function ScatterChart({
                 const stroke = calcStroke({ i })
                 const line = i * scatterGuideLine
                 return (
-                  <>
-                    <SvgLine key={`guide-${i}`} stroke={stroke} x={[line, 0]} y={[line, squ]} />
+                  <g key={`guide-lines-${i}`}>
+                    <SvgLine key={`guide-x`} stroke={stroke} x={[line, 0]} y={[line, squ]} />
                     { isHighlightLine({ i }) && (
                       <SvgLabelText
                         extraClass='scatter-chart__number'
-                        k={`guide-label-${i}-x`}
+                        key={`guide-label-x`}
                         label={i * show}
                         x={line}
                         y={scaleNumY()}
                       />
                     ) }
-                    <SvgLine key={`guide-${i}`} stroke={stroke} x={[0, squ - line]} y={[squ, squ - line]} />
+                    <SvgLine key={`guide-y`} stroke={stroke} x={[0, squ - line]} y={[squ, squ - line]} />
                     { isHighlightLine({ i }) && (
                       <SvgLabelText
                         extraClass='scatter-chart__number'
-                        k={`guide-label-${i}-y`}
+                        key={`guide-label-y`}
                         label={i * show}
                         x={scaleNumX()}
                         y={squ - line}
                       />
                     ) }
-                  </>
+                  </g>
                 )
               })}
               <SvgLine key='y-edge' stroke='#49d' x={[0, 0]} y={[0, squ]} />
               <SvgLine key='x-edge' stroke='#49d' x={[0, squ]} y={[squ, squ]} />
-              <SvgLabelText extraClass='scatter-chart__number' k='zero' label='0' x={scaleNumX() + 5} y={scaleNumY() - 3} />
+              <SvgLabelText extraClass='scatter-chart__number' key='zero' label='0' x={scaleNumX() + 5} y={scaleNumY() - 3} />
               { values(pointList).map(({ x, y, careErrors, outcome, primeSymptomSeverity }, i) => {
                 const xScaled = numberPrecision({ n: (x * plotStepSize) })
                 const yScaled = numberPrecision({ n: (squ - (y * plotStepSize)) })
                 return (
-                  <>
+                  <g key={`${x}-${y}-${i}`}>
                     <SvgCircle
                       circleRadius={5 + (primeSymptomSeverity || 0)}
                       c={{ x: xScaled, y: yScaled }}
                       extraClass={`scatter-chart__outcome${outcome === 'SEV' ? '' : '-not'}-severe`}
                       fillOpacity={0.3}
-                      key={`scale-${i}-sev`}
-                      k={`scale-${i}-sev`}
+                      key={`scale-sev`}
                       stroke={'rgba(48, 48, 48, 0.3)'}
                     />
                     <SvgCircle
-                      circleRadius={10 + (careErrors / 5)}
+                      circleRadius={10 + (careErrors || 0 / 5)}
                       c={{ x: xScaled, y: yScaled }}
                       extraClass={`scatter-chart__care-level${outcome === 'SEV' ? '' : '-not'}-severe`}
-                      key={`scale-${i}-care`}
-                      k={`scale-${i}-care`}
+                      key={`scale-care`}
                     />
-                  </>
+                  </g>
                 )})
               }
               <SvgLabelText
                 extraClass='scatter-chart__y-label'
-                k={keyPair.x}
+                key={keyPair.x}
                 label={`Y: ${i18next.t(`CommonClinicalResponses.${keyPair.x}`)}`}
                 x={0 - (squ / 2)}
                 y={0 - SCATTER_AXIS_LABEL_OFFSET}
               />
               <SvgLabelText
-                k={keyPair.y}
+                key={keyPair.y}
                 label={`X: ${i18next.t(`CommonClinicalResponses.${keyPair.y}`)}`}
                 x={(squ - SCATTER_SCALE_LABEL_OFFSET) / 2}
                 y={squ + SCATTER_AXIS_LABEL_OFFSET}
