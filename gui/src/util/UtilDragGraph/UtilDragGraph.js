@@ -25,7 +25,7 @@ export function calcAngleInRadians({ valList }) {
 }
 
 export function calcBaseLineCoordList({ angle, valList }) {
-  const r = (DRAG_GRAPH_SVG_SCALE_RADIUS * 0.94)
+  const r = (DRAG_GRAPH_SVG_SCALE_RADIUS * 0.74)
 
   return valList.map((val, i) => {
     const a = angle * i
@@ -47,7 +47,7 @@ export function calcPolygonCoordString({ coordList }) {
 }
 
 export function calcRadiusUnit({ max }) {
-  return numberPrecision({ n: ((DRAG_GRAPH_SVG_SCALE_RADIUS * 0.84) / max) })
+  return numberPrecision({ n: ((DRAG_GRAPH_SVG_SCALE_RADIUS * 0.64) / max) })
 }
 
 export function calcScaleRadiusList({ max }) {

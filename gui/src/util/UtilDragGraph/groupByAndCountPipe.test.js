@@ -1,4 +1,4 @@
-import { groupByAndCountPipe } from './Util'
+import { groupByAndCountPipe } from './UtilDragGraphGrouping'
 
 const groupByAndCountPipeFn = groupByAndCountPipe({ k: 'testKey' })
 
@@ -9,7 +9,7 @@ test('groupByAndCountPipe() drops any empty string groups', () => {
     { testKey: 'b', data: 3 },
     { testKey: '', data: 4 },
   ])
-  expect(result).toEqual([['a', 2], ['b', 1]])
+  expect(result).toEqual([['a', { length: 2, severe: 0, nonSevere: 0 }], ['b', { length: 1, severe: 0, nonSevere: 0 }]])
 })
 
 test('groupByAndCountPipe() drops any null groups', () => {
@@ -22,7 +22,7 @@ test('groupByAndCountPipe() drops any null groups', () => {
     { testKey: 'c', data: 6 },
     { testKey: 'c', data: 7 },
   ])
-  expect(result).toEqual([['a', 2], ['c', 3]])
+  expect(result).toEqual([['a', { length: 2, severe: 0, nonSevere: 0 }], ['c', { length: 3, severe: 0, nonSevere: 0 }]])
 })
 
 test('groupByAndCountPipe() counts all groups when keys are present', () => {
@@ -39,5 +39,5 @@ test('groupByAndCountPipe() counts all groups when keys are present', () => {
     { testKey: 'f', data: 10 },
   ])
   // note they are added as found, so d is second
-  expect(result).toEqual([['a', 1], ['d', 3], ['b', 1], ['c', 4], ['f', 1]])
+  expect(result).toEqual([['a', { length: 1, severe: 0, nonSevere: 0 }], ['d', { length: 3, severe: 0, nonSevere: 0 }], ['b', { length: 1, severe: 0, nonSevere: 0 }], ['c', { length: 4, severe: 0, nonSevere: 0 }], ['f', { length: 1, severe: 0, nonSevere: 0 }]])
 })

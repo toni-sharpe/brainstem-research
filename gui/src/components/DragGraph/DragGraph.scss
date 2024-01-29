@@ -1,6 +1,8 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .drag-graph {
+  border-bottom: 2px solid $blue;
+  margin-bottom: 40px;
   &__heading {
     box-shadow: none;
     box-sizing: border-box;

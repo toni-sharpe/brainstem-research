@@ -55,18 +55,18 @@ function DragGraph({
   }
 
   let labelValList = lblValList
-  let valList = lblValList.map(([_, val]) => val)
+  let valList = lblValList.map(([_, { length: val }]) => val)
 
   if (!incExtremes) {
     let max = Math.max(...valList)
     valList = valList.filter(v => !isFullMax({ max, v }))
-    labelValList = lblValList.filter(([_, v]) => !isFullMax({ max, v }))
+    labelValList = lblValList.filter(([_, { length: v }]) => !isFullMax({ max, v }))
   }
 
   if (minToMaxMultiplier) {
     const min = Math.min(...valList)
     valList = valList.filter(v => isWithinMultiplier({ min, v }))
-    labelValList = lblValList.filter(([_, v]) => isWithinMultiplier({ min, v }))
+    labelValList = lblValList.filter(([_, { length: v }]) => isWithinMultiplier({ min, v }))
   }
 
   const max = Math.max(...valList) / zoom
@@ -93,7 +93,7 @@ function DragGraph({
             <Button
               isSelected={incExtremes}
               isDisabled={minToMaxMultiplier}
-              size='small'
+              size='medium'
               label={i18next.t(`${i18nBase}.incExtremes`)}
               onClick={() => {
                 const newIncExtremes = !incExtremes
@@ -110,7 +110,7 @@ function DragGraph({
           <li>
             <Button
               isSelected={zoom === 2}
-              size='small'
+              size='medium'
               label={i18next.t(`${i18nBase}.zoomX2`)}
               onClick={() => {
                 const newZoom = zoom !== 2 ? 2 : 1
@@ -125,7 +125,7 @@ function DragGraph({
           <li>
             <Button
               isSelected={zoom === 3}
-              size='small'
+              size='medium'
               label={i18next.t(`${i18nBase}.zoomX3`)}
               onClick={() => {
                 const newZoom = zoom !== 3 ? 3 : 1
@@ -141,7 +141,7 @@ function DragGraph({
             <Button
               isSelected={minToMaxMultiplier}
               isDisabled={incExtremes}
-              size='small'
+              size='medium'
               label={i18next.t(`${i18nBase}.minToMaxMultiplier`, { multiplier: DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER })}
               onClick={() => {
                 const newMaxTenXMin = !minToMaxMultiplier
@@ -179,14 +179,33 @@ function DragGraph({
             stroke={color}
           />
           { dragLineCoordList.map(([x, y], i) => {
-            return valList[i] > max / 50
-              ? (
+            const { severe, nonSevere } = labelValList[i][1]
+            return (
+              <g>
+                { severe > 0 && (
+                  <SvgCircle
+                    circleRadius={15 + severe * 2 * zoom}
+                    c={{ x, y }}
+                    key={`sv-${i}`}
+                    fill='red'
+                    fillOpacity={0.1}
+                  />
+                ) }
+                { nonSevere > 0 && (
+                  <SvgCircle
+                    circleRadius={15 + nonSevere * 2 * zoom}
+                    c={{ x, y }}
+                    key={`nsv-${i}`}
+                    fill='blue'
+                    fillOpacity={0.1}
+                  />
+                ) }
                 <foreignObject
                   height='46'
                   key={labelValList[i][0]}
                   width='30'
                   x={x - 15}
-                  y={y - 31}
+                  y={y - 28}
                 >
                   <div className='drag-graph__graph-point-label'>{labelValList[i][0]}</div>
                   <div
@@ -196,8 +215,8 @@ function DragGraph({
                     {valList[i]}
                   </div>
                 </foreignObject>
-              )
-              : null
+              </g>
+            )
           })}
         </SvgWrapper>
       </figure>

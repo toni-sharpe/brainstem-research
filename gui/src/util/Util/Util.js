@@ -1,4 +1,4 @@
-import { filter, groupBy, map, pipe, prop, toPairs, type } from 'ramda'
+import { type } from 'ramda'
 
 import { PRECISION } from 'util/Constant/BaseConstantList'
 import { throwError } from 'util/UtilError/UtilError'
@@ -7,16 +7,6 @@ import { throwError } from 'util/UtilError/UtilError'
 export function getCurrentUrl() {
   const documentUrl = document.URL.split('/')
   return documentUrl[documentUrl.length - 1]
-}
-
-
-export function groupByAndCountPipe({ k }) {
-  return pipe(
-    groupBy(prop(k)),
-    toPairs,
-    filter(([v, _]) => !['', 'null', 'UNK'].includes(v)),
-    map(([v, list]) => [v, list.length]),
-  )
 }
 
 
