@@ -4,13 +4,8 @@ import { keys } from 'ramda'
 /*
  * Common
  */
-export const PRECISION = 6
-
-/***********************************/
-/*
- * Errors
- */
 export const I18N_ERROR_KEY = 'ErrorList'
+export const PRECISION = 6
 
 
 /***********************************/
