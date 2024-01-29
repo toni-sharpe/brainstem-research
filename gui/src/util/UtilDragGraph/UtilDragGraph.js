@@ -1,6 +1,8 @@
 import {
   DRAG_GRAPH_SVG_SCALE,
   DRAG_GRAPH_SVG_SCALE_RADIUS,
+  DRAG_GRAPH_OUTCOME_START,
+  DRAG_GRAPH_OUTCOME_MULTIPLIER,
 } from 'util/Constant/BaseConstantList'
 import { numberPrecision } from 'util/Util/Util'
 import { calcMaxBasedDisplay } from 'util/Util/UtilScaleGranularity'
@@ -31,6 +33,13 @@ export function calcBaseLineCoordList({ angle, valList }) {
     const a = angle * i
     return calcXY({ a, r })
   })
+}
+
+export function calcOutcomeCircleRadius({ value, zoom = 1 }) {
+  return DRAG_GRAPH_OUTCOME_START + value
+  *
+  DRAG_GRAPH_OUTCOME_MULTIPLIER
+  * zoom
 }
 
 export function calcPolygonCoordList({ angle, max, radiusUnit, valList }) {

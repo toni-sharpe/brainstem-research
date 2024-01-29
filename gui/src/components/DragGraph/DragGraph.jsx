@@ -17,6 +17,7 @@ import {
 import {
   calcAngleInRadians,
   calcBaseLineCoordList,
+  calcOutcomeCircleRadius,
   calcPolygonCoordList,
   calcPolygonCoordString,
   calcRadiusUnit,
@@ -184,7 +185,7 @@ function DragGraph({
               <g key={`g-${x}-${y}-${i}`}>
                 { severe > 0 && (
                   <SvgCircle
-                    circleRadius={15 + severe * 2 * zoom}
+                    circleRadius={calcOutcomeCircleRadius({ value: severe, zoom })}
                     c={{ x, y }}
                     key={`sv-${i}`}
                     fill='red'
@@ -193,7 +194,7 @@ function DragGraph({
                 ) }
                 { nonSevere > 0 && (
                   <SvgCircle
-                    circleRadius={15 + nonSevere * 2 * zoom}
+                    circleRadius={calcOutcomeCircleRadius({ value: nonSevere, zoom })}
                     c={{ x, y }}
                     key={`nsv-${i}`}
                     fill='blue'
