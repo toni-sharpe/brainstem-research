@@ -181,7 +181,7 @@ function DragGraph({
           { dragLineCoordList.map(([x, y], i) => {
             const { severe, nonSevere } = labelValList[i][1]
             return (
-              <g>
+              <g key={`g-${x}-${y}-${i}`}>
                 { severe > 0 && (
                   <SvgCircle
                     circleRadius={15 + severe * 2 * zoom}
