@@ -3,7 +3,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { range, values } from 'ramda'
 
-import { SCATTER_SCALE_LABEL_OFFSET, SCATTER_SCALE_NUMBER_OFFSET } from 'util/Constant/BaseConstantList'
+import {
+  SCATTER_AXIS_LABEL_OFFSET,
+  SCATTER_SCALE_LABEL_OFFSET,
+  SCATTER_SCALE_NUMBER_OFFSET,
+} from 'util/Constant/BaseConstantList'
 import { numberPrecision } from 'util/Util/Util'
 import calcKeyPairXy from 'util/UtilKeyPairXY/UtilKeyPairXY'
 import { calcScatterScale, calcStroke, isHighlightLine } from 'util/UtilScatter/UtilScatter'
@@ -23,17 +27,14 @@ const i18nBase = 'ScatterChart'
 
 function ScatterChart({
   ariaLabel,
-  keyPair: {
-    x,
-    y,
-  },
+  keyPair,
   mapFn,
   scatterData,
 }) {
   const pointList = calcKeyPairXy({
     data: scatterData,
-    xKey: x,
-    yKey: y,
+    xKey: keyPair.x,
+    yKey: keyPair.y,
     mapFn,
   })
 
@@ -48,10 +49,10 @@ function ScatterChart({
     squ,
   } = calcScatterScale({ pointList })
 
-  function textX() {
+  function scaleNumX() {
     return 0 - SCATTER_SCALE_NUMBER_OFFSET
   }
-  function textY() {
+  function scaleNumY() {
     return squ + SCATTER_SCALE_NUMBER_OFFSET
   }
 
@@ -76,7 +77,7 @@ function ScatterChart({
                         k={`guide-label-${i}-x`}
                         label={i * show}
                         x={line}
-                        y={textY()}
+                        y={scaleNumY()}
                       />
                     ) }
                     <SvgLine key={`guide-${i}`} stroke={stroke} x={[0, squ - line]} y={[squ, squ - line]} />
@@ -85,7 +86,7 @@ function ScatterChart({
                         extraClass='scatter-chart__number'
                         k={`guide-label-${i}-y`}
                         label={i * show}
-                        x={textX()}
+                        x={scaleNumX()}
                         y={squ - line}
                       />
                     ) }
@@ -94,7 +95,7 @@ function ScatterChart({
               })}
               <SvgLine key='y-edge' stroke='#49d' x={[0, 0]} y={[0, squ]} />
               <SvgLine key='x-edge' stroke='#49d' x={[0, squ]} y={[squ, squ]} />
-              <SvgLabelText extraClass='scatter-chart__number' k='zero' label='0' x={textX() + 5} y={textY() - 3} />
+              <SvgLabelText extraClass='scatter-chart__number' k='zero' label='0' x={scaleNumX() + 5} y={scaleNumY() - 3} />
               { values(pointList).map(({ x, y }, i) => {
                 const xScaled = numberPrecision({ n: (x * plotStepSize) })
                 const yScaled = numberPrecision({ n: (squ - (y * plotStepSize)) })
@@ -108,6 +109,19 @@ function ScatterChart({
                   />
                 )})
               }
+              <SvgLabelText
+                extraClass='scatter-chart__y-label'
+                k={keyPair.x}
+                label={`Y: ${i18next.t(`CommonClinicalResponses.${keyPair.x}`)}`}
+                x={0 - (squ / 2)}
+                y={0 - SCATTER_AXIS_LABEL_OFFSET}
+              />
+              <SvgLabelText
+                k={keyPair.y}
+                label={`X: ${i18next.t(`CommonClinicalResponses.${keyPair.y}`)}`}
+                x={(squ - SCATTER_SCALE_LABEL_OFFSET) / 2}
+                y={squ + SCATTER_AXIS_LABEL_OFFSET}
+              />
             </SvgWrapper>
           )
         : (

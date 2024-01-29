@@ -201,7 +201,7 @@ export const HYPOTHESIS_SYMPTOM_X_Y = {
 export const SCATTER_SCALE_HIGHLIGHT = 5
 export const SCATTER_SCALE_LABEL_OFFSET = 50
 export const SCATTER_SCALE_NUMBER_OFFSET = 12
-
+export const SCATTER_AXIS_LABEL_OFFSET = 36
 
 
 /***********************************/
