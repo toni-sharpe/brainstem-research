@@ -21,6 +21,7 @@ export function groupByAndCountPipe({ k }) {
 
 
 export function numberPrecision({ n }) {
+  throwError({ check: type(n) === 'Number', i18nKey: 'numberPrecisionJustSingle' })
   return Number(n.toPrecision(PRECISION))
 }
 

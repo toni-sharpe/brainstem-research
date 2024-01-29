@@ -453,6 +453,7 @@
     "mapToGanttBars": "mapToGanttBars needs data with length and an i18nBase",
     "noDragGraphData": "This drag graph config has zero results",
     "noHistogramData": "This histogram config has zero results",
+    "numberPrecisionJustSingle": "numberPrecision expects a single number only, no arrays of numbers",
     "primeSymptomHistogramBarGroup": "Prime symptom graph block list must be an array with positive count",
     "secondaryNavProps": "all four args are required, currentPanel, k and i18nBase are all strings and setCurrentPanel should be a function",
     "testError": "Test {{addToError}} {{alsoAddToError}}",
