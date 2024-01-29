@@ -54,40 +54,40 @@ function GanttScale({
         const scaleLineCount = step * stepDivision
 
         return (
-          <>
+          <li key={`${scaleLineCount}-scale`}>
             { subScaleLineList && subScaleLineList.map(({ perc, count }, i) => {
               return (
-                <li key={`${count}-sub-scale`} >
-                  <span
-                    className='gantt-scale__sub-label'
-                    key={`${count}-sub-scale-label`}
-                    style={{ left: `${perc}%` }}
-                  >
-                    {count}
-                  </span>
-                  <div
-                    className={`gantt-scale__sub-line`}
-                    key={`${count}-sub-scale-line`}
-                    style={{ height: `${ganttHeight}px`, left: `calc(${perc}% - 1px)` }}
-                  />
-                </li>
+                <ol>
+                  <li key={`${count}-${perc}-sub-scale`} >
+                    <span
+                      className='gantt-scale__sub-label'
+                      key={`${count}-sub-scale-label`}
+                      style={{ left: `${perc}%` }}
+                    >
+                      {count}
+                    </span>
+                    <div
+                      className={`gantt-scale__sub-line`}
+                      key={`${count}-sub-scale-line`}
+                      style={{ height: `${ganttHeight}px`, left: `calc(${perc}% - 1px)` }}
+                    />
+                  </li>
+                </ol>
               )}
             )}
-            <li key={`${scaleLineCount}-scale`} >
-              <span
-                className='gantt-scale__label'
-                key={`${scaleLineCount}-scale-label`}
-                style={positionScaleStep}
-              >
-                {scaleLineCount}
-              </span>
-              <div
-                className={`gantt-scale__line`}
-                key={`${scaleLineCount}-scale=line`}
-                style={positionScaleLine}
-              />
-            </li>
-          </>
+            <span
+              className='gantt-scale__label'
+              key={`${scaleLineCount}-scale-label`}
+              style={positionScaleStep}
+            >
+              {scaleLineCount}
+            </span>
+            <div
+              className={`gantt-scale__line`}
+              key={`${scaleLineCount}-scale=line`}
+              style={positionScaleLine}
+            />
+          </li>
         )
       })}
     </ol>

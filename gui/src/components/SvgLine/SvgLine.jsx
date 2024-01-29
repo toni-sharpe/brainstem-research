@@ -10,7 +10,6 @@ function SvgLine({
 }) {
   return (
     <line
-      key={`${x[0]}-${y[0]}`}
       stroke={stroke}
       x1={numberPrecision({ n: x[0] })}
       x2={numberPrecision({ n: y[0] })}
