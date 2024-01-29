@@ -1,6 +1,7 @@
 import {
   calcAngleInRadians,
   calcBaseLineCoordList,
+  calcOutcomeCircleRadius,
   calcPolygonCoordList,
   calcPolygonCoordString,
   calcRadiusUnit,
@@ -26,6 +27,10 @@ test('calcBaseLineCoordList()', () => {
     [141.258, 399.667],
     [74.0552, 192.83],
   ])
+})
+
+test('calcOutcomeCircleRadius()', () => {
+  expect(calcOutcomeCircleRadius({ value: 10, zoom: 2 })).toEqual(32)
 })
 
 test('calcPolygonCoordList()', () => {
