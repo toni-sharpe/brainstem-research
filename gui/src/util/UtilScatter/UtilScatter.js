@@ -1,13 +1,13 @@
 import { toPairs, type } from 'ramda'
 
 import {
-  PRECISION,
   SCATTER_SCALE_HIGHLIGHT,
   SCATTER_SCALE_LABEL_OFFSET,
   SCATTER_SVG_SCALE,
 } from 'util/Constant/BaseConstantList'
 import { calcMaxBasedDisplay } from 'util/Util/UtilScaleGranularity'
 import { calcMostMaxOfAllTheThings } from 'util/Util/UtilMaxThing'
+import { numberPrecision } from 'util/Util/Util'
 
 export function calcScatterScale({ pointList }) {
   const pointToThingList = toPairs(pointList)
@@ -16,11 +16,12 @@ export function calcScatterScale({ pointList }) {
   })
   const squ = SCATTER_SVG_SCALE + SCATTER_SCALE_LABEL_OFFSET
   const { show } = calcMaxBasedDisplay({ max })
-  const plotStepSize = Number((SCATTER_SVG_SCALE / max).toPrecision(PRECISION))
+  const plotStepSize = numberPrecision({ n: SCATTER_SVG_SCALE / max })
   const scatterGuideLine = plotStepSize * show
 
   return {
     plotStepSize,
+    rangeTopBound: Math.ceil((squ - SCATTER_SCALE_LABEL_OFFSET) / scatterGuideLine),
     scatterGuideLine,
     show,
     squ,
