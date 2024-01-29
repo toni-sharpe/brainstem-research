@@ -141,7 +141,7 @@ function AxisSelector({
           style: hueFn ? hiddenBorderAligner : null
         }
       ) }
-      <ul className={`column-layout space-children--column ${align}`}>
+      <ul className={`axis-selector__list column-layout space-children--column ${align}`}>
         { defineDurationOptions
           && (
             <>
