@@ -423,7 +423,11 @@
   },
 
   "DragGraph": {
-    "scaleDetail": "Äußerer Skalenring ist {{outerScale}} und Schritte sind {{scaleUnit}}"
+    "scaleDetail": "Äußerer Skalenring ist {{outerScale}} und Schritte sind {{scaleUnit}}",
+    "incExtremes": "Inc. Ausreißer",
+    "zoomX2": "Zoom X2",
+    "zoomX3": "Zoom X3",
+    "minToMaxMultiplier": "max = X{{multiplier}} min"
   },
 
   "ErrorList": {

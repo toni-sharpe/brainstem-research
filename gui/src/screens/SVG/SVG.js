@@ -15,7 +15,6 @@ function SVG({ data }) {
   if (!data || data.length === 0) { return null; }
 
   const graphKeyList = [
-    { k: 'care_equipment_4', fn: d => d.filter(({ care_equipment_4 }) => care_equipment_4 !== '005') },
     'care_equipment_4',
     'outcome_type',
     'etiology',
@@ -40,6 +39,7 @@ function SVG({ data }) {
           return (
             <DragGraph
               color={`hsl(${calcHue({ i, total: graphCount })} 80% 50%`}
+              graphKey={graphKey}
               heading={i18next.t(`CommonClinicalDefinitions.${graphKey}`)}
               key={`${graphKey}-${i}`}
               labelValList={labelValList}

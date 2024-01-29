@@ -14,7 +14,7 @@ export function groupByAndCountPipe({ k }) {
   return pipe(
     groupBy(prop(k)),
     toPairs,
-    filter(([v, _]) => !['', 'null'].includes(v)),
+    filter(([v, _]) => !['', 'null', 'UNK'].includes(v)),
     map(([v, list]) => [v, list.length]),
   )
 }

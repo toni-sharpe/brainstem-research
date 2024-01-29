@@ -425,7 +425,11 @@
   },
 
   "DragGraph": {
-    "scaleDetail": "Outer scale ring is {{outerScale}} and steps are {{scaleUnit}}"
+    "scaleDetail": "Outer scale ring is {{outerScale}} and steps are {{scaleUnit}}",
+    "incExtremes": "Inc. outlier",
+    "zoomX2": "Zoom X2",
+    "zoomX3": "Zoom X3",
+    "minToMaxMultiplier": "max = X{{multiplier}} min"
   },
 
   "ErrorList": {

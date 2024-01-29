@@ -6,12 +6,18 @@
     flex-wrap: wrap;
 
     & > * {
-      width: 100%;
+      margin-left: 2%;
+      margin-right: 2%;
+      width: 96%;
       @media (min-width: $media-switch__medium) {
-        width: 50%;
+        margin-left: 1%;
+        margin-right: 1%;
+        width: 48%;
       }
       @media (min-width: $media-switch__large) {
-        width: 33%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        width: 32%;
       }
     }
   }
