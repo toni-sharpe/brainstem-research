@@ -35,8 +35,8 @@ test('calcLeft()', () => {
 test('calcLeft() with scale factor', () => {
   expect(calcLeft({ scale: scalePartial, val: 0 })).toEqual(null)
   expect(calcLeft({ scale: scalePartial, val: 50 })).toEqual(-25)
-  expect(calcLeft({ scale: scalePartial, val: 1000 })).toEqual(133.33)
-  expect(calcLeft({ scale: scalePartial, val: 180 })).toEqual(-3.3333)
+  expect(calcLeft({ scale: scalePartial, val: 1000 })).toEqual(133.333)
+  expect(calcLeft({ scale: scalePartial, val: 180 })).toEqual(-3.33333)
   expect(() => calcLeft({ scale: scaleFull })).toThrow('calcLeft function requires a val')
 })
 test('calcLeft() with zoom right in scale factor', () => {
@@ -54,16 +54,16 @@ test('calcWidth()', () => {
   expect(calcWidth({ scale: scaleFull, min: 100, max: 200 })).toEqual({ left: '10%', width: '10%' })
   expect(calcWidth({ scale: scaleFull, min: 200, max: 1000 })).toEqual({ left: '20%', width: '80%' })
   expect(calcWidth({ scale: scaleFull, min: 1, max: 2 })).toEqual({ left: '0.1%', width: '0.1%' })
-  expect(calcWidth({ min: 4, max: 8 })).toEqual({ left: '1.1111%', width: '1.1111%' })
+  expect(calcWidth({ min: 4, max: 8 })).toEqual({ left: '1.11111%', width: '1.11111%' })
   expect(() => calcWidth({ scale: scaleFull })).toThrow('calcWidth function requires a min and max value provided')
 })
 test('calcWidth() with scale factor', () => {
-  expect(calcWidth({ scale: scalePartial, min: 100, max: 200 })).toEqual({ left: '-16.667%', width: '16.667%' })
-  expect(calcWidth({ scale: scalePartial, min: 200, max: 1000 })).toEqual({ left: '0%', width: '133.33%' })
+  expect(calcWidth({ scale: scalePartial, min: 100, max: 200 })).toEqual({ left: '-16.6667%', width: '16.6667%' })
+  expect(calcWidth({ scale: scalePartial, min: 200, max: 1000 })).toEqual({ left: '0%', width: '133.333%' })
   expect(calcWidth({ scale: scalePartial, min: 200, max: 800 })).toEqual({ left: '0%', width: '100%' })
-  expect(calcWidth({ scale: scalePartial, min: 400, max: 1000 })).toEqual({ left: '33.333%', width: '100%' })
-  expect(calcWidth({ scale: scalePartial, min: 1, max: 2 })).toEqual({ left: '-33.167%', width: '0.16667%' })
-  expect(calcWidth({ scale: scalePartial, min: 3, max: 6 })).toEqual({ left: '-32.833%', width: '0.5%' })
+  expect(calcWidth({ scale: scalePartial, min: 400, max: 1000 })).toEqual({ left: '33.3333%', width: '100%' })
+  expect(calcWidth({ scale: scalePartial, min: 1, max: 2 })).toEqual({ left: '-33.1667%', width: '0.166667%' })
+  expect(calcWidth({ scale: scalePartial, min: 3, max: 6 })).toEqual({ left: '-32.8333%', width: '0.5%' })
 })
 test('calcWidth() with scale factor', () => {
   expect(calcWidth({ scale: scaleFullZoom, min: 300, max: 500 })).toEqual({ left: '-200%', width: '200%' })

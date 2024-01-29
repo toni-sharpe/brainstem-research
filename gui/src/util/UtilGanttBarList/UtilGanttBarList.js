@@ -12,9 +12,9 @@ import {
 import {
   GANTT_BAR_HEIGHT,
   GANTT_BAR_SPACER,
-  PRECISION,
   QUANTILE_LIST
 } from 'util/Constant/BaseConstantList'
+import { numberPrecision } from 'util/Util/Util'
 import { throwError } from 'util/UtilError/UtilError'
 
 
@@ -56,8 +56,8 @@ export function getStatBase({
   return {
     max: count > 0 ? Math.max(...vals) : 0,
     min: count > 0 ? Math.min(...vals) : 0,
-    mean: count > 0 ? Number(mean(vals).toPrecision(PRECISION)) : 0,
-    median: count > 0 ? Number(median(vals).toPrecision(PRECISION)) : 0,
+    mean: count > 0 ? numberPrecision({ n: mean(vals) }) : 0,
+    median: count > 0 ? numberPrecision({ n: median(vals) }) : 0,
   }
 }
 
@@ -78,8 +78,8 @@ export function fullStatBase({
       label: i18nBase ? i18next.t(`${i18nBase}.${k}`) : k,
       quantile: count > 0 ? quantile(vals, QUANTILE_LIST) : null,
       mda: count > 1 ? medianAbsoluteDeviation(vals) : 0,
-      std: count > 1 ? Number(standardDeviation(vals).toPrecision(PRECISION)) : 0,
-      skewness: count > 2 ? Number(sampleSkewness(vals).toPrecision(PRECISION)) : 0,
+      std: count > 1 ? numberPrecision({ n: standardDeviation(vals) }) : 0,
+      skewness: count > 2 ? numberPrecision({ n: sampleSkewness(vals) }) : 0,
       tone,
     }
   })
