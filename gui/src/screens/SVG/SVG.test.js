@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByLabelText, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import APISVGData from 'example-data/APISVG.example-data'
 
@@ -31,4 +32,16 @@ test('SVG - ', async () => {
   expect(screen.getByText('Care Equipment 1')).toBeTruthy()
   expect(screen.getByText('Care Technique 2')).toBeTruthy()
   expect(screen.getByText('Care Technique 3')).toBeTruthy()
+})
+
+test('SVG with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: svg } = render(
+    <SVG
+      data={APISVGData}
+    />
+  )
+
+  expect(await axe(svg)).toHaveNoViolations()
 })

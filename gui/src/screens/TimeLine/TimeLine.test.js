@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByLabelText, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import APITimeLineData from 'example-data/APITimeLine.example-data'
 
@@ -38,4 +39,16 @@ test('TimeLine - ', async () => {
   expect(screen.getByText('2018')).toBeTruthy()
   expect(screen.getByText('2000')).toBeTruthy()
   expect(screen.queryByText('1999')).toBeNull()
+})
+
+test('TimeLine with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: timeLine } = render(
+    <TimeLine
+      data={APITimeLineData}
+    />
+  )
+
+  expect(await axe(timeLine)).toHaveNoViolations()
 })

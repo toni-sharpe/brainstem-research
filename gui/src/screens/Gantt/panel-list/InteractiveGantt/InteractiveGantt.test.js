@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByLabelText, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import APIGanttData from 'example-data/APIGantt.example-data'
 import { labelListDefault } from 'prop-types/GanttScale.prop-type'
@@ -64,4 +65,14 @@ test('InteractiveGantt - ', async () => {
       name: 'Prime symptom 2 shown on group by axis'
     }
   ).length).toEqual(1)
+})
+
+test('InteractiveGantt with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: interactiveGantt } = render(
+    <InteractiveGantt data={APIGanttData} />
+  )
+
+  expect(await axe(interactiveGantt)).toHaveNoViolations()
 })

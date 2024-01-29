@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByLabelText, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import TechStack from './TechStack'
 
@@ -20,4 +21,14 @@ test('TechStack - ', async () => {
   /*
    * Simple tests of on screen specifics, not always needed
    */
+})
+
+test('TechStack with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: techStack } = render(
+    <TechStack />
+  )
+
+  expect(await axe(techStack)).toHaveNoViolations()
 })

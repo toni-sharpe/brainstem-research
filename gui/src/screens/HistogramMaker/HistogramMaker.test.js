@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByLabelText, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import APIHistogramMakerData from 'example-data/APIHistogramMaker.example-data'
 
@@ -28,4 +29,16 @@ test('HistogramMaker - ', async () => {
   expect(screen.getByText('Bars')).toBeTruthy()
   expect(screen.getByText('Durations')).toBeTruthy()
   expect(screen.getByText('Single measures')).toBeTruthy()
+})
+
+test('HistogramMaker with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: histogramMaker } = render(
+    <HistogramMaker
+      data={APIHistogramMakerData}
+    />
+  )
+
+  expect(await axe(histogramMaker)).toHaveNoViolations()
 })

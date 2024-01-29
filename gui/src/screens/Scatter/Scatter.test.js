@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByLabelText, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import APIScatterData from 'example-data/APIScatter.example-data'
 
@@ -33,4 +34,16 @@ test('Scatter - ', async () => {
   // expect(screen.getByText('Sample covariance:')).toBeTruthy()
   expect(screen.getAllByText('Sev symp 1').length).toEqual(2)
   expect(screen.getAllByText('Sev symp 2').length).toEqual(2)
+})
+
+test('Scatter with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: scatter } = render(
+    <Scatter
+      data={APIScatterData}
+    />
+  )
+
+  expect(await axe(scatter)).toHaveNoViolations()
 })

@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByLabelText, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import APIAntiBiasToolKitData from 'example-data/APIAntiBiasToolKit.example-data'
 
@@ -30,4 +31,16 @@ test('BiasedTimingSim - ', async () => {
   expect(screen.getByText("Factor is on")).toBeTruthy()
   expect(screen.getByText("NB: this graph always counts from the first entry made, therefore filtering may return numbers that don't immediately make sense")).toBeTruthy()
   expect(screen.getByText("Prime symptom bar graph")).toBeTruthy()
+})
+
+test('BiasedTimingSim with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: biasedTimingSim } = render(
+    <BiasedTimingSim
+      antiBiasToolKitData={APIAntiBiasToolKitData.prime_symptom_cases}
+    />
+  )
+
+  expect(await axe(biasedTimingSim)).toHaveNoViolations()
 })
