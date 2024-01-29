@@ -41,19 +41,19 @@ function ScatterChart({
     mapFn: mapFn
       ? mapFn
       : (data) => {
-      const {
-        care_error_level: careErrors,
-        outcome,
-        prime_symptom_level: primeSymptomSeverity,
-      } = data
-      return ({
-        careErrors,
-        outcome,
-        primeSymptomSeverity,
-        x: data[xKey],
-        y: data[yKey],
-      })
-    },
+        const {
+          care_error_level: careErrors,
+          outcome,
+          prime_symptom_level: primeSymptomSeverity,
+        } = data
+        return ({
+          careErrors,
+          outcome,
+          primeSymptomSeverity,
+          x: data[xKey],
+          y: data[yKey],
+        })
+      },
   })
 
   if (!pointList || pointList?.length === 0) {
