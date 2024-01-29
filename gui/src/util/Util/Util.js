@@ -10,7 +10,7 @@ export function getCurrentUrl() {
 }
 
 
-export function groupByPipe({ k }) {
+export function groupByAndCountPipe({ k }) {
   return pipe(
     groupBy(prop(k)),
     toPairs,
