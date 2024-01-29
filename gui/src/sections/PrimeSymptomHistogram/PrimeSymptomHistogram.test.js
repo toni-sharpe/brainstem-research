@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import APIPrimeSymptomListData from 'example-data/APIPrimeSymptomList.example-data'
 
@@ -46,4 +47,17 @@ test('PrimeSymptomHistogram - user key interaction', async () => {
 
   expect(screen.getByText('Factor is off')).toBeTruthy()
   const newFactorButton = screen.getByText('Turn on')
+})
+
+
+test('PrimeSymptomHistogram with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: primeSymptomHistogram } = render(
+    <PrimeSymptomHistogram
+      {...basePrimeSymptomHistogramProps}
+    />
+  )
+
+  expect(await axe(primeSymptomHistogram)).toHaveNoViolations()
 })

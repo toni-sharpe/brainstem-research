@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByRole, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import { SingleHistogramData } from 'example-data/Histogram.example-data'
 
@@ -66,4 +67,17 @@ test('Histogram without data', async () => {
     />
   )
   expect(screen.getByText('This histogram config has zero results')).toBeTruthy()
+})
+
+
+test('Histogram with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: histogram } = render(
+    <Histogram
+      {...baseHistogramProps}
+    />
+  )
+
+  expect(await axe(histogram)).toHaveNoViolations()
 })

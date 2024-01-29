@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByRole, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import { SingleHistogramData } from 'example-data/Histogram.example-data'
 
@@ -27,4 +28,17 @@ test('HistogramBarList', async () => {
   )
 
   expect(screen.getByText('0-5 d')).toBeTruthy()
+})
+
+
+test('HistogramBarList with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: histogramBarList } = render(
+    <HistogramBarList
+      {...baseHistogramBarListProps}
+    />
+  )
+
+  expect(await axe(histogramBarList)).toHaveNoViolations()
 })

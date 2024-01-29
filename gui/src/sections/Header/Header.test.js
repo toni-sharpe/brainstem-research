@@ -1,6 +1,7 @@
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 
@@ -52,4 +53,17 @@ test('Header', async () => {
    */
   expect(screen.getByText('Scatter Plot')).toBeTruthy()
   expect(screen.getByText('Time Line')).toBeTruthy()
+})
+
+
+test('Header with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: header } = render(
+    <Header
+      {...baseHeaderProps}
+    />
+  )
+
+  expect(await axe(header)).toHaveNoViolations()
 })

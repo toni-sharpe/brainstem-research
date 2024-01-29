@@ -2,6 +2,7 @@ import {render, screen} from '@testing-library/react'
 import i18next from 'util/i18next/i18next'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import { secondaryNavProps } from 'util/UtilNav/UtilNav'
 import Button from 'components/Button/Button'
@@ -51,4 +52,17 @@ test('SecondaryNavSumAndFilterList', async () => {
   expect(screen.getByLabelText('Storybook secondary nav sum and filter list')).toBeTruthy()
   expect(screen.getByText('A', ariaOther)).toBeTruthy()
   expect(screen.getByText('B', ariaCurrent)).toBeTruthy()
+})
+
+
+test('SecondaryNavSumAndFilterList with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: secondaryNavSumAndFilterList } = render(
+    <SecondaryNavSumAndFilterList
+      {...secondaryNavSumAndFilterListProps}
+    />
+  )
+
+  expect(await axe(secondaryNavSumAndFilterList)).toHaveNoViolations()
 })

@@ -1,6 +1,7 @@
 import { getByRole, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 
@@ -59,4 +60,13 @@ test('FilterButtonList - HistogramMaker page enables remove dubious', async () =
   renderFilterButtonList({ currentUrl: 'HistogramMaker' })
 
   expect(screen.getByText('Rm Dub.', { selected: true })).toBeTruthy()
+})
+
+
+test('FilterButtonList with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: filterButtonList } = renderFilterButtonList({ currentUrl: 'TimeLine' })
+
+  expect(await axe(filterButtonList)).toHaveNoViolations()
 })

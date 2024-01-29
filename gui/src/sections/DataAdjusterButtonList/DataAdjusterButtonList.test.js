@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import { getByRole, render, screen, waitFor } from '@testing-library/react'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import { FULL_DATA_POINT_LIST } from 'util/Constant/FullDataPointList'
 
@@ -46,4 +47,17 @@ test('DataAdjusterButtonList', async () => {
   await userEvent.click(buttonToClick)
   expect(onClickMock).toHaveBeenCalledWith(5)
   expect(screen.getByLabelText('Buttons for Test List interaction')).toBeTruthy()
+})
+
+
+test('DataAdjusterButtonList with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: dataAdjusterButtonList } = render(
+    <DataAdjusterButtonList
+      {...baseDataAdjusterButtonListProps()}
+    />
+  )
+
+  expect(await axe(dataAdjusterButtonList)).toHaveNoViolations()
 })

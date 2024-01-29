@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { axe, toHaveNoViolations } from 'jest-axe'
 
 import APIGanttData from 'example-data/APIGantt.example-data'
 import { GANTT_SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
@@ -31,4 +32,25 @@ test('GanttChart', async () => {
   expect(screen.getByText('=2')).toBeTruthy()
   expect(screen.getAllByText('=3').length).toEqual(2)
   expect(screen.getByText('=7')).toBeTruthy()
+})
+
+
+test('GanttChart with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: ganttChart } = render(
+    <GanttChart
+      currentFilterList={[]}
+      ganttToggleList={[]}
+      maxOfAll={390}
+      scale={GANTT_SCALE_DEFAULT}
+      statDataList={calcInteractiveGantt({
+        currentGroupBy: 'mild_symptom_1',
+        currentResponse: 'prime_symptom_1',
+        data: APIGanttData,
+      })}
+    />
+  )
+
+  expect(await axe(ganttChart)).toHaveNoViolations()
 })
