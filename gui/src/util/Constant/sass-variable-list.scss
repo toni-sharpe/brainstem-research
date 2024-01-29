@@ -106,9 +106,6 @@ $menu-guaranteed: 1500;
 @mixin column-layout() {
   display: flex;
   flex-direction: column;
-  &.right {
-    align-items: flex-end;
-  }
 }
 
 @mixin space-column() {

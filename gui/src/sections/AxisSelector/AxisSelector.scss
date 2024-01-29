@@ -29,10 +29,10 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
   }
   &__primary {
     &--left {
-      border-left: 24px solid var(--green);
+      border-right: 24px solid var(--green);
     }
     &--right {
-      border-right: 24px solid var(--green);
+      border-left: 24px solid var(--green);
     }
   }
   &__open-button,
@@ -51,6 +51,38 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
 
 
   &.left {
+    border-right: 2px solid var(--green--dark);
+
+    .axis-selector__heading {
+      text-align: right;
+    }
+
+    .axis-selector__open-button {
+      left: $axis-selector__full-width;
+    }
+
+    .axis-selector__close-button {
+      right: -34px;
+    }
+
+    @media (max-width: $media-switch--large) {
+      left: 0 - $axis-selector__full-width;
+      transition: left 1s;
+    }
+
+    &.open {
+      @media (max-width: $media-switch--large) {
+        left: 0;
+      }
+    }
+  }
+
+  .left {
+    align-items: flex-end;
+  }
+
+  &.right {
+    align-items: flex-start;
     border-left: 2px solid var(--green--dark);
 
     .axis-selector__heading {
@@ -77,28 +109,10 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
     }
   }
 
-  &.right {
-    border-right: 2px solid var(--green--dark);
-
-    .axis-selector__open-button {
-      left: $axis-selector__full-width;
-    }
-
-    .axis-selector__close-button {
-      right: -34px;
-    }
-
-    @media (max-width: $media-switch--large) {
-      left: 0 - $axis-selector__full-width;
-      transition: left 1s;
-    }
-
-    &.open {
-      @media (max-width: $media-switch--large) {
-        left: 0;
-      }
-    }
+  .right {
+    align-items: flex-start;
   }
+
 
 
   @media (max-width: $media-switch--large) {

@@ -25,7 +25,6 @@ function InteractiveGantt({
       <div className='interactive-gantt__wrapper row-layout space-children--wide'>
         <div className='interactive-gantt__bar-selector'>
           <AxisSelector
-            align='right'
             axis='stats'
             currentAxisSelection={currentResponse}
             disabledSelection={currentGroupBy}
@@ -41,6 +40,7 @@ function InteractiveGantt({
           />
         </div>
         <AxisSelector
+          align='right'
           axis='groupBy'
           currentAxisSelection={currentGroupBy}
           disabledSelection={currentResponse}
