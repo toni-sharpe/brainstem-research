@@ -73,7 +73,6 @@ function HistogramMaker({ data }) {
     >
       <div className='histogram-maker row-layout'>
         <AxisSelector
-          align='right'
           axis='stats'
           currentAxisSelection={currentPathogenesisStepList}
           disabledSelection={currentGroupBy}
@@ -100,6 +99,7 @@ function HistogramMaker({ data }) {
           />
         </div>
         <AxisSelector
+          align='right'
           axis='groupBy'
           currentAxisSelection={currentGroupBy}
           defineDurationOptions

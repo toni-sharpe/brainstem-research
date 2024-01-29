@@ -1,4 +1,3 @@
-import * as ramda from 'ramda'
 import i18next from 'util/i18next/i18next'
 import React, { useState } from 'react'
 
@@ -22,16 +21,6 @@ function Scatter({
   const [x, setX] = useState(HYPOTHESIS_SYMPTOM_X_Y.x)
   const [y, setY] = useState(HYPOTHESIS_SYMPTOM_X_Y.y)
 
-  const domain = ramda.pipe(
-    ramda.map(({ [x]: pickedX, [y]: pickedY }) => [pickedX, pickedY]),
-    ramda.flatten,
-    ramda.filter(Boolean),
-    vals => ([Math.min(...vals) / 10, Math.max(...vals) / 10]),
-    ([a, b]) => ([Math.floor(a) * 10, Math.ceil(b) * 10])
-  )(data)
-
-  // const pointList = calcKeyPairXy({ data, xKey: x, yKey: y })
-
   return (
     <PageDetailWrapper
       count={data?.length}
@@ -40,27 +29,25 @@ function Scatter({
       <div className='column-layout space-children--column-wide'>
         <div className='row-layout space-children'>
           <AxisSelector
+            axis='y'
+            currentAxisSelection={y}
+            primaryMark={HYPOTHESIS_SYMPTOM_X_Y.y}
+            setCurrentAxisSelection={setY}
+          />
+          <div className='scatter__chart-wrapper'>
+            <ScatterChart
+              ariaLabel={i18next.t(`${i18nBase}.interactiveChart`)}
+              keyPair={{ x: y, y: x }}
+              scatterData={data}
+              showStatData={false}
+            />
+          </div>
+          <AxisSelector
             align='right'
             axis='x'
             currentAxisSelection={x}
             primaryMark={HYPOTHESIS_SYMPTOM_X_Y.x}
             setCurrentAxisSelection={setX}
-          />
-          <div className='scatter__chart-wrapper'>
-            <ScatterChart
-              ariaLabel={i18next.t(`${i18nBase}.interactiveChart`)}
-              domain={domain}
-              keyPair={{ x, y }}
-              scatterData={data}
-              showStatData={false}
-              width={100}
-            />
-          </div>
-          <AxisSelector
-            axis='y'
-            currentAxisSelection={y}
-            primaryMark={HYPOTHESIS_SYMPTOM_X_Y.y}
-            setCurrentAxisSelection={setY}
           />
         </div>
       </div>

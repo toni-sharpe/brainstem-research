@@ -189,8 +189,8 @@ export const DRAG_GRAPH_SVG_SCALE_RADIUS = DRAG_GRAPH_SVG_SCALE / 2
  */
 export const SCATTER_SVG_SCALE = 700
 export const HYPOTHESIS_SYMPTOM_X_Y = {
-  x: 'fatal_symptom_1',
-  y: 'fatal_symptom_2',
+  x: 'fatal_symptom_2',
+  y: 'fatal_symptom_1',
 }
 export const SCATTER_SCALE_HIGHLIGHT = 5
 export const SCATTER_SCALE_LABEL_OFFSET = 50
