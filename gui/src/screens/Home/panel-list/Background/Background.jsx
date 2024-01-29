@@ -18,7 +18,7 @@ function Background() {
           text={(
             <>
               <p>{i18next.t(`${i18nBase}.paragraph1`)}</p>
-              <p>{i18next.t(`${i18nBase}.paragraph2-1`)}<a href='https://github.com/toni-sharpe/brainstem-research'>{i18next.t(`${i18nBase}.paragraph2Link`)}</a>{i18next.t(`${i18nBase}.paragraph2-2`)}</p>
+              <p>{i18next.t(`${i18nBase}.paragraph2`)}</p>
               <p>{i18next.t(`${i18nBase}.paragraph3`)}</p>
             </>
           )}
