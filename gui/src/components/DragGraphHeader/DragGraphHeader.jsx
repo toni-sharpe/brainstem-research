@@ -15,12 +15,6 @@ function DragGraphHeader({
       >
         {heading}
       </h2>
-      <span
-        className='drag-graph-header__scale-detail'
-        key='scale'
-      >
-        {scaleDetail}
-      </span>
     </header>
   )
 }

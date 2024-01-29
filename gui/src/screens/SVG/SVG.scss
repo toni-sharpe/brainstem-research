@@ -6,12 +6,13 @@
     flex-wrap: wrap;
 
     & > * {
-      width: 100%;
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 90%;
       @media (min-width: $media-switch__medium) {
-        width: 50%;
-      }
-      @media (min-width: $media-switch__large) {
-        width: 33%;
+        margin-left: 3%;
+        margin-right: 3%;
+        width: 44%;
       }
     }
   }
