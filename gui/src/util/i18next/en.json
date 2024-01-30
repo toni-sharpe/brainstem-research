@@ -426,13 +426,16 @@
   },
 
   "DragGraph": {
+    "scaleDetail": "Outer scale ring is {{outerScale}} and steps are {{scaleUnit}}"
+  },
+
+  "DragGraphButton": {
     "aveSeverityShown": "Severity",
     "incExtremes": "Inc. outlier",
     "minToMaxMultiplier": "max = X{{multiplier}} min",
     "outcomeShown": "Outcome",
-    "scaleDetail": "Outer scale ring is {{outerScale}} and steps are {{scaleUnit}}",
-    "zoomX2": "Zoom X2",
-    "zoomX3": "Zoom X3"
+    "resetGraphCenter": "Recenter",
+    "zoom": "Zoom X2.5"
   },
 
   "ErrorList": {
@@ -449,7 +452,7 @@
     "calcStepDiffGoodDiff": "lastStep must be equal to or greater than firstStep in calcStepDiff, GanttScale",
     "calcStepDiffNumbers": "calcStepDiff in GanttScale requires both values to be numbers",
     "calcWidth": "calcWidth function requires a min and max value provided",
-    "dragGraphLabelValProp": "The labelValList must be an array of [string, number] arrays",
+    "dragGraphLabelValProp": "The labelValList must be an array of [string, object] arrays",
     "fnMustBeProvidedTo": "{{fnName}} must be provided to {{caller}} and must be a function",
     "fnMustHaveNumbers": "{{caller}} must have numbers in all these parameters [{{numberKeyString}}]",
     "fullStatBase": "fullStatBase needs a k",

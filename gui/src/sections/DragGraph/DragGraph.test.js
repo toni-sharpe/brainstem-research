@@ -1,3 +1,8 @@
+import { getByRole, render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
+import { axe, toHaveNoViolations } from 'jest-axe'
+
+import { DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER } from 'util/Constant/BaseConstantList'
 import DragGraph from './DragGraph';
 
 const baseDragGraphProps = {
@@ -18,11 +23,68 @@ const baseDragGraphProps = {
 }
 
 test('DragGraph', () => {
-  render: () => {
-    return (
-      <div style={{...divWrapper}}>
-        <DragGraph {...baseDragGraphProps} />
-      </div>
-    )
+  const dragGraph = render(
+    <DragGraph {...baseDragGraphProps} />
+  )
+})
+
+test('DragGraph has the control buttons', () => {
+  const dragGraph = render(
+    <DragGraph {...baseDragGraphProps} />
+  )
+
+  expect(screen.getByText('Severity')).toBeTruthy()
+  expect(screen.getByText('Inc. outlier')).toBeTruthy()
+  expect(screen.getByText(`max = X${DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER} min`)).toBeTruthy()
+  expect(screen.getByText('Outcome')).toBeTruthy()
+  expect(screen.getByText('Zoom X2.5')).toBeTruthy()
+})
+
+test('DragGraph with no data', () => {
+  const props = {
+    ...baseDragGraphProps,
+    labelValList: undefined,
   }
+
+  render(
+    <DragGraph {...props} />
+  )
+
+  expect(screen.getByText('This drag graph config has zero results')).toBeTruthy()
+})
+
+test('DragGraph with empty array', () => {
+  const props = {
+    ...baseDragGraphProps,
+    labelValList: [],
+  }
+
+  render(
+    <DragGraph {...props} />
+  )
+
+  expect(screen.getByText('This drag graph config has zero results')).toBeTruthy()
+})
+
+test('DragGraph with [1] only array', () => {
+  const props = {
+    ...baseDragGraphProps,
+    labelValList: [],
+  }
+
+  render(
+    <DragGraph {...props} />
+  )
+
+  expect(screen.getByText('This drag graph config has zero results')).toBeTruthy()
+})
+
+test('DragGraph with AXE', async () => {
+  expect.extend(toHaveNoViolations)
+
+  const { container: dragGraph } = render(
+    <DragGraph {...baseDragGraphProps} />
+  )
+
+  expect(await axe(dragGraph)).toHaveNoViolations()
 })
