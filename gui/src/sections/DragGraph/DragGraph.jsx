@@ -11,19 +11,20 @@ import SvgLine from 'components/SvgLine/SvgLine'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import {
   DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER,
+  DRAG_GRAPH_SEVERITY_MULTIPLIER,
   DRAG_GRAPH_SVG_SCALE,
   DRAG_GRAPH_SVG_SCALE_RADIUS,
 } from 'util/Constant/BaseConstantList'
 import {
   calcAngleInRadians,
   calcBaseLineCoordList,
-  calcOutcomeCircleRadius,
+  calcCircleRadius,
   calcPolygonCoordList,
   calcPolygonCoordString,
   calcRadiusUnit,
   calcScaleRadiusList,
 } from 'util/UtilDragGraph/UtilDragGraph'
-// import { numberPrecision } from 'util/Util/Util'
+import { numberPrecision } from 'util/Util/Util'
 import {
   isFullMax,
   isWithinMultiplier,
@@ -45,9 +46,17 @@ function DragGraph({
   labelValList: lblValList,
 }) {
   const persisted = getJSONLocalStorage({ k: graphKey })
+
   const [incExtremes, setIncExtremes] = useState(persisted?.incExtremes || false)
   const [minToMaxMultiplier, setMinToMaxMultiplier] = useState(persisted?.minToMaxMultiplier || false)
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
+  const [aveSeverityShown, setAveSeverityShown] = useState(
+    persisted?.aveSeverityShown !== undefined
+      ? persisted?.aveSeverityShown
+      : true
+    )
+  const [outcomeShown, setOutcomeShown] = useState(persisted?.outcomeShown || false)
+
   const dataError = !lblValList || type(lblValList) !== 'Array' || lblValList.length < 2
 
   if (dataError) {
@@ -157,6 +166,36 @@ function DragGraph({
               }}
             />
           </li>
+          <li>
+            <Button
+              isSelected={aveSeverityShown}
+              size='medium'
+              label={i18next.t(`${i18nBase}.aveSeverityShown`)}
+              onClick={() => {
+                const newAveSeverityShown = !aveSeverityShown
+                setJSONLocalStorage({ k: graphKey, v: {
+                  ...persisted,
+                  aveSeverityShown: newAveSeverityShown
+                } })
+                setAveSeverityShown(newAveSeverityShown)
+              }}
+            />
+          </li>
+          <li>
+            <Button
+              isSelected={outcomeShown}
+              size='medium'
+              label={i18next.t(`${i18nBase}.outcomeShown`)}
+              onClick={() => {
+                const newOutcomeShown = !outcomeShown
+                setJSONLocalStorage({ k: graphKey, v: {
+                  ...persisted,
+                  outcomeShown: newOutcomeShown
+                } })
+                setOutcomeShown(newOutcomeShown)
+              }}
+            />
+          </li>
         </ul>
       </section>
       <figure>
@@ -167,10 +206,25 @@ function DragGraph({
           {i18next.t(`${i18nBase}.scaleDetail`, { outerScale, scaleUnit })}
         </figcaption>
         <SvgWrapper svgScale={DRAG_GRAPH_SVG_SCALE}>
-          { baseLineCoordList.map(([x, y], i) => <SvgLine key={`${x}-${y}-${i}`} stroke='#eee' x={[r, r]} y={[x, y]} />) }
+          { baseLineCoordList.map(([x, y], i) => {
+            return (
+              <SvgLine
+                key={`${x}-${y}-${i}`}
+                stroke='#eee'
+                x={[r, r]}
+                y={[x, y]}
+              />
+            )
+          })}
           { scaleRadiusList.map((circleRadius, i) => {
             const stroke = i === scaleRadiusList.length - 1 ? '#777' : '#eee'
-            return (<SvgCircle circleRadius={circleRadius} c={{ x: r, y: r }} key={`scale-${i}`} stroke={stroke} />
+            return (
+              <SvgCircle
+                circleRadius={circleRadius}
+                c={{ x: r, y: r }}
+                key={`scale-${i}`}
+                stroke={stroke}
+              />
             )
           })}
           <polygon
@@ -182,28 +236,44 @@ function DragGraph({
           />
           { dragLineCoordList.map(([x, y], i) => {
             const {
-              // careLevel,
+              careLevel,
+              length,
               severe,
               nonSevere,
             } = labelValList[i][1]
             return (
               <g key={`g-${x}-${y}-${i}`}>
-                { severe > 0 && (
+                { severe > 0 && outcomeShown && (
                   <SvgCircle
-                    circleRadius={calcOutcomeCircleRadius({ value: severe, zoom })}
+                    circleRadius={calcCircleRadius({ value: severe, zoom })}
                     c={{ x, y }}
                     key={`sv-${i}`}
                     fill='red'
                     fillOpacity={0.1}
                   />
                 ) }
-                { nonSevere > 0 && (
+                { nonSevere > 0 && outcomeShown && (
                   <SvgCircle
-                    circleRadius={calcOutcomeCircleRadius({ value: nonSevere, zoom })}
+                    circleRadius={calcCircleRadius({ value: nonSevere, zoom })}
                     c={{ x, y }}
                     key={`nsv-${i}`}
                     fill='blue'
                     fillOpacity={0.1}
+                  />
+                ) }
+               { careLevel > 0 && aveSeverityShown && (
+                  <SvgCircle
+                    circleRadius={
+                      calcCircleRadius({
+                        multiplier: DRAG_GRAPH_SEVERITY_MULTIPLIER,
+                        value: numberPrecision({ n: (careLevel / length) }),
+                        zoom,
+                      })
+                    }
+                    c={{ x, y }}
+                    key={`cl-${i}`}
+                    fill='#7a7'
+                    fillOpacity={0.2}
                   />
                 ) }
 
@@ -217,6 +287,7 @@ function DragGraph({
                   <div className='drag-graph__graph-point-label'>{labelValList[i][0]}</div>
                   <div
                     className='drag-graph__graph-point'
+                    onFocus={() => console.log('derp')}
                     tabIndex={0}
                     title={`Sev: ${severe} Not sev: ${nonSevere}`}
                   >
@@ -236,16 +307,5 @@ DragGraph.propTypes = {
   labelValList: PropTypes.arrayOf(LabelValPropType),
 }
 
- // { careLevel[1] > 0 && (
- //    <SvgCircle
- //      circleRadius={
- //        calcOutcomeCircleRadius({
- //          value: numberPrecision({ n: (careLevel[0] / careLevel[1]) / 2 }), zoom })}
- //      c={{ x, y }}
- //      key={`nsv-${i}`}
- //      fill='#7a7'
- //      fillOpacity={0.2}
- //    />
- //  ) }
 
 export default DragGraph

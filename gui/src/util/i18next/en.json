@@ -426,11 +426,13 @@
   },
 
   "DragGraph": {
-    "scaleDetail": "Outer scale ring is {{outerScale}} and steps are {{scaleUnit}}",
+    "aveSeverityShown": "Severity",
     "incExtremes": "Inc. outlier",
+    "minToMaxMultiplier": "max = X{{multiplier}} min",
+    "outcomeShown": "Outcome",
+    "scaleDetail": "Outer scale ring is {{outerScale}} and steps are {{scaleUnit}}",
     "zoomX2": "Zoom X2",
-    "zoomX3": "Zoom X3",
-    "minToMaxMultiplier": "max = X{{multiplier}} min"
+    "zoomX3": "Zoom X3"
   },
 
   "ErrorList": {
