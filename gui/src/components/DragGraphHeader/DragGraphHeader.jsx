@@ -5,7 +5,6 @@ import './DragGraphHeader.scss'
 
 function DragGraphHeader({
   heading,
-  scaleDetail,
 }) {
   return (
     <header className='column-layout space-children--column'>
@@ -21,7 +20,6 @@ function DragGraphHeader({
 
 DragGraphHeader.propTypes = {
   heading: PropTypes.string,
-  scaleDetail: PropTypes.string,
 }
 
 export default DragGraphHeader

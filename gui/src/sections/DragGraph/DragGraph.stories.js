@@ -5,7 +5,7 @@ export default {
   component: DragGraph,
 };
 
-const divWrapper = { boxShadow: '0 0 100px 0 #000', height: '800px', width: '640px' }
+const divWrapper = { boxShadow: '0 0 100px 0 #000', height: '690px', width: '540px' }
 
 const baseDragGraphProps = {
   color: 'green',
@@ -174,16 +174,6 @@ export const BigRange = {
   }
 };
 
-export const Smaller = {
-  render: () => {
-    return (
-      <div style={{ boxShadow: '0 0 100px 0 #000', height: '275px', width: '180px' }}>
-        <DragGraph {...baseDragGraphProps} />
-      </div>
-    )
-  }
-};
-
 export const NoData = {
   render: () => {
     const props = {
@@ -191,9 +181,7 @@ export const NoData = {
       labelValList: undefined,
     }
     return (
-      <div style={{...divWrapper}}>
-        <DragGraph {...props} />
-      </div>
+      <DragGraph {...props} />
     )
   }
 };
@@ -205,9 +193,7 @@ export const NotAnArray = {
       labelValList: 1,
     }
     return (
-      <div style={{...divWrapper}}>
-        <DragGraph {...props} />
-      </div>
+      <DragGraph {...props} />
     )
   }
 };
@@ -219,9 +205,7 @@ export const NotEnoughData = {
       labelValList: [1],
     }
     return (
-      <div style={{...divWrapper}}>
-        <DragGraph {...props} />
-      </div>
+      <DragGraph {...props} />
     )
   }
 };
