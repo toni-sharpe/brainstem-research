@@ -6,13 +6,17 @@ import SvgScalePropType from 'prop-types/SvgScale.prop-type'
 
 function SvgWrapper({
   children,
+  offsetPair,
   offset,
   svgScale,
 }) {
+  const viewBox = offsetPair
+    ? `${offsetPair} ${svgScale} ${svgScale}`
+    : `${offset ? `-${offset}` : 0} ${offset} ${svgScale} ${svgScale}`
   return (
     <svg
       key='svg'
-      viewBox={`${offset ? `-${offset}` : 0} ${offset} ${svgScale} ${svgScale}`}
+      viewBox={viewBox}
       xmlns="http://www.w3.org/2000/svg"
     >
       {children}

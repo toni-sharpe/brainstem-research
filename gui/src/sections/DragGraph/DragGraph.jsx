@@ -4,7 +4,9 @@ import React, { useState } from 'react'
 import { type } from 'ramda'
 
 import Button from 'components/Button/Button'
+import DragGraphButton from 'components/DragGraphButton/DragGraphButton'
 import DragGraphHeader from 'components/DragGraphHeader/DragGraphHeader'
+import DragGraphOutcomeCircle from 'components/DragGraphOutcomeCircle/DragGraphOutcomeCircle'
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
 import SvgLine from 'components/SvgLine/SvgLine'
@@ -18,7 +20,6 @@ import {
 import {
   calcAngleInRadians,
   calcBaseLineCoordList,
-  calcCircleRadius,
   calcPolygonCoordList,
   calcPolygonCoordString,
   calcRadiusUnit,
@@ -47,6 +48,7 @@ function DragGraph({
 }) {
   const persisted = getJSONLocalStorage({ k: graphKey })
 
+  const [graphOffset, setGraphOffset] = useState('0 0')
   const [incExtremes, setIncExtremes] = useState(persisted?.incExtremes || false)
   const [minToMaxMultiplier, setMinToMaxMultiplier] = useState(persisted?.minToMaxMultiplier || false)
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
@@ -93,6 +95,11 @@ function DragGraph({
     scaleRadiusList,
   } = calcScaleRadiusList({ max })
 
+  const commonButtonProps = {
+    graphKey,
+    localStorageValList: persisted,
+  }
+
   return (
     <article className='drag-graph column-layout space-children--wide-column-with-border'>
       <section className='column-layout space-children--wide-column'>
@@ -101,51 +108,26 @@ function DragGraph({
         />
         <ul className='drag-graph__controls row-layout space-children'>
           <li>
-            <Button
+            <DragGraphButton
+              {...commonButtonProps}
+              newValue={!incExtremes}
               isSelected={incExtremes}
               isDisabled={minToMaxMultiplier}
-              size='medium'
-              label={i18next.t(`${i18nBase}.incExtremes`)}
-              onClick={() => {
-                const newIncExtremes = !incExtremes
-                setJSONLocalStorage({ k: graphKey, v: {
-                  ...persisted,
-                  incExtremes: newIncExtremes,
-                  minToMaxMultiplier: false
-                } })
-                setIncExtremes(newIncExtremes)
+              k='incExtremes'
+              localStorageValList={{...persisted, minToMaxMultiplier: false }}
+              stateFn={() => {
+                setIncExtremes(!incExtremes)
                 setMinToMaxMultiplier(false)
               }}
             />
           </li>
           <li>
-            <Button
-              isSelected={zoom === 2}
-              size='medium'
-              label={i18next.t(`${i18nBase}.zoomX2`)}
-              onClick={() => {
-                const newZoom = zoom !== 2 ? 2 : 1
-                setJSONLocalStorage({ k: graphKey, v: {
-                  ...persisted,
-                  zoom: newZoom
-                } })
-                setZoom(newZoom)
-              }}
-            />
-          </li>
-          <li>
-            <Button
-              isSelected={zoom === 3}
-              size='medium'
-              label={i18next.t(`${i18nBase}.zoomX3`)}
-              onClick={() => {
-                const newZoom = zoom !== 3 ? 3 : 1
-                setJSONLocalStorage({ k: graphKey, v: {
-                  ...persisted,
-                  zoom: newZoom
-                } })
-                setZoom(newZoom)
-              }}
+            <DragGraphButton
+              {...commonButtonProps}
+              newValue={zoom !== 2.5 ? 2.5 : 1}
+              isSelected={zoom === 2.5}
+              k='zoom'
+              stateFn={setZoom}
             />
           </li>
           <li>
@@ -153,7 +135,7 @@ function DragGraph({
               isSelected={minToMaxMultiplier}
               isDisabled={incExtremes}
               size='medium'
-              label={i18next.t(`${i18nBase}.minToMaxMultiplier`, { multiplier: DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER })}
+              label={i18next.t(`DragGraphButton.minToMaxMultiplier`, { multiplier: DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER })}
               onClick={() => {
                 const newMaxTenXMin = !minToMaxMultiplier
                 setJSONLocalStorage({ k: graphKey, v: {
@@ -167,33 +149,30 @@ function DragGraph({
             />
           </li>
           <li>
-            <Button
+            <DragGraphButton
+              {...commonButtonProps}
+              newValue={!aveSeverityShown}
               isSelected={aveSeverityShown}
-              size='medium'
-              label={i18next.t(`${i18nBase}.aveSeverityShown`)}
-              onClick={() => {
-                const newAveSeverityShown = !aveSeverityShown
-                setJSONLocalStorage({ k: graphKey, v: {
-                  ...persisted,
-                  aveSeverityShown: newAveSeverityShown
-                } })
-                setAveSeverityShown(newAveSeverityShown)
-              }}
+              k='aveSeverityShown'
+              stateFn={setAveSeverityShown}
             />
           </li>
           <li>
-            <Button
+            <DragGraphButton
+              {...commonButtonProps}
+              newValue={!outcomeShown}
               isSelected={outcomeShown}
-              size='medium'
-              label={i18next.t(`${i18nBase}.outcomeShown`)}
-              onClick={() => {
-                const newOutcomeShown = !outcomeShown
-                setJSONLocalStorage({ k: graphKey, v: {
-                  ...persisted,
-                  outcomeShown: newOutcomeShown
-                } })
-                setOutcomeShown(newOutcomeShown)
-              }}
+              k='outcomeShown'
+              stateFn={setOutcomeShown}
+            />
+          </li>
+          <li>
+            <DragGraphButton
+              {...commonButtonProps}
+              localStorageValList={false}
+              newValue={'0 0'}
+              k='resetGraphCenter'
+              stateFn={setGraphOffset}
             />
           </li>
         </ul>
@@ -205,27 +184,13 @@ function DragGraph({
         >
           {i18next.t(`${i18nBase}.scaleDetail`, { outerScale, scaleUnit })}
         </figcaption>
-        <SvgWrapper svgScale={DRAG_GRAPH_SVG_SCALE}>
+        <SvgWrapper offsetPair={graphOffset} svgScale={DRAG_GRAPH_SVG_SCALE}>
           { baseLineCoordList.map(([x, y], i) => {
-            return (
-              <SvgLine
-                key={`${x}-${y}-${i}`}
-                stroke='#eee'
-                x={[r, r]}
-                y={[x, y]}
-              />
-            )
+            return (<SvgLine key={`${x}-${y}-${i}`} stroke='#eee' x={[r, r]} y={[x, y]} />)
           })}
           { scaleRadiusList.map((circleRadius, i) => {
             const stroke = i === scaleRadiusList.length - 1 ? '#777' : '#eee'
-            return (
-              <SvgCircle
-                circleRadius={circleRadius}
-                c={{ x: r, y: r }}
-                key={`scale-${i}`}
-                stroke={stroke}
-              />
-            )
+            return (<SvgCircle circleRadius={circleRadius} c={{ x: r, y: r }} key={`scale-${i}`} stroke={stroke} />)
           })}
           <polygon
             fill={color}
@@ -241,39 +206,24 @@ function DragGraph({
               severe,
               nonSevere,
             } = labelValList[i][1]
+
+            const commonCircleProps = { c: { x, y }, zoom }
+
             return (
-              <g key={`g-${x}-${y}-${i}`}>
+              <g key={`g-${i}`}>
                 { severe > 0 && outcomeShown && (
-                  <SvgCircle
-                    circleRadius={calcCircleRadius({ value: severe, zoom })}
-                    c={{ x, y }}
-                    key={`sv-${i}`}
-                    fill='red'
-                    fillOpacity={0.1}
-                  />
+                  <DragGraphOutcomeCircle {...commonCircleProps} fill='red' key={`sv-${i}`} r={severe} />
                 ) }
                 { nonSevere > 0 && outcomeShown && (
-                  <SvgCircle
-                    circleRadius={calcCircleRadius({ value: nonSevere, zoom })}
-                    c={{ x, y }}
-                    key={`nsv-${i}`}
-                    fill='blue'
-                    fillOpacity={0.1}
-                  />
+                  <DragGraphOutcomeCircle {...commonCircleProps} fill='blue' key={`nsv-${i}`} r={nonSevere} />
                 ) }
                { careLevel > 0 && aveSeverityShown && (
-                  <SvgCircle
-                    circleRadius={
-                      calcCircleRadius({
-                        multiplier: DRAG_GRAPH_SEVERITY_MULTIPLIER,
-                        value: numberPrecision({ n: (careLevel / length) }),
-                        zoom,
-                      })
-                    }
-                    c={{ x, y }}
+                  <DragGraphOutcomeCircle
+                    {...commonCircleProps}
+                    fill='#494'
                     key={`cl-${i}`}
-                    fill='#7a7'
-                    fillOpacity={0.2}
+                    r={numberPrecision({ n: (careLevel / length) })}
+                    multiplier={DRAG_GRAPH_SEVERITY_MULTIPLIER}
                   />
                 ) }
 
@@ -287,7 +237,7 @@ function DragGraph({
                   <div className='drag-graph__graph-point-label'>{labelValList[i][0]}</div>
                   <div
                     className='drag-graph__graph-point'
-                    onFocus={() => console.log('derp')}
+                    onFocus={() => setGraphOffset(`${0 - (r - x)} ${0 - (r - y)}`)}
                     tabIndex={0}
                     title={`Sev: ${severe} Not sev: ${nonSevere}`}
                   >
