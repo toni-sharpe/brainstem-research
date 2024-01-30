@@ -55,7 +55,7 @@ function DragGraph({
   const [aveSeverityShown, setAveSeverityShown] = useState(
     persisted?.aveSeverityShown !== undefined
       ? persisted?.aveSeverityShown
-      : true
+      : false
     )
   const [outcomeShown, setOutcomeShown] = useState(persisted?.outcomeShown || false)
 
