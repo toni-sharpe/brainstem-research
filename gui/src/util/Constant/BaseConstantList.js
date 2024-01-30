@@ -182,10 +182,11 @@ export const BASE_SVG_OFFSET = 0
  * Drag graph
  */
 export const DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER = 12
-export const DRAG_GRAPH_SVG_SCALE = BASE_SVG_SCALE
+export const DRAG_GRAPH_SVG_SCALE = 640
 export const DRAG_GRAPH_SVG_SCALE_RADIUS = DRAG_GRAPH_SVG_SCALE / 2
 export const DRAG_GRAPH_OUTCOME_START = 15
-export const DRAG_GRAPH_OUTCOME_MULTIPLIER = 0.85
+export const DRAG_GRAPH_OUTCOME_MULTIPLIER = 2
+export const DRAG_GRAPH_SEVERITY_MULTIPLIER = 0.4
 
 /*
  * Scatter graph

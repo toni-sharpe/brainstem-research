@@ -2,7 +2,7 @@ import i18next from 'util/i18next/i18next'
 import React from 'react'
 import { type } from 'ramda'
 
-import DragGraph from 'components/DragGraph/DragGraph'
+import DragGraph from 'sections/DragGraph/DragGraph'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import { calcHue } from 'util/Util/UtilHue'
 import { groupByAndCountPipe } from 'util/UtilDragGraph/UtilDragGraphGrouping'
