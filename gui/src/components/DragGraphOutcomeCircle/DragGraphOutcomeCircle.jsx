@@ -10,6 +10,7 @@ function DragGraphOutcomeCircle({
   c,
   multiplier,
   fill,
+  fillOpacity,
   r,
   zoom,
 }) {
@@ -18,12 +19,13 @@ function DragGraphOutcomeCircle({
       circleRadius={calcCircleRadius({ multiplier, value: r, zoom })}
       c={c}
       fill={fill}
-      fillOpacity={0.1}
+      fillOpacity={fillOpacity}
     />
   )
 }
 
 DragGraphOutcomeCircle.defaultProps = {
+  fillOpacity: 0.1,
   multiplier: 1,
 }
 

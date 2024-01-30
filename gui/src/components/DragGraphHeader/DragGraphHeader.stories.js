@@ -8,7 +8,7 @@ export default {
 export const Primary = {
   render: () => {
     return (
-      <DragGraphHeader />
+      <DragGraphHeader heading='Test graph heading' />
     )
   }
 };
