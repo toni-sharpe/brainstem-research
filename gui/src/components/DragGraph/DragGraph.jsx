@@ -23,6 +23,7 @@ import {
   calcRadiusUnit,
   calcScaleRadiusList,
 } from 'util/UtilDragGraph/UtilDragGraph'
+// import { numberPrecision } from 'util/Util/Util'
 import {
   isFullMax,
   isWithinMultiplier,
@@ -180,7 +181,11 @@ function DragGraph({
             stroke={color}
           />
           { dragLineCoordList.map(([x, y], i) => {
-            const { severe, nonSevere } = labelValList[i][1]
+            const {
+              // careLevel,
+              severe,
+              nonSevere,
+            } = labelValList[i][1]
             return (
               <g key={`g-${x}-${y}-${i}`}>
                 { severe > 0 && (
@@ -201,6 +206,7 @@ function DragGraph({
                     fillOpacity={0.1}
                   />
                 ) }
+
                 <foreignObject
                   height='46'
                   key={labelValList[i][0]}
@@ -212,6 +218,7 @@ function DragGraph({
                   <div
                     className='drag-graph__graph-point'
                     tabIndex={0}
+                    title={`Sev: ${severe} Not sev: ${nonSevere}`}
                   >
                     {valList[i]}
                   </div>
@@ -228,5 +235,17 @@ function DragGraph({
 DragGraph.propTypes = {
   labelValList: PropTypes.arrayOf(LabelValPropType),
 }
+
+ // { careLevel[1] > 0 && (
+ //    <SvgCircle
+ //      circleRadius={
+ //        calcOutcomeCircleRadius({
+ //          value: numberPrecision({ n: (careLevel[0] / careLevel[1]) / 2 }), zoom })}
+ //      c={{ x, y }}
+ //      key={`nsv-${i}`}
+ //      fill='#7a7'
+ //      fillOpacity={0.2}
+ //    />
+ //  ) }
 
 export default DragGraph

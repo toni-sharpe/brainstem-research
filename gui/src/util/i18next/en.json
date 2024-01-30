@@ -70,6 +70,7 @@
   },
 
   "CommonClinicalDefinitions": {
+    "care_technique_1": "Kinetics",
     "care_equipment_1": "Care Equipment 1",
     "care_equipment_4": "Care Equipment 4",
     "care_technique_2": "Care Technique 2",

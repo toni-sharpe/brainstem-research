@@ -18,10 +18,9 @@ function SVG({ data }) {
     'care_equipment_4',
     'outcome_type',
     'etiology',
+    'care_technique_1',
     'care_equipment_1',
     'care_technique_2',
-    'care_technique_3',
-    { k: 'event_count', fn: d => d.filter(({ event_count }) => event_count > 1) },
     'prime_symptom_level',
   ]
 

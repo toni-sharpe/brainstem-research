@@ -31,7 +31,6 @@ test('SVG - ', async () => {
   expect(screen.getByText('Etiology')).toBeTruthy()
   expect(screen.getByText('Care Equipment 1')).toBeTruthy()
   expect(screen.getByText('Care Technique 2')).toBeTruthy()
-  expect(screen.getByText('Care Technique 3')).toBeTruthy()
 })
 
 test('SVG with AXE', async () => {
