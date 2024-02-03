@@ -10,6 +10,7 @@ function HistogramBar({
   backgroundColor,
   blockSize,
   children,
+  extraClass,
   height,
   left,
   title,
@@ -24,8 +25,8 @@ function HistogramBar({
 
   return (
     <li
-      className='histogram-bar'
-      style={{ ...endStyles, backgroundColor: backgroundColor || '#999' }}
+      className={`histogram-bar ${extraClass}`}
+      style={{ ...endStyles, backgroundColor: !extraClass && (backgroundColor || '#999') }}
       title={title}
     >
       {children}

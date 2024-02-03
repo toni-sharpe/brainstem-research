@@ -67,6 +67,25 @@ export const FallbackColour = {
   }
 };
 
+export const ExtraClassOverride = {
+  render: () => {
+    const props = {
+      ...baseHistogramBarProps,
+      backgroundColor: undefined,
+      extraClass: 'sb-example',
+    }
+    return (
+      <StoryBookPaddedWrapper>
+        <ul>
+          <HistogramBar {...props}>
+            <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
+          </HistogramBar>
+        </ul>
+      </StoryBookPaddedWrapper>
+    )
+  }
+};
+
 export const SizesChanged = {
   render: () => {
     const props = {
