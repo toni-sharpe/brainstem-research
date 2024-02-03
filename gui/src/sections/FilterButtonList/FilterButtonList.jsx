@@ -1,3 +1,4 @@
+import { keys } from 'ramda'
 import i18next from 'util/i18next/i18next'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -5,7 +6,6 @@ import React from 'react'
 import Button from 'components/Button/Button'
 import CurrentFilterListPropType from 'prop-types/CurrentFilterList.prop-type'
 import CurrentUrlPropType from 'prop-types/CurrentUrl.prop-type'
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 
 import './FilterButtonList.scss'
@@ -38,7 +38,7 @@ function FilterButtonList({
       className='filter-button-list'
       data-testid='filter-button-list'
     >
-      { orderedFilters.map(k => {
+      { keys(orderedFilters).map(k => {
         return (
           <li key={k}>
             <Button {...filterButtonProps({ k })} />
@@ -50,7 +50,7 @@ function FilterButtonList({
 }
 
 FilterButtonList.defaultProps = {
-  currentFilterList: CURRENT_FILTER_LIST,
+  currentFilterList: ORDERED_FILTERS,
   currentUrl: 'scatter',
   orderedFilters: ORDERED_FILTERS,
 }
@@ -58,7 +58,7 @@ FilterButtonList.defaultProps = {
 FilterButtonList.propTypes = {
   currentFilterList: CurrentFilterListPropType,
   currentUrl: CurrentUrlPropType,
-  orderedFilters: PropTypes.array,
+  orderedFilters: CurrentFilterListPropType,
   setCurrentFilterList: PropTypes.func,
 }
 

@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
+import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 
 import Header from './Header'
 
@@ -13,7 +13,7 @@ const setCurrentFilterListMock = jest.fn()
 
 const baseHeaderProps = {
   currentUrl: 'TimeLine',
-  currentFilterList: CURRENT_FILTER_LIST,
+  currentFilterList: ORDERED_FILTERS,
   setCurrentFilterList: setCurrentFilterListMock,
 }
 
@@ -32,15 +32,15 @@ test('Header', async () => {
   await userEvent.click(screen.getByText('NS'))
   expect(setCurrentFilterListMock).toHaveBeenCalledWith(
     {
-      ...CURRENT_FILTER_LIST,
+      ...ORDERED_FILTERS,
       nonSevere: true
     }
   )
   await userEvent.click(screen.getByText('Rm Dub.'))
   expect(setCurrentFilterListMock).toHaveBeenCalledWith(
     {
-      ...CURRENT_FILTER_LIST,
-      rmDubious: false
+      ...ORDERED_FILTERS,
+      rmDubious: true
     }
   )
 

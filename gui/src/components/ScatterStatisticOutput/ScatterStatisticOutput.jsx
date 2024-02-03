@@ -9,7 +9,7 @@ import GanttScale from 'sections/GanttScale/GanttScale'
 import ScatterPointListPropType from 'prop-types/ScatterPointList.prop-type'
 import StatBarDetailListPropType from 'prop-types/GanttToggleList.prop-type'
 import GanttBarList from 'sections/GanttBarList/GanttBarList'
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
+import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 import { FULL_DATA_POINT_LIST } from 'util/Constant/FullDataPointList'
 import { calcScale, mapToGanttBars } from 'util/UtilGanttBarList/UtilGanttBarList'
 import { GANTT_TOGGLE_LIST } from 'util/Constant/BaseConstantList'
@@ -82,7 +82,7 @@ function ScatterStatisticOutput({
             </div>
             <div className='scatter-statistic-output__gantt-bar-list'>
               <GanttBarList
-                currentFilterList={CURRENT_FILTER_LIST}
+                currentFilterList={ORDERED_FILTERS}
                 scale={scale}
                 statDataList={[xStatList, yStatList]}
                 ganttToggleList={ganttToggleList}

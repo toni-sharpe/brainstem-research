@@ -1,6 +1,6 @@
 import { map, pipe, toPairs } from 'ramda'
 
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
+import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 import { GanttBarDataToneSet } from 'example-data/GanttBar.example-data'
 
 function baseGanttBarListProps({ testContext = 'automated' } = {}) {
@@ -18,7 +18,7 @@ function baseGanttBarListProps({ testContext = 'automated' } = {}) {
   )
 
   return {
-    currentFilterList: CURRENT_FILTER_LIST,
+    currentFilterList: ORDERED_FILTERS,
     maxOfAll: 180,
     scale: {
       stepDivision: 60,

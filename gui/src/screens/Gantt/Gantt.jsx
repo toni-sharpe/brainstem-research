@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
 import SecondaryNavButtonList from 'components/SecondaryNavButtonList/SecondaryNavButtonList'
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
+import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 import { secondaryNavLocalStorage } from 'util/UtilLocalStorage/UtilSecondaryNav'
 
 import PathogenesisGantt from './panel-list/PathogenesisGantt/PathogenesisGantt'
@@ -57,7 +57,7 @@ function Gantt({
 }
 
 Gantt.defaultProps = {
-  currentFilterList: CURRENT_FILTER_LIST,
+  currentFilterList: ORDERED_FILTERS,
   data: [],
 }
 

@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
+import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 
 import FilterButtonList from './FilterButtonList'
 
@@ -11,7 +11,7 @@ function renderFilterButtonList({ currentUrl = 'TimeLine', mock = () => {} } = {
   return render(
     <FilterButtonList
       currentUrl={currentUrl}
-      currentFilterList={CURRENT_FILTER_LIST}
+      currentFilterList={ORDERED_FILTERS}
       setCurrentFilterList={mock}
     />
   )
@@ -24,7 +24,7 @@ test('FilterButtonList', async () => {
   await userEvent.click(screen.getByText('NS'))
   expect(setCurrentFilterListMock).toHaveBeenCalledWith(
     {
-      ...CURRENT_FILTER_LIST,
+      ...ORDERED_FILTERS,
       nonSevere: true
     }
   )

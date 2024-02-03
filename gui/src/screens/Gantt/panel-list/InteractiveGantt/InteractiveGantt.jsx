@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import AxisSelector from 'sections/AxisSelector/AxisSelector'
 import GanttChart from 'sections/GanttChart/GanttChart'
 import SubPageWrapper from 'components/SubPageWrapper/SubPageWrapper'
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
+import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 import { calcScale } from 'util/UtilGanttBarList/UtilGanttBarList'
 import { calcInteractiveGantt } from 'util/UtilGanttScreen/UtilInteractiveGantt'
 
@@ -52,7 +52,7 @@ function InteractiveGantt({
 }
 
 InteractiveGantt.defaultProps = {
-  currentFilterList: CURRENT_FILTER_LIST,
+  currentFilterList: ORDERED_FILTERS,
   data: [],
 }
 

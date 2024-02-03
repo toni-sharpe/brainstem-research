@@ -3,12 +3,10 @@ import baseGanttBarListProps from './baseGanttBarListProps'
 
 const baseProps = {
   currentFilterList: {
-    confirmedActors: false,
     severe: false,
     fjp: false,
     hardEventOnly: false,
-    hardPrimeSymptom: false,
-    rmDubious: true,
+    rmDubious: false,
     nonSevere: false,
   },
   maxOfAll: 180,

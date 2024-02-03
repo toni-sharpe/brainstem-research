@@ -13,7 +13,7 @@ import Gantt from 'screens/Gantt/Gantt';
 import TimeLine from 'screens/TimeLine/TimeLine';
 import HistogramMaker from 'screens/HistogramMaker/HistogramMaker';
 import SVG from 'screens/SVG/SVG';
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
+import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 import { calcFilterList, isAnyFilterSet } from 'util/UtilFilter/UtilFilter'
 import { getCurrentUrl } from 'util/Util/Util'
 
@@ -25,9 +25,9 @@ function App() {
 
   const [data, setData] = useState([])
 
-  CURRENT_FILTER_LIST.rmDubious = !['AntiBiasToolKit', 'Home', ''].includes(currentUrl)
-  CURRENT_FILTER_LIST.nonSevere = ['TimeLine'].includes(currentUrl)
-  const [currentFilterList, setCurrentFilterList] = useState(CURRENT_FILTER_LIST)
+  ORDERED_FILTERS.rmDubious = !['AntiBiasToolKit', 'Home', ''].includes(currentUrl)
+  ORDERED_FILTERS.nonSevere = ['TimeLine'].includes(currentUrl)
+  const [currentFilterList, setCurrentFilterList] = useState(ORDERED_FILTERS)
 
   useEffect(baseApiCall({ // eslint-disable-line react-hooks/exhaustive-deps
     endPoint: currentUrl,

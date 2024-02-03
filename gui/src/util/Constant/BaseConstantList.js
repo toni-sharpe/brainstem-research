@@ -12,15 +12,13 @@ export const PRECISION = 6
 /*
  * Filters
  */
-export const ORDERED_FILTERS = [
-  'fjp',
-  'rmDubious',
-  'confirmedActors',
-  'hardEventOnly',
-  'hardPrimeSymptom',
-  'severe',
-  'nonSevere'
-]
+export const ORDERED_FILTERS = {
+  fjp: false,
+  rmDubious: false,
+  hardEventOnly: false,
+  severe: false,
+  nonSevere: false,
+}
 
 
 /***********************************/
