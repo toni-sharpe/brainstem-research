@@ -51,19 +51,19 @@ test('calcPrimeSymptomHistogramBarGroup()', () => {
   }
 
   const expected = [
-    [ "0", { "severe":  0, "nonSevere":  0 }],
-    [ "5", { "severe":  0, "nonSevere":  0 }],
-    ["10", { "severe":  5, "nonSevere": 12 }],
-    ["15", { "severe":  1, "nonSevere": 16 }],
-    ["20", { "severe":  5, "nonSevere":  4 }],
-    ["25", { "severe":  1, "nonSevere":  4 }],
-    ["30", { "severe":  3, "nonSevere":  0 }],
-    ["35", { "severe":  0, "nonSevere":  0 }],
-    ["40", { "severe":  2, "nonSevere":  0 }],
-    ["45", { "severe":  0, "nonSevere":  0 }],
-    ["50", { "severe":  0, "nonSevere":  0 }],
-    ["55", { "severe":  0, "nonSevere":  0 }],
-    ["60", { "severe":  0, "nonSevere":  0 }],
+    [ "0", { "severe": [ 0,  0], "nonSevere": [ 0,  0] }],
+    [ "5", { "severe": [ 0,  0], "nonSevere": [ 0,  0] }],
+    ["10", { "severe": [ 5,  5], "nonSevere": [ 6, 12] }],
+    ["15", { "severe": [ 1,  1], "nonSevere": [ 8, 16] }],
+    ["20", { "severe": [ 5,  5], "nonSevere": [ 2,  4] }],
+    ["25", { "severe": [ 1,  1], "nonSevere": [ 2,  4] }],
+    ["30", { "severe": [ 3,  3], "nonSevere": [ 0,  0] }],
+    ["35", { "severe": [ 0,  0], "nonSevere": [ 0,  0] }],
+    ["40", { "severe": [ 2,  2], "nonSevere": [ 0,  0] }],
+    ["45", { "severe": [ 0,  0], "nonSevere": [ 0,  0] }],
+    ["50", { "severe": [ 0,  0], "nonSevere": [ 0,  0] }],
+    ["55", { "severe": [ 0,  0], "nonSevere": [ 0,  0] }],
+    ["60", { "severe": [ 0,  0], "nonSevere": [ 0,  0] }],
   ]
 
   expect(calcPrimeSymptomHistogramBarGroup(args)).toEqual(expected)

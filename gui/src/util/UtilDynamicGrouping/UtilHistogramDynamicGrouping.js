@@ -28,8 +28,8 @@ export function pathogenesisToGroupMapper({ dataFn } = {}) {
         const pathogenesisStepData = pluck(pathogenesisStep, data[pathogenesisStep])
         return ({
           [pathogenesisStep]: pathogenesisStepData?.length > 0
-            ? dataFn({ pathogenesisStepData })
-            : 0
+            ? [pathogenesisStepData?.length, dataFn({ pathogenesisStepData })]
+            : [0, 0]
         })
       })),
     ]

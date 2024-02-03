@@ -60,7 +60,7 @@ export function writeHistogramBarListAriaLabel({
     ),
     i18nKey: 'ariaTranslationSet'
   })
-  
+
   return translationSet?.barList && translationSet?.groupBy
     ? i18next.t(
       'HistogramBarListLabel.aria-label', {

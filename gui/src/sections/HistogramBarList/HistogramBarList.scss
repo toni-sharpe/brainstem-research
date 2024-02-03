@@ -3,6 +3,7 @@
   position: absolute;
   z-index: var(--step-right-forward);
   &:focus {
+    .histogram-bar-count,
     .histogram-bar-label {
       display: flex;
       z-index: var(--front-guaranteed);
@@ -12,6 +13,7 @@
     .histogram-bar-list-label {
       background-color: var(--blue--light);
     }
+    .histogram-bar-count,
     .histogram-bar-label {
       display: flex;
       z-index: var(--front-guaranteed);

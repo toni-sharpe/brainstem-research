@@ -10,6 +10,7 @@ import {
   HISTORGRAM_HEIGHT,
 } from 'util/Constant/BaseConstantList'
 import HistogramBar from 'components/HistogramBar/HistogramBar'
+import HistogramBarCount from 'components/HistogramBarCount/HistogramBarCount'
 import HistogramBarLabel from 'components/HistogramBarLabel/HistogramBarLabel'
 import HistogramBarListLabel from 'components/HistogramBarListLabel/HistogramBarListLabel'
 import HistogramDataPropType from 'prop-types/HistogramData.prop-type'
@@ -58,7 +59,7 @@ function HistogramBarList({
         <li>
           <ol>
             {
-              subBars.map(([k, val], j) => {
+              subBars.map(([k, [count, val]], j) => {
                 const innerLeft = innerBlockSize * j
 
                 const valCondensed = type(val) === 'Array'
@@ -72,7 +73,7 @@ function HistogramBarList({
 
                   const graphBarFraction = (v / mostMaxOfAllThings).toPrecision(3)
 
-                  const count = v.toFixed(v < 100 ? 1 : 0)
+                  const displayVal = v.toFixed(v < 100 ? 1 : 0)
                   const graphBarSize = (histogramHeight * graphBarFraction).toPrecision(4)
                   const graphBarTop = (histogramHeight - graphBarSize).toPrecision(4)
 
@@ -84,6 +85,7 @@ function HistogramBarList({
                           : null
                       }
                       blockSize={innerBlockSize}
+                      count={count}
                       extraClass={k}
                       height={`${graphBarSize}vh`}
                       key={`${innerLeft}-${k}-${v}-${i}`}
@@ -92,18 +94,22 @@ function HistogramBarList({
                       top={`${graphBarTop}vh`}
                     >
                       <HistogramBarLabel
-                        ariaLabel={i18next.t(`${i18nBaseOverride || 'HistogramBarLabel'}.${k}`, { ariaLabel, count })}
+                        ariaLabel={i18next.t(`${i18nBaseOverride || 'HistogramBarLabel'}.${k}`, { ariaLabel, displayVal })}
                         blockSize={blockSize}
                         isShown
                       >
-                        <span>{ count }</span>
+                        <span>{ displayVal }</span>
                       </HistogramBarLabel>
+                      <HistogramBarCount
+                        barCountPerBlock={barCountPerBlock}
+                        count={count}
+                      />
                     </HistogramBar>
                   )
                 }
 
                 return barSegmentCount === 0
-                  ? (<HistogramBarLabel ariaLabel={i18next.t(`HistogramBarLabel.${k}`, { ariaLabel, count: 0 })} />)
+                  ? (<HistogramBarLabel ariaLabel={i18next.t(`HistogramBarLabel.${k}`, { ariaLabel, displayVal: 0 })} />)
                   : (<li key={`${innerLeft}-${k}`}><ol>{ valCondensed.map(makeHistogramBarMapper) }</ol></li>)
               })
             }

@@ -277,10 +277,10 @@
     "55": "55-60 d",
     "60": "60 d +",
     "factoredBy": "{{ariaName}} with non severe columns factored by {{factor}}",
-    "severe": "{{count}} severe cases in {{ariaLabel}}",
+    "severe": "{{displayVal}} severe cases in {{ariaLabel}}",
     "severeOnly": "severe",
     "name": "Prime symptom bar graph",
-    "nonSevere": "{{count}} non severe cases in {{ariaLabel}}",
+    "nonSevere": "{{displayVal}} non severe cases in {{ariaLabel}}",
     "nonSevereOnly": "non severe",
     "numberExplanation": "NB: this graph always counts from the first entry made, therefore filtering may return numbers that don't immediately make sense",
     "primeSymptomHistogramTools": "Tools and feedback to interact with the graph",
@@ -297,7 +297,7 @@
   },
 
   "HistogramBarLabel": {
-    "sb-3": "{{count}} cases in {{ariaLabel}}"
+    "sb-3": "{{displayVal}} cases in {{ariaLabel}}"
   },
 
   "AverageLineList": {

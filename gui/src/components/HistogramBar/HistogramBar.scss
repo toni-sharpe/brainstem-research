@@ -3,11 +3,8 @@
   justify-content: center;
   position: absolute;
 
-  &--suffix-class-story-book-example {
-    background-color: #0a3;
-  }
-
   &:hover {
+    .histogram-bar-count,
     .histogram-bar-label {
       display: flex;
     }
