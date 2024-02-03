@@ -11,6 +11,7 @@ export default {
 const basePrimeSymptomHistogramProps = {
   biasedTimingError: 0,
   blockSize: PRIME_SYMPTOM_BLOCK_SIZE,
+  localStorageFn: () => ({ count: 1, factor: undefined }),
   primeSymptomData: PrimeSymptomHistogramData,
   timingError: 0,
 }
