@@ -1,4 +1,4 @@
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
+import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 
 import {
   confirmedActorFilter,
@@ -22,34 +22,34 @@ function filterOn({ fn, key }) {
 }
 
 const confirmedActorFilterMapper = confirmedActorFilter({
-  currentFilterList: CURRENT_FILTER_LIST
+  currentFilterList: ORDERED_FILTERS
 })
 const removeDubiousFilterMapper = removeDubiousFilter({
-  currentFilterList: CURRENT_FILTER_LIST
+  currentFilterList: ORDERED_FILTERS
 })
 const severeFilterMapper = severeFilter({
-  currentFilterList: CURRENT_FILTER_LIST
+  currentFilterList: ORDERED_FILTERS
 })
 const fjpFilterMapper = fjpFilter({
-  currentFilterList: CURRENT_FILTER_LIST
+  currentFilterList: ORDERED_FILTERS
 })
 const pathologicalEventDurationFilterMapper = pathologicalEventDurationFilter({
-  currentFilterList: CURRENT_FILTER_LIST
+  currentFilterList: ORDERED_FILTERS
 })
 const hardEventOnlyFilterMapper = hardEventOnlyFilter({
-  currentFilterList: CURRENT_FILTER_LIST
+  currentFilterList: ORDERED_FILTERS
 })
 const hardPrimeSymptomFilterMapper = hardPrimeSymptomFilter({
-  currentFilterList: CURRENT_FILTER_LIST
+  currentFilterList: ORDERED_FILTERS
 })
 const primeSymptomFilterMapper = primeSymptomFilter({
-  currentFilterList: CURRENT_FILTER_LIST
+  currentFilterList: ORDERED_FILTERS
 })
 const secondOrMoreMapper = secondOrMore({
-  currentFilterList: CURRENT_FILTER_LIST
+  currentFilterList: ORDERED_FILTERS
 })
 const thirdOrMoreMapper = thirdOrMore({
-  currentFilterList: CURRENT_FILTER_LIST
+  currentFilterList: ORDERED_FILTERS
 })
 
 

@@ -1,5 +1,5 @@
 // FilterButtonList.story.js
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
+import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 
 import FilterButtonList from './FilterButtonList';
 
@@ -8,7 +8,7 @@ export default {
 };
 
 const baseFilterButtonListProps = {
-  currentFilterList: CURRENT_FILTER_LIST,
+  currentFilterList: ORDERED_FILTERS,
   currentUrl: 'GanttBarList'
 }
 

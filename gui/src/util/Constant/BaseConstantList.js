@@ -15,9 +15,7 @@ export const PRECISION = 6
 export const ORDERED_FILTERS = [
   'fjp',
   'rmDubious',
-  'confirmedActors',
   'hardEventOnly',
-  'hardPrimeSymptom',
   'severe',
   'nonSevere'
 ]

@@ -1,6 +1,6 @@
 import * as ramda from 'ramda'
 
-import { SEVERE_KEYS, NON_SEVERE_KEYS } from 'util/Constant/FilterConstantList'
+import { SEVERE_KEYS, NON_SEVERE_KEYS } from 'util/Constant/BaseConstantList'
 
 import {
   confirmedActorFilter,
@@ -37,15 +37,3 @@ export function isAnyFilterSet({ currentFilterList }) {
 }
 
 
-export function showBasedOnSevereFilter({ currentFilterList, k }) {
-  if (!currentFilterList.severe && !currentFilterList.nonSevere) {
-    return true
-  }
-  if (SEVERE_KEYS.includes(k) && !currentFilterList.severe) {
-    return false
-  }
-  if (NON_SEVERE_KEYS.includes(k) && !currentFilterList.nonSevere) {
-    return false
-  }
-  return true
-}

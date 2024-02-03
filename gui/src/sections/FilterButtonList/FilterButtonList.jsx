@@ -5,7 +5,6 @@ import React from 'react'
 import Button from 'components/Button/Button'
 import CurrentFilterListPropType from 'prop-types/CurrentFilterList.prop-type'
 import CurrentUrlPropType from 'prop-types/CurrentUrl.prop-type'
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
 import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 
 import './FilterButtonList.scss'
@@ -50,7 +49,7 @@ function FilterButtonList({
 }
 
 FilterButtonList.defaultProps = {
-  currentFilterList: CURRENT_FILTER_LIST,
+  currentFilterList: ORDERED_FILTERS,
   currentUrl: 'scatter',
   orderedFilters: ORDERED_FILTERS,
 }

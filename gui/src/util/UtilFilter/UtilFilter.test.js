@@ -1,4 +1,4 @@
-import { CURRENT_FILTER_LIST, FILTER_TOTAL } from 'util/Constant/FilterConstantList'
+import { ORDERED_FILTERS, FILTER_TOTAL } from 'util/Constant/BaseConstantList'
 
 import {
   calcFilterList,
@@ -19,8 +19,8 @@ test('calcFilterList()', () => {
  * isAnyFilterSet()
  */
 test('isAnyFilterSet()', () => {
-  expect(isAnyFilterSet({ currentFilterList: { ...CURRENT_FILTER_LIST, rmDubious: false } })).toBeFalsy()
-  expect(isAnyFilterSet({ currentFilterList: CURRENT_FILTER_LIST })).toBeTruthy()
+  expect(isAnyFilterSet({ currentFilterList: { ...ORDERED_FILTERS, rmDubious: false } })).toBeFalsy()
+  expect(isAnyFilterSet({ currentFilterList: ORDERED_FILTERS })).toBeTruthy()
   expect(isAnyFilterSet({ currentFilterList: { a: true, b: false } })).toBeTruthy()
 })
 

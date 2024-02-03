@@ -7,7 +7,7 @@ import CurrentFilterListPropType from 'prop-types/CurrentFilterList.prop-type'
 import CurrentUrlPropType from 'prop-types/CurrentUrl.prop-type'
 import FilterButtonList from 'sections/FilterButtonList/FilterButtonList'
 import Menu from 'sections/Menu/Menu'
-import { CURRENT_FILTER_LIST } from 'util/Constant/FilterConstantList'
+import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 
 import './Header.scss'
 
@@ -68,7 +68,7 @@ function Header({
 }
 
 Header.defaultProps = {
-  currentFilterList: CURRENT_FILTER_LIST,
+  currentFilterList: ORDERED_FILTERS,
   currentUrl: 'scatter',
 }
 
