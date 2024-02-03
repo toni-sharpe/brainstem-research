@@ -45,6 +45,7 @@ function StyleGuideColorList() {
             <li className='style-guide__color-block red--dulled-light' />
             <li className='style-guide__color-block red--light' />
             <li className='style-guide__color-block red--very-light' />
+            <li className='style-guide__color-block red--lightest' />
           </ol>
         </li>
       </ol>
@@ -78,6 +79,7 @@ function StyleGuideColorList() {
           <ol className='row-layout space-children'>
             <li className='style-guide__color-block green--dark' />
             <li className='style-guide__color-block green' />
+            <li className='style-guide__color-block green--lightest' />
           </ol>
         </li>
       </ol>

@@ -25,7 +25,7 @@ function App() {
 
   const [data, setData] = useState([])
 
-  CURRENT_FILTER_LIST.rmDubious = !['AntiBiasToolKit'].includes(currentUrl)
+  CURRENT_FILTER_LIST.rmDubious = !['AntiBiasToolKit', 'Home', ''].includes(currentUrl)
   CURRENT_FILTER_LIST.nonSevere = ['TimeLine'].includes(currentUrl)
   const [currentFilterList, setCurrentFilterList] = useState(CURRENT_FILTER_LIST)
 
@@ -48,7 +48,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home />}
+          element={<Home data={filteredData} />}
         />
         { (
           currentUrl === ''
@@ -57,7 +57,7 @@ function App() {
         ) && (
           <Route
             path="/Home"
-            element={<Home />}
+            element={<Home data={filteredData} />}
           />
         ) }
         { currentUrl === 'AntiBiasToolKit' && (

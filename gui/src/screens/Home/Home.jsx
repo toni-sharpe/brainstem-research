@@ -8,22 +8,23 @@ import { secondaryNavLocalStorage } from 'util/UtilLocalStorage/UtilSecondaryNav
 
 import Background from './panel-list/Background/Background'
 import Motivation from './panel-list/Motivation/Motivation'
+import PathologicalEventList from './panel-list/PathologicalEventList/PathologicalEventList'
+import Summary from './panel-list/Summary/Summary'
 import TechStack from './panel-list/TechStack/TechStack'
 import Testing from './panel-list/Testing/Testing'
-import Summary from './panel-list/Summary/Summary'
 
 import './Home.scss'
 
 const i18nBase = 'Home'
 
-function Home() {
+function Home({ data }) {
   const currentPanel = secondaryNavLocalStorage({ def: 'background', k: i18nBase })
   const [currentHomePanel, setCurrentPanel] = useState(currentPanel)
 
   const commonNavProps = {
     currentPanel: currentHomePanel,
     i18nBase,
-    panelList: ['background', 'motivation', 'techStack', 'testing', 'summary'],
+    panelList: ['background', 'motivation', 'techStack', 'testing', 'summary', 'event'],
     setCurrentPanel,
   }
 
@@ -53,6 +54,9 @@ function Home() {
       ) }
       { currentHomePanel === 'summary' && (
         <Summary />
+      ) }
+      { currentHomePanel === 'event' && (
+        <PathologicalEventList data={data} />
       ) }
     </PageDetailWrapper>
   );

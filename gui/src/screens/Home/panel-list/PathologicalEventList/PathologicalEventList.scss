@@ -1,0 +1,58 @@
+.pathological-event-list {
+  tr {
+    &.heading {
+    }
+    &.sure {
+      background-color: var(--blue--lightest);
+    }
+    &.heading {
+    }
+    &.not-so-sure {
+      background-color: var(--red--lightest);
+    }
+  }
+
+  th,
+  td {
+    font-size: var(--font-size--medium-small);
+    padding: var(--padding--tiniest) var(--padding--small-tiny);
+  }
+
+  .heading {
+    td {
+      background-color: var(--grey--dark);
+      color: var(--white);
+      text-align: center;
+    }
+  }
+
+  td {
+    box-shadow: 0 0 0 1px inset var(--blue--dark);
+    &.center {
+      text-align: center;
+    }
+    &.num {
+      text-align: right;
+    }
+    .list {
+      width: 100%;
+      display: flex;
+      span {
+        min-width: 22px;
+        padding: var(--padding--tiniest);
+      }
+    }
+    .half {
+      width: 50%
+    }
+    .third {
+      width: 33.33%
+    }
+    .quarter {
+      width: 25%
+    }
+    .seventh {
+      width: 14.285%
+    }
+  }
+}
