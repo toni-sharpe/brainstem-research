@@ -32,6 +32,7 @@ function HistogramBarList({
   translationSet,
 }) {
   const innerBlockSize = 100 / barCountPerBlock
+  const barGroupWidth = barCountPerBlock * blockSize
 
   return histogramBarGroupList.map(([histogramBarListLabel, data], i) => {
     const ariaLabel = writeHistogramBarListAriaLabel({
@@ -40,7 +41,6 @@ function HistogramBarList({
       translationSet,
     })
 
-    const barGroupWidth = barCountPerBlock * blockSize
     const outerLeft = i * (barGroupWidth + barMargin)
     const subBars = toPairs(data)
 

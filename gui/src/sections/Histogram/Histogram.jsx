@@ -30,8 +30,6 @@ function Histogram({
   i18nBaseOverride,
   i18nKeyOnly,
   translationSet,
-  useHueContrastToggle,
-  useHueWheel,
 }) {
   if (!histogramBarGroupList || histogramBarGroupList?.length === 0) {
     return (
@@ -90,8 +88,6 @@ Histogram.propTypes = {
   graphLabel: PropTypes.string,
   i18nKeyOnly: PropTypes.bool, // lets any graph take charge of it's bar labelling
   translationSet: HistogramTranslationPropType,
-  useHueContrastToggle: PropTypes.bool,
-  useHueWheel: PropTypes.bool,
 }
 
 export default Histogram
