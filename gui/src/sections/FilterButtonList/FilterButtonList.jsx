@@ -1,3 +1,4 @@
+import { keys } from 'ramda'
 import i18next from 'util/i18next/i18next'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -37,7 +38,7 @@ function FilterButtonList({
       className='filter-button-list'
       data-testid='filter-button-list'
     >
-      { orderedFilters.map(k => {
+      { keys(orderedFilters).map(k => {
         return (
           <li key={k}>
             <Button {...filterButtonProps({ k })} />
@@ -57,7 +58,7 @@ FilterButtonList.defaultProps = {
 FilterButtonList.propTypes = {
   currentFilterList: CurrentFilterListPropType,
   currentUrl: CurrentUrlPropType,
-  orderedFilters: PropTypes.array,
+  orderedFilters: CurrentFilterListPropType,
   setCurrentFilterList: PropTypes.func,
 }
 

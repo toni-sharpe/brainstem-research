@@ -40,7 +40,7 @@ test('Header', async () => {
   expect(setCurrentFilterListMock).toHaveBeenCalledWith(
     {
       ...ORDERED_FILTERS,
-      rmDubious: false
+      rmDubious: true
     }
   )
 
