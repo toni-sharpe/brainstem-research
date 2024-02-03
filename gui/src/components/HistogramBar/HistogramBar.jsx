@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { HISTOGRAM_BAR_WIDTH } from 'util/Constant/BaseConstantList'
-import { bemWithExtraClass } from 'util/UtilClassName/UtilClassName'
 import { calcHistogramBarPosition } from 'util/UtilHistogram/UtilHistogram'
 
 import './HistogramBar.scss'
@@ -18,7 +17,6 @@ function HistogramBar({
   top,
 }) {
   const endStyles = calcHistogramBarPosition({
-    className: extraClass,
     height,
     left: `${left}%`,
     top,
@@ -27,8 +25,8 @@ function HistogramBar({
 
   return (
     <li
-      className={bemWithExtraClass({ bemBase: 'histogram-bar', extraClass })}
-      style={{ ...endStyles, backgroundColor }}
+      className={`histogram-bar ${extraClass}`}
+      style={{ ...endStyles, backgroundColor: !extraClass && (backgroundColor || '#999') }}
       title={title}
     >
       {children}
@@ -37,16 +35,14 @@ function HistogramBar({
 }
 
 HistogramBar.defaultProps = {
-  backgroundColor: null, // neutral grey default
+  backgroundColor: undefined, // neutral grey default
   blockSize: HISTOGRAM_BAR_WIDTH,
-  extraClass : null,
 }
 
 HistogramBar.propTypes = {
   backgroundColor: PropTypes.string, // over-rides extraClass
   blockSize: PropTypes.number,
   children: PropTypes.node,
-  extraClass: PropTypes.string, // must be provided in CSS somewhere to work
   height: PropTypes.string.isRequired,
   left: PropTypes.number.isRequired,
 }

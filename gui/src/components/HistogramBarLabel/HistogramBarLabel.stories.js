@@ -8,17 +8,16 @@ export default {
   component: HistogramBarLabel,
 };
 
-const graphBarProps = {
-  blockSize: 64,
+const histogramBarProps = {
+  backgroundColor: '#70f',
+  blockSize: 10,
   height: 384,
-  left: 100,
+  left: 10,
   extraClass: null,
 }
 
 const baseHistogramBarLabelProps = {
-  ariaLabel: 'SB aria-label',
-  blockSize: 64,
-  count: 17
+  blockSize: 10,
 }
 
 export const Primary = {
@@ -26,7 +25,7 @@ export const Primary = {
     return (
       <StoryBookPaddedWrapper>
         <ul>
-          <HistogramBar {...graphBarProps}>
+          <HistogramBar {...histogramBarProps}>
             <HistogramBarLabel {...baseHistogramBarLabelProps}>
               <span>Label</span>
             </HistogramBarLabel>

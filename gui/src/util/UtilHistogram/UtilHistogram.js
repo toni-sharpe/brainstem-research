@@ -11,14 +11,6 @@ import {
 import { theThingListErrorCheck } from 'util/Util/UtilMaxThing'
 
 
-export function calcHistogramBarHeight({
-  blockSize = HISTOGRAM_BAR_WIDTH,
-  elems,
-}) {
-  return (elems?.length || 0) * blockSize
-}
-
-
 export function calcHistogramWidth({
   barCountPerBlock = HISTOGRAM_BAR_LIST_COUNT,
   blockSize = HISTOGRAM_BAR_WIDTH,

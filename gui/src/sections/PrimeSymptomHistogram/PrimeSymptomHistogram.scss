@@ -34,10 +34,10 @@
     text-align: center;
     width: 100%;
   }
-  .histogram-bar--nonSevere {
+  .nonSevere {
     background-color:var(--prime-symptom--not-severe);
   }
-  .histogram-bar--severe {
+  .severe {
     background-color:var(--prime-symptom--severe);
   }
 }

@@ -1,5 +1,6 @@
 // HistogramBar.story.js
 import HistogramBarLabel from 'components/HistogramBarLabel/HistogramBarLabel'
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
 
 import HistogramBar from './HistogramBar';
 
@@ -8,36 +9,23 @@ export default {
 };
 
 const baseHistogramBarProps = {
-  blockSize: 64,
+  backgroundColor: '#70f',
+  blockSize: 10,
   height: 384,
-  left: 100,
+  left: 10,
   extraClass: null,
 }
 
 export const Primary = {
   render: () => {
     return (
-      <ul>
-        <HistogramBar {...baseHistogramBarProps}>
-          <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
-        </HistogramBar>
-      </ul>
-    )
-  }
-};
-
-export const WithSuffixClass = {
-  render: () => {
-    const props = {
-      ...baseHistogramBarProps,
-      extraClass: 'suffix-class-story-book-example'
-    }
-    return (
-      <ul>
-        <HistogramBar {...props}>
-          <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
-        </HistogramBar>
-      </ul>
+      <StoryBookPaddedWrapper>
+        <ul>
+          <HistogramBar {...baseHistogramBarProps}>
+            <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
+          </HistogramBar>
+        </ul>
+      </StoryBookPaddedWrapper>
     )
   }
 };
@@ -49,11 +37,13 @@ export const BackgroundColorOverride = {
       backgroundColor: '#dd4',
     }
     return (
-      <ul>
-        <HistogramBar {...props}>
-          <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
-        </HistogramBar>
-      </ul>
+      <StoryBookPaddedWrapper>
+        <ul>
+          <HistogramBar {...props}>
+            <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
+          </HistogramBar>
+        </ul>
+      </StoryBookPaddedWrapper>
     )
   }
 };
@@ -66,11 +56,32 @@ export const FallbackColour = {
       extraClass: undefined,
     }
     return (
-      <ul>
-        <HistogramBar {...props}>
-          <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
-        </HistogramBar>
-      </ul>
+      <StoryBookPaddedWrapper>
+        <ul>
+          <HistogramBar {...props}>
+            <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
+          </HistogramBar>
+        </ul>
+      </StoryBookPaddedWrapper>
+    )
+  }
+};
+
+export const ExtraClassOverride = {
+  render: () => {
+    const props = {
+      ...baseHistogramBarProps,
+      backgroundColor: undefined,
+      extraClass: 'sb-example',
+    }
+    return (
+      <StoryBookPaddedWrapper>
+        <ul>
+          <HistogramBar {...props}>
+            <HistogramBarLabel count={6} i18nKey='nonSevereCases' />
+          </HistogramBar>
+        </ul>
+      </StoryBookPaddedWrapper>
     )
   }
 };
@@ -79,16 +90,18 @@ export const SizesChanged = {
   render: () => {
     const props = {
       ...baseHistogramBarProps,
-      blockSize: 80,
+      blockSize: 12,
       height: 200,
-      left: 50
+      left: 20
     }
     return (
-      <ul>
-        <HistogramBar {...props}>
-          <HistogramBarLabel count={2.5} i18nKey='nonSevereCases' />
-        </HistogramBar>
-      </ul>
+      <StoryBookPaddedWrapper>
+        <ul>
+          <HistogramBar {...props}>
+            <HistogramBarLabel count={2.5} i18nKey='nonSevereCases' />
+          </HistogramBar>
+        </ul>
+      </StoryBookPaddedWrapper>
     )
   }
 };

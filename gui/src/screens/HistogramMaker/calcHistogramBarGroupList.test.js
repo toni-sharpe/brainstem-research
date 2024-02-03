@@ -12,24 +12,24 @@ test('calcHistogramBarGroupList()', () => {
   expect(result).toEqual([
     [  '0-8', {}],
     [ '8-16', {
-      prime_symptom_2: 8,
-      prime_symptom_3: 5,
+      prime_symptom_2: [ 8,  8],
+      prime_symptom_3: [ 5,  5],
     }],
     ['16-24', {
-      prime_symptom_2: 11,
-      prime_symptom_3: 14,
+      prime_symptom_2: [11, 11],
+      prime_symptom_3: [14, 14],
     }],
     ['24-32', {
-      prime_symptom_2: 3,
-      prime_symptom_3: 4,
+      prime_symptom_2: [ 3,  3],
+      prime_symptom_3: [ 4,  4],
     }],
     ['32-40', {
-      prime_symptom_2: 1,
-      prime_symptom_3: 1,
+      prime_symptom_2: [ 1,  1],
+      prime_symptom_3: [ 1,  1],
     }],
     ['40-48', {}],
     ['48-56', {
-      prime_symptom_2: 1,
+      prime_symptom_2: [ 1,  1],
     }]
   ])
 })

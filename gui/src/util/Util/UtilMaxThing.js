@@ -21,7 +21,9 @@ export function theThingListErrorCheck({ theThingList, callingFn }) {
 export function reduceToMaxThing(acc, [_, data]) {
   const mmMAXMapper = (([_, val]) => {
     return type(val) === 'Array'
-      ? Math.max(...val)
+      ? type(val[0]) === 'Number' && type(val[1]) === 'Array'
+        ? Math.max(...val[1])
+        : Math.max(...val)
       : val
   })
   const maybeMostMaxOfAllTheThings = Math.max(
