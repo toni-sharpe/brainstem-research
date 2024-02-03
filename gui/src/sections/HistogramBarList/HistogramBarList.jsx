@@ -86,7 +86,7 @@ function HistogramBarList({
                       }
                       blockSize={innerBlockSize}
                       count={count}
-                      extraClass={k}
+                      extraClass={hueFn ? undefined : k}
                       height={`${graphBarSize}vh`}
                       key={`${innerLeft}-${k}-${v}-${i}`}
                       left={innerLeft}
