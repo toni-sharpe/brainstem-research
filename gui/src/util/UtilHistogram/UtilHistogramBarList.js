@@ -47,7 +47,7 @@ export function writeHistogramBarListAriaLabel({
     check: (
       i18nOrTranslationSet({ i18nBaseOverride, translationSet })
       &&
-      histogramBarListLabel
+      (histogramBarListLabel || histogramBarListLabel === 0)
     ),
     i18nKey: 'writeHistogramBarListAriaLabel'
   })

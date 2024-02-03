@@ -20,12 +20,13 @@ const mostMaxOfAllThings = calcMostMaxOfAllTheThings({ theThingList: ThreeHistog
 
 const baseHistogramBarListProps = {
   barCountPerBlock: 3,
-  barMargin: 12,
-  blockSize: 30,
+  barMargin: 0.5,
+  blockSize: 5,
   histogramBarGroupList: ThreeHistogramData,
   hueFn,
   i18nKeyOnly: true,
   mostMaxOfAllThings,
+  translationSet: { barList: ['a', 'b'], groupBy: 'c' },
 }
 
 export const Primary = {
