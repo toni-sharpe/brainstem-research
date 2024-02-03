@@ -126,10 +126,11 @@
 
   "Home": {
     "backgroundPanelLabel": "Hintergrund",
+    "eventPanelLabel": "Liste der pathologischen Ereignisse",
     "motivationPanelLabel": "Motivation",
+    "summaryPanelLabel": "Seite Zusammenfassung",
     "techStackPanelLabel": "Technischer Stapel",
-    "testingPanelLabel": "Prüfung",
-    "summaryPanelLabel": "Seite Zusammenfassung"
+    "testingPanelLabel": "Prüfung"
   },
 
   "Background": {

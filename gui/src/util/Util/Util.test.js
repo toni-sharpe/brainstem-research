@@ -9,8 +9,8 @@ test('sortFn() returns -1 if A is greater than B', () => {
 test('sortFn() returns 1 if B is less than A', () => {
   expect(sortFn(0, 1)).toEqual(1)
 })
-test('sortFn() returns 1 if B is equal to A', () => {
-  expect(sortFn(0, 0)).toEqual(1)
+test('sortFn() returns 0 if B is equal to A', () => {
+  expect(sortFn(0, 0)).toEqual(0)
 })
 
 /*

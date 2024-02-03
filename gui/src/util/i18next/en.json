@@ -127,9 +127,10 @@
   "Home": {
     "backgroundPanelLabel": "Background",
     "motivationPanelLabel": "Motivation",
+    "eventPanelLabel": "Pathological event list",
+    "summaryPanelLabel": "Page Summary",
     "techStackPanelLabel": "Tech Stack",
-    "testingPanelLabel": "Testing",
-    "summaryPanelLabel": "Page Summary"
+    "testingPanelLabel": "Testing"
   },
 
   "Background": {

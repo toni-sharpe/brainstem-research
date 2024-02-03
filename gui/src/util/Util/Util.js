@@ -37,5 +37,7 @@ export function isOrIsInArray({ k, arr = [] }) {
 export function sortFn(a, b) {
   return a > b
     ? -1
-    : 1
+    : a < b
+      ? 1
+      : 0
 }
