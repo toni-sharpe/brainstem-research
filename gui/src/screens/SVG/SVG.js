@@ -4,7 +4,7 @@ import { type } from 'ramda'
 
 import DragGraph from 'sections/DragGraph/DragGraph'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
-import { calcHue } from 'util/Util/UtilHue'
+import { calcHue } from 'util/UtilHue/UtilHue'
 import { groupByAndCountPipe } from 'util/UtilDragGraph/UtilDragGraphGrouping'
 
 import './SVG.scss'

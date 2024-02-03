@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { calcHue } from 'util/Util/UtilHue'
+import { calcHue } from 'util/UtilHue/UtilHue'
 
 function StyleGuideZIndex() {
   const zIndexList = [
