@@ -1,7 +1,7 @@
 // HistogramBarList.story.js
 
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
-import { calcHistogramBarHue } from 'util/UtilHistogram/UtilHistogram'
+import { calcAccessibleHue } from 'util/UtilHue/UtilHue'
 import { calcMostMaxOfAllTheThings } from 'util/Util/UtilMaxThing'
 import { ThreeHistogramData } from 'example-data/Histogram.example-data'
 
@@ -11,7 +11,7 @@ export default {
   component: HistogramBarList,
 };
 
-const hueFn = calcHistogramBarHue({
+const hueFn = calcAccessibleHue({
   useHueContrastToggle: true,
   useHueWheel: true,
 })

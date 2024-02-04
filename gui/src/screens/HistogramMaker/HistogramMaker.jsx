@@ -7,7 +7,7 @@ import Histogram from 'sections/Histogram/Histogram'
 import Button from 'components/Button/Button'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
-import { calcHistogramBarHue } from 'util/UtilHistogram/UtilHistogram'
+import { calcAccessibleHue } from 'util/UtilHue/UtilHue'
 import { HISTOGRAM_BAR_LIST_MARGIN } from 'util/Constant/BaseConstantList'
 import { secondaryNavLocalStorage } from 'util/UtilLocalStorage/UtilSecondaryNav'
 import { secondaryNavProps } from 'util/UtilNav/UtilNav'
@@ -46,7 +46,7 @@ function HistogramMaker({ data }) {
 
   const barCountPerBlock = currentPathogenesisStepList.length
 
-  const hueFn = calcHistogramBarHue()
+  const hueFn = calcAccessibleHue()
 
   const commonNavProps = {
     currentPanel: currentBarFn,

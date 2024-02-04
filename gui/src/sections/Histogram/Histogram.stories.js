@@ -12,11 +12,11 @@ import {
 } from 'example-data/Histogram.example-data'
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
 
-import { calcHistogramBarHue } from 'util/UtilHistogram/UtilHistogram'
+import { calcAccessibleHue } from 'util/UtilHue/UtilHue'
 
 import Histogram from './Histogram';
 
-const hueFn = calcHistogramBarHue()
+const hueFn = calcAccessibleHue()
 
 export default {
   component: Histogram,
@@ -178,7 +178,7 @@ export const NoHueWheel = {
       }),
       histogramBarGroupList: NoHueToggleData,
       graphLabel: 'No hue toggle, smoother gradient',
-      hueFn: calcHistogramBarHue({ useHueContrastToggle: false }),
+      hueFn: calcAccessibleHue({ useHueContrastToggle: false }),
       i18nKeyOnly: true,
     }
     return (
