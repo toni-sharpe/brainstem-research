@@ -22,7 +22,7 @@ function PageDetailWrapper({
   return ( 
     <article className='page-detail-wrapper column-layout space-children--column'>
       <header className='row-layout page-detail-wrapper__header'>
-        <div className='page-detail-wrapper__left row-layout space-children'>
+        <div className='page-detail-wrapper__left'>
           <h1 className='page-detail-wrapper__heading'>{heading}</h1>
           <section className='page-detail-wrapper__secondary row-layout space-children--wide-with-border'>
             {secondaryNav && (<div>{secondaryNav}</div>)}
