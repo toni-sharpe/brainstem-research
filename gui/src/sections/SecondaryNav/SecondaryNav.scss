@@ -1,43 +1,11 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .secondary-nav {
   flex-wrap: wrap;
 
-  &.anti-bias {
-    & > * {
-      @media (max-width: 1113px) {
-        margin-top: var(--spacing--narrow);
-      }
-    }
-  }
-
-  &.histogram-maker {
-    & > * {
-      @media (max-width: 1071px) {
-        margin-top: var(--spacing--narrow);
-      }
-    }
-  }
-
-  &.research {
-    & > * {
-      @media (max-width: 1240px) {
-        margin-top: var(--spacing--narrow);
-      }
-    }
-  }
-
-  &.time-line {
-    & > * {
-      @media (max-width: 718px) {
-        margin-top: var(--spacing--narrow);
-      }
-    }
-  }
-
-  &.gantt {
-    & > * {
-      @media (max-width: 840px) {
-        margin-top: var(--spacing--narrow);
-      }
+  & > * {
+    @media (max-width: $media-switch--large) {
+      margin-top: var(--spacing--narrow);
     }
   }
 }
