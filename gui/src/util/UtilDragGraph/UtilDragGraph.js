@@ -27,7 +27,7 @@ export function calcAngleInRadians({ valList }) {
 }
 
 export function calcBaseLineCoordList({ angle, valList }) {
-  const r = (DRAG_GRAPH_SVG_SCALE_RADIUS * 0.89)
+  const r = (DRAG_GRAPH_SVG_SCALE_RADIUS * 2)
 
   return valList.map((val, i) => {
     const a = angle * i
@@ -64,21 +64,23 @@ export function calcRadiusUnit({ max }) {
   return numberPrecision({ n: ((DRAG_GRAPH_SVG_SCALE_RADIUS * 0.79) / max) })
 }
 
-export function calcScaleRadiusList({ max }) {
+export function calcScaleRadiusList({ fullMax, max }) {
   const { highlight, show } = calcMaxBasedDisplay({ max })
-  const scaleUnit = highlight || (show && show !== true) || 1
   const radiusUnit = calcRadiusUnit({ max })
   const scaleRadiusList = []
 
-  let x = scaleUnit
+  let x = show
 
-  for (; x <= max; x = x + scaleUnit) {
-    scaleRadiusList.push(numberPrecision({ n: x * radiusUnit }))
+  for (; x <= fullMax; x = x + show) {
+    scaleRadiusList.push([
+      numberPrecision({ n: x * radiusUnit }),
+      ['0.00'].includes((numberPrecision({ n: x }) % highlight).toPrecision(3)),
+    ])
   }
 
   return {
+    highlight,
     scaleRadiusList,
-    scaleUnit,
-    outerScale: x - scaleUnit,
+    scaleUnit: show,
   }
 }

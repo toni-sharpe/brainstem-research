@@ -1,10 +1,22 @@
 export function calcMaxBasedDisplay({ max }) {
+  if (max < 2) {
+    return { highlight: 0.5, show: 0.1 }
+  }
+
+  if (max < 3) {
+    return { highlight: 1, show: 0.5 }
+  }
+
+  if (max < 4) {
+    return { highlight: 2, show: 1 }
+  }
+
   if (max < 10) {
-    return { highlight: false, show: true }
+    return { highlight: 5, show: 1 }
   }
 
   if (max < 50) {
-    return { highlight: 5, show: true }
+    return { highlight: 10, show: 1 }
   }
 
   if (max < 100) {

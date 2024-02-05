@@ -425,16 +425,24 @@
   },
 
   "DragGraph": {
-    "scaleDetail": "Äußerer Skalenring ist {{outerScale}} und Schritte sind {{scaleUnit}}"
+    "scaleDetail": "Hervorhebungen sind auf {{highlight}} und Stufen sind {{scaleUnit}}"
   },
 
   "DragGraphButton": {
     "aveSeverityShown": "Schweregrad",
-    "incExtremes": "Inc. Ausreißer",
-    "minToMaxMultiplier": "max = X{{multiplier}} min",
+    "incExtremes": "+",
+    "minToMaxMultiplier": "!>X{{multiplier}}mn",
     "outcomeShown": "Ergebnis",
-    "resetGraphCenter": "Neu starten",
-    "zoom": "Zoom X2.5"
+    "resetGraphCenter": ".",
+    "1": "1",
+    "2": "2",
+    "3": "3",
+    "5": "5",
+    "10": "10",
+    "15": "15",
+    "20": "20",
+    "30": "30",
+    "50": "50"
   },
 
   "ErrorList": {

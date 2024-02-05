@@ -33,11 +33,13 @@ test('DragGraph has the control buttons', () => {
     <DragGraph {...baseDragGraphProps} />
   )
 
-  expect(screen.getByText('Severity')).toBeTruthy()
-  expect(screen.getByText('Inc. outlier')).toBeTruthy()
-  expect(screen.getByText(`max = X${DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER} min`)).toBeTruthy()
+  expect(screen.getByText('Sev.')).toBeTruthy()
+  expect(screen.getByText('+')).toBeTruthy()
+  expect(screen.getByText(`mx=X${DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER}mn`)).toBeTruthy()
   expect(screen.getByText('Outcome')).toBeTruthy()
-  expect(screen.getByText('Zoom X2.5')).toBeTruthy()
+  expect(screen.getByText('1')).toBeTruthy()
+  expect(screen.getByText('30')).toBeTruthy()
+  expect(screen.getByText('50')).toBeTruthy()
 })
 
 test('DragGraph with no data', () => {

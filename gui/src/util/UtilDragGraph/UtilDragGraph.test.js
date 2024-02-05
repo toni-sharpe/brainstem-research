@@ -21,11 +21,11 @@ test('calcAngleInRadians()', () => {
 test('calcBaseLineCoordList()', () => {
   expect(calcBaseLineCoordList({ angle, valList })).toEqual(
   [
-    [320     ,    35.2  ],
-    [590.861 ,   231.993],
-    [487.4   ,   550.409],
-    [152.597 ,   550.407],
-    [ 49.1401,   231.989],
+    [ 320     , -320    ],
+    [ 928.677 ,  122.231],
+    [ 696.18  ,  837.773],
+    [ -56.1871,  837.768],
+    [-288.674 ,  122.222],
   ])
 })
 
@@ -49,39 +49,61 @@ test('calcPolygonCoordString()', () => {
 })
 
 test('calcScaleRadiusList() - low max', () => {
-  expect(calcScaleRadiusList({ max: 4 })).toEqual({
-    outerScale: 4,
+  expect(calcScaleRadiusList({ fullMax: 4, max: 4 })).toEqual({
+    highlight: 5,
     scaleRadiusList: [
-       63.2,
-      126.4,
-      189.6,
-      252.8,
+      [ 63.2, false],
+      [126.4, false],
+      [189.6, false],
+      [252.8, false],
     ],
     scaleUnit: 1,
   })
 })
 
 test('calcScaleRadiusList() - max 2', () => {
-  expect(calcScaleRadiusList({ max: 2 })).toEqual({
-    outerScale: 2,
+  expect(calcScaleRadiusList({ fullMax: 2, max: 2 })).toEqual({
+    highlight: 1,
     scaleRadiusList: [
-      126.4,
-      252.8,
+      [ 63.2,  false],
+      [126.4,   true],
+      [189.6,  false],
+      [252.8,   true],
     ],
-    scaleUnit: 1,
+    scaleUnit: 0.5,
   })
 })
 
 test('calcScaleRadiusList() - high max', () => {
-  expect(calcScaleRadiusList({ max: 5000 })).toEqual({
-    outerScale: 5000,
+  expect(calcScaleRadiusList({ fullMax: 5000, max: 5000 })).toEqual({
+    highlight: 1000,
     scaleRadiusList: [
-       50.56,
-      101.12,
-      151.68,
-      202.24,
-      252.8,
+      [ 10.112, false],
+      [ 20.224, false],
+      [ 30.336, false],
+      [ 40.448, false],
+      [ 50.56 ,  true],
+      [ 60.672, false],
+      [ 70.784, false],
+      [ 80.896, false],
+      [ 91.008, false],
+      [101.12 ,  true],
+      [111.232, false],
+      [121.344, false],
+      [131.456, false],
+      [141.568, false],
+      [151.68 ,  true],
+      [161.792, false],
+      [171.904, false],
+      [182.016, false],
+      [192.128, false],
+      [202.24 ,  true],
+      [212.352, false],
+      [222.464, false],
+      [232.576, false],
+      [242.688, false],
+      [252.8  ,  true],
     ],
-    scaleUnit: 1000,
+    scaleUnit: 200,
   })
 })
