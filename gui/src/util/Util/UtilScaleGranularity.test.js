@@ -1,6 +1,5 @@
 import { calcMaxBasedDisplay } from './UtilScaleGranularity'
 
-
 /*
  * calcMaxBasedDisplay()
  */
