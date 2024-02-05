@@ -23,11 +23,12 @@
     cursor: pointer;
     align-items: center;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
-    padding: var(--padding--small);
+    padding: var(--padding--small-tiny);
     position: relative;
     height: 58px;
-    width: 44px;
+    width: 40px;
 
     &-label {
       font-size: var(--font-size--medium-small);

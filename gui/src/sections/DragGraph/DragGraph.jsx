@@ -255,20 +255,23 @@ function DragGraph({
 
             return (
               <foreignObject
-                className='drag-graph__point'
                 key={labelValList[i][0]}
                 onFocus={() => setGraphOffset(`${0 - (r - x)} ${0 - (r - y)}`)}
                 tabIndex={0}
                 x={x - 22}
                 y={y - 38}
+                width='50'
+                height='66'
               >
-                <div className='drag-graph__point-label'>{labelValList[i][0]}</div>
-                <div
-                  className='drag-graph__point-num'
-                  title={`Sev: ${severe} Not sev: ${nonSevere}`}
-                >
-                  <span>{valList[i]}</span>
-                </div>
+                <article className='drag-graph__point'>
+                  <header className='drag-graph__point-label'>{labelValList[i][0]}</header>
+                  <section
+                    className='drag-graph__point-num'
+                    title={`Sev: ${severe} Not sev: ${nonSevere}`}
+                  >
+                    <span>{valList[i]}</span>
+                  </section>
+                </article>
               </foreignObject>
             )
           })}
