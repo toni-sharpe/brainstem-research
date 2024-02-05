@@ -1,7 +1,8 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .drag-graph {
-  border-bottom: 2px solid $blue;
+  border: 2px solid $grey--lightest;
+  box-sizing: border-box;
   margin-bottom: 40px;
   &__heading {
     box-shadow: none;
@@ -15,29 +16,35 @@
   &__controls {
     justify-content: center;
   }
-  &__graph-point {
+  &__point {
+    background-color: rgba($white, 0.6);
+    border: 1px solid var(--black);
+    border-radius: 3px;
+    cursor: pointer;
     align-items: center;
-    background-color: white;
-    border-radius: 50%;
-    border: 1px solid #888;
-    box-sizing: border-box;
     display: flex;
-    height: 26px;
-    justify-content: center;
-    margin-left: 2px;
-    margin-right: 2px;
-    opacity: 0.7;
+    flex-direction: column;
+    padding: var(--padding--small);
     position: relative;
-    width: 26px;
+    height: 58px;
+    width: 44px;
 
-    &:focus {
-      z-index: var(--front-guaranteed);
+    &-label {
+      font-size: var(--font-size--medium-small);
+      height: 15px;
+      text-align: center;
+      width: 100%;
     }
-  }
-  &__graph-point-label {
-    font-size: var(--font-size--medium-small);
-    height: 15px;
-    text-align: center;
-    width: 100%;
+
+    &-num {
+      align-items: center;
+      background-color: var(--white);
+      border-radius: 50%;
+      border: 1px solid var(--grey--light);
+      display: flex;
+      height: 28px;
+      justify-content: center;
+      width: 28px;
+    }
   }
 }

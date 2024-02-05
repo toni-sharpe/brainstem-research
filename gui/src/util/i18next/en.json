@@ -427,16 +427,24 @@
   },
 
   "DragGraph": {
-    "scaleDetail": "Outer scale ring is {{outerScale}} and steps are {{scaleUnit}}"
+    "scaleDetail": "Highlights are at {{highlight}} and steps are {{scaleUnit}}"
   },
 
   "DragGraphButton": {
-    "aveSeverityShown": "Severity",
-    "incExtremes": "Inc. outlier",
-    "minToMaxMultiplier": "max = X{{multiplier}} min",
+    "aveSeverityShown": "Sev.",
+    "incExtremes": "+",
+    "minToMaxMultiplier": "mx=X{{multiplier}}mn",
     "outcomeShown": "Outcome",
-    "resetGraphCenter": "Recenter",
-    "zoom": "Zoom X2.5"
+    "resetGraphCenter": ".",
+    "1": "1",
+    "2": "2",
+    "3": "3",
+    "5": "5",
+    "10": "10",
+    "15": "15",
+    "20": "20",
+    "30": "30",
+    "50": "50"
   },
 
   "ErrorList": {

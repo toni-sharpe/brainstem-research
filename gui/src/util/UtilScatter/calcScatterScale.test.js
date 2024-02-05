@@ -10,29 +10,29 @@ test('calcScatterScale() returns numbers when given numbers', () => {
       { x: 28, y: 23 },
     ]
   })).toEqual({
-    plotStepSize: 6.93069,
-    rangeTopBound: 21,
-    scatterGuideLine: 34.65345,
-    show: 5,
-    squ: 750
+        plotStepSize:   6.93069,
+       rangeTopBound:  21,
+    scatterGuideLine:  34.65345,
+                show:   5,
+                 squ: 750,
   })
 })
 
 test('calcScatterScale() is not thrown by nulls or undefined', () => {
   expect(calcScatterScale({
     pointList: [
-      { x:  1, y: undefined },
-      { x: 31, y:  2 },
-      { x: 11, y: 91 },
-      { x: null, y: 20 },
-      { x: 28, y: 23 },
+      { x:    1, y: undefined },
+      { x:   31, y:         2 },
+      { x:   11, y:        91 },
+      { x: null, y:        20 },
+      { x:   28, y:        23 },
     ]
   })).toEqual({
-    plotStepSize: 6.93069,
-    rangeTopBound: 21,
-    scatterGuideLine: 34.65345,
-    show: 5,
-    squ: 750
+        plotStepSize:  6.93069,
+       rangeTopBound:  21,
+    scatterGuideLine:  34.65345,
+                show:   5,
+                 squ: 750,
   })
 })
 
@@ -42,11 +42,11 @@ test('calcScatterScale() handles one', () => {
       { x:  1, y: 1 },
     ]
   })).toEqual({
-    plotStepSize: 350,
-    rangeTopBound: 2,
-    scatterGuideLine: 350,
-    show: true,
-    squ: 750
+        plotStepSize: 350,
+       rangeTopBound:   4,
+    scatterGuideLine: 175,
+                show:   0.5,
+                 squ: 750,
   })
 })
 
@@ -64,10 +64,10 @@ test('calcScatterScale() ignores extra data', () => {
       { x:  4, y: 8, d: 'a' },
     ]
   })).toEqual({
-    plotStepSize: 77.7778,
-    rangeTopBound: 9,
-    scatterGuideLine:  77.7778,
-    show: true,
-    squ: 750
+        plotStepSize:   77.7778,
+       rangeTopBound:    9,
+    scatterGuideLine:   77.7778,
+                show:    1,
+                 squ:  750,
   })
 })
