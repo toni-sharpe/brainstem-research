@@ -13,7 +13,7 @@ create table if not exists pathological_event (
   commissioner_initials varchar(3),
   presented_gender varchar(1),
   patient_weight int,
-  outlier boolean,
+  outlier varchar(3),
   pathological_event_date date,
   etiology varchar(3),
 
