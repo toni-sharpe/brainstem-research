@@ -34,7 +34,11 @@ $ nvm use node
 // that's good
 
 cd server
-flask run\
+// install stuff that's needed
+pip3 install psycopg2-binary
+pip3 install simplejson
+pip3 install numpy
+python3 -m flask run
 
 // React frontend
 cd gui
