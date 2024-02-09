@@ -1356,7 +1356,7 @@ null,  null,null, null,  null,  null,  null,  null,  null,  null,    20,     5, 
       '', ''),
 
 (217, 'SCT',        '', 'DEE', 'SEV', 'DEE',  'ME',  null,   'M',    70, 'CNF', '2018-01-05',
-      'LWD',      null, 'THO', 'CMP'  'NAF', false, false, false,  true, false, false, '003',
+      'LWD',      null, 'THO', 'CMP', 'NAF', false, false, false,  true, false, false, '003',
   70,  null,null,   19,    70,  null,    85,    99,    99,    99,  null,  null,     1,   157,
                         false, false,   117,     0,     4,  null,  null,  null,  null,  null,
       '', ''),
