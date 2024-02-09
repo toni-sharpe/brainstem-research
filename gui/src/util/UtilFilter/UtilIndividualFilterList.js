@@ -16,7 +16,7 @@ export function confirmedActorFilter({ currentFilterList }) {
 
 export function removeDubiousFilter({ currentFilterList }) {
   return ({ outlier }) => {
-    if (!currentFilterList?.rmDubious) return true
+    if (!currentFilterList.rmDubious) return true
     return outlier !== 'DUB'
   }
 }

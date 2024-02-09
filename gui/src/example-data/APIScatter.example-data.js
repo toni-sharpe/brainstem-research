@@ -1,6 +1,6 @@
 const APIScatterData = [{
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -9,7 +9,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -18,7 +18,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -27,7 +27,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -36,7 +36,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 19,
     "prime_symptom_2": 21,
     "prime_symptom_3": 20,
@@ -63,7 +63,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 31,
     "prime_symptom_2": 33,
     "prime_symptom_3": 19,
@@ -72,7 +72,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -81,7 +81,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -90,7 +90,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 20,
     "prime_symptom_2": 24,
     "prime_symptom_3": 16,
@@ -99,7 +99,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 22,
     "prime_symptom_2": 39,
     "prime_symptom_3": 17,
@@ -108,7 +108,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 14,
     "prime_symptom_2": 35,
     "prime_symptom_3": null,
@@ -117,7 +117,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 16,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -126,7 +126,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 21,
     "prime_symptom_2": 60,
     "prime_symptom_3": 22,
@@ -135,7 +135,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 11,
     "prime_symptom_2": 26,
     "prime_symptom_3": 13,
@@ -144,7 +144,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 43,
     "prime_symptom_3": 32,
@@ -153,7 +153,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 11,
     "prime_symptom_2": null,
     "prime_symptom_3": 24,
@@ -162,7 +162,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 20,
     "prime_symptom_2": null,
     "prime_symptom_3": 14,
@@ -180,7 +180,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 19,
     "prime_symptom_2": 68,
     "prime_symptom_3": 21,
@@ -189,7 +189,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 20,
     "prime_symptom_2": 31,
     "prime_symptom_3": 16,
@@ -207,7 +207,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 44,
     "prime_symptom_3": null,
@@ -216,7 +216,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 7,
@@ -225,7 +225,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 17,
@@ -243,7 +243,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 36,
     "prime_symptom_2": null,
     "prime_symptom_3": 24,
@@ -252,7 +252,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 20,
     "prime_symptom_2": 49,
     "prime_symptom_3": 14,
@@ -261,7 +261,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 12,
@@ -270,7 +270,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 30,
     "prime_symptom_2": 34,
     "prime_symptom_3": 15,
@@ -279,7 +279,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 20,
     "prime_symptom_2": null,
     "prime_symptom_3": 17,
@@ -288,7 +288,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 21,
     "prime_symptom_2": 51,
     "prime_symptom_3": 23,
@@ -297,7 +297,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 32,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -315,7 +315,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 23,
     "prime_symptom_2": 63,
     "prime_symptom_3": 32,
@@ -324,7 +324,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "SEV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 24,
     "prime_symptom_2": null,
     "prime_symptom_3": 18,
@@ -333,7 +333,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 20,
     "prime_symptom_3": 21,
@@ -342,7 +342,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 18,
     "prime_symptom_2": null,
     "prime_symptom_3": 10,
@@ -351,7 +351,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 16,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -360,7 +360,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 18,
     "prime_symptom_2": null,
     "prime_symptom_3": 20,
@@ -369,7 +369,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 20,
     "prime_symptom_2": 22,
     "prime_symptom_3": 17,
@@ -378,7 +378,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 15,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -396,7 +396,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 24,
     "prime_symptom_2": null,
     "prime_symptom_3": 20,
@@ -405,7 +405,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -414,7 +414,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 13,
     "prime_symptom_3": null,
@@ -423,7 +423,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 12,
     "prime_symptom_2": 23,
     "prime_symptom_3": 17,
@@ -432,7 +432,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 18,
     "prime_symptom_2": 23,
     "prime_symptom_3": 17,
@@ -441,7 +441,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 10,
     "prime_symptom_2": 24,
     "prime_symptom_3": 16,
@@ -450,7 +450,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 31,
     "prime_symptom_2": null,
     "prime_symptom_3": 14,
@@ -459,7 +459,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 10,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -468,7 +468,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 34,
     "prime_symptom_2": null,
     "prime_symptom_3": 18,
@@ -477,7 +477,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -486,7 +486,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 23,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -495,7 +495,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 11,
     "prime_symptom_2": null,
     "prime_symptom_3": 21,
@@ -504,7 +504,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 12,
     "prime_symptom_2": null,
     "prime_symptom_3": 15,
@@ -513,7 +513,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 23,
     "prime_symptom_2": 17,
     "prime_symptom_3": 19,
@@ -522,7 +522,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -531,7 +531,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 13,
     "prime_symptom_3": null,
@@ -540,7 +540,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 10,
@@ -549,7 +549,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -558,7 +558,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 12,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -567,7 +567,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -576,7 +576,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -585,7 +585,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -594,7 +594,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 10,
     "prime_symptom_3": 30,
@@ -603,7 +603,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 10,
     "prime_symptom_3": null,
@@ -612,7 +612,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 16,
@@ -621,7 +621,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 16,
     "prime_symptom_2": null,
     "prime_symptom_3": 18,
@@ -630,7 +630,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -639,7 +639,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 18,
     "prime_symptom_2": 32,
     "prime_symptom_3": 23,
@@ -648,7 +648,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 9,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -657,7 +657,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 6,
     "prime_symptom_2": 11,
     "prime_symptom_3": 20,
@@ -666,7 +666,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 14,
     "prime_symptom_3": null,
@@ -675,7 +675,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -684,7 +684,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 12,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -702,7 +702,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -720,7 +720,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 28,
     "prime_symptom_2": null,
     "prime_symptom_3": 20,
@@ -729,7 +729,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 14,
     "prime_symptom_3": null,
@@ -738,7 +738,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -747,7 +747,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 14,
     "prime_symptom_2": null,
     "prime_symptom_3": 14,
@@ -765,7 +765,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 28,
@@ -774,7 +774,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 10,
@@ -783,7 +783,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 10,
     "prime_symptom_3": null,
@@ -792,7 +792,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -801,7 +801,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -810,7 +810,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 23,
@@ -819,7 +819,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 12,
     "prime_symptom_2": null,
     "prime_symptom_3": 28,
@@ -828,7 +828,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -837,7 +837,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -846,7 +846,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 8,
     "prime_symptom_2": 8,
     "prime_symptom_3": null,
@@ -855,7 +855,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 18,
     "prime_symptom_2": null,
     "prime_symptom_3": 16,
@@ -864,7 +864,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 18,
     "prime_symptom_2": null,
     "prime_symptom_3": 17,
@@ -873,7 +873,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -882,7 +882,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -891,7 +891,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -900,7 +900,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -909,7 +909,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 15,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -918,7 +918,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -927,7 +927,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -936,7 +936,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 35,
     "prime_symptom_3": 30,
@@ -945,7 +945,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 12,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -954,7 +954,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 22,
     "prime_symptom_2": null,
     "prime_symptom_3": 12,
@@ -963,7 +963,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -972,7 +972,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 16,
@@ -981,7 +981,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -990,7 +990,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -999,7 +999,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1008,16 +1008,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
-    "prime_symptom_1": null,
-    "prime_symptom_2": null,
-    "prime_symptom_3": null,
-    "fatal_symptom_1": null,
-    "fatal_symptom_2": null,
-  },
-  {
-    "outcome": "NSV",
-    "outlier": true,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1035,7 +1026,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": true,
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1044,7 +1035,16 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
+    "prime_symptom_1": null,
+    "prime_symptom_2": null,
+    "prime_symptom_3": null,
+    "fatal_symptom_1": null,
+    "fatal_symptom_2": null,
+  },
+  {
+    "outcome": "NSV",
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 19,
     "prime_symptom_3": null,
@@ -1053,7 +1053,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1062,7 +1062,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1071,7 +1071,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 12,
     "prime_symptom_3": null,
@@ -1089,7 +1089,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1098,7 +1098,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1107,7 +1107,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1116,7 +1116,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1125,7 +1125,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1134,7 +1134,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1143,7 +1143,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1152,7 +1152,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1170,7 +1170,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1179,7 +1179,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1188,7 +1188,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1197,7 +1197,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1206,7 +1206,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1215,7 +1215,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1224,7 +1224,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1233,7 +1233,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1242,7 +1242,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1251,7 +1251,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 38,
@@ -1260,7 +1260,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1269,7 +1269,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 38,
@@ -1278,7 +1278,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1287,7 +1287,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 30,
     "prime_symptom_2": null,
     "prime_symptom_3": 24,
@@ -1296,7 +1296,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1305,7 +1305,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1314,7 +1314,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1323,7 +1323,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1332,7 +1332,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": 11,
     "prime_symptom_3": 12,
@@ -1341,7 +1341,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1350,7 +1350,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 23,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1359,7 +1359,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 12,
@@ -1368,7 +1368,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 23,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1377,7 +1377,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1386,7 +1386,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 23,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1395,7 +1395,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1404,7 +1404,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1413,7 +1413,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": 19,
@@ -1422,7 +1422,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 37,
     "prime_symptom_2": 47,
     "prime_symptom_3": null,
@@ -1431,7 +1431,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1440,7 +1440,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1449,7 +1449,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1458,7 +1458,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 30,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1467,7 +1467,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1476,7 +1476,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": 70,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
@@ -1485,7 +1485,7 @@ const APIScatterData = [{
   },
   {
     "outcome": "NSV",
-    "outlier": false,
+    "outlier": "CNF",
     "prime_symptom_1": null,
     "prime_symptom_2": null,
     "prime_symptom_3": null,
