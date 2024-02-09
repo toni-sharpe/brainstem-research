@@ -348,7 +348,7 @@ begin
       when pe.care_technique_3 = 'TID' then care_technique_3_severity := 10;
       when pe.care_technique_3 = 'KNR' then care_technique_3_severity :=  7;
       when pe.care_technique_3 = 'RPH' then care_technique_3_severity :=  2;
-      when pe.care_technique_3 = 'WIN' then care_technique_3_severity :=  1;
+      when pe.care_technique_3 = 'NWI' then care_technique_3_severity :=  1;
       else care_technique_3_severity := 0;
     end case;
 

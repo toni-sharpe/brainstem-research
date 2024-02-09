@@ -1,7 +1,7 @@
 create or replace function calc_greatest(pe record) returns numeric as $func$
 begin
   if
-    pe.outcome = 'NFT'
+    pe.outcome = 'NSV'
     or
     pe.outcome = 'UNK'
   then
@@ -16,7 +16,7 @@ begin
   end if;
 
   if
-    pe.outcome = 'FAT'
+    pe.outcome = 'SEV'
   then
     if
       null_fatals(pe)

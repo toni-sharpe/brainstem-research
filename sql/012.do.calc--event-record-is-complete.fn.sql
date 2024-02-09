@@ -1,7 +1,7 @@
 create or replace function calc_event_record_is_complete(pe record) returns bool as $func$
 begin
   if
-    pe.outcome = 'FAT'
+    pe.outcome = 'SEV'
     and
     pe.fatal_symptom_1 is null
     and
