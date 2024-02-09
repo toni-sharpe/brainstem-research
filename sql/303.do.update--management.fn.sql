@@ -46,7 +46,7 @@ begin
     from
       pathological_event pe
     where
-      outcome = 'NFT'
+      outcome = 'NSV'
   loop
     --
     -- care technique 1
@@ -373,7 +373,7 @@ begin
       then
         care_technique_3_severity := 2;
       when
-        pe.care_technique_3 = 'WIN'
+        pe.care_technique_3 = 'NWI'
       then
         care_technique_3_severity := 1;
       else
@@ -390,7 +390,7 @@ begin
     from
       pathological_event
     where
-      outcome = 'FAT'
+      outcome = 'SEV'
     and
       pathological_event_duration < pe.pathological_event_duration;
 

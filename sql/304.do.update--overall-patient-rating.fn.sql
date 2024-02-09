@@ -25,7 +25,7 @@ begin
     from
       pathological_event
     where
-      outcome = 'NFT'
+      outcome = 'NSV'
   into
     rating_ranges;  
     
@@ -45,7 +45,7 @@ begin
     -- non-fatals involve care level
     --
     if
-      pe.outcome = 'NFT'
+      pe.outcome = 'NSV'
     then
       -- care level relative to range
       care_error_level_factor :=
@@ -78,7 +78,7 @@ begin
     -- fatals are simpler, just the severity itself for them, no weighting
     --
     if
-      pe.outcome = 'FAT'
+      pe.outcome = 'SEV'
     then
       overall_rating := pe.pathological_severity;
     end if;
