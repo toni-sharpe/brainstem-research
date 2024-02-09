@@ -22,7 +22,7 @@ test('PathologicalEventList - ', async () => {
   /*
    * Simple tests of on screen specifics, not always needed
    */
-  expect(screen.getAllByText('Et\'ogy').length).toEqual(10)
+  expect(screen.getAllByText('Et\'ogy').length).toEqual(12)
 })
 
 test('PathologicalEventList with AXE', async () => {

@@ -46,7 +46,7 @@ function PathologicalEventList({ data }) {
                   </tr>
                 ]),
                 <tr
-                  className={`${event.outlier ? 'not-so-' : ''}sure`}
+                  className={`${event.outlier === 'DUB' ? 'not-so-' : ''}sure`}
                   key={`${i}-data-row`}
                 >
                   <td className='num'>{i +1}</td>

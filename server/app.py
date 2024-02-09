@@ -48,7 +48,7 @@ def prime_symptom_pair():
 def bias():
   return process_bias(antibias_prime_symptom_cases, fatal_cases)
 
-@app.route("/TimeLineStatChart")
+@app.route("/Gantt")
 def statistics():
   return process_all_cases(all_cases)
 
@@ -60,6 +60,7 @@ def timeLine():
 def histogramMaker():
   return process_all_cases(all_cases)
 
-@app.route("/CorrelationHeatmap")
-def correlationHeatmap():
+@app.route("/SVG")
+def svg():
   return process_all_cases(all_cases)
+

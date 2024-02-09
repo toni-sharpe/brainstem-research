@@ -509,6 +509,12 @@ null,  null,null,   16,    32,  null,  null,    50,    50,  null,  null,  null, 
                          true, false,    63,  null,  null,  null,  null,  null,  null,  null,
       '', ''),
 
+( 76, 'LRM', '4A401D3', 'AMT', 'NFT', 'AMT',  'IN',  null,   'F',    55, 'CNF', '2023-12-17',
+      'WIN',      null, 'SCT', 'SIT', 'RPH', false, false, false, false, false, false, '006',
+null,  null,null,   12,    22,    22,  null,  null,  null,  null,    23,     9,     2,   218,
+                        false, false,    32,  null,  null,  null,  null,  null,  null,  null,
+      '', ''),
+
 ( 77, 'LRM', '99BDEEA', 'AMT', 'NSV', 'AMT',  null,  null,   'M',    70, 'CNF',         null,
       'NWI',      null, 'SCT', 'CMP', 'RPH', false,  true, false, false,  true, false, '005',
   19,  null,null,   23,    21,    23,  null,  null,  null,  null,    24,    10,     1,    96,
@@ -1789,7 +1795,7 @@ null,  null,null,   10,  null,  null,  null,  null,  null,  null,  null,  null, 
 
 (290, 'LRM', '8A23F34', 'AMT', 'NSV', 'AMT',  'IN',  null,   'F',    55, 'CNF', '2023-12-25',
       'NWI',      null, 'SCT', 'FFT', 'UNK', false, false, false, false, false, false, '005',
-   7,  null,null,    9,    15,    15,    28,  null,  null,  null,  null,  null,     2,   218,
+   7,  null,null,    9,    15,    15,    28,  null,  null,  null,  null,  null,     3,   218,
                         false, false,    67,  null,  null,  null,  null,  null,  null,     2,
       '', ''),
 
