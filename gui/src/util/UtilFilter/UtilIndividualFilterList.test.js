@@ -82,7 +82,7 @@ test('confirmedActorFilter()', () => {
  */
 test('removeDubiousFilter()', () => {
   const filterFn = filterOn({ fn: removeDubiousFilter, key: 'rmDubious' })
-  expect(filterFn({ outlier: true })).toBeFalsy()
+  expect(filterFn({ outlier: 'DUB' })).toBeFalsy()
 })
 
 
