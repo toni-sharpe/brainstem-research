@@ -15,29 +15,35 @@ create table if not exists pathological_event (
   patient_weight int,
   outlier varchar(3),
   pathological_event_date date,
+  explain_outlier text,
+
   etiology varchar(3),
-
-  care_equipment_1 varchar(3),
-  care_equipment_2 boolean default false,
-  care_equipment_3 boolean default false,
-  care_equipment_4 varchar(3),
-  care_equipment_5 varchar(3),
-  care_equipment_6 varchar(3),
-  care_equipment_7 varchar(3),
-
   care_technique_1 int,
+  care_equipment_1 varchar(3),
   care_technique_2 varchar(3),
   care_technique_3 varchar(3),
   care_technique_4 boolean default false,
   care_technique_5 boolean default false,
+  care_equipment_2 boolean default false,
+  care_equipment_3 boolean default false,
   care_technique_6 boolean default false,
   care_technique_7 boolean default false,
+  care_equipment_4 varchar(3),
+  care_equipment_5 varchar(3),
 
+
+  care_equipment_6 int,
+  care_equipment_7 boolean generated always as (
+    case
+      when care_technique_6 is false then
+        true
+      else
+        false
+    end
+  ) stored,
   observed_movement_response_1 boolean default false,
   observed_movement_response_2 boolean default false,
-
   event_record_length int default null,
-
   intro_symptom_start int default null,
   intro_symptom_end int default null,
   intro_symptom_duration int null,
@@ -61,6 +67,8 @@ create table if not exists pathological_event (
   prime_symptom_level int default 2,
   prime_symptom_3 int default null,
   prime_symptom_3_duration int default null,
+  prime_symptom_obscured int default null,
+  prime_symptom_disrupts_support boolean default false,
 
   fatal_symptom_1 int default null,
   fatal_symptom_2 int default null,
@@ -85,8 +93,12 @@ create table if not exists pathological_event (
 
   patient_id int not null,
   event_count int not null,
+  syphoning boolean default false,
   event_title varchar(24),
   notes text,
+
+  spare_field int,
+
   unique(
     patient_id,
     event_count
