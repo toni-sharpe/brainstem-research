@@ -1,7 +1,7 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .drag-graph {
-  border: 2px solid $grey--lightest;
+  border: 2px solid $blue;
   box-sizing: border-box;
   margin-bottom: 40px;
   &__heading {
@@ -17,18 +17,19 @@
     justify-content: center;
   }
   &__point {
-    background-color: rgba($white, 0.6);
-    border: 1px solid var(--black);
+    background-color: $white;
+    border: 1px solid var(--blue);
     border-radius: 3px;
     cursor: pointer;
     align-items: center;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    padding: var(--padding--small-tiny);
+    padding: var(--padding--tiniest);
     position: relative;
-    height: 58px;
-    width: 40px;
+    height: 48px;
+    width: 48px;
+    opacity: 0.6;
 
     &-label {
       font-size: var(--font-size--medium-small);
@@ -43,9 +44,14 @@
       border-radius: 50%;
       border: 1px solid var(--grey--light);
       display: flex;
-      height: 28px;
+      height: 24px;
       justify-content: center;
-      width: 28px;
+      width: 24px;
+    }
+
+    &.is-selected {
+    border: 1px solid var(--blue--dark);
+      opacity: 1.0;
     }
   }
 }

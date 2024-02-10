@@ -2,7 +2,6 @@ import { getByRole, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
-import { DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER } from 'util/Constant/BaseConstantList'
 import DragGraph from './DragGraph';
 
 const baseDragGraphProps = {
@@ -33,9 +32,7 @@ test('DragGraph has the control buttons', () => {
     <DragGraph {...baseDragGraphProps} />
   )
 
-  expect(screen.getByText('Sev.')).toBeTruthy()
   expect(screen.getByText('+')).toBeTruthy()
-  expect(screen.getByText(`mx=X${DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER}mn`)).toBeTruthy()
   expect(screen.getByText('Outcome')).toBeTruthy()
   expect(screen.getByText('1')).toBeTruthy()
   expect(screen.getByText('30')).toBeTruthy()

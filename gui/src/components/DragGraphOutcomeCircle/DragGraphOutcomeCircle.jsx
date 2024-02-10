@@ -16,7 +16,7 @@ function DragGraphOutcomeCircle({
 }) {
   return (
     <SvgCircle
-      circleRadius={calcCircleRadius({ multiplier, value: r, zoom })}
+      r={calcCircleRadius({ multiplier, value: r, zoom })}
       c={c}
       fill={fill}
       fillOpacity={fillOpacity}
@@ -25,7 +25,7 @@ function DragGraphOutcomeCircle({
 }
 
 DragGraphOutcomeCircle.defaultProps = {
-  fillOpacity: 0.1,
+  fillOpacity: 0.3,
   multiplier: 1,
 }
 

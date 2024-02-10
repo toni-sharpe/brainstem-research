@@ -121,18 +121,18 @@ function ScatterChart({
                 return (
                   <g key={`${x}-${y}-${i}`}>
                     <SvgCircle
-                      circleRadius={5 + (primeSymptomSeverity || 0)}
                       c={{ x: xScaled, y: yScaled }}
                       extraClass={`scatter-chart__outcome${outcome === 'SEV' ? '' : '-not'}-severe`}
                       fillOpacity={0.3}
                       key={`scale-sev`}
+                      r={5 + (primeSymptomSeverity || 0)}
                       stroke={'rgba(48, 48, 48, 0.3)'}
                     />
                     <SvgCircle
-                      circleRadius={10 + (careErrors || 0 / 5)}
                       c={{ x: xScaled, y: yScaled }}
                       extraClass={`scatter-chart__care-level${outcome === 'SEV' ? '' : '-not'}-severe`}
                       key={`scale-care`}
+                      r={10 + (careErrors || 0 / 5)}
                     />
                   </g>
                 )})

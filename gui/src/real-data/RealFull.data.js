@@ -9689,7 +9689,7 @@ const RealFullData = [
     "patient_weight": 65,
     "outlier": "CNF",
     "pathological_event_date": "2018-06-12",
-    "etiology": "___",
+    "etiology": "LWD",
     "care_equipment_1": "THO",
     "care_equipment_2": false,
     "care_equipment_3": false,
