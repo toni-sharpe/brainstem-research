@@ -127,12 +127,14 @@ function ScatterChart({
                       key={`scale-sev`}
                       r={5 + (primeSymptomSeverity || 0)}
                       stroke={'rgba(48, 48, 48, 0.3)'}
+                      strokeWidth={10}
                     />
                     <SvgCircle
                       c={{ x: xScaled, y: yScaled }}
                       extraClass={`scatter-chart__care-level${outcome === 'SEV' ? '' : '-not'}-severe`}
                       key={`scale-care`}
                       r={10 + (careErrors || 0 / 5)}
+                      strokeWidth={10}
                     />
                   </g>
                 )})
