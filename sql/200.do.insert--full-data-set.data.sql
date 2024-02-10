@@ -2075,7 +2075,7 @@ insert into
        '', ''),
 
 ( 337, 'SCT',          '', 'PRV', 'SEV', 'DCI',  'IN',  null,   'M',    65, 'CNF', '2018-06-12', '',
-       '___',        null, 'THO', 'FFT', 'NAF', false, false, false, false, false, false, '005',  null,
+       'LWD',        null, 'THO', 'FFT', 'NAF', false, false, false, false, false, false, '005',  null,
     6,  null,  null, null,  null,  null,    22,    75,    51,  null,  null,  null,     1,   245,  null,
                null, null, false,  true,    98,  null,  null,    51,  null,    51,  null,  null,
        '', ''),

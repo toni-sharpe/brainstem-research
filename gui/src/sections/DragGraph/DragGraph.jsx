@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { join, map, pipe, split, type } from 'ramda'
 
-import Button from 'components/Button/Button'
 import DragGraphButton from 'components/DragGraphButton/DragGraphButton'
 import DragGraphHeader from 'components/DragGraphHeader/DragGraphHeader'
 import DragGraphOutcomeCircle from 'components/DragGraphOutcomeCircle/DragGraphOutcomeCircle'
@@ -12,8 +11,6 @@ import SvgCircle from 'components/SvgCircle/SvgCircle'
 import SvgLine from 'components/SvgLine/SvgLine'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import {
-  DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER,
-  DRAG_GRAPH_SEVERITY_MULTIPLIER,
   DRAG_GRAPH_SVG_SCALE,
   DRAG_GRAPH_SVG_SCALE_RADIUS,
 } from 'util/Constant/BaseConstantList'
@@ -25,23 +22,15 @@ import {
   calcRadiusUnit,
   calcScaleRadiusList,
 } from 'util/UtilDragGraph/UtilDragGraph'
-import { numberPrecision } from 'util/Util/Util'
-import {
-  isFullMax,
-  isWithinMultiplier,
-} from 'util/UtilDragGraph/UtilDragGraphFilter'
+import { isFullMax } from 'util/UtilDragGraph/UtilDragGraphFilter'
 import LabelValPropType from 'prop-types/LabelVal.prop-type'
-import {
-  setJSONLocalStorage,
-  getJSONLocalStorage,
-} from 'util/UtilLocalStorage/UtilLocalStorage'
+import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './DragGraph.scss'
 
 const i18nBase = 'DragGraph'
 
 function DragGraph({
-  color,
   graphKey,
   heading,
   labelValList: lblValList,
@@ -50,13 +39,9 @@ function DragGraph({
 
   const [graphOffset, setGraphOffset] = useState('0 0')
   const [incExtremes, setIncExtremes] = useState(persisted?.incExtremes || false)
-  const [minToMaxMultiplier, setMinToMaxMultiplier] = useState(persisted?.minToMaxMultiplier || false)
-  const [zoom, setZoom] = useState(persisted?.zoom || 1)
-  const [aveSeverityShown, setAveSeverityShown] = useState(
-    persisted?.aveSeverityShown !== undefined
-      ? persisted?.aveSeverityShown
-      : false
-    )
+  const [zoom, setZoom] = useState(persisted?.zoom || 2)
+  const [focusLabel, setFocusLabel] = useState('')
+
   const [outcomeShown, setOutcomeShown] = useState(persisted?.outcomeShown || false)
 
   const dataError = !lblValList || type(lblValList) !== 'Array' || lblValList.length < 2
@@ -77,18 +62,13 @@ function DragGraph({
     labelValList = lblValList.filter(([_, { length: v }]) => !isFullMax({ max: fullMax, v }))
   }
 
-  if (minToMaxMultiplier) {
-    const min = Math.min(...valList)
-    valList = valList.filter(v => isWithinMultiplier({ min, v }))
-    labelValList = lblValList.filter(([_, { length: v }]) => isWithinMultiplier({ min, v }))
-  }
-
   const max = fullMax / zoom
   const radiusUnit = calcRadiusUnit({ max })
   const angle = calcAngleInRadians({ valList })
   const dragLineCoordList = calcPolygonCoordList({ angle, max, radiusUnit, valList })
   const baseLineCoordList = calcBaseLineCoordList({ angle, valList })
   const r = DRAG_GRAPH_SVG_SCALE_RADIUS
+  const cGraph = { x: r, y: r }
 
   const {
     highlight,
@@ -100,6 +80,8 @@ function DragGraph({
     graphKey,
     localStorageValList: persisted,
   }
+
+
 
   return (
     <article className='drag-graph column-layout space-children--column-with-border'>
@@ -113,13 +95,8 @@ function DragGraph({
               {...commonButtonProps}
               newValue={!incExtremes}
               isSelected={incExtremes}
-              isDisabled={minToMaxMultiplier}
               k='incExtremes'
-              localStorageValList={{...persisted, minToMaxMultiplier: false }}
-              stateFn={() => {
-                setIncExtremes(!incExtremes)
-                setMinToMaxMultiplier(false)
-              }}
+              stateFn={setIncExtremes}
             />
           </li>
           <li className='row-layout space-children'>
@@ -146,33 +123,6 @@ function DragGraph({
             }) }
           </li>
           <li>
-            <Button
-              isSelected={minToMaxMultiplier}
-              isDisabled={incExtremes}
-              size='medium'
-              label={i18next.t(`DragGraphButton.minToMaxMultiplier`, { multiplier: DRAG_GRAPH_MIN_TO_MAX_MULTIPLIER })}
-              onClick={() => {
-                const newMaxTenXMin = !minToMaxMultiplier
-                setJSONLocalStorage({ k: graphKey, v: {
-                  ...persisted,
-                  incExtremes: false,
-                  minToMaxMultiplier: newMaxTenXMin
-                } })
-                setIncExtremes(false)
-                setMinToMaxMultiplier(newMaxTenXMin)
-              }}
-            />
-          </li>
-          <li>
-            <DragGraphButton
-              {...commonButtonProps}
-              newValue={!aveSeverityShown}
-              isSelected={aveSeverityShown}
-              k='aveSeverityShown'
-              stateFn={setAveSeverityShown}
-            />
-          </li>
-          <li>
             <DragGraphButton
               {...commonButtonProps}
               newValue={!outcomeShown}
@@ -188,7 +138,10 @@ function DragGraph({
               localStorageValList={false}
               newValue={'0 0'}
               k='resetGraphCenter'
-              stateFn={setGraphOffset}
+              stateFn={(newVal) => {
+                setGraphOffset(newVal)
+                setFocusLabel('')
+              }}
             />
           </li>
         </ul>
@@ -200,79 +153,106 @@ function DragGraph({
         >
           {i18next.t(`${i18nBase}.scaleDetail`, { highlight, scaleUnit })}
         </figcaption>
-        <SvgWrapper offsetPair={graphOffset} svgScale={DRAG_GRAPH_SVG_SCALE}>
-          { baseLineCoordList.map(([x, y], i) => {
-            return (<SvgLine key={`${x}-${y}-${i}`} stroke='#ccc' x={[r, r]} y={[x, y]} />)
-          })}
-          { scaleRadiusList.map(([circleRadius, h], i) => {
-            const stroke = h ? '#ccc' : '#eee'
-            return (<SvgCircle circleRadius={circleRadius} c={{ x: r, y: r }} key={`scale-${i}`} stroke={stroke} />)
-          })}
-          <polygon
-            fill={'#000'}
-            fillOpacity={0.2}
-            key='drag-polygon'
-            points={calcPolygonCoordString({ coordList: dragLineCoordList })}
-            stroke={'#000'}
-            strokeOpacity={0.8}
-            strokeWidth={2}
-          />
-          { dragLineCoordList.map(([x, y], i) => {
+        <SvgWrapper svgScale={DRAG_GRAPH_SVG_SCALE}>
+          <g key='guides' transform={`translate(${graphOffset})`}>
+            { scaleRadiusList.map(([circleR, h], i) => {
+              const stroke = h ? '#ccc' : '#eee'
+              return (<SvgCircle key={`scc-${circleR}`} r={circleR} c={cGraph} stroke={stroke} fillOpacity={0.0} />)
+            })}
+            { baseLineCoordList.map(([[x, y], _], i) => {
+              return (<SvgLine key={`scl-${i}`} stroke='#777' x={[r, r]} y={[x, y]} />)
+            })}
+            <polygon
+              fill={'#333'}
+              fillOpacity={0.2}
+              key='drag-polygon'
+              points={calcPolygonCoordString({ coordList: dragLineCoordList })}
+              stroke={'#333'}
+              strokeOpacity={0.6}
+              strokeWidth={1.5}
+            />
+            { dragLineCoordList.map(([x, y], i) => {
+              const {
+                severe,
+                nonSevere,
+              } = labelValList[i][1]
+
+              const commonCircleProps = { c: { x, y }, zoom: zoom / 10 }
+
+              return (
+                <g key={`g-${i}`}>
+                  { severe > 0 && outcomeShown && (
+                    <DragGraphOutcomeCircle {...commonCircleProps} fill='#b22' r={severe + 20} />
+                  ) }
+                  { nonSevere > 0 && outcomeShown && (
+                    <DragGraphOutcomeCircle {...commonCircleProps} fill='#13a' r={nonSevere + 20} />
+                  ) }
+                  { (<SvgCircle {...commonCircleProps} r={4} fill='#13a' /> ) }
+                </g>
+              )
+            })}
+            <SvgCircle r={5} c={cGraph} stroke='#000' strokeOpacity={0.4} />
+          </g>
+          { baseLineCoordList.map(([[lx, ly], [fx, fy]], i) => {
             const {
-              careLevel,
-              length,
               severe,
               nonSevere,
             } = labelValList[i][1]
 
-            const commonCircleProps = { c: { x, y }, zoom }
+            const isSelected = focusLabel === labelValList[i][0]
+
+            const [rx, ry] = dragLineCoordList[i].map(v => r - v)
+
+            const baseSvgLineProps = {
+              stroke: '#13a',
+              strokeOpacity: 0.0,
+              x: [r, r],
+              y: [lx, ly],
+              strokeWidth: 1.0,
+            }
+
+            let svgLineProps = baseSvgLineProps
+            if (isSelected) {
+              svgLineProps = {
+                ...baseSvgLineProps,
+                strokeOpacity: 1.0,
+                strokeWidth: 2.0,
+              }
+            }
 
             return (
-              <g key={`g-${i}`}>
-                { severe > 0 && outcomeShown && (
-                  <DragGraphOutcomeCircle {...commonCircleProps} fill='red' key={`sv-${i}`} r={severe + 10} />
+              <g key={`sel-${i}`}>
+                <SvgLine {...svgLineProps} />
+                { isSelected && (
+                  <SvgCircle r={Math.max(2 * zoom / 6, 6)} c={cGraph} fill='#13a' stroke='#13a' />
                 ) }
-                { nonSevere > 0 && outcomeShown && (
-                  <DragGraphOutcomeCircle {...commonCircleProps} fill='blue' key={`nsv-${i}`} r={nonSevere + 10} />
-                ) }
-               { careLevel > 0 && aveSeverityShown && (
-                  <DragGraphOutcomeCircle
-                    {...commonCircleProps}
-                    fill='#494'
-                    key={`cl-${i}`}
-                    r={numberPrecision({ n: (careLevel / length) })}
-                    multiplier={DRAG_GRAPH_SEVERITY_MULTIPLIER}
-                  />
-                ) }
+                <foreignObject
+                  key={labelValList[i][0]}
+                  onFocus={() => {
+                    setGraphOffset(`${rx} ${ry}`)
+                    setFocusLabel(labelValList[i][0] || '')
+                  }}
+                  tabIndex={0}
+                  x={fx - 26}
+                  y={fy - 26}
+                  width='52'
+                  height='52'
+                  style={{
+                    borderRadius: '3px',
+                    boxShadow: isSelected ? '' : '0 0 20px 0 #555',
+                  }}
+                >
+                  <article className={`drag-graph__point ${isSelected ? 'is-selected' : ''}`}>
+                    <header className='drag-graph__point-label'>{labelValList[i][0]}</header>
+                    <section
+                      className='drag-graph__point-num'
+                      title={`Sev: ${severe} Not sev: ${nonSevere}`}
+                    >
+                      <span>{valList[i]}</span>
+                    </section>
+                  </article>
+                </foreignObject>
               </g>
-            )
-          })}
-          { dragLineCoordList.map(([x, y], i) => {
-            const {
-              severe,
-              nonSevere,
-            } = labelValList[i][1]
-
-            return (
-              <foreignObject
-                key={labelValList[i][0]}
-                onFocus={() => setGraphOffset(`${0 - (r - x)} ${0 - (r - y)}`)}
-                tabIndex={0}
-                x={x - 22}
-                y={y - 38}
-                width='50'
-                height='66'
-              >
-                <article className='drag-graph__point'>
-                  <header className='drag-graph__point-label'>{labelValList[i][0]}</header>
-                  <section
-                    className='drag-graph__point-num'
-                    title={`Sev: ${severe} Not sev: ${nonSevere}`}
-                  >
-                    <span>{valList[i]}</span>
-                  </section>
-                </article>
-              </foreignObject>
             )
           })}
         </SvgWrapper>

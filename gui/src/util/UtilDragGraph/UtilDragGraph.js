@@ -27,11 +27,11 @@ export function calcAngleInRadians({ valList }) {
 }
 
 export function calcBaseLineCoordList({ angle, valList }) {
-  const r = (DRAG_GRAPH_SVG_SCALE_RADIUS * 2)
+  const r = (DRAG_GRAPH_SVG_SCALE_RADIUS * 1.5)
 
   return valList.map((val, i) => {
     const a = angle * i
-    return calcXY({ a, r })
+    return [calcXY({ a, r }), calcXY({ a, r: r / 1.64 })]
   })
 }
 
