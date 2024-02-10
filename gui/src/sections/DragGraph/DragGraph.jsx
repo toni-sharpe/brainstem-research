@@ -148,7 +148,7 @@ function DragGraph({
       </section>
       <figure className='column-layout space-children--column'>
         <figcaption
-          className='drag-graph-header__scale-detail'
+          className='drag-graph__scale-detail'
           key='scale'
         >
           {i18next.t(`${i18nBase}.scaleDetail`, { highlight, scaleUnit })}
@@ -193,7 +193,23 @@ function DragGraph({
             })}
             <SvgCircle r={5} c={cGraph} stroke='#000' strokeOpacity={0.4} />
           </g>
-          { baseLineCoordList.map(([[lx, ly], [fx, fy]], i) => {
+          <SvgCircle
+            r={475}
+            c={cGraph}
+            fillOpacity={0.0}
+            stroke='#777'
+            strokeOpacity={0.075}
+            strokeWidth={200}
+          />
+          <SvgCircle
+            r={525}
+            c={cGraph}
+            fillOpacity={0.0}
+            stroke='#777'
+            strokeOpacity={0.075}
+            strokeWidth={200}
+          />
+          { baseLineCoordList.map(([_, [fx, fy]], i) => {
             const {
               severe,
               nonSevere,
@@ -207,7 +223,7 @@ function DragGraph({
               stroke: '#13a',
               strokeOpacity: 0.0,
               x: [r, r],
-              y: [lx, ly],
+              y: [fx, fy],
               strokeWidth: 1.0,
             }
 
