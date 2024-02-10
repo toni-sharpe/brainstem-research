@@ -9,6 +9,7 @@ function SvgCircle({
   r,
   stroke,
   strokeOpacity,
+  strokeWidth,
 }) {
   return (
     <circle
@@ -20,6 +21,7 @@ function SvgCircle({
       r={r}
       stroke={stroke}
       strokeOpacity={strokeOpacity}
+      strokeWidth={strokeWidth}
     />
   )
 }
@@ -28,6 +30,7 @@ SvgCircle.defaultProps = {
   fillOpacity: 1.0,
   stroke: undefined,
   strokeOpacity: 1.0,
+  strokeWidth: 1.0,
 }
 
 SvgCircle.propTypes = {

@@ -11,7 +11,12 @@
     width: 100%;
   }
   &__scale-detail {
-    text-align: center;
+    &.drag-graph__scale-detail {
+      border-bottom: 2px solid var(--blue);
+      margin-bottom: 0;
+      padding-bottom: var(--spacing--narrow);
+      text-align: center;
+    }
   }
   &__controls {
     justify-content: center;
@@ -50,7 +55,7 @@
     }
 
     &.is-selected {
-    border: 1px solid var(--blue--dark);
+      border: 1px solid var(--blue--dark);
       opacity: 1.0;
     }
   }
