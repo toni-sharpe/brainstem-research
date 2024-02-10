@@ -161,7 +161,7 @@ insert into
        '', ''),
 
 (  17, 'LRM',   '234BBEE', 'AMT', 'NSV', 'AMT',  null,  null,   'F',    56, 'CNF', '2022-12-24', '',
-       'LWD',        null, 'SCW', 'CHD', 'DRP', false, false, false, false, false, false, '005', 'BAR',
+       'LWD',        null, 'SCW', 'CHD', 'PRD', false, false, false, false, false, false, '005', 'BAR',
  null,  null,  null,    3,  null,    13,  null,  null,  null,  null,    19,     0,     1,     1,  null,
                null,   12, false, false,    19,  null,  null,  null,  null,  null,  null,     2,
        '', ''),
@@ -2027,7 +2027,7 @@ insert into
        '', ''),
 
 ( 328, 'SCT',          '', 'PRV', 'SEV', 'DCI',  'RU',  null,   'M',    58, 'UNU', '2020-06-03', '',
-       'DRP',           3, 'UNK', 'CMP', 'NAF', false, false, false, false, false, false, '005',  null,
+       'PRD',           3, 'UNK', 'CMP', 'NAF', false, false, false, false, false, false, '005',  null,
  null,  null,  null, null,  null,    14,  null,  null,  null,  null,  null,  null,     1,   236,  null,
                 null, null, true, false,    32,     0,     6,  null,  null,  null,  null,     2,
        '', ''),
@@ -2057,19 +2057,19 @@ insert into
        '', ''),
 
 ( 334, 'SCT',          '', 'PRV', 'SEV', 'DCI',  'IN',  null,   '_',  null, 'CNF', '2018-10-09', '',
-       'DRP',          24, 'UNK', 'FFT', 'NAF', false, false, false, false, false, false, '004',  null,
+       'PRD',          24, 'UNK', 'FFT', 'NAF', false, false, false, false, false, false, '004',  null,
  null,  null,  null,   25,  null,  null,    34,  null,  null,  null,  null,  null,     1,   242,  null,
                 null, null, true,  true,    46,  null,  null,  null,  null,  null,  null,  null,
        '', ''),
 
 ( 335, 'SCT',          '', 'PRV', 'NSV', 'ATM',  'NP',  null,   'M',    65, 'CNF', '2018-08-26', '',
-       'LWD',        null, 'UNK', 'CMP', 'DRP', false, false, false, false, false, false, 'UNK',  null,
+       'LWD',        null, 'UNK', 'CMP', 'PRD', false, false, false, false, false, false, 'UNK',  null,
     9,  null,  null, null,  null,  null,  null,  null,  null,  null,    24,     0,     1,   243,  null,
                null, null, false,  true,    24,  null,  null,  null,  null,  null,  null,  null,
        '', ''),
 
 ( 336, 'SCT',          '', 'PRV', 'SEV', 'DCI',  'IN',  null,   'M',  null, 'DUB', '2018-07-31', '',
-       'DRP',           3, 'UNK', 'CMP', 'NAF', false, false, false, false, false, false, '007',  null,
+       'PRD',           3, 'UNK', 'CMP', 'NAF', false, false, false, false, false, false, '007',  null,
     8,  null,  null, null,  null,  null,    23,   272,   272,   272,  null,  null,     1,   244,  null,
                 null, null, true, false,   300,  null,  null,  null,  null,  null,  null,  null,
        '', ''),
