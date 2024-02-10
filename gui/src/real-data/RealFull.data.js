@@ -9998,7 +9998,7 @@ const RealFullData = [
     "care_equipment_6": null,
     "care_equipment_7": null,
     "care_technique_1": null,
-    "care_technique_2": "FFt",
+    "care_technique_2": "FFT",
     "care_technique_3": "UNK",
     "care_technique_4": false,
     "care_technique_5": false,
