@@ -35,7 +35,7 @@ create table if not exists pathological_event (
   care_equipment_6 int,
   care_equipment_7 boolean generated always as (
     case
-      when care_technique_6 is false then
+      when care_technique_6 is null then
         true
       else
         false
@@ -68,7 +68,7 @@ create table if not exists pathological_event (
   prime_symptom_3 int default null,
   prime_symptom_3_duration int default null,
   prime_symptom_obscured int default null,
-  prime_symptom_disrupts_support boolean default false,
+  prime_symptom_disrupts_support int default 0,
 
   fatal_symptom_1 int default null,
   fatal_symptom_2 int default null,
@@ -93,11 +93,9 @@ create table if not exists pathological_event (
 
   patient_id int not null,
   event_count int not null,
-  syphoning boolean default false,
+  syphoning int default null,
   event_title varchar(24),
   notes text,
-
-  spare_field int,
 
   unique(
     patient_id,
