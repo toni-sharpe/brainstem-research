@@ -1,14 +1,11 @@
-import { pluck, join, map, pipe, split, tail, last, init, flatten } from 'ramda'
-import i18next from 'util/i18next/i18next'
+import { pipe, split, last, init } from 'ramda'
 import React, { useState } from 'react'
 
 import { calcPolygonCoordString } from 'util/UtilDragGraph/UtilDragGraph'
-import { numberPrecision } from 'util/Util/Util'
-import { MAP_FACTOR, WORLD_MAP_SVG_SCALE } from 'util/Constant/BaseConstantList'
+import { WORLD_MAP_SVG_SCALE } from 'util/Constant/BaseConstantList'
 import DragGraphButton from 'components/DragGraphButton/DragGraphButton'
 import MapBorderList from 'util/Constant/MapBorderList'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
-import SvgPath from 'components/SvgPath/SvgPath'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
@@ -86,18 +83,6 @@ function MapSvg() {
               return mapBorder.map((subBorder, j) => {
                 const { c } = last(subBorder)
                 const borderCoords = init(subBorder)
-                const zm = zoom / MAP_FACTOR
-                const np = ({ n }) => numberPrecision({ n, lessPrecise: 3 })
-                const d = borderCoords
-                  .map(([x, y], k) => {
-                    const z = k === subBorder.length - 2
-                    const v = `${x},${y}`
-                    return `${z
-                      ? `${v}Z`
-                      : `${k===0
-                        ? 'M'
-                        : 'L'}${v} `}`
-                }).join(' ')
 
                 return (
                   <g

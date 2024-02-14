@@ -11,7 +11,6 @@ import SvgCircle from 'components/SvgCircle/SvgCircle'
 import SvgLine from 'components/SvgLine/SvgLine'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import {
-  DRAG_GRAPH_SVG_SCALE,
   DRAG_GRAPH_SVG_SCALE_RADIUS,
   DRAG_GRAPH_SVG_VIEWBOX,
 } from 'util/Constant/BaseConstantList'
