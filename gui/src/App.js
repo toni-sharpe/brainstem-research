@@ -13,6 +13,7 @@ import Gantt from 'screens/Gantt/Gantt';
 import TimeLine from 'screens/TimeLine/TimeLine';
 import HistogramMaker from 'screens/HistogramMaker/HistogramMaker';
 import SVG from 'screens/SVG/SVG';
+import WorldMap from 'screens/WorldMap/WorldMap';
 import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 import { calcFilterList, isAnyFilterSet } from 'util/UtilFilter/UtilFilter'
 import { getCurrentUrl } from 'util/Util/Util'
@@ -100,6 +101,12 @@ function App() {
           <Route
             path="SVG"
             element={<SVG data={filteredData} />}
+          />
+        )}
+        { currentUrl === 'WorldMap' && (
+          <Route
+            path="WorldMap"
+            element={<WorldMap data={filteredData} />}
           />
         )}
       </Routes>

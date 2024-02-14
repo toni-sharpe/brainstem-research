@@ -83,7 +83,7 @@ function ScatterChart({
     >
       { pointList?.length
         ? (
-            <SvgWrapper offset={SCATTER_SCALE_LABEL_OFFSET} svgScale={squ}>
+            <SvgWrapper offset={SCATTER_SCALE_LABEL_OFFSET} svgScale={`${squ} ${squ}`}>
               { range(1, rangeTopBound).map((i) => {
                 const stroke = calcStroke({ i })
                 const line = i * scatterGuideLine
