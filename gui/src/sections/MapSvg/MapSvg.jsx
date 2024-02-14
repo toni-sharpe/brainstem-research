@@ -2,7 +2,11 @@ import { pipe, split, last, init } from 'ramda'
 import React, { useState } from 'react'
 
 import { calcPolygonCoordString } from 'util/UtilDragGraph/UtilDragGraph'
-import { WORLD_MAP_SVG_SCALE } from 'util/Constant/BaseConstantList'
+import {
+  WORLD_MAP_SVG_CENTER_X,
+  WORLD_MAP_SVG_CENTER_Y,
+  WORLD_MAP_SVG_SCALE,
+} from 'util/Constant/BaseConstantList'
 import DragGraphButton from 'components/DragGraphButton/DragGraphButton'
 import MapBorderList from 'util/Constant/MapBorderList'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
@@ -51,7 +55,7 @@ function MapSvg() {
                   const newGraphOffset = pipe(
                     split(' '),
                     d => {
-                      return `${(d[0] * factor) - (500 * (factor - 1))} ${(d[1] * factor) - (350 * (factor - 1))}`
+                      return `${(d[0] * factor) - (WORLD_MAP_SVG_CENTER_X * (factor - 1))} ${(d[1] * factor) - (WORLD_MAP_SVG_CENTER_Y * (factor - 1))}`
                     },
                   )(graphOffset)
                   setGraphOffset(newGraphOffset)
@@ -76,7 +80,6 @@ function MapSvg() {
         extraClass='map-svg'
         k='world-map-svg'
         svgScale={`0 0 ${WORLD_MAP_SVG_SCALE}`}
-        style={{ height: '80vh' }}
       >
         <g key='guides' transform={`translate(${graphOffset})`}>
           { MapBorderList.map(({ mapBorder }, i) => {
@@ -88,7 +91,7 @@ function MapSvg() {
                   <g
                     key={`${c.x}${c.y}`}
                     onClick={() => {
-                      setGraphOffset(`${500 - (c.x * zoom)} ${350 - (c.y * zoom)}`)
+                      setGraphOffset(`${WORLD_MAP_SVG_CENTER_X - (c.x * zoom)} ${WORLD_MAP_SVG_CENTER_Y - (c.y * zoom)}`)
                     }
                   }>
                     <polygon
