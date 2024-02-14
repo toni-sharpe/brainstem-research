@@ -1,9 +1,7 @@
-import i18next from 'util/i18next/i18next'
 import React from 'react'
 
 import MapSvg from 'sections/MapSvg/MapSvg'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
-import { groupByAndCountPipe } from 'util/UtilDragGraph/UtilDragGraphGrouping'
 
 import './WorldMap.scss'
 

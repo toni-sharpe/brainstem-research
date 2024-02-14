@@ -3,9 +3,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Button from 'components/Button/Button'
-import {
-  setJSONLocalStorage,
-} from 'util/UtilLocalStorage/UtilLocalStorage'
 
 const i18nBase = 'ResetGraphButton'
 
