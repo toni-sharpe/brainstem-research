@@ -7,7 +7,8 @@ import {
   WORLD_MAP_SVG_CENTER_Y,
   WORLD_MAP_SVG_SCALE,
 } from 'util/Constant/BaseConstantList'
-import DragGraphButton from 'components/DragGraphButton/DragGraphButton'
+import ResetGraphButton from 'components/ResetGraphButton/ResetGraphButton'
+import ZoomButton from 'components/ZoomButton/ZoomButton'
 import MapBorderList from 'util/Constant/MapBorderList'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
@@ -41,9 +42,9 @@ function MapSvg() {
         <div
           className='row-layout'
         >
-          { [1, 2, 3, 5, 10, 15, 20, 30, 50].map(z => {
+          { [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 30, 50, 100, 250, 1000].map(z => {
             return (
-              <DragGraphButton
+              <ZoomButton
                 {...commonButtonProps}
                 newValue={z}
                 isSelected={zoom === z}
@@ -64,15 +65,11 @@ function MapSvg() {
               />
             )
           }) }
-          <DragGraphButton
-            {...commonButtonProps}
-            isDisabled={graphOffset === '0 0'}
-            localStorageValList={false}
-            newValue={'0 0'}
-            k='resetGraphCenter'
-            stateFn={(newVal) => {
-              setGraphOffset(newVal)
-            }}
+          <ResetGraphButton
+            zoom={zoom}
+            graphOffset={graphOffset}
+            setGraphOffset={setGraphOffset}
+            setZoom={setZoom}
           />
         </div>
       </div>

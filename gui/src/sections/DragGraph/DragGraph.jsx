@@ -7,9 +7,11 @@ import DragGraphButton from 'components/DragGraphButton/DragGraphButton'
 import DragGraphHeader from 'components/DragGraphHeader/DragGraphHeader'
 import DragGraphOutcomeCircle from 'components/DragGraphOutcomeCircle/DragGraphOutcomeCircle'
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
+import ResetGraphButton from 'components/ResetGraphButton/ResetGraphButton'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
 import SvgLine from 'components/SvgLine/SvgLine'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
+import ZoomButton from 'components/ZoomButton/ZoomButton'
 import {
   DRAG_GRAPH_SVG_SCALE_RADIUS,
   DRAG_GRAPH_SVG_VIEWBOX,
@@ -81,8 +83,6 @@ function DragGraph({
     localStorageValList: persisted,
   }
 
-
-
   return (
     <article className='drag-graph column-layout space-children--column-with-border'>
       <section className='column-layout space-children--column'>
@@ -102,7 +102,7 @@ function DragGraph({
           <li className='row-layout space-children'>
             { [1, 2, 3, 5, 10, 15, 20, 30, 50].map(z => {
               return (
-                <DragGraphButton
+                <ZoomButton
                   {...commonButtonProps}
                   newValue={z}
                   isSelected={zoom === z}
@@ -132,16 +132,12 @@ function DragGraph({
             />
           </li>
           <li>
-            <DragGraphButton
-              {...commonButtonProps}
-              isDisabled={graphOffset === '0 0'}
-              localStorageValList={false}
-              newValue={'0 0'}
-              k='resetGraphCenter'
-              stateFn={(newVal) => {
-                setGraphOffset(newVal)
-                setFocusLabel('')
-              }}
+            <ResetGraphButton
+              zoom={zoom}
+              graphOffset={graphOffset}
+              setGraphOffset={setGraphOffset}
+              setZoom={setZoom}
+              extraStateFn={() => setFocusLabel('')}
             />
           </li>
         </ul>

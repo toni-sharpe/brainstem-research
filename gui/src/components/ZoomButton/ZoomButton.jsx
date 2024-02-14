@@ -7,9 +7,11 @@ import {
   setJSONLocalStorage,
 } from 'util/UtilLocalStorage/UtilLocalStorage'
 
-const i18nBase = 'DragGraphButton'
+import './ZoomButton.scss'
 
-function DragGraphButton({
+const i18nBase = 'ZoomButton'
+
+function ZoomButton({
   graphKey,
   isDisabled,
   isSelected,
@@ -25,8 +27,8 @@ function DragGraphButton({
       size='medium'
       label={i18next.t(`${i18nBase}.${k}`)}
       onClick={() => {
-          localStorageValList && setJSONLocalStorage({ k: graphKey, v: {
-            ...localStorageValList,
+        localStorageValList && setJSONLocalStorage({ k: graphKey, v: {
+          ...localStorageValList,
           [k]: newValue,
         } })
         stateFn(newValue)
@@ -35,9 +37,9 @@ function DragGraphButton({
   )
 }
 
-DragGraphButton.propTypes = {
-    heading: PropTypes.string,
+ZoomButton.propTypes = {
+  heading: PropTypes.string,
   scaleDetail: PropTypes.string,
 }
 
-export default DragGraphButton
+export default ZoomButton
