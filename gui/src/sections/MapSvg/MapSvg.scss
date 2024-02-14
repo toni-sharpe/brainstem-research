@@ -1,0 +1,48 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
+.map-svg {
+  background-color: var(--blue--lightest);
+  height: 110vh;
+  polygon {
+    article {
+      display: none;;
+    }
+    &:hover {
+      fill: var(--blue);
+      fill-opacity: 0.8;
+      cursor: pointer;
+      article {
+        background-color: red;
+        height: 100px;
+        width: 100px;
+        display: flex;
+      }
+    }
+  }
+
+  &__data {
+    height: 100px;
+    width: 100px;
+  }
+
+  &__point {
+    background-color: $white;
+    border-radius: 3px;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    position: relative;
+    font-size: var(--font-size--small);
+    height: 14px;
+    width: 36px;
+
+    &-num {
+      align-items: center;
+      background-color: var(--white);
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

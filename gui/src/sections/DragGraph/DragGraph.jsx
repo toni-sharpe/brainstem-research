@@ -13,6 +13,7 @@ import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import {
   DRAG_GRAPH_SVG_SCALE,
   DRAG_GRAPH_SVG_SCALE_RADIUS,
+  DRAG_GRAPH_SVG_VIEWBOX,
 } from 'util/Constant/BaseConstantList'
 import {
   calcAngleInRadians,
@@ -65,7 +66,7 @@ function DragGraph({
   const max = fullMax / zoom
   const radiusUnit = calcRadiusUnit({ max })
   const angle = calcAngleInRadians({ valList })
-  const dragLineCoordList = calcPolygonCoordList({ angle, max, radiusUnit, valList })
+  const dragLineCoordList = calcPolygonCoordList({ angle, radiusUnit, valList })
   const baseLineCoordList = calcBaseLineCoordList({ angle, valList })
   const r = DRAG_GRAPH_SVG_SCALE_RADIUS
   const cGraph = { x: r, y: r }
@@ -153,7 +154,7 @@ function DragGraph({
         >
           {i18next.t(`${i18nBase}.scaleDetail`, { highlight, scaleUnit })}
         </figcaption>
-        <SvgWrapper svgScale={DRAG_GRAPH_SVG_SCALE}>
+        <SvgWrapper offsetPair='0 0' svgScale={DRAG_GRAPH_SVG_VIEWBOX}>
           <g key='guides' transform={`translate(${graphOffset})`}>
             { scaleRadiusList.map(([circleR, h], i) => {
               const stroke = h ? '#ccc' : '#eee'

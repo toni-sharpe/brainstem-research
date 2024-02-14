@@ -1,15 +1,7 @@
 import PropTypes from 'prop-types'
 
-import {
-  DRAG_GRAPH_SVG_SCALE,
-  SCATTER_SVG_SCALE,
-  SCATTER_SCALE_LABEL_OFFSET,
-} from 'util/Constant/BaseConstantList'
+import NumberOrStringPropType from './NumberOrString.prop-type'
 
-const SvgScalePropType = PropTypes.oneOf([
-  DRAG_GRAPH_SVG_SCALE,
-  SCATTER_SVG_SCALE,
-  SCATTER_SVG_SCALE + SCATTER_SCALE_LABEL_OFFSET,
-])
+const SvgScalePropType = NumberOrStringPropType
 
 export default SvgScalePropType

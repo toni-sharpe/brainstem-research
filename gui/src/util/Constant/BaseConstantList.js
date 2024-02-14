@@ -55,6 +55,7 @@ export const ROOT_MENU_SLUGS = [
   'Gantt',
   'HistogramMaker',
   'SVG',
+  'WorldMap',
 ]
 
 
@@ -187,6 +188,7 @@ export const BASE_SVG_OFFSET = 0
  */
 export const DRAG_GRAPH_SVG_SCALE = 640
 export const DRAG_GRAPH_SVG_SCALE_RADIUS = DRAG_GRAPH_SVG_SCALE / 2
+export const DRAG_GRAPH_SVG_VIEWBOX = `${BASE_SVG_OFFSET} ${BASE_SVG_OFFSET} ${DRAG_GRAPH_SVG_SCALE} ${DRAG_GRAPH_SVG_SCALE}`
 export const DRAG_GRAPH_OUTCOME_START = 15
 export const DRAG_GRAPH_OUTCOME_MULTIPLIER = 2
 
@@ -202,6 +204,14 @@ export const SCATTER_SCALE_HIGHLIGHT = 5
 export const SCATTER_SCALE_LABEL_OFFSET = 50
 export const SCATTER_SCALE_NUMBER_OFFSET = 12
 export const SCATTER_AXIS_LABEL_OFFSET = 36
+
+/*
+ * World map
+ */
+export const WORLD_MAP_SVG_SCALE_WIDTH = 1000
+export const WORLD_MAP_SVG_SCALE_HEIGHT = 700
+export const MAP_FACTOR = 1
+export const WORLD_MAP_SVG_SCALE = `${WORLD_MAP_SVG_SCALE_WIDTH / MAP_FACTOR} ${WORLD_MAP_SVG_SCALE_HEIGHT / MAP_FACTOR}`
 
 
 /***********************************/
