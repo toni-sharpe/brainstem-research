@@ -6,7 +6,16 @@
 
   &:hover {
     fill: var(--blue);
-    fill-opacity: 0.8;
     cursor: pointer;
+    fill-opacity: 0.6;
+  }
+
+  &.is-selected {
+    fill: var(--blue);
+    fill-opacity: 1;
+  }
+
+  &.drop-back {
+    opacity: 0.4;
   }
 }

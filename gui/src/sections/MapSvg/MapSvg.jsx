@@ -9,6 +9,7 @@ import {
 import MapAreaCenterPoint from 'components/MapAreaCenterPoint/MapAreaCenterPoint'
 import MapCountry from 'components/MapCountry/MapCountry'
 import MapObjectSimple from 'components/MapObjectSimple/MapObjectSimple'
+import MapObjectDetailed from 'components/MapObjectDetailed/MapObjectDetailed'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
@@ -18,10 +19,16 @@ import './MapSvg.scss'
 
 function MapSvg({ currentYear, data }) {
   const graphKey = 'mapZoom'
-  const [graphOffset, setGraphOffset] = useState('0 0')
   const persisted = getJSONLocalStorage({ k: graphKey })
 
+  const [currentCountry, setCurrentCountry] = useState('')
+  const [graphOffset, setGraphOffset] = useState('0 0')
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
+
+  let currCx
+  let currCy
+  let isCurrentCountry
+  let cName
 
   return (
     <figure className='map-svg'>
@@ -39,7 +46,11 @@ function MapSvg({ currentYear, data }) {
         svgScale={`0 0 ${WORLD_MAP_SVG_SCALE}`}
       >
         <g key='guides' transform={`translate(${graphOffset})`}>
-          { WorldBorderList[currentYear].map(({ countryBorder, countryName }, i) => {
+          {
+            WorldBorderList[currentYear].map(({ countryBorder, countryName }, i) => {
+              isCurrentCountry = currentCountry === countryName
+              if (isCurrentCountry) { cName = countryName }
+
               return countryBorder.map((subBorder, j) => {
                 const { c } = last(subBorder)
                 const borderCoordList = init(subBorder)
@@ -47,22 +58,31 @@ function MapSvg({ currentYear, data }) {
                 const cx = c.x * zoom
                 const cy = c.y * zoom
 
+                if (isCurrentCountry) {
+                  currCx = cx
+                  currCy = cy
+                }
+
                 const offsetX = WORLD_MAP_SVG_CENTER_X - cx
                 const offsetY = WORLD_MAP_SVG_CENTER_Y - cy
 
                 return (
                   <g
                     key={`${c.x}${c.y}`}
-                    onClick={() => setGraphOffset(`${offsetX} ${offsetY}`)}
+                    onClick={() => {
+                      setGraphOffset(`${offsetX} ${offsetY}`)
+                      setCurrentCountry(countryName)
+                    }}
                   >
                     <MapCountry
                       borderCoordList={borderCoordList}
                       countryName={countryName}
                       cx={cx}
                       cy={cy}
+                      isSelected={isCurrentCountry}
                       zoom={zoom}
                     />
-                    { zoom > 2 && zoom <= 5 && (
+                    { zoom > 2 && zoom <= 3 && (
                       <MapObjectSimple
                         countryName={countryName}
                         size='small'
@@ -72,17 +92,7 @@ function MapSvg({ currentYear, data }) {
                         y={cy}
                       />
                     ) }
-                    { zoom > 5 && zoom < 10 && (
-                      <MapObjectSimple
-                        countryName={countryName}
-                        size='medium'
-                        h={18}
-                        w={80}
-                        x={cx}
-                        y={cy}
-                      />
-                    ) }
-                    { zoom > 10 && (
+                    { ((zoom > 3 && zoom <5) || (zoom >= 5 && !isCurrentCountry)) && (
                       <MapObjectSimple
                         countryName={countryName}
                         size='medium'
@@ -102,7 +112,17 @@ function MapSvg({ currentYear, data }) {
                 )
               })
             })
-          })}
+          }
+          { zoom >= 5 && (
+            <MapObjectDetailed
+              countryName={cName}
+              size='medium'
+              h={150}
+              w={150}
+              x={currCx}
+              y={currCy}
+            />
+          ) }
         </g>
       </SvgWrapper>
     </figure>

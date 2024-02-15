@@ -1,0 +1,12 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
+.map-object-detailed {
+  align-items: center;
+  font-size: var(--font-size--medium-small);
+  display: flex;
+  justify-content: center;
+  &__content {
+    background-color: var(--white);
+    padding: var(--padding--medium);
+  }
+}
