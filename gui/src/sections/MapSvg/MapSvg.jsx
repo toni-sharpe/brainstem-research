@@ -6,6 +6,7 @@ import {
   WORLD_MAP_SVG_CENTER_X,
   WORLD_MAP_SVG_CENTER_Y,
   WORLD_MAP_SVG_SCALE,
+  WORLD_MAP_ZOOM_LIST,
 } from 'util/Constant/BaseConstantList'
 import ResetGraphButton from 'components/ResetGraphButton/ResetGraphButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
@@ -42,7 +43,7 @@ function MapSvg() {
         <div
           className='row-layout'
         >
-          { [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 30, 50, 100, 250, 1000].map(z => {
+          { WORLD_MAP_ZOOM_LIST.map(z => {
             return (
               <ZoomButton
                 {...commonButtonProps}
