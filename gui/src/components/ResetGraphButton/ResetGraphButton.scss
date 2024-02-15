@@ -1,0 +1,7 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
+.reset-graph-button {
+  &__unset {
+    background-color: var(--red--medium);
+  }
+}
