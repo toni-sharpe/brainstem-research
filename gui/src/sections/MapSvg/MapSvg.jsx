@@ -61,8 +61,8 @@ function MapSvg({ data }) {
                       cx={cx}
                       cy={cy}
                     />
-                    { zoom > 1 && (<MapObjectSimple x={cx} y={cy} w={24} h={10} />) }
-                    <MapAreaCenterPoint c={{ x: cx, y: cy }} />
+                    { zoom > 2 && (<MapObjectSimple x={cx} y={cy} w={24} h={10} />) }
+                    { zoom < 3 && (<MapAreaCenterPoint c={{ x: cx, y: cy }} r={zoom} />) }
                   </g>
                 )
               })
