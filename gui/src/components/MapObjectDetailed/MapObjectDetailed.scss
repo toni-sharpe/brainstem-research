@@ -1,12 +1,22 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .map-object-detailed {
-  align-items: center;
-  font-size: var(--font-size--medium-small);
-  display: flex;
-  justify-content: center;
-  &__content {
-    background-color: var(--white);
-    padding: var(--padding--medium);
+  background-color: var(--white);
+  border: 2px solid var(--black);
+  font-size: var(--font-size--small-tiny);
+  font-weight: var(--font-weight--light);
+  opacity: 0.9;
+  padding: var(--padding--small);
+
+  &__heading {
+    font-size: var(--font-size--small-tiny);
+    text-align: center;
+  }
+
+  &__wrapper {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
   }
 }

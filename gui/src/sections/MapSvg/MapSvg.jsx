@@ -1,4 +1,4 @@
-import { init, last } from 'ramda'
+import { init, last, symmetricDifference } from 'ramda'
 import React, { useState } from 'react'
 
 import {
@@ -21,14 +21,13 @@ function MapSvg({ currentYear, data }) {
   const graphKey = 'mapZoom'
   const persisted = getJSONLocalStorage({ k: graphKey })
 
-  const [currentCountry, setCurrentCountry] = useState('')
+  const [currentCountryList, setCurrentCountryList] = useState([])
   const [graphOffset, setGraphOffset] = useState('0 0')
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
 
-  let currCx
-  let currCy
+  let currentCX = {}
+  let currentCy = {}
   let isCurrentCountry
-  let cName
 
   return (
     <figure className='map-svg'>
@@ -48,8 +47,7 @@ function MapSvg({ currentYear, data }) {
         <g key='guides' transform={`translate(${graphOffset})`}>
           {
             WorldBorderList[currentYear].map(({ countryBorder, countryName }, i) => {
-              isCurrentCountry = currentCountry === countryName
-              if (isCurrentCountry) { cName = countryName }
+              isCurrentCountry = currentCountryList.includes(countryName)
 
               return countryBorder.map((subBorder, j) => {
                 const { c } = last(subBorder)
@@ -59,8 +57,8 @@ function MapSvg({ currentYear, data }) {
                 const cy = c.y * zoom
 
                 if (isCurrentCountry) {
-                  currCx = cx
-                  currCy = cy
+                  currentCX = { ...currentCX, [countryName]: cx }
+                  currentCy = { ...currentCy, [countryName]: cy }
                 }
 
                 const offsetX = WORLD_MAP_SVG_CENTER_X - cx
@@ -71,7 +69,10 @@ function MapSvg({ currentYear, data }) {
                     key={`${c.x}${c.y}`}
                     onClick={() => {
                       setGraphOffset(`${offsetX} ${offsetY}`)
-                      setCurrentCountry(currentCountry === countryName ? '' : countryName)
+                      setCurrentCountryList(symmetricDifference(
+                        currentCountryList,
+                        [countryName],
+                      ))
                     }}
                   >
                     <MapCountry
@@ -82,7 +83,7 @@ function MapSvg({ currentYear, data }) {
                       isSelected={isCurrentCountry}
                       zoom={zoom}
                     />
-                    { zoom > 2 && zoom <= 4 && (
+                    { zoom > 2 && zoom <= 3 && (
                       <MapObjectSimple
                         countryName={countryName}
                         size='small'
@@ -92,7 +93,7 @@ function MapSvg({ currentYear, data }) {
                         y={cy}
                       />
                     ) }
-                    { (zoom >= 5 && !isCurrentCountry) && (
+                    { (zoom >= 4 && !isCurrentCountry) && (
                       <MapObjectSimple
                         countryName={countryName}
                         size='medium'
@@ -113,16 +114,25 @@ function MapSvg({ currentYear, data }) {
               })
             })
           }
-          { zoom >= 5 && (
-            <MapObjectDetailed
-              countryName={cName}
-              size='medium'
-              h={150}
-              w={150}
-              x={currCx}
-              y={currCy}
-            />
-          ) }
+          { zoom >= 4 && currentCountryList.map(currentCountry => {
+            return (
+              <g onClick={() => {
+                setCurrentCountryList(symmetricDifference(
+                  currentCountryList,
+                  [currentCountry],
+                ))
+              }}>
+                <MapObjectDetailed
+                  countryName={currentCountry}
+                  size='medium'
+                  h={150}
+                  w={150}
+                  x={currentCX[currentCountry]}
+                  y={currentCy[currentCountry]}
+                />
+              </g>
+            )
+          })}
         </g>
       </SvgWrapper>
     </figure>

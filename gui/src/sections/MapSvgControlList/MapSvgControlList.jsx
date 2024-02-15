@@ -11,6 +11,7 @@ import {
 import Button from 'components/Button/Button'
 import ResetGraphButton from 'components/ResetGraphButton/ResetGraphButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
+import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './MapSvgControlList.scss'
 
@@ -23,8 +24,8 @@ function MapSvgControlList({
   zoom,
 }) {
   // Easier code
-  const MAP_WIDTH = WORLD_MAP_SVG_SCALE_WIDTH
-  const MAP_HEIGHT = WORLD_MAP_SVG_SCALE_HEIGHT
+  const MAP_WIDTH = WORLD_MAP_SVG_SCALE_WIDTH / 2
+  const MAP_HEIGHT = WORLD_MAP_SVG_SCALE_HEIGHT / 2
 
   const xy = split(' ')(graphOffset)
 
@@ -62,7 +63,7 @@ function MapSvgControlList({
             label='→ West'
             onClick={() => {
               let newX = Number(xy[0]) - MAP_WIDTH
-              if (newX <= (0 - (MAP_WIDTH * zoom))) { newX = (0 - MAP_WIDTH * (zoom - 1)) }
+              if (newX <= (0 - (MAP_WIDTH * 2 * zoom))) { newX = (0 - MAP_WIDTH * (zoom - 1)) }
               setGraphOffset(`${newX} ${xy[1]}`)
             }}
           />
@@ -71,7 +72,7 @@ function MapSvgControlList({
             label='↓ South'
             onClick={() => {
               let newY = Number(xy[1]) - MAP_HEIGHT
-              if (newY <= (0 - (MAP_HEIGHT * zoom))) { newY = (0 - MAP_HEIGHT * (zoom - 1)) }
+              if (newY <= (0 - (MAP_HEIGHT * 2 * zoom))) { newY = (0 - MAP_HEIGHT * (zoom - 1)) }
               setGraphOffset(`${xy[0]} ${newY}`)
             }}
           />
@@ -95,7 +96,6 @@ function MapSvgControlList({
                 isSelected={zoom === z}
                 k={z}
                 key={`${z}-zoom`}
-                localStorageValList={{...persisted, zoom: z }}
                 newValue={z}
                 stateFn={(newVal) => {
                   const newGraphOffset = pipe(
@@ -104,15 +104,17 @@ function MapSvgControlList({
                   )(graphOffset)
                   setGraphOffset(newGraphOffset)
                   setZoom(newVal)
+                  setJSONLocalStorage({ [graphKey]: newVal })
                 }}
               />
             )
           }) }
           <ResetGraphButton
-            zoom={zoom}
+            graphKey={graphKey}
             graphOffset={graphOffset}
             setGraphOffset={setGraphOffset}
             setZoom={setZoom}
+            zoom={zoom}
           />
         </ol>
       </li>
