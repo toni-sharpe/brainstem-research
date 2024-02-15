@@ -4,6 +4,7 @@ import './MapObjectSimple.scss'
 
 function MapObjectSimple({
   countryName,
+  size,
   h,
   w,
   x,
@@ -17,7 +18,7 @@ function MapObjectSimple({
       width={w}
       height={h}
     >
-      <article className={`map-object-simple`}>
+      <article className={`map-object-simple map-object-simple__${size}`}>
         <section
           className='map-object-simple__label'
         >
