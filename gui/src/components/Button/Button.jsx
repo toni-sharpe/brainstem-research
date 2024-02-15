@@ -38,7 +38,7 @@ function Button({
 
   return (
     <button { ...buttonProps }>
-      {label}
+      <span>{label}</span>
     </button>
   )
 }
