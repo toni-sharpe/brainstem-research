@@ -1,5 +1,5 @@
 import { pluck } from 'ramda'
-import React, { useState } from 'react'
+import React from 'react'
 import { variance } from 'simple-statistics'
 
 import { calcPolygonCoordString } from 'util/UtilDragGraph/UtilDragGraph'

@@ -1,4 +1,4 @@
-import { init, last, pluck } from 'ramda'
+import { init, last } from 'ramda'
 import React, { useState } from 'react'
 
 import {
@@ -8,7 +8,6 @@ import {
 } from 'util/Constant/BaseConstantList'
 import MapAreaCenterPoint from 'components/MapAreaCenterPoint/MapAreaCenterPoint'
 import MapCountry from 'components/MapCountry/MapCountry'
-import SvgCircle from 'components/SvgCircle/SvgCircle'
 import MapObjectSimple from 'components/MapObjectSimple/MapObjectSimple'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import WorldBorderList from 'util/Constant/WorldBorderList'
