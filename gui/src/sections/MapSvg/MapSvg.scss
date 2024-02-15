@@ -8,6 +8,10 @@
     margin-bottom: 40px;
     width: 100%;
     polygon {
+      fill: var(--green);
+      stroke: var(--green--dark);
+      stroke-width: 0.5;
+      fill-opacity: 0.3;
       article {
         display: none;;
       }

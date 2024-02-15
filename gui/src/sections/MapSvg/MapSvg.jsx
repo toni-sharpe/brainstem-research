@@ -1,22 +1,23 @@
-import { last, init } from 'ramda'
+import { init, last, pluck } from 'ramda'
 import React, { useState } from 'react'
 
-import { calcPolygonCoordString } from 'util/UtilDragGraph/UtilDragGraph'
 import {
   WORLD_MAP_SVG_CENTER_X,
   WORLD_MAP_SVG_CENTER_Y,
   WORLD_MAP_SVG_SCALE,
 } from 'util/Constant/BaseConstantList'
 import MapAreaCenterPoint from 'components/MapAreaCenterPoint/MapAreaCenterPoint'
+import MapCountry from 'components/MapCountry/MapCountry'
+import SvgCircle from 'components/SvgCircle/SvgCircle'
 import MapObjectSimple from 'components/MapObjectSimple/MapObjectSimple'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
-import MapBorderList from 'util/Constant/MapBorderList'
+import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './MapSvg.scss'
 
-function MapSvg() {
+function MapSvg({ data }) {
   const graphKey = 'mapZoom'
   const [graphOffset, setGraphOffset] = useState('0 0')
   const persisted = getJSONLocalStorage({ k: graphKey })
@@ -39,10 +40,10 @@ function MapSvg() {
         svgScale={`0 0 ${WORLD_MAP_SVG_SCALE}`}
       >
         <g key='guides' transform={`translate(${graphOffset})`}>
-          { MapBorderList.map(({ mapBorder }, i) => {
-              return mapBorder.map((subBorder, j) => {
+          { WorldBorderList.map(({ countryBorder, countryName }, i) => {
+              return countryBorder.map((subBorder, j) => {
                 const { c } = last(subBorder)
-                const borderCoords = init(subBorder)
+                const borderCoordList = init(subBorder)
 
                 const cx = c.x * zoom
                 const cy = c.y * zoom
@@ -50,22 +51,18 @@ function MapSvg() {
                 const offsetX = WORLD_MAP_SVG_CENTER_X - cx
                 const offsetY = WORLD_MAP_SVG_CENTER_Y - cy
 
-                const coordList = borderCoords.map(([a, b]) => ([a * zoom , b * zoom]))
-
                 return (
                   <g
                     key={`${c.x}${c.y}`}
                     onClick={() => setGraphOffset(`${offsetX} ${offsetY}`)}
                   >
-                    <polygon
-                      fill={'#4c4'}
-                      fillOpacity={0.2}
-                      points={calcPolygonCoordString({ coordList })}
-                      stroke={'#484'}
-                      strokeOpacity={1}
-                      strokeWidth={0.5}
+                    <MapCountry
+                      borderCoordList={borderCoordList}
+                      zoom={zoom}
+                      cx={cx}
+                      cy={cy}
                     />
-                    <MapObjectSimple x={cx} y={cy} w={24} h={10} />
+                    { zoom > 1 && (<MapObjectSimple x={cx} y={cy} w={24} h={10} />) }
                     <MapAreaCenterPoint c={{ x: cx, y: cy }} />
                   </g>
                 )
