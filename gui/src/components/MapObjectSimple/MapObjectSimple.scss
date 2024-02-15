@@ -9,14 +9,23 @@
   justify-content: space-around;
   flex-direction: column;
   position: relative;
-  font-size: var(--font-size--tiniest);
-  height: 10px;
-  width: 48px;
 
   &__label {
     align-items: center;
     background-color: var(--white);
     display: flex;
     justify-content: center;
+  }
+
+  &__small {
+    font-size: var(--font-size--tiniest);
+    height: 10px;
+    width: 48px;
+  }
+
+  &__medium {
+    font-size: var(--font-size--small);
+    height: 18px;
+    width: 80px;
   }
 }

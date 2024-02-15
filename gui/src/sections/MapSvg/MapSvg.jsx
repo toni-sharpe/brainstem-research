@@ -62,11 +62,32 @@ function MapSvg({ currentYear, data }) {
                       cy={cy}
                       zoom={zoom}
                     />
-                    { zoom > 2 && (
+                    { zoom > 2 && zoom <= 5 && (
                       <MapObjectSimple
                         countryName={countryName}
+                        size='small'
                         h={10}
                         w={48}
+                        x={cx}
+                        y={cy}
+                      />
+                    ) }
+                    { zoom > 5 && zoom < 10 && (
+                      <MapObjectSimple
+                        countryName={countryName}
+                        size='medium'
+                        h={18}
+                        w={80}
+                        x={cx}
+                        y={cy}
+                      />
+                    ) }
+                    { zoom > 10 && (
+                      <MapObjectSimple
+                        countryName={countryName}
+                        size='medium'
+                        h={18}
+                        w={80}
                         x={cx}
                         y={cy}
                       />

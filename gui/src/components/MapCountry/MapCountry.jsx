@@ -10,7 +10,12 @@ import './MapCountry.scss'
 function MapCountry({ borderCoordList, countryName, cx, cy, zoom }) {
   const xRange = variance(pluck(0, borderCoordList))
   const yRange = variance(pluck(1, borderCoordList))
-  const isCircle = xRange < 3 && yRange < 3
+  const isCircle =
+    xRange < 2
+    &&
+    yRange < 2
+    &&
+    !['Kosovo', 'Palestine', 'Azerbaijan'].includes(countryName)
   const coordList = borderCoordList.map(([a, b]) => ([a * zoom , b * zoom]))
 
   return isCircle
