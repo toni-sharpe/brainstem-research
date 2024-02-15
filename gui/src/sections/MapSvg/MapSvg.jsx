@@ -6,6 +6,7 @@ import {
   WORLD_MAP_SVG_CENTER_X,
   WORLD_MAP_SVG_CENTER_Y,
   WORLD_MAP_SVG_SCALE,
+  WORLD_MAP_ZOOM_LIST,
 } from 'util/Constant/BaseConstantList'
 import ResetGraphButton from 'components/ResetGraphButton/ResetGraphButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
@@ -42,7 +43,7 @@ function MapSvg() {
         <div
           className='row-layout'
         >
-          { [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 30, 50, 100, 250, 1000].map(z => {
+          { WORLD_MAP_ZOOM_LIST.map(z => {
             return (
               <ZoomButton
                 {...commonButtonProps}
@@ -84,11 +85,14 @@ function MapSvg() {
                 const { c } = last(subBorder)
                 const borderCoords = init(subBorder)
 
+                const cx = c.x * zoom
+                const cy = c.y * zoom
+
                 return (
                   <g
                     key={`${c.x}${c.y}`}
                     onClick={() => {
-                      setGraphOffset(`${WORLD_MAP_SVG_CENTER_X - (c.x * zoom)} ${WORLD_MAP_SVG_CENTER_Y - (c.y * zoom)}`)
+                      setGraphOffset(`${WORLD_MAP_SVG_CENTER_X - cx} ${WORLD_MAP_SVG_CENTER_Y - cy}`)
                     }
                   }>
                     <polygon
@@ -107,8 +111,8 @@ function MapSvg() {
                     />
                     <foreignObject
                       key={'test'}
-                      x={c.x * zoom - 18}
-                      y={c.y * zoom - 7}
+                      x={cx- 18}
+                      y={cy - 7}
                       width='36'
                       height='14'
                     >
@@ -125,7 +129,7 @@ function MapSvg() {
                       fillOpacity={0.5}
                       r={2}
                       stroke='red'
-                      c={{ x: c.x * zoom, y: c.y + zoom }}
+                      c={{ x: cx, y: cy }}
                     />
                   </g>
                 )

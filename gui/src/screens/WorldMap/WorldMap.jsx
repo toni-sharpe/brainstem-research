@@ -10,7 +10,6 @@ const i18nBase = 'WorldMap'
 function WorldMap({ data }) {
   if (!data || data.length === 0) { return null; }
 
-
   return (
     <PageDetailWrapper
       i18nBase={i18nBase}
