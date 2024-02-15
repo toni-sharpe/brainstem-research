@@ -3,4 +3,10 @@
   stroke: var(--green--dark);
   stroke-width: 0.5;
   fill-opacity: 0.3;
+
+  &:hover {
+    fill: var(--blue);
+    fill-opacity: 0.8;
+    cursor: pointer;
+  }
 }

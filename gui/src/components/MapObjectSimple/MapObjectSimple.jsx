@@ -3,6 +3,7 @@ import React from 'react'
 import './MapObjectSimple.scss'
 
 function MapObjectSimple({
+  countryName,
   h,
   w,
   x,
@@ -20,7 +21,7 @@ function MapObjectSimple({
         <section
           className='map-object-simple__label'
         >
-          <span>70 yrs</span>
+          <span>{countryName}</span>
         </section>
       </article>
     </foreignObject>

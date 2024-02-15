@@ -7,7 +7,7 @@ import SvgCircle from 'components/SvgCircle/SvgCircle'
 
 import './MapCountry.scss'
 
-function MapCountry({ borderCoordList, cx, cy, zoom }) {
+function MapCountry({ borderCoordList, countryName, cx, cy, zoom }) {
   const xRange = variance(pluck(0, borderCoordList))
   const yRange = variance(pluck(1, borderCoordList))
   const isCircle = xRange < 3 && yRange < 3
@@ -28,7 +28,7 @@ function MapCountry({ borderCoordList, cx, cy, zoom }) {
     )
     : (
       <polygon
-        extraClass='map-country'
+        className='map-country'
         points={calcPolygonCoordString({ coordList })}
         strokeOpacity={1}
       />
