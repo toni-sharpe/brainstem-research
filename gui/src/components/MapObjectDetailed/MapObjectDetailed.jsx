@@ -19,15 +19,15 @@ function MapObjectDetailed({
       height={h}
     >
       <div
-        className='map-object-detailed'
+        className='map-object-detailed__wrapper'
         style={{ height: `${h}px`, width: `${w}` }}
       >
-        <article className='map-object-detailed__content'>
+        <article className='map-object-detailed column-layout space-children--column-with-border '>
           <header>
-            <h3>{countryName}</h3>
+            <h3 className='map-object-detailed__heading'>{countryName}</h3>
           </header>
           <section
-            className='map-object-detailed__label'
+            className='map-object-detailed__label column-layout space-children'
           >
             <ul>
               <li>Data 1: 1</li>
