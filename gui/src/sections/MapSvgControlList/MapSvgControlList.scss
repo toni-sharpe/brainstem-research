@@ -1,0 +1,17 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
+.map-svg-control-list {
+  background-color: rgba($white, 0.6);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding: var(--padding--medium);
+  position: fixed;
+  right: 0;
+  width: 100vw;
+
+  &__zoom-list {
+    align-items: center;
+  }
+}

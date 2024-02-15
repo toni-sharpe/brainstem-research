@@ -1,4 +1,4 @@
-import { pipe, split, last, init } from 'ramda'
+import { last, init } from 'ramda'
 import React, { useState } from 'react'
 
 import { calcPolygonCoordString } from 'util/UtilDragGraph/UtilDragGraph'
@@ -6,76 +6,35 @@ import {
   WORLD_MAP_SVG_CENTER_X,
   WORLD_MAP_SVG_CENTER_Y,
   WORLD_MAP_SVG_SCALE,
-  WORLD_MAP_ZOOM_LIST,
 } from 'util/Constant/BaseConstantList'
-import ResetGraphButton from 'components/ResetGraphButton/ResetGraphButton'
-import ZoomButton from 'components/ZoomButton/ZoomButton'
+import MapAreaCenterPoint from 'components/MapAreaCenterPoint/MapAreaCenterPoint'
+import MapObjectSimple from 'components/MapObjectSimple/MapObjectSimple'
+import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import MapBorderList from 'util/Constant/MapBorderList'
-import SvgCircle from 'components/SvgCircle/SvgCircle'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './MapSvg.scss'
 
 function MapSvg() {
+  const graphKey = 'mapZoom'
   const [graphOffset, setGraphOffset] = useState('0 0')
-  const persisted = getJSONLocalStorage({ k: 'mapZoom' })
+  const persisted = getJSONLocalStorage({ k: graphKey })
 
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
 
-  const commonButtonProps = {
-    graphKey: 'mapZoom',
-    localStorageValList: persisted,
-  }
-
   return (
-    <figure>
-      <div
-        style={{
-          width: '100vw',
-          justifyContent: 'center',
-          position: 'fixed',
-          bottom: 0,
-          display: 'flex',
-          left: 0,
-          right: 0
-        }}>
-        <div
-          className='row-layout'
-        >
-          { WORLD_MAP_ZOOM_LIST.map(z => {
-            return (
-              <ZoomButton
-                {...commonButtonProps}
-                newValue={z}
-                isSelected={zoom === z}
-                k={z}
-                key={`${z}-zoom`}
-                localStorageValList={{...persisted, zoom: z }}
-                stateFn={(newVal) => {
-                  const factor = newVal / zoom
-                  const newGraphOffset = pipe(
-                    split(' '),
-                    d => {
-                      return `${(d[0] * factor) - (WORLD_MAP_SVG_CENTER_X * (factor - 1))} ${(d[1] * factor) - (WORLD_MAP_SVG_CENTER_Y * (factor - 1))}`
-                    },
-                  )(graphOffset)
-                  setGraphOffset(newGraphOffset)
-                  setZoom(newVal)
-                }}
-              />
-            )
-          }) }
-          <ResetGraphButton
-            zoom={zoom}
-            graphOffset={graphOffset}
-            setGraphOffset={setGraphOffset}
-            setZoom={setZoom}
-          />
-        </div>
-      </div>
+    <figure className='map-svg'>
+      <MapSvgControlList
+        graphKey={graphKey}
+        graphOffset={graphOffset}
+        persisted={persisted}
+        setGraphOffset={setGraphOffset}
+        setZoom={setZoom}
+        zoom={zoom}
+      />
       <SvgWrapper
-        extraClass='map-svg'
+        extraClass='map-svg__svg'
         k='world-map-svg'
         svgScale={`0 0 ${WORLD_MAP_SVG_SCALE}`}
       >
@@ -88,49 +47,26 @@ function MapSvg() {
                 const cx = c.x * zoom
                 const cy = c.y * zoom
 
+                const offsetX = WORLD_MAP_SVG_CENTER_X - cx
+                const offsetY = WORLD_MAP_SVG_CENTER_Y - cy
+
+                const coordList = borderCoords.map(([a, b]) => ([a * zoom , b * zoom]))
+
                 return (
                   <g
                     key={`${c.x}${c.y}`}
-                    onClick={() => {
-                      setGraphOffset(`${WORLD_MAP_SVG_CENTER_X - cx} ${WORLD_MAP_SVG_CENTER_Y - cy}`)
-                    }
-                  }>
+                    onClick={() => setGraphOffset(`${offsetX} ${offsetY}`)}
+                  >
                     <polygon
                       fill={'#4c4'}
                       fillOpacity={0.2}
-                      points={calcPolygonCoordString({
-                        coordList: borderCoords.map(
-                          ([a, b]) => {
-                            return ([a * zoom , b * zoom])
-                          }
-                        )
-                      })}
+                      points={calcPolygonCoordString({ coordList })}
                       stroke={'#484'}
                       strokeOpacity={1}
                       strokeWidth={0.5}
                     />
-                    <foreignObject
-                      key={'test'}
-                      x={cx- 18}
-                      y={cy - 7}
-                      width='36'
-                      height='14'
-                    >
-                      <article className={`map-svg__point`}>
-                        <section
-                          className='map-svg__point-num'
-                        >
-                          <span>70 yrs</span>
-                        </section>
-                      </article>
-                    </foreignObject>
-                    <SvgCircle
-                      fill='red'
-                      fillOpacity={0.5}
-                      r={2}
-                      stroke='red'
-                      c={{ x: cx, y: cy }}
-                    />
+                    <MapObjectSimple x={cx} y={cy} w={24} h={10} />
+                    <MapAreaCenterPoint c={{ x: cx, y: cy }} />
                   </g>
                 )
               })

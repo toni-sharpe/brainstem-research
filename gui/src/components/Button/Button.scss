@@ -2,6 +2,8 @@ button {
   background-color: var(--grey--very-light);
   border: none;
   padding: 12px;
+  display: flex;
+  align-items: center;
 }
 
 button:hover {
