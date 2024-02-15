@@ -71,7 +71,7 @@ function MapSvg({ currentYear, data }) {
                     key={`${c.x}${c.y}`}
                     onClick={() => {
                       setGraphOffset(`${offsetX} ${offsetY}`)
-                      setCurrentCountry(countryName)
+                      setCurrentCountry(currentCountry === countryName ? '' : countryName)
                     }}
                   >
                     <MapCountry
@@ -82,7 +82,7 @@ function MapSvg({ currentYear, data }) {
                       isSelected={isCurrentCountry}
                       zoom={zoom}
                     />
-                    { zoom > 2 && zoom <= 3 && (
+                    { zoom > 2 && zoom <= 4 && (
                       <MapObjectSimple
                         countryName={countryName}
                         size='small'
@@ -92,7 +92,7 @@ function MapSvg({ currentYear, data }) {
                         y={cy}
                       />
                     ) }
-                    { ((zoom > 3 && zoom <5) || (zoom >= 5 && !isCurrentCountry)) && (
+                    { (zoom >= 5 && !isCurrentCountry) && (
                       <MapObjectSimple
                         countryName={countryName}
                         size='medium'

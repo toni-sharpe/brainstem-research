@@ -22,7 +22,12 @@ function MapCountry({
     &&
     yRange < 2
     &&
-    !['Kosovo', 'Palestine', 'Azerbaijan'].includes(countryName)
+    ![
+      'Kosovo',
+      'Palestine',
+      'Azerbaijan',
+      'Luxembourg',
+    ].includes(countryName)
   const coordList = borderCoordList.map(([a, b]) => ([a * zoom , b * zoom]))
 
   const selectedClass = isSelected ? ' is-selected' : ''
