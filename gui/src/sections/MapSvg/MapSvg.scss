@@ -12,20 +12,6 @@
       stroke: var(--green--dark);
       stroke-width: 0.5;
       fill-opacity: 0.3;
-      article {
-        display: none;;
-      }
-      &:hover {
-        fill: var(--blue);
-        fill-opacity: 0.8;
-        cursor: pointer;
-        article {
-          background-color: red;
-          height: 100px;
-          width: 100px;
-          display: flex;
-        }
-      }
     }
   }
 

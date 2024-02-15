@@ -16,7 +16,7 @@ import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './MapSvg.scss'
 
-function MapSvg({ data }) {
+function MapSvg({ currentYear, data }) {
   const graphKey = 'mapZoom'
   const [graphOffset, setGraphOffset] = useState('0 0')
   const persisted = getJSONLocalStorage({ k: graphKey })
@@ -39,7 +39,7 @@ function MapSvg({ data }) {
         svgScale={`0 0 ${WORLD_MAP_SVG_SCALE}`}
       >
         <g key='guides' transform={`translate(${graphOffset})`}>
-          { WorldBorderList.map(({ countryBorder, countryName }, i) => {
+          { WorldBorderList[currentYear].map(({ countryBorder, countryName }, i) => {
               return countryBorder.map((subBorder, j) => {
                 const { c } = last(subBorder)
                 const borderCoordList = init(subBorder)
@@ -57,12 +57,26 @@ function MapSvg({ data }) {
                   >
                     <MapCountry
                       borderCoordList={borderCoordList}
-                      zoom={zoom}
+                      countryName={countryName}
                       cx={cx}
                       cy={cy}
+                      zoom={zoom}
                     />
-                    { zoom > 2 && (<MapObjectSimple x={cx} y={cy} w={24} h={10} />) }
-                    { zoom < 3 && (<MapAreaCenterPoint c={{ x: cx, y: cy }} r={zoom} />) }
+                    { zoom > 2 && (
+                      <MapObjectSimple
+                        countryName={countryName}
+                        h={10}
+                        w={48}
+                        x={cx}
+                        y={cy}
+                      />
+                    ) }
+                    { zoom < 3 && (
+                      <MapAreaCenterPoint
+                        c={{ x: cx, y: cy }}
+                        r={zoom}
+                      />
+                    ) }
                   </g>
                 )
               })
@@ -72,6 +86,10 @@ function MapSvg({ data }) {
       </SvgWrapper>
     </figure>
   )
+}
+
+MapSvg.defaultProps = {
+  currentYear: 2024,
 }
 
 export default MapSvg
