@@ -84,11 +84,14 @@ function MapSvg() {
                 const { c } = last(subBorder)
                 const borderCoords = init(subBorder)
 
+                const cx = c.x * zoom
+                const cy = c.y * zoom
+
                 return (
                   <g
                     key={`${c.x}${c.y}`}
                     onClick={() => {
-                      setGraphOffset(`${WORLD_MAP_SVG_CENTER_X - (c.x * zoom)} ${WORLD_MAP_SVG_CENTER_Y - (c.y * zoom)}`)
+                      setGraphOffset(`${WORLD_MAP_SVG_CENTER_X - cx} ${WORLD_MAP_SVG_CENTER_Y - cy}`)
                     }
                   }>
                     <polygon
@@ -107,8 +110,8 @@ function MapSvg() {
                     />
                     <foreignObject
                       key={'test'}
-                      x={c.x * zoom - 18}
-                      y={c.y * zoom - 7}
+                      x={cx- 18}
+                      y={cy - 7}
                       width='36'
                       height='14'
                     >
@@ -125,7 +128,7 @@ function MapSvg() {
                       fillOpacity={0.5}
                       r={2}
                       stroke='red'
-                      c={{ x: c.x * zoom, y: c.y + zoom }}
+                      c={{ x: cx, y: cy }}
                     />
                   </g>
                 )
