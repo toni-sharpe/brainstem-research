@@ -17,7 +17,12 @@ import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './MapSvg.scss'
 
-function MapSvg({ currentYear, data }) {
+function MapSvg({
+  currentYear,
+  mapDetailElement,
+  mapDetailProps,
+  mapDetailData,
+}) {
   const graphKey = 'mapZoom'
   const persisted = getJSONLocalStorage({ k: graphKey })
 
@@ -83,7 +88,7 @@ function MapSvg({ currentYear, data }) {
                       isSelected={isCurrentCountry}
                       zoom={zoom}
                     />
-                    { zoom > 2 && zoom <= 3 && (
+                    { zoom >= 2 && zoom <= 3 && (
                       <MapObjectSimple
                         countryName={countryName}
                         size='small'
@@ -103,7 +108,7 @@ function MapSvg({ currentYear, data }) {
                         y={cy}
                       />
                     ) }
-                    { zoom < 3 && (
+                    { zoom < 2 && (
                       <MapAreaCenterPoint
                         c={{ x: cx, y: cy }}
                         r={zoom}
@@ -115,22 +120,43 @@ function MapSvg({ currentYear, data }) {
             })
           }
           { zoom >= 4 && currentCountryList.map(currentCountry => {
+            let h = 50
+            let w = 50
+            const histogramHeight = 12
+
+            const data = mapDetailData[currentCountry]
+            if (data) {
+              const widthModifier = data?.histogramBarGroupList
+                ? data.histogramBarGroupList.length
+                : 3
+
+              h = 174
+              const modW = 60 * widthModifier
+              w = modW + modW * (((widthModifier - 1) * data.barMargin) / 100)
+            }
             return (
-              <g onClick={() => {
-                setCurrentCountryList(symmetricDifference(
-                  currentCountryList,
-                  [currentCountry],
-                ))
-              }}>
-                <MapObjectDetailed
-                  countryName={currentCountry}
-                  size='medium'
-                  h={150}
-                  w={150}
-                  x={currentCX[currentCountry]}
-                  y={currentCy[currentCountry]}
-                />
-              </g>
+              <MapObjectDetailed
+                closeOnClick={() => {
+                  setCurrentCountryList(symmetricDifference(
+                    currentCountryList,
+                    [currentCountry],
+                  ))
+                }}
+                countryName={currentCountry}
+                size='medium'
+                h={h}
+                w={w}
+                x={currentCX[currentCountry]}
+                y={currentCy[currentCountry]}
+              >
+                {data && React.createElement(mapDetailElement, {
+                  ...mapDetailProps,
+                  ...data,
+                  graphLabel: currentCountry,
+                  histogramHeight,
+                  widthOverride: w,
+                })}
+              </MapObjectDetailed>
             )
           })}
         </g>

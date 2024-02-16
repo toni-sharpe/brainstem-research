@@ -34,6 +34,7 @@ function HistogramBarList({
   const innerBlockSize = 100 / barCountPerBlock
   const barGroupWidth = barCountPerBlock * blockSize
 
+
   return histogramBarGroupList.map(([histogramBarListLabel, data], i) => {
     const ariaLabel = writeHistogramBarListAriaLabel({
       histogramBarListLabel,
@@ -61,6 +62,7 @@ function HistogramBarList({
             {
               subBars.map(([k, [count, val]], j) => {
                 const innerLeft = innerBlockSize * j
+
 
                 const valCondensed = type(val) === 'Array'
                   ? reverse(uniq(val))

@@ -1,6 +1,7 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .histogram-bar-list-label {
+  @include column-layout();
   align-items: center;
   background-color: var(--grey--lightest);
   box-sizing: border-box;

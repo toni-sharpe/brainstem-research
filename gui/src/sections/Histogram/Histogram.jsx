@@ -30,7 +30,9 @@ function Histogram({
   i18nBaseOverride,
   i18nKeyOnly,
   translationSet,
+  widthOverride,
 }) {
+
   if (!histogramBarGroupList || histogramBarGroupList?.length === 0) {
     return (
       <div className='row-layout histogram__error-wrapper'>
@@ -59,6 +61,7 @@ function Histogram({
           {...commonProps}
           extraLineCount={4}
           histogramBarGroupList={histogramBarGroupList}
+          widthOverride={widthOverride}
         />
         <HistogramBarList
           {...commonProps}

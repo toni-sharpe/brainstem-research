@@ -16,6 +16,7 @@ function XAxisLineList({
   histogramHeight,
   mostMaxOfAllThings,
   showNumberList,
+  widthOverride,
 }) {
   const lineDivs = []
   const centreLineAdjuster = 1
@@ -37,7 +38,13 @@ function XAxisLineList({
     lineDivs.push(
       <div key={heightCount}>
         { showNumber && (
-            <dt>
+            <dt
+              className='x-axis-line-list__num-list'
+              style={widthOverride
+                ? { width: `${widthOverride}px` }
+                : { width: '100%' }
+              }
+            >
               <XAxisLineNumber
                 align='left'
                 lineNumber={lineNumber}
