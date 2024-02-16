@@ -12,4 +12,8 @@
       background-color:var(--blue--dark);
     }
   }
+  &__num-list {
+    display: flex;
+    justify-content: space-between;
+  }
 }

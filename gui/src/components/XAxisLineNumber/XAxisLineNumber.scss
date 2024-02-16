@@ -1,6 +1,5 @@
 .x-axis-line-number {
   position: absolute;
-  width: 8%;
 
   &.left {
     text-align: left;
@@ -12,7 +11,7 @@
   }
   &.center {
     left: 50%;
-    margin-left: -4%;
+    margin-left: -5%;
     text-align: center;
 
     .x-axis-line-number__num {

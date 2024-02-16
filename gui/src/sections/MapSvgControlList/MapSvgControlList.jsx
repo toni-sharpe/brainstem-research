@@ -24,8 +24,9 @@ function MapSvgControlList({
   zoom,
 }) {
   // Easier code
-  const MAP_WIDTH = WORLD_MAP_SVG_SCALE_WIDTH / 2
-  const MAP_HEIGHT = WORLD_MAP_SVG_SCALE_HEIGHT / 2
+  const STEP_BREAKDOWN = 4
+  const MAP_WIDTH = WORLD_MAP_SVG_SCALE_WIDTH / STEP_BREAKDOWN
+  const MAP_HEIGHT = WORLD_MAP_SVG_SCALE_HEIGHT / STEP_BREAKDOWN
 
   const xy = split(' ')(graphOffset)
 
@@ -63,7 +64,7 @@ function MapSvgControlList({
             label='→ West'
             onClick={() => {
               let newX = Number(xy[0]) - MAP_WIDTH
-              if (newX <= (0 - (MAP_WIDTH * 2 * zoom))) { newX = (0 - MAP_WIDTH * (zoom - 1)) }
+              if (newX <= (0 - (MAP_WIDTH * STEP_BREAKDOWN * zoom))) { newX = (0 - MAP_WIDTH * (zoom - 1)) }
               setGraphOffset(`${newX} ${xy[1]}`)
             }}
           />
@@ -72,7 +73,7 @@ function MapSvgControlList({
             label='↓ South'
             onClick={() => {
               let newY = Number(xy[1]) - MAP_HEIGHT
-              if (newY <= (0 - (MAP_HEIGHT * 2 * zoom))) { newY = (0 - MAP_HEIGHT * (zoom - 1)) }
+              if (newY <= (0 - (MAP_HEIGHT * STEP_BREAKDOWN * zoom))) { newY = (0 - MAP_HEIGHT * (zoom - 1)) }
               setGraphOffset(`${xy[0]} ${newY}`)
             }}
           />

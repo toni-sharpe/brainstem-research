@@ -22,7 +22,7 @@ function HistogramBarListLabel({
 }) {
   return (
     <span
-      className='histogram-bar-list-label column-layout'
+      className='histogram-bar-list-label'
       style={{ left: 0, top, width: '100%' }}
     >
       { translationSet?.groupBy && (<span>{translationSet?.groupBy}</span>) }

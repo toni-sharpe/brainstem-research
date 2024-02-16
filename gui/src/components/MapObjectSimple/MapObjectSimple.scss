@@ -1,8 +1,6 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .map-object-simple {
-  background-color: $white;
-  border-radius: 3px;
   cursor: pointer;
   align-items: center;
   display: flex;
@@ -12,20 +10,18 @@
 
   &__label {
     align-items: center;
+    border-radius: 3px;
     background-color: var(--white);
     display: flex;
     justify-content: center;
+    padding: var(--padding--tiny);
   }
 
   &__small {
     font-size: var(--font-size--small-tiny);
-    height: 10px;
-    width: 48px;
   }
 
   &__medium {
     font-size: var(--font-size--small);
-    height: 18px;
-    width: 80px;
   }
 }

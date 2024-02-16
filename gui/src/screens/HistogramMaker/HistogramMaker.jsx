@@ -94,8 +94,6 @@ function HistogramMaker({ data }) {
               barList: currentPathogenesisStepList.map(step => i18next.t(`CommonClinicalResponses.${step}`)),
               groupBy: i18next.t(`CommonClinicalResponses.${currentGroupBy}`),
             }}
-            useHueContrastToggle
-            useHueWheel
           />
         </div>
         <AxisSelector

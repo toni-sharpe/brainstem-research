@@ -1,8 +1,15 @@
+import i18next from 'util/i18next/i18next'
 import React from 'react'
+
+import Button from 'components/Button/Button'
 
 import './MapObjectDetailed.scss'
 
+const i18nBase = 'MapObjectDetailed'
+
 function MapObjectDetailed({
+  children,
+  closeOnClick,
   countryName,
   size,
   h,
@@ -18,25 +25,24 @@ function MapObjectDetailed({
       width={w}
       height={h}
     >
-      <div
-        className='map-object-detailed__wrapper'
-        style={{ height: `${h}px`, width: `${w}` }}
+      <article
+        className='map-object-detailed'
+        style={{ height: `${h}px`, width: `${w}px` }}
       >
-        <article className='map-object-detailed column-layout space-children--column-with-border '>
-          <header>
-            <h3 className='map-object-detailed__heading'>{countryName}</h3>
-          </header>
-          <section
-            className='map-object-detailed__label column-layout space-children'
-          >
-            <ul>
-              <li>Data 1: 1</li>
-              <li>Data 2: 7</li>
-              <li>Data 3: 4</li>
-            </ul>
-          </section>
-        </article>
-      </div>
+        <Button
+          extraClass='map-object-detailed__close-button'
+          label='X'
+          onClick={closeOnClick}
+          size='small'
+          title={i18next.t(`${i18nBase}.close`, { countryName })}
+        />
+        <section className='map-object-detailed__details'>
+          { children
+              ? children
+              : 'Lorem ipsum some detail'
+          }
+        </section>
+      </article>
     </foreignObject>
   )
 }
