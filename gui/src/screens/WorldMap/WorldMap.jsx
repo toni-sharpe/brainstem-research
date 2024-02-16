@@ -14,10 +14,40 @@ function WorldMap({ data }) {
 
   const mapDetailProps = {
     hueFn: calcAccessibleHue(),
-    translationSet: { barList: [], groupBy: 'tn/year' }
+    translationSet: { barList: [], groupBy: 'tn/y' }
   }
 
   const mapDetailData = {
+    Ethiopia: {
+      barCountPerBlock: 3,
+      barMargin: 2,
+      blockSize: 92 / 15,
+      histogramBarGroupList: [
+        ['0-10', { symp_1: [1,  5], test_1: [1, 15], test_3: [1, 35] }],
+        ['10-20',{ symp_1: [1, 15], test_1: [1, 34], test_3: [1, 33] }],
+        ['20-30',{ symp_1: [1,  2], test_1: [1, 45], test_3: [1, 33] }],
+        ['30-40',{ symp_1: [1, 56], test_1: [1, 41], test_3: [1, 23] }],
+        ['40-50',{ symp_1: [1, 45], test_1: [1, 28], test_3: [1, 53] }],
+      ],
+    },
+    Eritrea: {
+      barCountPerBlock: 3,
+      barMargin: 2,
+      blockSize: 98 / 6,
+      histogramBarGroupList: [
+        ['0-10', { symp_1: [1,  5], test_1: [1,115], test_3: [1, 35] }],
+        ['10-20',{ symp_1: [1, 15], test_1: [1,  5], test_3: [1,  3] }],
+        ['10-20',{ symp_1: [1, 15], test_1: [1,  5], test_3: [1,  3] }],
+      ],
+    },
+    Djibouti: {
+      barCountPerBlock: 3,
+      barMargin: 2,
+      blockSize: 100 / 3,
+      histogramBarGroupList: [
+        ['0-10', { symp_1: [1,  5], test_1: [1,115], test_3: [1, 35] }],
+      ],
+    },
     Niger: {
       barCountPerBlock: 3,
       barMargin: 2,

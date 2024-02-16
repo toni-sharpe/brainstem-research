@@ -130,7 +130,7 @@ function MapSvg({
                 ? data.histogramBarGroupList.length
                 : 3
 
-              h = 196
+              h = 174
               const modW = 60 * widthModifier
               w = modW + modW * (((widthModifier - 1) * data.barMargin) / 100)
             }

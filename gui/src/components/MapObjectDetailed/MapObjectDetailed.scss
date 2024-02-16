@@ -1,13 +1,12 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .map-object-detailed {
-  background-color: var(--white);
+  background-color: rgba($white, 0.85);
   border: 2px solid var(--black);
   box-sizing: border-box;
   cursor: pointer;
   font-size: var(--font-size--tiniest);
   font-weight: var(--font-weight--light);
-  opacity: 0.9;
   padding: var(--padding--small);
   position: relative;
   width: 100%;
