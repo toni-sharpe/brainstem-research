@@ -125,14 +125,13 @@ function MapSvg({
             const histogramHeight = 12
 
             const data = mapDetailData[currentCountry]
-            if (data) {
-              const widthModifier = data?.histogramBarGroupList
-                ? data.histogramBarGroupList.length
-                : 3
+            if (data && data?.histogramBarGroupList?.length) {
+              const { length } = data.histogramBarGroupList
+              const totalBars = length * data.barCountPerBlock
+              const barWidth = 120 / totalBars
 
-              h = 174
-              const modW = 60 * widthModifier
-              w = modW + modW * (((widthModifier - 1) * data.barMargin) / 100)
+              h = 165
+              w = barWidth * totalBars + ((barWidth - 1) * data.barMargin / 100)
             }
             return (
               <MapObjectDetailed
