@@ -187,6 +187,7 @@ export const BASE_SVG_OFFSET = 0
  * Drag graph
  */
 export const DRAG_GRAPH_LABEL_SIZE = 52
+export const DRAG_GRAPH_MINIMUM_SELECTED_RADIUS = 6
 export const DRAG_GRAPH_OUTCOME_MULTIPLIER = 2
 export const DRAG_GRAPH_OUTCOME_START = 15
 export const DRAG_GRAPH_SVG_SCALE = 640

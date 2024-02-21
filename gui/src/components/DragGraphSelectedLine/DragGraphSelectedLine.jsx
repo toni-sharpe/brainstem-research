@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
+import { calcRadiusOfSelectedPoint } from 'util/UtilDragGraph/UtilDragGraph'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
 import SvgLine from 'components/SvgLine/SvgLine'
 
@@ -26,7 +27,7 @@ function DragGraphSelectedLine({
   let svgLineProps = baseSvgLineProps
 
   if (isSelected) {
-    isSelelectedRadius = Math.max(2 * zoom / 6, 6)
+    isSelelectedRadius = calcRadiusOfSelectedPoint({ zoom })
     svgLineProps = {
       ...baseSvgLineProps,
       strokeOpacity: 1.0,

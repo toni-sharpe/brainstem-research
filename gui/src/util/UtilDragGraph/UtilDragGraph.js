@@ -1,8 +1,9 @@
 import {
+  DRAG_GRAPH_MINIMUM_SELECTED_RADIUS,
+  DRAG_GRAPH_OUTCOME_MULTIPLIER,
+  DRAG_GRAPH_OUTCOME_START,
   DRAG_GRAPH_SVG_SCALE,
   DRAG_GRAPH_SVG_SCALE_RADIUS,
-  DRAG_GRAPH_OUTCOME_START,
-  DRAG_GRAPH_OUTCOME_MULTIPLIER,
 } from 'util/Constant/BaseConstantList'
 import { numberPrecision } from 'util/Util/Util'
 import { calcMaxBasedDisplay } from 'util/Util/UtilScaleGranularity'
@@ -45,6 +46,20 @@ export function calcCircleRadius({
   multiplier
   *
   zoom
+}
+
+export function calcRadiusOfSelectedPoint({ zoom }) {
+  return numberPrecision({
+    n: Math.max(
+        2
+        *
+        zoom
+        /
+        6,
+      DRAG_GRAPH_MINIMUM_SELECTED_RADIUS
+    ),
+    lessPrecise: 3,
+  })
 }
 
 export function calcPolygonCoordList({ angle, max, radiusUnit, valList }) {
