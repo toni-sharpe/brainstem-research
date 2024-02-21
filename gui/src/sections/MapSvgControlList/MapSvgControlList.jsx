@@ -13,7 +13,7 @@ import {
   calcBound,
   calcMove,
   calcNewGraphOffset,
-} from 'util/UtilMapSvg/UtilMapSvg'
+} from 'util/UtilMapControlList/UtilMapControlList'
 
 import './MapSvgControlList.scss'
 
@@ -100,7 +100,12 @@ function MapSvgControlList({
           </li>
           <li className='row-layout space-children'>
             { WORLD_MAP_ZOOM_LIST.map(z => {
-              const newGraphOffset = calcNewGraphOffset({ x, y, z, zoom })
+              const newGraphOffset = calcNewGraphOffset({
+                x,
+                y,
+                zoomTo: z,
+                zoomFrom: zoom
+              })
 
               return (
                 <ZoomButton
