@@ -27,7 +27,7 @@ function MapSvg({
   const persisted = getJSONLocalStorage({ k: graphKey })
 
   const [currentCountryList, setCurrentCountryList] = useState([])
-  const [graphOffset, setGraphOffset] = useState('0 0')
+  const [graphOffset, setGraphOffset] = useState([0, 0])
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
 
   let currentCX = {}
@@ -73,7 +73,7 @@ function MapSvg({
                   <g
                     key={`${c.x}${c.y}`}
                     onClick={() => {
-                      setGraphOffset(`${offsetX} ${offsetY}`)
+                      setGraphOffset([offsetX, offsetY])
                       setCurrentCountryList(symmetricDifference(
                         currentCountryList,
                         [countryName],

@@ -39,7 +39,7 @@ function DragGraph({
 }) {
   const persisted = getJSONLocalStorage({ k: graphKey })
 
-  const [graphOffset, setGraphOffset] = useState('0 0')
+  const [graphOffset, setGraphOffset] = useState([0, 0])
   const [incExtremes, setIncExtremes] = useState(persisted?.incExtremes || false)
   const [zoom, setZoom] = useState(persisted?.zoom || 2)
   const [focusLabel, setFocusLabel] = useState('')
@@ -82,6 +82,8 @@ function DragGraph({
     graphKey,
     localStorageValList: persisted,
   }
+
+  const [ox, oy] = graphOffset
 
   return (
     <article className='drag-graph column-layout space-children--column-with-border'>
@@ -153,7 +155,7 @@ function DragGraph({
           {i18next.t(`${i18nBase}.scaleDetail`, { highlight, scaleUnit })}
         </figcaption>
         <SvgWrapper offsetPair='0 0' svgScale={DRAG_GRAPH_SVG_VIEWBOX}>
-          <g key='guides' transform={`translate(${graphOffset})`}>
+          <g key='guides' transform={`translate(${graphOffset.join(' ')})`}>
             { scaleRadiusList.map(([circleR, h], i) => {
               const stroke = h ? '#ccc' : '#eee'
               return (<SvgCircle key={`scc-${circleR}`} r={circleR} c={cGraph} stroke={stroke} fillOpacity={0.0} />)

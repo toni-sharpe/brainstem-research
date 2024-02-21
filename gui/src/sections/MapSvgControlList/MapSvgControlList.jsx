@@ -24,11 +24,11 @@ function MapSvgControlList({
   zoom,
 }) {
   // Easier code
-  const STEP_BREAKDOWN = 4
-  const MAP_WIDTH = WORLD_MAP_SVG_SCALE_WIDTH / STEP_BREAKDOWN
-  const MAP_HEIGHT = WORLD_MAP_SVG_SCALE_HEIGHT / STEP_BREAKDOWN
+  const STEP = 10
+  const HORZ_MOVE = WORLD_MAP_SVG_SCALE_WIDTH / STEP
+  const VERT_MOVE = WORLD_MAP_SVG_SCALE_HEIGHT / STEP
 
-  const xy = split(' ')(graphOffset)
+  const [x, y] = graphOffset
 
   const movementButtonCommonProps = {
     isDisabled: zoom === 1,
