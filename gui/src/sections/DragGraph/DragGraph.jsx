@@ -246,7 +246,7 @@ function DragGraph({
                 <foreignObject
                   key={labelValList[i][0]}
                   onFocus={() => {
-                    setGraphOffset(`${rx} ${ry}`)
+                    setGraphOffset([rx, ry])
                     setFocusLabel(labelValList[i][0] || '')
                   }}
                   tabIndex={0}
