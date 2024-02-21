@@ -1,7 +1,7 @@
 import i18next from 'util/i18next/i18next'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { join, map, pipe, split, type } from 'ramda'
+import { type } from 'ramda'
 
 import DragGraphButton from 'components/DragGraphButton/DragGraphButton'
 import DragGraphHeader from 'components/DragGraphHeader/DragGraphHeader'

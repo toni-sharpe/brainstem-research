@@ -1,4 +1,3 @@
-import { pipe, split } from 'ramda'
 import React from 'react'
 
 import {
