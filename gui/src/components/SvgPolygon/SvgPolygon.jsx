@@ -11,7 +11,7 @@ function SvgPolygon({
 }) {
   return (
     <polygon
-      points={points || "483,12 483,12 483,12 484,12 484,12 484,12 483,12 483,12 483,12 483,12"}
+      points={points}
       fill={fill}
       fillOpacity={fillOpacity}
       stroke={stroke}
