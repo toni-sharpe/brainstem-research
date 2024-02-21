@@ -70,7 +70,7 @@ function DragGraph({
   const dragLineCoordList = calcPolygonCoordList({ angle, radiusUnit, valList })
   const baseLineCoordList = calcBaseLineCoordList({ angle, valList })
   const r = DRAG_GRAPH_SVG_SCALE_RADIUS
-  const cGraph = { x: r, y: r }
+  const graphC = { x: r, y: r }
 
   const {
     highlight,
@@ -158,7 +158,7 @@ function DragGraph({
           <g key='guides' transform={`translate(${graphOffset.join(' ')})`}>
             { scaleRadiusList.map(([circleR, h], i) => {
               const stroke = h ? '#ccc' : '#eee'
-              return (<SvgCircle key={`scc-${circleR}`} r={circleR} c={cGraph} stroke={stroke} fillOpacity={0.0} />)
+              return (<SvgCircle key={`scc-${circleR}`} r={circleR} c={graphC} stroke={stroke} fillOpacity={0.0} />)
             })}
             { baseLineCoordList.map(([[x, y], _], i) => {
               return (<SvgLine key={`scl-${i}`} stroke='#777' x={[r, r]} y={[x, y]} />)
@@ -192,11 +192,11 @@ function DragGraph({
                 </g>
               )
             })}
-            <SvgCircle r={5} c={cGraph} stroke='#000' strokeOpacity={0.4} />
+            <SvgCircle r={5} c={graphC} stroke='#000' strokeOpacity={0.4} />
           </g>
           <SvgCircle
             r={475}
-            c={cGraph}
+            c={graphC}
             fillOpacity={0.0}
             stroke='#777'
             strokeOpacity={0.075}
@@ -204,7 +204,7 @@ function DragGraph({
           />
           <SvgCircle
             r={525}
-            c={cGraph}
+            c={graphC}
             fillOpacity={0.0}
             stroke='#777'
             strokeOpacity={0.075}
@@ -241,7 +241,7 @@ function DragGraph({
               <g key={`sel-${i}`}>
                 <SvgLine {...svgLineProps} />
                 { isSelected && (
-                  <SvgCircle r={Math.max(2 * zoom / 6, 6)} c={cGraph} fill='#13a' stroke='#13a' />
+                  <SvgCircle r={Math.max(2 * zoom / 6, 6)} c={graphC} fill='#13a' stroke='#13a' />
                 ) }
                 <foreignObject
                   key={labelValList[i][0]}
