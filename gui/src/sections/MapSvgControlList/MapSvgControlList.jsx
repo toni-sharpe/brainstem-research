@@ -2,8 +2,6 @@ import { pipe, split } from 'ramda'
 import React from 'react'
 
 import {
-  WORLD_MAP_SVG_CENTER_X,
-  WORLD_MAP_SVG_CENTER_Y,
   WORLD_MAP_ZOOM_LIST,
   WORLD_MAP_SVG_SCALE_WIDTH,
   WORLD_MAP_SVG_SCALE_HEIGHT,
@@ -12,6 +10,11 @@ import Button from 'components/Button/Button'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
 import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import {
+  calcBound,
+  calcMove,
+  calcNewGraphOffset,
+} from 'util/UtilMapSvg/UtilMapSvg'
 
 import './MapSvgControlList.scss'
 
