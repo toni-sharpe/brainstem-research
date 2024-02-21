@@ -21,44 +21,6 @@
   &__controls {
     justify-content: center;
   }
-  &__point {
-    background-color: $white;
-    border: 1px solid var(--blue);
-    border-radius: 3px;
-    cursor: pointer;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    padding: var(--padding--tiniest);
-    position: relative;
-    height: 48px;
-    width: 48px;
-    opacity: 0.6;
-
-    &-label {
-      font-size: var(--font-size--medium-small);
-      height: 15px;
-      text-align: center;
-      width: 100%;
-    }
-
-    &-num {
-      align-items: center;
-      background-color: var(--white);
-      border-radius: 50%;
-      border: 1px solid var(--grey--light);
-      display: flex;
-      height: 24px;
-      justify-content: center;
-      width: 24px;
-    }
-
-    &.is-selected {
-      border: 1px solid var(--blue--dark);
-      opacity: 1.0;
-    }
-  }
   &__zoom {
     align-items: center;
   }

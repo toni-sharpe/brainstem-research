@@ -4,8 +4,11 @@ import React, { useState } from 'react'
 import { type } from 'ramda'
 
 import DragGraphButton from 'components/DragGraphButton/DragGraphButton'
+import DragGraphEdgeFadeout from 'components/DragGraphEdgeFadeout/DragGraphEdgeFadeout'
 import DragGraphHeader from 'components/DragGraphHeader/DragGraphHeader'
 import DragGraphOutcomeCircle from 'components/DragGraphOutcomeCircle/DragGraphOutcomeCircle'
+import DragGraphPointLabel from 'components/DragGraphPointLabel/DragGraphPointLabel'
+import DragGraphSelectedLine from 'components/DragGraphSelectedLine/DragGraphSelectedLine'
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
@@ -13,6 +16,7 @@ import SvgLine from 'components/SvgLine/SvgLine'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
 import {
+  DRAG_GRAPH_LABEL_SIZE,
   DRAG_GRAPH_SVG_SCALE_RADIUS,
   DRAG_GRAPH_SVG_VIEWBOX,
 } from 'util/Constant/BaseConstantList'
@@ -194,81 +198,35 @@ function DragGraph({
             })}
             <SvgCircle r={5} c={graphC} stroke='#000' strokeOpacity={0.4} />
           </g>
-          <SvgCircle
-            r={475}
-            c={graphC}
-            fillOpacity={0.0}
-            stroke='#777'
-            strokeOpacity={0.075}
-            strokeWidth={200}
-          />
-          <SvgCircle
-            r={525}
-            c={graphC}
-            fillOpacity={0.0}
-            stroke='#777'
-            strokeOpacity={0.075}
-            strokeWidth={200}
-          />
+          <DragGraphEdgeFadeout c={graphC} />
           { baseLineCoordList.map(([_, [fx, fy]], i) => {
-            const {
-              severe,
-              nonSevere,
-            } = labelValList[i][1]
-
+            const { severe, nonSevere } = labelValList[i][1]
             const isSelected = focusLabel === labelValList[i][0]
-
             const [rx, ry] = dragLineCoordList[i].map(v => r - v)
-
-            const baseSvgLineProps = {
-              stroke: '#13a',
-              strokeOpacity: 0.0,
-              x: [r, r],
-              y: [fx, fy],
-              strokeWidth: 1.0,
-            }
-
-            let svgLineProps = baseSvgLineProps
-            if (isSelected) {
-              svgLineProps = {
-                ...baseSvgLineProps,
-                strokeOpacity: 1.0,
-                strokeWidth: 2.0,
-              }
-            }
 
             return (
               <g key={`sel-${i}`}>
-                <SvgLine {...svgLineProps} />
-                { isSelected && (
-                  <SvgCircle r={Math.max(2 * zoom / 6, 6)} c={graphC} fill='#13a' stroke='#13a' />
-                ) }
-                <foreignObject
-                  key={labelValList[i][0]}
+                <DragGraphSelectedLine
+                  c={graphC}
+                  isSelected={isSelected}
+                  labelX={fx}
+                  labelY={fy}
+                  r={r}
+                  zoom={zoom}
+                />
+                <DragGraphPointLabel
+                  isSelected={isSelected}
+                  label={labelValList[i][0]}
                   onFocus={() => {
                     setGraphOffset([rx, ry])
                     setFocusLabel(labelValList[i][0] || '')
                   }}
-                  tabIndex={0}
-                  x={fx - 26}
-                  y={fy - 26}
-                  width='52'
-                  height='52'
-                  style={{
-                    borderRadius: '3px',
-                    boxShadow: isSelected ? '' : '0 0 20px 0 #555',
-                  }}
-                >
-                  <article className={`drag-graph__point ${isSelected ? 'is-selected' : ''}`}>
-                    <header className='drag-graph__point-label'>{labelValList[i][0]}</header>
-                    <section
-                      className='drag-graph__point-num'
-                      title={`Sev: ${severe} Not sev: ${nonSevere}`}
-                    >
-                      <span>{valList[i]}</span>
-                    </section>
-                  </article>
-                </foreignObject>
+                  size={DRAG_GRAPH_LABEL_SIZE}
+                  title={`Sev: ${severe} Not sev: ${nonSevere}`}
+                  value={valList[i]}
+                  x={fx}
+                  y={fy}
+                />
               </g>
             )
           })}
