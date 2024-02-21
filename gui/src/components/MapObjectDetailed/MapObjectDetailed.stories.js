@@ -1,15 +1,21 @@
-// MapObjectSimple.story.js
+// MapObjectDetailed.story.js
 import StoryBookSvgWrapper from 'components/StoryBookSvgWrapper/StoryBookSvgWrapper'
-import MapObjectSimple from './MapObjectSimple';
+import MapObjectDetailed from './MapObjectDetailed';
 
 export default {
-  component: MapObjectSimple,
+  component: MapObjectDetailed,
 };
 
-const baseMapObjectSimpleProps = {
+const baseMapObjectDetailedProps = {
+  children: (
+    <div className='column-layout space-children--column'>
+      <span>Some stuff</span>
+      <span>Some morestuff</span>
+    </div>
+  ),
   closeOnClick: () => {},
   countryName: 'Test country',
-  size: 'medium',
+  size: 'small',
   h: 100,
   w: 100,
   x: 300,
@@ -20,8 +26,8 @@ export const Primary = {
   render: () => {
     return (
       <StoryBookSvgWrapper scale={500}>
-        <MapObjectSimple
-          {...baseMapObjectSimpleProps}
+        <MapObjectDetailed
+          {...baseMapObjectDetailedProps}
         />
       </StoryBookSvgWrapper>
     )
@@ -31,7 +37,7 @@ export const Primary = {
 export const DiffPos = {
   render: () => {
     const props = {
-      ...baseMapObjectSimpleProps,
+      ...baseMapObjectDetailedProps,
       h: 100,
       w: 100,
       x: 200,
@@ -39,7 +45,7 @@ export const DiffPos = {
     }
     return (
       <StoryBookSvgWrapper scale={500}>
-        <MapObjectSimple
+        <MapObjectDetailed
           {...props}
         />
       </StoryBookSvgWrapper>
@@ -50,12 +56,15 @@ export const DiffPos = {
 export const DiffSize = {
   render: () => {
     const props = {
-      ...baseMapObjectSimpleProps,
-      size: 'small',
+      ...baseMapObjectDetailedProps,
+      h: 300,
+      w: 300,
+      x: 200,
+      y: 200,
     }
     return (
       <StoryBookSvgWrapper scale={500}>
-        <MapObjectSimple
+        <MapObjectDetailed
           {...props}
         />
       </StoryBookSvgWrapper>

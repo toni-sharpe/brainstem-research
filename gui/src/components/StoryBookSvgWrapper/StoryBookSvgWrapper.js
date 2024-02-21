@@ -5,7 +5,11 @@ import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 
 import './StoryBookSvgWrapper.scss'
 
-function StoryBookSvgWrapper({ children }) {
+function StoryBookSvgWrapper({
+  children,
+  offset,
+  scale,
+}) {
   return (
     <div style={{
       border: '1px solid #000',
@@ -15,12 +19,17 @@ function StoryBookSvgWrapper({ children }) {
     }}>
       <SvgWrapper
         className='story-book-svg-wrapper'
-        svgScale={100}
+        svgScale={`${offset.join(' ')} ${scale} ${scale}`}
       >
         {children}
       </SvgWrapper>
     </div>
   )
+}
+
+StoryBookSvgWrapper.defaultProps = {
+  offset: [0, 0],
+  scale: 100,
 }
 
 export default StoryBookSvgWrapper

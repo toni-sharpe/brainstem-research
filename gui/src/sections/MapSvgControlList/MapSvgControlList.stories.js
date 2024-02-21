@@ -28,3 +28,17 @@ export const Zoom1IeNoZoomDisabledThings = {
     )
   }
 };
+
+export const WithOffsetAndZoomRestable= {
+  render: () => {
+    const props = {
+      ...baseMapSvgControlListProps,
+      zoom: 5,
+    }
+    return (
+      <StoryBookPaddedWrapper>
+        <MapSvgControlList {...props} />
+      </StoryBookPaddedWrapper>
+    )
+  }
+};
