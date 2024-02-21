@@ -7,7 +7,7 @@ import DragGraphButton from 'components/DragGraphButton/DragGraphButton'
 import DragGraphHeader from 'components/DragGraphHeader/DragGraphHeader'
 import DragGraphOutcomeCircle from 'components/DragGraphOutcomeCircle/DragGraphOutcomeCircle'
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
-import ResetGraphButton from 'components/ResetGraphButton/ResetGraphButton'
+import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
 import SvgLine from 'components/SvgLine/SvgLine'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
@@ -99,28 +99,40 @@ function DragGraph({
               stateFn={setIncExtremes}
             />
           </li>
-          <li className='row-layout space-children'>
-            { [1, 2, 3, 5, 10, 15, 20, 30, 50].map(z => {
-              return (
-                <ZoomButton
-                  {...commonButtonProps}
-                  newValue={z}
-                  isSelected={zoom === z}
-                  k={z}
-                  key={`${z}-zoom`}
-                  localStorageValList={{...persisted, zoom: z }}
-                  stateFn={(newVal) => {
-                    const newGraphOffset = pipe(
-                      split(' '),
-                      map(v => v * (newVal / zoom)),
-                      join(' '),
-                    )(graphOffset)
-                    setGraphOffset(newGraphOffset)
-                    setZoom(newVal)
-                  }}
+          <li>
+            <ol
+              className='drag-graph__zoom row-layout space-children'
+            >
+              <li>Zoom:</li>
+              <li className='row-layout space-children'>
+                { [1, 2, 3, 5, 10, 15, 20, 30, 50].map(z => {
+                  return (
+                    <ZoomButton
+                      {...commonButtonProps}
+                      newValue={z}
+                      isSelected={zoom === z}
+                      k={z}
+                      key={`${z}-zoom`}
+                      localStorageValList={{...persisted, zoom: z }}
+                      stateFn={(newVal) => {
+                        const factor = newVal / zoom
+                        setGraphOffset([ox * factor, oy * factor])
+                        setZoom(newVal)
+                      }}
+                    />
+                  )
+                }) }
+              </li>
+              <li>
+                <ResetZoomButton
+                  zoom={zoom}
+                  graphOffset={graphOffset}
+                  setGraphOffset={setGraphOffset}
+                  setZoom={setZoom}
+                  extraStateFn={() => setFocusLabel('')}
                 />
-              )
-            }) }
+              </li>
+            </ol>
           </li>
           <li>
             <DragGraphButton
@@ -129,15 +141,6 @@ function DragGraph({
               isSelected={outcomeShown}
               k='outcomeShown'
               stateFn={setOutcomeShown}
-            />
-          </li>
-          <li>
-            <ResetGraphButton
-              zoom={zoom}
-              graphOffset={graphOffset}
-              setGraphOffset={setGraphOffset}
-              setZoom={setZoom}
-              extraStateFn={() => setFocusLabel('')}
             />
           </li>
         </ul>

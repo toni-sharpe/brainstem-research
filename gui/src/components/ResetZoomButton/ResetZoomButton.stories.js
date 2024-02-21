@@ -1,5 +1,5 @@
 // ResetGraphButton.story.js
-import ResetGraphButton from './ResetGraphButton';
+import ResetGraphButton from './ResetZoomButton';
 
 export default {
   component: ResetGraphButton,

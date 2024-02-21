@@ -9,7 +9,7 @@ import {
   WORLD_MAP_SVG_SCALE_HEIGHT,
 } from 'util/Constant/BaseConstantList'
 import Button from 'components/Button/Button'
-import ResetGraphButton from 'components/ResetGraphButton/ResetGraphButton'
+import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
 import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
@@ -41,82 +41,90 @@ function MapSvgControlList({
     >
       <li>
         <ol className='row-layout space-children'>
-          <Button
-            {...movementButtonCommonProps}
-            label='← East'
-            onClick={() => {
-              let newX = Number(xy[0]) + MAP_WIDTH
-              if (newX >= 0) { newX = 0 }
-              setGraphOffset(`${newX} ${xy[1]}`)
-            }}
-          />
-          <Button
-            {...movementButtonCommonProps}
-            label='↑ North'
-            onClick={() => {
-              let newY = Number(xy[1]) + MAP_HEIGHT
-              if (newY >= 0) { newY = 0 }
-              setGraphOffset(`${xy[0]} ${newY}`)
-            }}
-          />
-          <Button
-            {...movementButtonCommonProps}
-            label='→ West'
-            onClick={() => {
-              let newX = Number(xy[0]) - MAP_WIDTH
-              if (newX <= (0 - (MAP_WIDTH * STEP_BREAKDOWN * zoom))) { newX = (0 - MAP_WIDTH * (zoom - 1)) }
-              setGraphOffset(`${newX} ${xy[1]}`)
-            }}
-          />
-          <Button
-            {...movementButtonCommonProps}
-            label='↓ South'
-            onClick={() => {
-              let newY = Number(xy[1]) - MAP_HEIGHT
-              if (newY <= (0 - (MAP_HEIGHT * STEP_BREAKDOWN * zoom))) { newY = (0 - MAP_HEIGHT * (zoom - 1)) }
-              setGraphOffset(`${xy[0]} ${newY}`)
-            }}
-          />
+          <li>
+            <Button
+              {...movementButtonCommonProps}
+              label='← East'
+              onClick={() => {
+                let newX = x + HORZ_MOVE
+                if (newX >= 0) { newX = 0 }
+                setGraphOffset([newX, y])
+              }}
+            />
+          </li>
+          <li>
+            <Button
+              {...movementButtonCommonProps}
+              label='↑ North'
+              onClick={() => {
+                let newY = y + VERT_MOVE
+                if (newY >= 0) { newY = 0 }
+                setGraphOffset([x, newY])
+              }}
+            />
+          </li>
+          <li>
+            <Button
+              {...movementButtonCommonProps}
+              label='→ West'
+              onClick={() => {
+                let m = HORZ_MOVE
+                let newX = x - m
+                if (newX <= calcBound({ m, step: STEP, zoom })) { newX = calcMove({ m }) }
+                setGraphOffset([newX, y])
+              }}
+            />
+          </li>
+          <li>
+            <Button
+              {...movementButtonCommonProps}
+              label='↓ South'
+              onClick={() => {
+                let m = VERT_MOVE
+                let newY = y - m
+                if (newY <= calcBound({ m, step: STEP, zoom })) { newY = calcMove({ m }) }
+                setGraphOffset([x, newY])
+              }}
+            />
+          </li>
         </ol>
       </li>
       <li>
         <ol
-          className='map-svg-control-list__zoom-list row-layout space-children'
+          className='map-svg-control-list__zoom row-layout space-children'
         >
           <li>
             <span>Zoom:</span>
           </li>
-          { WORLD_MAP_ZOOM_LIST.map(z => {
-            const factor = z / zoom
-            const offsetFactor = factor - 1
-            const xFactor = WORLD_MAP_SVG_CENTER_X * offsetFactor
-            const yFactor = WORLD_MAP_SVG_CENTER_Y * offsetFactor
-            return (
-              <ZoomButton
-                graphKey={graphKey}
-                isSelected={zoom === z}
-                k={z}
-                key={`${z}-zoom`}
-                newValue={z}
-                stateFn={(newVal) => {
-                  const newGraphOffset = pipe(
-                    split(' '),
-                    ([x, y]) => `${x * factor - xFactor} ${y * factor - yFactor}`,
-                  )(graphOffset)
-                  setGraphOffset(newGraphOffset)
-                  setZoom(newVal)
-                  setJSONLocalStorage({ [graphKey]: newVal })
-                }}
-              />
-            )
-          }) }
-          <ResetGraphButton
-            graphKey={graphKey}
-            graphOffset={graphOffset}
-            setGraphOffset={setGraphOffset}
-            setZoom={setZoom}
-            zoom={zoom}
-          />
+          <li className='row-layout space-children'>
+            { WORLD_MAP_ZOOM_LIST.map(z => {
+              const newGraphOffset = calcNewGraphOffset({ x, y, z, zoom })
+
+              return (
+                <ZoomButton
+                  graphKey={graphKey}
+                  isSelected={zoom === z}
+                  k={z}
+                  key={`${z}-zoom`}
+                  newValue={z}
+                  stateFn={(newVal) => {
+                    setGraphOffset(newGraphOffset)
+                    setZoom(newVal)
+                    setJSONLocalStorage({ [graphKey]: newVal })
+                  }}
+                />
+              )
+            }) }
+          </li>
+          <li>
+            <ResetZoomButton
+              graphKey={graphKey}
+              graphOffset={graphOffset}
+              setGraphOffset={setGraphOffset}
+              setZoom={setZoom}
+              zoom={zoom}
+            />
+          </li>
         </ol>
       </li>
     </ul>

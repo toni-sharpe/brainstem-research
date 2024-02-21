@@ -12,10 +12,14 @@ export default {
 };
 
 const baseMapSvgControlListProps = {
-
+  graphKey: 'test-sb',
+  graphOffset: [0, 0],
+  setGraphOffset: () => {},
+  setZoom: () => {},
+  zoom: 1,
 }
 
-export const Primary = {
+export const Zoom1IeNoZoomDisabledThings = {
   render: () => {
     return (
       <StoryBookPaddedWrapper>
