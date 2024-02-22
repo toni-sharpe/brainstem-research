@@ -77,7 +77,7 @@ function DragGraph({
   const radiusUnit = calcRadiusUnit({ max })
   const angle = calcAngleInRadians({ valList })
   const dragLineCoordList = calcPolygonCoordList({ angle, radiusUnit, scale, scaleR, valList })
-  const baseLineCoordList = calcBaseLineCoordList({ angle, valList })
+  const baseLineCoordList = calcBaseLineCoordList({ angle, scale, scaleR, valList })
   const r = DRAG_GRAPH_SVG_SCALE_RADIUS
   const graphC = { x: r, y: r }
 
