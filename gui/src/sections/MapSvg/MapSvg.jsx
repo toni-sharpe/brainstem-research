@@ -1,4 +1,4 @@
-import { init, last, symmetricDifference } from 'ramda'
+import { init, last, symmetricDifference, toPairs } from 'ramda'
 import React, { useState } from 'react'
 
 import {
@@ -26,12 +26,12 @@ function MapSvg({
   const graphKey = 'mapZoom'
   const persisted = getJSONLocalStorage({ k: graphKey })
 
-  const [currentCountryList, setCurrentCountryList] = useState([])
+  const [currentCountryIdList, setCurrentCountryList] = useState([])
   const [graphOffset, setGraphOffset] = useState([0, 0])
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
 
   let currentCX = {}
-  let currentCy = {}
+  let currentCY = {}
   let isCurrentCountry
 
   return (
@@ -51,8 +51,8 @@ function MapSvg({
       >
         <g key='guides' transform={`translate(${graphOffset})`}>
           {
-            WorldBorderList[currentYear].map(({ countryBorder, countryName }, i) => {
-              isCurrentCountry = currentCountryList.includes(countryName)
+            toPairs(WorldBorderList[currentYear]).map(([countryId, { countryBorder, countryName }], i) => {
+              isCurrentCountry = currentCountryIdList.includes(countryId)
 
               return countryBorder.map((subBorder, j) => {
                 const { c } = last(subBorder)
@@ -62,8 +62,8 @@ function MapSvg({
                 const cy = c.y * zoom
 
                 if (isCurrentCountry) {
-                  currentCX = { ...currentCX, [countryName]: cx }
-                  currentCy = { ...currentCy, [countryName]: cy }
+                  currentCX = { ...currentCX, [countryId]: cx }
+                  currentCY = { ...currentCY, [countryId]: cy }
                 }
 
                 const offsetX = WORLD_MAP_SVG_CENTER_X - cx
@@ -75,13 +75,14 @@ function MapSvg({
                     onClick={() => {
                       setGraphOffset([offsetX, offsetY])
                       setCurrentCountryList(symmetricDifference(
-                        currentCountryList,
-                        [countryName],
+                        currentCountryIdList,
+                        [countryId],
                       ))
                     }}
                   >
                     <MapCountry
                       borderCoordList={borderCoordList}
+                      countryId={countryId}
                       countryName={countryName}
                       c={{ x: cx, y: cy }}
                       isSelected={isCurrentCountry}
@@ -89,7 +90,7 @@ function MapSvg({
                     />
                     { zoom >= 2 && zoom <= 3 && (
                       <MapObjectSimple
-                        countryName={countryName}
+                        countryId={countryId}
                         size='small'
                         h={14}
                         w={48}
@@ -99,7 +100,7 @@ function MapSvg({
                     ) }
                     { (zoom >= 4 && !isCurrentCountry) && (
                       <MapObjectSimple
-                        countryName={countryName}
+                        countryId={countryId}
                         size='medium'
                         h={18}
                         w={80}
@@ -118,12 +119,12 @@ function MapSvg({
               })
             })
           }
-          { zoom >= 4 && currentCountryList.map(currentCountry => {
+          { zoom >= 4 && currentCountryIdList.map(currentCountryId => {
             let h = 50
             let w = 50
             const histogramHeight = 12
 
-            const data = mapDetailData[currentCountry]
+            const data = mapDetailData[currentCountryId]
             if (data && data?.histogramBarGroupList?.length) {
               const { length } = data.histogramBarGroupList
               const totalBars = length * data.barCountPerBlock
@@ -136,21 +137,21 @@ function MapSvg({
               <MapObjectDetailed
                 closeOnClick={() => {
                   setCurrentCountryList(symmetricDifference(
-                    currentCountryList,
-                    [currentCountry],
+                    currentCountryIdList,
+                    [currentCountryId],
                   ))
                 }}
-                countryName={currentCountry}
+                countryId={currentCountryId}
                 size='medium'
                 h={h}
                 w={w}
-                x={currentCX[currentCountry]}
-                y={currentCy[currentCountry]}
+                x={currentCX[currentCountryId]}
+                y={currentCY[currentCountryId]}
               >
                 {data && React.createElement(mapDetailElement, {
                   ...mapDetailProps,
                   ...data,
-                  graphLabel: currentCountry,
+                  graphLabel: mapDetailData[currentCountryId].countryName,
                   histogramHeight,
                   widthOverride: w,
                 })}
