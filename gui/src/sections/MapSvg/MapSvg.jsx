@@ -91,7 +91,7 @@ function MapSvg({
                       <MapObjectSimple
                         countryName={countryName}
                         size='small'
-                        h={10}
+                        h={14}
                         w={48}
                         x={cx}
                         y={cy}

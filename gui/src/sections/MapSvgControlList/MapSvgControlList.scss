@@ -1,6 +1,18 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .map-svg-control-list {
+  @include column-layout();
+  align-items: center;
+  & > * {
+    @include self-space-column-add-border();
+  }
+  @media (min-width: $media-switch--medium) {
+    @include row-layout();
+    & > * {
+      @include space-row();
+      border-bottom: 0;
+    }
+  }
   background-color: rgba($white, 0.6);
   bottom: 0;
   display: flex;
@@ -10,8 +22,42 @@
   position: fixed;
   right: 0;
   width: 100vw;
+  height: 14vh;
+
+  @media (min-width: $media-switch--medium) {
+    height: 4vh;
+  }
 
   &__zoom {
+    @include column-layout();
     align-items: center;
+    & > * {
+      @include space-column();
+    }
+    @media (min-width: $media-switch--medium) {
+      @include row-layout();
+      & > * {
+        @include space-row();
+      }
+      height: 4vh;
+    }
+  }
+
+  &__zoom-label {
+    align-self: center;
+  }
+
+  &__zoom-buttons {
+    @include row-layout();
+    align-items: center;
+    & > * {
+      @include space-row();
+    }
+    flex-wrap: wrap;
+    button {
+      @media (max-width: $media-switch--medium) {
+        margin-bottom: var(--spacing--narrow);
+      }
+    }
   }
 }

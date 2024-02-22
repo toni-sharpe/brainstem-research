@@ -42,7 +42,7 @@ function MapSvgControlList({
 
   return (
     <ul
-      className='map-svg-control-list row-layout space-children--wide-with-border'
+      className='map-svg-control-list'
     >
       <li>
         <ol className='row-layout space-children'>
@@ -102,12 +102,13 @@ function MapSvgControlList({
       </li>
       <li>
         <ol
-          className='map-svg-control-list__zoom row-layout space-children'
+          className='map-svg-control-list__zoom'
         >
-          <li>
+          <li className='map-svg-control-list__zoom-label'>
             <span>Zoom:</span>
           </li>
-          <li className='row-layout space-children'>
+
+          <li className='map-svg-control-list__zoom-buttons row-layout space-children'>
             { WORLD_MAP_ZOOM_LIST.map(z => {
               const newGraphOffset = calcNewGraphOffset({
                 x,
@@ -131,8 +132,6 @@ function MapSvgControlList({
                 />
               )
             }) }
-          </li>
-          <li>
             <ResetZoomButton
               graphKey={graphKey}
               graphOffset={graphOffset}
