@@ -9,11 +9,7 @@ import Button from 'components/Button/Button'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
 import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
-import {
-  calcBound,
-  calcMove,
-  calcNewGraphOffset,
-} from 'util/UtilMapControlList/UtilMapControlList'
+import { calcNewGraphOffset } from 'util/UtilMapControlList/UtilMapControlList'
 
 import './MapSvgControlList.scss'
 
