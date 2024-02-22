@@ -42,6 +42,11 @@ function PageSummary() {
         <a href={i18next.t(`${i18nBase}.link7`)}>{i18next.t(`${i18nBase}.heading7`)}</a>
         <p>{i18next.t(`${i18nBase}.paragraph8`)}</p>
       </div>
+      <div className='column-layout space-children--column'>
+        <h3>{i18next.t(`${i18nBase}.heading8`)}</h3>
+        <a href={i18next.t(`${i18nBase}.link8`)}>{i18next.t(`${i18nBase}.heading8`)}</a>
+        <p>{i18next.t(`${i18nBase}.paragraph9`)}</p>
+      </div>
     </div>
   );
 }
