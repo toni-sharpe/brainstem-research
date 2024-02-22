@@ -90,6 +90,7 @@
     "TimeLine": "Zeitleiste",
     "HistogramMaker": "Histogramm",
     "SVG": "SVG",
+    "WorldMap": "Weltkarte",
     "nIs": "N ist {{n}}"
   },
 
@@ -220,7 +221,7 @@
     "paragraph8": "Diese Seite zeigt eine Art Schleppdiagramm, das in Arbeit ist und zoombare Punkte enthält, an denen weitere Daten verfügbar sein werden.",
     "heading8": "World Map",
     "link8": "/WorldMap",
-    "paragraph9": "Eine Weltkarte zur Erkundung einiger der Ideen von OWID mit Blick auf meine Arbeit."
+  "paragraph9": "Eine Weltkarte zur Erkundung einiger der Ideen von OWID mit Blick auf meine Arbeit."
   },
 
   "Scatter": {

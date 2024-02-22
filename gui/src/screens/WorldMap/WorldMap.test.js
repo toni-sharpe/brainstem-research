@@ -16,7 +16,7 @@ test('WorldMap - ', async () => {
   /*
    * Base screen tests, has it rendered
    */
-  expect(screen.getByText('WorldMap')).toBeTruthy()
+  expect(screen.getByText('World Map')).toBeTruthy()
   expect(screen.getByText('EN')).toBeTruthy()
   expect(screen.getByText('DE')).toBeTruthy()
 
