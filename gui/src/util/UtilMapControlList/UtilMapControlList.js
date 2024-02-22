@@ -3,10 +3,6 @@ import {
   WORLD_MAP_SVG_CENTER_Y,
 } from 'util/Constant/BaseConstantList'
 
-export function calcBound({ m, step, zoom }) {
-  return (0 - (m * (step - 1) * zoom))
-}
-
 export function calcNewGraphOffset({ x, y, zoomTo, zoomFrom }) {
   const factor = zoomTo / zoomFrom
   const offsetFactor = factor - 1

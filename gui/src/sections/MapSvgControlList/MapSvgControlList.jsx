@@ -37,6 +37,9 @@ function MapSvgControlList({
     size: 'medium',
   }
 
+  const horz_bound = 0 - (WORLD_MAP_SVG_SCALE_WIDTH * zoom)
+  const vert_bound = 0 - (WORLD_MAP_SVG_SCALE_HEIGHT * zoom)
+
   return (
     <ul
       className='map-svg-control-list row-layout space-children--wide-with-border'
@@ -70,10 +73,13 @@ function MapSvgControlList({
               {...movementButtonCommonProps}
               label='→ West'
               onClick={() => {
-                let m = HORZ_MOVE
-                let newX = x - m
-                if (newX <= calcBound({ m, step: STEP, zoom })) { newX = calcMove({ m }) }
-                setGraphOffset([newX, y])
+                let m = x
+                if (m > horz_bound) {
+                  m = x - HORZ_MOVE
+                } else {
+                  m = horz_bound
+                }
+                setGraphOffset([m, y])
               }}
             />
           </li>
@@ -82,10 +88,13 @@ function MapSvgControlList({
               {...movementButtonCommonProps}
               label='↓ South'
               onClick={() => {
-                let m = VERT_MOVE
-                let newY = y - m
-                if (newY <= calcBound({ m, step: STEP, zoom })) { newY = calcMove({ m }) }
-                setGraphOffset([x, newY])
+                let m = y
+                if (m > vert_bound) {
+                  m = y - VERT_MOVE
+                } else {
+                  m = vert_bound
+                }
+                setGraphOffset([x, m])
               }}
             />
           </li>
