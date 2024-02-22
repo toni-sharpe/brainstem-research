@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 
 import SvgCircle from 'components/SvgCircle/SvgCircle'
 import SvgXyPropType from 'prop-types/SvgXy.prop-type'

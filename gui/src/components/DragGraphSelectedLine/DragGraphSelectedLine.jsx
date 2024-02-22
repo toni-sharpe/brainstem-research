@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 
+import SvgXyPropType from 'prop-types/SvgXy.prop-type'
 import { calcRadiusOfSelectedPoint } from 'util/UtilDragGraph/UtilDragGraph'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
 import SvgLine from 'components/SvgLine/SvgLine'
@@ -48,6 +49,15 @@ function DragGraphSelectedLine({
       ) }
     </>
   )
+}
+
+DragGraphSelectedLine.propTypes = {
+  c: SvgXyPropType,
+  isSelected: PropTypes.bool,
+  labelX: PropTypes.number,
+  labelY: PropTypes.number,
+  r: PropTypes.arrayOf(PropTypes.number,PropTypes.number),
+  zoom: PropTypes.number,
 }
 
 export default DragGraphSelectedLine

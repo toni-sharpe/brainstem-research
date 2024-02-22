@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 
 import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 
