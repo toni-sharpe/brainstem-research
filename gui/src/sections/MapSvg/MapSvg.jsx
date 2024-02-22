@@ -83,8 +83,7 @@ function MapSvg({
                     <MapCountry
                       borderCoordList={borderCoordList}
                       countryName={countryName}
-                      cx={cx}
-                      cy={cy}
+                      c={{ x: cx, y: cy }}
                       isSelected={isCurrentCountry}
                       zoom={zoom}
                     />

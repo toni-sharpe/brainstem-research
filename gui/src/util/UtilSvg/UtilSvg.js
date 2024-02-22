@@ -1,17 +1,33 @@
+import { numberPrecision } from 'util/Util/Util'
+import {
+  OUTCOME_MULTIPLIER,
+  OUTCOME_START,
+  SVG_SCALE,
+  SVG_SCALE_RADIUS,
+} from 'util/Constant/BaseConstantList'
 
-
-function calcX({ a, r }) {
-  return r * Math.sin(a) + (SVG_SCALE_RADIUS)
+function calcX({
+  a,
+  r,
+  scaleR = SVG_SCALE_RADIUS,
+  scale = SVG_SCALE,
+}) {
+  return r * Math.sin(a) + scaleR
 }
 
-function calcY({ a, r }) {
-  return SVG_SCALE - (r * Math.cos(a) + (SVG_SCALE_RADIUS))
+function calcY({
+  a,
+  r,
+  scaleR = SVG_SCALE_RADIUS,
+  scale = SVG_SCALE,
+}) {
+  return scale - (r * Math.cos(a) + scaleR)
 }
 
-function calcXY({ a, r }) {
+function calcXY({ a, r, scale, scaleR }) {
   return [
-    numberPrecision({ n: calcX({ a, r }) }),
-    numberPrecision({ n: calcY({ a, r }) }),
+    numberPrecision({ n: calcX({ a, r, scale, scaleR }) }),
+    numberPrecision({ n: calcY({ a, r, scale, scaleR }) }),
   ]
 }
 
@@ -19,46 +35,48 @@ export function calcAngleInRadians({ valList }) {
   return numberPrecision({ n: (360 / valList.length * (Math.PI / 180)) })
 }
 
-export function calcBaseLineCoordList({ angle, valList }) {
-  const r = (SVG_SCALE_RADIUS * 1.5)
+export function calcBaseLineCoordList({
+  angle,
+  scale = SVG_SCALE,
+  scaleR = SVG_SCALE_RADIUS,
+  valList
+}) {
+  const r = scaleR * 1.5
 
   return valList.map((val, i) => {
     const a = angle * i
-    return [calcXY({ a, r }), calcXY({ a, r: r / 1.64 })]
+    return [
+      calcXY({ a, r, scale, scaleR }),
+      calcXY({ a, r: r / 1.64, scale, scaleR })
+    ]
   })
 }
 
 export function calcCircleRadius({
   multiplier = OUTCOME_MULTIPLIER,
+  outcomeStart = OUTCOME_START,
   value,
   zoom = 1
 }) {
-  return OUTCOME_START + value
+  return outcomeStart + value
   *
   multiplier
   *
   zoom
 }
 
-export function calcRadiusOfSelectedPoint({ zoom }) {
-  return numberPrecision({
-    n: Math.max(
-        2
-        *
-        zoom
-        /
-        6,
-      MINIMUM_SELECTED_RADIUS
-    ),
-    lessPrecise: 3,
-  })
-}
-
-export function calcPolygonCoordList({ angle, max, radiusUnit, valList }) {
+export function calcPolygonCoordList({
+   angle,
+   max,
+   radiusUnit,
+   scale,
+   scaleR,
+   valList
+}) {
   return valList.map((val, i) => {
     const r = val * radiusUnit
     const a = angle * i
-    return calcXY({ a, r })
+    return calcXY({ a, r, scale, scaleR })
   })
 }
 

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { BASE_SVG_OFFSET, BASE_SVG_SCALE } from 'util/Constant/BaseConstantList'
+import { SVG_OFFSET, SVG_SCALE } from 'util/Constant/BaseConstantList'
 import SvgScalePropType from 'prop-types/SvgScale.prop-type'
 
 function SvgWrapper({
@@ -30,8 +30,8 @@ function SvgWrapper({
 SvgWrapper.defaultProps = {
   extraClass: '',
   k: 'svg',
-  offset: BASE_SVG_OFFSET,
-  svgScale: BASE_SVG_SCALE,
+  offset: SVG_OFFSET,
+  svgScale: SVG_SCALE,
 }
 
 SvgWrapper.propTypes = {

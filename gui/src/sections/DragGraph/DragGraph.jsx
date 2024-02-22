@@ -19,14 +19,17 @@ import {
   DRAG_GRAPH_LABEL_SIZE,
   DRAG_GRAPH_SVG_SCALE_RADIUS,
   DRAG_GRAPH_SVG_VIEWBOX,
+  DRAG_GRAPH_SVG_SCALE,
 } from 'util/Constant/BaseConstantList'
+import {
+  calcRadiusUnit,
+  calcScaleRadiusList,
+} from 'util/UtilDragGraph/UtilDragGraph'
 import {
   calcAngleInRadians,
   calcBaseLineCoordList,
   calcPolygonCoordList,
   calcPolygonCoordString,
-  calcRadiusUnit,
-  calcScaleRadiusList,
 } from 'util/UtilSvg/UtilSvg'
 import { isFullMax } from 'util/UtilDragGraph/UtilDragGraphFilter'
 import LabelValPropType from 'prop-types/LabelVal.prop-type'
@@ -41,6 +44,8 @@ function DragGraph({
   heading,
   labelValList: lblValList,
 }) {
+  const scale = DRAG_GRAPH_SVG_SCALE
+  const scaleR = DRAG_GRAPH_SVG_SCALE_RADIUS
   const persisted = getJSONLocalStorage({ k: graphKey })
 
   const [graphOffset, setGraphOffset] = useState([0, 0])
@@ -71,7 +76,7 @@ function DragGraph({
   const max = fullMax / zoom
   const radiusUnit = calcRadiusUnit({ max })
   const angle = calcAngleInRadians({ valList })
-  const dragLineCoordList = calcPolygonCoordList({ angle, radiusUnit, valList })
+  const dragLineCoordList = calcPolygonCoordList({ angle, radiusUnit, scale, scaleR, valList })
   const baseLineCoordList = calcBaseLineCoordList({ angle, valList })
   const r = DRAG_GRAPH_SVG_SCALE_RADIUS
   const graphC = { x: r, y: r }

@@ -8,10 +8,18 @@ import {
   calcScaleRadiusList,
 } from './UtilSvg'
 
+import { numberPrecision } from 'util/Util/Util'
+import {
+  OUTCOME_MULTIPLIER,
+  OUTCOME_START,
+  SVG_SCALE,
+  SVG_SCALE_RADIUS,
+} from 'util/Constant/BaseConstantList'
+
 const valList = [1, 2, 4, 3, 5]
 const angle = calcAngleInRadians({ valList })
 const max = Math.max(...valList)
-const radiusUnit = calcRadiusUnit({ max })
+const radiusUnit = SVG_SCALE_RADIUS
 const coordList = calcPolygonCoordList({ angle, max, radiusUnit, valList })
 
 test('calcAngleInRadians()', () => {
@@ -23,52 +31,52 @@ test('calcBaseLineCoordList()', () => {
   [
     [
       [
-         320,
-        -160,
+         250,
+        -125,
       ],
       [
-         320,
-          27.3171,
-      ],
-    ],
-    [
-      [
-        776.508,
-        171.673,
-      ],
-      [
-        598.358,
-        229.557,
+         250,
+          21.3415,
       ],
     ],
     [
       [
-        602.135,
-        708.33,
+        606.647,
+        134.12,
       ],
       [
-        492.033,
-        556.786,
-      ],
-    ],
-    [
-      [
-        37.8597,
-        708.326,
-      ],
-      [
-        147.963,
-        556.784,
+        467.467,
+        179.341,
       ],
     ],
     [
       [
-        -136.505,
-        171.666,
+        470.418,
+        553.383,
       ],
       [
-        41.6431,
-        229.553,
+        384.401,
+        434.989,
+      ],
+    ],
+    [
+      [
+         29.5779,
+        553.379,
+      ],
+      [
+        115.596,
+        434.987,
+      ],
+    ],
+    [
+      [
+       -106.645,
+        134.114,
+      ],
+      [
+         32.5336,
+        179.338,
       ],
     ],
   ])
@@ -81,74 +89,14 @@ test('calcCircleRadius()', () => {
 test('calcPolygonCoordList()', () => {
   expect(coordList).toEqual(
   [
-    [320     , 269.44 ],
-    [416.171 , 288.752],
-    [438.873 , 483.616],
-    [230.844 , 442.711],
-    [ 79.5738, 241.878],
+    [ 250    ,    0     ],
+    [ 725.529,    95.4929],
+    [ 837.78 , 1059.02  ],
+    [-190.844, 856.759 ],
+    [-938.816,  -136.285 ],
   ])
 })
 
 test('calcPolygonCoordString()', () => {
-  expect(calcPolygonCoordString({ coordList })).toEqual('320,269.44 416.171,288.752 438.873,483.616 230.844,442.711 79.5738,241.878 320,269.44')
-})
-
-test('calcScaleRadiusList() - low max', () => {
-  expect(calcScaleRadiusList({ fullMax: 4, max: 4 })).toEqual({
-    highlight: 5,
-    scaleRadiusList: [
-      [ 63.2, false],
-      [126.4, false],
-      [189.6, false],
-      [252.8, false],
-    ],
-    scaleUnit: 1,
-  })
-})
-
-test('calcScaleRadiusList() - max 2', () => {
-  expect(calcScaleRadiusList({ fullMax: 2, max: 2 })).toEqual({
-    highlight: 1,
-    scaleRadiusList: [
-      [ 63.2,  false],
-      [126.4,   true],
-      [189.6,  false],
-      [252.8,   true],
-    ],
-    scaleUnit: 0.5,
-  })
-})
-
-test('calcScaleRadiusList() - high max', () => {
-  expect(calcScaleRadiusList({ fullMax: 5000, max: 5000 })).toEqual({
-    highlight: 1000,
-    scaleRadiusList: [
-      [ 10.112, false],
-      [ 20.224, false],
-      [ 30.336, false],
-      [ 40.448, false],
-      [ 50.56 ,  true],
-      [ 60.672, false],
-      [ 70.784, false],
-      [ 80.896, false],
-      [ 91.008, false],
-      [101.12 ,  true],
-      [111.232, false],
-      [121.344, false],
-      [131.456, false],
-      [141.568, false],
-      [151.68 ,  true],
-      [161.792, false],
-      [171.904, false],
-      [182.016, false],
-      [192.128, false],
-      [202.24 ,  true],
-      [212.352, false],
-      [222.464, false],
-      [232.576, false],
-      [242.688, false],
-      [252.8  ,  true],
-    ],
-    scaleUnit: 200,
-  })
+  expect(calcPolygonCoordString({ coordList })).toEqual('250,0 725.529,95.4929 837.78,1059.02 -190.844,856.759 -938.816,-136.285 250,0')
 })

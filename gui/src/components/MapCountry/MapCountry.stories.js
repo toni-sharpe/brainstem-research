@@ -7,7 +7,7 @@ export default {
 };
 
 const baseMapCountryProps = {
-  borderCoordList: [[78, 77],[87, 78],[120, 75],[121, 100],[113, 119],[98, 118],[70, 116],[74, 95]],
+  borderCoordList: [[[78, 77],[87, 78],[120, 75],[121, 100],[113, 119],[98, 118],[70, 116],[74, 95]]],
   countryName: 'Test name',
   cx: 25,
   cy: 25,
