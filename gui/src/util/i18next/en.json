@@ -218,7 +218,10 @@
     "paragraph7": "This page is not related to the original work but was more a result of earlier parts coming together to allow the user to look at the data in a slightly different way. Again they select axes, but in this case they can set several bars per grouping, then choose stats like range and deviation to have those bars show various details.",
     "heading7": "SVG",
     "link7": "/SVG",
-    "paragraph8": "This page is coming soon and will be various SVG built graphs."
+    "paragraph8": "This page shows a type of drag graph which is work in progress including zoomable points where more data will become available.",
+    "heading8": "World Map",
+    "link8": "/WorldMap",
+    "paragraph9": "A world map for exploring some of the ideas from OWID with my work in mind."
   },
 
   "Scatter": {

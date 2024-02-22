@@ -217,7 +217,10 @@
     "paragraph7": "Diese Seite hat nichts mit der ursprünglichen Arbeit zu tun, sondern ist eher das Ergebnis der Zusammenführung früherer Teile, die es dem Benutzer ermöglichen, die Daten auf eine etwas andere Weise zu betrachten. Auch hier werden die Achsen ausgewählt, aber in diesem Fall können mehrere Balken pro Gruppierung festgelegt werden, dann werden Statistiken wie Bereich und Abweichung ausgewählt, damit diese Balken verschiedene Details anzeigen.",
     "heading7": "SVG",
     "link7": "/SVG",
-    "paragraph8": "Diese Seite wird bald erscheinen und verschiedene SVG-Grafiken enthalten."
+    "paragraph8": "Diese Seite zeigt eine Art Schleppdiagramm, das in Arbeit ist und zoombare Punkte enthält, an denen weitere Daten verfügbar sein werden.",
+    "heading8": "World Map",
+    "link8": "/WorldMap",
+    "paragraph9": "Eine Weltkarte zur Erkundung einiger der Ideen von OWID mit Blick auf meine Arbeit."
   },
 
   "Scatter": {
