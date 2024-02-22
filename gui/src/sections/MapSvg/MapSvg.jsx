@@ -6,6 +6,8 @@ import {
   WORLD_MAP_SVG_CENTER_Y,
   WORLD_MAP_SVG_SCALE,
 } from 'util/Constant/BaseConstantList'
+import DragGraph from 'sections/DragGraph/DragGraph'
+import Histogram from 'sections/Histogram/Histogram'
 import MapAreaCenterPoint from 'components/MapAreaCenterPoint/MapAreaCenterPoint'
 import MapCountry from 'components/MapCountry/MapCountry'
 import MapObjectSimple from 'components/MapObjectSimple/MapObjectSimple'
@@ -14,12 +16,12 @@ import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { calcAccessibleHue } from 'util/UtilHue/UtilHue'
 
 import './MapSvg.scss'
 
 function MapSvg({
   currentYear,
-  mapDetailElement,
   mapDetailProps,
   mapDetailData,
 }) {
@@ -120,11 +122,15 @@ function MapSvg({
             })
           }
           { zoom >= 4 && currentCountryIdList.map(currentCountryId => {
+            const data = mapDetailData[currentCountryId]
+            const mapDetailElement = data.dragData
+              ? DragGraph
+              : Histogram
+
             let h = 50
             let w = 50
             const histogramHeight = 12
 
-            const data = mapDetailData[currentCountryId]
             if (data && data?.histogramBarGroupList?.length) {
               const { length } = data.histogramBarGroupList
               const totalBars = length * data.barCountPerBlock
@@ -133,6 +139,20 @@ function MapSvg({
               h = 165
               w = barWidth * totalBars + ((barWidth - 1) * data.barMargin / 100)
             }
+
+            const mapDetailProps = data.dragData
+              ? {
+                graphKey: currentCountryId,
+                heading: mapDetailData[currentCountryId].countryName,
+                labelValList: data.dragData
+              } : {
+                hueFn: calcAccessibleHue(),
+                translationSet: { barList: [], groupBy: 'ty' },
+                histogramHeight,
+                widthOverride: w,
+                graphLabel: mapDetailData[currentCountryId].countryName,
+              }
+
             return (
               <MapObjectDetailed
                 closeOnClick={() => {
@@ -151,9 +171,6 @@ function MapSvg({
                 {data && React.createElement(mapDetailElement, {
                   ...mapDetailProps,
                   ...data,
-                  graphLabel: mapDetailData[currentCountryId].countryName,
-                  histogramHeight,
-                  widthOverride: w,
                 })}
               </MapObjectDetailed>
             )
