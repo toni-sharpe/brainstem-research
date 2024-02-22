@@ -2,10 +2,13 @@ import { init, last, symmetricDifference } from 'ramda'
 import React, { useState } from 'react'
 
 import {
+  WORLD_MAP_LONGITUDE,
   WORLD_MAP_SVG_CENTER_X,
   WORLD_MAP_SVG_CENTER_Y,
   WORLD_MAP_SVG_SCALE,
 } from 'util/Constant/BaseConstantList'
+// import MapLatitude from 'components/MapLatitude/MapLatitude'
+// import MapLongitude from 'components/MapLongitude/MapLongitude'
 import MapAreaCenterPoint from 'components/MapAreaCenterPoint/MapAreaCenterPoint'
 import MapCountry from 'components/MapCountry/MapCountry'
 import MapObjectSimple from 'components/MapObjectSimple/MapObjectSimple'

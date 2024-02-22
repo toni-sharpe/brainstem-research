@@ -16,13 +16,13 @@
   background-color: rgba($white, 0.6);
   bottom: 0;
   display: flex;
+  height: 14vh;
   justify-content: center;
   left: 0;
   padding: var(--padding--medium);
   position: fixed;
   right: 0;
   width: 100vw;
-  height: 14vh;
 
   @media (min-width: $media-switch--medium) {
     height: 4vh;
