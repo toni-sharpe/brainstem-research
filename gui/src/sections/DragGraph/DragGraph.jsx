@@ -27,7 +27,7 @@ import {
   calcPolygonCoordString,
   calcRadiusUnit,
   calcScaleRadiusList,
-} from 'util/UtilDragGraph/UtilDragGraph'
+} from 'util/UtilSvg/UtilSvg'
 import { isFullMax } from 'util/UtilDragGraph/UtilDragGraphFilter'
 import LabelValPropType from 'prop-types/LabelVal.prop-type'
 import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'

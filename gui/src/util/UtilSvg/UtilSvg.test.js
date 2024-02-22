@@ -6,7 +6,7 @@ import {
   calcPolygonCoordString,
   calcRadiusUnit,
   calcScaleRadiusList,
-} from './UtilDragGraph'
+} from './UtilSvg'
 
 const valList = [1, 2, 4, 3, 5]
 const angle = calcAngleInRadians({ valList })

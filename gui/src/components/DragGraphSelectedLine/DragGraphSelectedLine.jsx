@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import SvgXyPropType from 'prop-types/SvgXy.prop-type'
-import { calcRadiusOfSelectedPoint } from 'util/UtilDragGraph/UtilDragGraph'
+import { calcRadiusOfSelectedPoint } from 'util/UtilSvg/UtilSvg'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
 import SvgLine from 'components/SvgLine/SvgLine'
 
