@@ -4,42 +4,48 @@ import React from 'react'
 import Button from 'components/Button/Button'
 import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
-import './ResetGraphButton.scss'
+import './ResetZoomButton.scss'
 
-function ResetGraphButton({
+function ResetZoomButton({
   extraStateFn,
   graphKey,
-  graphOffset,
+  graphOffset: [ox, oy],
   persisted,
   setGraphOffset,
   setZoom,
+  size,
   zoom,
 }) {
-  const currentlyReset = graphOffset === '0 0' && zoom === 1
+  const isDisabled = ox === 0 && oy === 0 && zoom === 1
 
   return (
     <Button
-      extraClass={currentlyReset ? '' : 'reset-graph-button__unset'}
-      isDisabled={currentlyReset}
-      k='resetGraphCenter'
-      label={currentlyReset ? '.' : '!'}
+      extraClass={!isDisabled ? 'reset-zoom-button__active' : ''}
+      isDisabled={isDisabled}
+      k='resetZoomButton'
+      label={isDisabled ? '-' : 'X'}
       onClick={() => {
         setJSONLocalStorage({ k: graphKey,  v: { zoom: 1 } })
-        setGraphOffset('0 0')
+        setGraphOffset([0, 0])
         setZoom(1)
         extraStateFn && extraStateFn()
       }}
-      size='medium'
+      size={size}
     />
   )
 }
 
-ResetGraphButton.propTypes = {
+ResetZoomButton.defaultProps = {
+  size: 'medium',
+}
+
+ResetZoomButton.propTypes = {
   extraStateFn: PropTypes.func,
-  graphOffset: PropTypes.string,
+  graphOffset: PropTypes.array,
   setGraphOffset: PropTypes.func,
   setZoom: PropTypes.func,
+  size: PropTypes.string,
   zoom: PropTypes.number,
 }
 
-export default ResetGraphButton
+export default ResetZoomButton

@@ -1,33 +1,26 @@
-import { pluck } from 'ramda'
+import PropTypes from 'prop-types'
 import React from 'react'
-import { variance } from 'simple-statistics'
 
-import { calcPolygonCoordString } from 'util/UtilDragGraph/UtilDragGraph'
+import { isCountryCircle } from 'util/UtilMapCountry/UtilMapCountry'
+import { calcPolygonCoordString } from 'util/UtilSvg/UtilSvg'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
+import SvgXyPropType from 'prop-types/SvgXy.prop-type'
+import BorderCoordListPropType from 'prop-types/BorderCoordList.prop-type'
 
 import './MapCountry.scss'
 
 function MapCountry({
   borderCoordList,
   countryName,
-  cx,
-  cy,
+  c,
   isSelected,
   zoom
 }) {
-  const xRange = variance(pluck(0, borderCoordList))
-  const yRange = variance(pluck(1, borderCoordList))
-  const isCircle =
-    xRange < 2
-    &&
-    yRange < 2
-    &&
-    ![
-      'Kosovo',
-      'Palestine',
-      'Azerbaijan',
-      'Luxembourg',
-    ].includes(countryName)
+  const isCircle = isCountryCircle({
+    borderCoordList,
+    countryName,
+  })
+
   const coordList = borderCoordList.map(([a, b]) => ([a * zoom , b * zoom]))
 
   const selectedClass = isSelected ? ' is-selected' : ''
@@ -44,7 +37,7 @@ function MapCountry({
               ? Math.max(zoom / 3, 10)
               : Math.max(zoom / 4, 16)
         }
-        c={{ x: cx, y: cy }}
+        c
       />
     )
     : (
@@ -54,6 +47,14 @@ function MapCountry({
         strokeOpacity={1}
       />
     )
+}
+
+MapCountry.propTypes = {
+  borderCoordList: BorderCoordListPropType,
+  countryName: PropTypes.string,
+  c: SvgXyPropType,
+  isSelected: PropTypes.bool,
+  zoom: PropTypes.number,
 }
 
 export default MapCountry

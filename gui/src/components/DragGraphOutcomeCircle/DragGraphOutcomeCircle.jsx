@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import SvgCircle from 'components/SvgCircle/SvgCircle'
-import { calcCircleRadius } from 'util/UtilDragGraph/UtilDragGraph'
+import { calcCircleRadius } from 'util/UtilSvg/UtilSvg'
 
 import './DragGraphOutcomeCircle.scss'
 

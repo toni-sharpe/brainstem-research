@@ -12,14 +12,32 @@ export default {
 };
 
 const baseMapSvgControlListProps = {
-
+  graphKey: 'test-sb',
+  graphOffset: [0, 0],
+  setGraphOffset: () => {},
+  setZoom: () => {},
+  zoom: 1,
 }
 
-export const Primary = {
+export const Zoom1IeNoZoomDisabledThings = {
   render: () => {
     return (
       <StoryBookPaddedWrapper>
         <MapSvgControlList {...baseMapSvgControlListProps} />
+      </StoryBookPaddedWrapper>
+    )
+  }
+};
+
+export const WithOffsetAndZoomRestable= {
+  render: () => {
+    const props = {
+      ...baseMapSvgControlListProps,
+      zoom: 5,
+    }
+    return (
+      <StoryBookPaddedWrapper>
+        <MapSvgControlList {...props} />
       </StoryBookPaddedWrapper>
     )
   }

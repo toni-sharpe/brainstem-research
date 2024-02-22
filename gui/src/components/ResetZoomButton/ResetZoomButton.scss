@@ -1,7 +1,7 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
-.reset-graph-button {
-  &__unset {
+.reset-zoom-button {
+  &__active {
     background-color: var(--red--medium);
   }
 }

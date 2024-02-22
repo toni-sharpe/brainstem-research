@@ -1,6 +1,5 @@
 import { filter, groupBy, map, pipe, prop, toPairs } from 'ramda'
 
-
 export function groupByAndCountPipe({ k }) {
   return pipe(
     groupBy(prop(k)),

@@ -1,97 +1,30 @@
 import {
-  calcAngleInRadians,
-  calcBaseLineCoordList,
-  calcCircleRadius,
-  calcPolygonCoordList,
-  calcPolygonCoordString,
-  calcRadiusUnit,
+  DRAG_GRAPH_MINIMUM_SELECTED_RADIUS,
+} from 'util/Constant/BaseConstantList'
+import {
   calcScaleRadiusList,
-} from './UtilDragGraph'
+  calcRadiusOfSelectedPoint,
+} from 'util/UtilDragGraph/UtilDragGraph'
 
-const valList = [1, 2, 4, 3, 5]
-const angle = calcAngleInRadians({ valList })
-const max = Math.max(...valList)
-const radiusUnit = calcRadiusUnit({ max })
-const coordList = calcPolygonCoordList({ angle, max, radiusUnit, valList })
+const testSuffix = `thn the minimum of ${DRAG_GRAPH_MINIMUM_SELECTED_RADIUS}`
 
-test('calcAngleInRadians()', () => {
-  expect(angle).toEqual(1.25664)
+test(`calcRadiusOfSelectedPoint() = 6 when the zoom / 6 less ${testSuffix}`, () => {
+  expect(calcRadiusOfSelectedPoint({ zoom: 17 })).toEqual(6)
+})
+test(`calcRadiusOfSelectedPoint() = 6 when the zoom / 6 equal ${testSuffix}`, () => {
+  expect(calcRadiusOfSelectedPoint({ zoom: 18 })).toEqual(6)
+})
+test(`calcRadiusOfSelectedPoint() > 6 when the zoom / 6 > ${testSuffix}`, () => {
+  expect(calcRadiusOfSelectedPoint({ zoom: 19 })).toEqual(6.33)
+})
+test(`calcRadiusOfSelectedPoint() well above`, () => {
+  expect(calcRadiusOfSelectedPoint({ zoom: 123 })).toEqual(41)
+})
+test(`calcRadiusOfSelectedPoint() well below`, () => {
+  expect(calcRadiusOfSelectedPoint({ zoom: 1 })).toEqual(6)
 })
 
-test('calcBaseLineCoordList()', () => {
-  expect(calcBaseLineCoordList({ angle, valList })).toEqual(
-  [
-    [
-      [
-         320,
-        -160,
-      ],
-      [
-         320,
-          27.3171,
-      ],
-    ],
-    [
-      [
-        776.508,
-        171.673,
-      ],
-      [
-        598.358,
-        229.557,
-      ],
-    ],
-    [
-      [
-        602.135,
-        708.33,
-      ],
-      [
-        492.033,
-        556.786,
-      ],
-    ],
-    [
-      [
-        37.8597,
-        708.326,
-      ],
-      [
-        147.963,
-        556.784,
-      ],
-    ],
-    [
-      [
-        -136.505,
-        171.666,
-      ],
-      [
-        41.6431,
-        229.553,
-      ],
-    ],
-  ])
-})
 
-test('calcCircleRadius()', () => {
-  expect(calcCircleRadius({ value: 10, zoom: 2 })).toEqual(55)
-})
-
-test('calcPolygonCoordList()', () => {
-  expect(coordList).toEqual(
-  [
-    [320     , 269.44 ],
-    [416.171 , 288.752],
-    [438.873 , 483.616],
-    [230.844 , 442.711],
-    [ 79.5738, 241.878],
-  ])
-})
-
-test('calcPolygonCoordString()', () => {
-  expect(calcPolygonCoordString({ coordList })).toEqual('320,269.44 416.171,288.752 438.873,483.616 230.844,442.711 79.5738,241.878 320,269.44')
-})
 
 test('calcScaleRadiusList() - low max', () => {
   expect(calcScaleRadiusList({ fullMax: 4, max: 4 })).toEqual({

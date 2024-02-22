@@ -180,17 +180,20 @@ export const GANTT_TOGGLE_LIST = {
 /*
  * SVG
  */
-export const BASE_SVG_SCALE = 500
-export const BASE_SVG_OFFSET = 0
+export const SVG_SCALE = 500
+export const SVG_SCALE_RADIUS = SVG_SCALE / 2
+export const SVG_OFFSET = 0
+export const OUTCOME_MULTIPLIER = 2
+export const OUTCOME_START = 15
 
 /*
  * Drag graph
  */
+export const DRAG_GRAPH_LABEL_SIZE = 52
+export const DRAG_GRAPH_MINIMUM_SELECTED_RADIUS = 6
 export const DRAG_GRAPH_SVG_SCALE = 640
 export const DRAG_GRAPH_SVG_SCALE_RADIUS = DRAG_GRAPH_SVG_SCALE / 2
-export const DRAG_GRAPH_SVG_VIEWBOX = `${BASE_SVG_OFFSET} ${BASE_SVG_OFFSET} ${DRAG_GRAPH_SVG_SCALE} ${DRAG_GRAPH_SVG_SCALE}`
-export const DRAG_GRAPH_OUTCOME_START = 15
-export const DRAG_GRAPH_OUTCOME_MULTIPLIER = 2
+export const DRAG_GRAPH_SVG_VIEWBOX = `${SVG_OFFSET} ${SVG_OFFSET} ${DRAG_GRAPH_SVG_SCALE} ${DRAG_GRAPH_SVG_SCALE}`
 
 /*
  * Scatter graph
@@ -208,6 +211,14 @@ export const SCATTER_AXIS_LABEL_OFFSET = 36
 /*
  * World map
  */
+export const NON_ISLAND_TINY_TERRIROTORIES = [
+  'Azerbaijan',
+  'Kosovo',
+  'Luxembourg',
+  'Oman',
+  'Palestine',
+]
+export const TINY_TERRIROTORY_MAX = 1
 export const WORLD_MAP_SVG_SCALE_WIDTH = 1000
 export const WORLD_MAP_SVG_SCALE_HEIGHT = 440
 export const WORLD_MAP_SVG_CENTER_X = WORLD_MAP_SVG_SCALE_WIDTH / 2
