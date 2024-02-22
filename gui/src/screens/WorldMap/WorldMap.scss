@@ -1,5 +1,11 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .world-map {
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 78vh;
+  @media (min-width: $media-switch--medium) {
+    height: 83vh;
+  }
 }

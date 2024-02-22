@@ -9,11 +9,7 @@ import Button from 'components/Button/Button'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
 import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
-import {
-  calcBound,
-  calcMove,
-  calcNewGraphOffset,
-} from 'util/UtilMapControlList/UtilMapControlList'
+import { calcNewGraphOffset } from 'util/UtilMapControlList/UtilMapControlList'
 
 import './MapSvgControlList.scss'
 
@@ -37,9 +33,12 @@ function MapSvgControlList({
     size: 'medium',
   }
 
+  const horz_bound = 0 - (WORLD_MAP_SVG_SCALE_WIDTH * zoom)
+  const vert_bound = 0 - (WORLD_MAP_SVG_SCALE_HEIGHT * zoom)
+
   return (
     <ul
-      className='map-svg-control-list row-layout space-children--wide-with-border'
+      className='map-svg-control-list'
     >
       <li>
         <ol className='row-layout space-children'>
@@ -70,10 +69,13 @@ function MapSvgControlList({
               {...movementButtonCommonProps}
               label='→ West'
               onClick={() => {
-                let m = HORZ_MOVE
-                let newX = x - m
-                if (newX <= calcBound({ m, step: STEP, zoom })) { newX = calcMove({ m }) }
-                setGraphOffset([newX, y])
+                let m = x
+                if (m > horz_bound) {
+                  m = x - HORZ_MOVE
+                } else {
+                  m = horz_bound
+                }
+                setGraphOffset([m, y])
               }}
             />
           </li>
@@ -82,10 +84,13 @@ function MapSvgControlList({
               {...movementButtonCommonProps}
               label='↓ South'
               onClick={() => {
-                let m = VERT_MOVE
-                let newY = y - m
-                if (newY <= calcBound({ m, step: STEP, zoom })) { newY = calcMove({ m }) }
-                setGraphOffset([x, newY])
+                let m = y
+                if (m > vert_bound) {
+                  m = y - VERT_MOVE
+                } else {
+                  m = vert_bound
+                }
+                setGraphOffset([x, m])
               }}
             />
           </li>
@@ -93,12 +98,13 @@ function MapSvgControlList({
       </li>
       <li>
         <ol
-          className='map-svg-control-list__zoom row-layout space-children'
+          className='map-svg-control-list__zoom'
         >
-          <li>
+          <li className='map-svg-control-list__zoom-label'>
             <span>Zoom:</span>
           </li>
-          <li className='row-layout space-children'>
+
+          <li className='map-svg-control-list__zoom-buttons row-layout space-children'>
             { WORLD_MAP_ZOOM_LIST.map(z => {
               const newGraphOffset = calcNewGraphOffset({
                 x,
@@ -122,8 +128,6 @@ function MapSvgControlList({
                 />
               )
             }) }
-          </li>
-          <li>
             <ResetZoomButton
               graphKey={graphKey}
               graphOffset={graphOffset}
