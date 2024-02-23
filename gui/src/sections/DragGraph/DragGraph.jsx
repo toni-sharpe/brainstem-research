@@ -6,7 +6,6 @@ import { type } from 'ramda'
 import DragGraphButton from 'components/DragGraphButton/DragGraphButton'
 import DragGraphEdgeFadeout from 'components/DragGraphEdgeFadeout/DragGraphEdgeFadeout'
 import DragGraphHeader from 'components/DragGraphHeader/DragGraphHeader'
-import DragGraphOutcomeCircle from 'components/DragGraphOutcomeCircle/DragGraphOutcomeCircle'
 import DragGraphPointLabel from 'components/DragGraphPointLabel/DragGraphPointLabel'
 import DragGraphSelectedLine from 'components/DragGraphSelectedLine/DragGraphSelectedLine'
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
@@ -18,7 +17,6 @@ import ZoomButton from 'components/ZoomButton/ZoomButton'
 import {
   DRAG_GRAPH_LABEL_SIZE,
   DRAG_GRAPH_SVG_SCALE_RADIUS,
-  DRAG_GRAPH_SVG_VIEWBOX,
   DRAG_GRAPH_SVG_SCALE,
   DRAG_GRAPH_SVG_ZOOM_LIST,
 } from 'util/Constant/BaseConstantList'
