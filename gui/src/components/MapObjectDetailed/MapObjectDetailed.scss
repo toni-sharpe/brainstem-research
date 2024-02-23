@@ -28,6 +28,20 @@
       background-color: var(--menu--green-hover);
       color: var(--black);
     }
+
+    &.no-data {
+      &.no-data {
+        background-color: var(--red--dark);
+        color:  var(--white);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+      }
+    }
   }
 
   &__details {

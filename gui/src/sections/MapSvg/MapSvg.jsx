@@ -1,4 +1,4 @@
-import { init, last, symmetricDifference } from 'ramda'
+import { init, last, symmetricDifference, toPairs } from 'ramda'
 import React, { useState } from 'react'
 
 import {
@@ -6,6 +6,8 @@ import {
   WORLD_MAP_SVG_CENTER_Y,
   WORLD_MAP_SVG_SCALE,
 } from 'util/Constant/BaseConstantList'
+import DragGraph from 'sections/DragGraph/DragGraph'
+import Histogram from 'sections/Histogram/Histogram'
 import MapAreaCenterPoint from 'components/MapAreaCenterPoint/MapAreaCenterPoint'
 import MapCountry from 'components/MapCountry/MapCountry'
 import MapObjectSimple from 'components/MapObjectSimple/MapObjectSimple'
@@ -13,25 +15,25 @@ import MapObjectDetailed from 'components/MapObjectDetailed/MapObjectDetailed'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
-import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { getJSONLocalStorage, setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { calcAccessibleHue } from 'util/UtilHue/UtilHue'
 
 import './MapSvg.scss'
 
 function MapSvg({
   currentYear,
-  mapDetailElement,
   mapDetailProps,
   mapDetailData,
 }) {
   const graphKey = 'mapZoom'
   const persisted = getJSONLocalStorage({ k: graphKey })
 
-  const [currentCountryList, setCurrentCountryList] = useState([])
-  const [graphOffset, setGraphOffset] = useState([0, 0])
+  const [currentCountryIdList, setCurrentCountryList] = useState([])
+  const [graphOffset, setGraphOffset] = useState(persisted?.graphOffset || [0, 0])
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
 
   let currentCX = {}
-  let currentCy = {}
+  let currentCY = {}
   let isCurrentCountry
 
   return (
@@ -51,8 +53,8 @@ function MapSvg({
       >
         <g key='guides' transform={`translate(${graphOffset})`}>
           {
-            WorldBorderList[currentYear].map(({ countryBorder, countryName }, i) => {
-              isCurrentCountry = currentCountryList.includes(countryName)
+            toPairs(WorldBorderList[currentYear]).map(([countryId, { countryBorder, countryName }], i) => {
+              isCurrentCountry = currentCountryIdList.includes(countryId)
 
               return countryBorder.map((subBorder, j) => {
                 const { c } = last(subBorder)
@@ -62,8 +64,8 @@ function MapSvg({
                 const cy = c.y * zoom
 
                 if (isCurrentCountry) {
-                  currentCX = { ...currentCX, [countryName]: cx }
-                  currentCy = { ...currentCy, [countryName]: cy }
+                  currentCX = { ...currentCX, [countryId]: cx }
+                  currentCY = { ...currentCY, [countryId]: cy }
                 }
 
                 const offsetX = WORLD_MAP_SVG_CENTER_X - cx
@@ -73,15 +75,18 @@ function MapSvg({
                   <g
                     key={`${c.x}${c.y}`}
                     onClick={() => {
-                      setGraphOffset([offsetX, offsetY])
+                      const offset = [offsetX, offsetY]
+                      setGraphOffset(offset)
                       setCurrentCountryList(symmetricDifference(
-                        currentCountryList,
-                        [countryName],
+                        currentCountryIdList,
+                        [countryId],
                       ))
+                      setJSONLocalStorage({ k: graphKey, v: offset })
                     }}
                   >
                     <MapCountry
                       borderCoordList={borderCoordList}
+                      countryId={countryId}
                       countryName={countryName}
                       c={{ x: cx, y: cy }}
                       isSelected={isCurrentCountry}
@@ -89,7 +94,7 @@ function MapSvg({
                     />
                     { zoom >= 2 && zoom <= 3 && (
                       <MapObjectSimple
-                        countryName={countryName}
+                        countryId={countryId}
                         size='small'
                         h={14}
                         w={48}
@@ -99,7 +104,7 @@ function MapSvg({
                     ) }
                     { (zoom >= 4 && !isCurrentCountry) && (
                       <MapObjectSimple
-                        countryName={countryName}
+                        countryId={countryId}
                         size='medium'
                         h={18}
                         w={80}
@@ -118,12 +123,17 @@ function MapSvg({
               })
             })
           }
-          { zoom >= 4 && currentCountryList.map(currentCountry => {
-            let h = 50
-            let w = 50
-            const histogramHeight = 12
+          { zoom >= 4 && currentCountryIdList.map(currentCountryId => {
+            const data = mapDetailData[currentCountryId]
+            const { countryName } = WorldBorderList[currentYear][currentCountryId]
+            const mapDetailElement = data.dragData
+              ? DragGraph
+              : Histogram
 
-            const data = mapDetailData[currentCountry]
+            let mapDetailProps
+            let h
+            let w
+
             if (data && data?.histogramBarGroupList?.length) {
               const { length } = data.histogramBarGroupList
               const totalBars = length * data.barCountPerBlock
@@ -131,28 +141,59 @@ function MapSvg({
 
               h = 165
               w = barWidth * totalBars + ((barWidth - 1) * data.barMargin / 100)
+
+              mapDetailProps = {
+                hueFn: calcAccessibleHue(),
+                isPopulated: true,
+                translationSet: { barList: [], groupBy: 'ty' },
+                histogramHeight: 12,
+                widthOverride: w,
+              }
             }
+
+            if (data && data?.dragData?.length) {
+              h = 265
+              w = 200
+
+              mapDetailProps = {
+                buttonSize: 'small-tiny',
+                dragGraphLabelSize: 32,
+                dragGraphZoomList: [0.2, 0.5, 1, 2],
+                graphKey: currentCountryId,
+                includeExtreme: true,
+                isPopulated: true,
+                isOnMap: true,
+                labelValList: data.dragData,
+                pointButtonLabel: 'map',
+                scale: w,
+                scaleToLabelRatio: 2,
+                scaleR: w / 2,
+                showZoomLabel: false,
+                showExtremeButton: false,
+                z: 1,
+              }
+            }
+
             return (
               <MapObjectDetailed
                 closeOnClick={() => {
                   setCurrentCountryList(symmetricDifference(
-                    currentCountryList,
-                    [currentCountry],
+                    currentCountryIdList,
+                    [currentCountryId],
                   ))
                 }}
-                countryName={currentCountry}
+                countryId={currentCountryId}
+                countryName={countryName}
+                isPopulated={mapDetailProps?.isPopulated}
                 size='medium'
                 h={h}
                 w={w}
-                x={currentCX[currentCountry]}
-                y={currentCy[currentCountry]}
+                x={currentCX[currentCountryId]}
+                y={currentCY[currentCountryId]}
               >
                 {data && React.createElement(mapDetailElement, {
                   ...mapDetailProps,
                   ...data,
-                  graphLabel: currentCountry,
-                  histogramHeight,
-                  widthOverride: w,
                 })}
               </MapObjectDetailed>
             )

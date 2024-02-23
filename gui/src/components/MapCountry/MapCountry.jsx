@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { type } from 'ramda'
 
 import { isCountryCircle } from 'util/UtilMapCountry/UtilMapCountry'
 import { calcPolygonCoordString } from 'util/UtilSvg/UtilSvg'
@@ -27,7 +28,7 @@ function MapCountry({
   const fadeAwayClass = !isSelected && zoom >= 7 ? ' drop-back' : ''
   const className = `map-country${selectedClass}${fadeAwayClass}`
 
-  return isCircle
+  return isCircle && type(c, 'Object')
     ? (
       <SvgCircle
         extraClass={className}

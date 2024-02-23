@@ -24,4 +24,15 @@
   &__zoom {
     align-items: center;
   }
+
+  &__scale-detail {
+    &.is-on-map {
+      border: 1px solid $grey--light;
+      &.drag-graph__scale-detail {
+        &.drag-graph__scale-detail {
+          border-bottom: 1px solid $grey--light;
+        }
+      }
+    }
+  }
 }

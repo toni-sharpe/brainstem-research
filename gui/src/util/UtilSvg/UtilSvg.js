@@ -38,6 +38,7 @@ export function calcAngleInRadians({ valList }) {
 export function calcBaseLineCoordList({
   angle,
   scale = SVG_SCALE,
+  scaleToLabelRatio = 1.64,
   scaleR = SVG_SCALE_RADIUS,
   valList
 }) {
@@ -47,7 +48,7 @@ export function calcBaseLineCoordList({
     const a = angle * i
     return [
       calcXY({ a, r, scale, scaleR }),
-      calcXY({ a, r: r / 1.64, scale, scaleR })
+      calcXY({ a, r: r / scaleToLabelRatio, scale, scaleR })
     ]
   })
 }

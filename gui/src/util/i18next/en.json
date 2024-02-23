@@ -441,9 +441,11 @@
 
   "DragGraphButton": {
     "aveSeverityShown": "Sev.",
-    "incExtremes": "+",
+    "incExtreme": "+",
     "minToMaxMultiplier": "mx=X{{multiplier}}mn",
-    "outcomeShown": "Outcome"
+    "outcomeShown": "Outcome",
+    "map": "M",
+    "sbZoom": "SB Zoom"
   },
 
   "ResetGraphButton": {
@@ -451,6 +453,8 @@
   },
 
   "ZoomButton": {
+    "0.2": "0.2",
+    "0.5": "0.5",
     "1": "1",
     "2": "2",
     "3": "3",

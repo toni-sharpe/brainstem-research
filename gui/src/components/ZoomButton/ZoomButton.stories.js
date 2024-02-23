@@ -6,7 +6,7 @@ export default {
 };
 
 const baseZoomButtonProps = {
-  k: 'zoom',
+  k: '1',
   stateFn: () => {}
 }
 
@@ -15,6 +15,20 @@ export const Primary = {
     return (
       <ZoomButton
         {...baseZoomButtonProps}
+      />
+    )
+  }
+};
+
+export const DifferentNumber = {
+  render: () => {
+    const props = {
+      ...baseZoomButtonProps,
+      k: 10,
+    }
+    return (
+      <ZoomButton
+        {...props}
       />
     )
   }

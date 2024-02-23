@@ -11,40 +11,58 @@ function MapObjectDetailed({
   children,
   closeOnClick,
   countryName,
-  size,
+  isPopulated,
   h,
   w,
   x,
   y,
 }) {
+  const internalW = isPopulated ? w : 75
+  const internalH = isPopulated ? h : 75
   return (
     <foreignObject
       key={'test'}
-      x={x - (w / 2)}
-      y={y - (h / 2)}
-      width={w}
-      height={h}
+      x={x - (internalW / 2)}
+      y={y - (internalH / 2)}
+      width={internalW}
+      height={internalH}
     >
       <article
         className='map-object-detailed'
-        style={{ height: `${h}px`, width: `${w}px` }}
+        style={{ height: `${internalH}px`, width: `${internalW}px` }}
       >
         <Button
-          extraClass='map-object-detailed__close-button'
-          label='X'
+          extraClass={`map-object-detailed__close-button${isPopulated ? '' : ' no-data'}`}
+          label={`${isPopulated ? 'X' : 'NO DATA [X]'}`}
           onClick={closeOnClick}
           size='small'
+          style={{
+            fontSize: `${isPopulated ? 'var(--font-size--small)' : 'var(--font-size--large)'}`,
+            height: `${isPopulated ? '25' : '75'}px`,
+            width: `${isPopulated ? '25' : '75'}px`,
+          }}
           title={i18next.t(`${i18nBase}.close`, { countryName })}
         />
-        <section className='map-object-detailed__details'>
-          { children
-              ? children
-              : 'Lorem ipsum some detail'
-          }
-        </section>
+        { isPopulated && (
+          <section className='map-object-detailed__details'>
+            { children
+                ? children
+                : 'Lorem ipsum some detail'
+            }
+          </section>
+        ) }
       </article>
     </foreignObject>
   )
+}
+
+MapObjectDetailed.defaultProps = {
+
+}
+
+
+MapObjectDetailed.propTypes = {
+
 }
 
 export default MapObjectDetailed

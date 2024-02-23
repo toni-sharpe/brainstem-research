@@ -7,13 +7,13 @@ import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 import './ResetZoomButton.scss'
 
 function ResetZoomButton({
+  buttonSize,
   extraStateFn,
   graphKey,
   graphOffset: [ox, oy],
   persisted,
   setGraphOffset,
   setZoom,
-  size,
   zoom,
 }) {
   const isDisabled = ox === 0 && oy === 0 && zoom === 1
@@ -30,13 +30,13 @@ function ResetZoomButton({
         setZoom(1)
         extraStateFn && extraStateFn()
       }}
-      size={size}
+      size={buttonSize}
     />
   )
 }
 
 ResetZoomButton.defaultProps = {
-  size: 'medium',
+  buttonSize: 'medium',
 }
 
 ResetZoomButton.propTypes = {
@@ -44,7 +44,7 @@ ResetZoomButton.propTypes = {
   graphOffset: PropTypes.array,
   setGraphOffset: PropTypes.func,
   setZoom: PropTypes.func,
-  size: PropTypes.string,
+  buttonSize: PropTypes.string,
   zoom: PropTypes.number,
 }
 
