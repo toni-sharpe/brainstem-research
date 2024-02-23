@@ -40,18 +40,21 @@ function MapObjectDetailed({
           size='small'
           style={{
             fontSize: `${isPopulated ? 'var(--font-size--small)' : 'var(--font-size--large)'}`,
-            height: `${isPopulated ? '25' : '75'}px`,
-            width: `${isPopulated ? '25' : '75'}px`,
+            height: `${isPopulated ? '15' : '75'}px`,
+            width: `${isPopulated ? '15' : '75'}px`,
           }}
           title={i18next.t(`${i18nBase}.close`, { countryName })}
         />
         { isPopulated && (
-          <section className='map-object-detailed__details'>
-            { children
-                ? children
-                : 'Lorem ipsum some detail'
-            }
-          </section>
+          <>
+            { countryName && (<header className='map-object-detailed__heading'>{countryName}</header>) }
+            <section className='map-object-detailed__details'>
+              { children
+                  ? children
+                  : 'Lorem ipsum some detail'
+              }
+            </section>
+          </>
         ) }
       </article>
     </foreignObject>
