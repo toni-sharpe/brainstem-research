@@ -25,8 +25,7 @@ function MapCountry({
   const coordList = borderCoordList.map(([a, b]) => ([a * zoom , b * zoom]))
 
   const selectedClass = isSelected ? ' is-selected' : ''
-  const fadeAwayClass = !isSelected && zoom >= 7 ? ' drop-back' : ''
-  const className = `map-country${selectedClass}${fadeAwayClass}`
+  const className = `map-country${selectedClass}`
 
   return isCircle && type(c, 'Object')
     ? (

@@ -9,6 +9,7 @@ function StoryBookSvgWrapper({
   children,
   offset,
   scale,
+  svgScale,
 }) {
   return (
     <div style={{
@@ -19,7 +20,10 @@ function StoryBookSvgWrapper({
     }}>
       <SvgWrapper
         className='story-book-svg-wrapper'
-        svgScale={`${offset.join(' ')} ${scale} ${scale}`}
+        svgScale={svgScale
+          ? svgScale
+          : `${offset.join(' ')} ${scale} ${scale}`
+        }
       >
         {children}
       </SvgWrapper>
