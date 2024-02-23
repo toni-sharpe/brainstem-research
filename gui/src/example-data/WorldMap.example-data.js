@@ -6,7 +6,13 @@ const mapDetailData = {
   5: {},
   6: {},
   7: {},
-  8: {},
+  8: {
+    dragData: [
+      ['k1', { length:  56 }],
+      ['k2', { length:  21 }],
+      ['k3', { length:  21 }],
+      ['k4', { length:  12 }],
+  ]},
   9: {},
   10: {},
   11: {},
@@ -17,10 +23,19 @@ const mapDetailData = {
   16: {},
   17: {},
   18: {},
-  19: {},
+  19: {
+    dragData: [
+      ['k1', { length: 101 }],
+      ['k2', { length:   1 }],
+  ]},
   20: {},
   21: {},
-  22: {},
+  22: {
+    dragData: [
+      ['k1', { length:  56 }],
+      ['k2', { length:  56 }],
+      ['k3', { length:  56 }],
+  ]},
   23: {},
   24: {},
   25: {},
@@ -31,9 +46,23 @@ const mapDetailData = {
   30: {},
   31: {},
   32: {},
-  33: {},
+  33: {
+    dragData: [
+      ['k1', { length:  56 }],
+      ['k2', { length:  54 }],
+      ['k3', { length:  51 }],
+      ['k4', { length:  45 }],
+      ['k5', { length:  46 }],
+      ['k6', { length:  47 }],
+      ['k7', { length:  49 }],
+  ]},
   34: {},
-  35: {},
+  35: {
+    dragData: [
+      ['k1', { length:  87 }],
+      ['k2', { length:   9 }],
+      ['k3', { length:   8 }],
+  ]},
   36: {},
   37: {},
   38: {},
@@ -43,11 +72,21 @@ const mapDetailData = {
   42: {},
   43: {},
   44: {},
-  45: {},
+  45: {
+    dragData: [
+      ['k1', { length:  23 }],
+      ['k2', { length:  45 }],
+      ['k3', { length:  34 }],
+  ]},
   46: {},
   47: {},
   48: {},
-  49: {},
+  49: {
+    dragData: [
+      ['k1', { length:  12 }],
+      ['k2', { length:  16 }],
+      ['k3', { length:  15 }],
+  ]},
   50: {},
   51: {},
   52: {},
@@ -78,7 +117,12 @@ const mapDetailData = {
   57: {},
   58: {},
   59: {},
-  60: {},
+  60: {
+    dragData: [
+      ['k1', { length: 98 }],
+      ['k2', { length: 94 }],
+    ]
+  },
   61: {},
   62: {},
   63: {},
@@ -90,7 +134,13 @@ const mapDetailData = {
   69: {},
   70: {},
   71: {},
-  72: {},
+  72: {
+    dragData: [
+      ['k1', { length:  4 }],
+      ['k2', { length:  2 }],
+      ['k3', { length:  1 }],
+    ]
+  },
   73: {},
   74: {},
   75: {},
@@ -278,8 +328,24 @@ const mapDetailData = {
   127: {},
   128: {},
   129: {},
-  130: {},
-  131: {},
+  130: {
+    dragData: [
+      ['k1', { length:  1 }],
+      ['k2', { length: 19 }],
+      ['k3', { length: 19 }],
+      ['k4', { length: 12 }],
+      ['k5', { length: 12 }],
+    ]
+  },
+  131: {
+    dragData: [
+      ['k1', { length: 23 }],
+      ['k2', { length: 25 }],
+      ['k3', { length: 23 }],
+      ['k4', { length: 14 }],
+      ['k5', { length: 12 }],
+    ]
+  },
   132: {},
   133: {},
   134: {},
@@ -327,7 +393,15 @@ const mapDetailData = {
       ['20-30',{ symp_1: [4, 14], test_1: [1,  7] }],
     ],
   },
-  160: {},
+  160: {
+    dragData: [
+      ['k1', { length: 23 }],
+      ['k2', { length: 25 }],
+      ['k3', { length: 54 }],
+      ['k4', { length: 54 }],
+      ['k5', { length: 12 }],
+    ]
+  },
   161: {},
   162: {},
   163: {},
@@ -347,10 +421,30 @@ const mapDetailData = {
   177: {},
   178: {},
   179: {},
-  180: {},
+  180: {
+    dragData: [
+      ['k1', { length: 27 }],
+      ['k2', { length: 12 }],
+      ['k3', { length: 26 }],
+      ['k4', { length: 29 }],
+      ['k5', { length: 35 }],
+      ['k2', { length: 22 }],
+      ['k3', { length: 22 }],
+      ['k4', { length: 59 }],
+      ['k5', { length: 55 }],
+    ]
+  },
   181: {},
   182: {},
-  183: {},
+  183: {
+    dragData: [
+      ['k1', { length: 27 }],
+      ['k2', { length: 25 }],
+      ['k3', { length: 26 }],
+      ['k4', { length: 26 }],
+      ['k5', { length: 45 }],
+    ]
+  },
   184: {},
   185: {},
   186: {},
