@@ -15,7 +15,7 @@ import MapObjectDetailed from 'components/MapObjectDetailed/MapObjectDetailed'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
-import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { getJSONLocalStorage, setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 import { calcAccessibleHue } from 'util/UtilHue/UtilHue'
 
 import './MapSvg.scss'
@@ -29,7 +29,7 @@ function MapSvg({
   const persisted = getJSONLocalStorage({ k: graphKey })
 
   const [currentCountryIdList, setCurrentCountryList] = useState([])
-  const [graphOffset, setGraphOffset] = useState([0, 0])
+  const [graphOffset, setGraphOffset] = useState(persisted?.graphOffset || [0, 0])
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
 
   let currentCX = {}
@@ -75,11 +75,13 @@ function MapSvg({
                   <g
                     key={`${c.x}${c.y}`}
                     onClick={() => {
-                      setGraphOffset([offsetX, offsetY])
+                      const offset = [offsetX, offsetY]
+                      setGraphOffset(offset)
                       setCurrentCountryList(symmetricDifference(
                         currentCountryIdList,
                         [countryId],
                       ))
+                      setJSONLocalStorage({ k: graphKey, v: offset })
                     }}
                   >
                     <MapCountry
@@ -123,13 +125,14 @@ function MapSvg({
           }
           { zoom >= 4 && currentCountryIdList.map(currentCountryId => {
             const data = mapDetailData[currentCountryId]
+            const { countryName } = WorldBorderList[currentYear][currentCountryId]
             const mapDetailElement = data.dragData
               ? DragGraph
               : Histogram
 
-            let h = 50
-            let w = 50
-            const histogramHeight = 12
+            let mapDetailProps
+            let h
+            let w
 
             if (data && data?.histogramBarGroupList?.length) {
               const { length } = data.histogramBarGroupList
@@ -138,20 +141,38 @@ function MapSvg({
 
               h = 165
               w = barWidth * totalBars + ((barWidth - 1) * data.barMargin / 100)
+
+              mapDetailProps = {
+                hueFn: calcAccessibleHue(),
+                isPopulated: true,
+                translationSet: { barList: [], groupBy: 'ty' },
+                histogramHeight: 12,
+                widthOverride: w,
+              }
             }
 
-            const mapDetailProps = data.dragData
-              ? {
+            if (data && data?.dragData?.length) {
+              h = 265
+              w = 200
+
+              mapDetailProps = {
+                buttonSize: 'small-tiny',
+                dragGraphLabelSize: 32,
+                dragGraphZoomList: [0.2, 0.5, 1, 2],
                 graphKey: currentCountryId,
-                heading: mapDetailData[currentCountryId].countryName,
-                labelValList: data.dragData
-              } : {
-                hueFn: calcAccessibleHue(),
-                translationSet: { barList: [], groupBy: 'ty' },
-                histogramHeight,
-                widthOverride: w,
-                graphLabel: mapDetailData[currentCountryId].countryName,
+                includeExtreme: true,
+                isPopulated: true,
+                isOnMap: true,
+                labelValList: data.dragData,
+                pointButtonLabel: 'map',
+                scale: w,
+                scaleToLabelRatio: 2,
+                scaleR: w / 2,
+                showZoomLabel: false,
+                showExtremeButton: false,
+                z: 1,
               }
+            }
 
             return (
               <MapObjectDetailed
@@ -162,6 +183,8 @@ function MapSvg({
                   ))
                 }}
                 countryId={currentCountryId}
+                countryName={countryName}
+                isPopulated={mapDetailProps?.isPopulated}
                 size='medium'
                 h={h}
                 w={w}

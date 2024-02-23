@@ -49,7 +49,9 @@ function MapSvgControlList({
               onClick={() => {
                 let newX = x + HORZ_MOVE
                 if (newX >= 0) { newX = 0 }
-                setGraphOffset([newX, y])
+                const offset = [newX, y]
+                setGraphOffset(offset)
+                setJSONLocalStorage({ k: graphKey, v: { graphOffset, zoom } })
               }}
             />
           </li>
@@ -60,7 +62,9 @@ function MapSvgControlList({
               onClick={() => {
                 let newY = y + VERT_MOVE
                 if (newY >= 0) { newY = 0 }
-                setGraphOffset([x, newY])
+                const offset = [x, newY]
+                setGraphOffset(offset)
+                setJSONLocalStorage({ k: graphKey, v: { graphOffset, zoom } })
               }}
             />
           </li>
@@ -75,7 +79,9 @@ function MapSvgControlList({
                 } else {
                   m = horz_bound
                 }
-                setGraphOffset([m, y])
+              const offset = [m, y]
+                setGraphOffset(offset)
+                setJSONLocalStorage({ k: graphKey, v: { graphOffset, zoom } })
               }}
             />
           </li>
@@ -90,7 +96,9 @@ function MapSvgControlList({
                 } else {
                   m = vert_bound
                 }
-                setGraphOffset([x, m])
+              const offset = [x, m]
+                setGraphOffset(offset)
+                setJSONLocalStorage({ k: graphKey, v: { graphOffset, zoom } })
               }}
             />
           </li>
@@ -123,7 +131,7 @@ function MapSvgControlList({
                   stateFn={(newVal) => {
                     setGraphOffset(newGraphOffset)
                     setZoom(newVal)
-                    setJSONLocalStorage({ [graphKey]: newVal })
+                    setJSONLocalStorage({ k: graphKey, v: { graphOffset: newGraphOffset, zoom: newVal } })
                   }}
                 />
               )
