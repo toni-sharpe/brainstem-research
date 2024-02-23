@@ -39,7 +39,7 @@ DragGraphButton.defaultProps = {
 }
 
 DragGraphButton.propTypes = {
-    heading: PropTypes.string,
+  heading: PropTypes.string,
   scaleDetail: PropTypes.string,
 }
 

@@ -48,13 +48,15 @@ function DragGraphPointLabel({
         }
         style={contentStyle}
       >
-        <header className='drag-graph-point-label__text'>{label}</header>
-        <section
-          className='drag-graph-point-label__num'
-          title={title}
-        >
-          <span>{value}</span>
-        </section>
+        { label && (<header className='drag-graph-point-label__text'>{label}</header>) }
+        { value && (
+          <section
+            className='drag-graph-point-label__num'
+            title={title}
+          >
+            <span>{value}</span>
+          </section>
+        ) }
       </article>
     </foreignObject>
   )

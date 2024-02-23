@@ -78,3 +78,52 @@ export const XYChange = {
     )
   }
 };
+
+export const NoLabel = {
+  render: () => {
+    const props = {
+      ...baseDragGraphPointLabelProps,
+      label: undefined,
+    }
+    return (
+      <StoryBookSvgWrapper scale={400}>
+        <DragGraphPointLabel
+          {...props}
+        />
+      </StoryBookSvgWrapper>
+    )
+  }
+};
+
+export const NoValue = {
+  render: () => {
+    const props = {
+      ...baseDragGraphPointLabelProps,
+      value: undefined,
+    }
+    return (
+      <StoryBookSvgWrapper scale={400}>
+        <DragGraphPointLabel
+          {...props}
+        />
+      </StoryBookSvgWrapper>
+    )
+  }
+};
+
+export const NoLabelOrValue = {
+  render: () => {
+    const props = {
+      ...baseDragGraphPointLabelProps,
+      label: undefined,
+      value: undefined,
+    }
+    return (
+      <StoryBookSvgWrapper scale={400}>
+        <DragGraphPointLabel
+          {...props}
+        />
+      </StoryBookSvgWrapper>
+    )
+  }
+};

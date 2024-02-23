@@ -20,6 +20,7 @@ import {
   DRAG_GRAPH_SVG_SCALE_RADIUS,
   DRAG_GRAPH_SVG_VIEWBOX,
   DRAG_GRAPH_SVG_SCALE,
+  DRAG_GRAPH_SVG_ZOOM_LIST,
 } from 'util/Constant/BaseConstantList'
 import {
   calcRadiusUnit,
@@ -40,20 +41,31 @@ import './DragGraph.scss'
 const i18nBase = 'DragGraph'
 
 function DragGraph({
+  buttonSize,
+  dragGraphLabelSize,
+  dragGraphZoomList,
   graphKey,
   heading,
+  includeExtreme,
   labelValList: lblValList,
+  isOnMap,
+  pointButtonLabel,
+  pointDataMapper,
+  scale,
+  scaleToLabelRatio,
+  scaleR,
+  showExtremeButton,
+  showZoomLabel,
+  z,
 }) {
-  const scale = DRAG_GRAPH_SVG_SCALE
-  const scaleR = DRAG_GRAPH_SVG_SCALE_RADIUS
   const persisted = getJSONLocalStorage({ k: graphKey })
 
   const [graphOffset, setGraphOffset] = useState([0, 0])
-  const [incExtremes, setIncExtremes] = useState(persisted?.incExtremes || false)
-  const [zoom, setZoom] = useState(persisted?.zoom || 2)
+  const [incExtreme, setIncExtremes] = useState(persisted?.incExtreme || persisted?.incExtreme === false ? persisted?.incExtreme : includeExtreme)
+  const [zoom, setZoom] = useState(persisted?.zoom || z)
   const [focusLabel, setFocusLabel] = useState('')
 
-  const [outcomeShown, setOutcomeShown] = useState(persisted?.outcomeShown || false)
+  const [pointDataShown, setPointDataShown] = useState(persisted?.pointDataShown || false)
 
   const dataError = !lblValList || type(lblValList) !== 'Array' || lblValList.length < 2
 
@@ -68,7 +80,7 @@ function DragGraph({
 
   const fullMax = Math.max(...valList)
 
-  if (!incExtremes) {
+  if (!incExtreme) {
     valList = valList.filter(v => !isFullMax({ max: fullMax, v }))
     labelValList = lblValList.filter(([_, { length: v }]) => !isFullMax({ max: fullMax, v }))
   }
@@ -77,8 +89,8 @@ function DragGraph({
   const radiusUnit = calcRadiusUnit({ max })
   const angle = calcAngleInRadians({ valList })
   const dragLineCoordList = calcPolygonCoordList({ angle, radiusUnit, scale, scaleR, valList })
-  const baseLineCoordList = calcBaseLineCoordList({ angle, scale, scaleR, valList })
-  const r = DRAG_GRAPH_SVG_SCALE_RADIUS
+  const baseLineCoordList = calcBaseLineCoordList({ angle, scale, scaleToLabelRatio, scaleR, valList })
+  const r = scaleR
   const graphC = { x: r, y: r }
 
   const {
@@ -90,33 +102,36 @@ function DragGraph({
   const commonButtonProps = {
     graphKey,
     localStorageValList: persisted,
+    buttonSize,
   }
 
   const [ox, oy] = graphOffset
 
   return (
-    <article className='drag-graph column-layout space-children--column-with-border'>
+    <article className={`drag-graph${isOnMap ? ' is-on-map' : ''} column-layout space-children--column-with-border`}>
       <section className='column-layout space-children--column'>
         <DragGraphHeader
           heading={heading}
         />
         <ul className='drag-graph__controls row-layout space-children'>
-          <li>
-            <DragGraphButton
-              {...commonButtonProps}
-              newValue={!incExtremes}
-              isSelected={incExtremes}
-              k='incExtremes'
-              stateFn={setIncExtremes}
-            />
-          </li>
+          { showExtremeButton && (
+            <li>
+              <DragGraphButton
+                {...commonButtonProps}
+                newValue={!incExtreme}
+                isSelected={incExtreme}
+                k='incExtreme'
+                stateFn={setIncExtremes}
+              />
+            </li>
+          )}
           <li>
             <ol
               className='drag-graph__zoom row-layout space-children'
             >
-              <li>Zoom:</li>
+              { showZoomLabel && (<li>Zoom:</li>) }
               <li className='row-layout space-children'>
-                { [1, 2, 3, 5, 10, 15, 20, 30, 50].map(z => {
+                { dragGraphZoomList.map(z => {
                   return (
                     <ZoomButton
                       {...commonButtonProps}
@@ -150,10 +165,10 @@ function DragGraph({
           <li>
             <DragGraphButton
               {...commonButtonProps}
-              newValue={!outcomeShown}
-              isSelected={outcomeShown}
-              k='outcomeShown'
-              stateFn={setOutcomeShown}
+              newValue={!pointDataShown}
+              isSelected={pointDataShown}
+              k={pointButtonLabel}
+              stateFn={setPointDataShown}
             />
           </li>
         </ul>
@@ -165,7 +180,7 @@ function DragGraph({
         >
           {i18next.t(`${i18nBase}.scaleDetail`, { highlight, scaleUnit })}
         </figcaption>
-        <SvgWrapper offsetPair='0 0' svgScale={DRAG_GRAPH_SVG_VIEWBOX}>
+        <SvgWrapper svgScale={`0 0 ${scale} ${scale}`}>
           <g key='guides' transform={`translate(${graphOffset.join(' ')})`}>
             { scaleRadiusList.map(([circleR, h], i) => {
               const stroke = h ? '#ccc' : '#eee'
@@ -183,26 +198,7 @@ function DragGraph({
               strokeOpacity={0.6}
               strokeWidth={1.5}
             />
-            { dragLineCoordList.map(([x, y], i) => {
-              const {
-                severe,
-                nonSevere,
-              } = labelValList[i][1]
-
-              const commonCircleProps = { c: { x, y }, zoom: zoom / 10 }
-
-              return (
-                <g key={`g-${i}`}>
-                  { severe > 0 && outcomeShown && (
-                    <DragGraphOutcomeCircle {...commonCircleProps} fill='#b22' r={severe + 20} />
-                  ) }
-                  { nonSevere > 0 && outcomeShown && (
-                    <DragGraphOutcomeCircle {...commonCircleProps} fill='#13a' r={nonSevere + 20} />
-                  ) }
-                  { (<SvgCircle {...commonCircleProps} r={4} fill='#13a' /> ) }
-                </g>
-              )
-            })}
+            { pointDataShown && dragLineCoordList.map(pointDataMapper({ data: labelValList, zoom })) }
             <SvgCircle r={5} c={graphC} stroke='#000' strokeOpacity={0.4} />
           </g>
           <DragGraphEdgeFadeout c={graphC} />
@@ -228,7 +224,7 @@ function DragGraph({
                     setGraphOffset([rx, ry])
                     setFocusLabel(labelValList[i][0] || '')
                   }}
-                  size={DRAG_GRAPH_LABEL_SIZE}
+                  size={dragGraphLabelSize}
                   title={`Sev: ${severe} Not sev: ${nonSevere}`}
                   value={valList[i]}
                   x={fx}
@@ -243,8 +239,31 @@ function DragGraph({
   )
 }
 
+DragGraph.defaultProps = {
+  dragGraphLabelSize: DRAG_GRAPH_LABEL_SIZE,
+  dragGraphZoomList: DRAG_GRAPH_SVG_ZOOM_LIST,
+  includeExtreme: true,
+  isOnMap: false,
+  pointButtonLabel: 'outcomeShown',
+  scale: DRAG_GRAPH_SVG_SCALE,
+  scaleR: DRAG_GRAPH_SVG_SCALE_RADIUS,
+  showExtremeButton: true,
+  showZoomLabel: true,
+  z: 2,
+}
+
 DragGraph.propTypes = {
+  dragGraphZoomList: PropTypes.array,
+  includeExtreme: PropTypes.bool,
+  isOnMap: PropTypes.bool,
   labelValList: PropTypes.arrayOf(LabelValPropType),
+  pointButtonLabel: PropTypes.string,
+  scale: PropTypes.number,
+  scaleToLabelRatio: PropTypes.number,
+  scaleR: PropTypes.number,
+  showExtremeButton: PropTypes.bool,
+  showZoomLabel: PropTypes.bool,
+  z: PropTypes.number,
 }
 
 
