@@ -10,7 +10,6 @@ import DragGraph from 'sections/DragGraph/DragGraph'
 import Histogram from 'sections/Histogram/Histogram'
 import MapAreaCenterPoint from 'components/MapAreaCenterPoint/MapAreaCenterPoint'
 import MapCountry from 'components/MapCountry/MapCountry'
-import MapObjectSimple from 'components/MapObjectSimple/MapObjectSimple'
 import MapObjectDetailed from 'components/MapObjectDetailed/MapObjectDetailed'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import WorldBorderList from 'util/Constant/WorldBorderList'
@@ -92,26 +91,6 @@ function MapSvg({
                       isSelected={isCurrentCountry}
                       zoom={zoom}
                     />
-                    { zoom >= 2 && zoom <= 3 && (
-                      <MapObjectSimple
-                        countryId={countryId}
-                        size='small'
-                        h={14}
-                        w={48}
-                        x={cx}
-                        y={cy}
-                      />
-                    ) }
-                    { (zoom >= 4 && !isCurrentCountry) && (
-                      <MapObjectSimple
-                        countryId={countryId}
-                        size='medium'
-                        h={18}
-                        w={80}
-                        x={cx}
-                        y={cy}
-                      />
-                    ) }
                     { zoom < 2 && (
                       <MapAreaCenterPoint
                         c={{ x: cx, y: cy }}
@@ -124,7 +103,7 @@ function MapSvg({
             })
           }
           <g className='row-layout space-childen'>
-            { zoom >= 4 && currentCountryIdList.map(currentCountryId => {
+            { zoom >= 2 && currentCountryIdList.map(currentCountryId => {
               const data = mapDetailData[currentCountryId]
               const { countryName } = WorldBorderList[currentYear][currentCountryId]
               const mapDetailElement = data.dragData
@@ -153,12 +132,12 @@ function MapSvg({
               }
 
               if (data && data?.dragData?.length) {
-                h = 265
-                w = 200
+                h = 140
+                w = 125
 
                 mapDetailProps = {
                   buttonSize: 'small-tiny',
-                  dragGraphLabelSize: 32,
+                  dragGraphLabelSize: 20,
                   dragGraphZoomList: [0.2, 0.5, 1, 2],
                   graphKey: currentCountryId,
                   includeExtreme: true,
@@ -167,7 +146,7 @@ function MapSvg({
                   labelValList: data.dragData,
                   pointButtonLabel: 'map',
                   scale: w,
-                  scaleToLabelRatio: 2,
+                  scaleToLabelRatio: 2.5,
                   scaleR: w / 2,
                   showZoomLabel: false,
                   showExtremeButton: false,

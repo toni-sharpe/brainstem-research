@@ -27,15 +27,28 @@
 
   &.is-on-map {
     border: 0.5px solid $grey--light;
-    padding-top: 25px;
+    justify-content: center;
+    padding-top: 14px;
+
+    .drag-graph__header {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .drag-graph__figure {
+      & > * {
+        @include space-column--narrowest();
+      }
+    }
 
     .drag-graph__controls {
+    font-size: var(--font-size--tiniest);
       justify-content: flex-start;
       padding-left: var(--spacing--narrow);
     }
 
     .drag-graph__scale-detail {
-      font-size: var(--font-size--small);
+    font-size: var(--font-size--tiniest);
       &.drag-graph__scale-detail {
         border-bottom: 0.5px solid $grey--light;
       }

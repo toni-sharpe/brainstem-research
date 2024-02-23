@@ -107,7 +107,7 @@ function DragGraph({
 
   return (
     <article className={`drag-graph${isOnMap ? ' is-on-map' : ''} column-layout space-children--column-with-border`}>
-      <section className='column-layout space-children--column'>
+      <section className='drag-graph__header column-layout space-children--column'>
         { heading && (<DragGraphHeader heading={heading} />) }
         <ul className='drag-graph__controls row-layout space-children'>
           { showExtremeButton && (
@@ -121,62 +121,68 @@ function DragGraph({
               />
             </li>
           )}
-          <li>
-            <ol
-              className='drag-graph__zoom row-layout space-children'
-            >
-              { showZoomLabel && (<li>Zoom:</li>) }
-              <li className='row-layout space-children'>
-                { dragGraphZoomList.map(z => {
-                  return (
-                    <ZoomButton
-                      {...commonButtonProps}
-                      newValue={z}
-                      isSelected={zoom === z}
-                      k={z}
-                      key={`${z}-zoom`}
-                      localStorageValList={{...persisted, zoom: z }}
-                      size={buttonSize}
-                      stateFn={(newVal) => {
-                        const factor = newVal / zoom
-                        setGraphOffset([ox * factor, oy * factor])
-                        setZoom(newVal)
-                      }}
-                    />
-                  )
-                }) }
-              </li>
-              <li>
-                <ResetZoomButton
-                  zoom={zoom}
-                  zDefault={zDefault}
-                  buttonSize={buttonSize}
-                  graphOffset={graphOffset}
-                  setGraphOffset={setGraphOffset}
-                  setZoom={setZoom}
-                  extraStateFn={() => setFocusLabel('')}
-                />
-              </li>
-            </ol>
-          </li>
-          <li>
-            <DragGraphButton
-              {...commonButtonProps}
-              newValue={!pointDataShown}
-              isSelected={pointDataShown}
-              k={pointButtonLabel}
-              stateFn={setPointDataShown}
-            />
-          </li>
+          { !isOnMap && (
+            <li>
+              <ol
+                className='drag-graph__zoom row-layout space-children'
+              >
+                { showZoomLabel && (<li>Zoom:</li>) }
+                <li className='row-layout space-children'>
+                  { dragGraphZoomList.map(z => {
+                    return (
+                      <ZoomButton
+                        {...commonButtonProps}
+                        newValue={z}
+                        isSelected={zoom === z}
+                        k={z}
+                        key={`${z}-zoom`}
+                        localStorageValList={{...persisted, zoom: z }}
+                        size={buttonSize}
+                        stateFn={(newVal) => {
+                          const factor = newVal / zoom
+                          setGraphOffset([ox * factor, oy * factor])
+                          setZoom(newVal)
+                        }}
+                      />
+                    )
+                  }) }
+                </li>
+                <li>
+                  <ResetZoomButton
+                    zoom={zoom}
+                    zDefault={zDefault}
+                    buttonSize={buttonSize}
+                    graphOffset={graphOffset}
+                    setGraphOffset={setGraphOffset}
+                    setZoom={setZoom}
+                    extraStateFn={() => setFocusLabel('')}
+                  />
+                </li>
+              </ol>
+            </li>
+          ) }
+          { !isOnMap && (
+            <li>
+              <DragGraphButton
+                {...commonButtonProps}
+                newValue={!pointDataShown}
+                isSelected={pointDataShown}
+                k={pointButtonLabel}
+                stateFn={setPointDataShown}
+              />
+            </li>
+          ) }
         </ul>
       </section>
-      <figure className='column-layout space-children--column'>
-        <figcaption
-          className='drag-graph__scale-detail'
-          key='scale'
-        >
-          {i18next.t(`${i18nBase}.scaleDetail`, { highlight, scaleUnit })}
-        </figcaption>
+      <figure className='drag-graph__figure column-layout'>
+        { !isOnMap && (
+          <figcaption
+            className='drag-graph__scale-detail'
+            key='scale'
+          >
+            {i18next.t(`${i18nBase}.scaleDetail`, { highlight, scaleUnit })}
+          </figcaption>
+        ) }
         <SvgWrapper svgScale={`0 0 ${scale} ${scale}`}>
           <g key='guides' transform={`translate(${graphOffset.join(' ')})`}>
             { scaleRadiusList.map(([circleR, h], i) => {

@@ -13,8 +13,11 @@
   &__heading {
     font-size: var(--font-size--small);
     font-weight: var(--font-weight--bold);
-    height: 25px;
+    height: 15px;
     text-align: left;
+      position: absolute;
+      top: 2px;
+      left: 2px;
   }
 
   &__close-button {

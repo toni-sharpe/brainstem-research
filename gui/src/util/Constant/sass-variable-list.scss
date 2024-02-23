@@ -120,6 +120,13 @@ $menu-guaranteed: 1500;
   }
 }
 
+@mixin space-column--narrowest() {
+  margin-bottom: var(--spacing--narrowest);
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 @mixin space-column--wide {
   margin-bottom: var(--spacing--wide);
   &:last-child {
