@@ -25,7 +25,7 @@ const baseMapObjectDetailedProps = {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookSvgWrapper scale={500}>
+      <StoryBookSvgWrapper svgScale={'0 0 500 500'}>
         <MapObjectDetailed
           {...baseMapObjectDetailedProps}
         />
@@ -44,7 +44,7 @@ export const DiffPos = {
       y: 200,
     }
     return (
-      <StoryBookSvgWrapper scale={500}>
+      <StoryBookSvgWrapper svgScale={'0 0 500 500'}>
         <MapObjectDetailed
           {...props}
         />
@@ -63,7 +63,7 @@ export const DiffSize = {
       y: 200,
     }
     return (
-      <StoryBookSvgWrapper scale={500}>
+      <StoryBookSvgWrapper svgScale={'0 0 500 500'}>
         <MapObjectDetailed
           {...props}
         />
