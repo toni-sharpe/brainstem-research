@@ -142,6 +142,7 @@ function MapSvgControlList({
               setGraphOffset={setGraphOffset}
               setZoom={setZoom}
               zoom={zoom}
+              zDefault={1}
             />
           </li>
         </ol>

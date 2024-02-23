@@ -25,13 +25,19 @@
     align-items: center;
   }
 
-  &__scale-detail {
-    &.is-on-map {
-      border: 1px solid $grey--light;
+  &.is-on-map {
+    border: 0.5px solid $grey--light;
+    padding-top: 25px;
+
+    .drag-graph__controls {
+      justify-content: flex-start;
+      padding-left: var(--spacing--narrow);
+    }
+
+    .drag-graph__scale-detail {
+      font-size: var(--font-size--small);
       &.drag-graph__scale-detail {
-        &.drag-graph__scale-detail {
-          border-bottom: 1px solid $grey--light;
-        }
+        border-bottom: 0.5px solid $grey--light;
       }
     }
   }

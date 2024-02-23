@@ -54,13 +54,13 @@ function DragGraph({
   scaleR,
   showExtremeButton,
   showZoomLabel,
-  z,
+  zDefault,
 }) {
   const persisted = getJSONLocalStorage({ k: graphKey })
 
   const [graphOffset, setGraphOffset] = useState([0, 0])
   const [incExtreme, setIncExtremes] = useState(persisted?.incExtreme || persisted?.incExtreme === false ? persisted?.incExtreme : includeExtreme)
-  const [zoom, setZoom] = useState(persisted?.zoom || z)
+  const [zoom, setZoom] = useState(persisted?.zoom || zDefault)
   const [focusLabel, setFocusLabel] = useState('')
 
   const [pointDataShown, setPointDataShown] = useState(persisted?.pointDataShown || false)
@@ -108,9 +108,7 @@ function DragGraph({
   return (
     <article className={`drag-graph${isOnMap ? ' is-on-map' : ''} column-layout space-children--column-with-border`}>
       <section className='column-layout space-children--column'>
-        <DragGraphHeader
-          heading={heading}
-        />
+        { heading && (<DragGraphHeader heading={heading} />) }
         <ul className='drag-graph__controls row-layout space-children'>
           { showExtremeButton && (
             <li>
@@ -151,6 +149,7 @@ function DragGraph({
               <li>
                 <ResetZoomButton
                   zoom={zoom}
+                  zDefault={zDefault}
                   buttonSize={buttonSize}
                   graphOffset={graphOffset}
                   setGraphOffset={setGraphOffset}
@@ -247,7 +246,7 @@ DragGraph.defaultProps = {
   scaleR: DRAG_GRAPH_SVG_SCALE_RADIUS,
   showExtremeButton: true,
   showZoomLabel: true,
-  z: 2,
+  zDefault: 2,
 }
 
 DragGraph.propTypes = {
@@ -261,7 +260,7 @@ DragGraph.propTypes = {
   scaleR: PropTypes.number,
   showExtremeButton: PropTypes.bool,
   showZoomLabel: PropTypes.bool,
-  z: PropTypes.number,
+  zDefault: PropTypes.number,
 }
 
 

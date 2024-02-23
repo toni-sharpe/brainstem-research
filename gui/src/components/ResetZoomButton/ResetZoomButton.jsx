@@ -14,9 +14,10 @@ function ResetZoomButton({
   persisted,
   setGraphOffset,
   setZoom,
+  zDefault,
   zoom,
 }) {
-  const isDisabled = ox === 0 && oy === 0 && zoom === 1
+  const isDisabled = ox === 0 && oy === 0 && zoom === zDefault
 
   return (
     <Button
@@ -25,9 +26,9 @@ function ResetZoomButton({
       k='resetZoomButton'
       label={isDisabled ? '-' : 'X'}
       onClick={() => {
-        setJSONLocalStorage({ k: graphKey,  v: { zoom: 1 } })
+        setJSONLocalStorage({ k: graphKey, v: { zoom: zDefault } })
         setGraphOffset([0, 0])
-        setZoom(1)
+        setZoom(zDefault)
         extraStateFn && extraStateFn()
       }}
       size={buttonSize}
@@ -45,6 +46,7 @@ ResetZoomButton.propTypes = {
   setGraphOffset: PropTypes.func,
   setZoom: PropTypes.func,
   buttonSize: PropTypes.string,
+  zDefault: PropTypes.number,
   zoom: PropTypes.number,
 }
 
