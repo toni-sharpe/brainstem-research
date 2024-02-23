@@ -1,7 +1,9 @@
 import i18next from 'util/i18next/i18next'
+import PropTypes from 'prop-types'
 import React from 'react'
 
 import Button from 'components/Button/Button'
+import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 
 import './MapObjectDetailed.scss'
 
@@ -57,12 +59,21 @@ function MapObjectDetailed({
 }
 
 MapObjectDetailed.defaultProps = {
-
+  isPopulated: false,
+  h: 75,
+  w: 75,
 }
 
 
 MapObjectDetailed.propTypes = {
-
+  children: PropTypes.node,
+  closeOnClick: PropTypes.func,
+  countryName: PropTypes.string,
+  isPopulated: PropTypes.bool,
+  h: NumberOrStringPropType,
+  w: NumberOrStringPropType,
+  x: NumberOrStringPropType,
+  y: NumberOrStringPropType,
 }
 
 export default MapObjectDetailed

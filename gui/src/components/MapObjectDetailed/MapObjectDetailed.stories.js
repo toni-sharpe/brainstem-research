@@ -8,14 +8,18 @@ export default {
 
 const baseMapObjectDetailedProps = {
   children: (
-    <div className='column-layout space-children--column'>
-      <span>Some stuff</span>
-      <span>Some morestuff</span>
+    <div
+      className='column-layout space-children--column'
+      style={{ padding: '10px' }}
+    >
+      <span>1 stuff</span>
+      <span>2 thing</span>
+      <span>3 more</span>
     </div>
   ),
   closeOnClick: () => {},
   countryName: 'Test country',
-  size: 'small',
+  isPopulated: true,
   h: 100,
   w: 100,
   x: 300,
@@ -61,6 +65,22 @@ export const DiffSize = {
       w: 300,
       x: 200,
       y: 200,
+    }
+    return (
+      <StoryBookSvgWrapper svgScale={'0 0 500 500'}>
+        <MapObjectDetailed
+          {...props}
+        />
+      </StoryBookSvgWrapper>
+    )
+  }
+};
+
+export const NoData = {
+  render: () => {
+    const props = {
+      ...baseMapObjectDetailedProps,
+      isPopulated: false,
     }
     return (
       <StoryBookSvgWrapper svgScale={'0 0 500 500'}>
