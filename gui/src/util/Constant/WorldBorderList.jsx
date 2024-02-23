@@ -1,3 +1,29 @@
+// https://en.wikipedia.org/wiki/List_of_multilateral_free_trade_agreements
+
+// https://en.wikipedia.org/wiki/List_of_military_alliances
+
+// https://en.wikipedia.org/wiki/List_of_country_groupings
+// where to stop??
+const WorldCountryGroupList = {
+  africa: [],
+  africanUnion: [],
+  asia: [],
+  brics: [],
+  eu: [],
+  europe: [],
+  oecd: [],
+  g20: [],
+  g7: [],
+  islamistUnrest: [],
+  middleEast: [],
+  nafta: [],
+  nato: [],
+  northAmerica: [],
+  oceania: [],
+  opec: [],
+  southAmerica: [],
+}
+
 const WorldBorderList = {
   2024: {
     1: {
