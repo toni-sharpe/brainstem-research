@@ -10,6 +10,7 @@ import './ZoomButton.scss'
 const i18nBase = 'ZoomButton'
 
 function ZoomButton({
+  buttonSize,
   graphKey,
   isDisabled,
   isSelected,
@@ -22,7 +23,7 @@ function ZoomButton({
     <Button
       isSelected={isSelected}
       isDisabled={isDisabled}
-      size='medium'
+      size={buttonSize}
       label={i18next.t(`${i18nBase}.${k}`)}
       onClick={() => {
         setJSONLocalStorage({ k: graphKey, v: { zoom: newValue } })
@@ -30,6 +31,10 @@ function ZoomButton({
       }}
     />
   )
+}
+
+ZoomButton.defaultProps = {
+  buttonSize: 'medium',
 }
 
 ZoomButton.propTypes = {

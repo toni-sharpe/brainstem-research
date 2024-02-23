@@ -125,6 +125,7 @@ function DragGraph({
                       k={z}
                       key={`${z}-zoom`}
                       localStorageValList={{...persisted, zoom: z }}
+                      size={buttonSize}
                       stateFn={(newVal) => {
                         const factor = newVal / zoom
                         setGraphOffset([ox * factor, oy * factor])
@@ -137,6 +138,7 @@ function DragGraph({
               <li>
                 <ResetZoomButton
                   zoom={zoom}
+                  buttonSize={buttonSize}
                   graphOffset={graphOffset}
                   setGraphOffset={setGraphOffset}
                   setZoom={setZoom}

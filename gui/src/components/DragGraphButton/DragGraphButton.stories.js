@@ -6,7 +6,7 @@ export default {
 };
 
 const baseDragGraphButtonProps = {
-  k: 'zoom',
+  k: 'sbZoom',
   stateFn: () => {}
 }
 

@@ -8,6 +8,7 @@ import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 const i18nBase = 'DragGraphButton'
 
 function DragGraphButton({
+  buttonSize,
   graphKey,
   isDisabled,
   isSelected,
@@ -20,7 +21,7 @@ function DragGraphButton({
     <Button
       isSelected={isSelected}
       isDisabled={isDisabled}
-      size='medium'
+      size={buttonSize}
       label={i18next.t(`${i18nBase}.${k}`)}
       onClick={() => {
           localStorageValList && setJSONLocalStorage({ k: graphKey, v: {
@@ -31,6 +32,10 @@ function DragGraphButton({
       }}
     />
   )
+}
+
+DragGraphButton.defaultProps = {
+  buttonSize: 'medium',
 }
 
 DragGraphButton.propTypes = {
