@@ -4,6 +4,7 @@ import React from 'react'
 import DragGraph from 'sections/DragGraph/DragGraph'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import { groupByAndCountPipe } from 'util/UtilDragGraph/UtilDragGraphGrouping'
+import severityCircleMapper from 'util/UtilPointData/severityCircleMapper'
 
 import './SVG.scss'
 
@@ -35,6 +36,7 @@ function SVG({ data }) {
               heading={i18next.t(`CommonClinicalDefinitions.${graphKey}`)}
               key={`${graphKey}-${i}`}
               labelValList={labelValList}
+              pointDataMapper={severityCircleMapper}
             />
           )
         }) }
