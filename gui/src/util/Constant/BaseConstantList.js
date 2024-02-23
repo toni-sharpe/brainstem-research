@@ -264,4 +264,4 @@ export const TIME_LINE_FILTER_LIST = {
   UNK: ['outcome', 'UNK'],
 }
 
-export const TIME_LINE_FIRST_MONTH = '2000-01-01'
+export const TIME_LINE_FIRST_MONTH = '2005-01-01'
