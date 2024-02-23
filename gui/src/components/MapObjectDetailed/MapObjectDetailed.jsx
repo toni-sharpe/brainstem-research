@@ -46,12 +46,15 @@ function MapObjectDetailed({
           title={i18next.t(`${i18nBase}.close`, { countryName })}
         />
         { isPopulated && (
-          <section className='map-object-detailed__details'>
-            { children
-                ? children
-                : 'Lorem ipsum some detail'
-            }
-          </section>
+          <>
+            { countryName && (<header className='map-object-detailed__heading'>{countryName}</header>) }
+            <section className='map-object-detailed__details'>
+              { children
+                  ? children
+                  : 'Lorem ipsum some detail'
+              }
+            </section>
+          </>
         ) }
       </article>
     </foreignObject>

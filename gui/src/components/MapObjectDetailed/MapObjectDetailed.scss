@@ -11,8 +11,9 @@
   width: 100%;
 
   &__heading {
-    font-size: var(--font-size--tiniest);
-    text-align: center;
+    font-size: var(--font-size--small);
+    font-weight: var(--font-weight--bold);
+    text-align: left;
   }
 
   &__close-button {
