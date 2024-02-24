@@ -106,6 +106,62 @@ function OwidExample() {
                 </div>
             </article>
 
+            <article className='owid-example__map column-layout space-children--column--wide'>
+                <h2>Results: estimated cases by region</h2>
+                <div className='owid-example__map-block'>
+                    <figure className='owid-example__sub-block'>
+                        <img src='cases.png' alt='cases' />
+                    </figure>
+                    <section className='owid-example__sub-block column-layout space-children--column'>
+                        <p>
+                            This chart shows the results of this method by region. Using the adapted methodology based on Tebbens et al. (2010), there were around 370,000 paralytic polio cases worldwide in 1980. Since then, the number of cases has declined in all regions. Today, the world is very close to the goal of eradicating this disease globally.
+                        </p>
+                    </section>
+                </div>
+            </article>
+
+            <article className='owid-example__map column-layout space-children--column--wide'>
+                <h2>It is important to note that these are rough estimates of the number of paralytic polio cases based on metrics of testing quality (non-polio AFP rate and AFP cases with adequate stool collection). Data on testing quality by country is not available before 2000.</h2>
+                <div className='owid-example__map-block'>
+                    <figure className='owid-example__sub-block'>
+                        <img src='cases.png' alt='cases' />
+                    </figure>
+                    <section className='owid-example__sub-block column-layout space-children--column'>
+                        <p>
+                            This chart shows the results of this method by region. Using the adapted methodology based on Tebbens et al. (2010), there were around 370,000 paralytic polio cases worldwide in 1980. Since then, the number of cases has declined in all regions. Today, the world is very close to the goal of eradicating this disease globally.
+                        </p>
+                    </section>
+                </div>
+            </article>
+
+            <article className='owid-example__map column-layout space-children--column--wide'>
+                <h2>It is important to note that these are rough estimates of the number of paralytic polio cases based on metrics of testing quality (non-polio AFP rate and AFP cases with adequate stool collection). Data on testing quality by country is not available before 2000.</h2>
+                <div className='owid-example__map-block'>
+                    <section className='owid-example__sub-block column-layout space-children--column'>
+                        <p>
+                            This chart shows the results of this method by region. Using the adapted methodology based on Tebbens et al. (2010), there were around 370,000 paralytic polio cases worldwide in 1980. Since then, the number of cases has declined in all regions. Today, the world is very close to the goal of eradicating this disease globally.
+                        </p>
+                    </section>
+                    <figure className='owid-example__sub-block'>
+                        <img src='cases.png' alt='cases' />
+                    </figure>
+                </div>
+            </article>
+
+            <article className='owid-example__map column-layout space-children--column--wide'>
+                <h2 className='full-width'>It is important to note that these are rough estimates of the number of paralytic polio cases based on metrics of testing quality (non-polio AFP rate and AFP cases with adequate stool collection). Data on testing quality by country is not available before 2000.</h2>
+                <div className='owid-example__map-block'>
+                    <section className='owid-example__sub-block column-layout space-children--column'>
+                        <p>
+                            This chart shows the results of this method by region. Using the adapted methodology based on Tebbens et al. (2010), there were around 370,000 paralytic polio cases worldwide in 1980. Since then, the number of cases has declined in all regions. Today, the world is very close to the goal of eradicating this disease globally.
+                        </p>
+                    </section>
+                    <figure className='owid-example__sub-block'>
+                        <img src='cases.png' alt='cases' />
+                    </figure>
+                </div>
+            </article>
+
             <footer className='owid-example__text column-layout space-children--column--wide'>
                 <h2>Endnotes</h2>
                 <div className='column-layout space-children--column'>
