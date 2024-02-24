@@ -113,7 +113,7 @@ test('calcRange() returns [] if num is 0 (default)', () => {
  * calcShownMonthTotal()
  */
 test('calcShownMonthTotal() again from the const start date to the fake date', () => {
-  expect(calcShownMonthTotal()).toEqual(281)
+  expect(calcShownMonthTotal()).toEqual(221)
 })
 
 

@@ -13,6 +13,7 @@ $media-switch--large: 1220px;
 $spacing--narrowest: 2px;
 $spacing--narrow: 8px;
 $spacing--wide: 20px;
+$spacing--very-wide: 50px;
 /* padding */
 $padding--tiniest: 1px;
 $padding--small-tiny: 3px;
@@ -129,6 +130,12 @@ $menu-guaranteed: 1500;
 
 @mixin space-column--wide {
   margin-bottom: var(--spacing--wide);
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+@mixin space-column--very-wide {
+  margin-bottom: var(--spacing--very-wide);
   &:last-child {
     margin-bottom: 0;
   }

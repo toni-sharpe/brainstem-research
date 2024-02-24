@@ -43,6 +43,12 @@
   &-with-border > * {
     @include space-column-add-border()
   }
+  &--wide > * {
+    @include space-column--wide()
+  }
+  &--very-wide > * {
+    @include space-column--very-wide()
+  }
 }
 
 .space-children--wide-column {
