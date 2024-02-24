@@ -1,0 +1,63 @@
+@import '/Users/brainstem/brainstem/gui/src/util/Constant/sass-variable-list.scss';
+
+.owid-example {
+  align-items: center;
+  line-height: var(--line-height--large);
+  padding: 0 2vw;
+
+  &__text {
+    max-width: 800px;
+    width: 96vw;
+  }
+
+  &__map {
+    width: 96vw;
+  }
+
+  &__map-block {
+    justify-content: space-between;
+    @include column-layout();
+    & > * {
+      @include space-column();
+    }
+
+    @media (min-width: $media-switch--medium) {
+      @include row-layout();
+      & > * {
+        @include space-row();
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__sub-block {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+
+    @media (min-width: $media-switch--medium) {
+      width: 46vw;
+    }
+  }
+
+  h1 {
+    background-color: unset;
+    color: var(--black);
+    font-size: 32px;
+    line-height: var(--line-height--small);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: var(--line-height--small);
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+    @media (min-width: $media-switch--medium) {
+      width: 46vw;
+    }
+  }
+}
