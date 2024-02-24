@@ -56,7 +56,7 @@ DragGraphSelectedLine.propTypes = {
   isSelected: PropTypes.bool,
   labelX: PropTypes.number,
   labelY: PropTypes.number,
-  r: PropTypes.arrayOf(PropTypes.number,PropTypes.number),
+  r: PropTypes.number,
   zoom: PropTypes.number,
 }
 

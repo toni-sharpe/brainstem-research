@@ -9,10 +9,10 @@ import OwidExample from './OwidExample'
 
 const i18nBase = 'Background'
 
-function Background() {
+function Background({ data }) {
   return (
     <div className='column-layout space-children--wide-column-with-border'>
-      <OwidExample />
+      <OwidExample data={data} />
       <SubPageWrapper
         heading={i18next.t('Home.backgroundPanelLabel')}
         rowLayout={false}

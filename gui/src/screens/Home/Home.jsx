@@ -41,7 +41,7 @@ function Home({ data }) {
       )}
     >
       { currentHomePanel === 'background' && (
-        <Background />
+        <Background data={data} />
       ) }
       { currentHomePanel === 'motivation' && (
         <Motivation />
