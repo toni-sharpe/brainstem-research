@@ -172,6 +172,19 @@ $menu-guaranteed: 1500;
   }
 }
 
+@mixin self-space-column--very-wide-add-border {
+  border-bottom: 1px solid var(--grey--very-light);
+  margin-bottom: var(--spacing--very-wide);
+  padding-bottom: var(--spacing--very-wide);
+}
+
+@mixin space-column--very-wide-add-border {
+  @include self-space-column--very-wide-add-border();
+  &:last-child {
+    @include self-space-column-remove-border();
+  }
+}
+
 
 /*
  * row layout

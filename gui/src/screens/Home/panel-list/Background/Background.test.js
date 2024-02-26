@@ -7,7 +7,7 @@ import Background from './Background'
 
 test('Background - ', async () => {
   render(
-    <Background />
+    <Background data={[]} />
   )
 
 
@@ -22,7 +22,7 @@ test('Background with AXE', async () => {
   expect.extend(toHaveNoViolations)
 
   const { container: background } = render(
-    <Background />
+    <Background data={[]} />
   )
 
   expect(await axe(background)).toHaveNoViolations()

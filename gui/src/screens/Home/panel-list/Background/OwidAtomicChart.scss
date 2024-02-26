@@ -1,0 +1,41 @@
+@import '/src/util/Constant/sass-variable-list.scss';
+
+.owid-atomic-chart {
+  width: 100%;
+
+  &__details {
+    justify-content: space-between;
+    @include column-layout();
+    & > * {
+      @include space-column();
+    }
+
+    @media (min-width: $media-switch--medium) {
+      @include row-layout();
+      & > * {
+        @include space-row();
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__figure,
+  &__text {
+    width: 100%;
+
+    @media (min-width: $media-switch--medium) {
+      width: 46vw;
+    }
+  }
+
+  &__heading {
+    @media (min-width: $media-switch--medium) {
+      width: 46vw;
+    }
+  }
+
+  .full-width {
+    text-align: left;
+    width: 100%;
+  }
+}

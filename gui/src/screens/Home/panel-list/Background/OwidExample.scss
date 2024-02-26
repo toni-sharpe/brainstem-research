@@ -1,0 +1,45 @@
+@import '/src/util/Constant/sass-variable-list.scss';
+
+.owid-example {
+  @include column-layout();
+  align-items: center;
+  line-height: var(--line-height--large);
+  padding: 0 2vw;
+
+  & > * {
+    @include space-column--very-wide-add-border()
+  }
+
+  &__text {
+    max-width: 800px;
+    width: 96vw;
+  }
+
+  h1,
+  h2 {
+    line-height: var(--line-height--small);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  h1 {
+    background-color: unset;
+    color: var(--black);
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: var(--line-height--small);
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  &__chart-list {
+    @include column-layout();
+    & > * {
+      @include space-column--very-wide-add-border()
+    }
+  }
+}
