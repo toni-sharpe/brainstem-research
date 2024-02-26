@@ -2,10 +2,12 @@ import { keys } from 'ramda'
 
 /***********************************/
 /*
- * Common
+ * Common / General
  */
 export const I18N_ERROR_KEY = 'ErrorList'
 export const PRECISION = 6
+
+export const SHOW_OWID_EXAMPLE = false
 
 
 /***********************************/
