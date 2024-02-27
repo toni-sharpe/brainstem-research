@@ -2,19 +2,13 @@
 
 .map-svg {
   &__svg {
-    background-color: var(--blue--lightest);
+    background-color: $blue--lightest;
     margin-bottom: 20px;
-    box-shadow: 0 0 20px 0 inset var(--blue--dark);
+    box-shadow: 0 0 20px 0 inset $blue--dark;
     width: 99vw;
     height: 78vh;
     @media (min-width: $media-switch--medium) {
       height: 80vh;
-    }
-    polygon {
-      fill: var(--green);
-      stroke: var(--green--dark);
-      stroke-width: 0.5;
-      fill-opacity: 0.3;
     }
   }
 

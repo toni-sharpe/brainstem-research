@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 function SvgText({
   extraClass,
+  style,
   text,
   x,
   y,
@@ -10,10 +11,11 @@ function SvgText({
   return (
     <text
       className={extraClass}
+      dominantBaseline='middle'
+      style={style}
+      textAnchor='middle'
       x={x}
       y={y}
-      dominantBaseline='middle'
-      textAnchor='middle'
     >
       {text}
     </text>

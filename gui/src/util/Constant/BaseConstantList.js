@@ -216,6 +216,7 @@ export const SCATTER_AXIS_LABEL_OFFSET = 36
  */
 export const NON_ISLAND_TINY_TERRIROTORIES = [
   'Azerbaijan',
+  'Bahrain',
   'Kosovo',
   'Luxembourg',
   'Oman',
