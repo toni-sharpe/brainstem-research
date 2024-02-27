@@ -37,6 +37,7 @@ function MapCountry({
     ? (
       <SvgCircle
         extraClass={className}
+        fill='#efe'
         r={zoom * 1.6}
         c={c}
       />
@@ -44,6 +45,7 @@ function MapCountry({
     : (
     <polygon
       className={className}
+      fill='#efe'
       points={calcPolygonCoordString({ coordList })}
       strokeOpacity={1}
     />
