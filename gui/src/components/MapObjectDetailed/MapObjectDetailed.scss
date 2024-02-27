@@ -2,17 +2,17 @@
 
 .map-object-detailed {
   background-color: rgba($white, 0.85);
-  border: 0.5px solid var(--black);
+  border: 0.5px solid $black;
   box-sizing: border-box;
   cursor: pointer;
-  font-size: var(--font-size--tiniest);
-  padding: var(--padding--small);
+  font-size: $font-size--tiniest;
+  padding: $padding--small;
   position: relative;
   width: 100%;
 
   &__heading {
-    font-size: var(--font-size--small);
-    font-weight: var(--font-weight--bold);
+    font-size: $font-size--small;
+    font-weight: $font-weight--bold;
     height: 15px;
     text-align: left;
       position: absolute;
@@ -21,30 +21,29 @@
   }
 
   &__close-button {
-    background-color: var(--menu--green);
-    color: var(--white);
-    font-size: var(--font-size--tiniest);
-    padding: var(--padding--tiniest);
+    background-color: $menu--green;
+    color: $white;
+    font-size: $font-size--tiniest;
+    padding: $padding--tiniest;
     position: absolute;
     right: 0;
     top: 0;
-    z-index: var(--step-forward);
+    z-index: $step-forward;
     &:hover {
-      background-color: var(--menu--green-hover);
-      color: var(--black);
+      background-color: $menu--green-hover;
+      color: $black;
     }
 
     &.no-data {
       &.no-data {
-        background-color: var(--red--dark);
-        color:  var(--white);
+        background-color: $red--dark;
+        font-size: $font-size--small;
+        color:  $white;
         position: fixed;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        width: 100px;
-        height: 100px;
       }
     }
   }
@@ -57,14 +56,14 @@
   }
 
   .histogram__caption {
-    font-size: var(--font-size--small);
-    padding-top: var(--padding--small);
+    font-size: $font-size--small;
+    padding-top: $padding--small;
     position: relative;
   }
 
   .histogram-bar-list-label {
     @include row-layout();
-    font-size: var(--font-size--small);
+    font-size: $font-size--small;
     min-height: 0;
     padding: 0;
   }
@@ -74,9 +73,9 @@
       display: none;
     }
     &__num {
-      font-size: var(--font-size--tiniest);
-      font-weight: var(--font-weight--bold);
-      padding: var(--padding--tiniest);
+      font-size: $font-size--tiniest;
+      font-weight: $font-weight--bold;
+      padding: $padding--tiniest;
     }
   }
 }
