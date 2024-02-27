@@ -7,7 +7,7 @@ export default {
   component: AxisSelector,
   decorators: [
     (Story) => (
-      <StoryBookPaddedWrapper>
+      <StoryBookPaddedWrapper padding={'50px 200px'}>
         <Story />
       </StoryBookPaddedWrapper>
     ),
