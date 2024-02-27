@@ -7,7 +7,7 @@
 
   &:hover,
   &.is-hovered {
-    fill: $blue--light;
+    fill: $green;
     cursor: pointer;
     fill-opacity: 0.6;
   }
@@ -16,13 +16,17 @@
     fill: $blue--dark;
     fill-opacity: 1;
     stroke-width: 0.5;
-    stroke: $blue--dark;
+    stroke: $white;
   }
 
   &__name {
     fill: $black;
     &.is-selected {
       fill: $white;
+    }
+    &:hover,
+    &.is-hovered {
+      cursor: pointer;
     }
   }
 }
