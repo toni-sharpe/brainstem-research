@@ -2,8 +2,8 @@
 
 .map-country {
   fill: $green;
-  stroke: $black;
-  stroke-width: 0.5;
+  stroke: $grey--light;
+  stroke-width: 1;
   fill-opacity: 0.7;
 
   &:hover,
@@ -11,8 +11,6 @@
     fill: $blue--light;
     cursor: pointer;
     fill-opacity: 0.6;
-    stroke-width: 1.5;
-    stroke: $blue--dark;
   }
 
   &.is-selected {
@@ -24,5 +22,8 @@
 
   &__name {
     fill: $black;
+    &.is-selected {
+      fill: $white;
+    }
   }
 }

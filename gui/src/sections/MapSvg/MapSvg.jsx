@@ -35,6 +35,77 @@ function MapSvg({
   let currentCY = {}
   let isCurrentCountry
 
+  const borders = []
+  const labels = []
+
+  toPairs(
+    WorldBorderList[currentYear]
+  ).forEach(function([
+    countryId, {
+      countryBorder,
+      countryCenter,
+      countryName,
+      labelCenter,
+    }
+  ], i) {
+    isCurrentCountry = currentCountryIdList.includes(countryId)
+
+    return countryBorder.forEach(function(subBorder, j) {
+      // this can go once the full center code is sorted
+      let borderCoordList
+      let c
+      const lastB = last(subBorder)
+      if (lastB.c) {
+        c = lastB.c
+        borderCoordList = init(subBorder)
+      } else {
+        c = countryCenter
+        borderCoordList = subBorder
+      }
+
+      const cx = c.x * zoom
+      const cy = c.y * zoom
+
+      let labelC
+      if (labelCenter?.x && labelCenter?.y) {
+        labelC = { x: labelCenter.x * zoom, y: labelCenter.y * zoom }
+      }
+
+      if (isCurrentCountry) {
+        currentCX = { ...currentCX, [countryId]: cx }
+        currentCY = { ...currentCY, [countryId]: cy }
+      }
+
+      const offsetX = WORLD_MAP_SVG_CENTER_X - cx
+      const offsetY = WORLD_MAP_SVG_CENTER_Y - cy
+
+
+      const [b, l] = MapCountry({
+        borderCoordList,
+        countryId,
+        countryName,
+        c: { x: cx, y: cy },
+        labelC,
+        isHovered: currentHoveredCountryId === countryId,
+        isSelected: isCurrentCountry,
+        zoom,
+      })
+
+      const onClick = () => {
+        const offset = [offsetX, offsetY]
+        setGraphOffset(offset)
+        setCurrentCountryList(symmetricDifference(
+          currentCountryIdList,
+          [countryId],
+        ))
+        setJSONLocalStorage({ k: graphKey, v: offset })
+      }
+
+      borders.push({ b, countryId, onClick })
+      labels.push({ l, countryId, onClick })
+    })
+  })
+
   return (
     <figure className='map-svg'>
       <MapSvgControlList
@@ -52,78 +123,34 @@ function MapSvg({
       >
         <g key='guides' transform={`translate(${graphOffset})`}>
           {
-            toPairs(
-              WorldBorderList[currentYear]
-            ).map(([
-              countryId, {
-                countryBorder,
-                countryCenter,
-                countryName,
-                labelCenter,
-              }
-            ], i) => {
-              isCurrentCountry = currentCountryIdList.includes(countryId)
-
-              return countryBorder.map((subBorder, j) => {
-                // this can go once the full center code is sorted
-                let borderCoordList
-                let c
-                const lastB = last(subBorder)
-                if (lastB.c) {
-                  c = lastB.c
-                  borderCoordList = init(subBorder)
-                } else {
-                  c = countryCenter
-                  borderCoordList = subBorder
-                }
-
-                const cx = c.x * zoom
-                const cy = c.y * zoom
-
-                let labelC
-                if (labelCenter?.x && labelCenter?.y) {
-                  labelC = { x: labelCenter.x * zoom, y: labelCenter.y * zoom }
-                }
-
-                if (isCurrentCountry) {
-                  currentCX = { ...currentCX, [countryId]: cx }
-                  currentCY = { ...currentCY, [countryId]: cy }
-                }
-
-                const offsetX = WORLD_MAP_SVG_CENTER_X - cx
-                const offsetY = WORLD_MAP_SVG_CENTER_Y - cy
-
-                return (
-                  <g
-                    key={`${countryId}${j}`}
-                    pointer-events="visiblePainted"
-                    onMouseEnter={() => setCurrentHoveredCountryId(countryId)}
-                    onMouseLeave={() => setCurrentHoveredCountryId(undefined)}
-                    onClick={() => {
-                      const offset = [offsetX, offsetY]
-                      setGraphOffset(offset)
-                      setCurrentCountryList(symmetricDifference(
-                        currentCountryIdList,
-                        [countryId],
-                      ))
-                      setJSONLocalStorage({ k: graphKey, v: offset })
-                    }}
-                  >
-                    <MapCountry
-                      borderCoordList={borderCoordList}
-                      countryId={countryId}
-                      countryName={countryName}
-                      c={{ x: cx, y: cy }}
-                      labelC={labelC}
-                      isHovered={currentHoveredCountryId === countryId}
-                      isSelected={isCurrentCountry}
-                      zoom={zoom}
-                    />
-                  </g>
-                )
-              })
+            borders.map(({ b, countryId, onClick }, i) => {
+              return (
+                <g
+                  key={`${countryId}${i}`}
+                  pointer-events="visiblePainted"
+                  onMouseEnter={() => setCurrentHoveredCountryId(countryId)}
+                  onMouseLeave={() => setCurrentHoveredCountryId(undefined)}
+                  onClick={onClick}
+                >
+                  {b}
+                </g>
+              )
             })
           }
+          {
+            labels.map(({ l, countryId, onClick }) => {
+              return (<g
+                  pointer-events="visiblePainted"
+                  onMouseEnter={() => setCurrentHoveredCountryId(countryId)}
+                  onMouseLeave={() => setCurrentHoveredCountryId(undefined)}
+                  onClick={onClick}>{l}</g>)
+            })
+          }
+
+
+
+
+
           <g className='row-layout space-childen'>
             { zoom >= 2 && currentCountryIdList.map(currentCountryId => {
               const data = mapDetailData[currentCountryId]
