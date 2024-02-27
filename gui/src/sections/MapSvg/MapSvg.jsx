@@ -40,7 +40,7 @@ function MapSvg({
 
   toPairs(
     WorldBorderList[currentYear]
-  ).map(function([
+  ).forEach(function([
     countryId, {
       countryBorder,
       countryCenter,
@@ -50,7 +50,7 @@ function MapSvg({
   ], i) {
     isCurrentCountry = currentCountryIdList.includes(countryId)
 
-    return countryBorder.map((subBorder, j) => {
+    return countryBorder.forEach(function(subBorder, j) {
       // this can go once the full center code is sorted
       let borderCoordList
       let c
