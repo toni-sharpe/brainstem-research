@@ -4,7 +4,7 @@
   @include column-layout();
   @include self-space-column-add-border();
   align-items: center;
-  font-size: var(--font-size--medium);
+  font-size: $font-size--medium;
   white-space: nowrap;
   width: 100%;
 
@@ -52,28 +52,28 @@
   }
 
   &__total-marker {
-    background-color: var(--black);
+    background-color: $black;
   }
 
   &__label {
-    color: var(--white);
-    padding: var(--padding--small-tiny) var(--padding--small);
+    color: $white;
+    padding: $padding--small-tiny $padding--small;
   }
   &__severe-ave {
-    background-color:var(--red--dark);
+    background-color:$red--dark;
   }
   &__non-severe-ave {
-    background-color:var(--blue--dark);
+    background-color:$blue--dark;
   }
   &__lowest-median-marker {
-    border-left: 20px solid var(--green);
+    border-left: 20px solid $green;
   }
 
   &__unknown-count {
-    background-color: var(--orange--light);
-    color: var(--black);
+    background-color: $orange--light;
+    color: $black;
     &.outcome-summary__unknown-count {
-      padding-right: var(--spacing--narrow);
+      padding-right: $spacing--narrow;
     }
   }
 

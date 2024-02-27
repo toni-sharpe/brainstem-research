@@ -1,10 +1,12 @@
+@import '../../../../util/Constant/sass-variable-list.scss';
+
 .biased-judgement-sim {
   width: 100%;
   display: inline-flex;
   flex-wrap: wrap;
 
   &__example {
-    padding: var(--padding--large);
+    padding: $padding--large;
     position: relative;
   }
 }

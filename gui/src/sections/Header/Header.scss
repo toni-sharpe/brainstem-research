@@ -1,8 +1,8 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .ui-header-bar {
-  border-bottom: 1px solid var(--grey--black);
-  padding-bottom: var(--spacing--narrow);
+  border-bottom: 1px solid $grey--black;
+  padding-bottom: $spacing--narrow;
   transition: left 1s;
   width: 100%;
 
@@ -44,15 +44,15 @@
   }
 
   @media (max-width: $media-switch--large) {
-    background-color: var(--white);
-    border-bottom: 1px solid var(--grey--black);
-    border-right: 1px solid var(--grey--black);
-    border-top: var(--padding--medium) solid var(--white);
-    border-left: var(--padding--medium) solid var(--white);
+    background-color: $white;
+    border-bottom: 1px solid $grey--black;
+    border-right: 1px solid $grey--black;
+    border-top: $padding--medium solid $white;
+    border-left: $padding--medium solid $white;
     left: -210px;
     position: absolute;
     top: 0 - $padding--small-tiny;
     width: 200px;
-    z-index: var(--menu-guaranteed);
+    z-index: $menu-guaranteed;
   }
 }

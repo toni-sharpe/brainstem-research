@@ -1,3 +1,5 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .x-axis-line-number {
   position: absolute;
 
@@ -15,14 +17,14 @@
     text-align: center;
 
     .x-axis-line-number__num {
-      background-color: var(--blue--light);
-      color: var(--blue--dark);
+      background-color: $blue--light;
+      color: $blue--dark;
     }
   }
 
   &__num {
-    background-color: var(--blue--dark);
-    color: var(--white);
-    padding: var(--padding--small-tiny) var(--padding--small);
+    background-color: $blue--dark;
+    color: $white;
+    padding: $padding--small-tiny $padding--small;
   }
 }

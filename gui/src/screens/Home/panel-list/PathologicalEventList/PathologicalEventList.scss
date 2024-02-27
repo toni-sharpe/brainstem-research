@@ -1,33 +1,35 @@
+@import '../../../../util/Constant/sass-variable-list.scss';
+
 .pathological-event-list {
   tr {
     &.heading {
     }
     &.sure {
-      background-color: var(--blue--lightest);
+      background-color: $blue--lightest;
     }
     &.heading {
     }
     &.not-so-sure {
-      background-color: var(--red--lightest);
+      background-color: $red--lightest;
     }
   }
 
   th,
   td {
-    font-size: var(--font-size--medium-small);
-    padding: var(--padding--tiniest) var(--padding--small-tiny);
+    font-size: $font-size--medium-small;
+    padding: $padding--tiniest $padding--small-tiny;
   }
 
   .heading {
     td {
-      background-color: var(--grey--dark);
-      color: var(--white);
+      background-color: $grey--dark;
+      color: $white;
       text-align: center;
     }
   }
 
   td {
-    box-shadow: 0 0 0 1px inset var(--blue--dark);
+    box-shadow: 0 0 0 1px inset $blue--dark;
     &.center {
       text-align: center;
     }
@@ -39,7 +41,7 @@
       display: flex;
       span {
         min-width: 22px;
-        padding: var(--padding--tiniest);
+        padding: $padding--tiniest;
       }
     }
     .half {

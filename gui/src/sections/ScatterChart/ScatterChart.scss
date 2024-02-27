@@ -3,29 +3,29 @@
 .scatter-chart {
   box-sizing: border-box;
   flex: 1;
-  padding: var(--padding--very-large);
+  padding: $padding--very-large;
   width: 100%;
   max-width: 90vh;
   max-height: 90vh;
   &__number {
-    fill: var(--black);
+    fill: $black;
     fill-opacity: 1;
-    font-size: var(--font-size--medium-small);
+    font-size: $font-size--medium-small;
     text-align: right;
   }
   &__y-label {
     transform: rotate(-90deg);
   }
   &__outcome-severe {
-    fill: var(--prime-symptom--severe);
+    fill: $prime-symptom--severe;
   }
   &__outcome-not-severe {
-    fill: var(--prime-symptom--not-severe);
+    fill: $prime-symptom--not-severe;
   }
   &__care-level-severe {
-    stroke: var(--prime-symptom--severe);
+    stroke: $prime-symptom--severe;
   }
   &__care-level-not-severe {
-    stroke: var(--prime-symptom--not-severe);
+    stroke: $prime-symptom--not-severe;
   }
 }

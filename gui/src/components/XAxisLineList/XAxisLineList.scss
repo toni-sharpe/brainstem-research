@@ -1,15 +1,17 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .x-axis-line-list {
   position: relative;
   width: 100%;
   &__line {
-    background-color: var(--grey--light);
+    background-color: $grey--light;
     position: absolute;
     height: 2px;
     opacity: 0.5;
     width: 100%;
-    z-index: var(--step-right-back);
+    z-index: $step-right-back;
     &--highlight {
-      background-color:var(--blue--dark);
+      background-color:$blue--dark;
     }
   }
   &__num-list {

@@ -1,6 +1,8 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .gantt-bar-wrapper {
-  border-bottom: 1px solid var(--grey--lightest);
+  border-bottom: 1px solid $grey--lightest;
   position: absolute;
   width: 100%;
-  z-index: var(--step-right-back);
+  z-index: $step-right-back;
 }

@@ -1,3 +1,5 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .sub-page-wrapper {
   position: relative;
   align-items: center;
@@ -14,6 +16,6 @@
   }
 
   &__story-book {
-    background-color: var(--blue--light);
+    background-color: $blue--light;
   }
 }

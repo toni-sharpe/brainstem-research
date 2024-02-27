@@ -1,12 +1,14 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .perc-output {
-  background-color: var(--grey--light);
+  background-color:  $grey--light;
   width: 100px;
   &__current {
-    background-color:var(--blue--dark);
+    background-color: $blue--dark;
     height: 20px;
   }
   &__unknown {
-    background-color:var(--orange--light);
+    background-color: $orange--light;
     height: 20px;
   }
 }

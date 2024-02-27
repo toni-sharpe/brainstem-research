@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   left: 0;
-  padding: var(--padding--medium);
+  padding: $padding--medium;
   position: fixed;
   right: 0;
   width: 100%;
@@ -56,7 +56,7 @@
     flex-wrap: wrap;
     button {
       @media (max-width: $media-switch--medium) {
-        margin-bottom: var(--spacing--narrow);
+        margin-bottom: $spacing--narrow;
       }
     }
   }

@@ -1,10 +1,12 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .menu-item {
   display: inline-block;
-  padding: var(--padding--medium-large) var(--padding--large);
+  padding: $padding--medium-large $padding--large;
   white-space: nowrap;
 
   &--current {
-    background-color: var(--blue--dark);
-    color: var(--white);
+    background-color: $blue--dark;
+    color: $white;
   }
 }
