@@ -16,6 +16,7 @@ function MapCountry({
   borderCoordList,
   countryName,
   c,
+  isHovered,
   isSelected,
   zoom
 }) {
@@ -27,7 +28,8 @@ function MapCountry({
   const coordList = borderCoordList.map(([a, b]) => ([a * zoom , b * zoom]))
 
   const selectedClass = isSelected ? ' is-selected' : ''
-  const className = `map-country${selectedClass}`
+  const hoveredClass = isHovered ? ' is-hovered' : ''
+  const className = `map-country${selectedClass}${hoveredClass}`
 
   return isCircle && type(c, 'Object')
     ? (

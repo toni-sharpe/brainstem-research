@@ -27,6 +27,7 @@ function MapSvg({
   const persisted = getJSONLocalStorage({ k: graphKey })
 
   const [currentCountryIdList, setCurrentCountryList] = useState([])
+  const [currentHoveredCountryId, setCurrentHoveredCountryId] = useState()
   const [graphOffset, setGraphOffset] = useState(persisted?.graphOffset || [0, 0])
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
 
@@ -80,7 +81,10 @@ function MapSvg({
 
                 return (
                   <g
-                    key={`${c.x}${c.y}`}
+                    key={`${countryId}${j}`}
+                    pointer-events="visiblePainted"
+                    onMouseEnter={() => setCurrentHoveredCountryId(countryId)}
+                    onMouseLeave={() => setCurrentHoveredCountryId(undefined)}
                     onClick={() => {
                       const offset = [offsetX, offsetY]
                       setGraphOffset(offset)
