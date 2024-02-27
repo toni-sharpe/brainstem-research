@@ -27,7 +27,7 @@ const baseMapSvgControlListProps = {
   zoom: 1,
 }
 
-export const Zoom1IeNoZoomDisabledThings = {
+export const Zoom1Centered = {
   render: () => {
     return (
       <MapSvgControlList {...baseMapSvgControlListProps} />
@@ -35,7 +35,19 @@ export const Zoom1IeNoZoomDisabledThings = {
   }
 };
 
-export const WithOffsetAndZoomRestable= {
+export const Zoom1NotCentered = {
+  render: () => {
+    const props = {
+      ...baseMapSvgControlListProps,
+      graphOffset: [1, 1],
+    }
+    return (
+      <MapSvgControlList {...props} />
+    )
+  }
+};
+
+export const WithOffsetAndZoomResetable= {
   render: () => {
     const props = {
       ...baseMapSvgControlListProps,
