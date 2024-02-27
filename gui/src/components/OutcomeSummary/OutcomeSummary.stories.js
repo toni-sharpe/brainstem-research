@@ -1,8 +1,17 @@
 // OutcomeSummary.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import OutcomeSummary from './OutcomeSummary';
 
 export default {
   component: OutcomeSummary,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseOutcomeSummaryProps = {

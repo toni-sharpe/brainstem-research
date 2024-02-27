@@ -7,6 +7,13 @@ import ScatterStatisticOutput from './ScatterStatisticOutput';
 
 export default {
   component: ScatterStatisticOutput,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper widthSetTo100>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const storyKeys = {
@@ -25,9 +32,7 @@ const commonScatterStatisticOutputProps = {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <ScatterStatisticOutput {...commonScatterStatisticOutputProps} />
-      </StoryBookPaddedWrapper>
+      <ScatterStatisticOutput {...commonScatterStatisticOutputProps} />
     )
   },
 };
@@ -40,9 +45,7 @@ export const NotEnoughPoints = {
     }
 
     return (
-      <StoryBookPaddedWrapper>
-        <ScatterStatisticOutput {...props} />
-      </StoryBookPaddedWrapper>
+      <ScatterStatisticOutput {...props} />
     )
   },
 };
@@ -55,9 +58,7 @@ export const NeedsTwoPoints = {
     }
 
     return (
-      <StoryBookPaddedWrapper>
-        <ScatterStatisticOutput {...props} />
-      </StoryBookPaddedWrapper>
+      <ScatterStatisticOutput {...props} />
     )
   },
 };

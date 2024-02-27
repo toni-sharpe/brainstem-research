@@ -6,6 +6,18 @@ import HistogramBarLabel from './HistogramBarLabel';
 
 export default {
   component: HistogramBarLabel,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper
+        info='Hover over the bar to see the number appear'
+        widthSetTo100
+        wrapperElem='ul'
+        wrapperElemProps={{ style: { width: '80%' } }}
+      >
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const histogramBarProps = {
@@ -23,15 +35,11 @@ const baseHistogramBarLabelProps = {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <ul>
-          <HistogramBar {...histogramBarProps}>
-            <HistogramBarLabel {...baseHistogramBarLabelProps}>
-              <span>Label</span>
-            </HistogramBarLabel>
-          </HistogramBar>
-        </ul>
-      </StoryBookPaddedWrapper>
+      <HistogramBar {...histogramBarProps}>
+        <HistogramBarLabel {...baseHistogramBarLabelProps}>
+          <span>Label</span>
+        </HistogramBarLabel>
+      </HistogramBar>
     )
   }
 };

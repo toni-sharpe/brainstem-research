@@ -6,6 +6,18 @@ import HistogramBarCount from './HistogramBarCount';
 
 export default {
   component: HistogramBarCount,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper
+        info='Hover over the bar to see the number appear'
+        widthSetTo100
+        wrapperElem='ul'
+        wrapperElemProps={{ style: { width: '80%' } }}
+      >
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const histogramBarProps = {
@@ -24,13 +36,9 @@ const baseHistogramBarCountProps = {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <ul>
-          <HistogramBar {...histogramBarProps}>
-            <HistogramBarCount {...baseHistogramBarCountProps} />
-          </HistogramBar>
-        </ul>
-      </StoryBookPaddedWrapper>
+      <HistogramBar {...histogramBarProps}>
+        <HistogramBarCount {...baseHistogramBarCountProps} />
+      </HistogramBar>
     )
   }
 };
@@ -42,13 +50,9 @@ export const BarCountOver4 = {
       barCountPerBlock: 5,
     }
     return (
-      <StoryBookPaddedWrapper>
-        <ul>
-          <HistogramBar {...histogramBarProps}>
-            <HistogramBarCount {...props} />
-          </HistogramBar>
-        </ul>
-      </StoryBookPaddedWrapper>
+      <HistogramBar {...histogramBarProps}>
+        <HistogramBarCount {...props} />
+      </HistogramBar>
     )
   }
 };
@@ -60,13 +64,9 @@ export const BarCountOver6 = {
       barCountPerBlock: 7,
     }
     return (
-      <StoryBookPaddedWrapper>
-        <ul>
-          <HistogramBar {...histogramBarProps}>
-            <HistogramBarCount {...props} />
-          </HistogramBar>
-        </ul>
-      </StoryBookPaddedWrapper>
+      <HistogramBar {...histogramBarProps}>
+        <HistogramBarCount {...props} />
+      </HistogramBar>
     )
   }
 };

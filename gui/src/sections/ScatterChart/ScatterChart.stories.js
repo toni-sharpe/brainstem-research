@@ -1,10 +1,19 @@
 // ScatterChart.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import APIScatterData from 'example-data/APIScatter.example-data'
 
 import ScatterChart from './ScatterChart';
 
 export default {
   component: ScatterChart,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper isScreenWidth>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const commonScatterChartProps = {

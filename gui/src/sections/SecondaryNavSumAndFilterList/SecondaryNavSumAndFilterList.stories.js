@@ -1,8 +1,17 @@
 // SecondaryNavSumAndFilterList.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import SecondaryNavSumAndFilterList from './SecondaryNavSumAndFilterList';
 
 export default {
   component: SecondaryNavSumAndFilterList,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseSecondaryNavSumAndFilterListProps = {

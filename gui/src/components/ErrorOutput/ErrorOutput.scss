@@ -3,11 +3,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 50px 0;
   &__text {
     background-color: var(--red--dark);
     color: var(--white);
-    font-size: var(--font-size--large);
+    font-size: var(--font-size--medium);
     font-weight: bold;
     padding: var(--padding--small) var(--padding--medium);
   }

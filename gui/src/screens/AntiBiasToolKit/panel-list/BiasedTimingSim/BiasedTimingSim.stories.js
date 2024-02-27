@@ -6,6 +6,17 @@ import BiasedTimingSim from './BiasedTimingSim';
 
 export default {
   component: BiasedTimingSim,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper
+        height={780}
+        heading='Allows bias in the prime symptom measurements to be altered to see how badly that could affect the results'
+        isScreenWidth
+      >
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const BiasedTimingSimProps = {
@@ -15,9 +26,7 @@ const BiasedTimingSimProps = {
 export const RegularPage = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <BiasedTimingSim {...BiasedTimingSimProps} />
-      </StoryBookPaddedWrapper>
+      <BiasedTimingSim {...BiasedTimingSimProps} />
     )
   }
 };

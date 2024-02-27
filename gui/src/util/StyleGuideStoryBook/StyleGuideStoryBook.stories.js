@@ -1,6 +1,8 @@
 // StyleGuideStoryBook.story.js
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
 
+
+
 import StyleGuideStoryBook from './StyleGuideStoryBook'
 
 export default {
@@ -10,9 +12,9 @@ export default {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
+      <div style={{ padding: '4%' }}>
         <StyleGuideStoryBook />
-      </StoryBookPaddedWrapper>
+      </div>
     )
   }
 };

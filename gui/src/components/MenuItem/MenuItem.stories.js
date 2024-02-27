@@ -1,8 +1,17 @@
 // MenuItem.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import MenuItem from './MenuItem';
 
 export default {
   component: MenuItem,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseMenuItemProps = {

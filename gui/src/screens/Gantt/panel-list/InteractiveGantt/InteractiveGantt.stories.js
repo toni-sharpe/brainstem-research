@@ -6,6 +6,16 @@ import InteractiveGantt from './InteractiveGantt';
 
 export default {
   component: InteractiveGantt,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper
+        height={716}
+        isScreenWidth
+      >
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseInteractiveGanttProps = {
@@ -15,9 +25,7 @@ const baseInteractiveGanttProps = {
 export const RegularPage = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <InteractiveGantt {...baseInteractiveGanttProps} />
-      </StoryBookPaddedWrapper>
+      <InteractiveGantt {...baseInteractiveGanttProps} />
     )
   }
 };

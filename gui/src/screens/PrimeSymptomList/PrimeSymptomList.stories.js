@@ -6,6 +6,16 @@ import PrimeSymptomList from './PrimeSymptomList';
 
 export default {
   component: PrimeSymptomList,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper
+        height={800}
+        isScreenWidth
+      >
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const basePrimeSymptomListProps = {
@@ -15,9 +25,7 @@ const basePrimeSymptomListProps = {
 export const RegularPage = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <PrimeSymptomList {...basePrimeSymptomListProps} />
-      </StoryBookPaddedWrapper>
+      <PrimeSymptomList {...basePrimeSymptomListProps} />
     )
   }
 };

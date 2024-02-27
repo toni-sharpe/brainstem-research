@@ -6,6 +6,16 @@ import Gantt from './Gantt';
 
 export default {
   component: Gantt,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper
+        height={740}
+        isScreenWidth
+      >
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseGanttProps = {
@@ -15,9 +25,7 @@ const baseGanttProps = {
 export const RegularPage = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <Gantt {...baseGanttProps} />
-      </StoryBookPaddedWrapper>
+      <Gantt {...baseGanttProps} />
     )
   }
 };

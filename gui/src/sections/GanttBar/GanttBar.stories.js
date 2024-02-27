@@ -1,4 +1,6 @@
 // GanttBar.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import { keys, lensPath, pipe, set, view } from 'ramda'
 import { GanttBarDataToneSet } from 'example-data/GanttBar.example-data'
 import { GANTT_TOGGLE_LIST, TONE_KEY_LIST } from 'util/Constant/BaseConstantList'

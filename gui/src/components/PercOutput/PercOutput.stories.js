@@ -1,8 +1,17 @@
 // PercOutput.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import PercOutput from './PercOutput';
 
 export default {
   component: PercOutput,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const basePercOutputProps = {

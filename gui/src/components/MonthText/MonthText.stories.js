@@ -5,6 +5,13 @@ import MonthText from './MonthText';
 
 export default {
   component: MonthText,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper widthSetTo100>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseMonthTextProps = {
@@ -23,12 +30,10 @@ const monthBlockProps = {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <MonthBlock
-          {...monthBlockProps}
-          monthText={<MonthText {...baseMonthTextProps} />}
-        />
-      </StoryBookPaddedWrapper>
+      <MonthBlock
+        {...monthBlockProps}
+        monthText={<MonthText {...baseMonthTextProps} />}
+      />
     )
   }
 };
@@ -40,12 +45,10 @@ export const JustValSum = {
       valOutputList: [],
     }
     return (
-      <StoryBookPaddedWrapper>
-        <MonthBlock
-          {...monthBlockProps}
-          monthText={<MonthText {...props} />}
-        />
-      </StoryBookPaddedWrapper>
+      <MonthBlock
+        {...monthBlockProps}
+        monthText={<MonthText {...props} />}
+      />
     )
   }
 };
@@ -57,12 +60,10 @@ export const JustOneVal = {
       valOutputList: [50],
     }
     return (
-      <StoryBookPaddedWrapper>
-        <MonthBlock
-          {...monthBlockProps}
-          monthText={<MonthText {...props} />}
-        />
-      </StoryBookPaddedWrapper>
+      <MonthBlock
+        {...monthBlockProps}
+        monthText={<MonthText {...props} />}
+      />
     )
   }
 };
@@ -75,12 +76,10 @@ export const JustOneValAboveCrossover = {
       valOutputList: [53],
     }
     return (
-      <StoryBookPaddedWrapper>
-        <MonthBlock
-          {...monthBlockProps}
-          monthText={<MonthText {...props} />}
-        />
-      </StoryBookPaddedWrapper>
+      <MonthBlock
+        {...monthBlockProps}
+        monthText={<MonthText {...props} />}
+      />
     )
   }
 };
@@ -92,12 +91,10 @@ export const HighCrossover = {
       crossover: 110,
     }
     return (
-      <StoryBookPaddedWrapper>
-        <MonthBlock
-          {...monthBlockProps}
-          monthText={<MonthText {...props} />}
-        />
-      </StoryBookPaddedWrapper>
+      <MonthBlock
+        {...monthBlockProps}
+        monthText={<MonthText {...props} />}
+      />
     )
   }
 };
@@ -109,12 +106,10 @@ export const NoCrossoverUsesDefault = {
       crossover: undefined,
     }
     return (
-      <StoryBookPaddedWrapper>
-        <MonthBlock
-          {...monthBlockProps}
-          monthText={<MonthText {...props} />}
-        />
-      </StoryBookPaddedWrapper>
+      <MonthBlock
+        {...monthBlockProps}
+        monthText={<MonthText {...props} />}
+      />
     )
   }
 };
@@ -127,12 +122,10 @@ export const NoValsSumZero = {
       valSum: 0,
     }
     return (
-      <StoryBookPaddedWrapper>
-        <MonthBlock
-          {...monthBlockProps}
-          monthText={<MonthText {...props} />}
-        />
-      </StoryBookPaddedWrapper>
+      <MonthBlock
+        {...monthBlockProps}
+        monthText={<MonthText {...props} />}
+      />
     )
   }
 };
@@ -145,12 +138,10 @@ export const NoValsOrSum = {
       valSum: undefined,
     }
     return (
-      <StoryBookPaddedWrapper>
-        <MonthBlock
-          {...monthBlockProps}
-          monthText={<MonthText {...props} />}
-        />
-      </StoryBookPaddedWrapper>
+      <MonthBlock
+        {...monthBlockProps}
+        monthText={<MonthText {...props} />}
+      />
     )
   }
 };

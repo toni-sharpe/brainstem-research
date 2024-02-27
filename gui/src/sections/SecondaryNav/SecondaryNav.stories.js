@@ -1,9 +1,18 @@
 // SecondaryNav.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import Button from 'components/Button/Button'
 import SecondaryNav from './SecondaryNav';
 
 export default {
   component: SecondaryNav,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseSecondaryNavProps = {

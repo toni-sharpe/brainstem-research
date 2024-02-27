@@ -1,9 +1,12 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .gantt-bar-quantile-list {
+  height: $gantt-bar-quantile-height;
   &__line {
-    background-color: var(--grey--dull-dark);
-    height: var(--gantt-bar-quantile-height);
+    background-color: $grey--dull-dark;
+    height: $gantt-bar-quantile-height;
     position: absolute;
     width: 2px;
-    z-index: var(--step-right-forward);
+    z-index: $step-right-forward;
   }
 }

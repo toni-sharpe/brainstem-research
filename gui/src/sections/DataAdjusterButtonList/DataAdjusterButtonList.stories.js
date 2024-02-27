@@ -1,13 +1,18 @@
 // DataAdjusterButtonList.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import DataAdjusterButtonList from './DataAdjusterButtonList';
 
 export default {
   component: DataAdjusterButtonList,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
-
-function DataAdjusterStoryWidthSim({ children }) {
-  return (<div style={{ width: '80px' }}>{children}</div>)
-}
 
 const baseDataAdjusterButtonListProps = {
   adjusterList: [1, 2, 3, 5, 7, 11],
@@ -20,7 +25,7 @@ const baseDataAdjusterButtonListProps = {
 export const Primary = {
   render: () => {
     return (
-      <DataAdjusterStoryWidthSim><DataAdjusterButtonList {...baseDataAdjusterButtonListProps} /></DataAdjusterStoryWidthSim>
+      <DataAdjusterButtonList {...baseDataAdjusterButtonListProps} />
     )
   }
 };

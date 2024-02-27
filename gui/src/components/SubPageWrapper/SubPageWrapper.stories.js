@@ -1,9 +1,18 @@
 // SubPageWrapper.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import StoryBookExampleBlock from 'components/StoryBookExampleBlock/StoryBookExampleBlock'
 import SubPageWrapper from './SubPageWrapper';
 
 export default {
   component: SubPageWrapper,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseSubPageWrapperProps = {

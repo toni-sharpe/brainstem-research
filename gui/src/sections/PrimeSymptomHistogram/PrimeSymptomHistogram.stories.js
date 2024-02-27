@@ -1,4 +1,6 @@
 // PrimeSymptomHistogram.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import PrimeSymptomHistogramData from 'example-data/APIPrimeSymptomList.example-data'
 import { PRIME_SYMPTOM_BLOCK_SIZE } from 'util/Constant/BaseConstantList'
 
@@ -6,6 +8,16 @@ import PrimeSymptomHistogram from './PrimeSymptomHistogram';
 
 export default {
   component: PrimeSymptomHistogram,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper
+        height={860}
+        isScreenWidth
+      >
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const basePrimeSymptomHistogramProps = {

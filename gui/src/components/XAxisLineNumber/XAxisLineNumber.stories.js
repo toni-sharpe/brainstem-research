@@ -1,8 +1,17 @@
 // XAxisLineNumber.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import XAxisLineNumber from './XAxisLineNumber';
 
 export default {
   component: XAxisLineNumber,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper info='Several numbers are shown'>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 export const Primary = {
@@ -21,7 +30,6 @@ export const Primary = {
         <XAxisLineNumber lineNumber={437} top={125} />
         <XAxisLineNumber lineNumber={685} top={175} />
         <XAxisLineNumber lineNumber={854} top={225} />
-        Several numbers are shown
       </div>
     )
   }

@@ -1,6 +1,7 @@
 // MapSvgControlList.story.js
-
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
+
 import { calcAccessibleHue } from 'util/UtilHue/UtilHue'
 import { calcMostMaxOfAllTheThings } from 'util/Util/UtilMaxThing'
 import { ThreeHistogramData } from 'example-data/Histogram.example-data'
@@ -9,6 +10,13 @@ import MapSvgControlList from './MapSvgControlList';
 
 export default {
   component: MapSvgControlList,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseMapSvgControlListProps = {
@@ -22,9 +30,7 @@ const baseMapSvgControlListProps = {
 export const Zoom1IeNoZoomDisabledThings = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <MapSvgControlList {...baseMapSvgControlListProps} />
-      </StoryBookPaddedWrapper>
+      <MapSvgControlList {...baseMapSvgControlListProps} />
     )
   }
 };
@@ -36,9 +42,7 @@ export const WithOffsetAndZoomRestable= {
       zoom: 5,
     }
     return (
-      <StoryBookPaddedWrapper>
-        <MapSvgControlList {...props} />
-      </StoryBookPaddedWrapper>
+      <MapSvgControlList {...props} />
     )
   }
 };

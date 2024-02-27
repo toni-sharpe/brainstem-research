@@ -1,8 +1,17 @@
 // SumOutput.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import SumOutput from './SumOutput';
 
 export default {
   component: SumOutput,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseSumOutputProps = {

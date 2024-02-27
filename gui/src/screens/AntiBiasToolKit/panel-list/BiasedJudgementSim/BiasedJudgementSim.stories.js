@@ -6,6 +6,13 @@ import BiasedJudgementSim from './BiasedJudgementSim';
 
 export default {
   component: BiasedJudgementSim,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper isScreenWidth>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const BiasedJudgementSimProps = {
@@ -15,9 +22,7 @@ const BiasedJudgementSimProps = {
 export const RegularPage = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <BiasedJudgementSim {...BiasedJudgementSimProps} />
-      </StoryBookPaddedWrapper>
+      <BiasedJudgementSim {...BiasedJudgementSimProps} />
     )
   }
 };

@@ -2,20 +2,20 @@
 
 h1, h2 {
   display: inline;
-  font-size: var(--font-size--large);
-  padding: var(--padding--small) var(--padding--medium-large);
+  font-size: $font-size--large;
   text-align: center;
 }
 h1 {
-  background-color: var(--blue--dark);
-  color: var(--white);
+  background-color: $blue--dark;
+  padding: $padding--small $padding--medium-large;
+  color: $white;
 }
 h2 {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: $white;
+  color: $black;
 }
 h3 {
-  font-size: var(--font-size--medium-large);
+  font-size: $font-size--medium-large;
   font-weight: normal;
 }
 
@@ -34,7 +34,7 @@ h3 {
     flex-wrap: wrap;
     align-items: flex-start;
     h1 {
-      padding-bottom: var(--padding--small);
+      padding-bottom: $padding--small;
     }
     @media (min-width: $media-switch--large) {
       @include row-layout();
@@ -48,22 +48,22 @@ h3 {
 
   &__header {
     align-items: center;
-    border-bottom: 1px solid var(--grey--dark);
+    border-bottom: 1px solid $grey--dark;
     box-sizing: border-box;
     justify-content: space-between;
-    padding: var(--padding--medium) 0;
+    padding: $padding--medium 0;
     width: 100%;
     @media (max-width: $media-switch--large) {
       padding-top: 0;
     }
 
     @media (max-width: $media-switch--medium) {
-      padding-bottom: var(--padding--small-tiny);
+      padding-bottom: $padding--small-tiny;
     }
 
     &.page-detail-wrapper__header {
       @media (max-width: $media-switch--large) {
-        margin-bottom: var(--spacing--narrow);
+        margin-bottom: $spacing--narrow;
       }
     }
   }

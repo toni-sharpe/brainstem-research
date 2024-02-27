@@ -13,10 +13,8 @@ function StoryBookSvgWrapper({
 }) {
   return (
     <div style={{
-      border: '1px solid #000',
-      height: '400px',
-      margin: '100px',
-      width: '400px',
+      height: '540px',
+      width: '540px',
     }}>
       <SvgWrapper
         className='story-book-svg-wrapper'

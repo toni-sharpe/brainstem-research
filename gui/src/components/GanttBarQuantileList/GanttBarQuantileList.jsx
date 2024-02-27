@@ -30,7 +30,7 @@ function GanttBarQuantileList({
   const lineFattener = calcLineFattener({ fatLines })
 
   return (
-    <>
+    <ol className='gantt-bar-quantile-list'>
       { quantileList.map((quantileElem, i) => {
 
         const { left } = quantileElem
@@ -48,7 +48,7 @@ function GanttBarQuantileList({
           </li>
         )
       }) }
-    </>
+    </ol>
   )
 }
 
