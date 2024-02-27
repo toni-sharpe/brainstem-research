@@ -12,7 +12,7 @@ export default {
   component: HistogramBarList,
   decorators: [
     (Story) => (
-      <StoryBookPaddedWrapper isScreenWidth>
+      <StoryBookPaddedWrapper forceAbsolute isScreenWidth>
         <Story />
       </StoryBookPaddedWrapper>
     ),

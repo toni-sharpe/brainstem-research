@@ -10,6 +10,7 @@ import './StoryBookPaddedWrapper.scss'
 function StoryBookPaddedWrapper({
   children,
   elementType,
+  forceAbsolute,
   heading,
   height,
   info,
@@ -63,6 +64,7 @@ function StoryBookPaddedWrapper({
         className='story-book-padded-wrapper__main'
         style={{
           height,
+          position: forceAbsolute ? 'absolute' : undefined,
           width,
         }}
       >
@@ -78,6 +80,7 @@ function StoryBookPaddedWrapper({
 
 StoryBookPaddedWrapper.defaultProps = {
   elementType: 'component',
+  forceAbsolute: false,
   height: 'auto',
   isScreenWidth: false,
   padding: '4%',
@@ -88,6 +91,7 @@ StoryBookPaddedWrapper.defaultProps = {
 StoryBookPaddedWrapper.propTypes = {
   children: PropTypes.node,
   elementType: ElementTypePropType,
+  forceAbsolute: PropTypes.bool, // there's always one
   heading: PropTypes.string,
   height: PropTypes.number, // we need this for position: absolute, that takes the element out of the flow
                             // and therefore out of the height calculation.

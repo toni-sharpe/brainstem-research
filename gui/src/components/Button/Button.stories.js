@@ -92,7 +92,7 @@ export const LabelAccidentallyNotSet = {
   }
 }
 
-export const SmallPadding = {
+export const SmallButton = {
   render: () => {
     const props = {
       ...commonButtonProps,
@@ -104,11 +104,11 @@ export const SmallPadding = {
   }
 }
 
-export const SmallestPadding = {
+export const SmallTinyButton = {
   render: () => {
     const props = {
       ...commonButtonProps,
-      size: 'smallest',
+      size: 'small-tiny',
     }
     return(
       <Button {...props} />
