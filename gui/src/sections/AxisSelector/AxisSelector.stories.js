@@ -5,11 +5,14 @@ import AxisSelector from './AxisSelector';
 
 export default {
   component: AxisSelector,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
-
-function AxisSelectorStoryWidthSim({ children }) {
-  return (<div style={{ width: '250px' }}>{children}</div>)
-}
 
 const baseAxisSelectorProps = {
   axis: 'x',
@@ -24,7 +27,7 @@ const baseAxisSelectorProps = {
 export const Basic = {
   render: () => {
     return (
-      <AxisSelectorStoryWidthSim><AxisSelector {...baseAxisSelectorProps} /></ AxisSelectorStoryWidthSim>
+      <AxisSelector {...baseAxisSelectorProps} />
     )
   }
 };
@@ -36,7 +39,7 @@ export const Selected = {
       currentAxisSelection: 'prime_symptom_2',
     }
     return (
-      <AxisSelectorStoryWidthSim><AxisSelector {...props} /></ AxisSelectorStoryWidthSim>
+      <AxisSelector {...props} />
     )
   }
 };
@@ -49,7 +52,7 @@ export const RightAligned = {
       currentAxisSelection: 'prime_symptom_2',
     }
     return (
-      <AxisSelectorStoryWidthSim><AxisSelector {...props} /></ AxisSelectorStoryWidthSim>
+      <AxisSelector {...props} />
     )
   }
 };
@@ -62,7 +65,7 @@ export const PrimaryMarkLeftAligned = {
       primaryMark: 'prime_symptom_1',
     }
     return (
-      <AxisSelectorStoryWidthSim><AxisSelector {...props} /></ AxisSelectorStoryWidthSim>
+      <AxisSelector {...props} />
     )
   }
 };
@@ -76,7 +79,7 @@ export const PrimaryMarkRightAligned = {
       primaryMark: 'prime_symptom_3',
     }
     return (
-      <AxisSelectorStoryWidthSim><AxisSelector {...props} /></ AxisSelectorStoryWidthSim>
+      <AxisSelector {...props} />
     )
   }
 };
@@ -92,7 +95,7 @@ export const MultiSelect = {
       ]
     }
     return (
-      <AxisSelectorStoryWidthSim><AxisSelector {...props} /></ AxisSelectorStoryWidthSim>
+      <AxisSelector {...props} />
     )
   }
 };
@@ -112,7 +115,7 @@ export const DisabledSelection = {
       ]
     }
     return (
-      <AxisSelectorStoryWidthSim><AxisSelector {...props} /></ AxisSelectorStoryWidthSim>
+      <AxisSelector {...props} />
     )
   }
 };
@@ -124,7 +127,7 @@ export const WithDurationOptions = {
       showDurationOptions: true,
     }
     return (
-      <AxisSelectorStoryWidthSim><AxisSelector {...props} /></ AxisSelectorStoryWidthSim>
+      <AxisSelector {...props} />
     )
   }
 };
@@ -136,7 +139,7 @@ export const DurationOptionsDefined = {
       defineDurationOptions: true,
     }
     return (
-      <AxisSelectorStoryWidthSim><AxisSelector {...props} /></ AxisSelectorStoryWidthSim>
+      <AxisSelector {...props} />
     )
   }
 };

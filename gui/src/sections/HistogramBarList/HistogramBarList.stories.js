@@ -10,6 +10,13 @@ import HistogramBarList from './HistogramBarList';
 
 export default {
   component: HistogramBarList,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper isScreenWidth>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const hueFn = calcAccessibleHue({
@@ -33,9 +40,7 @@ const baseHistogramBarListProps = {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <HistogramBarList {...baseHistogramBarListProps} />
-      </StoryBookPaddedWrapper>
+      <HistogramBarList {...baseHistogramBarListProps} />
     )
   }
 };

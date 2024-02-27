@@ -10,7 +10,10 @@ export default {
   component: GanttChart,
   decorators: [
     (Story) => (
-      <StoryBookPaddedWrapper>
+      <StoryBookPaddedWrapper
+        height={710}
+        isScreenWidth
+      >
         <Story />
       </StoryBookPaddedWrapper>
     ),
@@ -32,9 +35,7 @@ const baseGanttChartProps = {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <GanttChart { ...baseGanttChartProps } />
-      </StoryBookPaddedWrapper>
+      <GanttChart { ...baseGanttChartProps } />
     )
   },
 };
@@ -50,9 +51,7 @@ export const FirstStep = {
       }
     }
     return (
-      <StoryBookPaddedWrapper>
-        <GanttChart { ...props } />
-      </StoryBookPaddedWrapper>
+      <GanttChart { ...props } />
     )
   },
 };
@@ -68,9 +67,7 @@ export const LastStep = {
       }
     }
     return (
-      <StoryBookPaddedWrapper>
-        <GanttChart { ...props } />
-      </StoryBookPaddedWrapper>
+      <GanttChart { ...props } />
     )
   },
 };
@@ -86,9 +83,7 @@ export const MiddleTwoSteps = {
       }
     }
     return (
-      <StoryBookPaddedWrapper>
-        <GanttChart { ...props } />
-      </StoryBookPaddedWrapper>
+      <GanttChart { ...props } />
     )
   },
 };

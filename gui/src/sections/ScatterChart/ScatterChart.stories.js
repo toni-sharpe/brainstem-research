@@ -7,6 +7,13 @@ import ScatterChart from './ScatterChart';
 
 export default {
   component: ScatterChart,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper isScreenWidth>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const commonScatterChartProps = {

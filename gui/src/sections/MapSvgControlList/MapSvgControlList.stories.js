@@ -30,9 +30,7 @@ const baseMapSvgControlListProps = {
 export const Zoom1IeNoZoomDisabledThings = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <MapSvgControlList {...baseMapSvgControlListProps} />
-      </StoryBookPaddedWrapper>
+      <MapSvgControlList {...baseMapSvgControlListProps} />
     )
   }
 };
@@ -44,9 +42,7 @@ export const WithOffsetAndZoomRestable= {
       zoom: 5,
     }
     return (
-      <StoryBookPaddedWrapper>
-        <MapSvgControlList {...props} />
-      </StoryBookPaddedWrapper>
+      <MapSvgControlList {...props} />
     )
   }
 };

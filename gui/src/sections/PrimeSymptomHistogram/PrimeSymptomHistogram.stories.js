@@ -10,7 +10,10 @@ export default {
   component: PrimeSymptomHistogram,
   decorators: [
     (Story) => (
-      <StoryBookPaddedWrapper>
+      <StoryBookPaddedWrapper
+        height={860}
+        isScreenWidth
+      >
         <Story />
       </StoryBookPaddedWrapper>
     ),

@@ -12,9 +12,9 @@ export default {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
+      <div style={{ padding: '4%' }}>
         <StyleGuideStoryBook />
-      </StoryBookPaddedWrapper>
+      </div>
     )
   }
 };
