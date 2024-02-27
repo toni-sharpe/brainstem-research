@@ -40,14 +40,14 @@ function MapSvg({
 
   toPairs(
     WorldBorderList[currentYear]
-  ).map(([
+  ).map(function([
     countryId, {
       countryBorder,
       countryCenter,
       countryName,
       labelCenter,
     }
-  ], i) => {
+  ], i) {
     isCurrentCountry = currentCountryIdList.includes(countryId)
 
     return countryBorder.map((subBorder, j) => {
