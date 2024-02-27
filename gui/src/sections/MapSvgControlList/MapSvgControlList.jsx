@@ -29,7 +29,7 @@ function MapSvgControlList({
   const [x, y] = graphOffset
 
   const movementButtonCommonProps = {
-    isDisabled: zoom === 1,
+    isDisabled: zoom === 1 && x === 0 && y === 0,
     size: 'medium',
   }
 

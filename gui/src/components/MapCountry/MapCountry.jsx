@@ -62,7 +62,7 @@ function MapCountry({
     : (
       <MapAreaCenterPoint
         c={c}
-        r={3}
+        r={1}
       />
     )
 
