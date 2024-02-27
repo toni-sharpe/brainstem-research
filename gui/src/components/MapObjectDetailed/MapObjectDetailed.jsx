@@ -19,8 +19,8 @@ function MapObjectDetailed({
   x,
   y,
 }) {
-  const internalW = isPopulated ? w : 75
-  const internalH = isPopulated ? h : 75
+  const internalW = isPopulated ? w : 26
+  const internalH = isPopulated ? h : 20
   return (
     <foreignObject
       key={'test'}
@@ -35,13 +35,12 @@ function MapObjectDetailed({
       >
         <Button
           extraClass={`map-object-detailed__close-button${isPopulated ? '' : ' no-data'}`}
-          label={`${isPopulated ? 'X' : 'NO DATA [X]'}`}
+          label={`${isPopulated ? 'X' : '[ND]'}`}
           onClick={closeOnClick}
           size='small'
           style={{
-            fontSize: `${isPopulated ? 'var(--font-size--small)' : 'var(--font-size--large)'}`,
-            height: `${isPopulated ? '15' : '75'}px`,
-            width: `${isPopulated ? '15' : '75'}px`,
+            height: `${isPopulated ? '15' : '20'}px`,
+            width: `${isPopulated ? '15' : '26'}px`,
           }}
           title={i18next.t(`${i18nBase}.close`, { countryName })}
         />

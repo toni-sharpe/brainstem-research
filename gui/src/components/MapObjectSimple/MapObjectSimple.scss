@@ -11,29 +11,29 @@
   &__label {
     align-items: center;
     border-radius: 3px;
-    background-color: var(--white);
+    background-color: $white;
     display: flex;
     justify-content: center;
-    padding: var(--padding--tiny);
+    padding: $padding--tiny;
   }
 
   &__small {
-    font-size: var(--font-size--medium-large);
+    font-size: $font-size--medium-large;
     @media(min-width: $media-switch--medium) {
-      font-size: var(--font-size--small);
+      font-size: $font-size--small;
     }
     @media(min-width: $media-switch--large) {
-      font-size: var(--font-size--small-tiny);
+      font-size: $font-size--small-tiny;
     }
   }
 
   &__medium {
-    font-size: var(--font-size--medium-large);
+    font-size: $font-size--medium-large;
     @media(min-width: $media-switch--medium) {
-      font-size: var(--font-size--small);
+      font-size: $font-size--small;
     }
     @media(min-width: $media-switch--large) {
-      font-size: var(--font-size--small-tiny);
+      font-size: $font-size--small-tiny;
     }
   }
 }

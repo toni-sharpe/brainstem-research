@@ -8,7 +8,6 @@ import {
 } from 'util/Constant/BaseConstantList'
 import DragGraph from 'sections/DragGraph/DragGraph'
 import Histogram from 'sections/Histogram/Histogram'
-import MapAreaCenterPoint from 'components/MapAreaCenterPoint/MapAreaCenterPoint'
 import MapCountry from 'components/MapCountry/MapCountry'
 import MapObjectDetailed from 'components/MapObjectDetailed/MapObjectDetailed'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
@@ -28,6 +27,7 @@ function MapSvg({
   const persisted = getJSONLocalStorage({ k: graphKey })
 
   const [currentCountryIdList, setCurrentCountryList] = useState([])
+  const [currentHoveredCountryId, setCurrentHoveredCountryId] = useState()
   const [graphOffset, setGraphOffset] = useState(persisted?.graphOffset || [0, 0])
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
 
@@ -52,12 +52,21 @@ function MapSvg({
       >
         <g key='guides' transform={`translate(${graphOffset})`}>
           {
-            toPairs(WorldBorderList[currentYear]).map(([countryId, { countryBorder, countryName }], i) => {
+            toPairs(WorldBorderList[currentYear]).map(([countryId, { countryBorder, countryCenter, countryName }], i) => {
               isCurrentCountry = currentCountryIdList.includes(countryId)
 
               return countryBorder.map((subBorder, j) => {
-                const { c } = last(subBorder)
-                const borderCoordList = init(subBorder)
+                // this can go once the full center code is sorted
+                let borderCoordList
+                let c
+                const lastB = last(subBorder)
+                if (lastB.c) {
+                  c = lastB.c
+                  borderCoordList = init(subBorder)
+                } else {
+                  c = countryCenter[0].c
+                  borderCoordList = subBorder
+                }
 
                 const cx = c.x * zoom
                 const cy = c.y * zoom
@@ -72,7 +81,10 @@ function MapSvg({
 
                 return (
                   <g
-                    key={`${c.x}${c.y}`}
+                    key={`${countryId}${j}`}
+                    pointer-events="visiblePainted"
+                    onMouseEnter={() => setCurrentHoveredCountryId(countryId)}
+                    onMouseLeave={() => setCurrentHoveredCountryId(undefined)}
                     onClick={() => {
                       const offset = [offsetX, offsetY]
                       setGraphOffset(offset)
@@ -88,15 +100,10 @@ function MapSvg({
                       countryId={countryId}
                       countryName={countryName}
                       c={{ x: cx, y: cy }}
+                      isHovered={currentHoveredCountryId === countryId}
                       isSelected={isCurrentCountry}
                       zoom={zoom}
                     />
-                    { zoom < 2 && (
-                      <MapAreaCenterPoint
-                        c={{ x: cx, y: cy }}
-                        r={zoom}
-                      />
-                    ) }
                   </g>
                 )
               })

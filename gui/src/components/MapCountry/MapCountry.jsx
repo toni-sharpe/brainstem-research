@@ -4,7 +4,9 @@ import { type } from 'ramda'
 
 import { isCountryCircle } from 'util/UtilMapCountry/UtilMapCountry'
 import { calcPolygonCoordString } from 'util/UtilSvg/UtilSvg'
+import SvgText from 'components/SvgText/SvgText'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
+import MapAreaCenterPoint from 'components/MapAreaCenterPoint/MapAreaCenterPoint'
 import SvgXyPropType from 'prop-types/SvgXy.prop-type'
 import BorderCoordListPropType from 'prop-types/BorderCoordList.prop-type'
 
@@ -14,6 +16,7 @@ function MapCountry({
   borderCoordList,
   countryName,
   c,
+  isHovered,
   isSelected,
   zoom
 }) {
@@ -25,7 +28,8 @@ function MapCountry({
   const coordList = borderCoordList.map(([a, b]) => ([a * zoom , b * zoom]))
 
   const selectedClass = isSelected ? ' is-selected' : ''
-  const className = `map-country${selectedClass}`
+  const hoveredClass = isHovered ? ' is-hovered' : ''
+  const className = `map-country${selectedClass}${hoveredClass}`
 
   return isCircle && type(c, 'Object')
     ? (
@@ -41,12 +45,30 @@ function MapCountry({
       />
     )
     : (
+    <>
       <polygon
         className={className}
         points={calcPolygonCoordString({ coordList })}
         strokeOpacity={1}
       />
-    )
+      { zoom >= 2
+        ? (
+          <SvgText
+            extraClass={`map-country__name-${zoom <= 4 ? 'small' : 'large'}`}
+            x={c.x}
+            y={c.y}
+            text={countryName}
+          />
+        )
+        : (
+          <MapAreaCenterPoint
+            c={c}
+            r={3}
+          />
+        )
+      }
+    </>
+  )
 }
 
 MapCountry.propTypes = {
