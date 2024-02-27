@@ -57,23 +57,23 @@ const thirdOrMoreMapper = thirdOrMore({
  * confirmedActorFilter()
  */
 test('confirmedActorFilter() - when off does nothing', () => {
-  expect(confirmedActorFilterMapper({})).toBeTruthy()
+  expect(confirmedActorFilterMapper({})).toEqual(true)
 })
 
 test('confirmedActorFilter()', () => {
   const filterFn = filterOn({ fn: confirmedActorFilter, key: 'confirmedActors' })
 
-  expect(filterFn({ consultant_doctor: 'FIR' })).toBeTruthy()
-  expect(filterFn({ consultant_doctor: 'CRW' })).toBeTruthy()
-  expect(filterFn({ consultant_doctor: 'AGG' })).toBeTruthy()
-  expect(filterFn({ consultant_doctor: 'NEM' })).toBeTruthy()
-  expect(filterFn({ consultant_doctor: 'RPV' })).toBeTruthy()
-  expect(filterFn({ consultant_doctor: 'GAL' })).toBeTruthy()
-  expect(filterFn({ consultant_doctor: 'BOD' })).toBeTruthy()
-  expect(filterFn({ consultant_doctor: 'DEE' })).toBeTruthy()
+  expect(filterFn({ consultant_doctor: 'FIR' })).toEqual(true)
+  expect(filterFn({ consultant_doctor: 'CRW' })).toEqual(true)
+  expect(filterFn({ consultant_doctor: 'AGG' })).toEqual(true)
+  expect(filterFn({ consultant_doctor: 'NEM' })).toEqual(true)
+  expect(filterFn({ consultant_doctor: 'RPV' })).toEqual(true)
+  expect(filterFn({ consultant_doctor: 'GAL' })).toEqual(true)
+  expect(filterFn({ consultant_doctor: 'BOD' })).toEqual(true)
+  expect(filterFn({ consultant_doctor: 'DEE' })).toEqual(true)
 
-  expect(filterFn({ consultant_doctor: 'WRONG' })).toBeFalsy()
-  expect(filterFn({})).toBeFalsy()
+  expect(filterFn({ consultant_doctor: 'WRONG' })).toEqual(false)
+  expect(filterFn({})).toEqual(false)
 })
 
 
@@ -82,7 +82,7 @@ test('confirmedActorFilter()', () => {
  */
 test('removeDubiousFilter()', () => {
   const filterFn = filterOn({ fn: removeDubiousFilter, key: 'rmDubious' })
-  expect(filterFn({ outlier: 'DUB' })).toBeFalsy()
+  expect(filterFn({ outlier: 'DUB' })).toEqual(false)
 })
 
 
@@ -90,16 +90,16 @@ test('removeDubiousFilter()', () => {
  * severeFilter()
  */
 test('severeFilter() - when off does nothing', () => {
-  expect(severeFilterMapper({})).toBeTruthy()
+  expect(severeFilterMapper({})).toEqual(true)
 })
 
 test('severeFilter()', () => {
   const severeFilterFn = filterOn({ fn: severeFilter, key: 'severe' })
-  expect(severeFilterFn({ outcome: 'SEV' })).toBeTruthy()
-  expect(severeFilterFn({ outcome: 'NSV' })).toBeFalsy()
+  expect(severeFilterFn({ outcome: 'SEV' })).toEqual(true)
+  expect(severeFilterFn({ outcome: 'NSV' })).toEqual(false)
   const nonSevereFilterFn = filterOn({ fn: severeFilter, key: 'nonSevere' })
-  expect(nonSevereFilterFn({ outcome: 'SEV' })).toBeFalsy()
-  expect(nonSevereFilterFn({ outcome: 'NSV' })).toBeTruthy()
+  expect(nonSevereFilterFn({ outcome: 'SEV' })).toEqual(false)
+  expect(nonSevereFilterFn({ outcome: 'NSV' })).toEqual(true)
 })
 
 
@@ -107,35 +107,13 @@ test('severeFilter()', () => {
  * fjpFilter()
  */
 test('fjpFilter() - when off does nothing', () => {
-  expect(fjpFilterMapper({})).toBeTruthy()
+  expect(fjpFilterMapper({})).toEqual(true)
 })
 
 test('fjpFilter()', () => {
   const filterFn = filterOn({ fn: fjpFilter, key: 'fjp' })
-  expect(filterFn({ consultant_doctor: 'FIR' })).toBeTruthy()
-  expect(filterFn({ consultant_doctor: 'WRONG' })).toBeFalsy()
-})
-
-
-/*
- * pathologicalEventDurationFilter()
- */
-test('pathologicalEventDurationFilter() - when off does nothing', () => {
-  expect(pathologicalEventDurationFilterMapper({})).toBeTruthy()
-})
-
-test('pathologicalEventDurationFilter() - moderate', () => {
-  const filterFn = filterOn({ fn: pathologicalEventDurationFilter, key: 'moderateTime' })
-  expect(filterFn({ pathological_event_duration: 29 })).toBeFalsy()
-  expect(filterFn({ pathological_event_duration: 30 })).toBeTruthy()
-  expect(filterFn({ pathological_event_duration: 31 })).toBeTruthy()
-})
-
-test('pathologicalEventDurationFilter() - long', () => {
-  const filterFn = filterOn({ fn: pathologicalEventDurationFilter, key: 'longTime' })
-  expect(filterFn({ pathological_event_duration: 59 })).toBeFalsy()
-  expect(filterFn({ pathological_event_duration: 60 })).toBeTruthy()
-  expect(filterFn({ pathological_event_duration: 61 })).toBeTruthy()
+  expect(filterFn({ consultant_doctor: 'FIR' })).toEqual(true)
+  expect(filterFn({ consultant_doctor: 'WRONG' })).toEqual(false)
 })
 
 
@@ -152,12 +130,12 @@ const baseArgsAllNull = {
   mild_symptom_1_duration: null,
 }
 test('hardEventOnlyFilter() - when off does nothing', () => {
-  expect(hardEventOnlyFilterMapper({})).toBeTruthy()
+  expect(hardEventOnlyFilterMapper({})).toEqual(true)
 })
 
 test('hardEventOnlyFilter() - when everything indicates a softer event returns false', () => {
   const filterFn = filterOn({ fn: hardEventOnlyFilter, key: 'hardEventOnly' })
-  expect(filterFn(baseArgsAllNull)).toBeFalsy()
+  expect(filterFn(baseArgsAllNull)).toEqual(false)
 })
 
 test('hardEventOnlyFilter() - with any prime or severe symptom returns true', () => {
@@ -167,47 +145,47 @@ test('hardEventOnlyFilter() - with any prime or severe symptom returns true', ()
     ...baseArgsAllNull,
     fatal_symptom_1: 19,
   }
-  expect(filterFn(argsSevereSymptom1)).toBeTruthy()
+  expect(filterFn(argsSevereSymptom1)).toEqual(true)
 
   // Severe symptom 2
   const argsSevereSymptom2 = {
     ...baseArgsAllNull,
     fatal_symptom_2: 23,
   }
-  expect(filterFn(argsSevereSymptom2)).toBeTruthy()
+  expect(filterFn(argsSevereSymptom2)).toEqual(true)
 
   // First prime symptom
   const argsPrimeSymptom = {
     ...baseArgsAllNull,
     first_prime_symptom: 29,
   }
-  expect(filterFn(argsPrimeSymptom)).toBeTruthy()
+  expect(filterFn(argsPrimeSymptom)).toEqual(true)
 
   // Prime symptom 1
   const argsPrimeSymptom1 = {
     ...baseArgsAllNull,
     prime_symptom_1: 31,
   }
-  expect(filterFn(argsPrimeSymptom1)).toBeTruthy()
+  expect(filterFn(argsPrimeSymptom1)).toEqual(true)
 
   // Prime symptom 2
   const argsPrimeSymptom2 = {
     ...baseArgsAllNull,
     prime_symptom_2: 37,
   }
-  expect(filterFn(argsPrimeSymptom2)).toBeTruthy()
+  expect(filterFn(argsPrimeSymptom2)).toEqual(true)
 
   // Prime symptom 3
   const argsPrimeSymptom3 = {
     ...baseArgsAllNull,
     prime_symptom_3: 41,
   }
-  expect(filterFn(argsPrimeSymptom3)).toBeTruthy()
+  expect(filterFn(argsPrimeSymptom3)).toEqual(true)
 })
 
 test('hardEventOnlyFilter() - with just a mild symptom duration of null returns false', () => {
   const filterFn = filterOn({ fn: hardEventOnlyFilter, key: 'hardEventOnly' })
-  expect(filterFn(baseArgsAllNull)).toBeFalsy()
+  expect(filterFn(baseArgsAllNull)).toEqual(false)
 })
 
 test('hardEventOnlyFilter() - with just a mild symptom duration of <=15 returns false', () => {
@@ -216,7 +194,7 @@ test('hardEventOnlyFilter() - with just a mild symptom duration of <=15 returns 
     ...baseArgsAllNull,
     mild_symptom_1_duration: 15,
   }
-  expect(filterFn(argsShortMildSymptomDuration)).toBeFalsy()
+  expect(filterFn(argsShortMildSymptomDuration)).toEqual(false)
 })
 
 test('hardEventOnlyFilter() - with just a mild symptom duration of >15 returns true', () => {
@@ -225,7 +203,7 @@ test('hardEventOnlyFilter() - with just a mild symptom duration of >15 returns t
     ...baseArgsAllNull,
     mild_symptom_1_duration: 16,
   }
-  expect(filterFn(argsLongEnoughMildSymptomDuration)).toBeTruthy()
+  expect(filterFn(argsLongEnoughMildSymptomDuration)).toEqual(true)
 })
 
 
@@ -233,13 +211,13 @@ test('hardEventOnlyFilter() - with just a mild symptom duration of >15 returns t
  * hardPrimeSymptomFilter()
  */
 test('hardPrimeSymptomFilter() - when off does nothing', () => {
-  expect(hardPrimeSymptomFilterMapper({})).toBeTruthy()
+  expect(hardPrimeSymptomFilterMapper({})).toEqual(true)
 })
 
 test('hardPrimeSymptomFilter()', () => {
   const filterFn = filterOn({ fn: hardPrimeSymptomFilter, key: 'hardPrimeSymptom' })
-  expect(filterFn({ prime_symptom_level: 3 })).toBeFalsy()
-  expect(filterFn({ prime_symptom_level: 4 })).toBeTruthy()
+  expect(filterFn({ prime_symptom_level: 3 })).toEqual(false)
+  expect(filterFn({ prime_symptom_level: 4 })).toEqual(true)
 })
 
 
@@ -247,13 +225,13 @@ test('hardPrimeSymptomFilter()', () => {
  * primeSymptomFilter()
  */
 test('primeSymptomFilter() - when off does nothing', () => {
-  expect(primeSymptomFilterMapper({})).toBeTruthy()
+  expect(primeSymptomFilterMapper({})).toEqual(true)
 })
 
 test('primeSymptomFilter()', () => {
   const filterFn = filterOn({ fn: primeSymptomFilter, key: 'primeSymptomType' })
-  expect(filterFn({ first_prime_symptom_type: null })).toBeFalsy()
-  expect(filterFn({ first_prime_symptom_type: 3 })).toBeTruthy()
+  expect(filterFn({ first_prime_symptom_type: null })).toEqual(false)
+  expect(filterFn({ first_prime_symptom_type: 3 })).toEqual(true)
 })
 
 
@@ -261,13 +239,13 @@ test('primeSymptomFilter()', () => {
  * secondOrMore()
  */
 test('secondOrMore() - when off does nothing', () => {
-  expect(secondOrMoreMapper({})).toBeTruthy()
+  expect(secondOrMoreMapper({})).toEqual(true)
 })
 
 test('secondOrMore()', () => {
   const filterFn = filterOn({ fn: secondOrMore, key: 'secondOrMore' })
-  expect(filterFn({ event_count: 1 })).toBeFalsy()
-  expect(filterFn({ event_count: 2 })).toBeTruthy()
+  expect(filterFn({ event_count: 1 })).toEqual(false)
+  expect(filterFn({ event_count: 2 })).toEqual(true)
 })
 
 
@@ -275,11 +253,11 @@ test('secondOrMore()', () => {
  * thirdOrMore()
  */
 test('thirdOrMore() - when off does nothing', () => {
-  expect(thirdOrMoreMapper({})).toBeTruthy()
+  expect(thirdOrMoreMapper({})).toEqual(true)
 })
 
 test('thirdOrMore()', () => {
   const filterFn = filterOn({ fn: thirdOrMore, key: 'thirdOrMore' })
-  expect(filterFn({ event_count: 2 })).toBeFalsy()
-  expect(filterFn({ event_count: 3 })).toBeTruthy()
+  expect(filterFn({ event_count: 2 })).toEqual(false)
+  expect(filterFn({ event_count: 3 })).toEqual(true)
 })

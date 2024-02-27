@@ -105,7 +105,6 @@ test('fullStatBase()', () => {
     vals,
   }
   const result = fullStatBase(args)
-  expect(result.key1).toBeTruthy()
   const key1Stats = result.key1
   expect({
     ...statBase,
