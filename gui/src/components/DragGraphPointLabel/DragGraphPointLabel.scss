@@ -2,7 +2,7 @@
 
 .drag-graph-point-label {
   background-color: $white;
-  border: 1px solid var(--blue);
+  border: 1px solid $blue;
   border-radius: 3px;
   box-sizing: border-box;
   cursor: pointer;
@@ -10,12 +10,12 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  padding: var(--padding--tiniest);
+  padding: $padding--tiniest;
   position: relative;
   opacity: 0.6;
 
   &__text {
-    font-size: var(--font-size--medium-small);
+    font-size: $font-size--medium-small;
     height: 15px;
     text-align: center;
     width: 100%;
@@ -23,9 +23,9 @@
 
   &__num {
     align-items: center;
-    background-color: var(--white);
+    background-color: $white;
     border-radius: 50%;
-    border: 1px solid var(--grey--light);
+    border: 1px solid $grey--light;
     display: flex;
     height: 24px;
     justify-content: center;
@@ -33,7 +33,7 @@
   }
 
   &.is-selected {
-    border: 1px solid var(--blue--dark);
+    border: 1px solid $blue--dark;
     opacity: 1.0;
   }
 }

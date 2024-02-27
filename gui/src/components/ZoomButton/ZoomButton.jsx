@@ -5,8 +5,6 @@ import React from 'react'
 import Button from 'components/Button/Button'
 import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
-import './ZoomButton.scss'
-
 const i18nBase = 'ZoomButton'
 
 function ZoomButton({

@@ -1,5 +1,7 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 button {
-  background-color: var(--grey--very-light);
+  background-color: $grey--very-light;
   border: none;
   padding: 12px;
   display: flex;
@@ -8,32 +10,32 @@ button {
 }
 
 button:hover {
-  background-color: var(--blue--light);
+  background-color: $blue--light;
   cursor: pointer;
 }
 
 button:focus {
-  background-color: var(--blue--light);
+  background-color: $blue--light;
 }
 
 button.is-selected {
-  background-color: var(--grey--dark);
-  color: var(--white);
+  background-color: $grey--dark;
+  color: $white;
 }
 button.is-selected--secondary {
-  background-color:var(--blue--dark);
-  color: var(--white);
+  background-color:$blue--dark;
+  color: $white;
 }
 button.is-disabled {
-  background-color: var(--grey--light);
-  color: var(--grey--lightest);
+  background-color: $grey--light;
+  color: $grey--lightest;
 }
 button.button--medium {
-  padding: var(--padding--medium);
+  padding: $padding--medium;
 }
 button.button--small {
-  padding: var(--padding--small);
+  padding: $padding--small;
 }
 button.button--small-tiny {
-  padding: var(--padding--small-tiny);
+  padding: $padding--small-tiny;
 }

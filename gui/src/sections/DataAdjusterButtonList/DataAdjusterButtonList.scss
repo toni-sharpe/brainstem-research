@@ -1,6 +1,8 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .data-adjuster-button-list {
   align-items: stretch;
-  font-size: var(--font-size--medium);
+  font-size: $font-size--medium;
   width: 40px;
 
   &__button {

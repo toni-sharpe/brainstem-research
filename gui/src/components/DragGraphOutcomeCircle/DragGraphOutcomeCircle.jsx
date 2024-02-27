@@ -4,8 +4,6 @@ import React from 'react'
 import SvgCircle from 'components/SvgCircle/SvgCircle'
 import { calcCircleRadius } from 'util/UtilSvg/UtilSvg'
 
-import './DragGraphOutcomeCircle.scss'
-
 function DragGraphOutcomeCircle({
   c,
   multiplier,

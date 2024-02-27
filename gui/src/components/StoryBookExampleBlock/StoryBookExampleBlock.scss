@@ -1,5 +1,7 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .story-book-example-block {
-  background-color: var(--grey--lightest);
+  background-color: $grey--lightest;
   display: flex;
   justify-content: center;
   align-items: flex-start;

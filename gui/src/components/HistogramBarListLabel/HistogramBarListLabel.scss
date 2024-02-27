@@ -3,19 +3,19 @@
 .histogram-bar-list-label {
   @include column-layout();
   align-items: center;
-  background-color: var(--grey--lightest);
+  background-color: $grey--lightest;
   box-sizing: border-box;
-  font-size: var(--font-size--medium-small);
+  font-size: $font-size--medium-small;
   display: flex;
   justify-content: center;
-  line-height: var(--line-height--large);
+  line-height: $line-height--large;
   min-height: 60px;
-  padding: var(--padding--small-tiny);
+  padding: $padding--small-tiny;
   position: absolute;
   text-align: center;
-  z-index: var(--step-back--at-the-back);
+  z-index: $step-right-back;
 
   @media (min-width: $media-switch--medium) {
-    font-size: var(--font-size--medium);
+    font-size: $font-size--medium;
   }
 }

@@ -1,3 +1,5 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .histogram {
   position: relative;
   display: flex;
@@ -6,7 +8,7 @@
 
   &__caption {
     display: block;
-    font-size: var(--font-size--large);
+    font-size: $font-size--large;
     position: absolute;
     text-align: center;
     width: 100%;
@@ -15,7 +17,7 @@
   &__columns {
     position: absolute;
     bottom: 10px;
-    top: var(--histogram-bar-group-height);
+    top: $histogram-bar-group-height;
   }
 
   &__error-wrapper {

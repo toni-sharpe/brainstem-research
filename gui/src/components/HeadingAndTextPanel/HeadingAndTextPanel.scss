@@ -1,6 +1,8 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .heading-and-text-panel {
-  font-size: var(--font-size--large);
-  line-height: var(--line-height--large);
+  font-size: $font-size--large;
+  line-height: $line-height--large;
   max-width: 800px;
 
   h2,
@@ -9,8 +11,8 @@
   }
 
   h3 {
-    color: var(--blue--dark);
-    font-size: var(--font-size--very-large);
-    font-weight: var(--font-weight--bold);
+    color: $blue--dark;
+    font-size: $font-size--large;
+    font-weight: $font-weight--bold;
   }
 }

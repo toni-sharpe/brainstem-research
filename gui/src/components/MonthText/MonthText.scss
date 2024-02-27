@@ -1,13 +1,15 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .month-text {
-  background-color: var(--white);
-  padding: var(--padding--small-tiny);
+  background-color: $white;
+  padding: $padding--small-tiny;
   &__elem {
     flex-wrap: wrap;
-    margin-bottom: var(--spacing--narrowest);
+    margin-bottom: $spacing--narrowest;
     white-space: nowrap;
   }
   &__sum-val-output {
     display: inline-flex;
-    margin-top: var(--spacing--narrowest);
+    margin-top: $spacing--narrowest;
   }
 }

@@ -1,7 +1,7 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .gantt-bar {
-  height: var(--gantt-bar-height);
+  height: $gantt-bar-height;
   position: absolute;
   bottom: 1px;
   width: 100%;
@@ -10,7 +10,7 @@
     background-color: rgba($green--dark, 0.15);
     white-space: nowrap;
     position: absolute;
-    z-index: var(--step-right-forward);
+    z-index: $step-right-forward;
     right: 2px;
     padding: 1px 6px 2px;
     text-align: left;
@@ -20,9 +20,9 @@
   &__label {
     white-space: nowrap;
     position: absolute;
-    z-index: var(--step-right-forward);
+    z-index: $step-right-forward;
     &--bar-number {
-      font-size: var(--font-size--medium-small);
+      font-size: $font-size--medium-small;
     }
     &--mean {
       left: 5px;
@@ -37,8 +37,8 @@
   }
 
   &__label-text {
-    padding-right: var(--padding--small-tiny);
-    padding-left: var(--padding--small-tiny);
+    padding-right: $padding--small-tiny;
+    padding-left: $padding--small-tiny;
   }
   &__mark {
     width: 2px;
@@ -46,16 +46,16 @@
   &__range {
     opacity: 0.3;
   }
-  &--good { background-color: var(--green); }
+  &--good { background-color: $green; }
   &--notGood { background-color: #da7; }
-  &--bad { background-color: var(--red--dark); }
-  &--veryBad { background-color: var(--grey--dull-dark); }
-  &--neutral { background-color: var(--blue); }
-  &--good-dark { background-color: var(--green--dark) }
+  &--bad { background-color: $red--dark; }
+  &--veryBad { background-color: $grey--dull-dark; }
+  &--neutral { background-color: $blue; }
+  &--good-dark { background-color: $green--dark; }
   &--notGood-dark { background-color: #a81; }
-  &--bad-dark { background-color: var(--red--black); }
-  &--veryBad-dark { background-color: var(--grey--black); }
-  &--neutral-dark { background-color: var(--blue--dark); }
+  &--bad-dark { background-color: $red--black; }
+  &--veryBad-dark { background-color: $grey--black; }
+  &--neutral-dark { background-color: $blue--dark; }
 
   .gantt-bar-label {
     background-color: rgba(255,255,255,0.6);

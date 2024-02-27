@@ -1,13 +1,15 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .menu-button {
-  background-color: var(--menu--green);
-  color: var(--white);
-  font-size: var(--font-size--medium);
-  font-weight: var(--font-weight--bold);
+  background-color: $menu--green;
+  color: $white;
+  font-size: $font-size--medium;
+  font-weight: $font-weight--bold;
   width: 100%;
 
   &:focus,
   &:hover {
-    background-color: var(--menu--green-hover);
-    color: var(--black);
+    background-color: $menu--green-hover;
+    color: $black;
   }
 }

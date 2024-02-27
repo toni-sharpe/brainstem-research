@@ -3,12 +3,12 @@
 .gantt-toggle-list {
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: var(--spacing--narrow);
+  padding-bottom: $spacing--narrow;
   width: 100%;
 
   &__button {
     @media (max-width: $media-switch--small) {
-      padding-top: var(--spacing--narrow);
+      padding-top: $spacing--narrow;
     }
   }
 }

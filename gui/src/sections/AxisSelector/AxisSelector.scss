@@ -4,17 +4,17 @@ $axis-selector__base-width: 135px;
 $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
 
 .axis-selector {
-  background-color: var(--white);
+  background-color: $white;
   box-sizing: border-box;
-  padding-left: var(--padding--medium);
-  padding-right: var(--padding--medium);
+  padding-left: $padding--medium;
+  padding-right: $padding--medium;
   position: relative;
   width: $axis-selector__full-width;
-  z-index: var(--front-guaranteed);
+  z-index: $front-guaranteed;
 
   &__heading {
     box-shadow: none;
-    font-size: var(--font-size--large);
+    font-size: $font-size--large;
     font-weight: bold;
     padding-left: 0;
     padding-right: 0;
@@ -29,15 +29,15 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
     white-space: nowrap;
   }
   &__break-line {
-    background-color: var(--blue--dark);
+    background-color: $blue--dark;
     height: 1px;
   }
   &__primary {
     &--left {
-      border-right: 24px solid var(--green);
+      border-right: 24px solid $green;
     }
     &--right {
-      border-left: 24px solid var(--green);
+      border-left: 24px solid $green;
     }
   }
   &__open-button,
@@ -51,12 +51,12 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
 
 
   h3 {
-    font-size: var(--font-size--medium-large);
+    font-size: $font-size--medium-large;
   }
 
 
   &.left {
-    border-right: 2px solid var(--green--dark);
+    border-right: 2px solid $green--dark;
 
     .axis-selector__heading {
       text-align: right;
@@ -88,7 +88,7 @@ $axis-selector__full-width: $axis-selector__base-width + $padding--medium;
 
   &.right {
     align-items: flex-start;
-    border-left: 2px solid var(--green--dark);
+    border-left: 2px solid $green--dark;
 
     .axis-selector__heading {
       text-align: left;

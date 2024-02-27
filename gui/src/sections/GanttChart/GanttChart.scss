@@ -9,7 +9,7 @@
     box-sizing: border-box;
     height: 40px;
     justify-content: center ;
-    padding: 0 var(--spacing--narrow);
+    padding: 0 $spacing--narrow;
     top: -40px;
     position: absolute;
     width: 100%;
@@ -18,8 +18,8 @@
   &__zoom-button {
     &.is-selected {
       background-color: rgba($green--dark, 0.15);
-      box-shadow: 0 0 2px 0 inset var(--green);
-      color: var(---black)
+      box-shadow: 0 0 2px 0 inset $green;
+      color: $black;
     }
   }
 }
