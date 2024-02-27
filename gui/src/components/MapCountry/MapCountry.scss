@@ -2,31 +2,27 @@
 
 .map-country {
   fill: $green;
-  stroke: $green--dark;
+  stroke: $black;
   stroke-width: 0.5;
-  fill-opacity: 0.3;
+  fill-opacity: 0.7;
 
   &:hover,
   &.is-hovered {
-    fill: $blue;
+    fill: $blue--light;
     cursor: pointer;
     fill-opacity: 0.6;
+    stroke-width: 1.5;
+    stroke: $blue--dark;
   }
 
   &.is-selected {
-    fill: $blue;
+    fill: $blue--dark;
     fill-opacity: 1;
     stroke-width: 0.5;
     stroke: $blue--dark;
   }
 
-  &__name-small,
-  &__name-large {
+  &__name {
     fill: $black;
-    font: normal 12px sans-serif;
-  }
-
-  &__name-large {
-    font: normal 20px sans-serif;
   }
 }

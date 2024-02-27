@@ -52,7 +52,16 @@ function MapSvg({
       >
         <g key='guides' transform={`translate(${graphOffset})`}>
           {
-            toPairs(WorldBorderList[currentYear]).map(([countryId, { countryBorder, countryCenter, countryName }], i) => {
+            toPairs(
+              WorldBorderList[currentYear]
+            ).map(([
+              countryId, {
+                countryBorder,
+                countryCenter,
+                countryName,
+                labelCenter,
+              }
+            ], i) => {
               isCurrentCountry = currentCountryIdList.includes(countryId)
 
               return countryBorder.map((subBorder, j) => {
@@ -64,12 +73,17 @@ function MapSvg({
                   c = lastB.c
                   borderCoordList = init(subBorder)
                 } else {
-                  c = countryCenter[0].c
+                  c = countryCenter
                   borderCoordList = subBorder
                 }
 
                 const cx = c.x * zoom
                 const cy = c.y * zoom
+
+                let labelC
+                if (labelCenter?.x && labelCenter?.y) {
+                  labelC = { x: labelCenter.x * zoom, y: labelCenter.y * zoom }
+                }
 
                 if (isCurrentCountry) {
                   currentCX = { ...currentCX, [countryId]: cx }
@@ -100,6 +114,7 @@ function MapSvg({
                       countryId={countryId}
                       countryName={countryName}
                       c={{ x: cx, y: cy }}
+                      labelC={labelC}
                       isHovered={currentHoveredCountryId === countryId}
                       isSelected={isCurrentCountry}
                       zoom={zoom}
