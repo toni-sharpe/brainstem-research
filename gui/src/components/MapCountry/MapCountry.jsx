@@ -31,43 +31,42 @@ function MapCountry({
   const selectedClass = isSelected ? ' is-selected' : ''
   const hoveredClass = isHovered ? ' is-hovered' : ''
   const className = `map-country${selectedClass}${hoveredClass}`
+  const labelClassName = `map-country__name${selectedClass}${hoveredClass}`
 
-  return (
-    <>
-      { isCircle && type(c, 'Object')
-        ? (
-          <SvgCircle
-            extraClass={className}
-            r={zoom * 1.6}
-            c={c}
-          />
-        )
-        : (
-        <polygon
-          className={className}
-          points={calcPolygonCoordString({ coordList })}
-          strokeOpacity={1}
-        />
-      ) }
-      { zoom > 2
-        ? (
-          <SvgText
-            extraClass='map-country__name'
-            style={{ font: `bold ${zoom + 4 + zoom * 0.8}px sans-serif` }}
-            text={countryName}
-            x={labelC ? labelC.x : c.x}
-            y={labelC ? labelC.y : c.y}
-          />
-        )
-        : (
-          <MapAreaCenterPoint
-            c={c}
-            r={3}
-          />
-        )
-      }
-    </>
+  const border = isCircle && type(c, 'Object')
+    ? (
+      <SvgCircle
+        extraClass={className}
+        r={zoom * 1.6}
+        c={c}
+      />
+    )
+    : (
+    <polygon
+      className={className}
+      points={calcPolygonCoordString({ coordList })}
+      strokeOpacity={1}
+    />
   )
+
+  const label = zoom > 2
+    ? (
+      <SvgText
+        extraClass={labelClassName}
+        style={{ font: `bold ${zoom + 4 + zoom * 0.8}px sans-serif` }}
+        text={countryName}
+        x={labelC ? labelC.x : c.x}
+        y={labelC ? labelC.y : c.y}
+      />
+    )
+    : (
+      <MapAreaCenterPoint
+        c={c}
+        r={3}
+      />
+    )
+
+  return [border, label]
 }
 
 MapCountry.defaultProps = {
