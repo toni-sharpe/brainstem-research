@@ -1,4 +1,6 @@
 // DataAdjusterButtonList.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import DataAdjusterButtonList from './DataAdjusterButtonList';
 
 export default {

@@ -1,10 +1,19 @@
 // SvgPolygon.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import StoryBookSvgWrapper from 'components/StoryBookSvgWrapper/StoryBookSvgWrapper'
 
 import SvgPolygon from './SvgPolygon';
 
 export default {
   component: SvgPolygon,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const basPolygonProps = {

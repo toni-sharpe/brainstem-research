@@ -1,4 +1,6 @@
 // GanttBarList.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import baseGanttBarListProps from './baseGanttBarListProps'
 
 import GanttBarList from './GanttBarList'

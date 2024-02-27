@@ -1,9 +1,18 @@
 // MapObjectSimple.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import StoryBookSvgWrapper from 'components/StoryBookSvgWrapper/StoryBookSvgWrapper'
 import MapObjectSimple from './MapObjectSimple';
 
 export default {
   component: MapObjectSimple,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseMapObjectSimpleProps = {

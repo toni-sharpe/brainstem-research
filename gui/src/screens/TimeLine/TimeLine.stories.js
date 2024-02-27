@@ -6,6 +6,13 @@ import TimeLine from './TimeLine';
 
 export default {
   component: TimeLine,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper isScreenWidth>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseTimeLineProps = {
@@ -15,9 +22,7 @@ const baseTimeLineProps = {
 export const RegularPage = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <TimeLine {...baseTimeLineProps} />
-      </StoryBookPaddedWrapper>
+      <TimeLine {...baseTimeLineProps} />
     )
   }
 };

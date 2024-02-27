@@ -1,9 +1,18 @@
 // HistogramBarListLabel.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import HistogramBarListLabel from './HistogramBarListLabel';
 import { PRIME_SYMPTOM_HISTOGRAM_BAR_LIST_MAP } from 'util/Constant/BaseConstantList'
 
 export default {
   component: HistogramBarListLabel,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseHistogramBarListLabelProps = {

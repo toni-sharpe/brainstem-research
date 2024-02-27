@@ -6,6 +6,13 @@ import Scatter from './Scatter';
 
 export default {
   component: Scatter,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper isScreenWidth>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const ScatterProps = {
@@ -15,9 +22,7 @@ const ScatterProps = {
 export const RegularPage = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <Scatter {...ScatterProps} />
-      </StoryBookPaddedWrapper>
+      <Scatter {...ScatterProps} />
     )
   }
 };

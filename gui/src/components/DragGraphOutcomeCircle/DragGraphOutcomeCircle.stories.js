@@ -1,10 +1,19 @@
 // DragGraphOutcomeCircle.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import StoryBookSvgWrapper from 'components/StoryBookSvgWrapper/StoryBookSvgWrapper'
 
 import DragGraphOutcomeCircle from './DragGraphOutcomeCircle';
 
 export default {
   component: DragGraphOutcomeCircle,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseDragGraphOutcomeCircleProps = {

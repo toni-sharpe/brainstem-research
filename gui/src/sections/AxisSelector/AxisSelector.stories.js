@@ -1,4 +1,6 @@
 // AxisSelector.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import AxisSelector from './AxisSelector';
 
 export default {

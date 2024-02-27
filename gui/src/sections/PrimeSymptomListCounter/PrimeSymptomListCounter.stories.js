@@ -1,8 +1,17 @@
 // PrimeSymptomListCounter.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import PrimeSymptomListCounter from './PrimeSymptomListCounter';
 
 export default {
   component: PrimeSymptomListCounter,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const basePrimeSymptomListCounterProps = {

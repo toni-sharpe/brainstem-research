@@ -15,9 +15,7 @@ const baseWorldMapProps = {
 export const RegularPage = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <WorldMap {...baseWorldMapProps} />
-      </StoryBookPaddedWrapper>
+      <WorldMap {...baseWorldMapProps} />
     )
   }
 };

@@ -1,26 +1,33 @@
 // GanttBarQuantileList.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import { GANTT_SCALE_DEFAULT } from 'util/Constant/BaseConstantList'
 
 import GanttBarQuantileList from './GanttBarQuantileList';
 
 export default {
   component: GanttBarQuantileList,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper isScreenWidth>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseGanttBarQuantileListProps = {
   count: 11,
   fatLines: false,
   numberShown: true,
-  quantile: [1, 5, 11, 19, 29, 37, 43, 53, 61],
+  quantile: [1, 51, 113, 119, 129, 151, 197, 233, 283],
   scale: GANTT_SCALE_DEFAULT,
 }
 
 export const FullList = {
   render: () => {
     return (
-      <ol>
-        <GanttBarQuantileList {...baseGanttBarQuantileListProps} />
-      </ol>
+      <GanttBarQuantileList {...baseGanttBarQuantileListProps} />
     )
   }
 };
@@ -30,12 +37,10 @@ export const ShorterList = {
     const props = {
       ...baseGanttBarQuantileListProps,
       count: 4, // needs a smaller count, though this fixed in code
-      quantile: [5, 29, 53]
+      quantile: [5, 197, 233]
     }
     return (
-      <ol>
-        <GanttBarQuantileList {...props} />
-      </ol>
+      <GanttBarQuantileList {...props} />
     )
   }
 };
@@ -47,9 +52,7 @@ export const FatLines = {
       fatLines: true,
     }
     return (
-      <ol>
-        <GanttBarQuantileList {...props} />
-      </ol>
+      <GanttBarQuantileList {...props} />
     )
   }
 };
@@ -61,9 +64,7 @@ export const NumbersNotShown = {
       numberShown: false,
     }
     return (
-      <ol>
-        <GanttBarQuantileList {...props} />
-      </ol>
+      <GanttBarQuantileList {...props} />
     )
   }
 };

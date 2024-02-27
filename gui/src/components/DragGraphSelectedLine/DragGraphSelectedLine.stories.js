@@ -1,10 +1,19 @@
 // DragGraphSelectedLine.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import StoryBookSvgWrapper from 'components/StoryBookSvgWrapper/StoryBookSvgWrapper'
 import { DRAG_GRAPH_SVG_SCALE_RADIUS } from 'util/Constant/BaseConstantList'
 import DragGraphSelectedLine from './DragGraphSelectedLine';
 
 export default {
   component: DragGraphSelectedLine,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseDragGraphSelectedLineProps = {

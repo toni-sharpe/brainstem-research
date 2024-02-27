@@ -1,10 +1,19 @@
 // GanttBarLabelWrapper.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import GanttBarLabel from 'components/GanttBarLabel/GanttBarLabel'
 
 import GanttBarLabelWrapper from './GanttBarLabelWrapper';
 
 export default {
   component: GanttBarLabelWrapper,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseGanttBarLabelWrapperProps = {

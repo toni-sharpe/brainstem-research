@@ -1,10 +1,22 @@
 // XAxisLineList.story.js
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
 
+
+
 import XAxisLineList from './XAxisLineList';
 
 export default {
   component: XAxisLineList,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper
+        height={580}
+        widthSetTo100
+      >
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseXAxisLineListProps = {
@@ -16,9 +28,7 @@ const baseXAxisLineListProps = {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <XAxisLineList {...baseXAxisLineListProps}/>
-      </StoryBookPaddedWrapper>
+      <XAxisLineList {...baseXAxisLineListProps}/>
     )
   }
 };
@@ -30,9 +40,7 @@ export const MassiveNumber = {
       mostMaxOfAllThings: 12500,
     }
     return (
-      <StoryBookPaddedWrapper>
-        <XAxisLineList {...props}/>
-      </StoryBookPaddedWrapper>
+      <XAxisLineList {...props}/>
     )
   }
 };
@@ -44,9 +52,7 @@ export const One = {
       mostMaxOfAllThings: 1,
     }
     return (
-      <StoryBookPaddedWrapper>
-        <XAxisLineList {...props}/>
-      </StoryBookPaddedWrapper>
+      <XAxisLineList {...props}/>
     )
   }
 };
@@ -58,9 +64,7 @@ export const Two = {
       mostMaxOfAllThings: 2,
     }
     return (
-      <StoryBookPaddedWrapper>
-        <XAxisLineList {...props}/>
-      </StoryBookPaddedWrapper>
+      <XAxisLineList {...props}/>
     )
   }
 };

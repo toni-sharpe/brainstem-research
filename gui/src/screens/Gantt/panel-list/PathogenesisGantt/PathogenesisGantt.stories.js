@@ -6,6 +6,16 @@ import PathogenesisGantt from './PathogenesisGantt';
 
 export default {
   component: PathogenesisGantt,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper
+        height={740}
+        isScreenWidth
+      >
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const basePathogenesisGanttProps = {
@@ -15,9 +25,7 @@ const basePathogenesisGanttProps = {
 export const RegularPage = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <PathogenesisGantt {...basePathogenesisGanttProps} />
-      </StoryBookPaddedWrapper>
+      <PathogenesisGantt {...basePathogenesisGanttProps} />
     )
   }
 };

@@ -6,6 +6,16 @@ import AntiBiasToolKit from './AntiBiasToolKit';
 
 export default {
   component: AntiBiasToolKit,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper
+        heading='Anti-bias toolkit default page on load'
+        isScreenWidth
+      >
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const AntiBiasToolKitProps = {
@@ -15,9 +25,7 @@ const AntiBiasToolKitProps = {
 export const RegularPage = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <AntiBiasToolKit {...AntiBiasToolKitProps} />
-      </StoryBookPaddedWrapper>
+      <AntiBiasToolKit {...AntiBiasToolKitProps} />
     )
   }
 };

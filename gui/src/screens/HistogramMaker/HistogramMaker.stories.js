@@ -6,6 +6,13 @@ import HistogramMaker from './HistogramMaker';
 
 export default {
   component: HistogramMaker,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper isScreenWidth>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseHistogramMakerProps = {
@@ -15,9 +22,7 @@ const baseHistogramMakerProps = {
 export const RegularPage = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper>
-        <HistogramMaker {...baseHistogramMakerProps} />
-      </StoryBookPaddedWrapper>
+      <HistogramMaker {...baseHistogramMakerProps} />
     )
   }
 };

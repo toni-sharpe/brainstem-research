@@ -20,6 +20,13 @@ const hueFn = calcAccessibleHue()
 
 export default {
   component: Histogram,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper isScreenWidth>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseBarMargin = 0.5
@@ -71,7 +78,7 @@ const baseHistogramProps = {
 export const Primary = {
   render: () => {
     return (
-      <StoryBookPaddedWrapper><Histogram {...baseHistogramProps} /></StoryBookPaddedWrapper>
+      <Histogram {...baseHistogramProps} />
     )
   }
 };
@@ -89,7 +96,7 @@ export const TwoColumn = {
       graphLabel: 'Two bars per group',
     }
     return (
-      <StoryBookPaddedWrapper><Histogram {...props} /></StoryBookPaddedWrapper>
+      <Histogram {...props} />
     )
   }
 };
@@ -108,7 +115,7 @@ export const LowValuesInHighGraph = {
       minGraphHeight: 12,
     }
     return (
-      <StoryBookPaddedWrapper><Histogram {...props} /></StoryBookPaddedWrapper>
+      <Histogram {...props} />
     )
   }
 };
@@ -126,7 +133,7 @@ export const ThreeColumn = {
       graphLabel: 'Three bars per group - and an empty group',
     }
     return (
-      <StoryBookPaddedWrapper><Histogram {...props} /></StoryBookPaddedWrapper>
+      <Histogram {...props} />
     )
   }
 };
@@ -144,7 +151,7 @@ export const Simpler = {
       graphLabel: 'Simpler three',
     }
     return (
-      <StoryBookPaddedWrapper><Histogram {...props} /></StoryBookPaddedWrapper>
+      <Histogram {...props} />
     )
   }
 };
@@ -162,7 +169,7 @@ export const LetsTryFive = {
       graphLabel: 'Five different things on each group'
     }
     return (
-      <StoryBookPaddedWrapper><Histogram {...props} /></StoryBookPaddedWrapper>
+      <Histogram {...props} />
     )
   }
 };
@@ -182,7 +189,7 @@ export const NoHueWheel = {
       i18nKeyOnly: true,
     }
     return (
-      <StoryBookPaddedWrapper><Histogram {...props} /></StoryBookPaddedWrapper>
+      <Histogram {...props} />
     )
   }
 };
@@ -200,7 +207,7 @@ export const ThisCouldGetSillyButUseful = {
       graphLabel: 'Lots of room for sets of grouped bars',
     }
     return (
-      <StoryBookPaddedWrapper><Histogram {...props} /></StoryBookPaddedWrapper>
+      <Histogram {...props} />
     )
   }
 };
@@ -218,7 +225,7 @@ export const JustOneGroup = {
       graphLabel: 'Actually the same as the first'
     }
     return (
-      <StoryBookPaddedWrapper><Histogram {...props} /></StoryBookPaddedWrapper>
+      <Histogram {...props} />
     )
   }
 };
@@ -238,7 +245,7 @@ export const NoGap = {
       histogramBarGroupList: SimpleThreeHistogramData,
     }
     return (
-      <StoryBookPaddedWrapper><Histogram {...props} /></StoryBookPaddedWrapper>
+      <Histogram {...props} />
     )
   }
 };
@@ -250,7 +257,7 @@ export const NullData = {
       histogramBarGroupList: null,
     }
     return (
-      <StoryBookPaddedWrapper><Histogram {...props} /></StoryBookPaddedWrapper>
+      <Histogram {...props} />
     )
   }
 };
@@ -262,7 +269,7 @@ export const NoData = {
       histogramBarGroupList: [],
     }
     return (
-      <StoryBookPaddedWrapper><Histogram {...props} /></StoryBookPaddedWrapper>
+      <Histogram {...props} />
     )
   }
 };

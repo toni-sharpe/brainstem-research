@@ -67,13 +67,15 @@ function GanttBar({
       <dd>
         <ol>
           { ganttToggleList?.quantile && (
-            <GanttBarQuantileList
-              count={count}
-              fatLines={ganttToggleList?.fatLines}
-              numberShown={ganttToggleList?.quantileNumber}
-              quantile={quantile}
-              scale={scale}
-            />
+            <li>
+              <GanttBarQuantileList
+                count={count}
+                fatLines={ganttToggleList?.fatLines}
+                numberShown={ganttToggleList?.quantileNumber}
+                quantile={quantile}
+                scale={scale}
+              />
+            </li>
           ) }
           { ganttToggleList?.range && (
             <>

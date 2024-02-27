@@ -1,43 +1,70 @@
 // GanttBarWrapper.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import GanttBar from 'sections/GanttBar/GanttBar'
 import { GanttBarDataToneSet } from 'example-data/GanttBar.example-data'
 import GanttBarWrapper from './GanttBarWrapper';
 
 export default {
   component: GanttBarWrapper,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper
+        isScreenWidth
+        wrapperElem='ul'
+      >
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
-const ganttBarWrapperBaseProps = {
-  currentFilterList: {
-    severe: true,
-    nonSevere: true,
-  }
-}
-
-const buildBars = ({ props }) => {
-  return (
-    <ul>
-      <GanttBarWrapper {...props} key='key-1' i={1} k='notGood' >
+export const NotGood = {
+  render: () => {
+    return (
+      <GanttBarWrapper i={0} k='notGood' offset={0}>
         <GanttBar {...GanttBarDataToneSet.notGood} />
       </GanttBarWrapper>
-      <GanttBarWrapper {...props} key='key-2' i={2} k='bad' >
+    )
+  }
+};
+
+export const Bad = {
+  render: () => {
+    return (
+      <GanttBarWrapper i={0} k='bad' offset={0}>
         <GanttBar {...GanttBarDataToneSet.bad} />
       </GanttBarWrapper>
-      <GanttBarWrapper {...props} key='key-3' i={3} k='good' >
+    )
+  }
+};
+
+export const Good = {
+  render: () => {
+    return (
+      <GanttBarWrapper i={0} k='good' offset={0}>
         <GanttBar {...GanttBarDataToneSet.good} />
       </GanttBarWrapper>
-      <GanttBarWrapper {...props} key='key-4' i={4} k='veryBad' >
+    )
+  }
+};
+
+export const VeryBad = {
+  render: () => {
+    return (
+      <GanttBarWrapper i={0} k='veryBad' offset={0}>
         <GanttBar {...GanttBarDataToneSet.veryBad} />
       </GanttBarWrapper>
-      <GanttBarWrapper {...props} key='key-5' i={5} k='neutral' >
+    )
+  }
+};
+
+export const Neutral = {
+  render: () => {
+    return (
+      <GanttBarWrapper i={0} k='neutral' offset={0}>
         <GanttBar {...GanttBarDataToneSet.neutral} />
       </GanttBarWrapper>
-    </ul>
-  )
-}
-
-export const Primary = {
-  render: () => {
-    return (buildBars({ props: ganttBarWrapperBaseProps }))
+    )
   }
 };

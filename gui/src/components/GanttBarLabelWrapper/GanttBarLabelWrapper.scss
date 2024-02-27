@@ -1,4 +1,7 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .gantt-bar-label-wrapper {
-  font-size: var(--font-size--medium-small);
+  font-size: $font-size--medium-small;
   position: absolute;
+  top: 0;
 }

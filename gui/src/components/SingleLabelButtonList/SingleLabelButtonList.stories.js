@@ -1,10 +1,19 @@
 // SingleLabelButtonList.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import Button from 'components/Button/Button'
 
 import SingleLabelButtonList from './SingleLabelButtonList';
 
 export default {
   component: SingleLabelButtonList,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 export const WithButtonGroup = {

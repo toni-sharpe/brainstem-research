@@ -1,9 +1,18 @@
 // MonthBlock.story.js
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
+
 import MonthBlock from './MonthBlock';
 
 export default {
   component: MonthBlock,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper isScreenWidth>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseMonthBlockProps = {
@@ -33,139 +42,29 @@ export const BlocksTogether = {
     const frighteningProps = { ...baseMonthBlockProps, colorVal:   '0', monthText: 'Frightening' }
 
     return (
-      <StoryBookPaddedWrapper>
-        <div className='column-layout space-children--wide-column'>
-          <div className='row-layout space-children--wide'>
-            <MonthBlock {...futureProps} />
-            <MonthBlock {...thisMonthProps} />
-          </div>
-          <div className='row-layout space-children--wide'>
-            <MonthBlock {...janProps} />
-            <MonthBlock {...defaultYearProps} />
-            <MonthBlock {...janClassProps} />
-            <MonthBlock {...janColorProps} />
-            <MonthBlock {...eventFreeProps} />
-            <MonthBlock {...noText} />
-          </div>
-          <div className='row-layout space-children--wide'>
-            <MonthBlock {...lightProps} />
-            <MonthBlock {...mediumProps} />
-            <MonthBlock {...heavyProps} />
-            <MonthBlock {...veryHeavyProps} />
-            <MonthBlock {...exceptionalProps} />
-            <MonthBlock {...frighteningProps} />
-          </div>
+      <div className='column-layout space-children--wide-column'>
+        <div className='row-layout space-children--wide'>
+          <MonthBlock {...futureProps} />
+          <MonthBlock {...thisMonthProps} />
         </div>
-      </StoryBookPaddedWrapper>
+        <div className='row-layout space-children--wide'>
+          <MonthBlock {...janProps} />
+          <MonthBlock {...defaultYearProps} />
+          <MonthBlock {...janClassProps} />
+          <MonthBlock {...janColorProps} />
+          <MonthBlock {...eventFreeProps} />
+          <MonthBlock {...noText} />
+        </div>
+        <div className='row-layout space-children--wide'>
+          <MonthBlock {...lightProps} />
+          <MonthBlock {...mediumProps} />
+          <MonthBlock {...heavyProps} />
+          <MonthBlock {...veryHeavyProps} />
+          <MonthBlock {...exceptionalProps} />
+          <MonthBlock {...frighteningProps} />
+        </div>
+      </div>
     )
   }
 };
 
-export const FutureBlock = {
-  render: () => {
-    const props = {
-      ...baseMonthBlockProps,
-      monthType: 'future',
-    }
-    return (
-      <ul><MonthBlock {...props} /></ul>
-    )
-  }
-};
-
-export const EventFreeBlockShowsYearTagToo = {
-  render: () => {
-    const props = {
-      ...baseMonthBlockProps,
-      monthType: 'event-free',
-      currentMonth: '01',
-    }
-    return (
-      <ul><MonthBlock {...props} /></ul>
-    )
-  }
-};
-
-export const ThisMonth = {
-  render: () => {
-    const props = {
-      ...baseMonthBlockProps,
-      monthType: 'this-month',
-    }
-    return (
-      <ul><MonthBlock {...props} /></ul>
-    )
-  }
-};
-
-export const LightBlock = {
-  render: () => {
-    const props = {
-      ...baseMonthBlockProps,
-      colorVal: '201',
-    }
-    return (
-      <ul><MonthBlock {...props} /></ul>
-    )
-  }
-};
-
-export const MediumBlock = {
-  render: () => {
-    const props = {
-      ...baseMonthBlockProps,
-      colorVal: '161',
-    }
-    return (
-      <ul><MonthBlock {...props} /></ul>
-    )
-  }
-};
-
-export const HeavyBlock = {
-  render: () => {
-    const props = {
-      ...baseMonthBlockProps,
-      colorVal: '121',
-    }
-    return (
-      <ul><MonthBlock {...props} /></ul>
-    )
-  }
-};
-
-export const VeryHeavyBlock = {
-  render: () => {
-    const props = {
-      ...baseMonthBlockProps,
-      colorVal: '81',
-    }
-    return (
-      <ul><MonthBlock {...props} /></ul>
-    )
-  }
-};
-
-export const ExceptionalBlock = {
-  render: () => {
-    const props = {
-      ...baseMonthBlockProps,
-      colorVal: '41',
-    }
-    return (
-      <ul><MonthBlock {...props} /></ul>
-    )
-  }
-};
-
-export const FrighteningBlock = {
-  render: () => {
-    const props = {
-      ...baseMonthBlockProps,
-      colorVal: '0',
-    }
-    return (
-      <ul><MonthBlock {...props} /></ul>
-    )
-  }
-};

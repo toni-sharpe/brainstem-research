@@ -1,4 +1,6 @@
 // DragGraph.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import severityCircleMapper from 'util/UtilPointData/severityCircleMapper'
 import DragGraph from './DragGraph';
 

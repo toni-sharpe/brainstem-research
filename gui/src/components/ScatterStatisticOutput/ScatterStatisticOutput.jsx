@@ -100,16 +100,16 @@ function ScatterStatisticOutput({
 }
 
 ScatterStatisticOutput.defaultProps = {
-  pointList: [],
   ganttToggleList: GANTT_TOGGLE_LIST,
+  pointList: [],
   showBars: true,
 }
 
 ScatterStatisticOutput.propTypes = {
+  ganttToggleList: StatBarDetailListPropType,
   pointList: ScatterPointListPropType,
   setGanttToggleList: PropTypes.func,
   showBars: PropTypes.bool,
-  ganttToggleList: StatBarDetailListPropType,
   xKey: PropTypes.string.isRequired,
   yKey: PropTypes.string.isRequired,
 }

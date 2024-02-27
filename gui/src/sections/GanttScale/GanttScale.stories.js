@@ -1,9 +1,18 @@
 // GanttScale.story.js
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
+
 import GanttScale from './GanttScale';
 
 export default {
   component: GanttScale,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseGanttScaleProps = {

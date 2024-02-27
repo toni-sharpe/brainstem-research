@@ -1,9 +1,18 @@
 // DragGraphPointLabel.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import StoryBookSvgWrapper from 'components/StoryBookSvgWrapper/StoryBookSvgWrapper'
 import DragGraphPointLabel from './DragGraphPointLabel';
 
 export default {
   component: DragGraphPointLabel,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseDragGraphPointLabelProps = {

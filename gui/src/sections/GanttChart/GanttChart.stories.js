@@ -8,6 +8,13 @@ import GanttChart from './GanttChart';
 
 export default {
   component: GanttChart,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseGanttChartProps = {

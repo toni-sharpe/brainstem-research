@@ -1,9 +1,18 @@
 // DragGraphEdgeFadeout.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import StoryBookSvgWrapper from 'components/StoryBookSvgWrapper/StoryBookSvgWrapper'
 import DragGraphEdgeFadeout from './DragGraphEdgeFadeout';
 
 export default {
   component: DragGraphEdgeFadeout,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseDragGraphPointLabelProps = {
@@ -21,7 +30,6 @@ export const Primary = {
     )
   }
 };
-
 
 export const CenterCanBeDifferent = {
   render: () => {

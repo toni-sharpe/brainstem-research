@@ -1,8 +1,17 @@
 // MenuButton.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import MenuButton from './MenuButton';
 
 export default {
   component: MenuButton,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const commonMenuButtonProps = {

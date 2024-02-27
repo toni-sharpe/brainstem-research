@@ -7,12 +7,12 @@ import './ErrorOutput.scss'
 
 function ErrorOutput({ ariaLive, message }) {
   return (
-    <span
+    <div
       aria-live={ariaLive}
       className='error-output'
     >
       <span className='error-output__text'>{message}</span>
-    </span>
+    </div>
   )
 }
 

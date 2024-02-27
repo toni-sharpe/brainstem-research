@@ -1,9 +1,18 @@
 // MapObjectDetailed.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import StoryBookSvgWrapper from 'components/StoryBookSvgWrapper/StoryBookSvgWrapper'
 import MapObjectDetailed from './MapObjectDetailed';
 
 export default {
   component: MapObjectDetailed,
+  decorators: [
+    (Story) => (
+      <StoryBookPaddedWrapper>
+        <Story />
+      </StoryBookPaddedWrapper>
+    ),
+  ],
 };
 
 const baseMapObjectDetailedProps = {

@@ -1,4 +1,6 @@
 // PageDetailWrapper.story.js
+import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
+
 import ErrorOutput from 'components/ErrorOutput/ErrorOutput'
 import StoryBookExampleBlock from 'components/StoryBookExampleBlock/StoryBookExampleBlock'
 import { Primary } from 'sections/SecondaryNav/SecondaryNav.stories';
