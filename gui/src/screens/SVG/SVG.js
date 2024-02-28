@@ -1,11 +1,9 @@
-import i18next from 'util/i18next/i18next'
 import React from 'react'
 
-import DragGraph from 'sections/DragGraph/DragGraph'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import { groupByAndCountPipe } from 'util/UtilDragGraph/UtilDragGraphGrouping'
-import severityCircleMapper from 'util/UtilPointData/severityCircleMapper'
 
+import GraphSet from './GraphSet'
 import './SVG.scss'
 
 const i18nBase = 'SVG'
@@ -27,17 +25,11 @@ function SVG({ data }) {
     <PageDetailWrapper
       i18nBase={i18nBase}
     >
-      <div className='svg__drag-graph-list row-layout'>
+      <div className='svg__graph-list'>
         { graphKeyList.map((graphKey, i) => {
           const labelValList = groupByAndCountPipe({ k: graphKey })(data)
           return (
-            <DragGraph
-              graphKey={graphKey}
-              heading={i18next.t(`CommonClinicalDefinitions.${graphKey}`)}
-              key={`${graphKey}-${i}`}
-              labelValList={labelValList}
-              pointDataMapper={severityCircleMapper}
-            />
+            <GraphSet graphKey={graphKey} labelValList={labelValList} />
           )
         }) }
       </div>

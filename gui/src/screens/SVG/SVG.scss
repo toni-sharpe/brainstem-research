@@ -1,19 +1,36 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .svg {
-  &__drag-graph-list {
+  &__graph-list {
+    @include row-layout();
     width: 100%;
     flex-wrap: wrap;
 
+    .drag-graph {
+      flex: 1;
+    }
+
     & > * {
-      margin-left: 5%;
-      margin-right: 5%;
-      width: 90%;
+      margin-left: 1%;
+      margin-right: 1%;
+      width: 98%;
       @media (min-width: $media-switch__large) {
-        margin-left: 3%;
-        margin-right: 3%;
-        width: 44%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        width: 49%;
       }
+    }
+  }
+
+  &__graph-set-wrapper {
+    @include row-layout();
+  }
+
+  &__graph-set-tab-list {
+    align-items: flex-end;
+    @include column-layout();
+    & > * {
+      @include space-column();
     }
   }
 }
