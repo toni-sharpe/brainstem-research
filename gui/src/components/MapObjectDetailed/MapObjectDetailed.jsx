@@ -19,7 +19,7 @@ function MapObjectDetailed({
   w,
 }) {
   const internalW = isPopulated ? w : 26
-  const internalH = isPopulated ? h : 20
+  const internalH = isPopulated ? h : 70
   return (
     <foreignObject
       key={'test'}
@@ -30,7 +30,12 @@ function MapObjectDetailed({
     >
       <article
         className='map-object-detailed'
-        style={{ height: `${internalH}px`, width: `${internalW}px` }}
+        style={{
+          height: `${internalH}px`,
+          width: `${internalW}px`,
+          backgroundColor: isPopulated ? 'rgba(255, 255, 255, 0.85)' : null,
+          border: isPopulated ? '0.5px solid #000' : null,
+        }}
       >
         <Button
           extraClass={`map-object-detailed__close-button${isPopulated ? '' : ' no-data'}`}

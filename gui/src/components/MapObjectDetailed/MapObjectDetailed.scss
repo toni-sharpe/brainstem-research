@@ -1,8 +1,6 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .map-object-detailed {
-  background-color: rgba($white, 0.85);
-  border: 0.5px solid $black;
   box-sizing: border-box;
   cursor: pointer;
   font-size: $font-size--tiniest;
@@ -42,7 +40,6 @@
         position: fixed;
         top: 0;
         right: 0;
-        bottom: 0;
         left: 0;
       }
     }
