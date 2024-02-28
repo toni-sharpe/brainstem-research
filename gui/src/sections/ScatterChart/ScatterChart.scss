@@ -18,14 +18,10 @@
   }
   &__outcome-severe {
     fill: $prime-symptom--severe;
+    stroke: $prime-symptom--severe;
   }
   &__outcome-not-severe {
     fill: $prime-symptom--not-severe;
-  }
-  &__care-level-severe {
-    stroke: $prime-symptom--severe;
-  }
-  &__care-level-not-severe {
     stroke: $prime-symptom--not-severe;
   }
 }
