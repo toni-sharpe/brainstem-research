@@ -2,6 +2,7 @@
   "CommonClinicalResponses": {
     "care_error_level": "Care error level",
     "care_technique_1": "Care technique 1",
+    "consultant_doctor": "Consultant Dr.",
     "death_response_1": "Severe response 1",
     "death_response_2": "Severe response 2",
     "event_count": "Pathological event order",
@@ -32,6 +33,7 @@
     "recovery_proportion": "Recovery proportion",
     "slight_death_response_1": "Severe response 1 (pos)",
     "slight_death_response_2": "Severe response 2 (pos)",
+    "source_country": "Source country",
     "time_of_death": "Time of severity",
 
     "care_error_level_abbrev": "Care errors",
@@ -70,15 +72,20 @@
   },
 
   "CommonClinicalDefinitions": {
-    "care_technique_1": "Kinetics",
     "care_equipment_1": "Care Equipment 1",
     "care_equipment_4": "Care Equipment 4",
+    "care_technique_1": "Kinetics",
     "care_technique_2": "Care Technique 2",
     "care_technique_3": "Care Technique 3",
+    "consultant_doctor": "Consultant Dr.",
     "etiology": "Etiology",
     "event_count": "Pathological event order",
     "outcome_type": "Outcome Type",
-    "prime_symptom_level": "Prime symptom severity"
+    "prime_symptom_level": "Prime symptom severity",
+    "source_country": "Source country",
+    "care_site": "Place of care",
+    "outlier": "Outlier type",
+    "boolean_set": " Booleans"
   },
 
   "MainPageHeading": {
