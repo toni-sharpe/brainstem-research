@@ -189,6 +189,12 @@ export const OUTCOME_MULTIPLIER = 2
 export const OUTCOME_START = 15
 
 /*
+ * Block graph
+ */
+export const BLOCK_GRAPH_SVG_HEIGHT = 124
+export const BLOCK_GRAPH_SVG_HEIGHT_FACTOR = 124 / 100
+
+/*
  * Drag graph
  */
 export const DRAG_GRAPH_LABEL_SIZE = 52

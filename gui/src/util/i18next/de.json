@@ -69,18 +69,6 @@
     "time_of_death_abbrev": "Zeit des Sev"
   },
 
-  "CommonClinicalDefinitions": {
-    "care_technique_1": "Kinetics",
-    "care_equipment_1": "Pflegemittel 1",
-    "care_equipment_4": "Pflegemittel 4",
-    "care_technique_2": "Pflegetechnik 2",
-    "care_technique_3": "Pflegetechnik 3",
-    "etiology": "Ätiologie",
-    "event_count": "Pathologische Ereignisfolge",
-    "outcome_type": "Ergebnis Typ",
-    "prime_symptom_level": "Hauptsymptom Schweregrad"
-  },
-
   "MainPageHeading": {
     "": "Forschung",
     "Scatter": "Punktwolke",
@@ -443,6 +431,22 @@
     "minToMaxMultiplier": "!>X{{multiplier}}mn",
     "outcomeShown": "Ergebnis",
     "map": "M"
+  },
+
+  "GraphSet": {
+    "care_technique_1": "Kinetics",
+    "care_equipment_1": "Pflegemittel 1",
+    "care_equipment_4": "Pflegemittel 4",
+    "care_technique_2": "Pflegetechnik 2",
+    "care_technique_3": "Pflegetechnik 3",
+    "etiology": "Ätiologie",
+    "event_count": "Pathologische Ereignisfolge",
+    "outcome_type": "Ergebnis Typ",
+    "prime_symptom_level": "Hauptsymptom Schweregrad",
+    "source_country": "Quelle Land",
+    "care_site": "Ort der Pflege",
+    "outlier": "Ausreißertyp",
+    "boolean_set": "Boolesche Werte"
   },
 
   "ResetGraphButton": {

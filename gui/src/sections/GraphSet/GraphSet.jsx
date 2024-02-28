@@ -1,4 +1,5 @@
 import i18next from 'util/i18next/i18next'
+import { type } from 'ramda'
 import React, { useState } from 'react'
 
 import Button from 'components/Button/Button'
@@ -33,7 +34,7 @@ function GraphSet({
       { graphTab === 'drag' && (
         <DragGraph
           graphKey={graphKey}
-          heading={i18next.t(`CommonClinicalDefinitions.${graphKey}`)}
+          heading={i18next.t(`GraphSet.${type(graphKey) === 'Array' ? 'boolean_set' : graphKey}`)}
           key={`${graphKey}`}
           labelValList={labelValList}
           pointDataMapper={severityCircleMapper}

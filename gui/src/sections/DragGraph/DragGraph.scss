@@ -1,7 +1,7 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .drag-graph {
-  border: 2px solid $blue;
+  border: 1px solid $grey--black;
   box-sizing: border-box;
   margin-bottom: 40px;
   &__heading {
@@ -12,7 +12,7 @@
   }
   &__scale-detail {
     &.drag-graph__scale-detail {
-      border-bottom: 2px solid $blue;
+      border-bottom: 1px solid $grey--black;
       margin-bottom: 0;
       padding-bottom: $spacing--narrow;
       text-align: center;

@@ -11,17 +11,35 @@ test('groupByAndCountPipe() drops any empty string groups', () => {
   ])
   expect(result).toEqual([[
     'a', {
-      careLevel: 14,
+      careLevel: 7,
+      dcb: 0,
+      dcbPerc: 0,
       length: 2,
+      nonSevere: 2,
+      nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
-      nonSevere: 2
+      severePerc: 0,
     }
   ], [
     'b', {
       careLevel: 11,
+      dcb: 0,
+      dcbPerc: 0,
       length: 1,
+      nonSevere: 0,
+      nonSeverePerc: 0,
+      rgb: [
+        250,
+        0,
+        0,
+      ],
       severe: 1,
-      nonSevere: 0
+      severePerc: 100,
     }
   ]])
 })
@@ -38,17 +56,35 @@ test('groupByAndCountPipe() drops any null groups', () => {
   ])
   expect(result).toEqual([[
     'a', {
-      careLevel: 9,
+      careLevel: 4.5,
+      dcb: 0,
+      dcbPerc: 0,
       length: 2,
+      nonSevere: 2,
+      nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
-      nonSevere: 2
+      severePerc: 0,
     }
   ], [
     'c', {
-      careLevel: 29,
+      careLevel: 9.66667,
+      dcb: 0,
+      dcbPerc: 0,
       length: 3,
+      nonSevere: 2,
+      nonSeverePerc: 67,
+      rgb: [
+        149.5,
+        0,
+        83.75,
+      ],
       severe: 1,
-      nonSevere: 2
+      severePerc: 33,
     }
   ]])
 })
@@ -70,37 +106,82 @@ test('groupByAndCountPipe() counts all groups when keys are present', () => {
   expect(result).toEqual([[
     'a', {
       careLevel: 100,
+      dcb: 0,
+      dcbPerc: 0,
       length: 1,
+      nonSevere: 1,
+      nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
-      nonSevere: 1
+      severePerc: 0,
     }
   ], [
     'd', {
-      careLevel: 109,
+      careLevel: 36.3333,
+      dcb: 0,
+      dcbPerc: 0,
       length: 3,
+      nonSevere: 2,
+      nonSeverePerc: 67,
+      rgb: [
+        149.5,
+        0,
+        83.75,
+      ],
       severe: 1,
-      nonSevere: 2
+      severePerc: 33,
     }
   ], [
     'b', {
       careLevel: 9,
+      dcb: 0,
+      dcbPerc: 0,
       length: 1,
+      nonSevere: 1,
+      nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
-      nonSevere: 1
+      severePerc: 0,
     }
   ], [
     'c', {
-      careLevel: 84,
+      careLevel: 21,
+      dcb: 0,
+      dcbPerc: 0,
       length: 4,
+      nonSevere: 4,
+      nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
-      nonSevere: 4
+      severePerc: 0,
     }
   ], [
     'f', {
       careLevel: 37,
+      dcb: 0,
+      dcbPerc: 0,
       length: 1,
+      nonSevere: 1,
+      nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
-      nonSevere: 1
+      severePerc: 0,
     }]
   ])
 })
