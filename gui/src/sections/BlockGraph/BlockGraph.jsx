@@ -1,5 +1,5 @@
 import React from 'react'
-import { descend, filter, map, pipe, pluck, reduce, sort } from 'ramda'
+import { descend, filter, map, pipe, reduce, sort } from 'ramda'
 
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import { numberPrecision } from 'util/Util/Util'

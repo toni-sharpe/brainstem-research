@@ -1,12 +1,7 @@
-import i18next from 'util/i18next/i18next'
-import React, { useState } from 'react'
+import React from 'react'
 
-import Button from 'components/Button/Button'
-import DragGraph from 'sections/DragGraph/DragGraph'
-import BlockGraph from 'sections/BlockGraph/BlockGraph'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import { groupByAndCountPipe } from 'util/UtilDragGraph/UtilDragGraphGrouping'
-import severityCircleMapper from 'util/UtilPointData/severityCircleMapper'
 
 import GraphSet from './GraphSet'
 import './SVG.scss'
