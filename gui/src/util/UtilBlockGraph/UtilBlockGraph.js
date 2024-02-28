@@ -1,0 +1,3 @@
+severePerc
+dcbPerc
+nonSeverePerc
