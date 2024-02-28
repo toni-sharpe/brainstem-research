@@ -13,8 +13,7 @@ function BlockGraph({ labelValList }) {
 
   const blockPercList = pipe(
     sort(bySizeDesc),
-    pluck(1),
-    map(val => ({ ...val, perc: numberPrecision({ n: val.length / sum * 100, lessPrecise: 2 }) })),
+    map(([label, val]) => ({ ...val, label, perc: numberPrecision({ n: val.length / sum * 100, lessPrecise: 2 }) })),
     reduce((a, c) => {
       const sum = (a.length > 0 ? a[a.length -1].sum : 0) + c.perc
       a.push({ ...c, orientation: sum < 70 ? 'V' : 'H', sum })
@@ -45,15 +44,26 @@ function BlockGraph({ labelValList }) {
           }
 
           const thisRect = (
-            <rect
-              x={vX}
-              y={0}
-              width={blPerc.perc}
-              fill={`rgb(50, ${120 + (100 / vTotal) * (vCount + 1)}, ${100 + (90 / vTotal) * (vCount + 1)})`}
-              height='100'
-              stroke='#444'
-              strokeWidth='0.2'
-            />
+            <g>
+              <rect
+                x={vX}
+                y={0}
+                width={blPerc.perc}
+                fill={`rgb(50, ${120 + (100 / vTotal) * (vCount + 1)}, ${100 + (90 / vTotal) * (vCount + 1)})`}
+                height='100'
+                stroke='#444'
+                strokeWidth='0.2'
+              />
+              <text
+                dominantBaseline='hanging'
+                textAnchor='left'
+                style={{ font: 'normal 4px sans-serif' }}
+                x={vX + 0.5}
+                y={0.5}
+              >
+                {blPerc.label}
+              </text>
+            </g>
           )
 
           if (blPerc.orientation === 'V') {
@@ -65,15 +75,26 @@ function BlockGraph({ labelValList }) {
         })}
         {hList.map((hlPerc) => {
           const thisRect = (
-            <rect
-              x={100 - remaining}
-              y={vY}
-              width={remaining}
-              fill={`rgb(${200 - (60 / hlPerc.length) * (hCount - 1)}, ${100 - (30 / hlPerc.length) * (hCount - 1)}, ${255 - (100 / hlPerc.length) * (hCount - 1)})`}
-              height={hlPerc.hPerc}
-              stroke='#000'
-              strokeWidth='0.2'
-            />
+            <g>
+              <rect
+                x={100 - remaining}
+                y={vY}
+                width={remaining}
+                fill={`rgb(${200 - (60 / hlPerc.length) * (hCount - 1)}, ${100 - (30 / hlPerc.length) * (hCount - 1)}, ${255 - (100 / hlPerc.length) * (hCount - 1)})`}
+                height={hlPerc.hPerc}
+                stroke='#000'
+                strokeWidth='0.2'
+              />
+              <text
+                dominantBaseline='hanging'
+                textAnchor='left'
+                style={{ font: 'normal 4px sans-serif' }}
+                x={100 - remaining + 0.5}
+                y={vY + 0.5}
+              >
+                {hlPerc.label}
+              </text>
+            </g>
           )
 
           vY = vY + hlPerc.hPerc

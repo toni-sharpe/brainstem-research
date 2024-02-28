@@ -8,12 +8,12 @@ import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import { groupByAndCountPipe } from 'util/UtilDragGraph/UtilDragGraphGrouping'
 import severityCircleMapper from 'util/UtilPointData/severityCircleMapper'
 
+import GraphSet from './GraphSet'
 import './SVG.scss'
 
 const i18nBase = 'SVG'
 
 function SVG({ data }) {
-  const [graphTab, setGraphTab] = useState('drag')
   if (!data || data.length === 0) { return null; }
 
   const graphKeyList = [
@@ -34,38 +34,7 @@ function SVG({ data }) {
         { graphKeyList.map((graphKey, i) => {
           const labelValList = groupByAndCountPipe({ k: graphKey })(data)
           return (
-            <div className='svg__graph-set-wrapper'>
-              <ol className='svg__graph-set-tab-list'>
-                <li>
-                  <Button
-                    label='Drag'
-                    onClick={() => setGraphTab('drag')}
-                    isSelected={graphTab === 'drag'}
-                   />
-                </li>
-                <li>
-                  <Button
-                    label='Block'
-                    onClick={() => setGraphTab('block')}
-                    isSelected={graphTab === 'block'}
-                   />
-                </li>
-              </ol>
-              { graphTab === 'drag' && (
-                <DragGraph
-                  graphKey={graphKey}
-                  heading={i18next.t(`CommonClinicalDefinitions.${graphKey}`)}
-                  key={`${graphKey}-${i}`}
-                  labelValList={labelValList}
-                  pointDataMapper={severityCircleMapper}
-                />
-              ) }
-              { graphTab === 'block' && (
-                <BlockGraph
-                  labelValList={labelValList}
-                />
-              ) }
-            </div>
+            <GraphSet graphKey={graphKey} labelValList={labelValList} />
           )
         }) }
       </div>
