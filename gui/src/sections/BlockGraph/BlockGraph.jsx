@@ -57,11 +57,29 @@ function BlockGraph({ labelValList }) {
               <text
                 dominantBaseline='hanging'
                 textAnchor='left'
-                style={{ font: 'normal 3px sans-serif' }}
-                x={vX + 0.5}
-                y={0.5}
+                style={{ font: 'normal 2.6px sans-serif' }}
+                x={vX + 2}
+                y={2}
               >
-                {blPerc.label} {blPerc.length}:[{blPerc.perc}%]
+                {blPerc.label}
+              </text>
+              <text
+                dominantBaseline='hanging'
+                textAnchor='left'
+                style={{ font: 'normal 2.6px sans-serif' }}
+                x={vX + 2}
+                y={6}
+              >
+                {blPerc.length}
+              </text>
+              <text
+                dominantBaseline='hanging'
+                textAnchor='left'
+                style={{ font: 'normal 2.6px sans-serif' }}
+                x={vX + 2}
+                y={10}
+              >
+                {blPerc.perc}%
               </text>
             </g>
           )
@@ -80,7 +98,7 @@ function BlockGraph({ labelValList }) {
                 x={100 - remaining}
                 y={vY}
                 width={remaining}
-                fill={`rgb(${200 - (60 / hlPerc.length) * (hCount - 1)}, ${100 - (30 / hlPerc.length) * (hCount - 1)}, ${255 - (100 / hlPerc.length) * (hCount - 1)})`}
+                fill={`rgb(${250 - (60 / hlPerc.length) * (hCount - 1)}, ${100 - (30 / hlPerc.length) * (hCount - 1)}, ${255 - (100 / hlPerc.length) * (hCount - 1)})`}
                 height={hlPerc.hPerc}
                 stroke='#000'
                 strokeWidth='0.2'
@@ -88,11 +106,11 @@ function BlockGraph({ labelValList }) {
               <text
                 dominantBaseline='hanging'
                 textAnchor='left'
-                style={{ font: 'normal 3px sans-serif' }}
-                x={100 - remaining + 0.5}
+                style={{ font: 'normal 2.6px sans-serif' }}
+                x={100 - remaining + 2}
                 y={vY + 0.5}
               >
-                {hlPerc.label} {hlPerc.length}:[{hlPerc.perc}%]
+                {hlPerc.label} : {hlPerc.length} : {hlPerc.perc}%
               </text>
             </g>
           )
