@@ -49,7 +49,7 @@ function BlockGraph({ labelValList }) {
               x={vX}
               y={0}
               width={blPerc.perc}
-              fill={`rgb(${120 + (100 / vTotal) * (vCount + 1)}, 50, ${100 + (90 / vTotal) * (vCount + 1)})`}
+              fill={`rgb(50, ${120 + (100 / vTotal) * (vCount + 1)}, ${100 + (90 / vTotal) * (vCount + 1)})`}
               height='100'
               stroke='#444'
               strokeWidth='0.2'
