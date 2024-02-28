@@ -24,31 +24,31 @@ test('calcGeneralGanttBarStatList() correctly processed data when data is provid
  */
 test('showBasedOnSevereFilter() - both false', () => {
   const currentFilterList = { severe: false, nonSevere: false }
-  expect(showBasedOnSevereFilter({ currentFilterList, k: '_' })).toBeTruthy()
+  expect(showBasedOnSevereFilter({ currentFilterList, k: '_' })).toEqual(true)
 })
 
 test('showBasedOnSevereFilter() - neither set', () => {
   const currentFilterList = {  }
-  expect(showBasedOnSevereFilter({ currentFilterList, k: '_' })).toBeTruthy()
+  expect(showBasedOnSevereFilter({ currentFilterList, k: '_' })).toEqual(true)
 })
 
 test('showBasedOnSevereFilter() - severe key and severe set', () => {
   const currentFilterList = { severe: true }
-  expect(showBasedOnSevereFilter({ currentFilterList, k: 'death_response_1' })).toBeTruthy()
+  expect(showBasedOnSevereFilter({ currentFilterList, k: 'death_response_1' })).toEqual(true)
 })
 
 test('showBasedOnSevereFilter() - severe key and severe not set', () => {
   const currentFilterList = { severe: false, nonSevere: true }
-  expect(showBasedOnSevereFilter({ currentFilterList, k: 'death_response_1' })).toBeFalsy()
+  expect(showBasedOnSevereFilter({ currentFilterList, k: 'death_response_1' })).toEqual(false)
 })
 
 test('showBasedOnSevereFilter() - non-severe key and non-severe set', () => {
   const currentFilterList = { nonSevere: true }
-  expect(showBasedOnSevereFilter({ currentFilterList, k: 'good' })).toBeTruthy()
+  expect(showBasedOnSevereFilter({ currentFilterList, k: 'good' })).toEqual(true)
 
 })
 
 test('showBasedOnSevereFilter() - non-severe key and non-severe not set', () => {
   const currentFilterList = { nonSevere: false, severe: true }
-  expect(showBasedOnSevereFilter({ currentFilterList, k: 'good' })).toBeFalsy()
+  expect(showBasedOnSevereFilter({ currentFilterList, k: 'good' })).toEqual(false)
 })

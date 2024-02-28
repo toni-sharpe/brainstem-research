@@ -22,7 +22,7 @@ test('calcFilterList()', () => {
  * isAnyFilterSet()
  */
 test('isAnyFilterSet()', () => {
-  expect(isAnyFilterSet({ currentFilterList: { ...ORDERED_FILTERS, rmDubious: false } })).toBeFalsy()
-  expect(isAnyFilterSet({ currentFilterList: ORDERED_FILTERS })).toBeFalsy()
-  expect(isAnyFilterSet({ currentFilterList: { a: true, b: false } })).toBeTruthy()
+  expect(isAnyFilterSet({ currentFilterList: { ...ORDERED_FILTERS, rmDubious: false } })).toEqual(false)
+  expect(isAnyFilterSet({ currentFilterList: ORDERED_FILTERS })).toEqual(false)
+  expect(isAnyFilterSet({ currentFilterList: { a: true, b: false } })).toEqual(true)
 })

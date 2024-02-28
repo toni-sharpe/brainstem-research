@@ -10,14 +10,13 @@ import './MapObjectDetailed.scss'
 const i18nBase = 'MapObjectDetailed'
 
 function MapObjectDetailed({
+  c: { x, y },
   children,
   closeOnClick,
   countryName,
   isPopulated,
   h,
   w,
-  x,
-  y,
 }) {
   const internalW = isPopulated ? w : 26
   const internalH = isPopulated ? h : 20
