@@ -17,6 +17,11 @@ test('groupByAndCountPipe() drops any empty string groups', () => {
       length: 2,
       nonSevere: 2,
       nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
       severePerc: 0,
     }
@@ -28,6 +33,11 @@ test('groupByAndCountPipe() drops any empty string groups', () => {
       length: 1,
       nonSevere: 0,
       nonSeverePerc: 0,
+      rgb: [
+        250,
+        0,
+        0,
+      ],
       severe: 1,
       severePerc: 100,
     }
@@ -52,6 +62,11 @@ test('groupByAndCountPipe() drops any null groups', () => {
       length: 2,
       nonSevere: 2,
       nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
       severePerc: 0,
     }
@@ -62,9 +77,14 @@ test('groupByAndCountPipe() drops any null groups', () => {
       dcbPerc: 0,
       length: 3,
       nonSevere: 2,
-      nonSeverePerc: 66.6667,
+      nonSeverePerc: 67,
+      rgb: [
+        149.5,
+        0,
+        83.75,
+      ],
       severe: 1,
-      severePerc: 33.3333,
+      severePerc: 33,
     }
   ]])
 })
@@ -91,6 +111,11 @@ test('groupByAndCountPipe() counts all groups when keys are present', () => {
       length: 1,
       nonSevere: 1,
       nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
       severePerc: 0,
     }
@@ -101,9 +126,14 @@ test('groupByAndCountPipe() counts all groups when keys are present', () => {
       dcbPerc: 0,
       length: 3,
       nonSevere: 2,
-      nonSeverePerc: 66.6667,
+      nonSeverePerc: 67,
+      rgb: [
+        149.5,
+        0,
+        83.75,
+      ],
       severe: 1,
-      severePerc: 33.3333,
+      severePerc: 33,
     }
   ], [
     'b', {
@@ -113,6 +143,11 @@ test('groupByAndCountPipe() counts all groups when keys are present', () => {
       length: 1,
       nonSevere: 1,
       nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
       severePerc: 0,
     }
@@ -124,6 +159,11 @@ test('groupByAndCountPipe() counts all groups when keys are present', () => {
       length: 4,
       nonSevere: 4,
       nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
       severePerc: 0,
     }
@@ -135,6 +175,11 @@ test('groupByAndCountPipe() counts all groups when keys are present', () => {
       length: 1,
       nonSevere: 1,
       nonSeverePerc: 100,
+      rgb: [
+        100,
+        0,
+        125,
+      ],
       severe: 0,
       severePerc: 0,
     }]
