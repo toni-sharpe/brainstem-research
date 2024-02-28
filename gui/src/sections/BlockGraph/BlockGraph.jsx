@@ -57,11 +57,11 @@ function BlockGraph({ labelValList }) {
               <text
                 dominantBaseline='hanging'
                 textAnchor='left'
-                style={{ font: 'normal 4px sans-serif' }}
+                style={{ font: 'normal 3px sans-serif' }}
                 x={vX + 0.5}
                 y={0.5}
               >
-                {blPerc.label}
+                {blPerc.label} {blPerc.length}:[{blPerc.perc}%]
               </text>
             </g>
           )
@@ -88,11 +88,11 @@ function BlockGraph({ labelValList }) {
               <text
                 dominantBaseline='hanging'
                 textAnchor='left'
-                style={{ font: 'normal 4px sans-serif' }}
+                style={{ font: 'normal 3px sans-serif' }}
                 x={100 - remaining + 0.5}
                 y={vY + 0.5}
               >
-                {hlPerc.label}
+                {hlPerc.label} {hlPerc.length}:[{hlPerc.perc}%]
               </text>
             </g>
           )
