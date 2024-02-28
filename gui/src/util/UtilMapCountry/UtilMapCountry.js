@@ -77,3 +77,29 @@ export function onMapCountryClickHandler({
     setJSONLocalStorage({ k: graphKey, v: offset })
   }
 }
+
+export function buildMapCountryElement({
+  data,
+  elementKey,
+  i,
+  setCurrentHoveredCountryId,
+}) {
+  const { countryId, onClick } = data
+
+  return({
+    children: data[elementKey],
+    key: `${countryId}-${i}-${elementKey}`,
+    onClick,
+    onMouseEnter: () => setCurrentHoveredCountryId(countryId),
+    onMouseLeave: () => setCurrentHoveredCountryId(undefined),
+    pointerEvents: 'visiblePainted',
+  })
+}
+
+export function countryElementMapperFn({ elementKey, setCurrentHoveredCountryId }) {
+  return function(data, i) {
+    return (
+      <g {...buildMapCountryElement({ data, elementKey, i, setCurrentHoveredCountryId })} />
+    )
+  }
+}
