@@ -191,8 +191,9 @@ export const OUTCOME_START = 15
 /*
  * Block graph
  */
-export const BLOCK_GRAPH_SVG_HEIGHT = 124
-export const BLOCK_GRAPH_SVG_HEIGHT_FACTOR = 124 / 100
+export const BLOCK_GRAPH_SVG_WIDTH = 500
+export const BLOCK_GRAPH_SVG_HEIGHT = BLOCK_GRAPH_SVG_WIDTH
+export const BLOCK_GRAPH_PERC_FACTOR = BLOCK_GRAPH_SVG_WIDTH / 100
 
 /*
  * Drag graph

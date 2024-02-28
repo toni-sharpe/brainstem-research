@@ -1,0 +1,14 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
+.graph-set {
+  &__wrapper {
+    @include row-layout();
+  }
+  &__tab-list {
+    align-items: flex-end;
+    @include column-layout();
+    & > * {
+      @include space-column();
+    }
+  }
+}

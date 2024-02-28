@@ -97,7 +97,7 @@ function MapSvg({
           { borders.map(countryElementMapperFn({ elementKey: 'b', setCurrentHoveredCountryId })) }
           { labels.map(countryElementMapperFn({ elementKey: 'l', setCurrentHoveredCountryId })) }
 
-          <g className='row-layout space-childen'>
+          <g className='row-layout space-childen' tabIndex={0}>
             { zoom >= 2
               &&
               currentCountryIdList.map(

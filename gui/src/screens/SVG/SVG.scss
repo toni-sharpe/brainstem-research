@@ -21,16 +21,4 @@
       }
     }
   }
-
-  &__graph-set-wrapper {
-    @include row-layout();
-  }
-
-  &__graph-set-tab-list {
-    align-items: flex-end;
-    @include column-layout();
-    & > * {
-      @include space-column();
-    }
-  }
 }

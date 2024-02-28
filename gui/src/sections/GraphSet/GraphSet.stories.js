@@ -1,10 +1,10 @@
-// BlockGraph.story.js
+// GraphSet.story.js
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
 
-import BlockGraph from './BlockGraph';
+import GraphSet from './GraphSet';
 
 export default {
-  component: BlockGraph,
+  component: GraphSet,
   decorators: [
     (Story) => (
       <StoryBookPaddedWrapper
@@ -19,7 +19,7 @@ export default {
 export const RegularPage = {
   render: () => {
     return (
-      <BlockGraph labelValList={[
+      <GraphSet graphKey='dragGraphStoryBook' labelValList={[
           [  '1', { length:  7, rgb: [100,  80, 160] }],
           [  '2', { length:  9, rgb: [ 80,  70, 170] }],
           [  '3', { length:  2, rgb: [ 90,  70, 180] }],
@@ -42,7 +42,7 @@ export const RegularPage = {
 export const SmallSet = {
   render: () => {
     return (
-      <BlockGraph labelValList={[
+      <GraphSet graphKey='dragGraphStoryBook' labelValList={[
           [  '1', { length:  7, rgb: [100,  80, 160] }],
           [  '2', { length:  9, rgb: [ 80,  70, 170] }]
         ]}
@@ -54,7 +54,7 @@ export const SmallSet = {
 export const SmallSetHugeNumber = {
   render: () => {
     return (
-      <BlockGraph labelValList={[
+      <GraphSet graphKey='dragGraphStoryBook' labelValList={[
           [  '1', { length:   7, rgb: [100,  80, 160] }],
           [  '2', { length: 153, rgb: [ 80,  70, 170] }]
         ]}
@@ -66,7 +66,7 @@ export const SmallSetHugeNumber = {
 export const OneNumber = {
   render: () => {
     return (
-      <BlockGraph labelValList={[
+      <GraphSet graphKey='dragGraphStoryBook' labelValList={[
           [  '1', { length:  9, rgb: [100,  80, 160] }],
         ]}
       />

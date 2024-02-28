@@ -2,8 +2,9 @@ import React from 'react'
 import { descend, drop, filter, map, pipe, reduce, sort } from 'ramda'
 
 import {
+  BLOCK_GRAPH_SVG_WIDTH,
   BLOCK_GRAPH_SVG_HEIGHT,
-  BLOCK_GRAPH_SVG_HEIGHT_FACTOR,
+  BLOCK_GRAPH_PERC_FACTOR,
 } from 'util/Constant/BaseConstantList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import { numberPrecision } from 'util/Util/Util'
@@ -16,10 +17,10 @@ function BlockGraph({ labelValList }) {
 
   const blockPercList = pipe(
     sort(bySizeDesc),
-    map(([label, val]) => ({ ...val, label, perc: numberPrecision({ n: val.length / sum * 100, lessPrecise: 2 }) })),
-    reduce((a, c) => {
+    map(([label, val]) => ({ ...val, label, perc: numberPrecision({ n: val.length / sum * BLOCK_GRAPH_SVG_WIDTH }) })),
+    reduce((a, c, i) => {
       const sum = (a.length > 0 ? a[a.length -1].sum : 0) + c.perc
-      a.push({ ...c, orientation: sum < 70 ? 'V' : 'H', sum })
+      a.push({ ...c, orientation: sum < BLOCK_GRAPH_SVG_WIDTH * 0.7 || i < 1 ? 'V' : 'H', sum })
       return a
     }, [])
   )(labelValList)
@@ -42,18 +43,20 @@ function BlockGraph({ labelValList }) {
     stroke: '#333',
   }
 
+  console.log(blockPercList)
+
   const commonTextProps = {
     dominantBaseline: 'hanging',
     textAnchor: 'left',
-    style: { font: 'normal 2.6px sans-serif' },
+    style: { font: 'normal 9px sans-serif' },
   }
 
   return (
     <figure className='block-graph'>
-      <SvgWrapper svgScale={`0 0 100 ${BLOCK_GRAPH_SVG_HEIGHT}`}>
+      <SvgWrapper svgScale={`0 0 456 ${BLOCK_GRAPH_SVG_HEIGHT}`}>
         {blockPercList.map((blPerc, i) => {
           if (blPerc.orientation === 'H' && hCount === 0) {
-            remaining = numberPrecision({ n: 100 - blockPercList[i - 1].sum })
+            remaining = numberPrecision({ n: BLOCK_GRAPH_SVG_WIDTH - (i >= 1 ? blockPercList[i - 1].sum : 0) })
             hList = pipe(
               filter(({ orientation }) => orientation === 'H'),
               map(val => ({ ...val, hPerc: val.perc / remaining * BLOCK_GRAPH_SVG_HEIGHT }))
@@ -63,7 +66,7 @@ function BlockGraph({ labelValList }) {
 
           const firstTextProps = {
             ...commonTextProps,
-            x: vX + 2,
+            x: vX + 4,
           }
 
           const width = blPerc.perc
@@ -82,15 +85,15 @@ function BlockGraph({ labelValList }) {
               <rect
                 x={vX}
                 y={0}
-                width={12}
+                width={42}
                 fill='#444'
                 fillOpacity={0.6}
-                height={14}
+                height={50}
               />
               <g fill='#fff'>
-                <text {...firstTextProps} y={ 2}>{blPerc.label}</text>
-                <text {...firstTextProps} y={ 6}>{blPerc.length}</text>
-                <text {...firstTextProps} y={10}>{blPerc.perc}%</text>
+                <text {...firstTextProps} y={ 5}>{blPerc.label}</text>
+                <text {...firstTextProps} y={20}>{blPerc.length}</text>
+                <text {...firstTextProps} y={35}>{(blPerc.perc / BLOCK_GRAPH_PERC_FACTOR).toFixed(2)}%</text>
               </g>
             </g>
           )
@@ -103,10 +106,10 @@ function BlockGraph({ labelValList }) {
           return hCount === 0 && thisRect
         })}
         {hList.map((hlPerc, i) => {
-          const flipVertical = vY >= 90
-          let xBase = 100 - remaining
+          const flipVertical = vY >= BLOCK_GRAPH_SVG_HEIGHT * 0.9
+          let xBase = BLOCK_GRAPH_SVG_WIDTH - remaining
           let width = remaining
-          const vYFactored = vY * BLOCK_GRAPH_SVG_HEIGHT_FACTOR
+          const vYFactored = vY
 
           // to flip vertical again we'll do some things once
           if (flipVertical && !fireOnceOnFlipVertical) {
@@ -126,17 +129,17 @@ function BlockGraph({ labelValList }) {
           let finalTextProps
           if (flipVertical) {
             width = numberPrecision({ n: hlPerc.hPerc / totalRemainingPerc * remaining })
-            xBase = 100 - remaining + verticalRevert
+            xBase = BLOCK_GRAPH_SVG_WIDTH - remaining + verticalRevert
             finalTextProps = {
               ...commonTextProps,
-              style: { font: 'normal 2px sans-serif' },
-              x: xBase + 2,
+              style: { font: 'normal 7px sans-serif' },
+              x: xBase + 5,
             }
           }
 
           const { rgb: [r, g, b] } = hlPerc
 
-          const thisRect = vY < 90
+          const thisRect = !flipVertical
             ? (
                 <g key={`${hCount}-${i}`}>
                   <rect
@@ -145,7 +148,7 @@ function BlockGraph({ labelValList }) {
                     y={vYFactored}
                     width={width}
                     fill={`rgba(${r},${g},${b},0.7)`}
-                    height={hlPerc.hPerc * BLOCK_GRAPH_SVG_HEIGHT_FACTOR}
+                    height={hlPerc.hPerc }
                   />
                   <rect
                     x={xBase}
@@ -153,15 +156,15 @@ function BlockGraph({ labelValList }) {
                     width={width}
                     fill='#444'
                     fillOpacity={0.6}
-                    height={6}
+                    height={16}
                   />
                   <g fill='#fff'>
                     <text
                       {...commonTextProps}
-                      x={xBase + 2}
-                      y={vYFactored + 2}
+                      x={xBase + 4}
+                      y={vYFactored + 4}
                     >
-                      {hlPerc.label} : {hlPerc.length} : {hlPerc.perc}%
+                      {hlPerc.label} : {hlPerc.length} : {(hlPerc.perc / BLOCK_GRAPH_PERC_FACTOR).toFixed(2)}%
                     </text>
                   </g>
                 </g>
@@ -177,9 +180,11 @@ function BlockGraph({ labelValList }) {
                   height={vYFixedHeight}
                   title={hlPerc.label}
                 />
-                <text {...finalTextProps} y={vYFixed + 2}>{hlPerc.label}</text>
-                <text {...finalTextProps} y={vYFixed + 5}>{hlPerc.length}</text>
-                <text {...finalTextProps} y={vYFixed + 8}>{hlPerc.perc}%</text>
+                <g fill='#fff'>
+                  <text {...finalTextProps} y={vYFixed +  5}>{hlPerc.label}</text>
+                  <text {...finalTextProps} y={vYFixed + 14}>{hlPerc.length}</text>
+                  <text {...finalTextProps} y={vYFixed + 23}>{(hlPerc.perc / BLOCK_GRAPH_PERC_FACTOR).toFixed(2)}%</text>
+                  </g>
               </g>
             )
 

@@ -7,6 +7,8 @@ import DragGraph from 'sections/DragGraph/DragGraph'
 import BlockGraph from 'sections/BlockGraph/BlockGraph'
 import severityCircleMapper from 'util/UtilPointData/severityCircleMapper'
 
+import './GraphSet.scss'
+
 function GraphSet({
   graphKey,
   labelValList,
@@ -14,8 +16,8 @@ function GraphSet({
   const [graphTab, setGraphTab] = useState('drag')
 
   return (
-    <div className='svg__graph-set-wrapper'>
-      <ol className='svg__graph-set-tab-list'>
+    <div className='graph-set__wrapper'>
+      <ol className='graph-set__tab-list'>
         <li>
           <Button
             label='Drag'
