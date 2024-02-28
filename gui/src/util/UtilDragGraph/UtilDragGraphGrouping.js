@@ -42,16 +42,24 @@ export function groupByAndCountPipe({ k }) {
       const nonSevere = list.filter(({ outcome }) => outcome === 'NSV').length
       const severe = list.filter(({ outcome }) => outcome === 'SEV').length
 
+      const dcbPerc = Math.round(dcb / length)
+      const nonSeverePerc = Math.round(nonSevere / length)
+      const severePerc = Math.round(severe / length)
+
+      const rgb = [
+        100 + severePerc * 1.5 * 100,
+          0,
+          0 + nonSeverePerc * 1.25 * 100 - dcbPerc * 0.5 * 100,
+      ]
+
       return [
         v, {
           careLevel,
           dcb,
-          dcbPerc: numberPrecision({ n: dcb / length * 100 }),
+          rgb,
           length,
           nonSevere,
-          nonSeverePerc: numberPrecision({ n: nonSevere / length * 100 }),
           severe,
-          severePerc: numberPrecision({ n: severe / length * 100 }),
         }
       ]
     }),

@@ -34,7 +34,7 @@ function GraphSet({
       { graphTab === 'drag' && (
         <DragGraph
           graphKey={graphKey}
-          heading={i18next.t(`CommonClinicalDefinitions.${type(graphKey) === 'Array' ? 'booleanSet' : graphKey}`)}
+          heading={i18next.t(`GraphSet.${type(graphKey) === 'Array' ? 'boolean_set' : graphKey}`)}
           key={`${graphKey}`}
           labelValList={labelValList}
           pointDataMapper={severityCircleMapper}

@@ -71,23 +71,6 @@
     "time_of_death_abbrev": "Time of sev"
   },
 
-  "CommonClinicalDefinitions": {
-    "care_equipment_1": "Care Equipment 1",
-    "care_equipment_4": "Care Equipment 4",
-    "care_technique_1": "Kinetics",
-    "care_technique_2": "Care Technique 2",
-    "care_technique_3": "Care Technique 3",
-    "consultant_doctor": "Consultant Dr.",
-    "etiology": "Etiology",
-    "event_count": "Pathological event order",
-    "outcome_type": "Outcome Type",
-    "prime_symptom_level": "Prime symptom severity",
-    "source_country": "Source country",
-    "care_site": "Place of care",
-    "outlier": "Outlier type",
-    "boolean_set": " Booleans"
-  },
-
   "MainPageHeading": {
     "": "Research",
     "Scatter": "Scatter Plot",
@@ -453,6 +436,23 @@
     "outcomeShown": "Outcome",
     "map": "M",
     "sbZoom": "SB Zoom"
+  },
+
+  "GraphSet": {
+    "care_equipment_1": "Care Equipment 1",
+    "care_equipment_4": "Care Equipment 4",
+    "care_technique_1": "Kinetics",
+    "care_technique_2": "Care Technique 2",
+    "care_technique_3": "Care Technique 3",
+    "consultant_doctor": "Consultant Dr.",
+    "etiology": "Etiology",
+    "event_count": "Pathological event order",
+    "outcome_type": "Outcome Type",
+    "prime_symptom_level": "Prime symptom severity",
+    "source_country": "Source country",
+    "care_site": "Place of care",
+    "outlier": "Outlier type",
+    "boolean_set": "Booleans"
   },
 
   "ResetGraphButton": {

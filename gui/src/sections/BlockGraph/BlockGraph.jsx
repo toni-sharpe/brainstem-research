@@ -67,6 +67,7 @@ function BlockGraph({ labelValList }) {
           }
 
           const width = blPerc.perc
+          const { rgb: [r, g, b] } = blPerc
 
           const thisRect = (
             <g key={`${vCount}-${i}`}>
@@ -75,7 +76,7 @@ function BlockGraph({ labelValList }) {
                 x={vX}
                 y={0}
                 width={width}
-                fill='#aaa'
+                fill={`rgba(${r},${g},${b},0.7)`}
                 height={BLOCK_GRAPH_SVG_HEIGHT}
               />
               <rect
@@ -133,6 +134,8 @@ function BlockGraph({ labelValList }) {
             }
           }
 
+          const { rgb: [r, g, b] } = hlPerc
+
           const thisRect = vY < 90
             ? (
                 <g key={`${hCount}-${i}`}>
@@ -141,7 +144,7 @@ function BlockGraph({ labelValList }) {
                     x={xBase}
                     y={vYFactored}
                     width={width}
-                    fill='#aaa'
+                    fill={`rgba(${r},${g},${b},0.7)`}
                     height={hlPerc.hPerc * BLOCK_GRAPH_SVG_HEIGHT_FACTOR}
                   />
                   <rect
@@ -170,8 +173,9 @@ function BlockGraph({ labelValList }) {
                   x={xBase}
                   y={vYFixed}
                   width={width}
-                  fill='#aaa'
+                  fill={`rgba(${r},${g},${b},0.7)`}
                   height={vYFixedHeight}
+                  title={hlPerc.label}
                 />
                 <text {...finalTextProps} y={vYFixed + 2}>{hlPerc.label}</text>
                 <text {...finalTextProps} y={vYFixed + 5}>{hlPerc.length}</text>
