@@ -43,7 +43,7 @@ export function calcBaseLineCoordList({
   useDepth,
   valList
 }) {
-  const r = scaleR * 3
+  const r = scaleR * 1.5
 
   return valList.map((val, i) => {
     const a = angle * i

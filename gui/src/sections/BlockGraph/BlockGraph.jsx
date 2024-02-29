@@ -19,8 +19,15 @@ function BlockGraph({ labelValList }) {
     sort(bySizeDesc),
     map(([label, val]) => ({ ...val, label, perc: numberPrecision({ n: val.length / sum * BLOCK_GRAPH_SVG_WIDTH }) })),
     reduce((a, c, i) => {
-      const sum = (a.length > 0 ? a[a.length -1].sum : 0) + c.perc
-      a.push({ ...c, orientation: sum < BLOCK_GRAPH_SVG_WIDTH * 0.7 || i < 1 ? 'V' : 'H', sum })
+      const accSum = a.length > 0
+        ? a[a.length -1].sum
+        : 0
+      const sum = accSum + c.perc
+      const orientation = sum < BLOCK_GRAPH_SVG_WIDTH * 0.7 || i < 1
+        ? 'V'
+        : 'H'
+
+      a.push({ ...c, orientation, sum })
       return a
     }, [])
   )(labelValList)
@@ -79,7 +86,7 @@ function BlockGraph({ labelValList }) {
                 x={vX}
                 y={0}
                 width={width}
-                fill={`rgba(${r},${g},${b},0.7)`}
+                fill={`rgba(${r},${g},${b},0.4)`}
                 height={BLOCK_GRAPH_SVG_HEIGHT}
               />
               <rect
@@ -87,7 +94,7 @@ function BlockGraph({ labelValList }) {
                 y={0}
                 width={42}
                 fill='#444'
-                fillOpacity={0.6}
+                fillOpacity={0.9}
                 height={50}
               />
               <g fill='#fff'>
@@ -147,7 +154,7 @@ function BlockGraph({ labelValList }) {
                     x={xBase}
                     y={vYFactored}
                     width={width}
-                    fill={`rgba(${r},${g},${b},0.7)`}
+                    fill={`rgba(${r},${g},${b},0.4)`}
                     height={hlPerc.hPerc }
                   />
                   <rect
@@ -155,7 +162,7 @@ function BlockGraph({ labelValList }) {
                     y={vYFactored}
                     width={width}
                     fill='#444'
-                    fillOpacity={0.6}
+                    fillOpacity={0.9}
                     height={16}
                   />
                   <g fill='#fff'>
@@ -176,7 +183,7 @@ function BlockGraph({ labelValList }) {
                   x={xBase}
                   y={vYFixed}
                   width={width}
-                  fill={`rgba(${r},${g},${b},0.7)`}
+                  fill={`rgba(${r},${g},${b},0.4)`}
                   height={vYFixedHeight}
                   title={hlPerc.label}
                 />
