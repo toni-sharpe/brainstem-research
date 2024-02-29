@@ -4,7 +4,7 @@
   &__svg {
     background-color: $blue--lightest;
     margin-bottom: 20px;
-    box-shadow: 0 0 20px 0 inset $blue--dark;
+    box-shadow: 0 0 110px 0 inset $blue;
     width: 99vw;
     height: 78vh;
     @media (min-width: $media-switch--medium) {
