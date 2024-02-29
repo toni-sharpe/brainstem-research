@@ -40,15 +40,21 @@ export function calcBaseLineCoordList({
   scale = SVG_SCALE,
   scaleToLabelRatio = 1.64,
   scaleR = SVG_SCALE_RADIUS,
+  useDepth,
   valList
 }) {
-  const r = scaleR * 1.5
+  const r = scaleR * 3
 
   return valList.map((val, i) => {
     const a = angle * i
+
+    const stlr = useDepth
+      ? scaleToLabelRatio + (i % 8) * 0.6
+      : scaleToLabelRatio
+
     return [
       calcXY({ a, r, scale, scaleR }),
-      calcXY({ a, r: r / scaleToLabelRatio, scale, scaleR })
+      calcXY({ a, r: r / stlr, scale, scaleR })
     ]
   })
 }

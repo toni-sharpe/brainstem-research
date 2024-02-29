@@ -54,6 +54,7 @@ function DragGraph({
   scaleR,
   showExtremeButton,
   showZoomLabel,
+  useDepth,
   zDefault,
 }) {
   const persisted = getJSONLocalStorage({ k: graphKey })
@@ -87,7 +88,7 @@ function DragGraph({
   const radiusUnit = calcRadiusUnit({ max })
   const angle = calcAngleInRadians({ valList })
   const dragLineCoordList = calcPolygonCoordList({ angle, radiusUnit, scale, scaleR, valList })
-  const baseLineCoordList = calcBaseLineCoordList({ angle, scale, scaleToLabelRatio, scaleR, valList })
+  const baseLineCoordList = calcBaseLineCoordList({ angle, scale, scaleToLabelRatio, scaleR, useDepth, valList })
   const r = scaleR
   const graphC = { x: r, y: r }
 
@@ -252,6 +253,7 @@ DragGraph.defaultProps = {
   scaleR: DRAG_GRAPH_SVG_SCALE_RADIUS,
   showExtremeButton: true,
   showZoomLabel: true,
+  useDepth: false,
   zDefault: 2,
 }
 
