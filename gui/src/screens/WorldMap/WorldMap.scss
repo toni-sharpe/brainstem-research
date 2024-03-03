@@ -4,8 +4,5 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 78vh;
-  @media (min-width: $media-switch--medium) {
-    height: 83vh;
-  }
+  height: 81vh;
 }
