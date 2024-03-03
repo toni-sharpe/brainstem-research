@@ -236,6 +236,8 @@ export const WORLD_MAP_SVG_CENTER_X = WORLD_MAP_SVG_SCALE_WIDTH / 2
 export const WORLD_MAP_SVG_CENTER_Y = WORLD_MAP_SVG_SCALE_HEIGHT / 2
 export const WORLD_MAP_SVG_SCALE = `${WORLD_MAP_SVG_SCALE_WIDTH} ${WORLD_MAP_SVG_SCALE_HEIGHT}`
 export const WORLD_MAP_ZOOM_LIST = [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 25, 30, 40]
+export const WORLD_MAP_SVG_ZOOM_DEFAULT = 1
+
 
 
 /***********************************/

@@ -5,6 +5,7 @@ import {
   WORLD_MAP_SVG_SCALE,
   WORLD_MAP_SVG_SCALE_HEIGHT,
   WORLD_MAP_SVG_SCALE_WIDTH,
+  WORLD_MAP_ZOOM_LIST,
 } from 'util/Constant/BaseConstantList'
 import {
   calcMapPolygonCoordGroup,
@@ -12,13 +13,14 @@ import {
   onMapCountryClickHandler,
   countryElementMapperFn,
 } from 'util/UtilMapCountry/UtilMapCountry'
+import { handleOnKeyDown } from 'util/UtilMapControlList/UtilMapControlList'
 import { numberPrecision } from 'util/Util/Util'
 
 import MapCountry from 'components/MapCountry/MapCountry'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
-import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { getJSONLocalStorage, setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import tempTestMapperFn from './tempTestMapperFn'
 import './MapSvg.scss'
@@ -83,9 +85,21 @@ function MapSvg({
     })
   })
 
+  const [x, y] = graphOffset
 
   return (
-    <figure className='map-svg'>
+    <figure
+      className='map-svg'
+      onKeyDown={({ keyCode }) => handleOnKeyDown({
+        graphKey,
+        graphOffset,
+        keyCode,
+        persisted,
+        setGraphOffset,
+        setZoom,
+        zoom,
+      })}
+    >
       <MapSvgControlList
         graphKey={graphKey}
         graphOffset={graphOffset}
@@ -107,8 +121,8 @@ function MapSvg({
           <div
             className='map-svg__zoom-guide map-svg__north-south-guide--right'
             style={{
-            height: `${(77 / zoom).toFixed(1)}vh`,
-            top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 77) })}vh`,
+            height: `${(73 / zoom).toFixed(1)}vh`,
+            top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 73) })}vh`,
           }}/>
       ) }
         <SvgWrapper
@@ -142,8 +156,8 @@ function MapSvg({
           <div
             className='map-svg__zoom-guide map-svg__north-south-guide--left'
             style={{
-            height: `${(77 / zoom).toFixed(1)}vh`,
-            top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 77) })}vh`,
+            height: `${(73 / zoom).toFixed(1)}vh`,
+            top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 73) })}vh`,
           }}/>
       ) }
       </div>

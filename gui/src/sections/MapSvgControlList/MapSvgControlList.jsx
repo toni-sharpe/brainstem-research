@@ -10,7 +10,14 @@ import Button from 'components/Button/Button'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
 import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
-import { calcNewGraphOffset } from 'util/UtilMapControlList/UtilMapControlList'
+import {
+  calcNewGraphOffset,
+  onWestEventHandler,
+  onEastEventHandler,
+  onNorthEventHandler,
+  onSouthEventHandler,
+  onResetHandler,
+} from 'util/UtilMapControlList/UtilMapControlList'
 
 import './MapSvgControlList.scss'
 
@@ -22,11 +29,6 @@ function MapSvgControlList({
   setZoom,
   zoom,
 }) {
-  // Easier code
-  const STEP = 10
-  const HORZ_MOVE = WORLD_MAP_SVG_SCALE_WIDTH / STEP
-  const VERT_MOVE = WORLD_MAP_SVG_SCALE_HEIGHT / STEP
-
   const [x, y] = graphOffset
 
   const movementButtonCommonProps = {
@@ -34,8 +36,14 @@ function MapSvgControlList({
     size: 'medium',
   }
 
-  const horz_bound = numberPrecision({ n: (0 - (WORLD_MAP_SVG_SCALE_WIDTH * zoom)) })
-  const vert_bound = numberPrecision({ n: (0 - (WORLD_MAP_SVG_SCALE_HEIGHT * zoom)) })
+  const eventHandlerProps = {
+    graphKey,
+    graphOffset,
+    persisted,
+    setGraphOffset,
+    setZoom,
+    zoom,
+  }
 
   return (
     <ul
@@ -47,60 +55,28 @@ function MapSvgControlList({
             <Button
               {...movementButtonCommonProps}
               label='← East'
-              onClick={() => {
-                let newX = x + HORZ_MOVE
-                if (newX >= 0) { newX = 0 }
-                const offset = [newX, y]
-                setGraphOffset(offset)
-                setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset, zoom } })
-              }}
+              onClick={() => onEastEventHandler(eventHandlerProps)}
             />
           </li>
           <li>
             <Button
               {...movementButtonCommonProps}
               label='↑ North'
-              onClick={() => {
-                let newY = y + VERT_MOVE
-                if (newY >= 0) { newY = 0 }
-                const offset = [x, newY]
-                setGraphOffset(offset)
-                setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset, zoom } })
-              }}
+              onClick={() => onNorthEventHandler(eventHandlerProps)}
             />
           </li>
           <li>
             <Button
               {...movementButtonCommonProps}
               label='→ West'
-              onClick={() => {
-                let m = x
-                if (m <= horz_bound + WORLD_MAP_SVG_SCALE_WIDTH) {
-                  m = horz_bound + WORLD_MAP_SVG_SCALE_WIDTH
-                } else {
-                  m = x - HORZ_MOVE
-                }
-                const offset = [m, y]
-                setGraphOffset(offset)
-                setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset, zoom } })
-              }}
+              onClick={() => onWestEventHandler(eventHandlerProps)}
             />
           </li>
           <li>
             <Button
               {...movementButtonCommonProps}
               label='↓ South'
-              onClick={() => {
-                let m = y
-                if (m <= (vert_bound + WORLD_MAP_SVG_SCALE_HEIGHT)) {
-                  m = vert_bound + WORLD_MAP_SVG_SCALE_HEIGHT
-                } else {
-                  m = y - VERT_MOVE
-                }
-                const offset = [x, m]
-                setGraphOffset(offset)
-                setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset, zoom } })
-              }}
+              onClick={() => onSouthEventHandler(eventHandlerProps)}
             />
           </li>
         </ol>
