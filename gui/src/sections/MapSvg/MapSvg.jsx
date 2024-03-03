@@ -1,13 +1,18 @@
 import { toPairs } from 'ramda'
 import React, { useState } from 'react'
 
-import { WORLD_MAP_SVG_SCALE } from 'util/Constant/BaseConstantList'
+import {
+  WORLD_MAP_SVG_SCALE,
+  WORLD_MAP_SVG_SCALE_HEIGHT,
+  WORLD_MAP_SVG_SCALE_WIDTH,
+} from 'util/Constant/BaseConstantList'
 import {
   calcMapPolygonCoordGroup,
   calcZoomC,
   onMapCountryClickHandler,
   countryElementMapperFn,
 } from 'util/UtilMapCountry/UtilMapCountry'
+import { numberPrecision } from 'util/Util/Util'
 
 import MapCountry from 'components/MapCountry/MapCountry'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
@@ -89,31 +94,59 @@ function MapSvg({
         setZoom={setZoom}
         zoom={zoom}
       />
-      <SvgWrapper
-        extraClass='map-svg__svg'
-        k='world-map-svg'
-        svgScale={`0 0 ${WORLD_MAP_SVG_SCALE}`}
-      >
-        <g key='guides' transform={`translate(${graphOffset})`}>
-          { borders.map(borderMapFn({ setCurrentHoveredCountryId })) }
-          { labels.map(countryElementMapperFn({ elementKey: 'l', setCurrentHoveredCountryId })) }
+      <div
+        className='map-svg__zoom-guide map-svg__east-west-guide--top'
+        style={{
+          width: `${(100 / zoom).toFixed(1)}%`,
+          left: `${numberPrecision({ n: (Math.abs(graphOffset[0]) / (WORLD_MAP_SVG_SCALE_WIDTH * zoom) * 100) })}%`,
+        }}/>
+      <div className='row-layout'>
+        <div
+          className='map-svg__zoom-guide map-svg__north-south-guide--right'
+          style={{
+          height: `${(77 / zoom).toFixed(1)}vh`,
+          top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 77) })}vh`,
+        }}/>
+        <SvgWrapper
+          extraClass='map-svg__svg'
+          k='world-map-svg'
+          svgScale={`0 0 ${WORLD_MAP_SVG_SCALE}`}
+        >
+          <g key='guides' transform={`translate(${graphOffset})`}>
+            { borders.map(borderMapFn({ setCurrentHoveredCountryId })) }
+            { labels.map(countryElementMapperFn({ elementKey: 'l', setCurrentHoveredCountryId })) }
 
-          <g className='row-layout space-childen' tabIndex={0}>
-            { zoom >= 2
-              &&
-              currentCountryIdList.map(
-                selectedCountryMapFn({
-                  currentCountryIdList,
-                  currentYear,
-                  mapDetailData,
-                  setCurrentCountryList,
-                  zoom,
-                })
-              )
-            }
+            <text x={500 * zoom} y={250 * zoom}>{graphOffset}</text>
+
+            <g className='row-layout space-childen' tabIndex={0}>
+              { zoom >= 2
+                &&
+                currentCountryIdList.map(
+                  selectedCountryMapFn({
+                    currentCountryIdList,
+                    currentYear,
+                    mapDetailData,
+                    setCurrentCountryList,
+                    zoom,
+                  })
+                )
+              }
+            </g>
           </g>
-        </g>
-      </SvgWrapper>
+        </SvgWrapper>
+        <div
+          className='map-svg__zoom-guide map-svg__north-south-guide--left'
+          style={{
+          height: `${(77 / zoom).toFixed(1)}vh`,
+          top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 77) })}vh`,
+        }}/>
+      </div>
+      <div
+        className='map-svg__zoom-guide map-svg__east-west-guide--bottom'
+        style={{
+          width: `${(100 / zoom).toFixed(1)}%`,
+          left: `${numberPrecision({ n: (Math.abs(graphOffset[0]) / (WORLD_MAP_SVG_SCALE_WIDTH * zoom) * 100) })}%`,
+        }}/>
     </figure>
   )
 }

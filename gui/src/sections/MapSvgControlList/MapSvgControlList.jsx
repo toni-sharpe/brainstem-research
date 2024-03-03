@@ -34,8 +34,8 @@ function MapSvgControlList({
     size: 'medium',
   }
 
-  const horz_bound = 0 - (WORLD_MAP_SVG_SCALE_WIDTH * zoom)
-  const vert_bound = 0 - (WORLD_MAP_SVG_SCALE_HEIGHT * zoom)
+  const horz_bound = numberPrecision({ n: (0 - (WORLD_MAP_SVG_SCALE_WIDTH * zoom)) })
+  const vert_bound = numberPrecision({ n: (0 - (WORLD_MAP_SVG_SCALE_HEIGHT * zoom)) })
 
   return (
     <ul
@@ -75,12 +75,12 @@ function MapSvgControlList({
               label='→ West'
               onClick={() => {
                 let m = x
-                if (m > horz_bound) {
-                  m = x - HORZ_MOVE
+                if (m <= horz_bound + WORLD_MAP_SVG_SCALE_WIDTH) {
+                  m = horz_bound + WORLD_MAP_SVG_SCALE_WIDTH
                 } else {
-                  m = horz_bound
+                  m = x - HORZ_MOVE
                 }
-              const offset = [m, y]
+                const offset = [m, y]
                 setGraphOffset(offset)
                 setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset, zoom } })
               }}
@@ -92,12 +92,12 @@ function MapSvgControlList({
               label='↓ South'
               onClick={() => {
                 let m = y
-                if (m > vert_bound) {
-                  m = y - VERT_MOVE
+                if (m <= (vert_bound + WORLD_MAP_SVG_SCALE_HEIGHT)) {
+                  m = vert_bound + WORLD_MAP_SVG_SCALE_HEIGHT
                 } else {
-                  m = vert_bound
+                  m = y - VERT_MOVE
                 }
-              const offset = [x, m]
+                const offset = [x, m]
                 setGraphOffset(offset)
                 setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset, zoom } })
               }}
