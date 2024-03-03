@@ -9,8 +9,6 @@ function HeadingAndTextPanel({ heading, text }) {
       {text}
     </section>
   )
-
-  return null
 }
 
 export default HeadingAndTextPanel
