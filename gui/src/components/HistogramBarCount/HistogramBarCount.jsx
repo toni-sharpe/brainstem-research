@@ -9,6 +9,8 @@ function HistogramBarCount({
   barCountPerBlock,
   count,
 }) {
+  if (!count) { return null}
+
   let fontSize = ''
   if (barCountPerBlock > 3) {
     fontSize = ' histogram-bar-count__font-size-small'

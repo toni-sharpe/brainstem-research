@@ -1,12 +1,9 @@
 import React from 'react'
-
-import { HISTOGRAM_BAR_WIDTH } from 'util/Constant/BaseConstantList'
-import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
+import PropTypes from 'prop-types'
 
 import './HistogramBarLabel.scss'
 
 function HistogramBarLabel({
-  blockSize,
   children,
 }) {
   return (
@@ -18,12 +15,8 @@ function HistogramBarLabel({
   )
 }
 
-HistogramBarLabel.defaultProps = {
-  blockSize: HISTOGRAM_BAR_WIDTH,
-}
-
 HistogramBarLabel.propTypes = {
-  blockSize: NumberOrStringPropType,
+  children: PropTypes.node,
 }
 
 export default HistogramBarLabel
