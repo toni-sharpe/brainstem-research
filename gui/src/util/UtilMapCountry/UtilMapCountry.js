@@ -5,8 +5,6 @@ import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 import {
   NON_ISLAND_TINY_TERRIROTORIES,
   TINY_TERRIROTORY_MAX,
-  WORLD_MAP_SVG_CENTER_X,
-  WORLD_MAP_SVG_CENTER_Y,
 } from 'util/Constant/BaseConstantList'
 
 export function isCountryCircle({
@@ -57,24 +55,19 @@ export function calcZoomC({
 }
 
 export function onMapCountryClickHandler({
-  c,
   countryId,
   currentCountryIdList,
   graphKey,
   setCurrentCountryList,
-  setGraphOffset,
+  persisted,
 }) {
   return () => {
-    const offset = [
-      WORLD_MAP_SVG_CENTER_X - c.x,
-      WORLD_MAP_SVG_CENTER_Y - c.y,
-    ]
-    setGraphOffset(offset)
-    setCurrentCountryList(symmetricDifference(
+    const newCurrentCountryIdList = symmetricDifference(
       currentCountryIdList,
       [countryId],
-    ))
-    setJSONLocalStorage({ k: graphKey, v: offset })
+    )
+    setCurrentCountryList(newCurrentCountryIdList)
+    setJSONLocalStorage({ k: graphKey, v: { ...persisted, currentCountryIdList: newCurrentCountryIdList } })
   }
 }
 

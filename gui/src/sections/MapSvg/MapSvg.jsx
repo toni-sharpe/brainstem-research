@@ -28,7 +28,7 @@ function MapSvg({
   const graphKey = 'mapZoom'
   const persisted = getJSONLocalStorage({ k: graphKey })
 
-  const [currentCountryIdList, setCurrentCountryList] = useState([])
+  const [currentCountryIdList, setCurrentCountryList] = useState(persisted?.currentCountryIdList || [])
   const [currentHoveredCountryId, setCurrentHoveredCountryId] = useState()
   const [graphOffset, setGraphOffset] = useState(persisted?.graphOffset || [0, 0])
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
@@ -66,12 +66,11 @@ function MapSvg({
       })
 
       const onClick = onMapCountryClickHandler({
-        c,
         countryId,
         currentCountryIdList,
         graphKey,
+        persisted,
         setCurrentCountryList,
-        setGraphOffset,
       })
 
       borders.push({ b, countryId, onClick })

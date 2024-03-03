@@ -5,6 +5,7 @@ import {
   WORLD_MAP_SVG_SCALE_WIDTH,
   WORLD_MAP_SVG_SCALE_HEIGHT,
 } from 'util/Constant/BaseConstantList'
+import { numberPrecision } from 'util/Util/Util'
 import Button from 'components/Button/Button'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
@@ -51,7 +52,7 @@ function MapSvgControlList({
                 if (newX >= 0) { newX = 0 }
                 const offset = [newX, y]
                 setGraphOffset(offset)
-                setJSONLocalStorage({ k: graphKey, v: { graphOffset, zoom } })
+                setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset, zoom } })
               }}
             />
           </li>
@@ -64,7 +65,7 @@ function MapSvgControlList({
                 if (newY >= 0) { newY = 0 }
                 const offset = [x, newY]
                 setGraphOffset(offset)
-                setJSONLocalStorage({ k: graphKey, v: { graphOffset, zoom } })
+                setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset, zoom } })
               }}
             />
           </li>
@@ -81,7 +82,7 @@ function MapSvgControlList({
                 }
               const offset = [m, y]
                 setGraphOffset(offset)
-                setJSONLocalStorage({ k: graphKey, v: { graphOffset, zoom } })
+                setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset, zoom } })
               }}
             />
           </li>
@@ -98,7 +99,7 @@ function MapSvgControlList({
                 }
               const offset = [x, m]
                 setGraphOffset(offset)
-                setJSONLocalStorage({ k: graphKey, v: { graphOffset, zoom } })
+                setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset, zoom } })
               }}
             />
           </li>
@@ -131,7 +132,7 @@ function MapSvgControlList({
                   stateFn={(newVal) => {
                     setGraphOffset(newGraphOffset)
                     setZoom(newVal)
-                    setJSONLocalStorage({ k: graphKey, v: { graphOffset: newGraphOffset, zoom: newVal } })
+                    setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: newGraphOffset, zoom: newVal } })
                   }}
                 />
               )
