@@ -28,6 +28,7 @@ function Button({
     'aria-disabled': isDisabled,
     'aria-label': ariaLabel,
     'aria-pressed': isSelected,
+    disabled: isDisabled,
     className,
     onClick: isDisabled
       ? null

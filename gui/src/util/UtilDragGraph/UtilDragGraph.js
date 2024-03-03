@@ -30,7 +30,7 @@ export function calcScaleRadiusList({ fullMax, max }) {
   }
 }
 
-export function calcRadiusOfSelectedPoint({ zoom }) {
+export function calcRadiusOfSelectedPoint({ zoom = 1 }) {
   return numberPrecision({
     n: Math.max(
         2
