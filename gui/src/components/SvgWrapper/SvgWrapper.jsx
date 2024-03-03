@@ -10,6 +10,7 @@ function SvgWrapper({
   extraClass,
   offsetPair,
   offset,
+  style,
   svgScale,
 }) {
   const viewBox = offset
@@ -19,6 +20,7 @@ function SvgWrapper({
     <svg
       className={extraClass}
       key={k}
+      style={style}
       viewBox={viewBox}
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -37,6 +39,7 @@ SvgWrapper.defaultProps = {
 SvgWrapper.propTypes = {
   extraClass: PropTypes.string,
   offset: PropTypes.number,
+  style: PropTypes.object,
   svgScale: SvgScalePropType,
 }
 
