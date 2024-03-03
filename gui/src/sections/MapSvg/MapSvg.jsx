@@ -94,19 +94,23 @@ function MapSvg({
         setZoom={setZoom}
         zoom={zoom}
       />
-      <div
-        className='map-svg__zoom-guide map-svg__east-west-guide--top'
-        style={{
-          width: `${(100 / zoom).toFixed(1)}%`,
-          left: `${numberPrecision({ n: (Math.abs(graphOffset[0]) / (WORLD_MAP_SVG_SCALE_WIDTH * zoom) * 100) })}%`,
-        }}/>
-      <div className='row-layout'>
+      { zoom !== 1 && (
         <div
-          className='map-svg__zoom-guide map-svg__north-south-guide--right'
+          className='map-svg__zoom-guide map-svg__east-west-guide--top'
           style={{
-          height: `${(77 / zoom).toFixed(1)}vh`,
-          top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 77) })}vh`,
-        }}/>
+            width: `${(100 / zoom).toFixed(1)}%`,
+            left: `${numberPrecision({ n: (Math.abs(graphOffset[0]) / (WORLD_MAP_SVG_SCALE_WIDTH * zoom) * 100) })}%`,
+          }}/>
+      ) }
+      <div className='row-layout'>
+        { zoom !== 1 && (
+          <div
+            className='map-svg__zoom-guide map-svg__north-south-guide--right'
+            style={{
+            height: `${(77 / zoom).toFixed(1)}vh`,
+            top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 77) })}vh`,
+          }}/>
+      ) }
         <SvgWrapper
           extraClass='map-svg__svg'
           k='world-map-svg'
@@ -134,19 +138,23 @@ function MapSvg({
             </g>
           </g>
         </SvgWrapper>
-        <div
-          className='map-svg__zoom-guide map-svg__north-south-guide--left'
-          style={{
-          height: `${(77 / zoom).toFixed(1)}vh`,
-          top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 77) })}vh`,
-        }}/>
+        { zoom !== 1 && (
+          <div
+            className='map-svg__zoom-guide map-svg__north-south-guide--left'
+            style={{
+            height: `${(77 / zoom).toFixed(1)}vh`,
+            top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 77) })}vh`,
+          }}/>
+      ) }
       </div>
-      <div
-        className='map-svg__zoom-guide map-svg__east-west-guide--bottom'
-        style={{
-          width: `${(100 / zoom).toFixed(1)}%`,
-          left: `${numberPrecision({ n: (Math.abs(graphOffset[0]) / (WORLD_MAP_SVG_SCALE_WIDTH * zoom) * 100) })}%`,
-        }}/>
+      { zoom !== 1 && (
+        <div
+          className='map-svg__zoom-guide map-svg__east-west-guide--bottom'
+          style={{
+            width: `${(100 / zoom).toFixed(1)}%`,
+            left: `${numberPrecision({ n: (Math.abs(graphOffset[0]) / (WORLD_MAP_SVG_SCALE_WIDTH * zoom) * 100) })}%`,
+          }}/>
+      ) }
     </figure>
   )
 }
