@@ -99,7 +99,7 @@ export function buildMapCountryElement({
 export function countryElementMapperFn({ elementKey, setCurrentHoveredCountryId }) {
   return function(data, i) {
     return (
-      <g  tabIndex={0} {...buildMapCountryElement({ data, elementKey, i, setCurrentHoveredCountryId })} />
+      <g {...buildMapCountryElement({ data, elementKey, i, setCurrentHoveredCountryId })} />
     )
   }
 }

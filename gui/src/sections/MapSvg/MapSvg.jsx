@@ -19,9 +19,11 @@ import tempTestMapperFn from './tempTestMapperFn'
 import './MapSvg.scss'
 
 function MapSvg({
+  borderMapFn,
   currentYear,
   mapDetailProps,
   mapDetailData,
+  selectedCountryMapFn,
 }) {
   const graphKey = 'mapZoom'
   const persisted = getJSONLocalStorage({ k: graphKey })
@@ -94,14 +96,14 @@ function MapSvg({
         svgScale={`0 0 ${WORLD_MAP_SVG_SCALE}`}
       >
         <g key='guides' transform={`translate(${graphOffset})`}>
-          { borders.map(countryElementMapperFn({ elementKey: 'b', setCurrentHoveredCountryId })) }
+          { borders.map(borderMapFn({ setCurrentHoveredCountryId })) }
           { labels.map(countryElementMapperFn({ elementKey: 'l', setCurrentHoveredCountryId })) }
 
           <g className='row-layout space-childen' tabIndex={0}>
             { zoom >= 2
               &&
               currentCountryIdList.map(
-                tempTestMapperFn({
+                selectedCountryMapFn({
                   currentCountryIdList,
                   currentYear,
                   mapDetailData,
@@ -118,7 +120,9 @@ function MapSvg({
 }
 
 MapSvg.defaultProps = {
+  borderMapFn: ({ setCurrentHoveredCountryId }) => countryElementMapperFn({ elementKey: 'b', setCurrentHoveredCountryId }),
   currentYear: 2024,
+  selectedCountryMapFn: tempTestMapperFn,
 }
 
 export default MapSvg
