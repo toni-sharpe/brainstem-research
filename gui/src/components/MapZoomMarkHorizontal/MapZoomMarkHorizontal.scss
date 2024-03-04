@@ -3,19 +3,21 @@
 .map-zoom-mark-horizontal {
   &__bottom,
   &__top {
-    background-color: $red--dulled-light;
+    background-color: $green--dark;
     position: relative;
   }
 
   &__top {
     height: 5px;
-    border-bottom: 3px solid $red--dark;
-    top: 3px;
+    border-bottom: 1px solid $black;
+    border-radius: 5px 5px 0 0;
+    top: 1px;
   }
 
   &__bottom {
     height: 5px;
-    border-top: 3px solid $red--dark;
-    top: -3px;
+    border-radius: 0 0 5px 5px;
+    border-top: 1px solid $black;
+    top: -1px;
   }
 }

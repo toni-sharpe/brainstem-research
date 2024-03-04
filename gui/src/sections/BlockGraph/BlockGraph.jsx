@@ -53,8 +53,6 @@ function BlockGraph({
     stroke: '#333',
   }
 
-  console.log(blockPercList)
-
   const commonTextProps = {
     dominantBaseline: 'hanging',
     textAnchor: 'left',

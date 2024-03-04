@@ -70,4 +70,15 @@ h3 {
   &__secondary {
     align-items: center;
   }
+
+  &.sb-page-detail-wrapper {
+    .page-detail-wrapper__header {
+      background-color: $red--light;
+      color: $blue;
+    }
+
+    h1 {
+      background-color: $green--dark;
+    }
+  }
 }

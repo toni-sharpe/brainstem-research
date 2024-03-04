@@ -70,6 +70,27 @@ export const SubHeadingAndSecondaryNav = {
   }
 };
 
+export const WithExtraClass = {
+  render: () => {
+    return (
+      <PageDetailWrapper
+        count={10}
+        extraClass='sb-page-detail-wrapper'
+        heading='Demo page wrapper'
+        subHeading='This is a test sub-heading'
+        secondaryNav={Primary.render()}
+      >
+        <StoryBookExampleBlock>
+          Section 1
+        </StoryBookExampleBlock>
+        <StoryBookExampleBlock>
+          Section 2
+        </StoryBookExampleBlock>
+      </PageDetailWrapper>
+    )
+  }
+};
+
 export const ErrorsIfNeitherHeadingNorI18nProvided = {
   render: () => {
     return (

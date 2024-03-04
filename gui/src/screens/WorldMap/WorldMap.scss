@@ -5,4 +5,10 @@
   justify-content: center;
   width: 100%;
   height: 79vh;
+
+  &__wrapper {
+    .page-detail-wrapper__header {
+      margin-bottom: 1px;
+    }
+  }
 }
