@@ -11,6 +11,7 @@ import './PageDetailWrapper.scss'
 function PageDetailWrapper({
   children,
   count,
+  extraClass,
   heading: headingProp,
   i18nBase,
   secondaryNav,
@@ -20,7 +21,7 @@ function PageDetailWrapper({
     : i18next.t(`MainPageHeading.${i18nBase}`)
 
   return ( 
-    <article className='page-detail-wrapper column-layout space-children--column'>
+    <article className={`${extraClass ? extraClass : ''} page-detail-wrapper column-layout space-children--column`}>
       <header className='row-layout page-detail-wrapper__header'>
         <div className='page-detail-wrapper__left'>
           <h1 className='page-detail-wrapper__heading'>{heading}</h1>

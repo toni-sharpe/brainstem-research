@@ -63,7 +63,7 @@ function MapSvg({
         countryId,
         countryName,
         c,
-        fill: mapDetailData[countryId].fill,
+        fill: mapDetailData[countryId]?.[1]?.fill,
         labelC: calcZoomC({ c: labelCenter, zoom }),
         isHovered: currentHoveredCountryId === countryId,
         isSelected: currentCountryIdList.includes(countryId),

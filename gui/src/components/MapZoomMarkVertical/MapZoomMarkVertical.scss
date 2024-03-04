@@ -3,21 +3,23 @@
 .map-zoom-mark-vertical {
   &__left,
   &__right {
-    background-color: $red--dulled-light;
+    background-color: $green--dark;
     position: relative;
   }
 
   &__right {
     z-index: 1;
     width: 5px;
-    border-left: 3px solid $red--dark;
-    left: -3px;
+    border-left: 1px solid $black;
+    border-radius: 0 5px 5px 0;
+    left: -1px;
   }
 
   &__left {
     z-index: 1;
     width: 5px;
-    border-right: 3px solid $red--dark;
-    right: -3px;
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid $black;
+    right: -1px;
   }
 }

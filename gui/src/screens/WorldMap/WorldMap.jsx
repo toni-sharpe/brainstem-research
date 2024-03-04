@@ -41,11 +41,11 @@ function WorldMap({ data }) {
 
   return (
     <PageDetailWrapper
+      extraClass='world-map__wrapper'
       i18nBase={i18nBase}
       secondaryNav={(
         <SecondaryNav
           ariaLabel={i18next.t(`${i18nBase}.secondaryNav`)}
-          extraClass='research'
         >
           <SecondaryNavButtonList {...commonNavProps} />
         </SecondaryNav>
