@@ -1,4 +1,4 @@
-const mapDetailData = {
+const fillTestMapData = {
   1:  { fill: 'hsl(100 80% 50%)' },
   2:  { fill: 'hsl(315 80% 50%)' },
   3:  { fill: 'hsl(328 80% 50%)' },
@@ -203,4 +203,4 @@ const mapDetailData = {
  202: { fill: 'hsl( 156 80% 50%)' },
 }
 
-export default mapDetailData
+export default fillTestMapData
