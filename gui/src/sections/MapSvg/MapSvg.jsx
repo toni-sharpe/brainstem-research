@@ -1,11 +1,7 @@
 import { toPairs } from 'ramda'
 import React, { useState } from 'react'
 
-import {
-  WORLD_MAP_SVG_SCALE,
-  WORLD_MAP_SVG_SCALE_HEIGHT,
-  WORLD_MAP_SVG_SCALE_WIDTH,
-} from 'util/Constant/BaseConstantList'
+import { WORLD_MAP_SVG_SCALE } from 'util/Constant/BaseConstantList'
 import {
   calcMapPolygonCoordGroup,
   calcZoomC,
@@ -13,8 +9,9 @@ import {
   countryElementMapperFn,
 } from 'util/UtilMapCountry/UtilMapCountry'
 import { handleOnKeyDown } from 'util/UtilMapControlList/UtilMapControlList'
-import { numberPrecision } from 'util/Util/Util'
 
+import MapZoomMarkHorizontal from 'components/MapZoomMarkHorizontal/MapZoomMarkHorizontal'
+import MapZoomMarkVertical from 'components/MapZoomMarkVertical/MapZoomMarkVertical'
 import MapCountry from 'components/MapCountry/MapCountry'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import WorldBorderList from 'util/Constant/WorldBorderList'
@@ -105,23 +102,9 @@ function MapSvg({
         setZoom={setZoom}
         zoom={zoom}
       />
-      { zoom !== 1 && (
-        <div
-          className='map-svg__zoom-guide map-svg__east-west-guide--top'
-          style={{
-            width: `${(100 / zoom).toFixed(1)}%`,
-            left: `${numberPrecision({ n: (Math.abs(graphOffset[0]) / (WORLD_MAP_SVG_SCALE_WIDTH * zoom) * 100) })}%`,
-          }}/>
-      ) }
+      <MapZoomMarkHorizontal orientation='top' x={graphOffset[0]} zoom={zoom} />
       <div className='row-layout'>
-        { zoom !== 1 && (
-          <div
-            className='map-svg__zoom-guide map-svg__north-south-guide--right'
-            style={{
-            height: `${(73 / zoom).toFixed(1)}vh`,
-            top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 73) })}vh`,
-          }}/>
-      ) }
+        <MapZoomMarkVertical orientation='left' y={graphOffset[1]} zoom={zoom} />
         <SvgWrapper
           extraClass='map-svg__svg'
           k='world-map-svg'
@@ -130,8 +113,6 @@ function MapSvg({
           <g key='guides' transform={`translate(${graphOffset})`}>
             { borders.map(borderMapFn({ setCurrentHoveredCountryId })) }
             { labels.map(countryElementMapperFn({ elementKey: 'l', setCurrentHoveredCountryId })) }
-
-            <text x={500 * zoom} y={250 * zoom}>{graphOffset}</text>
 
             <g className='row-layout space-childen' tabIndex={0}>
               { zoom >= 2
@@ -149,23 +130,9 @@ function MapSvg({
             </g>
           </g>
         </SvgWrapper>
-        { zoom !== 1 && (
-          <div
-            className='map-svg__zoom-guide map-svg__north-south-guide--left'
-            style={{
-            height: `${(73 / zoom).toFixed(1)}vh`,
-            top: `${numberPrecision({ n: ((Math.abs(graphOffset[1])) / (WORLD_MAP_SVG_SCALE_HEIGHT * zoom) * 73) })}vh`,
-          }}/>
-      ) }
+        <MapZoomMarkVertical orientation='right' y={graphOffset[1]} zoom={zoom} />
       </div>
-      { zoom !== 1 && (
-        <div
-          className='map-svg__zoom-guide map-svg__east-west-guide--bottom'
-          style={{
-            width: `${(100 / zoom).toFixed(1)}%`,
-            left: `${numberPrecision({ n: (Math.abs(graphOffset[0]) / (WORLD_MAP_SVG_SCALE_WIDTH * zoom) * 100) })}%`,
-          }}/>
-      ) }
+      <MapZoomMarkHorizontal orientation='bottom' x={graphOffset[0]} zoom={zoom} />
     </figure>
   )
 }

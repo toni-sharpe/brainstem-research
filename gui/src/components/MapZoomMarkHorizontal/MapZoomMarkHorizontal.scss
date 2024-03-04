@@ -1,0 +1,21 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
+.map-zoom-mark-horizontal {
+  &__bottom,
+  &__top {
+    background-color: $red--dulled-light;
+    position: relative;
+  }
+
+  &__top {
+    height: 5px;
+    border-bottom: 3px solid $red--dark;
+    top: 3px;
+  }
+
+  &__bottom {
+    height: 5px;
+    border-top: 3px solid $red--dark;
+    top: -3px;
+  }
+}
