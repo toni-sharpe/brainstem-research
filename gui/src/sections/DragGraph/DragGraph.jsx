@@ -108,7 +108,10 @@ function DragGraph({
 
   return (
     <article className={`drag-graph${isOnMap ? ' is-on-map' : ''} column-layout space-children--column-with-border`}>
-      <section className='drag-graph__header column-layout space-children--column'>
+      <section
+        aria-label={`graph heading and controls for ${heading}`}
+        className='drag-graph__header column-layout space-children--column'
+      >
         { heading && (<DragGraphHeader heading={heading} />) }
         <ul className='drag-graph__controls row-layout space-children'>
           { showExtremeButton && (
@@ -184,7 +187,11 @@ function DragGraph({
             {i18next.t(`${i18nBase}.scaleDetail`, { highlight, scaleUnit })}
           </figcaption>
         ) }
-        <SvgWrapper svgScale={`0 0 ${scale} ${scale}`}>
+        <SvgWrapper
+          ariaLabel={`drag graph for ${heading}`}
+          region
+          svgScale={`0 0 ${scale} ${scale}`}
+        >
           <g key='guides' transform={`translate(${graphOffset.join(' ')})`}>
             { scaleRadiusList.map(([circleR, h], i) => {
               const stroke = h ? '#ccc' : '#eee'

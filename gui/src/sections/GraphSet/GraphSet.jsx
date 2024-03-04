@@ -15,6 +15,8 @@ function GraphSet({
 }) {
   const [graphTab, setGraphTab] = useState('drag')
 
+  const heading = i18next.t(`GraphSet.${type(graphKey) === 'Array' ? 'boolean_set' : graphKey}`)
+
   return (
     <div className='graph-set__wrapper'>
       <ol className='graph-set__tab-list'>
@@ -36,7 +38,7 @@ function GraphSet({
       { graphTab === 'drag' && (
         <DragGraph
           graphKey={graphKey}
-          heading={i18next.t(`GraphSet.${type(graphKey) === 'Array' ? 'boolean_set' : graphKey}`)}
+          heading={heading}
           key={`${graphKey}`}
           labelValList={labelValList}
           pointDataMapper={severityCircleMapper}
@@ -45,6 +47,7 @@ function GraphSet({
       { graphTab === 'block' && (
         <BlockGraph
           labelValList={labelValList}
+          heading={heading}
         />
       ) }
     </div>

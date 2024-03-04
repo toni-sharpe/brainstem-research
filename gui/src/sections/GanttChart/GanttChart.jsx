@@ -34,7 +34,11 @@ function GanttChart({
       <figure
         className='gantt-chart column-layout space-children--wide-column'
       >
-        <div className='gantt-chart__zoom-button-list row-layout'>
+        <div
+          aria-label='zoom buttons for Gantt chart'
+          className='gantt-chart__zoom-button-list row-layout'
+          role='region'
+        >
           <ol className='row-layout space-children'>
             {scaleRange.map(i => {
               return (
