@@ -484,6 +484,12 @@
     "50": "50"
   },
 
+  "WorldMap": {
+    "secondaryNav": "Switch the map data",
+    "blankPanelLabel": "Blank",
+    "fillTestPanelLabel": "Fill test"
+  },
+
   "MapObjectDetailed": {
     "close": "Close data for {{countryName}}"
   },

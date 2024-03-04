@@ -1,4 +1,4 @@
-const mapDetailData = {
+const blankMapData = {
   1: {},
   2: {},
   3: {},
@@ -203,4 +203,4 @@ const mapDetailData = {
  202: {},
 }
 
-export default mapDetailData
+export default blankMapData
