@@ -3,8 +3,6 @@ import {
   WORLD_MAP_SVG_CENTER_Y,
   WORLD_MAP_SVG_SCALE_HEIGHT,
   WORLD_MAP_SVG_SCALE_WIDTH,
-  WORLD_MAP_ZOOM_LIST,
-  WORLD_MAP_SVG_ZOOM_DEFAULT,
 } from 'util/Constant/BaseConstantList'
 
 import { numberPrecision } from 'util/Util/Util'

@@ -1,11 +1,6 @@
 import React from 'react'
 
-import {
-  WORLD_MAP_ZOOM_LIST,
-  WORLD_MAP_SVG_SCALE_WIDTH,
-  WORLD_MAP_SVG_SCALE_HEIGHT,
-} from 'util/Constant/BaseConstantList'
-import { numberPrecision } from 'util/Util/Util'
+import { WORLD_MAP_ZOOM_LIST } from 'util/Constant/BaseConstantList'
 import Button from 'components/Button/Button'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
@@ -16,7 +11,6 @@ import {
   onEastEventHandler,
   onNorthEventHandler,
   onSouthEventHandler,
-  onResetHandler,
 } from 'util/UtilMapControlList/UtilMapControlList'
 
 import './MapSvgControlList.scss'

@@ -5,7 +5,6 @@ import {
   WORLD_MAP_SVG_SCALE,
   WORLD_MAP_SVG_SCALE_HEIGHT,
   WORLD_MAP_SVG_SCALE_WIDTH,
-  WORLD_MAP_ZOOM_LIST,
 } from 'util/Constant/BaseConstantList'
 import {
   calcMapPolygonCoordGroup,
@@ -20,7 +19,7 @@ import MapCountry from 'components/MapCountry/MapCountry'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
-import { getJSONLocalStorage, setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import tempTestMapperFn from './tempTestMapperFn'
 import './MapSvg.scss'
@@ -84,8 +83,6 @@ function MapSvg({
       labels.push({ l, countryId, onClick })
     })
   })
-
-  const [x, y] = graphOffset
 
   return (
     <figure
