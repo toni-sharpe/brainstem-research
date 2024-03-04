@@ -1,6 +1,7 @@
 import React from 'react'
 
-import mapDetailData from 'example-data/WorldMap.example-data'
+// import mapDetailData from 'example-data/WorldMap.example-data'
+import mapDetailData from 'example-data/WorldMapBasicNumbers.example-data'
 import MapSvg from 'sections/MapSvg/MapSvg'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 

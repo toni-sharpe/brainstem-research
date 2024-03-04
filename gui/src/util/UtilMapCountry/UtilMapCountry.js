@@ -72,27 +72,18 @@ export function onMapCountryClickHandler({
 }
 
 export function buildMapCountryElement({
-  data,
-  elementKey,
+  b,
+  countryId,
   i,
+  onClick,
   setCurrentHoveredCountryId,
 }) {
-  const { countryId, onClick } = data
-
   return({
-    children: data[elementKey],
-    key: `${countryId}-${i}-${elementKey}`,
+    children: b,
+    key: `${countryId}-${i}`,
     onClick,
     onMouseEnter: () => setCurrentHoveredCountryId(countryId),
     onMouseLeave: () => setCurrentHoveredCountryId(undefined),
     pointerEvents: 'visiblePainted',
   })
-}
-
-export function countryElementMapperFn({ elementKey, setCurrentHoveredCountryId }) {
-  return function(data, i) {
-    return (
-      <g {...buildMapCountryElement({ data, elementKey, i, setCurrentHoveredCountryId })} />
-    )
-  }
 }
