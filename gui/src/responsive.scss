@@ -2,9 +2,9 @@
 
 
 .app-wrapper {
-  margin: var(--padding--medium) var(--padding--medium) 200px;
+  margin: var(--padding--medium) var(--padding--medium) 20px;
   @media (max-width: $media-switch--medium) {
-    margin: var(--padding--small-tiny) var(--padding--small-tiny) 100px;
+    margin: var(--padding--small-tiny) var(--padding--small-tiny) 20px;
   }
 }
 

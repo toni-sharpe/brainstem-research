@@ -230,12 +230,16 @@ export const NON_ISLAND_TINY_TERRIROTORIES = [
   'Palestine',
 ]
 export const TINY_TERRIROTORY_MAX = 1
-export const WORLD_MAP_SVG_SCALE_WIDTH = 1040
-export const WORLD_MAP_SVG_SCALE_HEIGHT = 432
+export const WORLD_MAP_ON_SCREEN_HEIGHT = 78.4 // vh
+export const WORLD_MAP_ON_SCREEN_WIDTH = 99 // vw
+export const WORLD_MAP_SVG_SCALE_HEIGHT = 462
+export const WORLD_MAP_SVG_SCALE_WIDTH = 990
 export const WORLD_MAP_SVG_CENTER_X = WORLD_MAP_SVG_SCALE_WIDTH / 2
 export const WORLD_MAP_SVG_CENTER_Y = WORLD_MAP_SVG_SCALE_HEIGHT / 2
 export const WORLD_MAP_SVG_SCALE = `${WORLD_MAP_SVG_SCALE_WIDTH} ${WORLD_MAP_SVG_SCALE_HEIGHT}`
 export const WORLD_MAP_ZOOM_LIST = [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 25, 30, 40]
+export const WORLD_MAP_SVG_ZOOM_DEFAULT = 1
+
 
 
 /***********************************/

@@ -6,47 +6,11 @@
     border: 3px solid $grey--light;
     box-shadow: 0 0 110px 0 inset $blue;
     width: 100%;
-    height: 77vh;
+    height: 78vh;
   }
 
   &__data {
     height: 100px;
     width: 100px;
-  }
-
-  &__zoom-guide {
-    background-color: $red--dulled-light;
-    position: relative;
-  }
-
-  &__east-west-guide {
-    &--top {
-      height: 5px;
-      border-bottom: 3px solid $red--dark;
-      top: 3px;
-    }
-  }
-
-  &__east-west-guide {
-    &--bottom {
-      height: 5px;
-      border-top: 3px solid $red--dark;
-      top: -3px;
-    }
-  }
-
-  &__north-south-guide {
-    &--left {
-      z-index: 1;
-      width: 5px;
-      border-left: 3px solid $red--dark;
-      left: -3px;
-    }
-    &--right {
-      z-index: 1;
-      width: 5px;
-      border-right: 3px solid $red--dark;
-      right: -3px;
-    }
   }
 }
