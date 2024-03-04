@@ -3,10 +3,10 @@ import React, { useState } from 'react'
 
 import { WORLD_MAP_SVG_SCALE } from 'util/Constant/BaseConstantList'
 import {
+  buildMapCountryElement,
   calcMapPolygonCoordGroup,
   calcZoomC,
   onMapCountryClickHandler,
-  countryElementMapperFn,
 } from 'util/UtilMapCountry/UtilMapCountry'
 import { handleOnKeyDown } from 'util/UtilMapControlList/UtilMapControlList'
 
@@ -27,6 +27,7 @@ function MapSvg({
   mapDetailProps,
   mapDetailData,
   selectedCountryMapFn,
+  showLabelList,
 }) {
   const graphKey = 'mapZoom'
   const persisted = getJSONLocalStorage({ k: graphKey })
@@ -36,8 +37,8 @@ function MapSvg({
   const [graphOffset, setGraphOffset] = useState(persisted?.graphOffset || [0, 0])
   const [zoom, setZoom] = useState(persisted?.zoom || 1)
 
-  const borders = []
-  const labels = []
+  const borderList = []
+  const labelList = []
 
   toPairs(
     WorldBorderList[currentYear]
@@ -62,6 +63,7 @@ function MapSvg({
         countryId,
         countryName,
         c,
+        fill: mapDetailData[countryId].fill,
         labelC: calcZoomC({ c: labelCenter, zoom }),
         isHovered: currentHoveredCountryId === countryId,
         isSelected: currentCountryIdList.includes(countryId),
@@ -76,8 +78,8 @@ function MapSvg({
         setCurrentCountryList,
       })
 
-      borders.push({ b, countryId, onClick })
-      labels.push({ l, countryId, onClick })
+      borderList.push({ b, countryId, onClick })
+      labelList.push({ l, countryId, onClick })
     })
   })
 
@@ -113,23 +115,47 @@ function MapSvg({
           svgScale={`0 0 ${WORLD_MAP_SVG_SCALE}`}
         >
           <g key='guides' transform={`translate(${graphOffset})`}>
-            { borders.map(borderMapFn({ setCurrentHoveredCountryId })) }
-            { labels.map(countryElementMapperFn({ elementKey: 'l', setCurrentHoveredCountryId })) }
+            { borderList.map(({ b, countryId, onClick }, i) => {
+              return (
+                <g {...buildMapCountryElement({
+                  b,
+                  countryId,
+                  i,
+                  onClick,
+                  setCurrentHoveredCountryId,
+                })} />
+              )
+            })}
 
-            <g className='row-layout space-childen' tabIndex={0}>
-              { zoom >= 2
-                &&
-                currentCountryIdList.map(
-                  selectedCountryMapFn({
-                    currentCountryIdList,
-                    currentYear,
-                    mapDetailData,
-                    setCurrentCountryList,
-                    zoom,
-                  })
-                )
-              }
-            </g>
+            { showLabelList && labelList.map(({ countryId, l, onClick }, i) => {
+              return (
+                <g {...buildMapCountryElement({
+                  countryId,
+                  i,
+                  onClick,
+                  setCurrentHoveredCountryId
+                })}>
+                  {l}
+                </g>
+              )
+            })}
+
+            { selectedCountryMapFn && (
+              <g className='row-layout space-childen'>
+                { zoom >= 2
+                  &&
+                  currentCountryIdList.map(
+                    selectedCountryMapFn({
+                      currentCountryIdList,
+                      currentYear,
+                      mapDetailData,
+                      setCurrentCountryList,
+                      zoom,
+                    })
+                  )
+                }
+              </g>
+            ) }
           </g>
         </SvgWrapper>
         <MapZoomMarkVertical orientation='right' y={graphOffset[1]} zoom={zoom} />
@@ -140,8 +166,8 @@ function MapSvg({
 }
 
 MapSvg.defaultProps = {
-  borderMapFn: ({ setCurrentHoveredCountryId }) => countryElementMapperFn({ elementKey: 'b', setCurrentHoveredCountryId }),
   currentYear: 2024,
+  showLabelList: true,
   selectedCountryMapFn: tempTestMapperFn,
 }
 

@@ -73,7 +73,7 @@ function ScatterStatisticOutput({
           <li>
             <div className='scatter-statistic-output__gantt-bar-list-scale'>
               <GanttScale
-                ariaLabel='scatter statistic output'
+                aria-label='scatter statistic output'
                 lineHeight='210px'
                 scale={scale}
                 setGanttToggleList={setGanttToggleList}

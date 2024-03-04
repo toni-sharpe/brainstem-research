@@ -4,8 +4,9 @@ const onClickMock = jest.fn()
 const setCurrentHoveredCountryIdMock = jest.fn()
 
 const result = buildMapCountryElement({
-  data: { countryId: 19, onClick: onClickMock, x: 'test' },
-  elementKey: 'x',
+  b: 'test',
+  countryId: 19,
+  onClick: onClickMock,
   i: 53,
   setCurrentHoveredCountryId: setCurrentHoveredCountryIdMock
 })
@@ -16,7 +17,7 @@ test('buildMapCountryElement() result uses elementKey for children', () => {
 })
 
 test('buildMapCountryElement() result made key well', () => {
-  expect(result.key).toEqual('19-53-x')
+  expect(result.key).toEqual('19-53')
 })
 
 test('buildMapCountryElement() prepares for the mouse', () => {

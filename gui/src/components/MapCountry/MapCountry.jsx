@@ -16,6 +16,8 @@ function MapCountry({
   borderCoordList,
   countryName,
   c,
+  extraClass,
+  fill,
   isHovered,
   isSelected,
   labelC,
@@ -36,16 +38,16 @@ function MapCountry({
   const border = isCircle && type(c, 'Object')
     ? (
       <SvgCircle
-        extraClass={className}
-        fill='#efe'
+        extraClass={`${className} ${extraClass}`}
+        fill={fill || '#efe'}
         r={zoom * 1.6}
         c={c}
       />
     )
     : (
     <polygon
-      className={className}
-      fill='#efe'
+      className={`${className} ${extraClass}`}
+      fill={fill || '#efe'}
       points={calcPolygonCoordString({ coordList })}
       strokeOpacity={1}
     />
@@ -79,6 +81,7 @@ MapCountry.propTypes = {
   borderCoordList: BorderCoordListPropType,
   c: SvgXyPropType,
   countryName: PropTypes.string,
+  fill: PropTypes.string,
   isSelected: PropTypes.bool,
   isHovered: PropTypes.bool,
   labelC: SvgXyPropType,

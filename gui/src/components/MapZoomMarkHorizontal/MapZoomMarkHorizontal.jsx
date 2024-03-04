@@ -37,6 +37,7 @@ function MapZoomMarkHorizontal({ orientation, x, zoom }) {
     <div
       className={`map-zoom-mark-horizontal__${orientation}`}
       style={{ width: `${width}%`, left: `${left}%` }}
+      tabIndex={0}
     />
   )
 }

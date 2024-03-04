@@ -17,7 +17,7 @@ function GanttToggleList({
   ganttToggleList,
 }) {
   return (
-    <section ariaLabel='toggle elements of the gantt chart'>
+    <section aria-label='toggle elements of the gantt chart'>
       <ol className='gantt-toggle-list row-layout space-children'>
         { keys(ganttToggleList).map(statDetail => {
           const isSelected = ganttToggleList[statDetail]
