@@ -1,7 +1,6 @@
 // SVG.story.js
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
-
-
+import RealFullData from 'real-data/RealFull.data'
 
 import SVG from './SVG';
 
@@ -19,7 +18,7 @@ export default {
 export const Primary = {
   render: () => {
     return (
-      <SVG />
+      <SVG data={RealFullData} />
     )
   }
 };
