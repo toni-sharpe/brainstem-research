@@ -26,7 +26,7 @@ test('Histogram', async () => {
     />
   )
 
-  expect(screen.getByRole('figure')).toBeTruthy()
+  expect(screen.getByRole('region')).toBeTruthy()
   expect(screen.getByText('StoryBook test graph')).toBeTruthy()
   expect(screen.getByText('0-5 d')).toBeTruthy()
   expect(screen.getByLabelText('Time values 5-10 d with bars for severe, non severe')).toBeTruthy()
@@ -49,7 +49,7 @@ test('Histogram with translation set', async () => {
     />
   )
 
-  expect(screen.getByRole('figure')).toBeTruthy()
+  expect(screen.getByRole('region')).toBeTruthy()
   expect(screen.getByText('StoryBook test graph')).toBeTruthy()
   expect(screen.getByText('15')).toBeTruthy()
   expect(screen.getByLabelText('Symptom values 0 with bars for doing OK')).toBeTruthy()

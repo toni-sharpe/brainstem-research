@@ -40,85 +40,90 @@ function MapSvgControlList({
   }
 
   return (
-    <ul
-      className='map-svg-control-list'
+    <div
+      aria-label='world map move and zoom'
+      role='region'
     >
-      <li>
-        <ol className='row-layout space-children'>
-          <li>
-            <Button
-              {...movementButtonCommonProps}
-              label='← East'
-              onClick={() => onEastEventHandler(eventHandlerProps)}
-            />
-          </li>
-          <li>
-            <Button
-              {...movementButtonCommonProps}
-              label='↑ North'
-              onClick={() => onNorthEventHandler(eventHandlerProps)}
-            />
-          </li>
-          <li>
-            <Button
-              {...movementButtonCommonProps}
-              label='→ West'
-              onClick={() => onWestEventHandler(eventHandlerProps)}
-            />
-          </li>
-          <li>
-            <Button
-              {...movementButtonCommonProps}
-              label='↓ South'
-              onClick={() => onSouthEventHandler(eventHandlerProps)}
-            />
-          </li>
-        </ol>
-      </li>
-      <li>
-        <ol
-          className='map-svg-control-list__zoom'
-        >
-          <li className='map-svg-control-list__zoom-label'>
-            <span>Zoom:</span>
-          </li>
+      <ul
+        className='map-svg-control-list'
+      >
+        <li>
+          <ol className='row-layout space-children'>
+            <li>
+              <Button
+                {...movementButtonCommonProps}
+                label='← East'
+                onClick={() => onEastEventHandler(eventHandlerProps)}
+              />
+            </li>
+            <li>
+              <Button
+                {...movementButtonCommonProps}
+                label='↑ North'
+                onClick={() => onNorthEventHandler(eventHandlerProps)}
+              />
+            </li>
+            <li>
+              <Button
+                {...movementButtonCommonProps}
+                label='→ West'
+                onClick={() => onWestEventHandler(eventHandlerProps)}
+              />
+            </li>
+            <li>
+              <Button
+                {...movementButtonCommonProps}
+                label='↓ South'
+                onClick={() => onSouthEventHandler(eventHandlerProps)}
+              />
+            </li>
+          </ol>
+        </li>
+        <li>
+          <ol
+            className='map-svg-control-list__zoom'
+          >
+            <li className='map-svg-control-list__zoom-label'>
+              <span>Zoom:</span>
+            </li>
 
-          <li className='map-svg-control-list__zoom-buttons row-layout space-children'>
-            { WORLD_MAP_ZOOM_LIST.map(z => {
-              const newGraphOffset = calcNewGraphOffset({
-                x,
-                y,
-                zoomTo: z,
-                zoomFrom: zoom
-              })
+            <li className='map-svg-control-list__zoom-buttons row-layout space-children'>
+              { WORLD_MAP_ZOOM_LIST.map(z => {
+                const newGraphOffset = calcNewGraphOffset({
+                  x,
+                  y,
+                  zoomTo: z,
+                  zoomFrom: zoom
+                })
 
-              return (
-                <ZoomButton
-                  graphKey={graphKey}
-                  isSelected={zoom === z}
-                  k={z}
-                  key={`${z}-zoom`}
-                  newValue={z}
-                  stateFn={(newVal) => {
-                    setGraphOffset(newGraphOffset)
-                    setZoom(newVal)
-                    setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: newGraphOffset, zoom: newVal } })
-                  }}
-                />
-              )
-            }) }
-            <ResetZoomButton
-              graphKey={graphKey}
-              graphOffset={graphOffset}
-              setGraphOffset={setGraphOffset}
-              setZoom={setZoom}
-              zoom={zoom}
-              zDefault={1}
-            />
-          </li>
-        </ol>
-      </li>
-    </ul>
+                return (
+                  <ZoomButton
+                    graphKey={graphKey}
+                    isSelected={zoom === z}
+                    k={z}
+                    key={`${z}-zoom`}
+                    newValue={z}
+                    stateFn={(newVal) => {
+                      setGraphOffset(newGraphOffset)
+                      setZoom(newVal)
+                      setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: newGraphOffset, zoom: newVal } })
+                    }}
+                  />
+                )
+              }) }
+              <ResetZoomButton
+                graphKey={graphKey}
+                graphOffset={graphOffset}
+                setGraphOffset={setGraphOffset}
+                setZoom={setZoom}
+                zoom={zoom}
+                zDefault={1}
+              />
+            </li>
+          </ol>
+        </li>
+      </ul>
+    </div>
   )
 }
 

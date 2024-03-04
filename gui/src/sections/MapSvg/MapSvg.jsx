@@ -106,8 +106,10 @@ function MapSvg({
       <div className='row-layout'>
         <MapZoomMarkVertical orientation='left' y={graphOffset[1]} zoom={zoom} />
         <SvgWrapper
+          ariaLabel='world map'
           extraClass='map-svg__svg'
           k='world-map-svg'
+          region
           svgScale={`0 0 ${WORLD_MAP_SVG_SCALE}`}
         >
           <g key='guides' transform={`translate(${graphOffset})`}>

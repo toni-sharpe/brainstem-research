@@ -17,30 +17,32 @@ function GanttToggleList({
   ganttToggleList,
 }) {
   return (
-    <ol className='gantt-toggle-list row-layout space-children'>
-      { keys(ganttToggleList).map(statDetail => {
-        const isSelected = ganttToggleList[statDetail]
-        const buttonProps = {
-          isSelected,
-          extraClass: `${isSelected ? ' is-selected--secondary' : ''}`,
-          label: i18next.t(`${i18nBase}.${statDetail}`),
-          onClick: () => {
-            const newToggleList = { ...ganttToggleList, [statDetail]: !isSelected }
-            setGanttToggleList(newToggleList)
-            setJSONLocalStorage({ k: 'ganttToggleList', v: newToggleList })
-          },
-          size: 'small',
-        }
-        return (
-          <li
-            className='gantt-toggle-list__button'
-            key={statDetail}
-          >
-            <Button {...buttonProps} />
-          </li>
-        )
-      })}
-    </ol>
+    <section ariaLabel='toggle elements of the gantt chart'>
+      <ol className='gantt-toggle-list row-layout space-children'>
+        { keys(ganttToggleList).map(statDetail => {
+          const isSelected = ganttToggleList[statDetail]
+          const buttonProps = {
+            isSelected,
+            extraClass: `${isSelected ? ' is-selected--secondary' : ''}`,
+            label: i18next.t(`${i18nBase}.${statDetail}`),
+            onClick: () => {
+              const newToggleList = { ...ganttToggleList, [statDetail]: !isSelected }
+              setGanttToggleList(newToggleList)
+              setJSONLocalStorage({ k: 'ganttToggleList', v: newToggleList })
+            },
+            size: 'small',
+          }
+          return (
+            <li
+              className='gantt-toggle-list__button'
+              key={statDetail}
+            >
+              <Button {...buttonProps} />
+            </li>
+          )
+        })}
+      </ol>
+    </section>
   )
 }
 

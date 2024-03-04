@@ -11,7 +11,10 @@ import { numberPrecision } from 'util/Util/Util'
 
 import './BlockGraph.scss'
 
-function BlockGraph({ labelValList }) {
+function BlockGraph({
+  heading,
+  labelValList,
+}) {
   const bySizeDesc = descend(([a, { length }]) => length)
   const sum = reduce((a, [_, { length }]) => a + length, 0)(labelValList)
 
@@ -60,7 +63,11 @@ function BlockGraph({ labelValList }) {
 
   return (
     <figure className='block-graph'>
-      <SvgWrapper svgScale={`0 0 456 ${BLOCK_GRAPH_SVG_HEIGHT}`}>
+      <SvgWrapper
+        ariaLabel={`block graph shows drag graph data differently for ${heading}`}
+        svgScale={`0 0 456 ${BLOCK_GRAPH_SVG_HEIGHT}`}
+        region
+      >
         {blockPercList.map((blPerc, i) => {
           if (blPerc.orientation === 'H' && hCount === 0) {
             remaining = numberPrecision({ n: BLOCK_GRAPH_SVG_WIDTH - (i >= 1 ? blockPercList[i - 1].sum : 0) })

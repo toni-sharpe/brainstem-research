@@ -62,67 +62,71 @@ function TimeLine({ data }) {
         />
       )}
     >
-      <ol key='filter-list' className='row-layout space-children'>
-        {
-          pipe(
-            toPairs,
-            map(([label, filter]) => {
-              const isSelected = filter[1] === filterBy[1]
+      <section aria-label='time line output filters that adjust heat map'>
+        <ol key='filter-list' className='row-layout space-children'>
+          {
+            pipe(
+              toPairs,
+              map(([label, filter]) => {
+                const isSelected = filter[1] === filterBy[1]
 
-              return (
-                <li key={label}>
-                  <Button
-                    isSelected={isSelected}
-                    label={label}
-                    onClick={() => {
-                      setFilterBy(filter)
-                      setJSONLocalStorage({ k: 'timeLineFilteredBy', v: filter})
-                    }}
-                    size='medium'
-                  />
-                </li>
-              )
-            })
-          )(TIME_LINE_FILTER_LIST)
-        }
-      </ol>
-      <ul className='time-line__heat-map'>
-        { calcRange({ num: monthsLeftThisYear }).map(ml => {
-          return (
-            <li className='time-line__month' key={`future-month-${0-ml}`}>
-              <MonthBlock
-                colorVal={null}
-                monthType='future'
-              />
-            </li>
-          )
-        })}
-        { reverse(calcRange({ num: monthTotal + 1 })).map(month => {
-          const dateKey = calcDateKey({ month, monthTotal })
-          const { valSum, valOutputList } = extractOutputValsForMonth({ dateGroup: dateGrouped[dateKey] })
-          const currentYear = format(new Date(dateKey), 'yyyy')
-          const currentMonth = format(new Date(dateKey), 'MM')
-          const thisMonth = thisMonthKey === `${currentYear}-${currentMonth}`
+                return (
+                  <li key={label}>
+                    <Button
+                      isSelected={isSelected}
+                      label={label}
+                      onClick={() => {
+                        setFilterBy(filter)
+                        setJSONLocalStorage({ k: 'timeLineFilteredBy', v: filter})
+                      }}
+                      size='medium'
+                    />
+                  </li>
+                )
+              })
+            )(TIME_LINE_FILTER_LIST)
+          }
+        </ol>
+      </section>
+      <section aria-label='time line heat map month by month'>
+        <ul className='time-line__heat-map'>
+          { calcRange({ num: monthsLeftThisYear }).map(ml => {
+            return (
+              <li className='time-line__month' key={`future-month-${0-ml}`}>
+                <MonthBlock
+                  colorVal={null}
+                  monthType='future'
+                />
+              </li>
+            )
+          })}
+          { reverse(calcRange({ num: monthTotal + 1 })).map(month => {
+            const dateKey = calcDateKey({ month, monthTotal })
+            const { valSum, valOutputList } = extractOutputValsForMonth({ dateGroup: dateGrouped[dateKey] })
+            const currentYear = format(new Date(dateKey), 'yyyy')
+            const currentMonth = format(new Date(dateKey), 'MM')
+            const thisMonth = thisMonthKey === `${currentYear}-${currentMonth}`
 
-          return (
-            <li className='time-line__month' key={`month-${month}`}>
-              <MonthBlock
-                colorVal={calcColorVal({ valSum })}
-                currentMonth={currentMonth}
-                currentYear={currentYear}
-                monthText={(
-                  <MonthText
-                    month={month}
-                    valSum={valSum}
-                    valOutputList={valOutputList}
-                  />
-                )}
-                monthType={calcMonthType({ thisMonth, valSum })}
-              />
-            </li>
-          )
-        })}
-      </ul>
+            return (
+              <li className='time-line__month' key={`month-${month}`}>
+                <MonthBlock
+                  colorVal={calcColorVal({ valSum })}
+                  currentMonth={currentMonth}
+                  currentYear={currentYear}
+                  monthText={(
+                    <MonthText
+                      month={month}
+                      valSum={valSum}
+                      valOutputList={valOutputList}
+                    />
+                  )}
+                  monthType={calcMonthType({ thisMonth, valSum })}
+                />
+              </li>
+            )
+          })}
+        </ul>
+      </section>
     </PageDetailWrapper>
   );
 }

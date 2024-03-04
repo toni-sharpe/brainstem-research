@@ -116,7 +116,11 @@ function AxisSelector({
   }
 
   return (
-    <div className={axisSelectorClassNameList}>
+    <div
+      aria-label={`axis selector for ${axisSelectorHeading}`}
+      className={axisSelectorClassNameList}
+      role='region'
+    >
       { !isOpen && (
         <div className='axis-selector__open-button'>
           <MenuButton
