@@ -1,4 +1,8 @@
 import {
+  DOWN_SOUTH_KEY,
+  LEFT_WEST_KEY,
+  RIGHT_EAST_KEY,
+  UP_NORTH_KEY,
   WORLD_MAP_SVG_CENTER_X,
   WORLD_MAP_SVG_CENTER_Y,
   WORLD_MAP_SVG_SCALE_HEIGHT,
@@ -73,24 +77,19 @@ export function onSouthEventHandler({ graphKey, graphOffset: [x, y], persisted, 
   setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
 }
 
-const MAP_EAST_KEY = 37
-const MAP_WEST_KEY = 39
-const MAP_NORTH_KEY = 38
-const MAP_SOUTH_KEY = 40
-
 export function handleOnKeyDown(eventHandlerProps) {
   const { keyCode } = eventHandlerProps
 
-  if (keyCode === MAP_EAST_KEY) {
+  if (keyCode === RIGHT_EAST_KEY) {
     onEastEventHandler(eventHandlerProps)
   }
-  if (keyCode === MAP_WEST_KEY) {
+  if (keyCode === LEFT_WEST_KEY) {
     onWestEventHandler(eventHandlerProps)
   }
-  if (keyCode === MAP_NORTH_KEY) {
+  if (keyCode === UP_NORTH_KEY) {
     onNorthEventHandler(eventHandlerProps)
   }
-  if (keyCode === MAP_SOUTH_KEY) {
+  if (keyCode === DOWN_SOUTH_KEY) {
     onSouthEventHandler(eventHandlerProps)
   }
 }

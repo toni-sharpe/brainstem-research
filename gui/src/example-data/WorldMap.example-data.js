@@ -1,4 +1,4 @@
- const blankMapData = [
+ const blankMapData = { 2024: [
   [  '0', {}],
   [  '1', {}],
   [  '2', {}],
@@ -201,6 +201,6 @@
   ['199', {}],
   ['200', {}],
   ['201', {}],
-]
+] }
 
 export default blankMapData
