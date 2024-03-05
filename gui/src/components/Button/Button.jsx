@@ -15,6 +15,7 @@ function Button({
   isSelected,
   label,
   onClick,
+  onKeyDown,
   size,
   style,
   title,
@@ -33,6 +34,9 @@ function Button({
     onClick: isDisabled
       ? null
       : onClick,
+    onKeyDown: isDisabled
+      ? null
+      : onKeyDown,
     style,
     title: `${title ? title : ''}${isDisabled ? ' (is currently disabled)' : ''}${isPrimaryMarked ? ' - primary' : ''}`,
   }

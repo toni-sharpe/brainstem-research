@@ -1,0 +1,13 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
+.year-slider {
+  background-color: $grey--very-light;
+  height: 30px;
+  position: relative;
+  width: 100%;
+
+  &__button {
+    position: relative;
+    width: 2.5%;
+  }
+}

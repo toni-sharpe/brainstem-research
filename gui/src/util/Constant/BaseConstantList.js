@@ -9,6 +9,12 @@ export const PRECISION = 6
 
 export const SHOW_OWID_EXAMPLE = false
 
+export const RIGHT_EAST_KEY = 37
+export const LEFT_WEST_KEY = 39
+export const UP_NORTH_KEY = 38
+export const DOWN_SOUTH_KEY = 40
+
+
 
 /***********************************/
 /*
