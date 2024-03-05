@@ -1,6 +1,5 @@
 import i18next from 'util/i18next/i18next'
 import React, { useState } from 'react'
-import { format } from 'date-fns'
 
 import blankMapData from 'example-data/WorldMap.example-data'
 import fillTestMapData from 'example-data/WorldMapBasicNumbers.example-data'
