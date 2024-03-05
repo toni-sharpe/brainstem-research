@@ -1,17 +1,12 @@
-import i18next from 'util/i18next/i18next'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { format } from 'date-fns'
 import {
   LEFT_WEST_KEY,
   RIGHT_EAST_KEY,
 } from 'util/Constant/BaseConstantList'
 import Button from 'components/Button/Button'
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './YearSlider.scss'
-
-const i18nBase = 'YearSlider'
 
 function onKeyDownHandler({
   currentYear,
