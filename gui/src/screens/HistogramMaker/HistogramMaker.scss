@@ -3,5 +3,9 @@
   position: relative;
   &__data {
     flex: 1;
+    .year-slider {
+      position: relative;
+      top: 36px;
+    }
   }
 }

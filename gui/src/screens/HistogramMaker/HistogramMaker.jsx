@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { keys, map, pipe } from 'ramda'
 
 import AxisSelector from 'sections/AxisSelector/AxisSelector'
+import YearSlider from 'components/YearSlider/YearSlider'
 import Histogram from 'sections/Histogram/Histogram'
 import Button from 'components/Button/Button'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
@@ -22,6 +23,7 @@ function HistogramMaker({ data }) {
   const [currentPathogenesisStepList, setCurrentPathogenesisStepList] = useState(['mild_symptom_1', 'prime_symptom_3'])
   const [currentGroupBy, setCurrentGroupBy] = useState('fatal_symptom_1')
   const [currentBarFn, setCurrentBarFn] = useState(barFn)
+  const [currentYear, setCurrentYear] = useState(2024)
 
   if (!data || data.length === 0) {
     return null
@@ -33,6 +35,8 @@ function HistogramMaker({ data }) {
     currentPathogenesisStepList,
     data,
   })
+
+  const USE_YEAR = false
 
   const totalBarListCount = 7
   const marginCount = 6
@@ -81,11 +85,24 @@ function HistogramMaker({ data }) {
           showDurationOptions={currentBarFn !== 'count'}
         />
         <div className='histogram-maker__data'>
+          { USE_YEAR && (
+            <YearSlider
+              currentYear={currentYear}
+              endYear={2024}
+              setCurrentYear={setCurrentYear}
+              startYear={2012}
+              yearStep={2}
+            />
+          ) }
           <Histogram
             barCountPerBlock={barCountPerBlock}
             barMargin={HISTOGRAM_BAR_LIST_MARGIN}
             blockSize={blockSize}
-            histogramBarGroupList={histogramBarGroupList}
+            histogramBarGroupList={
+              USE_YEAR
+                ? histogramBarGroupList /* histogramBarGroupListByYear[currentYear] */
+                : histogramBarGroupList
+            }
             heightPaddingLines={0}
             hueFn={hueFn}
             i18nKeyOnly
