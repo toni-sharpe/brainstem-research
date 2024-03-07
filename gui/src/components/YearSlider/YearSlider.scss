@@ -6,7 +6,13 @@
   position: relative;
   width: 100%;
 
+  &.year-slider {
+    margin-bottom: 6px;
+  }
+
   &__button {
+    background-color: $grey--dark;
+    color: $white;
     position: relative;
     width: 2.5%;
   }
