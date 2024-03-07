@@ -162,7 +162,7 @@ Use a consistent set of CRUD related commands in handlers and models:
 `update`      - always returns the updated object
 `save`        - always returns the created/updated object
 `delete`      - always returns the deleted object
-`readDetails` - always returns a single object
+`readDetail`  - always returns a single object
 `readList`    - always returns an array of objects
 
 Use different words for other types of 'get':
