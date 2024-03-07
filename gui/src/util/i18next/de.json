@@ -477,6 +477,12 @@
     "50": "50"
   },
 
+  "WorldMap": {
+    "secondaryNav": "Umschalten der Kartendaten",
+    "blankPanelLabel": "Leere",
+    "centuryPlusPerfTestPanelLabel": "124y perf test"
+  },
+
   "MapObjectDetailed": {
     "close": "Daten schließen für {{countryName}}"
   },
