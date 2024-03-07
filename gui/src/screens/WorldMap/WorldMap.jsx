@@ -29,12 +29,14 @@ function WorldMap({ data }) {
   }
 
   let mapData
+  let startYear = currentYear
   switch (commonNavProps.currentPanel) {
     case 'blank':
       mapData = blankMapData[currentYear]
       break;
     case 'fillTest':
       mapData = fillTestMapData[currentYear]
+      startYear = 1900
       break;
     default:
       mapData = blankMapData[currentYear]
@@ -57,7 +59,7 @@ function WorldMap({ data }) {
         currentYear={currentYear}
         endYear={2024}
         setCurrentYear={setCurrentYear}
-        startYear={2001}
+        startYear={startYear}
         yearStep={1}
       />
       <div className='world-map'>
