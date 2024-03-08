@@ -1,7 +1,7 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .year-slider {
-  background-color: $grey--very-light;
+  background-color: $green--grey;
   height: 34px;
   position: relative;
   width: 100%;
@@ -12,18 +12,20 @@
   }
 
   &__button {
-    background-color: $grey--dark;
+    background-color: $green--dark;
     color: $white;
     font-size: $font-size--medium-large;
     position: relative;
     width: 5%;
 
     &:focus {
-      background-color: $green--dark;
+      background-color: $green;
+      color: $black;
     }
   }
 
   &__ghost-button {
+    background-color: $green--grey;
     height: 34px;
     outline: none;
     position: absolute;
