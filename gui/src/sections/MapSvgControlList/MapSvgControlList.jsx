@@ -52,8 +52,8 @@ function MapSvgControlList({
             <li>
               <Button
                 {...movementButtonCommonProps}
-                label='← East'
-                onClick={() => onEastEventHandler(eventHandlerProps)}
+                label=' ← West'
+                onClick={() => onWestEventHandler(eventHandlerProps)}
               />
             </li>
             <li>
@@ -66,8 +66,8 @@ function MapSvgControlList({
             <li>
               <Button
                 {...movementButtonCommonProps}
-                label='→ West'
-                onClick={() => onWestEventHandler(eventHandlerProps)}
+                label='East →'
+                onClick={() => onEastEventHandler(eventHandlerProps)}
               />
             </li>
             <li>

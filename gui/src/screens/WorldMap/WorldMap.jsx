@@ -30,6 +30,7 @@ function WorldMap({ data }) {
 
   let mapData
   let startYear = currentYear
+  let useYearSlider = false
   switch (commonNavProps.currentPanel) {
     case 'blank':
       mapData = blankMapData[currentYear]
@@ -37,6 +38,7 @@ function WorldMap({ data }) {
     case 'centuryPlusPerfTest':
       mapData = centuryPlusPerfTestMapData[currentYear]
       startYear = 1900
+      useYearSlider = true
       break;
     default:
       mapData = blankMapData[currentYear]
@@ -55,13 +57,15 @@ function WorldMap({ data }) {
         </SecondaryNav>
       )}
     >
-      <YearSlider
-        currentYear={currentYear}
-        endYear={2024}
-        setCurrentYear={setCurrentYear}
-        startYear={startYear}
-        yearStep={1}
-      />
+      { useYearSlider && (
+        <YearSlider
+          currentYear={currentYear}
+          endYear={2024}
+          setCurrentYear={setCurrentYear}
+          startYear={startYear}
+          yearStep={1}
+        />
+      ) }
       <div className='world-map'>
         <MapSvg
           mapDetailData={mapData}

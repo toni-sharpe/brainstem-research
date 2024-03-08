@@ -1,32 +1,16 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { range } from 'ramda'
+
 import {
-  LEFT_WEST_KEY,
-  RIGHT_EAST_KEY,
-} from 'util/Constant/BaseConstantList'
+  calcStepSize,
+  calcCurrentStep,
+  calcTotalStepCount,
+  onButtonEventHandler,
+} from 'util/UtilYearSlider/UtilYearSlider'
 import Button from 'components/Button/Button'
 
 import './YearSlider.scss'
-
-function onKeyDownHandler({
-  currentYear,
-  endYear,
-  setCurrentYear,
-  startYear,
-  yearStep,
-}) {
-  return function({ keyCode }) {
-    console.log(keyCode)
-    console.log(keyCode === LEFT_WEST_KEY)
-    console.log(keyCode === RIGHT_EAST_KEY)
-    if (keyCode === LEFT_WEST_KEY) {
-      setCurrentYear(currentYear < endYear ? currentYear + yearStep : endYear)
-    }
-    if (keyCode === RIGHT_EAST_KEY) {
-      setCurrentYear(currentYear > startYear ? currentYear - yearStep : startYear)
-    }
-  }
-}
 
 function YearSlider({
   currentYear,
@@ -35,23 +19,45 @@ function YearSlider({
   startYear,
   yearStep,
 }) {
-  console.log(currentYear)
-  const left = (97.5 / (endYear - startYear)) * (currentYear - startYear)
+  const totalStepCount = calcTotalStepCount({ endYear, startYear })
+  if (totalStepCount === null) { return null }
+
+  const stepSize = calcStepSize({ totalStepCount })
+  const currentStep = calcCurrentStep({ currentYear, endYear, startYear })
+  const left = stepSize * currentStep
+
+  const eventHandler = onButtonEventHandler({
+    currentYear,
+    endYear,
+    setCurrentYear,
+    startYear,
+    yearStep,
+  })
+
   return (
     <div
-      className='year-slider'
-      onKeyDown={onKeyDownHandler({
-        currentYear,
-        endYear,
-        setCurrentYear,
-        startYear,
-        yearStep,
-      })}
+      className='year-slider row-layout'
+      onKeyDown={eventHandler}
     >
+      { range(0, (totalStepCount / 10)).map(y => {
+        const year = y * 10
+        const ghostLeft = stepSize * year
+        return (
+          <Button
+            extraClass='year-slider__ghost-button'
+            onClick={() => {
+              setCurrentYear(startYear + year)
+            }}
+            label={startYear + year}
+            size='medium'
+            style={{ left: `${ghostLeft}%` }}
+          />
+        )
+      })}
       <Button
         extraClass='year-slider__button'
         label={currentYear}
-        size='small'
+        size='medium'
         style={{ left: `${left}%` }}
       />
     </div>
