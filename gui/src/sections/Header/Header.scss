@@ -39,6 +39,7 @@
 
   &.open {
     @media (max-width: $media-switch--large) {
+      box-shadow: 0 0 100px 0 $grey--dark;
       left: 0;
     }
   }
