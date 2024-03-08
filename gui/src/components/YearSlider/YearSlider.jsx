@@ -36,7 +36,9 @@ function YearSlider({
 
   return (
     <div
+      aria-label='year slider allows data across the years to be viewed'
       className='year-slider row-layout'
+      role='region'
       onKeyDown={eventHandler}
     >
       { range(0, (totalStepCount / 10)).map(y => {
