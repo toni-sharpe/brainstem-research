@@ -119,6 +119,7 @@
     "backgroundPanelLabel": "Background",
     "motivationPanelLabel": "Motivation",
     "eventPanelLabel": "Pathological event list",
+    "currentWIPPanelLabel": "Upcoming work",
     "summaryPanelLabel": "Page Summary",
     "techStackPanelLabel": "Tech Stack",
     "testingPanelLabel": "Testing"
@@ -177,6 +178,20 @@
     "techStack19": " - there are several acronyms I don't remember, but, generally I try to keep things consistent, reuse things, factor stuff out against tests and all the other things. Of course I don't manage this all the time, the excitement of proving a concept takes over, or something needs to be done and we've got it written down to come back to. In my experience this doesn't happen as much as I would like.",
     "techStack20Label": "Performance.",
     "techStack20": " - It's fast and accessible, because I use HTML, aria, SVG (or canvas) and CSS directly. I also try to keep things simple and avoid just adding another library."
+  },
+
+  "CurrentWIP": {
+    "paragraphWIP": "This page lists some of the upcoming features, labelled P0 on the backlog and therefore next in line",
+    "currentWIP1Label": "Allowing histograms to be built from maps",
+    "currentWIP1": " - this feature will allow any number of countries from any number of years to be selected then grouped, either by country, or by year on a histogramm, including the ability to toggle between year groups and country groups.",
+    "currentWIP2Label": "Fixed set correlations",
+    "currentWIP2": " - this feature will display fixed set values as matrices of corellations as well as providing the user the opportunity to configure this themselves.",
+    "currentWIP3Label": "Year changes",
+    "currentWIP3": " - like the world map, this will be applied to the histogram and drag graphs.",
+    "currentWIP4Label": "Fractal drag graphs",
+    "currentWIP4": " - points on a graph graph will reveal further drag graphs and/or different details as yet undecided.",
+    "currentWIP5Label": "Line graphs, amongst others",
+    "currentWIP5": " - new graph types will be described, using the same data pattern as currently established."
   },
 
   "Testing": {

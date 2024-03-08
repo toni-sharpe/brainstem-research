@@ -9,6 +9,7 @@ import { secondaryNavLocalStorage } from 'util/UtilLocalStorage/UtilSecondaryNav
 import Background from './panel-list/Background/Background'
 import Motivation from './panel-list/Motivation/Motivation'
 import PathologicalEventList from './panel-list/PathologicalEventList/PathologicalEventList'
+import CurrentWIP from './panel-list/CurrentWIP/CurrentWIP'
 import Summary from './panel-list/Summary/Summary'
 import TechStack from './panel-list/TechStack/TechStack'
 import Testing from './panel-list/Testing/Testing'
@@ -24,7 +25,7 @@ function Home({ data }) {
   const commonNavProps = {
     currentPanel: currentHomePanel,
     i18nBase,
-    panelList: ['background', 'motivation', 'techStack', 'testing', 'summary', 'event'],
+    panelList: ['background', 'motivation', 'techStack', 'testing', 'currentWIP', 'summary', 'event'],
     setCurrentPanel,
   }
 
@@ -51,6 +52,9 @@ function Home({ data }) {
       ) }
       { currentHomePanel === 'testing' && (
         <Testing />
+      ) }
+      { currentHomePanel === 'currentWIP' && (
+        <CurrentWIP />
       ) }
       { currentHomePanel === 'summary' && (
         <Summary />
