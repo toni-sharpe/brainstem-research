@@ -485,9 +485,10 @@
   },
 
   "WorldMap": {
-    "secondaryNav": "Switch the map data",
     "blankPanelLabel": "Blank",
-    "centuryPlusPerfTestPanelLabel": "124y perf test"
+    "centuryPlusPerfTestPanelLabel": "124y perf test",
+    "graphDataPanelLabel": "Graphs - click Afr/S.A.",
+    "secondaryNav": "Switch the map data"
   },
 
   "MapObjectDetailed": {

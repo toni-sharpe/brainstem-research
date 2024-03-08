@@ -478,9 +478,10 @@
   },
 
   "WorldMap": {
-    "secondaryNav": "Umschalten der Kartendaten",
     "blankPanelLabel": "Leere",
-    "centuryPlusPerfTestPanelLabel": "124y perf test"
+    "centuryPlusPerfTestPanelLabel": "124y perf test",
+    "graphDataPanelLabel": "Diagramme - klicken Sie auf Afr/S.A.",
+    "secondaryNav": "Umschalten der Kartendaten"
   },
 
   "MapObjectDetailed": {

@@ -2,6 +2,7 @@ import i18next from 'util/i18next/i18next'
 import React, { useState } from 'react'
 
 import blankMapData from 'example-data/WorldMap.example-data'
+import graphMapData from 'example-data/WorldMap--with-graphs.example-data'
 import centuryPlusPerfTestMapData from 'example-data/WorldMapBasicNumbers.example-data'
 import MapSvg from 'sections/MapSvg/MapSvg'
 import YearSlider from 'components/YearSlider/YearSlider'
@@ -24,7 +25,7 @@ function WorldMap({ data }) {
   const commonNavProps = {
     currentPanel: currentWorldMapPanel,
     i18nBase,
-    panelList: ['blank', 'centuryPlusPerfTest'],
+    panelList: ['blank', 'graphData', 'centuryPlusPerfTest'],
     setCurrentPanel,
   }
 
@@ -34,6 +35,9 @@ function WorldMap({ data }) {
   switch (commonNavProps.currentPanel) {
     case 'blank':
       mapData = blankMapData[currentYear]
+      break;
+    case 'graphData':
+      mapData = graphMapData
       break;
     case 'centuryPlusPerfTest':
       mapData = centuryPlusPerfTestMapData[currentYear]
