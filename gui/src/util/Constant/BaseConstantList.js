@@ -285,3 +285,12 @@ export const TIME_LINE_FILTER_LIST = {
 }
 
 export const TIME_LINE_FIRST_MONTH = '2005-01-01'
+
+
+
+/***********************************/
+/*
+ * Year slider
+ */
+// in %
+export const YEAR_SLIDER_BUTTON_WIDTH = 5

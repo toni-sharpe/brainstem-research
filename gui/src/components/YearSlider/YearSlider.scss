@@ -2,18 +2,34 @@
 
 .year-slider {
   background-color: $grey--very-light;
-  height: 30px;
+  height: 34px;
   position: relative;
   width: 100%;
 
   &.year-slider {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
+    margin-top: 2px;
   }
 
   &__button {
     background-color: $grey--dark;
     color: $white;
+    font-size: $font-size--medium-large;
     position: relative;
-    width: 2.5%;
+    width: 5%;
+
+    &:focus {
+      background-color: $green--dark;
+    }
+  }
+
+  &__ghost-button {
+    height: 34px;
+    outline: none;
+    position: absolute;
+    width: 5%;
+    :focus {
+      background-color: none;
+    }
   }
 }
