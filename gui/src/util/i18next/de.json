@@ -117,6 +117,7 @@
     "backgroundPanelLabel": "Hintergrund",
     "eventPanelLabel": "Liste der pathologischen Ereignisse",
     "motivationPanelLabel": "Motivation",
+    "currentWIPPanelLabel": "Bevorstehende Arbeiten",
     "summaryPanelLabel": "Seite Zusammenfassung",
     "techStackPanelLabel": "Technischer Stapel",
     "testingPanelLabel": "Prüfung"
@@ -175,6 +176,20 @@
     "techStack19": " - Es gibt mehrere Akronyme, an die ich mich nicht erinnere, aber im Allgemeinen versuche ich, die Dinge konsistent zu halten, Dinge wiederzuverwenden, Dinge mit Tests zu vergleichen und all die anderen Dinge. Natürlich gelingt mir das nicht immer, die Aufregung über die Bewährung eines Konzepts nimmt überhand, oder es muss etwas getan werden und wir haben es aufgeschrieben, um darauf zurückzukommen. Meiner Erfahrung nach geschieht das nicht so oft, wie ich es mir wünschen würde..",
     "techStack20Label": "Leistung.",
     "techStack20": " - Es ist schnell und zugänglich, weil ich HTML, Aria, SVG (oder Canvas) und CSS direkt verwende. Ich versuche auch, die Dinge einfach zu halten und nicht einfach eine weitere Bibliothek hinzuzufügen."
+  },
+
+  "CurrentWIP": {
+    "paragraphWIP": "Auf dieser Seite sind einige der kommenden Funktionen aufgelistet, die im Backlog mit P0 gekennzeichnet sind und somit als nächstes anstehen",
+    "currentWIP1Label": "Ermöglichung der Erstellung von Histogrammen aus Karten",
+    "currentWIP1": " - Mit dieser Funktion kann eine beliebige Anzahl von Ländern aus einer beliebigen Anzahl von Jahren ausgewählt und dann gruppiert werden, entweder nach Land oder nach Jahr in einem Histogramm, einschließlich der Möglichkeit, zwischen Jahresgruppen und Ländergruppen umzuschalten.",
+    "currentWIP2Label": "Festgelegte Korrelationen",
+    "currentWIP2": " - Mit dieser Funktion werden fest eingestellte Werte als Matrizen von Korellationen angezeigt, und der Benutzer hat die Möglichkeit, diese selbst zu konfigurieren.",
+    "currentWIP3Label": "Jahreswechsel",
+    "currentWIP3": " - Wie bei der Weltkarte wird dies auch auf die Histogramm- und Drag-Diagramme angewendet.",
+    "currentWIP4Label": "Fraktale Widerstandsgrafiken",
+    "currentWIP4": " - Punkte auf einem Diagramm zeigen weitere Schleppdiagramme und/oder verschiedene noch nicht entschiedene Details an.",
+    "currentWIP5Label": "Liniendiagramme, u.a.",
+    "currentWIP5": " - Es werden neue Diagrammtypen beschrieben, die das gleiche Datenmuster wie die derzeit etablierten verwenden."
   },
 
   "Testing": {
