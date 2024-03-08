@@ -8,6 +8,7 @@ import CurrentUrlPropType from 'prop-types/CurrentUrl.prop-type'
 import FilterButtonList from 'sections/FilterButtonList/FilterButtonList'
 import Menu from 'sections/Menu/Menu'
 import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
+import { getJSONLocalStorage, setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './Header.scss'
 
@@ -18,7 +19,8 @@ function Header({
   currentUrl,
   setCurrentFilterList,
 }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const persisted = getJSONLocalStorage({ k: 'menuOpen' })
+  const [isOpen, setIsOpen] = useState(persisted || false)
 
   const openClass = isOpen ? 'open' : ''
 
@@ -28,7 +30,10 @@ function Header({
         <div className='ui-header-bar__main-button'>
           <MenuButton
             label={i18next.t(`${i18nBase}.openMenu`)}
-            onClick={() => setIsOpen(true)}
+            onClick={() => {
+              setIsOpen(true)
+              setJSONLocalStorage({ k: 'menuOpen', v: true })
+            }}
           />
         </div>
       ) }
@@ -36,7 +41,10 @@ function Header({
         <div className='ui-header-bar__main-button'>
           <MenuButton
             label={i18next.t(`${i18nBase}.close`)}
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false)
+              setJSONLocalStorage({ k: 'menuOpen', v: false })
+            }}
             title={i18next.t(`${i18nBase}.close`)}
           />
         </div>
