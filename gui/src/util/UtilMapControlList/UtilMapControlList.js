@@ -35,7 +35,7 @@ export function mapBound({ edgeSize, zoom }) {
   return numberPrecision({ n: (0 - (edgeSize * zoom)) })
 }
 
-export function onWestEventHandler({ graphKey, graphOffset: [x, y], persisted, setGraphOffset, zoom }) {
+export function onEastEventHandler({ graphKey, graphOffset: [x, y], persisted, setGraphOffset, zoom }) {
   const horz_bound = mapBound({ edgeSize: WORLD_MAP_SVG_SCALE_WIDTH, zoom })
   let m = x
   if (m <= horz_bound + WORLD_MAP_SVG_SCALE_WIDTH) {
@@ -48,7 +48,7 @@ export function onWestEventHandler({ graphKey, graphOffset: [x, y], persisted, s
   setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
 }
 
-export function onEastEventHandler({ graphKey, graphOffset: [x, y], persisted, setGraphOffset, zoom }) {
+export function onWestEventHandler({ graphKey, graphOffset: [x, y], persisted, setGraphOffset, zoom }) {
   let newX = x + HORZ_MOVE
   if (newX >= 0) { newX = 0 }
   const offset = [newX, y]

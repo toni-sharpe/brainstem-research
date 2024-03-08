@@ -16,14 +16,11 @@ function onKeyDownHandler({
   yearStep,
 }) {
   return function({ keyCode }) {
-    console.log(keyCode)
-    console.log(keyCode === LEFT_WEST_KEY)
-    console.log(keyCode === RIGHT_EAST_KEY)
     if (keyCode === LEFT_WEST_KEY) {
-      setCurrentYear(currentYear < endYear ? currentYear + yearStep : endYear)
+      setCurrentYear(currentYear > startYear ? currentYear - yearStep : startYear)
     }
     if (keyCode === RIGHT_EAST_KEY) {
-      setCurrentYear(currentYear > startYear ? currentYear - yearStep : startYear)
+      setCurrentYear(currentYear < endYear ? currentYear + yearStep : endYear)
     }
   }
 }
