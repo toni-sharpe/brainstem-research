@@ -9,6 +9,7 @@ import {
   HISTOGRAM_BAR_WIDTH,
   HISTORGRAM_HEIGHT,
 } from 'util/Constant/BaseConstantList'
+import { throwError } from 'util/UtilError/UtilError'
 import HistogramBar from 'components/HistogramBar/HistogramBar'
 import HistogramBarCount from 'components/HistogramBarCount/HistogramBarCount'
 import HistogramBarLabel from 'components/HistogramBarLabel/HistogramBarLabel'
@@ -31,9 +32,13 @@ function HistogramBarList({
   mostMaxOfAllThings,
   translationSet,
 }) {
+  throwError({
+    check: i18nBaseOverride || translationSet,
+    i18nKey: 'histogramBarListTranslations',
+  })
+
   const innerBlockSize = 100 / barCountPerBlock
   const barGroupWidth = barCountPerBlock * blockSize
-
 
   return histogramBarGroupList.map(([histogramBarListLabel, data], i) => {
     const ariaLabel = writeHistogramBarListAriaLabel({

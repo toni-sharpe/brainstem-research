@@ -523,6 +523,7 @@
     "fullStatBase": "fullStatBase Funktion benötigt ein k",
     "generalResponseTimeBarDataIsArray": "Allgemeine Statistiklistenberechnung benötigt ein Array für Daten",
     "hueTotalError": "calcHue muss eine positive ganze Zahl in der Eigenschaft \"total\" enthalten",
+    "histogramBarListTranslations": "die HistogramBarList muss entweder ein translationSet mit barList- und groupBy-Textwerten oder ein i18nBaseOverride haben, das die Komponenten zu diesen Übersetzungen umleitet",
     "isOrIsInArrayNeedsValues": "isOrIsInArray Wert Fehler. {{missing}}",
     "makeWidth": "makeWidth erfordert die Angabe eines Mindest- und Höchstwerts",
     "mapToGanttBars": "mapToGanttBars benötigt data mit Länge und eine i18nBase",

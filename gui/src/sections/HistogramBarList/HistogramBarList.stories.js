@@ -44,3 +44,15 @@ export const Primary = {
     )
   }
 };
+
+export const ThrowsErrorWithoutTranslationKeys = {
+  render: () => {
+    const props = {
+      ...baseHistogramBarListProps,
+      translationSet: undefined,
+    }
+    return (
+      <HistogramBarList {...props} />
+    )
+  }
+};

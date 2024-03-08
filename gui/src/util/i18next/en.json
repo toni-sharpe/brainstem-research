@@ -529,6 +529,7 @@
     "fnMustHaveNumbers": "{{caller}} must have numbers in all these parameters [{{numberKeyString}}]",
     "fullStatBase": "fullStatBase needs a k",
     "generalResponseTimeBarDataIsArray": "General stat list calc needs an array for data",
+    "histogramBarListTranslations": "the HistogramBarList must have either a translationSet with barList and groupBy text values or an i18nBaseOverride which redirects the components to those translations",
     "hueTotalError": "calcHue must have a positive integer in the \"total\" property",
     "isOrIsInArrayNeedsValues": "isOrIsInArray value error. {{missing}}",
     "makeWidth": "makeWidth requires a min and max value provided",
