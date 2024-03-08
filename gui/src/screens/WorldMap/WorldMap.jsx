@@ -32,9 +32,10 @@ function WorldMap({ data }) {
   let mapData
   let startYear = currentYear
   let useYearSlider = false
+
   switch (commonNavProps.currentPanel) {
     case 'blank':
-      mapData = blankMapData[currentYear]
+      mapData = blankMapData[2024]
       break;
     case 'graphData':
       mapData = graphMapData
