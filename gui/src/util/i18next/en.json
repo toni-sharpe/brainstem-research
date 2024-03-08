@@ -522,6 +522,8 @@
     "numberPrecisionJustSingle": "numberPrecision expects a single number only, no arrays of numbers",
     "primeSymptomHistogramBarGroup": "Prime symptom graph block list must be an array with positive count",
     "secondaryNavProps": "all four args are required, currentPanel, k and i18nBase are all strings and setCurrentPanel should be a function",
+    "sliderYear": "startYear must not be after endYear",
+    "sliderStepYear": "currentYear must be equal to of after startYear and equal to or before endYear",
     "testError": "Test {{addToError}} {{alsoAddToError}}",
     "theThingListLengthInvalid": "theThingList is not correct in {{callingFn}} - receiving: {{typeOf}} | {{val}}",
     "theThingListLengthZero": "theThingList has length 0, there should be something in theThingList for {{callingFn}}",

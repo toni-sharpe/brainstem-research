@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 import { range } from 'ramda'
 
 import {
-  LEFT_WEST_KEY,
-  RIGHT_EAST_KEY,
-  YEAR_SLIDER_BUTTON_WIDTH
-} from 'util/Constant/BaseConstantList'
-import { onButtonEventHandler } from 'util/UtilYearSlider/UtilYearSlider'
+  calcStepSize,
+  calcCurrentStep,
+  calcTotalStepCount,
+  onButtonEventHandler,
+} from 'util/UtilYearSlider/UtilYearSlider'
 import Button from 'components/Button/Button'
 
 import './YearSlider.scss'
@@ -19,13 +19,11 @@ function YearSlider({
   startYear,
   yearStep,
 }) {
-  const [focusArrow, setFocussArrow] = useState(null)
+  const totalStepCount = calcTotalStepCount({ endYear, startYear })
+  if (totalStepCount === null) { return null }
 
-  const availableSpace = 100 - YEAR_SLIDER_BUTTON_WIDTH
-  const totalStepCount = endYear - startYear
-  const stepSize = availableSpace / totalStepCount
-  const currentStep = currentYear - startYear
-
+  const stepSize = calcStepSize({ totalStepCount })
+  const currentStep = calcCurrentStep({ currentYear, endYear, startYear })
   const left = stepSize * currentStep
 
   const eventHandler = onButtonEventHandler({
