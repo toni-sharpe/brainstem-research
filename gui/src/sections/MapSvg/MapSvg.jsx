@@ -22,9 +22,7 @@ import tempTestMapperFn from './tempTestMapperFn'
 import './MapSvg.scss'
 
 function MapSvg({
-  borderMapFn,
   currentYear,
-  mapDetailProps,
   mapDetailData,
   selectedCountryMapFn,
   showLabelList,
