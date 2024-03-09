@@ -467,7 +467,8 @@
     "source_country": "Source country",
     "care_site": "Place of care",
     "outlier": "Outlier type",
-    "boolean_set": "Booleans"
+    "boolean_set": "Booleans",
+    "testing": "This is a test key"
   },
 
   "ResetGraphButton": {
