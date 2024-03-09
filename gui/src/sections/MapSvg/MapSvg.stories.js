@@ -1,10 +1,7 @@
 // MapSvg.story.js
 import StoryBookPaddedWrapper from 'components/StoryBookPaddedWrapper/StoryBookPaddedWrapper'
 
-
-import { calcAccessibleHue } from 'util/UtilHue/UtilHue'
-import { calcMostMaxOfAllTheThings } from 'util/Util/UtilMaxThing'
-import { ThreeHistogramData } from 'example-data/Histogram.example-data'
+import blankMapData from 'example-data/WorldMap.example-data'
 
 import MapSvg from './MapSvg';
 
@@ -20,7 +17,10 @@ export default {
 };
 
 const baseMapSvgProps = {
-
+  currentYear: 2024,
+  mapDetailData: blankMapData,
+  selectedCountryMapFn: (args) => { return function() {} },
+  showLabelList: true,
 }
 
 export const Primary = {
