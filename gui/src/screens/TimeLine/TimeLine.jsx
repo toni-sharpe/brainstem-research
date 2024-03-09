@@ -62,7 +62,9 @@ function TimeLine({ data }) {
         />
       )}
     >
-      <section aria-label='time line output filters that adjust heat map'>
+      <section
+        aria-label='time line output filters that adjust heat map'
+      >
         <ol key='filter-list' className='row-layout space-children'>
           {
             pipe(
@@ -88,7 +90,10 @@ function TimeLine({ data }) {
           }
         </ol>
       </section>
-      <section aria-label='time line heat map month by month'>
+      <section
+        aria-label='time line heat map month by month'
+        className='time-line'
+      >
         <ul className='time-line__heat-map'>
           { calcRange({ num: monthsLeftThisYear }).map(ml => {
             return (
