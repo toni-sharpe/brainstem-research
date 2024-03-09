@@ -57,7 +57,10 @@ function Header({
           <div className='ui-header-bar__close-x-button'>
             <MenuButton
               label='X'
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false)
+                setJSONLocalStorage({ k: 'menuOpen', v: false })
+              }}
               title={i18next.t(`${i18nBase}.close`)}
             />
           </div>
