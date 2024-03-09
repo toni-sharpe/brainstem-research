@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 
 test('---', () => {
-  // These are low priority, functionliaty is covered by specific tests ijn UtilGanttsBarList,
-  // still ticketed, see 448
+  // Both Gantt screens have their own, tested util files that usew these functions, therefore
+  // it doesn't seem necessary to delve in at this stage
+  // For coverage see UtilGanttScreen tests
 })
