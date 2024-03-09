@@ -22,6 +22,7 @@ function GraphSet({
       <ol className='graph-set__tab-list'>
         <li>
           <Button
+            ariaLabel={`tab to select drag graph for ${heading}`}
             label='Drag'
             onClick={() => setGraphTab('drag')}
             isSelected={graphTab === 'drag'}
@@ -29,6 +30,7 @@ function GraphSet({
         </li>
         <li>
           <Button
+            ariaLabel={`tab to select block graph for ${heading}`}
             label='Block'
             onClick={() => setGraphTab('block')}
             isSelected={graphTab === 'block'}
@@ -39,7 +41,7 @@ function GraphSet({
         <DragGraph
           graphKey={graphKey}
           heading={heading}
-          key={`${graphKey}`}
+          key={graphKey}
           labelValList={labelValList}
           pointDataMapper={severityCircleMapper}
         />
