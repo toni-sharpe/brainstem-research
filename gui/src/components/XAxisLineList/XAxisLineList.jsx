@@ -35,7 +35,7 @@ function XAxisLineList({
     const showLine = hasLine({ lineNumber, maxBasedDisplay })
     const showNumber = hasNumber({ lineHighlight, maxBasedDisplay, showNumberList })
 
-    lineDivs.push(
+    showLine && lineDivs.push(
       <div key={heightCount}>
         { showNumber && (
             <dt
@@ -63,12 +63,10 @@ function XAxisLineList({
             </dt>
           )
         }
-        { showLine && (
-          <dd
-            className={`x-axis-line-list__line ${lineHighlight ? 'x-axis-line-list__line--highlight' : ''}`}
-            style={{ top }}
-          />
-        ) }
+        <dd
+          className={`x-axis-line-list__line ${lineHighlight ? 'x-axis-line-list__line--highlight' : ''}`}
+          style={{ top }}
+        />
       </div>
     )
   }
