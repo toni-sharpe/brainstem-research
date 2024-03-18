@@ -4,6 +4,7 @@
   &__svg {
     background-color: $blue--lightest;
     border: 1px solid $white;
+    box-shadow: 0 0 110px 0 inset $blue;
     height: 71vh;
     @media (min-width: $media-switch--medium) {
       height: 78vh;
