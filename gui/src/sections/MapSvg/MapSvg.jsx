@@ -17,7 +17,6 @@ import MapCountry from 'components/MapCountry/MapCountry'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
-import { numberPrecision } from 'util/Util/Util'
 import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import tempTestMapperFn from './tempTestMapperFn'
@@ -65,7 +64,7 @@ function MapSvg({
         fill: mapDetailData[countryId]?.[1]?.fill,
         isHovered: currentHoveredCountryId === countryId,
         isSelected: currentCountryIdList.includes(countryId),
-        labelC: labelCenter
+        labelC: labelCenter && !countryC.label
           ? { ...calcZoomC({ c: labelCenter, zoom }), countryName }
           : countryC.label
             ? { ...calcZoomC({ c: countryC.label, zoom }), countryName: countryC.label.countryName }
