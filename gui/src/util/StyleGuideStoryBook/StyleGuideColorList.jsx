@@ -125,6 +125,7 @@ function StyleGuideColorList() {
                 '--black',
                 'dark',
                 'dull-dark',
+                'medium',
                 'light',
                 'very-light',
                 'lightest',
@@ -140,6 +141,7 @@ function StyleGuideColorList() {
             <li className='style-guide__color-block grey--black' />
             <li className='style-guide__color-block grey--dark' />
             <li className='style-guide__color-block grey--dull-dark' />
+            <li className='style-guide__color-block grey--medium' />
             <li className='style-guide__color-block grey--light' />
             <li className='style-guide__color-block grey--very-light' />
             <li className='style-guide__color-block grey--lightest' />
