@@ -70,7 +70,7 @@ function MapSvg({
           : countryC.label
             ? { ...calcZoomC({ c: countryC.label, zoom }), countryName: countryC.label.countryName }
             : null,
-        showCountryId: true,
+        showCountryId: false,
         zoom,
       })
 
