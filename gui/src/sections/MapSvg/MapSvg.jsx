@@ -142,7 +142,7 @@ function MapSvg({
                   onClick,
                   setCurrentHoveredCountryId
                 })}>
-                  {l}{countryId}
+                  {l}
                 </g>
               )
             })}
