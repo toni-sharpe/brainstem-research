@@ -22,7 +22,7 @@ export function calcMapFillDataFromSparse({
         const fl = 100 - countryRow[x] * 0.35
         const sl = 60 - countryRow[x] * 0.4
         fill = `hsl(${hue}, 80%, ${fl}%)`
-        stroke = `hsl(${hue}, 60%, ${sl}%)`
+        stroke = `hsl(${hue}, 10%, ${sl}%)`
       } else {
         fill = 'url(#star)'
       }
