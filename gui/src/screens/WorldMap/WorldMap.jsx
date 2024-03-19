@@ -2,7 +2,6 @@ import i18next from 'util/i18next/i18next'
 import React, { useState } from 'react'
 
 import blankMapData from 'example-data/WorldMap.example-data'
-import graphMapData from 'example-data/WorldMap--with-graphs.example-data'
 import centuryPlusPerfTestMapData from 'example-data/WorldMapBasicNumbers.example-data'
 import InternetUsageData from 'example-data/InternetUsageData.super-min'
 import MapSvg from 'sections/MapSvg/MapSvg'
@@ -20,38 +19,44 @@ const i18nBase = 'WorldMap'
 function WorldMap({ data }) {
   const currentPanel = secondaryNavLocalStorage({ def: 'blank', k: i18nBase })
   const [currentWorldMapPanel, setCurrentPanel] = useState(currentPanel)
-  const [currentYear, setCurrentYear] = useState(1990)
+  const [currentYear, setCurrentYear] = useState(undefined)
 
   if (!data || data.length === 0) { return null; }
 
   const commonNavProps = {
     currentPanel: currentWorldMapPanel,
     i18nBase,
-    panelList: ['blank', 'graphData', 'centuryPlusPerfTest', 'internetUse'],
+    panelList: ['blank', 'centuryPlusPerfTest', 'internetUse'],
     setCurrentPanel,
   }
 
   let mapData
-  let startYear = currentYear
-  let endYear = currentYear
+  let firstLoadYear
+  let startYear
+  let endYear
   let useYearSlider = false
 
   switch (commonNavProps.currentPanel) {
     case 'blank':
       mapData = blankMapData[2024]
       break;
-    case 'graphData':
-      mapData = graphMapData
-      break;
     case 'centuryPlusPerfTest':
       startYear = 1900
       endYear = 2024
-      mapData = centuryPlusPerfTestMapData[currentYear]
+      firstLoadYear = currentYear || startYear
+      if (firstLoadYear < startYear) {
+        firstLoadYear = startYear
+      }
+      mapData = centuryPlusPerfTestMapData[firstLoadYear]
       useYearSlider = true
       break;
     case 'internetUse':
       startYear = 1990
       endYear = 2021
+      firstLoadYear = currentYear || startYear
+      if (firstLoadYear < startYear) {
+        firstLoadYear = startYear
+      }
       const internetMapData = calcMapFillDataFromSparse({
         data: InternetUsageData,
         dataStart: 1960,
@@ -60,11 +65,11 @@ function WorldMap({ data }) {
         start: startYear,
         end: endYear,
       })
-      mapData = internetMapData[currentYear]
+      mapData = internetMapData[firstLoadYear]
       useYearSlider = true
       break;
     default:
-      mapData = blankMapData[currentYear]
+      mapData = blankMapData[firstLoadYear]
       break;
   }
 
@@ -82,7 +87,7 @@ function WorldMap({ data }) {
     >
       { useYearSlider && (
         <YearSlider
-          currentYear={currentYear}
+          currentYear={firstLoadYear}
           endYear={endYear}
           setCurrentYear={setCurrentYear}
           startYear={startYear}
@@ -91,7 +96,7 @@ function WorldMap({ data }) {
       ) }
       <div className='world-map'>
         <MapSvg
-          currentYear={currentYear}
+          currentYear={firstLoadYear}
           mapDetailData={mapData}
         />
       </div>

@@ -26,7 +26,6 @@ import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
 import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
-import tempTestMapperFn from './tempTestMapperFn'
 import './MapSvg.scss'
 
 function MapSvg({
@@ -169,7 +168,6 @@ function MapSvg({
                 })} />
               )
             })}
-
             { showLabelList && labelList.map(({ countryId, l, onClick }, i) => {
               return (
                 <g {...buildMapCountryElement({
@@ -182,23 +180,6 @@ function MapSvg({
                 </g>
               )
             })}
-
-            { selectedCountryMapFn && (
-              <g className='row-layout space-childen'>
-                { zoom >= 2
-                  &&
-                  currentCountryIdList.map(
-                    selectedCountryMapFn({
-                      currentCountryIdList,
-                      currentYear,
-                      mapDetailData,
-                      setCurrentCountryList,
-                      zoom,
-                    })
-                  )
-                }
-              </g>
-            ) }
           </g>
         </SvgWrapper>
         <MapZoomMarkVertical orientation='right' y={graphOffset[1]} zoom={zoom} />
@@ -211,7 +192,6 @@ function MapSvg({
 MapSvg.defaultProps = {
   currentYear: 0,
   showLabelList: true,
-  selectedCountryMapFn: tempTestMapperFn,
   svgScale: WORLD_MAP_SVG_SCALE,
 }
 
