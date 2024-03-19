@@ -89,12 +89,14 @@ function MapSvgControlList({
 
             <li className='map-svg-control-list__zoom-buttons row-layout space-children'>
               { WORLD_MAP_ZOOM_LIST.map(z => {
-                const newGraphOffset = calcNewGraphOffset({
-                  x,
-                  y,
-                  zoomTo: z,
-                  zoomFrom: zoom
-                })
+                const newGraphOffset = z === 1
+                  ? [0, 0]
+                  : calcNewGraphOffset({
+                    x,
+                    y,
+                    zoomTo: z,
+                    zoomFrom: zoom
+                  })
 
                 return (
                   <ZoomButton
