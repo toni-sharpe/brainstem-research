@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { type } from 'ramda'
 
+import { CIRCLE_COUNTRY_RADIUS } from 'util/Constant/BaseConstantList'
 import { isCountryCircle } from 'util/UtilMapCountry/UtilMapCountry'
 import { calcPolygonCoordString } from 'util/UtilSvg/UtilSvg'
 import SvgText from 'components/SvgText/SvgText'
@@ -42,7 +43,7 @@ function MapCountry({
       <SvgCircle
         extraClass={`${className} ${extraClass}`}
         fill={fill || '#efe'}
-        r={zoom * 1.6}
+        r={zoom * CIRCLE_COUNTRY_RADIUS}
         c={c}
       />
     )
