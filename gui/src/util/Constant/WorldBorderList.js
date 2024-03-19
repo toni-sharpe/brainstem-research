@@ -511,7 +511,7 @@ const WorldBorderList = {
       countryCode: 'DOM',
       countryId: 47,
       countryName: 'Dominican Rep.',
-      labelCenter: { x: 300, y: 191 },
+      labelCenter: { x: 290, y: 191 },
     },
     48: {
       countryBorder: [
@@ -1388,7 +1388,7 @@ const WorldBorderList = {
       countryCode : 'PRI',
       countryId: 135,
       countryName: 'Puerto Rico',
-      labelCenter: { x: 301, y: 194.5 },
+      labelCenter: { x: 301, y: 195.5 },
     },
     136: {
       countryBorder: [
@@ -1433,11 +1433,11 @@ const WorldBorderList = {
       countryBorder: [
         [
           [315,198],[315,199],[316,199],[316,199],[315,198],
-          { c: { x: 315, y: 198, label: { x: 312, y: 198.7, countryName: 'Nevis' } } }
+          { c: { x: 315, y: 198, label: { x: 314, y: 200, countryName: 'Nevis' } } }
         ],
         [
           [314,197],[314,198],[315,198],[315,198],[314,197],
-          { c: { x: 314.5, y: 197.5, label: { x: 310, y: 196.8, countryName: 'St. Kitts' } } }
+          { c: { x: 314.5, y: 197.5, label: { x: 310, y: 198, countryName: 'St. Kitts' } } }
         ]
       ],
       countryCode: 'KNA',
@@ -2272,6 +2272,26 @@ const WorldBorderList = {
       countryCode: 'TCA',
       countryId: 218,
       countryName: 'Turks & Caicos Is.',
+    },
+    219: {
+      countryBorder: [
+        [[310.5,192.5],[310.5,193.5],[311.5,193.5],[311.5,192.5],[310.5,192.5]],
+      ],
+      countryCenter: { x: 311, y: 191 },
+      countryCode: 'VGB',
+      countryId: 219,
+      countryName: 'UK V Is',
+      labelCenter: { x: 309, y: 190 },
+    },
+    220: {
+      countryBorder: [
+        [[310.5,192.5],[310.5,193.5],[311.5,193.5],[311.5,192.5],[310.5,192.5]],
+      ],
+      countryCenter: { x: 310.5, y: 194 },
+      countryCode: 'VIR',
+      countryId: 220,
+      countryName: 'US V Is',
+      labelCenter: { x: 306, y: 193 },
     },
   }
 }
