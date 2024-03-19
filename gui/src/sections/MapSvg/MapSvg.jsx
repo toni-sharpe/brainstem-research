@@ -10,6 +10,7 @@ import {
 } from 'util/UtilMapCountry/UtilMapCountry'
 import { handleOnKeyDown } from 'util/UtilMapControlList/UtilMapControlList'
 
+import MapEdgeBuffer from 'components/MapEdgeBuffer/MapEdgeBuffer'
 import MapZoomMarkHorizontal from 'components/MapZoomMarkHorizontal/MapZoomMarkHorizontal'
 import MapZoomMarkVertical from 'components/MapZoomMarkVertical/MapZoomMarkVertical'
 import MapCountry from 'components/MapCountry/MapCountry'
@@ -26,6 +27,7 @@ function MapSvg({
   mapDetailData,
   selectedCountryMapFn,
   showLabelList,
+  svgScale,
 }) {
   const graphKey = 'mapZoom'
   const persisted = getJSONLocalStorage({ k: graphKey })
@@ -54,17 +56,20 @@ function MapSvg({
         subBorder,
       })
 
-      const c = calcZoomC({ c: countryC, zoom })
-
       const [b, l] = MapCountry({
         borderCoordList,
+        c: calcZoomC({ c: countryC, zoom }),
         countryId,
         countryName,
-        c,
         fill: mapDetailData[countryId]?.[1]?.fill,
-        labelC: calcZoomC({ c: labelCenter, zoom }),
         isHovered: currentHoveredCountryId === countryId,
         isSelected: currentCountryIdList.includes(countryId),
+        labelC: labelCenter && !countryC.label
+          ? { ...calcZoomC({ c: labelCenter, zoom }), countryName }
+          : countryC.label
+            ? { ...calcZoomC({ c: countryC.label, zoom }), countryName: countryC.label.countryName }
+            : null,
+        showCountryId: false,
         zoom,
       })
 
@@ -110,8 +115,12 @@ function MapSvg({
           extraClass='map-svg__svg'
           k='world-map-svg'
           region
-          svgScale={`0 0 ${WORLD_MAP_SVG_SCALE}`}
+          svgScale={`${svgScale}`}
         >
+          <MapEdgeBuffer
+            graphOffset={graphOffset}
+            zoom={zoom}
+          />
           <g key='guides' transform={`translate(${graphOffset})`}>
             { borderList.map(({ b, countryId, onClick }, i) => {
               return (
@@ -133,7 +142,7 @@ function MapSvg({
                   onClick,
                   setCurrentHoveredCountryId
                 })}>
-                  {l}
+                  {l}{countryId}
                 </g>
               )
             })}
@@ -167,6 +176,7 @@ MapSvg.defaultProps = {
   currentYear: 2024,
   showLabelList: true,
   selectedCountryMapFn: tempTestMapperFn,
+  svgScale: WORLD_MAP_SVG_SCALE,
 }
 
 export default MapSvg

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { type } from 'ramda'
 
+import { CIRCLE_COUNTRY_RADIUS } from 'util/Constant/BaseConstantList'
 import { isCountryCircle } from 'util/UtilMapCountry/UtilMapCountry'
 import { calcPolygonCoordString } from 'util/UtilSvg/UtilSvg'
 import SvgText from 'components/SvgText/SvgText'
@@ -14,14 +15,16 @@ import './MapCountry.scss'
 
 function MapCountry({
   borderCoordList,
-  countryName,
   c,
+  countryId,
+  countryName,
   extraClass,
   fill,
   isHovered,
   isSelected,
   labelC,
-  zoom
+  showCountryId,
+  zoom,
 }) {
   const isCircle = isCountryCircle({
     borderCoordList,
@@ -40,7 +43,7 @@ function MapCountry({
       <SvgCircle
         extraClass={`${className} ${extraClass}`}
         fill={fill || '#efe'}
-        r={zoom * 1.6}
+        r={zoom * CIRCLE_COUNTRY_RADIUS}
         c={c}
       />
     )
@@ -58,9 +61,9 @@ function MapCountry({
       <SvgText
         extraClass={labelClassName}
         style={{ font: `bold ${zoom + 4 + zoom * 0.8}px sans-serif` }}
-        text={countryName}
-        x={labelC ? labelC.x : c.x}
-        y={labelC ? labelC.y : c.y}
+        text={`${showCountryId ? `[${countryId}]--` : '' }${labelC?.countryName || countryName}`}
+        x={labelC?.x || c.x}
+        y={labelC?.y || c.y}
       />
     )
     : (
@@ -75,16 +78,19 @@ function MapCountry({
 
 MapCountry.defaultProps = {
   labelC: undefined,
+  showCountryId: false,
 }
 
 MapCountry.propTypes = {
   borderCoordList: BorderCoordListPropType,
   c: SvgXyPropType,
+  countryId: PropTypes.number,
   countryName: PropTypes.string,
   fill: PropTypes.string,
   isSelected: PropTypes.bool,
   isHovered: PropTypes.bool,
   labelC: SvgXyPropType,
+  showCountryId: PropTypes.bool,
   zoom: PropTypes.number,
 }
 
