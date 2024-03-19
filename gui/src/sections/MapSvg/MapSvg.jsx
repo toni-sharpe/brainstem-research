@@ -70,14 +70,20 @@ function MapSvg({
         subBorder,
       })
 
+      const {
+        fill,
+        stroke,
+      } = mapDetailData[countryId] && mapDetailData[countryId][1]
+          ? mapDetailData[countryId][1]
+          : {}
+
       const [b, l] = MapCountry({
         borderCoordList,
         c: calcZoomC({ c: countryC, zoom }),
         countryId,
         countryName,
-        fill: mapDetailData[countryId] && mapDetailData[countryId][1]
-          ? mapDetailData[countryId][1].fill
-          : null,
+        fill,
+        stroke,
         isHovered: currentHoveredCountryId === countryId,
         isSelected: currentCountryIdList.includes(countryId),
         labelC: labelCenter && !countryC.label
@@ -139,7 +145,7 @@ function MapSvg({
                 cx='5'
                 cy='5'
                 r='6'
-                fill='#2a2'
+                fill='#8d8'
                 fillOpacity='0.6'
                 strokeWidth='6'
                 stroke='#fff'
