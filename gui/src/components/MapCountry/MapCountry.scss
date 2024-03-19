@@ -1,8 +1,7 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .map-country {
-  stroke: $grey--medium;
-  stroke-width: 1;
+  stroke-width: 0.5;
   fill-opacity: 0.7;
 
   &:hover,
