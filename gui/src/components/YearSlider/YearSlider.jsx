@@ -47,10 +47,11 @@ function YearSlider({
         return (
           <Button
             extraClass='year-slider__ghost-button'
+            key={y}
+            label={startYear + year}
             onClick={() => {
               setCurrentYear(startYear + year)
             }}
-            label={startYear + year}
             size='medium'
             style={{ left: `${ghostLeft}%` }}
           />
