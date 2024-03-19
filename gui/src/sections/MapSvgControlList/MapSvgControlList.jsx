@@ -92,11 +92,11 @@ function MapSvgControlList({
                 const newGraphOffset = z === 1
                   ? [0, 0]
                   : calcNewGraphOffset({
-                    x,
-                    y,
-                    zoomTo: z,
-                    zoomFrom: zoom
-                  })
+                      x,
+                      y,
+                      zoomTo: z,
+                      zoomFrom: zoom
+                    })
 
                 return (
                   <ZoomButton
