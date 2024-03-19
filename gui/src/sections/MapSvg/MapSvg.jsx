@@ -61,7 +61,9 @@ function MapSvg({
         c: calcZoomC({ c: countryC, zoom }),
         countryId,
         countryName,
-        fill: mapDetailData[countryId]?.[1]?.fill,
+        fill: mapDetailData[countryId] && mapDetailData[countryId][1]
+          ? mapDetailData[countryId][1].fill
+          : null,
         isHovered: currentHoveredCountryId === countryId,
         isSelected: currentCountryIdList.includes(countryId),
         labelC: labelCenter && !countryC.label
@@ -117,6 +119,20 @@ function MapSvg({
           region
           svgScale={`${svgScale}`}
         >
+          <defs>
+            <pattern id="star" viewBox="0,0,10,10" patternUnits="userSpaceOnUse" width="1%" height="1%">
+              <circle
+                cx='5'
+                cy='5'
+                r='6'
+                fill='#2a2'
+                fillOpacity='0.6'
+                strokeWidth='6'
+                stroke='#fff'
+                strokeOpacity='0.9'
+              />
+            </pattern>
+          </defs>
           <MapEdgeBuffer
             graphOffset={graphOffset}
             zoom={zoom}
