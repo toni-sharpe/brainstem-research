@@ -897,6 +897,9 @@ const mapDetailData = {
   218: {},
   219: {},
   220: {},
+  221: {},
+  222: {},
+  223: {},
 }
 
 export default mapDetailData
