@@ -31,8 +31,6 @@ function MapCountry({
     countryName,
   })
 
-  const coordList = borderCoordList.map(([a, b]) => ([a * zoom , b * zoom]))
-
   const selectedClass = isSelected ? ' is-selected' : ''
   const hoveredClass = isHovered ? ' is-hovered' : ''
   const className = `map-country${selectedClass}${hoveredClass}`
@@ -51,7 +49,11 @@ function MapCountry({
     <polygon
       className={`${className} ${extraClass}`}
       fill={fill || '#efe'}
-      points={calcPolygonCoordString({ coordList })}
+      points={calcPolygonCoordString({
+        coordList: borderCoordList.map(([a, b]) => {
+          return [a * zoom , b * zoom]
+        }
+      )})}
       strokeOpacity={1}
     />
   )

@@ -11,6 +11,10 @@ export function isCountryCircle({
   borderCoordList,
   countryName,
 }) {
+  if (!borderCoordList) {
+    return true
+  }
+
   const xList = pluck(0, borderCoordList)
   const yList = pluck(1, borderCoordList)
 
@@ -28,6 +32,13 @@ export function calcMapPolygonCoordGroup({
   countryCenter,
   subBorder,
 }) {
+  if (!subBorder) {
+    return {
+      countryC: countryCenter,
+      borderCoordList: null,
+    }
+  }
+
   const lastB = last(subBorder)
 
   if (lastB.c) {
