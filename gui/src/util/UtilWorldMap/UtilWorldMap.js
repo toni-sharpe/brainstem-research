@@ -9,7 +9,7 @@ export function calcMapFillDataFromSparse({
 }) {
   const calced = {}
 
-  data.map(countryRow => {
+  data.forEach(countryRow => {
     let countryCode = countryRow[0]
 
     for (let x = (start - dataStart); x < (countryRow.length - (dataEnd - end)); x++) {
