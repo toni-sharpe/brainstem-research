@@ -44,8 +44,9 @@ function WorldMap({ data }) {
       mapData = graphMapData
       break;
     case 'centuryPlusPerfTest':
-      mapData = centuryPlusPerfTestMapData[currentYear]
       startYear = 1900
+      endYear = 2024
+      mapData = centuryPlusPerfTestMapData[currentYear]
       useYearSlider = true
       break;
     case 'internetUse':
