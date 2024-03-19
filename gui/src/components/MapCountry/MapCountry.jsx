@@ -42,7 +42,7 @@ function MapCountry({
       <SvgCircle
         extraClass={`${className} ${extraClass}`}
         fill={fill || '#efe'}
-        stroke={stroke || '#222'}
+        stroke={stroke || '#888'}
         r={zoom * CIRCLE_COUNTRY_RADIUS}
         c={c}
       />
@@ -51,7 +51,7 @@ function MapCountry({
     <polygon
       className={`${className} ${extraClass}`}
       fill={fill || '#efe'}
-      stroke={stroke || '#222'}
+      stroke={stroke || '#888'}
       points={calcPolygonCoordString({
         coordList: borderCoordList.map(([a, b]) => {
           return [a * zoom , b * zoom]

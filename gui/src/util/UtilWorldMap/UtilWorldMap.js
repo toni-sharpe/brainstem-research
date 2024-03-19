@@ -3,7 +3,7 @@ export function calcMapFillDataFromSparse({
   dataEnd,
   dataStart,
   end,
-  hue = 240,
+  hue = 140,
   start,
   step,
 }) {
@@ -19,7 +19,7 @@ export function calcMapFillDataFromSparse({
 
       let fill, stroke
       if (countryRow[x] > -1) {
-        const fl = 100 - countryRow[x] * 0.4
+        const fl = 100 - countryRow[x] * 0.35
         const sl = 60 - countryRow[x] * 0.4
         fill = `hsl(${hue}, 80%, ${fl}%)`
         stroke = `hsl(${hue}, 60%, ${sl}%)`
