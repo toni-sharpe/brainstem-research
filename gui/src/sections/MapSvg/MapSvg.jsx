@@ -1,4 +1,11 @@
-import { toPairs } from 'ramda'
+import {
+  filter,
+  keys,
+  mergeDeepRight,
+  pipe,
+  reduce,
+  toPairs,
+} from 'ramda'
 import React, { useState } from 'react'
 
 import { WORLD_MAP_SVG_SCALE } from 'util/Constant/BaseConstantList'
@@ -40,9 +47,16 @@ function MapSvg({
   const borderList = []
   const labelList = []
 
-  toPairs(
-    WorldBorderList[currentYear]
-  ).forEach(function([
+  const baseWorldBorderList = WorldBorderList[0]
+
+  const worldBorderUpdateYearList = pipe(
+    keys,
+    filter(year => year <= currentYear),
+    reduce((a, c) => mergeDeepRight(a, WorldBorderList[c]), baseWorldBorderList),
+    toPairs,
+  )(WorldBorderList)
+
+  worldBorderUpdateYearList.forEach(function([
     countryId, {
       countryBorder,
       countryCenter,
@@ -189,7 +203,7 @@ function MapSvg({
 }
 
 MapSvg.defaultProps = {
-  currentYear: 2024,
+  currentYear: 0,
   showLabelList: true,
   selectedCountryMapFn: tempTestMapperFn,
   svgScale: WORLD_MAP_SVG_SCALE,

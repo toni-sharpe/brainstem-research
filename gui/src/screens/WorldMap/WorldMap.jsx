@@ -20,7 +20,7 @@ const i18nBase = 'WorldMap'
 function WorldMap({ data }) {
   const currentPanel = secondaryNavLocalStorage({ def: 'blank', k: i18nBase })
   const [currentWorldMapPanel, setCurrentPanel] = useState(currentPanel)
-  const [currentYear, setCurrentYear] = useState(2021)
+  const [currentYear, setCurrentYear] = useState(1990)
 
   if (!data || data.length === 0) { return null; }
 
@@ -91,6 +91,7 @@ function WorldMap({ data }) {
       ) }
       <div className='world-map'>
         <MapSvg
+          currentYear={currentYear}
           mapDetailData={mapData}
         />
       </div>
