@@ -64,7 +64,7 @@ function MapSvg({
       labelCenter,
     }
   ]) {
-    return countryBorder.forEach(function(subBorder) {
+    return (countryBorder || [null]).forEach(function(subBorder) {
       const { borderCoordList, countryC } = calcMapPolygonCoordGroup({
         countryCenter,
         subBorder,
