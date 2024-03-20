@@ -40,6 +40,7 @@ function MapSvg({
   svgScale,
 }) {
   const persisted = getJsonLocalStorage({ k: graphKey })
+  const { zoom, graphOffset, currentCountryIdList } = persisted
 
   const [currentCountryIdList, setCurrentCountryList] = useState(persisted?.currentCountryIdList || [])
   const [currentHoveredCountryId, setCurrentHoveredCountryId] = useState()
@@ -124,7 +125,7 @@ function MapSvg({
       })}
     >
       <div
-        onKeyDown={onKeyDownRegionHandler}
+        onKeyDown={onKeyDownRegionHandler({ zoom })}
         tabIndex='0'
       >
         <MapZoomMarkHorizontal orientation='top' x={graphOffset[0]} zoom={zoom} />

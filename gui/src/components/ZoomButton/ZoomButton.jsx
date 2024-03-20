@@ -16,9 +16,11 @@ function ZoomButton({
   localStorageValList,
   newValue,
   stateFn,
+  zoom,
 }) {
   return (
     <Button
+      extraClass={`js-zoom-${k}`}
       isSelected={isSelected}
       isDisabled={isDisabled}
       size={buttonSize}
@@ -33,11 +35,19 @@ function ZoomButton({
 
 ZoomButton.defaultProps = {
   buttonSize: 'medium',
+  isDisabled: false,
+  isSelected: false,
 }
 
 ZoomButton.propTypes = {
-  heading: PropTypes.string,
-  scaleDetail: PropTypes.string,
+  buttonSize: PropTypes.string,
+  graphKey: PropTypes.string,
+  isDisabled: PropTypes.bool,
+  isSelected: PropTypes.bool,
+  localStorageValList: PropTypes.array,
+  newValue: PropTypes.number,
+  stateFn: PropTypes.func,
+  zoom: PropTypes.number,
 }
 
 export default ZoomButton

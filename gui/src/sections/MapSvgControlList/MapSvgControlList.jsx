@@ -49,7 +49,7 @@ function MapSvgControlList({
     >
       <ul
         className='map-svg-control-list'
-        onKeyDown={onKeyDownRegionHandler}
+        onKeyDown={onKeyDownRegionHandler({ zoom })}
         tabIndex='0'
       >
         <li>
@@ -119,6 +119,7 @@ function MapSvgControlList({
                       setZoom(newVal)
                       setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: newGraphOffset, zoom: newVal } })
                     }}
+                    zoom={zoom}
                   />
                 )
               }) }
