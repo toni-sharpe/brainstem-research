@@ -582,7 +582,7 @@
      "69": "Guatemala",
       "2": "Guam",
      "72": "Guyana",
-    "123": "Hongkong",
+    "213": "Hongkong",
      "74": "Honduras",
      "40": "Kroatien",
      "73": "Haiti",
@@ -690,6 +690,7 @@
     "218": "Turks- und Caicosinseln",
      "32": "Tschad",
     "168": "Togo",
+    "164": "Taiwan",
     "167": "Thailand",
     "165": "Tadschikistan",
     "173": "Turkmenistan",
@@ -716,7 +717,9 @@
     "186": "Jemen",
     "154": "Südafrika",
     "187": "Sambia",
-    "188": "Simbabwe"
+    "188": "Simbabwe",
+    "185": "Westsahara",
+    "43B": "Tschechoslowakei"
   },
 
   "ErrorList": {
