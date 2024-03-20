@@ -2,16 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import CurrentUrlPropType from 'prop-types/CurrentUrl.prop-type'
+import { setLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './MenuItem.scss'
 
-export function MenuItem({ currentUrl, label, url }) {
-  const isSelected = currentUrl === url
+export function MenuItem({
+  currentUrl,
+  label,
+  urlSlug,
+}) {
+  const isSelected = currentUrl === urlSlug
 
   const menuItemProps = {
     'aria-current': isSelected ? 'page' : false,
     className: `menu-item ${ isSelected ? 'menu-item--current' : ''}`,
-    href: `/${url}`,
+    href: `/${urlSlug}`,
+    onClick: () => setLocalStorage({ k: 'currentFocus', v: 'menuL1' }),
     role: 'menuitem',
   }
 
@@ -21,7 +27,7 @@ export function MenuItem({ currentUrl, label, url }) {
 MenuItem.propTypes = {
   currentUrl: CurrentUrlPropType,
   label: PropTypes.string.isRequired,
-  url: CurrentUrlPropType
+  urlSlug: CurrentUrlPropType
 }
 
 export default MenuItem

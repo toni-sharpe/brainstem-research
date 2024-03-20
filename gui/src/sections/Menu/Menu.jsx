@@ -5,6 +5,7 @@ import React from 'react'
 import CurrentUrlPropType from 'prop-types/CurrentUrl.prop-type'
 import MenuItem from 'components/MenuItem/MenuItem'
 import { ROOT_MENU_SLUGS } from 'util/Constant/BaseConstantList'
+import { getLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './Menu.scss'
 
@@ -19,13 +20,13 @@ function Menu({
       aria-label={i18next.t(`${i18nBase}.ariaLabel`)}
     >
       <ul role='menu' className='menu'>
-        {rootMenuSlugs.map(urlSlug => {
+        {rootMenuSlugs.map((urlSlug, i) => {
           return (
             <li role='none' key={urlSlug}>
               <MenuItem
                 currentUrl={currentUrl}
-                url={urlSlug}
                 label={i18next.t(`MainPageHeading.${urlSlug}`)}
+                urlSlug={urlSlug}
               />
             </li>
           )
@@ -36,7 +37,6 @@ function Menu({
 }
 
 Menu.defaultProps = {
-  currentUrl: 'scatter',
   rootMenuSlugs: ROOT_MENU_SLUGS,
 }
 
