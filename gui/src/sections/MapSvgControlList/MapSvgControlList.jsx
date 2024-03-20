@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
 import { WORLD_MAP_ZOOM_LIST } from 'util/Constant/BaseConstantList'
 import Button from 'components/Button/Button'
+import GraphOffsetPropType from 'prop-types/GraphOffset.prop-type'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
 import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
@@ -127,6 +129,21 @@ function MapSvgControlList({
       </ul>
     </div>
   )
+}
+
+MapSvgControlList.defaultProps = {
+  graphKey: 'blankMap',
+  graphOffset: [0,0],
+  zoom: 1,
+}
+
+MapSvgControlList.propTypes = {
+  graphKey: PropTypes.string,
+  graphOffset: GraphOffsetPropType,
+  persisted: PropTypes.object,
+  setGraphOffset: PropTypes.func,
+  setZoom: PropTypes.func,
+  zoom: PropTypes.number,
 }
 
 export default MapSvgControlList

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import {
   filter,
   keys,
@@ -8,6 +9,7 @@ import {
 } from 'ramda'
 import React, { useState } from 'react'
 
+import SvgScalePropType from 'prop-types/SvgScale.prop-type'
 import { WORLD_MAP_SVG_SCALE } from 'util/Constant/BaseConstantList'
 import {
   buildMapCountryElement,
@@ -194,6 +196,13 @@ MapSvg.defaultProps = {
   graphKey: 'blankMap',
   showLabelList: true,
   svgScale: WORLD_MAP_SVG_SCALE,
+}
+
+MapSvg.propTypes = {
+  currentYear: PropTypes.number,
+  graphKey: PropTypes.string,
+  showLabelList: PropTypes.bool,
+  svgScale: SvgScalePropType,
 }
 
 export default MapSvg
