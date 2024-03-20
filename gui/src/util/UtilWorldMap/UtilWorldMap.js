@@ -1,4 +1,4 @@
-export function calcMapFillDataFromSparse({
+export function calcMapStyle({
   data,
   dataEnd,
   dataStart,
@@ -34,4 +34,19 @@ export function calcMapFillDataFromSparse({
   })
 
   return calced
+}
+
+export function calcFirstScreenLoadYear({
+  currentYear,
+  startYear,
+  endYear,
+}) {
+  let firstLoadYear = currentYear || startYear
+  if (firstLoadYear < startYear) {
+    firstLoadYear = startYear
+  }
+  if (firstLoadYear > endYear) {
+    firstLoadYear = endYear
+  }
+  return firstLoadYear
 }
