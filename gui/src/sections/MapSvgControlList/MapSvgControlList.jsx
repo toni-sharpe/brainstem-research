@@ -4,7 +4,7 @@ import { WORLD_MAP_ZOOM_LIST } from 'util/Constant/BaseConstantList'
 import Button from 'components/Button/Button'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 import {
   calcNewGraphOffset,
   onWestEventHandler,
@@ -108,7 +108,7 @@ function MapSvgControlList({
                     stateFn={(newVal) => {
                       setGraphOffset(newGraphOffset)
                       setZoom(newVal)
-                      setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: newGraphOffset, zoom: newVal } })
+                      setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: newGraphOffset, zoom: newVal } })
                     }}
                   />
                 )

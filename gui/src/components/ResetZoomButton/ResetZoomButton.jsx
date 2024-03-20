@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Button from 'components/Button/Button'
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './ResetZoomButton.scss'
 
@@ -26,7 +26,7 @@ function ResetZoomButton({
       k='resetZoomButton'
       label={isDisabled ? '-' : 'X'}
       onClick={() => {
-        setJSONLocalStorage({ k: graphKey, v: { zoom: zDefault } })
+        setJsonLocalStorage({ k: graphKey, v: { zoom: zDefault } })
         setGraphOffset([0, 0])
         setZoom(zDefault)
         extraStateFn && extraStateFn()

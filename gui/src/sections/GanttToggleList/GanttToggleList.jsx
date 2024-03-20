@@ -6,7 +6,7 @@ import { keys } from 'ramda'
 import Button from 'components/Button/Button'
 import GanttToggleListPropType from 'prop-types/GanttToggleList.prop-type'
 import { GANTT_TOGGLE_LIST } from 'util/Constant/BaseConstantList'
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './GanttToggleList.scss'
 
@@ -28,7 +28,7 @@ function GanttToggleList({
             onClick: () => {
               const newToggleList = { ...ganttToggleList, [statDetail]: !isSelected }
               setGanttToggleList(newToggleList)
-              setJSONLocalStorage({ k: 'ganttToggleList', v: newToggleList })
+              setJsonLocalStorage({ k: 'ganttToggleList', v: newToggleList })
             },
             size: 'small',
           }

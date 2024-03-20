@@ -11,7 +11,7 @@ import {
 
 import { numberPrecision } from 'util/Util/Util'
 
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 export function calcNewGraphOffset({ x, y, zoomTo, zoomFrom }) {
   const factor = zoomTo / zoomFrom
@@ -45,7 +45,7 @@ export function onEastEventHandler({ graphKey, graphOffset: [x, y], persisted, s
   }
   const offset = [m, y]
   setGraphOffset(offset)
-  setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
+  setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
 }
 
 export function onWestEventHandler({ graphKey, graphOffset: [x, y], persisted, setGraphOffset, zoom }) {
@@ -53,7 +53,7 @@ export function onWestEventHandler({ graphKey, graphOffset: [x, y], persisted, s
   if (newX >= 0) { newX = 0 }
   const offset = [newX, y]
   setGraphOffset(offset)
-  setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
+  setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
 }
 
 export function onNorthEventHandler({ graphKey, graphOffset: [x, y], persisted, setGraphOffset, zoom }) {
@@ -61,7 +61,7 @@ export function onNorthEventHandler({ graphKey, graphOffset: [x, y], persisted, 
   if (newY >= 0) { newY = 0 }
   const offset = [x, newY]
   setGraphOffset(offset)
-  setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
+  setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
 }
 
 export function onSouthEventHandler({ graphKey, graphOffset: [x, y], persisted, setGraphOffset, zoom }) {
@@ -74,7 +74,7 @@ export function onSouthEventHandler({ graphKey, graphOffset: [x, y], persisted, 
   }
   const offset = [x, m]
   setGraphOffset(offset)
-  setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
+  setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
 }
 
 export function handleOnKeyDown(eventHandlerProps) {

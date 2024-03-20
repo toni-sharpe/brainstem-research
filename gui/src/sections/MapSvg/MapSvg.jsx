@@ -24,7 +24,7 @@ import MapCountry from 'components/MapCountry/MapCountry'
 import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
-import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { getJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './MapSvg.scss'
 
@@ -36,7 +36,7 @@ function MapSvg({
   svgScale,
 }) {
   const graphKey = 'mapZoom'
-  const persisted = getJSONLocalStorage({ k: graphKey })
+  const persisted = getJsonLocalStorage({ k: graphKey })
 
   const [currentCountryIdList, setCurrentCountryList] = useState(persisted?.currentCountryIdList || [])
   const [currentHoveredCountryId, setCurrentHoveredCountryId] = useState()

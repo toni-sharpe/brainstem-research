@@ -4,13 +4,13 @@ import { getByLabelText, render, screen, waitFor } from '@testing-library/react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
 import APIPrimeSymptomListData from 'example-data/APIPrimeSymptomList.example-data'
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import PrimeSymptomList from './PrimeSymptomList'
 
 test('PrimeSymptomList - ', async () => {
   // make sure the stored values match the test
-  setJSONLocalStorage({ k: 'primeSymptom', v: { count: 20, factor: true }})
+  setJsonLocalStorage({ k: 'primeSymptom', v: { count: 20, factor: true }})
 
   render(
     <PrimeSymptomList

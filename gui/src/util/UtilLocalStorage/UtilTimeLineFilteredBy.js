@@ -1,5 +1,5 @@
-import { getJSONLocalStorage } from './UtilLocalStorage'
+import { getJsonLocalStorage } from './UtilLocalStorage'
 
 export function timeLineFilterByLocalStorage({ k }) {
-  return getJSONLocalStorage({ k }) || [null, null]
+  return getJsonLocalStorage({ k }) || [null, null]
 }

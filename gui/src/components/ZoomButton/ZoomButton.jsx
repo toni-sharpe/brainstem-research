@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Button from 'components/Button/Button'
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 const i18nBase = 'ZoomButton'
 
@@ -24,7 +24,7 @@ function ZoomButton({
       size={buttonSize}
       label={i18next.t(`${i18nBase}.${k}`)}
       onClick={() => {
-        setJSONLocalStorage({ k: graphKey, v: { zoom: newValue } })
+        setJsonLocalStorage({ k: graphKey, v: { zoom: newValue } })
         stateFn(newValue)
       }}
     />
