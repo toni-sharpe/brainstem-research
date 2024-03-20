@@ -9,7 +9,8 @@ button {
   justify-content: center;
 }
 
-button:hover {
+button:hover,
+button.is-hovered {
   background-color: $blue--light;
   cursor: pointer;
 }

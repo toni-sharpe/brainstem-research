@@ -5,7 +5,6 @@ import React from 'react'
 import CurrentUrlPropType from 'prop-types/CurrentUrl.prop-type'
 import MenuItem from 'components/MenuItem/MenuItem'
 import { ROOT_MENU_SLUGS } from 'util/Constant/BaseConstantList'
-import { getLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './Menu.scss'
 
