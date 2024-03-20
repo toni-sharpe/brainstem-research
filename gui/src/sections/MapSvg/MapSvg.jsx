@@ -17,25 +17,25 @@ import {
 } from 'util/UtilMapCountry/UtilMapCountry'
 import { handleOnKeyDown } from 'util/UtilMapControlList/UtilMapControlList'
 
+import MapCountry from 'components/MapCountry/MapCountry'
 import MapEdgeBuffer from 'components/MapEdgeBuffer/MapEdgeBuffer'
+import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import MapZoomMarkHorizontal from 'components/MapZoomMarkHorizontal/MapZoomMarkHorizontal'
 import MapZoomMarkVertical from 'components/MapZoomMarkVertical/MapZoomMarkVertical'
-import MapCountry from 'components/MapCountry/MapCountry'
-import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
-import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
+import WorldBorderList from 'util/Constant/WorldBorderList'
 import { getJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './MapSvg.scss'
 
 function MapSvg({
   currentYear,
+  graphKey,
   mapDetailData,
   selectedCountryMapFn,
   showLabelList,
   svgScale,
 }) {
-  const graphKey = 'mapZoom'
   const persisted = getJsonLocalStorage({ k: graphKey })
 
   const [currentCountryIdList, setCurrentCountryList] = useState(persisted?.currentCountryIdList || [])
@@ -191,6 +191,7 @@ function MapSvg({
 
 MapSvg.defaultProps = {
   currentYear: 0,
+  graphKey: 'blankMap',
   showLabelList: true,
   svgScale: WORLD_MAP_SVG_SCALE,
 }

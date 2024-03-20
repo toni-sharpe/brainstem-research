@@ -106,6 +106,7 @@ function WorldMap({ data }) {
       <div className='world-map'>
         <MapSvg
           currentYear={firstLoadYear}
+          graphKey={currentWorldMapPanel}
           mapDetailData={mapData}
         />
       </div>
