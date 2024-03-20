@@ -13,6 +13,7 @@ import Button from 'components/Button/Button'
 import './YearSlider.scss'
 
 function YearSlider({
+  buttonStep,
   currentYear,
   endYear,
   setCurrentYear,
@@ -41,8 +42,8 @@ function YearSlider({
       role='region'
       onKeyDown={eventHandler}
     >
-      { range(0, (totalStepCount / 10)).map(y => {
-        const year = y * 10
+      { range(0, (totalStepCount / buttonStep + 1)).map(y => {
+        const year = y * buttonStep
         const ghostLeft = stepSize * year
         return (
           <Button
@@ -68,12 +69,14 @@ function YearSlider({
 }
 
 YearSlider.defaultProps = {
+  buttonStep: 10,
   currentYear: 2024,
   endYear: 2024,
   yearStep: 1,
 }
 
 YearSlider.propTypes = {
+  buttonStep: PropTypes.number,
   currentYear: PropTypes.number,
   endYear: PropTypes.number,
   setCurrentYear: PropTypes.func,

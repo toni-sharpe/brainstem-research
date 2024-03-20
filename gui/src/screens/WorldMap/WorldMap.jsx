@@ -10,7 +10,10 @@ import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNav from 'sections/SecondaryNav/SecondaryNav'
 import SecondaryNavButtonList from 'components/SecondaryNavButtonList/SecondaryNavButtonList'
 import { secondaryNavLocalStorage } from 'util/UtilLocalStorage/UtilSecondaryNav'
-import { calcMapFillDataFromSparse } from 'util/UtilWorldMap/UtilWorldMap'
+import {
+  calcFirstScreenLoadYear,
+  calcMapStyle,
+} from 'util/UtilWorldMap/UtilWorldMap'
 
 import './WorldMap.scss'
 
@@ -30,34 +33,39 @@ function WorldMap({ data }) {
     setCurrentPanel,
   }
 
-  let mapData
-  let firstLoadYear
-  let startYear
+  let buttonStep
   let endYear
+  let firstLoadYear
+  let mapData
+  let startYear
   let useYearSlider = false
 
   switch (commonNavProps.currentPanel) {
     case 'blank':
-      mapData = blankMapData[2024]
+      mapData = blankMapData
       break;
     case 'centuryPlusPerfTest':
       startYear = 1900
       endYear = 2024
-      firstLoadYear = currentYear || startYear
-      if (firstLoadYear < startYear) {
-        firstLoadYear = startYear
-      }
+      buttonStep = 10
+      firstLoadYear = calcFirstScreenLoadYear({
+        currentYear,
+        startYear,
+        endYear,
+      })
       mapData = centuryPlusPerfTestMapData[firstLoadYear]
       useYearSlider = true
       break;
     case 'internetUse':
-      startYear = 1990
+      startYear = 1988
       endYear = 2021
-      firstLoadYear = currentYear || startYear
-      if (firstLoadYear < startYear) {
-        firstLoadYear = startYear
-      }
-      const internetMapData = calcMapFillDataFromSparse({
+      buttonStep = 3
+      firstLoadYear = calcFirstScreenLoadYear({
+        currentYear,
+        startYear,
+        endYear,
+      })
+      const internetMapData = calcMapStyle({
         data: InternetUsageData,
         dataStart: 1960,
         dataEnd: 2022,
@@ -69,7 +77,7 @@ function WorldMap({ data }) {
       useYearSlider = true
       break;
     default:
-      mapData = blankMapData[firstLoadYear]
+      mapData = blankMapData
       break;
   }
 
@@ -87,6 +95,7 @@ function WorldMap({ data }) {
     >
       { useYearSlider && (
         <YearSlider
+          buttonStep={buttonStep}
           currentYear={firstLoadYear}
           endYear={endYear}
           setCurrentYear={setCurrentYear}
