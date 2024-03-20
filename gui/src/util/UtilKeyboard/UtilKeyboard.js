@@ -23,4 +23,6 @@ export function onKeyDownRegionHandler({ keyCode }) {
       console.log('x')
       break;
   }
+
+  return false
 }

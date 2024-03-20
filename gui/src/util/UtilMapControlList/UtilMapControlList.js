@@ -13,6 +13,10 @@ import { numberPrecision } from 'util/Util/Util'
 
 import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
+const STEP = 10
+const HORZ_MOVE = WORLD_MAP_SVG_SCALE_WIDTH / STEP
+const VERT_MOVE = WORLD_MAP_SVG_SCALE_HEIGHT / STEP
+
 export function calcNewGraphOffset({ x, y, zoomTo, zoomFrom }) {
   const factor = zoomTo / zoomFrom
   const offsetFactor = factor - 1
@@ -27,54 +31,58 @@ export function calcMove({ m, zoom }) {
   return (0 - m * zoom)
 }
 
-const STEP = 10
-const HORZ_MOVE = WORLD_MAP_SVG_SCALE_WIDTH / STEP
-const VERT_MOVE = WORLD_MAP_SVG_SCALE_HEIGHT / STEP
-
 export function mapBound({ edgeSize, zoom }) {
-  return numberPrecision({ n: (0 - (edgeSize * zoom)) })
+  return numberPrecision({ n: (0 - (edgeSize * zoom) + edgeSize) })
 }
 
 export function onEastEventHandler({ graphKey, graphOffset: [x, y], persisted, setGraphOffset, zoom }) {
+  document.querySelectorAll('.js-map-scroll').forEach(jsMs => jsMs.classList.remove("is-hovered"))
   const horz_bound = mapBound({ edgeSize: WORLD_MAP_SVG_SCALE_WIDTH, zoom })
   let m = x
-  if (m <= horz_bound + WORLD_MAP_SVG_SCALE_WIDTH) {
-    m = horz_bound + WORLD_MAP_SVG_SCALE_WIDTH
+  if (m <= horz_bound) {
+    m = horz_bound
   } else {
     m = x - HORZ_MOVE
   }
   const offset = [m, y]
   setGraphOffset(offset)
   setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
+  document.querySelector('.js-east').classList.add("is-hovered")
 }
 
 export function onWestEventHandler({ graphKey, graphOffset: [x, y], persisted, setGraphOffset, zoom }) {
+  document.querySelectorAll('.js-map-scroll').forEach(jsMs => jsMs.classList.remove("is-hovered"))
   let newX = x + HORZ_MOVE
   if (newX >= 0) { newX = 0 }
   const offset = [newX, y]
   setGraphOffset(offset)
   setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
+  document.querySelector('.js-west').classList.add("is-hovered")
 }
 
 export function onNorthEventHandler({ graphKey, graphOffset: [x, y], persisted, setGraphOffset, zoom }) {
+  document.querySelectorAll('.js-map-scroll').forEach(jsMs => jsMs.classList.remove("is-hovered"))
   let newY = y + VERT_MOVE
   if (newY >= 0) { newY = 0 }
   const offset = [x, newY]
   setGraphOffset(offset)
   setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
+  document.querySelector('.js-north').classList.add("is-hovered")
 }
 
 export function onSouthEventHandler({ graphKey, graphOffset: [x, y], persisted, setGraphOffset, zoom }) {
+  document.querySelectorAll('.js-map-scroll').forEach(jsMs => jsMs.classList.remove("is-hovered"))
   const vert_bound = mapBound({ edgeSize: WORLD_MAP_SVG_SCALE_HEIGHT, zoom })
   let m = y
-  if (m <= (vert_bound + WORLD_MAP_SVG_SCALE_HEIGHT)) {
-    m = vert_bound + WORLD_MAP_SVG_SCALE_HEIGHT
+  if (m <= (vert_bound)) {
+    m = vert_bound
   } else {
     m = y - VERT_MOVE
   }
   const offset = [x, m]
   setGraphOffset(offset)
   setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: offset, zoom } })
+  document.querySelector('.js-south').classList.add("is-hovered")
 }
 
 export function handleOnKeyDown(eventHandlerProps) {

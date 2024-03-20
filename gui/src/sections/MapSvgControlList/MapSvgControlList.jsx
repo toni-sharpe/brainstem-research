@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { WORLD_MAP_ZOOM_LIST } from 'util/Constant/BaseConstantList'
 import Button from 'components/Button/Button'
 import GraphOffsetPropType from 'prop-types/GraphOffset.prop-type'
+import { WORLD_MAP_ZOOM_LIST } from 'util/Constant/BaseConstantList'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
 import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
@@ -14,6 +14,7 @@ import {
   onNorthEventHandler,
   onSouthEventHandler,
 } from 'util/UtilMapControlList/UtilMapControlList'
+import { onKeyDownRegionHandler } from 'util/UtilKeyboard/UtilKeyboard'
 
 import './MapSvgControlList.scss'
 
@@ -48,12 +49,15 @@ function MapSvgControlList({
     >
       <ul
         className='map-svg-control-list'
+        onKeyDown={onKeyDownRegionHandler}
+        tabIndex='0'
       >
         <li>
           <ol className='row-layout space-children'>
             <li>
               <Button
                 {...movementButtonCommonProps}
+                extraClass='js-map-scroll js-west'
                 label=' ← West'
                 onClick={() => onWestEventHandler(eventHandlerProps)}
               />
@@ -61,6 +65,7 @@ function MapSvgControlList({
             <li>
               <Button
                 {...movementButtonCommonProps}
+                extraClass='js-map-scroll js-north'
                 label='↑ North'
                 onClick={() => onNorthEventHandler(eventHandlerProps)}
               />
@@ -68,6 +73,7 @@ function MapSvgControlList({
             <li>
               <Button
                 {...movementButtonCommonProps}
+                extraClass='js-map-scroll js-east'
                 label='East →'
                 onClick={() => onEastEventHandler(eventHandlerProps)}
               />
@@ -75,6 +81,7 @@ function MapSvgControlList({
             <li>
               <Button
                 {...movementButtonCommonProps}
+                extraClass='js-map-scroll js-south'
                 label='↓ South'
                 onClick={() => onSouthEventHandler(eventHandlerProps)}
               />
