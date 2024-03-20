@@ -22,6 +22,8 @@ export function onKeyDownRegionHandler({ keyCode }) {
     case 88:// x - reset
       console.log('x')
       break;
+    default:
+      break;
   }
 
   return false
