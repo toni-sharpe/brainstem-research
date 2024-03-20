@@ -29,7 +29,6 @@ function MapZoomMarkVertical({ orientation, y, zoom }) {
     <div
       className={`map-zoom-mark-vertical__${orientation}`}
       style={{ height: `${height}vh`, top: `${top}vh` }}
-      tabIndex={0}
     />
   )
 }
