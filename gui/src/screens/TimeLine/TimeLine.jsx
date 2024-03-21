@@ -8,7 +8,7 @@ import MonthText from 'components/MonthText/MonthText'
 import PageDetailWrapper from 'components/PageDetailWrapper/PageDetailWrapper'
 import SecondaryNavSumAndFilterList from 'sections/SecondaryNavSumAndFilterList/SecondaryNavSumAndFilterList'
 import TimeLineDataPropType from 'prop-types/TimeLineData.prop-type'
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 import { secondaryNavLocalStorage } from 'util/UtilLocalStorage/UtilSecondaryNav'
 import { timeLineFilterByLocalStorage } from 'util/UtilLocalStorage/UtilTimeLineFilteredBy'
 import { DATA_POINT_SUM_LIST, TIME_LINE_FILTER_LIST } from 'util/Constant/BaseConstantList'
@@ -79,7 +79,7 @@ function TimeLine({ data }) {
                       label={label}
                       onClick={() => {
                         setFilterBy(filter)
-                        setJSONLocalStorage({ k: 'timeLineFilteredBy', v: filter})
+                        setJsonLocalStorage({ k: 'timeLineFilteredBy', v: filter})
                       }}
                       size='medium'
                     />

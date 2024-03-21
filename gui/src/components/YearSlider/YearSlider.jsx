@@ -9,6 +9,7 @@ import {
   onButtonEventHandler,
 } from 'util/UtilYearSlider/UtilYearSlider'
 import Button from 'components/Button/Button'
+import { onKeyDownRegionHandler } from 'util/UtilKeyboard/UtilKeyboard'
 
 import './YearSlider.scss'
 
@@ -37,33 +38,39 @@ function YearSlider({
 
   return (
     <div
-      aria-label='year slider allows data across the years to be viewed'
-      className='year-slider row-layout'
-      role='region'
-      onKeyDown={eventHandler}
+      className='js-year-slider year-slider'
+      onKeyDown={onKeyDownRegionHandler()}
+      tabIndex='-1'
     >
-      { range(0, (totalStepCount / buttonStep + 1)).map(y => {
-        const year = y * buttonStep
-        const ghostLeft = stepSize * year
-        return (
-          <Button
-            extraClass='year-slider__ghost-button'
-            key={y}
-            label={startYear + year}
-            onClick={() => {
-              setCurrentYear(startYear + year)
-            }}
-            size='medium'
-            style={{ left: `${ghostLeft}%` }}
-          />
-        )
-      })}
-      <Button
-        extraClass='year-slider__button'
-        label={currentYear}
-        size='medium'
-        style={{ left: `${left}%` }}
-      />
+      <div
+        aria-label='year slider allows data across the years to be viewed'
+        className='year-slider__rail row-layout'
+        role='region'
+        onKeyDown={eventHandler}
+      >
+        { range(0, (totalStepCount / buttonStep + 1)).map(y => {
+          const year = y * buttonStep
+          const ghostLeft = stepSize * year
+          return (
+            <Button
+              extraClass='year-slider__ghost-button'
+              key={y}
+              label={startYear + year}
+              onClick={() => {
+                setCurrentYear(startYear + year)
+              }}
+              size='medium'
+              style={{ left: `${ghostLeft}%` }}
+            />
+          )
+        })}
+        <Button
+          extraClass='js-year-slider-main-button year-slider__button'
+          label={currentYear}
+          size='medium'
+          style={{ left: `${left}%` }}
+        />
+      </div>
     </div>
   )
 }

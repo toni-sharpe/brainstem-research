@@ -3,6 +3,7 @@ import i18next from 'util/i18next/i18next'
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { onKeyDownRegionHandler } from 'util/UtilKeyboard/UtilKeyboard'
 import LanguageToggle from 'components/LanguageToggle/LanguageToggle'
 import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 
@@ -22,7 +23,11 @@ function PageDetailWrapper({
 
   return ( 
     <article className={`${extraClass ? extraClass : ''} page-detail-wrapper column-layout space-children--column`}>
-      <header className='row-layout page-detail-wrapper__header'>
+      <header
+        className='row-layout page-detail-wrapper__header'
+        onKeyDown={onKeyDownRegionHandler()}
+        tabIndex='0'
+      >
         <div className='page-detail-wrapper__left'>
           <h1 className='page-detail-wrapper__heading'>{heading}</h1>
           <section className='page-detail-wrapper__secondary row-layout space-children--wide-with-border'>

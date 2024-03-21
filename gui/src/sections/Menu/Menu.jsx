@@ -19,13 +19,17 @@ function Menu({
       aria-label={i18next.t(`${i18nBase}.ariaLabel`)}
     >
       <ul role='menu' className='menu'>
-        {rootMenuSlugs.map(urlSlug => {
+        {rootMenuSlugs.map((urlSlug, i) => {
           return (
-            <li role='none' key={urlSlug}>
+            <li
+              className={i === 0 ? 'js-menu-first' : null}
+              key={urlSlug}
+              role='none'
+            >
               <MenuItem
                 currentUrl={currentUrl}
-                url={urlSlug}
                 label={i18next.t(`MainPageHeading.${urlSlug}`)}
+                urlSlug={urlSlug}
               />
             </li>
           )
@@ -36,7 +40,6 @@ function Menu({
 }
 
 Menu.defaultProps = {
-  currentUrl: 'scatter',
   rootMenuSlugs: ROOT_MENU_SLUGS,
 }
 

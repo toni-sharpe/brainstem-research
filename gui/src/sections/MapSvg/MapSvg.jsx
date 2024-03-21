@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import {
   filter,
   keys,
@@ -8,6 +9,7 @@ import {
 } from 'ramda'
 import React, { useState } from 'react'
 
+import SvgScalePropType from 'prop-types/SvgScale.prop-type'
 import { WORLD_MAP_SVG_SCALE } from 'util/Constant/BaseConstantList'
 import {
   buildMapCountryElement,
@@ -16,27 +18,28 @@ import {
   onMapCountryClickHandler,
 } from 'util/UtilMapCountry/UtilMapCountry'
 import { handleOnKeyDown } from 'util/UtilMapControlList/UtilMapControlList'
+import { onKeyDownRegionHandler } from 'util/UtilKeyboard/UtilKeyboard'
 
+import MapCountry from 'components/MapCountry/MapCountry'
 import MapEdgeBuffer from 'components/MapEdgeBuffer/MapEdgeBuffer'
+import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
 import MapZoomMarkHorizontal from 'components/MapZoomMarkHorizontal/MapZoomMarkHorizontal'
 import MapZoomMarkVertical from 'components/MapZoomMarkVertical/MapZoomMarkVertical'
-import MapCountry from 'components/MapCountry/MapCountry'
-import MapSvgControlList from 'sections/MapSvgControlList/MapSvgControlList'
-import WorldBorderList from 'util/Constant/WorldBorderList'
 import SvgWrapper from 'components/SvgWrapper/SvgWrapper'
-import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import WorldBorderList from 'util/Constant/WorldBorderList'
+import { getJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './MapSvg.scss'
 
 function MapSvg({
   currentYear,
+  graphKey,
   mapDetailData,
   selectedCountryMapFn,
   showLabelList,
   svgScale,
 }) {
-  const graphKey = 'mapZoom'
-  const persisted = getJSONLocalStorage({ k: graphKey })
+  const persisted = getJsonLocalStorage({ k: graphKey })
 
   const [currentCountryIdList, setCurrentCountryList] = useState(persisted?.currentCountryIdList || [])
   const [currentHoveredCountryId, setCurrentHoveredCountryId] = useState()
@@ -120,6 +123,68 @@ function MapSvg({
         zoom,
       })}
     >
+      <div
+        onKeyDown={onKeyDownRegionHandler()}
+        tabIndex='0'
+      >
+        <MapZoomMarkHorizontal orientation='top' x={graphOffset[0]} zoom={zoom} />
+        <div className='row-layout'>
+          <MapZoomMarkVertical orientation='left' y={graphOffset[1]} zoom={zoom} />
+          <SvgWrapper
+            ariaLabel='world map'
+            extraClass='map-svg__svg'
+            k='world-map-svg'
+            region
+            svgScale={`${svgScale}`}
+          >
+            <defs>
+              <pattern id="star" viewBox="0,0,10,10" patternUnits="userSpaceOnUse" width="1%" height="1%">
+                <circle
+                  cx='5'
+                  cy='5'
+                  r='6'
+                  fill='#44e'
+                  fillOpacity='0.3'
+                  strokeWidth='6'
+                  stroke='#fff'
+                  strokeOpacity='0.9'
+                />
+              </pattern>
+            </defs>
+            <MapEdgeBuffer
+              graphOffset={graphOffset}
+              zoom={zoom}
+            />
+            <g key='guides' transform={`translate(${graphOffset})`}>
+              { borderList.map(({ b, countryId, onClick }, i) => {
+                return (
+                  <g {...buildMapCountryElement({
+                    b,
+                    countryId,
+                    i,
+                    onClick,
+                    setCurrentHoveredCountryId,
+                  })} />
+                )
+              })}
+              { showLabelList && labelList.map(({ countryId, l, onClick }, i) => {
+                return (
+                  <g {...buildMapCountryElement({
+                    countryId,
+                    i,
+                    onClick,
+                    setCurrentHoveredCountryId
+                  })}>
+                    {l}
+                  </g>
+                )
+              })}
+            </g>
+          </SvgWrapper>
+          <MapZoomMarkVertical orientation='right' y={graphOffset[1]} zoom={zoom} />
+        </div>
+        <MapZoomMarkHorizontal orientation='bottom' x={graphOffset[0]} zoom={zoom} />
+      </div>
       <MapSvgControlList
         graphKey={graphKey}
         graphOffset={graphOffset}
@@ -128,71 +193,22 @@ function MapSvg({
         setZoom={setZoom}
         zoom={zoom}
       />
-      <MapZoomMarkHorizontal orientation='top' x={graphOffset[0]} zoom={zoom} />
-      <div className='row-layout'>
-        <MapZoomMarkVertical orientation='left' y={graphOffset[1]} zoom={zoom} />
-        <SvgWrapper
-          ariaLabel='world map'
-          extraClass='map-svg__svg'
-          k='world-map-svg'
-          region
-          svgScale={`${svgScale}`}
-        >
-          <defs>
-            <pattern id="star" viewBox="0,0,10,10" patternUnits="userSpaceOnUse" width="1%" height="1%">
-              <circle
-                cx='5'
-                cy='5'
-                r='6'
-                fill='#44e'
-                fillOpacity='0.3'
-                strokeWidth='6'
-                stroke='#fff'
-                strokeOpacity='0.9'
-              />
-            </pattern>
-          </defs>
-          <MapEdgeBuffer
-            graphOffset={graphOffset}
-            zoom={zoom}
-          />
-          <g key='guides' transform={`translate(${graphOffset})`}>
-            { borderList.map(({ b, countryId, onClick }, i) => {
-              return (
-                <g {...buildMapCountryElement({
-                  b,
-                  countryId,
-                  i,
-                  onClick,
-                  setCurrentHoveredCountryId,
-                })} />
-              )
-            })}
-            { showLabelList && labelList.map(({ countryId, l, onClick }, i) => {
-              return (
-                <g {...buildMapCountryElement({
-                  countryId,
-                  i,
-                  onClick,
-                  setCurrentHoveredCountryId
-                })}>
-                  {l}
-                </g>
-              )
-            })}
-          </g>
-        </SvgWrapper>
-        <MapZoomMarkVertical orientation='right' y={graphOffset[1]} zoom={zoom} />
-      </div>
-      <MapZoomMarkHorizontal orientation='bottom' x={graphOffset[0]} zoom={zoom} />
     </figure>
   )
 }
 
 MapSvg.defaultProps = {
   currentYear: 0,
+  graphKey: 'blankMap',
   showLabelList: true,
   svgScale: WORLD_MAP_SVG_SCALE,
+}
+
+MapSvg.propTypes = {
+  currentYear: PropTypes.number,
+  graphKey: PropTypes.string,
+  showLabelList: PropTypes.bool,
+  svgScale: SvgScalePropType,
 }
 
 export default MapSvg

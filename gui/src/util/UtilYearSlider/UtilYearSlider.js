@@ -6,20 +6,42 @@ import {
 import { throwError } from 'util/UtilError/UtilError'
 
 export function calcTotalStepCount({ endYear, startYear }) {
-  throwError({ check: endYear >= startYear, i18nKey: 'sliderYear' })
+  throwError({
+    check:
+      endYear
+      >=
+      startYear,
+    i18nKey: 'sliderYear'
+  })
 
   return startYear === endYear
     ? null
-    : endYear - startYear
+    : endYear
+      -
+      startYear
 }
 
 export function calcStepSize({ totalStepCount }) {
-  const availableSpace = 100 - YEAR_SLIDER_BUTTON_WIDTH
+  const availableSpace =
+    100
+    -
+    YEAR_SLIDER_BUTTON_WIDTH
+
   return availableSpace / totalStepCount
 }
 
 export function calcCurrentStep({ currentYear, endYear, startYear }) {
-  throwError({ check: currentYear >= startYear && currentYear <= endYear, i18nKey: 'sliderStepYear' })
+  throwError({
+    check:
+      currentYear
+      >=
+      startYear
+        &&
+      currentYear
+      <=
+      endYear,
+    i18nKey: 'sliderStepYear'
+  })
 
   return currentYear - startYear
 }
@@ -33,10 +55,26 @@ export function onButtonEventHandler({
 }) {
   return function({ keyCode }) {
     if (keyCode === LEFT_WEST_KEY) {
-      setCurrentYear(currentYear > startYear ? currentYear - yearStep : startYear)
+      setCurrentYear(
+        currentYear
+        >
+        startYear
+          ? currentYear
+            -
+            yearStep
+          : startYear
+      )
     }
     if (keyCode === RIGHT_EAST_KEY) {
-      setCurrentYear(currentYear < endYear ? currentYear + yearStep : endYear)
+      setCurrentYear(
+        currentYear
+        <
+        endYear
+          ? currentYear
+            +
+            yearStep
+          : endYear
+      )
     }
     return null
   }

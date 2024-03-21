@@ -1,8 +1,8 @@
 import {
   setLocalStorage,
-  setJSONLocalStorage,
+  setJsonLocalStorage,
   getLocalStorage,
-  getJSONLocalStorage,
+  getJsonLocalStorage,
 } from './UtilLocalStorage'
 
 test('we can set and get a value from local storage', () => {
@@ -11,11 +11,11 @@ test('we can set and get a value from local storage', () => {
 })
 
 test('we can set and get a value from local storage when it is an object', () => {
-  setJSONLocalStorage({ k: 'a', v: { x: 'y' } })
-  expect(getJSONLocalStorage({ k: 'a' })).toEqual({ x: 'y' })
+  setJsonLocalStorage({ k: 'a', v: { x: 'y' } })
+  expect(getJsonLocalStorage({ k: 'a' })).toEqual({ x: 'y' })
 })
 
 test('we can set and get a value from local storage when it is an array', () => {
-  setJSONLocalStorage({ k: 'a', v: [1, 2, 3] })
-  expect(getJSONLocalStorage({ k: 'a' })).toEqual([1, 2, 3])
+  setJsonLocalStorage({ k: 'a', v: [1, 2, 3] })
+  expect(getJsonLocalStorage({ k: 'a' })).toEqual([1, 2, 3])
 })

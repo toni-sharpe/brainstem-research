@@ -1,10 +1,13 @@
+import i18next from 'util/i18next/i18next'
+import PropTypes from 'prop-types'
 import React from 'react'
 
-import { WORLD_MAP_ZOOM_LIST } from 'util/Constant/BaseConstantList'
 import Button from 'components/Button/Button'
+import GraphOffsetPropType from 'prop-types/GraphOffset.prop-type'
+import { WORLD_MAP_ZOOM_LIST } from 'util/Constant/BaseConstantList'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
 import ZoomButton from 'components/ZoomButton/ZoomButton'
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 import {
   calcNewGraphOffset,
   onWestEventHandler,
@@ -12,8 +15,11 @@ import {
   onNorthEventHandler,
   onSouthEventHandler,
 } from 'util/UtilMapControlList/UtilMapControlList'
+import { onKeyDownRegionHandler } from 'util/UtilKeyboard/UtilKeyboard'
 
 import './MapSvgControlList.scss'
+
+const i18nBase = 'MapSvgControlList'
 
 function MapSvgControlList({
   graphKey,
@@ -46,12 +52,15 @@ function MapSvgControlList({
     >
       <ul
         className='map-svg-control-list'
+        onKeyDown={onKeyDownRegionHandler({ zoom })}
+        tabIndex='0'
       >
         <li>
           <ol className='row-layout space-children'>
             <li>
               <Button
                 {...movementButtonCommonProps}
+                extraClass='js-map-scroll js-west'
                 label=' ← West'
                 onClick={() => onWestEventHandler(eventHandlerProps)}
               />
@@ -59,6 +68,7 @@ function MapSvgControlList({
             <li>
               <Button
                 {...movementButtonCommonProps}
+                extraClass='js-map-scroll js-north'
                 label='↑ North'
                 onClick={() => onNorthEventHandler(eventHandlerProps)}
               />
@@ -66,6 +76,7 @@ function MapSvgControlList({
             <li>
               <Button
                 {...movementButtonCommonProps}
+                extraClass='js-map-scroll js-east'
                 label='East →'
                 onClick={() => onEastEventHandler(eventHandlerProps)}
               />
@@ -73,6 +84,7 @@ function MapSvgControlList({
             <li>
               <Button
                 {...movementButtonCommonProps}
+                extraClass='js-map-scroll js-south'
                 label='↓ South'
                 onClick={() => onSouthEventHandler(eventHandlerProps)}
               />
@@ -83,8 +95,8 @@ function MapSvgControlList({
           <ol
             className='map-svg-control-list__zoom'
           >
-            <li className='map-svg-control-list__zoom-label'>
-              <span>Zoom:</span>
+            <li className='js-zoom-label map-svg-control-list__zoom-label'>
+              <span>{i18next.t(`${i18nBase}.zoom`)}:</span>
             </li>
 
             <li className='map-svg-control-list__zoom-buttons row-layout space-children'>
@@ -108,8 +120,9 @@ function MapSvgControlList({
                     stateFn={(newVal) => {
                       setGraphOffset(newGraphOffset)
                       setZoom(newVal)
-                      setJSONLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: newGraphOffset, zoom: newVal } })
+                      setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: newGraphOffset, zoom: newVal } })
                     }}
+                    zoom={zoom}
                   />
                 )
               }) }
@@ -127,6 +140,21 @@ function MapSvgControlList({
       </ul>
     </div>
   )
+}
+
+MapSvgControlList.defaultProps = {
+  graphKey: 'blankMap',
+  graphOffset: [0,0],
+  zoom: 1,
+}
+
+MapSvgControlList.propTypes = {
+  graphKey: PropTypes.string,
+  graphOffset: GraphOffsetPropType,
+  persisted: PropTypes.object,
+  setGraphOffset: PropTypes.func,
+  setZoom: PropTypes.func,
+  zoom: PropTypes.number,
 }
 
 export default MapSvgControlList

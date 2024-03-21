@@ -6,10 +6,10 @@ export function getLocalStorage({ k }) {
   return localStorage.getItem(k)
 }
 
-export function setJSONLocalStorage({ k, v }) {
+export function setJsonLocalStorage({ k, v }) {
   localStorage.setItem(k, JSON.stringify(v))
 }
 
-export function getJSONLocalStorage({ k }) {
+export function getJsonLocalStorage({ k }) {
   return JSON.parse(localStorage.getItem(k))
 }

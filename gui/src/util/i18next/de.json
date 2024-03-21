@@ -499,6 +499,10 @@
     "secondaryNav": "Umschalten der Kartendaten"
   },
 
+  "MapSvgControlList": {
+    "zoom": "Zoom"
+  },
+
   "MapCountry": {
     "203": "Aruba",
       "4": "Afghanistan",

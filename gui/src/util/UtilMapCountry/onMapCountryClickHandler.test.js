@@ -1,9 +1,9 @@
 import { onMapCountryClickHandler } from './UtilMapCountry'
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 jest.mock('util/UtilLocalStorage/UtilLocalStorage', () => ({
   __esModule: true, // this property makes it work
-  setJSONLocalStorage: jest.fn(),
+  setJsonLocalStorage: jest.fn(),
 }));
 
 test('onMapCountryClickHandler() builds a fn that adds the right stuff in the right places', () => {
@@ -19,7 +19,7 @@ test('onMapCountryClickHandler() builds a fn that adds the right stuff in the ri
 
   onClick()
 
-  expect(setJSONLocalStorage).toHaveBeenCalledWith({"k": "testKey", "v": { xy: 12, currentCountryIdList: [13, 19] }})
+  expect(setJsonLocalStorage).toHaveBeenCalledWith({"k": "testKey", "v": { xy: 12, currentCountryIdList: [13, 19] }})
   expect(setCurrentCountryListMock).toHaveBeenCalledWith([13, 19])
 })
 

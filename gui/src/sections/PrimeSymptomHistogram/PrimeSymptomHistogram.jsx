@@ -22,7 +22,7 @@ import {
   primeSymptomHistogramBarGrouper,
   primeSymptomTimingError,
 } from 'util/UtilPrimeSymptomHistogram/UtilPrimeSymptomHistogram'
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './PrimeSymptomHistogram.scss'
 
@@ -57,7 +57,7 @@ function PrimeSymptomHistogram({
     return null
   }
 
-  setJSONLocalStorage({ k: localStorageKey, v: { count: currentDisplayedDataPoints, factor: currentFactorOn } })
+  setJsonLocalStorage({ k: localStorageKey, v: { count: currentDisplayedDataPoints, factor: currentFactorOn } })
 
   const histogramData = ramda.pipe(
     ramda.take(currentDisplayedDataPoints),

@@ -1,6 +1,6 @@
 import { init, last, pluck, symmetricDifference } from 'ramda'
 
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import {
   NON_ISLAND_TINY_TERRIROTORIES,
@@ -78,7 +78,7 @@ export function onMapCountryClickHandler({
       [countryId],
     )
     setCurrentCountryList(newCurrentCountryIdList)
-    setJSONLocalStorage({ k: graphKey, v: { ...persisted, currentCountryIdList: newCurrentCountryIdList } })
+    setJsonLocalStorage({ k: graphKey, v: { ...persisted, currentCountryIdList: newCurrentCountryIdList } })
   }
 }
 

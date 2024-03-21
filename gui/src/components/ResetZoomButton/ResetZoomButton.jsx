@@ -2,7 +2,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Button from 'components/Button/Button'
-import { setJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { WORLD_MAP_SVG_ZOOM_DEFAULT } from 'util/Constant/BaseConstantList'
+import { setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './ResetZoomButton.scss'
 
@@ -26,9 +27,14 @@ function ResetZoomButton({
       k='resetZoomButton'
       label={isDisabled ? '-' : 'X'}
       onClick={() => {
-        setJSONLocalStorage({ k: graphKey, v: { zoom: zDefault } })
-        setGraphOffset([0, 0])
-        setZoom(zDefault)
+        setJsonLocalStorage({
+          k: graphKey,
+          v: {
+            ...persisted,
+            graphOffset: [0, 0],
+            zoom: zDefault
+          }
+        })
         extraStateFn && extraStateFn()
       }}
       size={buttonSize}
@@ -38,6 +44,7 @@ function ResetZoomButton({
 
 ResetZoomButton.defaultProps = {
   buttonSize: 'medium',
+  zDefault: WORLD_MAP_SVG_ZOOM_DEFAULT,
 }
 
 ResetZoomButton.propTypes = {

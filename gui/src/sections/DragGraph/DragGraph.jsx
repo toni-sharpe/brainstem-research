@@ -32,7 +32,7 @@ import {
 } from 'util/UtilSvg/UtilSvg'
 import { isFullMax } from 'util/UtilDragGraph/UtilDragGraphFilter'
 import LabelValPropType from 'prop-types/LabelVal.prop-type'
-import { getJSONLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { getJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
 
 import './DragGraph.scss'
 
@@ -57,7 +57,7 @@ function DragGraph({
   useDepth,
   zDefault,
 }) {
-  const persisted = getJSONLocalStorage({ k: graphKey })
+  const persisted = getJsonLocalStorage({ k: graphKey })
 
   const [graphOffset, setGraphOffset] = useState([0, 0])
   const [incExtreme, setIncExtremes] = useState(persisted?.incExtreme || persisted?.incExtreme === false ? persisted?.incExtreme : includeExtreme)
