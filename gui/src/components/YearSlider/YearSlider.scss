@@ -1,10 +1,10 @@
 @import '../../util/Constant/sass-variable-list.scss';
 
 .year-slider {
-  background-color: $green--grey;
+  background-color: $grey--lightest;
   box-sizing: border-box;
-  height: 46px;
-  padding: $padding--small 0.5%;
+  height: 36px;
+  padding: $padding--small-tiny 0.5%;
   position: relative;
   width: 100%;
 
@@ -14,8 +14,7 @@
   }
 
   &__rail {
-    background-color: $green--grey;
-    box-shadow: 0 0 10px 0 inset $grey--medium;
+    background-color: $grey--lightest;
     position: relative;
     width: 100%;
   }
@@ -25,6 +24,7 @@
     color: $white;
     font-size: $font-size--medium-large;
     position: relative;
+    top: 0;
     width: 5%;
 
     &:focus {
@@ -34,10 +34,10 @@
   }
 
   &__ghost-button {
-    background-color: $red--medium;
-    height: 34px;
-    outline: none;
+    background-color: $green-grey--light;
+    font-size: $font-size--medium-large;
     position: absolute;
+    top: 0;
     width: 5%;
     :focus {
       background-color: none;

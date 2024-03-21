@@ -59,7 +59,7 @@ function YearSlider({
               onClick={() => {
                 setCurrentYear(startYear + year)
               }}
-              size='medium'
+              size='small'
               style={{ left: `${ghostLeft}%` }}
             />
           )
@@ -67,7 +67,7 @@ function YearSlider({
         <Button
           extraClass='js-year-slider-main-button year-slider__button'
           label={currentYear}
-          size='medium'
+          size='small'
           style={{ left: `${left}%` }}
         />
       </div>
