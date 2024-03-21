@@ -4,13 +4,20 @@
   background-color: $green--grey;
   box-sizing: border-box;
   height: 46px;
-  padding: $padding--small 0;
+  padding: $padding--small 0.5%;
   position: relative;
   width: 100%;
 
   &.year-slider {
     margin-bottom: 4px;
     margin-top: 2px;
+  }
+
+  &__rail {
+    background-color: $green--grey;
+    box-shadow: 0 0 10px 0 inset $grey--medium;
+    position: relative;
+    width: 100%;
   }
 
   &__button {
@@ -27,7 +34,7 @@
   }
 
   &__ghost-button {
-    background-color: $green--grey;
+    background-color: $red--medium;
     height: 34px;
     outline: none;
     position: absolute;

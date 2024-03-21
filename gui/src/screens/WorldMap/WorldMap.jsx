@@ -45,7 +45,7 @@ function WorldMap({ data }) {
       mapData = blankMapData
       break;
     case 'centuryPlusPerfTest':
-      startYear = 1900
+      startYear = 1894
       endYear = 2024
       buttonStep = 10
       firstLoadYear = calcFirstScreenLoadYear({

@@ -44,7 +44,7 @@ function YearSlider({
     >
       <div
         aria-label='year slider allows data across the years to be viewed'
-        className='row-layout'
+        className='year-slider__rail row-layout'
         role='region'
         onKeyDown={eventHandler}
       >

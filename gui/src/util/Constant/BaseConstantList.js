@@ -307,3 +307,5 @@ export const TIME_LINE_FIRST_MONTH = '2005-01-01'
  */
 // in %
 export const YEAR_SLIDER_BUTTON_WIDTH = 5
+export const YEAR_SLIDER_END_PADDING = 0.5
+

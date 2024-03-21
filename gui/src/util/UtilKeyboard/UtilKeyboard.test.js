@@ -1,20 +1,5 @@
 import { rmZoomClass, rmMenuClass, onKeyDownRegionHandler } from './UtilKeyboard'
 
-describe('rmZoomClass', () => {
-  it('should remove zoom-focus class from .js-zoom-label', () => {
-    const removeMock = jest.fn()
-    const querySelectorMock = jest.fn().mockReturnValueOnce({
-      classList: {
-        remove: removeMock
-      }
-    })
-    document.querySelector = querySelectorMock
-    rmZoomClass();
-    expect(querySelectorMock).toHaveBeenCalledWith('.js-zoom-label')
-    expect(removeMock).toHaveBeenCalledWith('zoom-focus')
-  });
-});
-
 describe('rmMenuClass', () => {
   it('should remove open class from .js-header', () => {
     const removeMock = jest.fn()
@@ -34,7 +19,6 @@ describe('onKeyDownRegionHandler', () => {
 
     const querySelectorMock = jest.fn().mockReturnValue({
       classList: {
-        remove: removeMock,
         toggle: toggleMock,
       },
       focus: focusMock,
@@ -47,9 +31,7 @@ describe('onKeyDownRegionHandler', () => {
 
     expect(querySelectorMock).toHaveBeenCalledWith('.js-header')
     expect(querySelectorMock).toHaveBeenCalledWith('.js-menu-first a')
-    expect(querySelectorMock).toHaveBeenCalledWith('.js-zoom-label')
 
-    expect(removeMock).toHaveBeenCalledWith('zoom-focus')
     expect(toggleMock).toHaveBeenCalledWith('open')
     expect(focusMock).toHaveBeenCalled()
   });
@@ -71,10 +53,8 @@ describe('onKeyDownRegionHandler', () => {
     handler({ keyCode: 78 });
 
     expect(querySelectorMock).toHaveBeenCalledWith('.js-menu-2-first')
-    expect(querySelectorMock).toHaveBeenCalledWith('.js-zoom-label')
     expect(querySelectorMock).toHaveBeenCalledWith('.js-header')
 
-    expect(removeMock).toHaveBeenCalledWith('zoom-focus')
     expect(removeMock).toHaveBeenCalledWith('open')
     expect(focusMock).toHaveBeenCalled()
   });
@@ -96,10 +76,8 @@ describe('onKeyDownRegionHandler', () => {
     handler({ keyCode: 83 });
 
     expect(querySelectorMock).toHaveBeenCalledWith('.js-west')
-    expect(querySelectorMock).toHaveBeenCalledWith('.js-zoom-label')
     expect(querySelectorMock).toHaveBeenCalledWith('.js-header')
 
-    expect(removeMock).toHaveBeenCalledWith('zoom-focus')
     expect(removeMock).toHaveBeenCalledWith('open')
     expect(focusMock).toHaveBeenCalled()
   });
@@ -111,7 +89,6 @@ describe('onKeyDownRegionHandler', () => {
 
     const querySelectorMock = jest.fn().mockReturnValue({
       classList: {
-        add: addMock,
         remove: removeMock,
       },
       focus: focusMock,
@@ -123,10 +100,8 @@ describe('onKeyDownRegionHandler', () => {
     handler({ keyCode: 90 });
 
     expect(querySelectorMock).toHaveBeenCalledWith('.js-zoom-5')
-    expect(querySelectorMock).toHaveBeenCalledWith('.js-zoom-label')
     expect(querySelectorMock).toHaveBeenCalledWith('.js-header')
 
-    expect(addMock).toHaveBeenCalledWith('zoom-focus')
     expect(removeMock).toHaveBeenCalledWith('open')
     expect(focusMock).toHaveBeenCalled()
   });
@@ -148,10 +123,8 @@ describe('onKeyDownRegionHandler', () => {
     handler({ keyCode: 84 });
 
     expect(querySelectorMock).toHaveBeenCalledWith('.js-year-slider-main-button')
-    expect(querySelectorMock).toHaveBeenCalledWith('.js-zoom-label')
     expect(querySelectorMock).toHaveBeenCalledWith('.js-header')
 
-    expect(removeMock).toHaveBeenCalledWith('zoom-focus')
     expect(removeMock).toHaveBeenCalledWith('open')
     expect(focusMock).toHaveBeenCalled()
   });
@@ -161,9 +134,6 @@ describe('onKeyDownRegionHandler', () => {
     const removeMock = jest.fn()
 
     const querySelectorMock = jest.fn().mockReturnValue({
-      classList: {
-        remove: removeMock,
-      },
       focus: focusMock,
     })
 
@@ -173,9 +143,7 @@ describe('onKeyDownRegionHandler', () => {
     handler({ keyCode: 82 });
 
     expect(querySelectorMock).toHaveBeenCalledWith('.js-filter')
-    expect(querySelectorMock).toHaveBeenCalledWith('.js-zoom-label')
 
-    expect(removeMock).toHaveBeenCalledWith('zoom-focus')
     expect(focusMock).toHaveBeenCalled()
   });
 
@@ -195,7 +163,6 @@ describe('onKeyDownRegionHandler', () => {
     handler({ keyCode: 88 });
 
     expect(querySelectorMock).toHaveBeenCalledWith('.js-header')
-
     expect(removeMock).toHaveBeenCalledWith('open')
   });
 

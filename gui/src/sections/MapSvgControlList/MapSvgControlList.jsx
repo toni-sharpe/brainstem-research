@@ -1,3 +1,4 @@
+import i18next from 'util/i18next/i18next'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -95,7 +96,7 @@ function MapSvgControlList({
             className='map-svg-control-list__zoom'
           >
             <li className='js-zoom-label map-svg-control-list__zoom-label'>
-              <span>Zoom:</span>
+              <span>{i18next.t(`${i18nBase}.zoom`)}:</span>
             </li>
 
             <li className='map-svg-control-list__zoom-buttons row-layout space-children'>
