@@ -18,6 +18,8 @@ import { onKeyDownRegionHandler } from 'util/UtilKeyboard/UtilKeyboard'
 
 import './MapSvgControlList.scss'
 
+const i18nBase = 'MapSvgControlList'
+
 function MapSvgControlList({
   graphKey,
   graphOffset,
@@ -92,7 +94,7 @@ function MapSvgControlList({
           <ol
             className='map-svg-control-list__zoom'
           >
-            <li className='map-svg-control-list__zoom-label'>
+            <li className='js-zoom-label map-svg-control-list__zoom-label'>
               <span>Zoom:</span>
             </li>
 

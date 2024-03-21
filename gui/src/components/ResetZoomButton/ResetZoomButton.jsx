@@ -44,6 +44,7 @@ function ResetZoomButton({
 
 ResetZoomButton.defaultProps = {
   buttonSize: 'medium',
+  zDefault: WORLD_MAP_SVG_ZOOM_DEFAULT,
 }
 
 ResetZoomButton.propTypes = {

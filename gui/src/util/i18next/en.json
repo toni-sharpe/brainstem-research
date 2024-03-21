@@ -508,8 +508,8 @@
     "secondaryNav": "Switch the map data"
   },
 
-  "MapObjectDetailed": {
-    "close": "Close data for {{countryName}}"
+  "MapSvgControlList": {
+    "zoom": "Zoom"
   },
 
   "ErrorList": {

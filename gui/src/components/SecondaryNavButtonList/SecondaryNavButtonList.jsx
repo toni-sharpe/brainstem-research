@@ -10,10 +10,11 @@ function SecondaryNavButtonList({
   panelList,
   setCurrentPanel,
 }) {
-  return panelList.map(k => {
+  return panelList.map((k, i) => {
     return (
       <li key={k}>
         <Button
+          extraClass={i === 0 ? 'js-menu-2-first' : null}
           {
             ...secondaryNavProps({
               currentPanel,

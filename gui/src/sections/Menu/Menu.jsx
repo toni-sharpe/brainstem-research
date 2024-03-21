@@ -21,7 +21,11 @@ function Menu({
       <ul role='menu' className='menu'>
         {rootMenuSlugs.map((urlSlug, i) => {
           return (
-            <li role='none' key={urlSlug}>
+            <li
+              className={i === 0 ? 'js-menu-first' : null}
+              key={urlSlug}
+              role='none'
+            >
               <MenuItem
                 currentUrl={currentUrl}
                 label={i18next.t(`MainPageHeading.${urlSlug}`)}

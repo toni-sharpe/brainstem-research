@@ -9,6 +9,7 @@ import FilterButtonList from 'sections/FilterButtonList/FilterButtonList'
 import Menu from 'sections/Menu/Menu'
 import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
 import { getJsonLocalStorage, setJsonLocalStorage } from 'util/UtilLocalStorage/UtilLocalStorage'
+import { onKeyDownRegionHandler } from 'util/UtilKeyboard/UtilKeyboard'
 
 import './Header.scss'
 
@@ -25,7 +26,10 @@ function Header({
   const openClass = isOpen ? 'open' : ''
 
   return (
-    <div>
+    <div
+      onKeyDown={onKeyDownRegionHandler()}
+      tabIndex='0'
+    >
       { !isOpen && (
         <div className='ui-header-bar__main-button'>
           <MenuButton
@@ -50,10 +54,10 @@ function Header({
         </div>
       ) }
       <header
-        className={`ui-header-bar ${openClass}`}
+        className={`js-header ui-header-bar ${openClass}`}
         data-testid='ui-header'
       >
-        { isOpen && (
+        {
           <div className='ui-header-bar__close-x-button'>
             <MenuButton
               label='X'
@@ -64,7 +68,7 @@ function Header({
               title={i18next.t(`${i18nBase}.close`)}
             />
           </div>
-        ) }
+        }
         <div className='ui-header-bar__nav-and-filter'>
           <Menu currentUrl={currentUrl} />
           <FilterButtonList

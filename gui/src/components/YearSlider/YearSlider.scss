@@ -2,7 +2,9 @@
 
 .year-slider {
   background-color: $green--grey;
-  height: 34px;
+  box-sizing: border-box;
+  height: 46px;
+  padding: $padding--small 0;
   position: relative;
   width: 100%;
 

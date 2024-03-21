@@ -38,10 +38,13 @@ function FilterButtonList({
       className='filter-button-list'
       data-testid='filter-button-list'
     >
-      { keys(orderedFilters).map(k => {
+      { keys(orderedFilters).map((k, i) => {
         return (
           <li key={k}>
-            <Button {...filterButtonProps({ k })} />
+            <Button
+              extraClass={i === 0 ? 'js-filter' : null}
+              {...filterButtonProps({ k })}
+            />
           </li>
         )}
       ) }

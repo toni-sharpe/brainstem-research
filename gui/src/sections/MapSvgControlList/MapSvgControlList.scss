@@ -10,9 +10,7 @@
     @include row-layout();
     & > * {
       @include space-row();
-      border-bottom: 0;
-      padding-bottom: 0;
-      margin-bottom: 0;
+      @include self-space-column-remove-border();
     }
   }
   background-color: rgba($white, 0.6);
@@ -32,14 +30,15 @@
 
   &__zoom {
     @include column-layout();
-    align-items: center;
     & > * {
       @include space-column();
     }
     @media (min-width: $media-switch--medium) {
       @include row-layout();
+      align-items: center;
       & > * {
         @include space-row();
+        @include self-space-column-remove-border();
       }
       height: 4vh;
     }
@@ -47,6 +46,9 @@
 
   &__zoom-label {
     align-self: center;
+    &.zoom-focus {
+      font-weight: $font-weight--bold;
+    }
   }
 
   &__zoom-buttons {

@@ -5,6 +5,10 @@
   padding: $padding--medium-large $padding--large;
   white-space: nowrap;
 
+  &:focus {
+    outline-style: auto;
+  }
+
   &--current {
     background-color: $blue--dark;
     color: $white;
