@@ -258,6 +258,7 @@ export const WORLD_MAP_SVG_SCALE = `0 0 ${WORLD_MAP_SVG_SCALE_WIDTH} ${WORLD_MAP
 export const WORLD_MAP_ZOOM_LIST = [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 25, 30, 40]
 export const WORLD_MAP_SVG_ZOOM_DEFAULT = 1
 export const CIRCLE_COUNTRY_RADIUS = 1.3
+export const WORLD_MAP_FOCUS_ZONE = false
 
 
 

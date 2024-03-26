@@ -22,4 +22,22 @@
     border-right: 1px solid $black;
     right: -1px;
   }
+
+  &__top-line,
+  &__bottom-line {
+    background-color: $blue-green--medium;
+    height: 1px;
+    left: 4px;
+    position: absolute;
+    width: 94vw;
+    z-index: $step-forward;
+  }
+
+  &__top-line {
+    top: 0;
+  }
+
+  &__bottom-line {
+    bottom: 0;
+  }
 }

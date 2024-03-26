@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import { WORLD_MAP_FOCUS_ZONE } from 'util/Constant/BaseConstantList'
 import {
   calcVerticalZoomMarkTop,
   calcVerticalZoomMarkHeight,
@@ -8,7 +9,12 @@ import {
 
 import './MapZoomMarkVertical.scss'
 
-function MapZoomMarkVertical({ orientation, y, zoom }) {
+function MapZoomMarkVertical({
+  orientation,
+  showFocusZone,
+  y,
+  zoom,
+}) {
   const height = calcVerticalZoomMarkHeight({ zoom })
   const top = calcVerticalZoomMarkTop({ y, zoom })
 
@@ -16,13 +22,30 @@ function MapZoomMarkVertical({ orientation, y, zoom }) {
     <div
       className={`map-zoom-mark-vertical__${orientation}`}
       style={{ height: `${height}vh`, top: `${top}vh` }}
-    />
+    >
+      { showFocusZone && orientation === 'left' && (
+        <div>
+          <div
+            className='map-zoom-mark-vertical__top-line'
+          />
+          <div
+            className='map-zoom-mark-vertical__bottom-line'
+          />
+        </div>
+      ) }
+    </div>
   )
+}
+
+MapZoomMarkVertical.defaultProps = {
+  showFocusZone: WORLD_MAP_FOCUS_ZONE,
+  zoom: 1,
 }
 
 MapZoomMarkVertical.propTypes = {
   orientation: PropTypes.oneOf(['left', 'right']),
-  x: PropTypes.number,
+  showFocusZone: PropTypes.bool,
+  y: PropTypes.number,
   zoom: PropTypes.number,
 }
 

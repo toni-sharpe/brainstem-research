@@ -20,4 +20,22 @@
     border-top: 1px solid $black;
     top: -1px;
   }
+
+  &__left-line,
+  &__right-line {
+    background-color: $blue-green--medium;
+    height: 77.3vh;
+    top: 4px;
+    position: absolute;
+    width: 0.1%;
+    z-index: $step-forward;
+  }
+
+  &__left-line {
+    left: 0;
+  }
+
+  &__right-line {
+    right: 0;
+  }
 }
