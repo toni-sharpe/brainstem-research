@@ -17,7 +17,7 @@ import {
   calcZoomC,
   onMapCountryClickHandler,
 } from 'util/UtilMapCountry/UtilMapCountry'
-import { handleOnKeyDown } from 'util/UtilMapControlList/UtilMapControlList'
+import { handleOnKeyDownScroll } from 'util/UtilMapControlList/UtilMapControlList'
 import { onKeyDownRegionHandler } from 'util/UtilKeyboard/UtilKeyboard'
 
 import MapCountry from 'components/MapCountry/MapCountry'
@@ -113,7 +113,7 @@ function MapSvg({
   return (
     <figure
       className='map-svg'
-      onKeyDown={({ keyCode }) => handleOnKeyDown({
+      onKeyDown={({ keyCode }) => handleOnKeyDownScroll({
         graphKey,
         graphOffset,
         keyCode,

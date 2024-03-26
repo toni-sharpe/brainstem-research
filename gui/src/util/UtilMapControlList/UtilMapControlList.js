@@ -20,11 +20,32 @@ const VERT_MOVE = WORLD_MAP_SVG_SCALE_HEIGHT / STEP
 export function calcNewGraphOffset({ x, y, zoomTo, zoomFrom }) {
   const factor = zoomTo / zoomFrom
   const offsetFactor = factor - 1
-  return [
-    // The offset to a point is base on the center of the map
-    x * factor - WORLD_MAP_SVG_CENTER_X * offsetFactor,
-    y * factor - WORLD_MAP_SVG_CENTER_Y * offsetFactor,
-  ]
+  const newX = numberPrecision({ n: x * factor - WORLD_MAP_SVG_CENTER_X * offsetFactor })
+  const newY = numberPrecision({ n: y * factor - WORLD_MAP_SVG_CENTER_Y * offsetFactor })
+
+  if (zoomTo > zoomFrom) {
+    return [ newX, newY ]
+  }
+
+  // const isInEast = WORLD_MAP_SVG_CENTER_X * zoomFrom < Math.abs(newX)
+  // const isInSouth = WORLD_MAP_SVG_CENTER_Y * zoomFrom < Math.abs(newY)
+
+  const minWestForX = 0
+  const minNorthForY = 0
+  // const maxEastForX = (WORLD_MAP_SVG_SCALE_WIDTH * zoomTo - WORLD_MAP_SVG_CENTER_X / zoomTo)
+  // const maxSouthForY = (WORLD_MAP_SVG_SCALE_HEIGHT * zoomTo - WORLD_MAP_SVG_CENTER_Y / zoomTo)
+
+  // const newGraphOffset = zoomTo < zoomFrom
+  //   ? [
+  //     isInEast
+  //       ? Math.max(newX, maxEastForX)
+  //       : Math.min(minWestForX, newX),
+  //     isInSouth
+  //       ? Math.max(newY, maxSouthForY)
+  //       : Math.min(minNorthForY, newY),
+  //   ] : [ newX, newY ]
+
+  return [ Math.min(minWestForX, newX), Math.min(minNorthForY, newY) ]
 }
 
 export function calcMove({ m, zoom }) {
@@ -85,7 +106,7 @@ export function onSouthEventHandler({ graphKey, graphOffset: [x, y], persisted, 
   document.querySelector('.js-south').classList.add("is-hovered")
 }
 
-export function handleOnKeyDown(eventHandlerProps) {
+export function handleOnKeyDownScroll(eventHandlerProps) {
   const { keyCode } = eventHandlerProps
 
   if (keyCode === RIGHT_EAST_KEY) {
