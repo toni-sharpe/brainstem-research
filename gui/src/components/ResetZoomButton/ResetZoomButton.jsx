@@ -31,10 +31,12 @@ function ResetZoomButton({
           k: graphKey,
           v: {
             ...persisted,
-            graphOffset: [0, 0],
+            graphOffset: [ox, oy],
             zoom: zDefault
           }
         })
+        setZoom(zDefault)
+        setGraphOffset([ox, oy])
         extraStateFn && extraStateFn()
       }}
       size={buttonSize}
