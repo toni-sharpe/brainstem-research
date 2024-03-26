@@ -20,10 +20,14 @@ const VERT_MOVE = WORLD_MAP_SVG_SCALE_HEIGHT / STEP
 export function calcNewGraphOffset({ x, y, zoomTo, zoomFrom }) {
   const factor = zoomTo / zoomFrom
   const offsetFactor = factor - 1
+
+  const newX = x * factor - WORLD_MAP_SVG_CENTER_X * offsetFactor
+  const newY = y * factor - WORLD_MAP_SVG_CENTER_Y * offsetFactor
+
   return [
     // The offset to a point is base on the center of the map
-    x * factor - WORLD_MAP_SVG_CENTER_X * offsetFactor,
-    y * factor - WORLD_MAP_SVG_CENTER_Y * offsetFactor,
+    Math.min(0, newX),
+    Math.min(0, newY),
   ]
 }
 
