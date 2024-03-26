@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Button from 'components/Button/Button'
+import KeyHint from 'components/KeyHint/KeyHint'
 import CurrentFilterListPropType from 'prop-types/CurrentFilterList.prop-type'
 import CurrentUrlPropType from 'prop-types/CurrentUrl.prop-type'
 import { ORDERED_FILTERS } from 'util/Constant/BaseConstantList'
@@ -38,6 +39,12 @@ function FilterButtonList({
       className='filter-button-list'
       data-testid='filter-button-list'
     >
+      <li>
+        <KeyHint
+          letter='r'
+          positionStyle={{ top: '-8px', left: '-8px' }}
+        />
+      </li>
       { keys(orderedFilters).map((k, i) => {
         return (
           <li key={k}>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Button from 'components/Button/Button'
+import KeyHint from 'components/KeyHint/KeyHint'
 import GraphOffsetPropType from 'prop-types/GraphOffset.prop-type'
 import { WORLD_MAP_ZOOM_LIST } from 'util/Constant/BaseConstantList'
 import ResetZoomButton from 'components/ResetZoomButton/ResetZoomButton'
@@ -57,6 +58,9 @@ function MapSvgControlList({
       >
         <li>
           <ol className='row-layout space-children'>
+            <li className='map-svg-control-list__scroll-key-hint'>
+              <KeyHint letter='s' positionStyle={{ top: '3px', left: '-16px' }} />
+            </li>
             <li>
               <Button
                 {...movementButtonCommonProps}
@@ -95,10 +99,12 @@ function MapSvgControlList({
           <ol
             className='map-svg-control-list__zoom'
           >
+            <li>
+              <KeyHint letter='z' positionStyle={{ top: '8px', left: '-4px' }} />
+            </li>
             <li className='js-zoom-label map-svg-control-list__zoom-label'>
               <span>{i18next.t(`${i18nBase}.zoom`)}:</span>
             </li>
-
             <li className='map-svg-control-list__zoom-buttons row-layout space-children'>
               { WORLD_MAP_ZOOM_LIST.map(z => {
                 return (

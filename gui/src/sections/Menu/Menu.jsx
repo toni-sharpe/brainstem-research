@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import CurrentUrlPropType from 'prop-types/CurrentUrl.prop-type'
+import KeyHint from 'components/KeyHint/KeyHint'
 import MenuItem from 'components/MenuItem/MenuItem'
 import { ROOT_MENU_SLUGS } from 'util/Constant/BaseConstantList'
 
@@ -19,6 +20,12 @@ function Menu({
       aria-label={i18next.t(`${i18nBase}.ariaLabel`)}
     >
       <ul role='menu' className='menu'>
+        <li role='none'>
+          <KeyHint
+            letter='m'
+            positionStyle={{ top: '-2px', left: '-2px' }}
+          />
+        </li>
         {rootMenuSlugs.map((urlSlug, i) => {
           return (
             <li

@@ -1,0 +1,19 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
+.key-hint {
+  background-color: rgba($red--lightest, 0.7);
+  border-radius: 3px;
+  box-shadow: 0 0 0 2px inset rgba($red--medium, 0.8);
+  color: $red--dark;
+  font-size: $font-size--large;
+  font-weight: $font-weight--bold;
+  left: 0;
+  padding: $padding--small-tiny $padding--small;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1em;
+  z-index: $step-forward;
+}

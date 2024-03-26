@@ -7,6 +7,14 @@ export function onKeyDownRegionHandler({
 } = {}) {
   return function ({ keyCode }) {
     switch(keyCode) {
+      case 75: // k - toggle labels
+        document.querySelector('.js-key-hint-m').classList.toggle('hide')
+        document.querySelector('.js-key-hint-n').classList.toggle('hide')
+        document.querySelector('.js-key-hint-s').classList.toggle('hide')
+        document.querySelector('.js-key-hint-z').classList.toggle('hide')
+        document.querySelector('.js-key-hint-t').classList.toggle('hide')
+        document.querySelector('.js-key-hint-r').classList.toggle('hide')
+        break;
       case 77: // m - menu
         document.querySelector('.js-header')?.classList.toggle('open')
         document.querySelector('.js-menu-first a')?.focus()
