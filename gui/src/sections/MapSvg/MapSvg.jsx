@@ -10,7 +10,10 @@ import {
 import React, { useState } from 'react'
 
 import SvgScalePropType from 'prop-types/SvgScale.prop-type'
-import { WORLD_MAP_SVG_SCALE } from 'util/Constant/BaseConstantList'
+import {
+  WORLD_MAP_FOCUS_ZONE,
+  WORLD_MAP_SVG_SCALE,
+} from 'util/Constant/BaseConstantList'
 import {
   buildMapCountryElement,
   calcMapPolygonCoordGroup,
@@ -36,6 +39,7 @@ function MapSvg({
   graphKey,
   mapDetailData,
   selectedCountryMapFn,
+  showFocusZone,
   showLabelList,
   svgScale,
 }) {
@@ -127,9 +131,9 @@ function MapSvg({
         onKeyDown={onKeyDownRegionHandler()}
         tabIndex='0'
       >
-        <MapZoomMarkHorizontal orientation='top' x={graphOffset[0]} zoom={zoom} />
+        <MapZoomMarkHorizontal orientation='top' showFocusZone={showFocusZone} x={graphOffset[0]} zoom={zoom} />
         <div className='row-layout'>
-          <MapZoomMarkVertical orientation='left' y={graphOffset[1]} zoom={zoom} />
+          <MapZoomMarkVertical orientation='left' showFocusZone={showFocusZone} y={graphOffset[1]} zoom={zoom} />
           <SvgWrapper
             ariaLabel='world map'
             extraClass='map-svg__svg'
@@ -181,9 +185,9 @@ function MapSvg({
               })}
             </g>
           </SvgWrapper>
-          <MapZoomMarkVertical orientation='right' y={graphOffset[1]} zoom={zoom} />
+          <MapZoomMarkVertical orientation='right' showFocusZone={showFocusZone} y={graphOffset[1]} zoom={zoom} />
         </div>
-        <MapZoomMarkHorizontal orientation='bottom' x={graphOffset[0]} zoom={zoom} />
+        <MapZoomMarkHorizontal orientation='bottom' showFocusZone={showFocusZone} x={graphOffset[0]} zoom={zoom} />
       </div>
       <MapSvgControlList
         graphKey={graphKey}
@@ -201,12 +205,14 @@ MapSvg.defaultProps = {
   currentYear: 0,
   graphKey: 'blankMap',
   showLabelList: true,
+  showFocusZone: WORLD_MAP_FOCUS_ZONE,
   svgScale: WORLD_MAP_SVG_SCALE,
 }
 
 MapSvg.propTypes = {
   currentYear: PropTypes.number,
   graphKey: PropTypes.string,
+  showFocusZone: PropTypes.bool,
   showLabelList: PropTypes.bool,
   svgScale: SvgScalePropType,
 }
