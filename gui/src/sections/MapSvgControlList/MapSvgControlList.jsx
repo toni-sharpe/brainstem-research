@@ -109,17 +109,17 @@ function MapSvgControlList({
                     key={`${z}-zoom`}
                     newValue={z}
                     stateFn={(newVal) => {
-                    const newGraphOffset = z === 1
-                      ? [0, 0]
-                      : calcNewGraphOffset({
-                          x,
-                          y,
-                          zoomTo: z,
-                          zoomFrom: zoom
-                        })
-                      setGraphOffset(newGraphOffset)
-                      setZoom(newVal)
-                      setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: newGraphOffset, zoom: newVal } })
+                      const newGraphOffset = z === 1
+                        ? [0, 0]
+                        : calcNewGraphOffset({
+                            x,
+                            y,
+                            zoomTo: z,
+                            zoomFrom: zoom
+                          })
+                        setGraphOffset(newGraphOffset)
+                        setZoom(newVal)
+                        setJsonLocalStorage({ k: graphKey, v: { ...persisted, graphOffset: newGraphOffset, zoom: newVal } })
                     }}
                     zoom={zoom}
                   />
@@ -127,7 +127,7 @@ function MapSvgControlList({
               }) }
               <ResetZoomButton
                 graphKey={graphKey}
-                graphOffset={graphOffset}
+                graphOffset={[0, 0]}
                 setGraphOffset={setGraphOffset}
                 setZoom={setZoom}
                 zoom={zoom}
