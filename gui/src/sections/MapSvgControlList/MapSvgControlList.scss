@@ -28,8 +28,13 @@
     height: 4vh;
   }
 
+  &__scroll-key-hint {
+    position: relative;
+  }
+
   &__zoom {
     @include column-layout();
+    position: relative;
     & > * {
       @include space-column();
     }
@@ -46,6 +51,8 @@
 
   &__zoom-label {
     align-self: center;
+    text-align: right;
+    min-width: 60px;
     &.zoom-focus {
       font-weight: $font-weight--bold;
     }

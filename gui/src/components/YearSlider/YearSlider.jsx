@@ -9,6 +9,7 @@ import {
   onButtonEventHandler,
 } from 'util/UtilYearSlider/UtilYearSlider'
 import Button from 'components/Button/Button'
+import KeyHint from 'components/KeyHint/KeyHint'
 import { onKeyDownRegionHandler } from 'util/UtilKeyboard/UtilKeyboard'
 
 import './YearSlider.scss'
@@ -42,6 +43,10 @@ function YearSlider({
       onKeyDown={onKeyDownRegionHandler()}
       tabIndex='-1'
     >
+      <KeyHint
+        letter='t'
+        positionStyle={{ top: '4px', left: '-8px' }}
+      />
       <div
         aria-label='year slider allows data across the years to be viewed'
         className='year-slider__rail row-layout'

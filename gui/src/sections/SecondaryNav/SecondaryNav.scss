@@ -2,6 +2,7 @@
 
 .secondary-nav {
   flex-wrap: wrap;
+  position: relative;
 
   & > * {
     @media (max-width: $media-switch--large) {
