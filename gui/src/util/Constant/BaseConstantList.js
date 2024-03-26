@@ -1,3 +1,4 @@
+
 import { keys } from 'ramda'
 
 /***********************************/
@@ -236,7 +237,7 @@ export const NON_ISLAND_TINY_TERRIROTORIES = [
   'Palestine',
 ]
 export const TINY_TERRIROTORY_MAX = 1
-export const WORLD_MAP_ON_SCREEN_HEIGHT = 78.4 // vh
+export const WORLD_MAP_ON_SCREEN_HEIGHT = 77 // vh
 export const WORLD_MAP_ON_SCREEN_WIDTH = 99 // vw
 const LONGITUDE_SOUTH_FROM_EQUATOR = 90
 const LONGITUDE_NORTH_FROM_EQUATOR = 90
