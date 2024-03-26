@@ -1,77 +1,79 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
 .style-guide {
-  .blue--dark { background-color: var(--blue--dark); }
-  .blue { background-color: var(--blue); }
-  .blue--light { background-color: var(--blue--light); }
-  .blue--lightest { background-color: var(--blue--lightest); }
-  .red--black { background-color: var(--red--black); }
-  .red--dark { background-color: var(--red--dark); }
-  .red--medium { background-color: var(--red--medium); }
-  .red--dulled-light { background-color: var(--red--dulled-light); }
-  .red--light { background-color: var(--red--light); }
-  .red--very-light { background-color: var(--red--very-light); }
-  .red--lightest { background-color: var(--red--lightest); }
-  .green--dark { background-color: var(--green--dark); }
-  .green { background-color: var(--green); }
-  .green--lightest { background-color: var(--green--lightest); }
-  .menu--green { background-color: var(--menu--green); }
-  .menu--green-hover { background-color: var(--menu--green-hover); }
-  .prime-symptom--not-severe { background-color: var(--prime-symptom--not-severe); }
-  .prime-symptom--severe { background-color: var(--prime-symptom--severe); }
-  .orange--light { background-color: var(--orange--light); }
-  .orange { background-color: var(--orange); }
-  .orange--dark { background-color: var(--orange--dark); }
-  .black { background-color: var(--black); }
-  .grey--black { background-color: var(--grey--black); }
-  .grey--dark { background-color: var(--grey--dark); }
-  .grey--dull-dark { background-color: var(--grey--dull-dark); }
-  .grey--medium { background-color: var(--grey--medium); }
-  .grey--light { background-color: var(--grey--light); }
-  .grey--very-light { background-color: var(--grey--very-light); }
-  .grey--lightest { background-color: var(--grey--lightest); }
-  .grey--white { background-color: var(--grey--white); }
+  .blue--dark { background-color: $blue--dark }
+  .blue { background-color: $blue }
+  .blue--light { background-color: $blue--light }
+  .blue--lightest { background-color: $blue--lightest }
+  .red--black { background-color: $red--black }
+  .red--dark { background-color: $red--dark }
+  .red--medium { background-color: $red--medium }
+  .red--dulled-light { background-color: $red--dulled-light }
+  .red--light { background-color: $red--light }
+  .red--very-light { background-color: $red--very-light }
+  .red--lightest { background-color: $red--lightest }
+  .green--dark { background-color: $green--dark }
+  .green { background-color: $green }
+  .green--lightest { background-color: $green--lightest }
+  .menu--green { background-color: $menu--green }
+  .menu--green-hover { background-color: $menu--green-hover }
+  .prime-symptom--not-severe { background-color: $prime-symptom--not-severe }
+  .prime-symptom--severe { background-color: $prime-symptom--severe }
+  .orange--light { background-color: $orange--light }
+  .orange { background-color: $orange }
+  .orange--dark { background-color: $orange--dark }
+  .black { background-color: $black }
+  .grey--black { background-color: $grey--black }
+  .grey--dark { background-color: $grey--dark }
+  .grey--dull-dark { background-color: $grey--dull-dark }
+  .grey--medium { background-color: $grey--medium }
+  .grey--light { background-color: $grey--light }
+  .grey--very-light { background-color: $grey--very-light }
+  .grey--lightest { background-color: $grey--lightest }
+  .grey--white { background-color: $grey--white }
 
-  .font--small-light { font-size: var(--font-size--small); font-weight: var(--font-weight--light) }
-  .font--medium-small-light { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--light) }
-  .font--medium-light { font-size: var(--font-size--medium); font-weight: var(--font-weight--light) }
-  .font--medium-large-light { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--light) }
-  .font--large-light { font-size: var(--font-size--large); font-weight: var(--font-weight--light) }
+  .font--small-light { font-size: $font-size--small; font-weight: $font-weight--light }
+  .font--medium-small-light { font-size: $font-size--medium-small; font-weight: $font-weight--light }
+  .font--medium-light { font-size: $font-size--medium; font-weight: $font-weight--light }
+  .font--medium-large-light { font-size: $font-size--medium-large; font-weight: $font-weight--light }
+  .font--large-light { font-size: $font-size--large; font-weight: $font-weight--light }
 
-  .font--small-regular { font-size: var(--font-size--small); font-weight: var(--font-weight--regular) }
-  .font--medium-small-regular { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--regular) }
-  .font--medium-regular { font-size: var(--font-size--medium); font-weight: var(--font-weight--regular) }
-  .font--medium-large-regular { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--regular) }
-  .font--large-regular { font-size: var(--font-size--large); font-weight: var(--font-weight--regular) }
+  .font--small-regular { font-size: $font-size--small; font-weight: $font-weight--regular }
+  .font--medium-small-regular { font-size: $font-size--medium-small; font-weight: $font-weight--regular }
+  .font--medium-regular { font-size: $font-size--medium; font-weight: $font-weight--regular }
+  .font--medium-large-regular { font-size: $font-size--medium-large; font-weight: $font-weight--regular }
+  .font--large-regular { font-size: $font-size--large; font-weight: $font-weight--regular }
 
-  .font--small-bold { font-size: var(--font-size--small); font-weight: var(--font-weight--bold) }
-  .font--medium-small-bold { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--bold) }
-  .font--medium-bold { font-size: var(--font-size--medium); font-weight: var(--font-weight--bold) }
-  .font--medium-large-bold { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--bold) }
-  .font--large-bold { font-size: var(--font-size--large); font-weight: var(--font-weight--bold) }
+  .font--small-bold { font-size: $font-size--small; font-weight: $font-weight--bold }
+  .font--medium-small-bold { font-size: $font-size--medium-small; font-weight: $font-weight--bold }
+  .font--medium-bold { font-size: $font-size--medium; font-weight: $font-weight--bold }
+  .font--medium-large-bold { font-size: $font-size--medium-large; font-weight: $font-weight--bold }
+  .font--large-bold { font-size: $font-size--large; font-weight: $font-weight--bold }
 
-  .font--small-black { font-size: var(--font-size--small); font-weight: var(--font-weight--black) }
-  .font--medium-small-black { font-size: var(--font-size--medium-small); font-weight: var(--font-weight--black) }
-  .font--medium-black { font-size: var(--font-size--medium); font-weight: var(--font-weight--black) }
-  .font--medium-large-black { font-size: var(--font-size--medium-large); font-weight: var(--font-weight--black) }
-  .font--large-black { font-size: var(--font-size--large); font-weight: var(--font-weight--black) }
+  .font--small-black { font-size: $font-size--small; font-weight: $font-weight--black }
+  .font--medium-small-black { font-size: $font-size--medium-small; font-weight: $font-weight--black }
+  .font--medium-black { font-size: $font-size--medium; font-weight: $font-weight--black }
+  .font--medium-large-black { font-size: $font-size--medium-large; font-weight: $font-weight--black }
+  .font--large-black { font-size: $font-size--large; font-weight: $font-weight--black }
 
-  .spacing--narrowest { margin: var(--spacing--narrowest) }
-  .spacing--narrow { margin: var(--spacing--narrow) }
-  .spacing--wide { margin: var(--spacing--wide) }
+  .spacing--narrowest { margin: $spacing--narrowest }
+  .spacing--narrow { margin: $spacing--narrow }
+  .spacing--wide { margin: $spacing--wide }
 
-  .padding--tiniest { padding: var(--padding--tiniest) }
-  .padding--small-tiny { padding: var(--padding--small-tiny) }
-  .padding--small { padding: var(--padding--small) }
-  .padding--medium { padding: var(--padding--medium) }
-  .padding--medium-large { padding: var(--padding--medium-large) }
-  .padding--large { padding: var(--padding--large) }
-  .padding--very-large { padding: var(--padding--very-large) }
+  .padding--tiniest { padding: $padding--tiniest }
+  .padding--small-tiny { padding: $padding--small-tiny }
+  .padding--small { padding: $padding--small }
+  .padding--medium { padding: $padding--medium }
+  .padding--medium-large { padding: $padding--medium-large }
+  .padding--large { padding: $padding--large }
+  .padding--very-large { padding: $padding--very-large }
 
-  .background-guaranteed { z-index: var(--background-guaranteed)}
-  .step-right-back { z-index: var(--step-right-back)}
-  .step-back { z-index: var(--step-back)}
-  .neutral { z-index: var(--neutral)}
-  .step-forward { z-index: var(--step-right-forward)}
-  .step-right-forward { z-index: var(--step-right-forward)}
-  .front-guaranteed { z-index: var(--front-guaranteed)}
-  .menu-guaranteed { z-index: var(--menu-guaranteed)}
+  .background-guaranteed { z-index: $background-guaranteed }
+  .step-right-back { z-index: $step-right-back }
+  .step-back { z-index: $step-back }
+  .neutral { z-index: $neutral }
+  .step-forward { z-index: $step-right-forward }
+  .step-right-forward { z-index: $step-right-forward }
+  .front-guaranteed { z-index: $front-guaranteed }
+  .menu-guaranteed { z-index: $menu-guaranteed }
 }
