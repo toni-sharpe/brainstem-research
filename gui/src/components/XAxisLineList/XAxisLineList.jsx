@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import NumberOrStringPropType from 'prop-types/NumberOrString.prop-type'
 import XAxisLineNumber from 'components/XAxisLineNumber/XAxisLineNumber'
-import { calcMaxBasedDisplay } from 'util/Util/UtilScaleGranularity'
+import { calcMaxBasedDisplay } from 'util/UtilScale/UtilScaleGranularity'
 import {
   calcLineHighlight,
   hasLine,

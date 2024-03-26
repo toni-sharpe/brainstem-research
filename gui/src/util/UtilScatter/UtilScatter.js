@@ -5,7 +5,7 @@ import {
   SCATTER_SCALE_LABEL_OFFSET,
   SCATTER_SVG_SCALE,
 } from 'util/Constant/BaseConstantList'
-import { calcMaxBasedDisplay } from 'util/Util/UtilScaleGranularity'
+import { calcMaxBasedDisplay } from 'util/UtilScale/UtilScaleGranularity'
 import { calcMostMaxOfAllTheThings } from 'util/Util/UtilMaxThing'
 import { numberPrecision } from 'util/Util/Util'
 
