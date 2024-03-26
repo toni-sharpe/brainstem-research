@@ -3,7 +3,7 @@ import {
   DRAG_GRAPH_MINIMUM_SELECTED_RADIUS,
 } from 'util/Constant/BaseConstantList'
 import { numberPrecision } from 'util/Util/Util'
-import { calcMaxBasedDisplay } from 'util/Util/UtilScaleGranularity'
+import { calcMaxBasedDisplay } from 'util/UtilScale/UtilScaleGranularity'
 
 export function calcRadiusUnit({ max }) {
   return numberPrecision({ n: ((DRAG_GRAPH_SVG_SCALE_RADIUS * 0.79) / max) })

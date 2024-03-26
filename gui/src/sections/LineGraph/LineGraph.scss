@@ -1,0 +1,15 @@
+@import '../../util/Constant/sass-variable-list.scss';
+
+.line-graph {
+  padding: $padding--small;
+  width: 100%;
+
+  &__heading {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__svg {
+    width: 100%;
+  }
+}
