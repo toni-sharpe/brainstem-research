@@ -2,28 +2,15 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import {
-  WORLD_MAP_ON_SCREEN_HEIGHT,
-  WORLD_MAP_SVG_SCALE_HEIGHT,
-} from 'util/Constant/BaseConstantList'
-import { numberPrecision } from 'util/Util/Util'
+  calcVerticalZoomMarkTop,
+  calcVerticalZoomMarkHeight,
+} from 'util/UtilWorldMapZoomMark/UtilWorldMapZoomMark'
 
 import './MapZoomMarkVertical.scss'
 
 function MapZoomMarkVertical({ orientation, y, zoom }) {
-  const height = (WORLD_MAP_ON_SCREEN_HEIGHT / zoom).toFixed(1)
-  const top = numberPrecision({
-    n: (
-      (Math.abs(y))
-      /
-      (
-        WORLD_MAP_SVG_SCALE_HEIGHT
-        *
-        zoom
-      )
-      *
-      WORLD_MAP_ON_SCREEN_HEIGHT
-    )
-  })
+  const height = calcVerticalZoomMarkHeight({ zoom })
+  const top = calcVerticalZoomMarkTop({ y, zoom })
 
   return zoom !== 1 && (
     <div
