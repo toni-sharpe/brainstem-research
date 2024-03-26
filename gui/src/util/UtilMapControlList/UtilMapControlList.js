@@ -21,7 +21,7 @@ export function calcNewGraphOffset({ x, y, zoomTo, zoomFrom }) {
   const factor = zoomTo / zoomFrom
   const offsetFactor = factor - 1
   const newX = numberPrecision({ n: x * factor - WORLD_MAP_SVG_CENTER_X * offsetFactor })
-  const newY = numberPrecision({ n: y * factor - WORLD_MAP_SVG_CENTER_X * offsetFactor })
+  const newY = numberPrecision({ n: y * factor - WORLD_MAP_SVG_CENTER_Y * offsetFactor })
 
   if (zoomTo > zoomFrom) {
     return [ newX, newY ]
