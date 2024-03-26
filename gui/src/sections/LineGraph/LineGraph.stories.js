@@ -10,7 +10,7 @@ export default {
     (Story) => (
       <StoryBookPaddedWrapper
         wrapperElem='div'
-        wrapperElemProps={ { style: { width: '800px' } } }
+        wrapperElemProps={ { style: { width: '1360px' } } }
       >
         <Story />
       </StoryBookPaddedWrapper>

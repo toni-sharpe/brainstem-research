@@ -43,6 +43,7 @@ function LineGraph({
   const lessPrecise = 3
   const xUnit = numberPrecision({ n: fullHeight / longest, lessPrecise })
   const yUnit = numberPrecision({ n: fullHeight / fullHeight, lessPrecise })
+  const labelUnit = numberPrecision({ n: fullHeight / lineCount, lessPrecise })
   const yHighlight = numberPrecision({ n: fullHeight / (fullHeight / scale.highlight), lessPrecise })
   const yLine = numberPrecision({ n: fullHeight / (fullHeight / scale.show ), lessPrecise })
 
@@ -54,51 +55,95 @@ function LineGraph({
       <SvgWrapper
         ariaLabel={ariaLabel}
         extraClass='line-graph__svg'
-        offset={20}
         region
-        svgScale={`${fullHeight} ${fullHeight}`}
+        svgScale={`0 5 ${fullHeight + 400} ${fullHeight}`}
       >
-        { lineList.map(l => {
-          return (
-            <line
-              x1={0}
-              y1={fullHeight - l}
-              x2={fullHeight - 42}
-              y2={fullHeight - l}
-              stroke={highLightLineList.includes(l) ? '#333' : '#eee'}
-              strokeWidth={1}
-              key={l}
-            />
-          )
-        }) }
-        { range(0, longest + 1).map((_, i) => {
-          return (
-            <line
-              x1={i * xUnit}
-              y1={0}
-              x2={i * xUnit}
-              y2={fullHeight}
-              stroke='#ccc'
-              strokeWidth={1}
-              key={i}
-            />
-          )
-        }) }
-        { data.map(([lineLabel, valueList], i) => {
-          const lineHue = calcHue({ i, total: lineCount })
-          return valueList.map((vl, j) => {
-            return valueList[j+1] && (
+        <g transform='translate(200 0)'>
+          { lineList.map(l => {
+            const highlight = highLightLineList.includes(l)
+            return (
+              <g>
+                <line
+                  x1={0}
+                  y1={fullHeight - l}
+                  x2={fullHeight - 42}
+                  y2={fullHeight - l}
+                  stroke={highlight ? '#333' : '#eee'}
+                  strokeWidth={1}
+                  key={l}
+                />
+                <text
+                  className={`line-graph__label ${highlight ? 'line-graph__label--highlight' : ''}`}
+                  x={fullHeight - 35}
+                  y={fullHeight - l}
+                  textAnchor='start'
+                  dominantBaseline='middle'
+                >
+                  {l}
+                </text>
+              </g>
+            )
+          }) }
+          { range(0, longest).map((_, i) => {
+            return (
               <line
-                x1={j * xUnit}
-                y1={fullHeight - (valueList[j].v * yUnit)}
-                x2={(j+1) * xUnit}
-                y2={fullHeight - (valueList[j+1].v * yUnit)}
-                stroke={lineHue}
-                strokeWidth={2}
+                x1={i * xUnit}
+                y1={0}
+                x2={i * xUnit}
+                y2={fullHeight}
+                stroke='#ccc'
+                strokeWidth={1}
+                key={i}
               />
             )
-          })
-        })}
+          }) }
+          { data.sort((a, b) => a[1][0].v >= b[1][0].v ? 1 : -1).map(([lineLabel, valueList], i) => {
+            const lineHue = calcHue({ i, total: lineCount })
+            const firstPoint = fullHeight - (i * labelUnit) - 30
+
+            return (
+              <g>
+                <text
+                  className='line-graph__label'
+                  x={-105}
+                  y={firstPoint - 5}
+                  textAnchor='end'
+                  dominantBaseline='top'
+                >
+                  {lineLabel}
+                </text>
+                <line
+                  x1={-98}
+                  y1={firstPoint}
+                  x2={0}
+                  y2={fullHeight - (valueList[0].v * yUnit)}
+                  stroke={lineHue}
+                  strokeWidth={2}
+                />
+                <line
+                  x1={-190}
+                  y1={firstPoint}
+                  x2={-98}
+                  y2={firstPoint}
+                  stroke={lineHue}
+                  strokeWidth={2}
+                />
+                { valueList.map((vl, j) => {
+                  return valueList[j+1] && (
+                    <line
+                      x1={j * xUnit}
+                      y1={fullHeight - (valueList[j].v * yUnit)}
+                      x2={(j+1) * xUnit}
+                      y2={fullHeight - (valueList[j+1].v * yUnit)}
+                      stroke={lineHue}
+                      strokeWidth={2}
+                    />
+                  )
+                }) }
+              </g>
+            )
+          })}
+        </g>
       </SvgWrapper>
     </figure>
   )
