@@ -66,6 +66,7 @@ function MapSvg({
     countryId, {
       countryBorder,
       countryCenter,
+      countryCode,
       countryName,
       labelCenter,
     }
@@ -87,6 +88,7 @@ function MapSvg({
         borderCoordList,
         c: calcZoomC({ c: countryC, zoom }),
         countryId,
+        countryCode,
         countryName,
         fill,
         stroke,

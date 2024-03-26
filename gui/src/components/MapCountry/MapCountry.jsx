@@ -1,3 +1,4 @@
+
 import i18next from 'util/i18next/i18next'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -21,6 +22,7 @@ function MapCountry({
   borderCoordList,
   c,
   countryId,
+  countryCode,
   countryName,
   extraClass,
   fill,
@@ -81,7 +83,17 @@ function MapCountry({
         y={labelC?.y || c.y}
       />
     )
-    : (
+    : zoom > 1
+      ? (
+        <SvgText
+          extraClass={labelClassName}
+          style={{ font: `bold ${zoom + 4 + zoom * 0.8}px sans-serif` }}
+          text={countryCode}
+          x={labelC?.x || c.x}
+          y={labelC?.y || c.y}
+        />
+      )
+      : (
       <MapAreaCenterPoint
         c={c}
         r={1}
@@ -100,6 +112,7 @@ MapCountry.propTypes = {
   borderCoordList: BorderCoordListPropType,
   c: SvgXyPropType,
   countryId: PropTypes.number,
+  countryCode: PropTypes.string,
   countryName: PropTypes.string,
   fill: PropTypes.string,
   isSelected: PropTypes.bool,
