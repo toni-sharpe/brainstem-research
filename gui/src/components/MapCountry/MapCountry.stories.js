@@ -20,6 +20,7 @@ const c = { x: 97, y: 98 }
 
 const baseMapCountryProps = {
   borderCoordList: [[78, 77],[87, 78],[120, 75],[121, 100],[113, 119],[98, 118],[70, 116],[74, 95]],
+  countryCode: 'TST',
   countryName: 'Test name',
   c,
   isSelected: false,
