@@ -85,7 +85,7 @@ export function onSouthEventHandler({ graphKey, graphOffset: [x, y], persisted, 
   document.querySelector('.js-south').classList.add("is-hovered")
 }
 
-export function handleOnKeyDown(eventHandlerProps) {
+export function handleOnKeyDownScroll(eventHandlerProps) {
   const { keyCode } = eventHandlerProps
 
   if (keyCode === RIGHT_EAST_KEY) {
