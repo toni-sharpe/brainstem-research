@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import { inc, map, pipe, range } from 'ramda'
 
+import { LINE_CHART_VAL_SPACER } from 'util/Constant/BaseConstantList'
 import { numberPrecision } from 'util/Util/Util'
 import { calcAccessibleHue } from 'util/UtilHue/UtilHue'
 import { calcMaxBasedDisplay } from 'util/UtilScale/UtilScaleGranularity'
@@ -19,9 +20,10 @@ function LineGraph({
   xLabel,
   yLabel,
 }) {
+  const [currentHoveredLineId, setCurrentHoveredLineId] = useState()
   const scale = calcMaxBasedDisplay({ max })
 
-  const fullHeight = (Math.floor(max / scale.highlight) * scale.highlight + scale.highlight) + 30
+  const fullHeight = (Math.floor(max / scale.highlight) * scale.highlight + scale.highlight * 2) + 30
 
   let x = 0
   let highLightLineList = []
@@ -46,23 +48,28 @@ function LineGraph({
   const labelUnit = numberPrecision({ n: fullHeight / lineCount, lessPrecise })
   const yHighlight = numberPrecision({ n: fullHeight / (fullHeight / scale.highlight), lessPrecise })
   const yLine = numberPrecision({ n: fullHeight / (fullHeight / scale.show ), lessPrecise })
+  const xAxisRange = range(0, longest)
+  const sortedData = data.sort((a, b) => a[1][0].v >= b[1][0].v ? 1 : -1)
 
   const calcHue = calcAccessibleHue()
 
   return (
-    <figure className='column-layout space-children--column line-graph'>
+    <figure
+      className='column-layout space-children--column line-graph'
+      onMouseLeave={() => setCurrentHoveredLineId(undefined)}
+    >
       <figcaption className='line-graph__heading'>{heading}</figcaption>
       <SvgWrapper
         ariaLabel={ariaLabel}
         extraClass='line-graph__svg'
         region
-        svgScale={`0 5 ${fullHeight + 400} ${fullHeight}`}
+        svgScale={`0 20 ${fullHeight + 400} ${fullHeight}`}
       >
         <g transform='translate(200 0)'>
           { lineList.map(l => {
             const highlight = highLightLineList.includes(l)
             return (
-              <g>
+              <g key={l}>
                 <line
                   x1={0}
                   y1={fullHeight - l}
@@ -70,7 +77,6 @@ function LineGraph({
                   y2={fullHeight - l}
                   stroke={highlight ? '#333' : '#eee'}
                   strokeWidth={1}
-                  key={l}
                 />
                 <text
                   className={`line-graph__label ${highlight ? 'line-graph__label--highlight' : ''}`}
@@ -84,7 +90,7 @@ function LineGraph({
               </g>
             )
           }) }
-          { range(0, longest).map((_, i) => {
+          { xAxisRange.map((_, i) => {
             return (
               <line
                 x1={i * xUnit}
@@ -97,12 +103,21 @@ function LineGraph({
               />
             )
           }) }
-          { data.sort((a, b) => a[1][0].v >= b[1][0].v ? 1 : -1).map(([lineLabel, valueList], i) => {
-            const lineHue = calcHue({ i, total: lineCount })
+          { sortedData.map(([lineLabel, valueList], i) => {
+            const stroke = calcHue({ i, total: lineCount })
             const firstPoint = fullHeight - (i * labelUnit) - 30
 
+            function valToY({ index }) {
+              return fullHeight - (valueList[index].v * yUnit)
+            }
+
+            const strokeDef = {
+              stroke,
+              strokeWidth: 1,
+            }
+
             return (
-              <g>
+              <g key={`s-${i}`}>
                 <text
                   className='line-graph__label'
                   x={-105}
@@ -113,37 +128,120 @@ function LineGraph({
                   {lineLabel}
                 </text>
                 <line
-                  x1={-98}
+                  {...strokeDef}
+                  x1={-100}
                   y1={firstPoint}
                   x2={0}
-                  y2={fullHeight - (valueList[0].v * yUnit)}
-                  stroke={lineHue}
-                  strokeWidth={2}
+                  y2={valToY({ index: 0 })}
                 />
                 <line
+                  {...strokeDef}
                   x1={-190}
                   y1={firstPoint}
-                  x2={-98}
+                  x2={-100}
                   y2={firstPoint}
-                  stroke={lineHue}
-                  strokeWidth={2}
                 />
                 { valueList.map((vl, j) => {
-                  return valueList[j+1] && (
-                    <line
-                      x1={j * xUnit}
-                      y1={fullHeight - (valueList[j].v * yUnit)}
-                      x2={(j+1) * xUnit}
-                      y2={fullHeight - (valueList[j+1].v * yUnit)}
-                      stroke={lineHue}
-                      strokeWidth={2}
-                    />
+                  const k = j + 1
+                  const x = j * xUnit
+                  const y = valToY({ index: j })
+                  const show = j === currentHoveredLineId
+
+                  return valueList[k] && (
+                    <g key={`s-${j}`}>
+                      <line
+                        {...strokeDef}
+                        x1={x}
+                        y1={y}
+                        x2={k * xUnit}
+                        y2={valToY({ index: k })}
+                      />
+                      <circle
+                        cx={x}
+                        cy={y}
+                        fill={stroke}
+                        r={show ? 3 : 0}
+                      />
+                    </g>
                   )
                 }) }
               </g>
             )
           })}
+          { xAxisRange.map((_, i) => {
+            return (
+              <rect
+                className='line-graph__data-target'
+                height={fullHeight}
+                key={`r-${i}`}
+                onMouseEnter={() => setCurrentHoveredLineId(i)}
+                width={xUnit - 4}
+                x={(i * xUnit - xUnit / 2) + 2}
+                y={0}
+              />
+            )
+          }) }
         </g>
+        { sortedData
+            .map(([lineLabel, valueList], i) => {
+              return valueList
+                .map((vl, j) => {
+                  return j === currentHoveredLineId ? vl.v : null
+                })
+                .filter(Boolean)
+            })
+            .map((value, i) => {
+              if (!currentHoveredLineId) {
+                return null
+              }
+              const stroke = calcHue({ i, total: lineCount })
+              const xBase = currentHoveredLineId * xUnit + 200
+              const yBase = fullHeight - value
+              const iR = i % 14
+
+              const left = [0, 2, 5].includes(iR)
+              const right = [1, 4, 6].includes(iR)
+              const top = [0, 3, 6].includes(iR)
+              const upTop = [8,10,12].includes(iR)
+              const bottom = [2, 4, 7].includes(iR)
+              const downBottom = [9,11,13].includes(iR)
+
+              return (
+                <text
+                  className='line-graph__point-label'
+                  key={`${i}-${value}`}
+                  x={left
+                    ? xBase - LINE_CHART_VAL_SPACER
+                    : right
+                      ? xBase + LINE_CHART_VAL_SPACER
+                      : xBase
+                  }
+                  y={top || upTop
+                    ? yBase - LINE_CHART_VAL_SPACER - (upTop ? LINE_CHART_VAL_SPACER : 0)
+                    : bottom || downBottom
+                      ? yBase + LINE_CHART_VAL_SPACER + (downBottom ? LINE_CHART_VAL_SPACER : 0)
+                      : yBase
+                  }
+                  fill={stroke}
+                  textAnchor={left
+                    ? 'end'
+                    : right
+                      ? 'start'
+                      : 'middle'
+                  }
+                  dominantBaseline={top
+                    ? 'text-top'
+                    : bottom
+                      ? 'hanging'
+                      : 'middle'
+                  }
+                >
+                  {value}
+                </text>
+              )
+            })
+          })}
+        )}
       </SvgWrapper>
     </figure>
   )

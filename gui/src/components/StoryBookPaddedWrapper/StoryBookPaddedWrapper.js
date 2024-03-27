@@ -93,7 +93,7 @@ StoryBookPaddedWrapper.propTypes = {
   elementType: ElementTypePropType,
   forceAbsolute: PropTypes.bool, // there's always one
   heading: PropTypes.string,
-  height: PropTypes.number, // we need this for position: absolute, that takes the element out of the flow
+  height: NumberOrStringPropType, // we need this for position: absolute, that takes the element out of the flow
                             // and therefore out of the height calculation.
   info: PropTypes.string,
   isScreenWidth: PropTypes.bool,
