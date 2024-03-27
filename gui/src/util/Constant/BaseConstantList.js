@@ -213,6 +213,11 @@ export const DRAG_GRAPH_SVG_VIEWBOX = `${SVG_OFFSET} ${SVG_OFFSET} ${DRAG_GRAPH_
 export const DRAG_GRAPH_SVG_ZOOM_LIST = [1, 2, 3, 5, 10, 15, 20, 30, 50]
 
 /*
+ * Line chart
+ */
+export const LINE_CHART_VAL_SPACER = 10
+
+/*
  * Scatter graph
  */
 export const SCATTER_SVG_SCALE = 700

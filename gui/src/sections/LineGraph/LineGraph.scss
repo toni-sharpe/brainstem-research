@@ -20,4 +20,15 @@
       fill: $grey--dull-dark;
     }
   }
+
+  &__data-target {
+    fill: rgba($grey--light, 0.05);
+    &:hover {
+      fill: rgba($grey--light, 0.1);
+    }
+  }
+
+  &__point-label {
+    font-size: $font-size--medium-small;
+  }
 }
